@@ -1,14 +1,15 @@
 #include "Timer.h"
 
-class Timer{
+using namespace std;
 
-    private:
-    int id;
-    bool running;
+Timer::Timer() {}
 
-    public:
-    Timer::Timer(int t_hours, int t_minutes, int t_seconds, int t_id, bool t_run){
-        id = t_id;
-        running = t_run;
-    }
-};
+void Timer::start(int countdownSeconds) {
+    endTime = chrono::steady_clock::now() + chrono::seconds(countdownSeconds);
+}
+
+int Timer::remainingSeconds() const {
+    auto now = chrono::steady_clock::now();
+    auto remaining = chrono::duration_cast<chrono::seconds>(endTime - now).count();
+    return remaining > 0 ? remaining : 0;
+}

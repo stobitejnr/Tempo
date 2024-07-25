@@ -1,23 +1,27 @@
 #include <iostream>
-#include <thread>
 #include <chrono>
-#include "timer.h"
-
-void waitForUser() {
-    std::cout << "Press Enter to stop the timer..." << std::endl;
-    std::cin.get();
-}
+#include "Timer.h"
 
 int main() {
-    Timer timer;
+    Timer t1;
+    int countdownSeconds;
 
-    std::cout << "Starting timer..." << std::endl;
-    timer.start();
+    std::cout << "Enter countdown time in seconds: ";
+    std::cin >> countdownSeconds;
 
-    waitForUser();
+    t1.start(countdownSeconds);
 
-    timer.stop();
-    std::cout << "Elapsed time: " << timer.elapsedMilliseconds() << " milliseconds." << std::endl;
+    while (true) {
+        int remaining = timer.remainingSeconds();
+        std::cout << "\rTime remaining: " << remaining << " seconds" << std::flush;
+        if (remaining == 0) break;
+        
+        // Busy-wait for 1 second
+        auto start = std::chrono::steady_clock::now();
+        while (std::chrono::steady_clock::now() - start < std::chrono::seconds(1));
+    }
+
+    std::cout << "\nCountdown finished!" << std::endl;
 
     return 0;
 }
