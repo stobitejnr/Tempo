@@ -5,25 +5,24 @@
 using namespace std;
 
 int main() {
-    Timer timer;
     int countdownSeconds;
 
-    std::cout << "Enter countdown time in seconds: ";
-    std::cin >> countdownSeconds;
+    cout << "Enter countdown time in seconds: ";
+    cin >> countdownSeconds;
 
-    timer.start(countdownSeconds);
+    Timer timer = Timer(1, countdownSeconds, "Test", "");
 
     while (true) {
         int remaining = timer.remainingSeconds();
-        std::cout << "\rTime remaining: " << remaining << " seconds" << std::flush;
+        cout << "\rTime remaining: " << remaining << " seconds" << flush;
         if (remaining == 0) break;
         
-        // Busy-wait for 1 second
-        auto start = std::chrono::steady_clock::now();
-        while (std::chrono::steady_clock::now() - start < std::chrono::seconds(1));
+        // Wait for 1 second
+        auto start = chrono::steady_clock::now();
+        while (chrono::steady_clock::now() - start < chrono::seconds(1));
     }
 
-    std::cout << "\nCountdown finished!" << std::endl;
+    cout << "\nCountdown finished!" << endl;
 
     return 0;
 }
