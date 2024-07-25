@@ -2,14 +2,16 @@
 #include <chrono>
 #include "Timer.h"
 
+using namespace std;
+
 int main() {
-    Timer t1;
+    Timer timer;
     int countdownSeconds;
 
     std::cout << "Enter countdown time in seconds: ";
     std::cin >> countdownSeconds;
 
-    t1.start(countdownSeconds);
+    timer.start(countdownSeconds);
 
     while (true) {
         int remaining = timer.remainingSeconds();
