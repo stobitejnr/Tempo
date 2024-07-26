@@ -3,6 +3,7 @@
 #include "Timer.hpp"
 #include <conio.h>
 
+
 using namespace std;
 
 void wait(int seconds){
@@ -20,7 +21,8 @@ int main() {
 
     while (true) {
         int remaining = timer.remainingSeconds();
-        cout << "\rTime remaining: " << remaining << " seconds" << flush;
+        if (remaining == 1) cout << "\rTime remaining: " << remaining << " second" << flush;
+        else cout << "\rTime remaining: " << remaining << " seconds" << flush;
         if (remaining == 0) break;
 
         if(_kbhit()){
