@@ -11,6 +11,8 @@ void wait(int seconds){
     while (chrono::steady_clock::now() - start < chrono::seconds(seconds));
 }
 
+
+// Main function
 int main() {
     int countdownSeconds;
 
