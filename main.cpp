@@ -1,6 +1,7 @@
 #include <iostream>
 #include <chrono>
 #include "Timer.hpp"
+#include <conio.h>
 
 using namespace std;
 
@@ -21,6 +22,20 @@ int main() {
         int remaining = timer.remainingSeconds();
         cout << "\rTime remaining: " << remaining << " seconds" << flush;
         if (remaining == 0) break;
+
+        if(_kbhit()){
+            char ch = _getch();
+            if(ch == 's'){
+                cout << "\nTimer paused!" << endl;
+                timer.pause();
+            }
+
+            if(ch == 'r'){
+                cout << "\nTimer resumed!" << endl;
+                timer.resume();
+            }
+
+        }
         
         // Wait for 1 second
         auto start = chrono::steady_clock::now();
