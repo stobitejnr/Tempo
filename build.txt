@@ -1,1 +1,1 @@
-g++ -static-libgcc -static-libstdc++ main.cpp -o main.exe timer.cpp -o timerapp
+g++ -static-libgcc -static-libstdc++ main.cpp timer.cpp -o timerapp
