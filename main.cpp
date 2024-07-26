@@ -1,6 +1,6 @@
 #include <iostream>
 #include <chrono>
-#include "Timer.h"
+#include "Timer.hpp"
 
 using namespace std;
 
@@ -14,7 +14,8 @@ int main() {
 
     while (true) {
         int remaining = timer.remainingSeconds();
-        cout << "\rTime remaining: " << remaining << " seconds" << flush;
+        if (remaining == 1) cout << "\rTime remaining: " << remaining << " second" << flush;
+        else cout << "\rTime remaining: " << remaining << " seconds" << flush;
         if (remaining == 0) break;
         
         // Wait for 1 second
