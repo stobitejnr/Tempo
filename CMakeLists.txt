@@ -7,3 +7,4 @@ add_executable(Group_Assignment
         main.cpp
         Timer.cpp
         Timer.hpp)
+
