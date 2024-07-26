@@ -1,8 +1,13 @@
 #include <iostream>
 #include <chrono>
-#include "Timer.h"
+#include "Timer.hpp"
 
 using namespace std;
+
+void wait(int seconds){
+    auto start = chrono::steady_clock::now();
+    while (chrono::steady_clock::now() - start < chrono::seconds(seconds));
+}
 
 int main() {
     int countdownSeconds;
@@ -22,7 +27,7 @@ int main() {
         while (chrono::steady_clock::now() - start < chrono::seconds(1));
     }
 
+    
     cout << "\nCountdown finished!" << endl;
-
     return 0;
 }
