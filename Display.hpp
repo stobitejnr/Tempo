@@ -3,6 +3,7 @@
 
 #include "Timer.hpp"
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -12,7 +13,7 @@ public:
 
     void tick();
     void printTime(int hours, int minutes, int seconds);
-    void clearScreen();
+    static void clearScreen();
 
 private:
     Timer& _timer;

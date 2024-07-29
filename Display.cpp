@@ -1,12 +1,14 @@
 #include "Display.hpp"
-#include <vector>
-#include <string>
 
 using namespace std;
 
 Display::Display(Timer& timer) : _timer(timer) {}
 
 #define ASCII_HEIGHT 8
+
+/* =========================================================
+DEFINITION OF ALL ASCII CHARACTER ART
+========================================================= */
 
 vector<string> _0 = {
 " $$$$$$\\  ",
@@ -120,6 +122,10 @@ vector<string> _colon = {
     
 vector<vector<string>> ascii = {_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _colon};
 
+/* =========================================================
+FUNCTION HANDLING TRERMINAL CLEARING FOR SEAMLESS FRAMES
+========================================================= */
+
 void Display::clearScreen() {
 #ifdef _WIN32
     system("cls");
@@ -127,6 +133,10 @@ void Display::clearScreen() {
     system("clear");
 #endif
 }
+
+/* =========================================================
+FUNCTION HANDLING PRINTING OF TIMER IN ASCII
+========================================================= */
 
 void Display::printTime(int hours, int minutes, int seconds){
     clearScreen();
@@ -170,13 +180,17 @@ void Display::printTime(int hours, int minutes, int seconds){
     }
 }
 
+/* =========================================================
+FUNCTION TO HANDLE PARSING TIMER, CALLS PRINT
+========================================================= */
+
 void Display::tick(){
     int remaining = _timer.remainingSeconds();
     
     int hours = remaining / 3600;
     remaining %= 3600;
     int minutes = remaining / 60;
-    int seconds = remaining % 60;
+    int seconds = (remaining % 60);
     
     printTime(hours, minutes, seconds);
 }
