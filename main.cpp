@@ -58,7 +58,6 @@ Timer createTimer(){
     }
 
     Timer timer = Timer(1, countdownSeconds, "Name", "Description");
-
     return timer;
 }
 
@@ -66,16 +65,19 @@ Timer createTimer(){
 // Main function
 int main() {
 
-    vector<Timer> timers;
-    vector<Display> displays;
-    
+    bool run = true;
+
     Timer timer = createTimer();
     Display display = Display(timer);
 
     //Main loop
-    while (true) {
+    while (run) {
+
+        if(timer.remainingSeconds() == 0) { run = false; }
+
         display.tick();
-        if (timer.remainingSeconds() == 0) break;
+        
+        //Handle keypresses
         if(_kbhit()){
             char ch = _getch();
             if(ch == 's'){
@@ -88,11 +90,9 @@ int main() {
                 timer.resume();
             }
         }
-        
         wait(1);
     }
 
-    
     cout << "\nTimer finished!" << endl;
     return 0;
 }
