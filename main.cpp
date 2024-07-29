@@ -1,6 +1,7 @@
 #include <iostream>
 #include <chrono>
 #include "Timer.hpp"
+#include "Display.hpp"
 #include <conio.h>
 
 
@@ -14,18 +15,19 @@ void wait(int seconds){
 
 // Main function
 int main() {
+    bool run = true;
     int countdownSeconds;
 
     cout << "Enter countdown time in seconds: ";
     cin >> countdownSeconds;
 
     Timer timer = Timer(1, countdownSeconds, "Test", "");
+    Display display = Display(timer);
 
-    while (true) {
+    while (run) {
         int remaining = timer.remainingSeconds();
+        display.tick();
         if (remaining == 0) break;
-        cout << "\rTime remaining: " << remaining << " seconds" << flush;
-
         if(_kbhit()){
             char ch = _getch();
             if(ch == 's'){
