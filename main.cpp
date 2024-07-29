@@ -23,9 +23,8 @@ int main() {
 
     while (true) {
         int remaining = timer.remainingSeconds();
-        if (remaining == 1) cout << "\rTime remaining: " << remaining << " second" << flush;
-        else cout << "\rTime remaining: " << remaining << " seconds" << flush;
         if (remaining == 0) break;
+        cout << "\rTime remaining: " << remaining << " seconds" << flush;
 
         if(_kbhit()){
             char ch = _getch();
@@ -38,12 +37,9 @@ int main() {
                 cout << "\nTimer resumed!" << endl;
                 timer.resume();
             }
-
         }
         
-        // Wait for 1 second
-        auto start = chrono::steady_clock::now();
-        while (chrono::steady_clock::now() - start < chrono::seconds(1));
+        wait(1);
     }
 
     

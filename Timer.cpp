@@ -4,7 +4,7 @@ using namespace std;
 
 //Default constructor
 Timer::Timer(){
-    _countdownSeconds = 10;
+    _countdownSeconds = 0;
     start(_countdownSeconds);
 }
 
