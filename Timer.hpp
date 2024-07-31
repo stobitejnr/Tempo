@@ -24,12 +24,12 @@ public:
     void createTimer();
 
     bool isRunning();
-    int remainingSeconds() const;
+    int remainingMilliseconds() const;
 
 private:
-    int _startSeconds;
-    int _countdownSeconds;
-    int _remainingSeconds;
+    int _startMilliseconds;
+    int _countdownMilliseconds;
+    int _remainingMilliseconds;
 
 
     string _name;

@@ -55,7 +55,7 @@ int main() {
     //Main loop
     while (run) {
 
-        if(timer.remainingSeconds() == 0) { run = false; }
+        if(timer.remainingMilliseconds() == 0) { run = false; }
 
         display.tick();
 

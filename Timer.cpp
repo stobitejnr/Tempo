@@ -8,7 +8,7 @@ Timer::Timer(){
     int h = 0;
     int m = 0;
     int s = 0;
-    _countdownSeconds = 0;
+    int countdownSeconds = 0;
 
     Display::clearScreen();
 
@@ -40,25 +40,27 @@ Timer::Timer(){
             s = stoi(match[1].str());
         }
         
-        _countdownSeconds = (3600*h) + (60*m) + (s);
-        if (_countdownSeconds <= 360000){break;}
+        countdownSeconds = (3600*h) + (60*m) + (s);
+        if (countdownSeconds <= 360000){break;}
         else{
             cout << "Cannot set a timer for more than 100 hours." << endl;
         }
     }
-    _startSeconds = _countdownSeconds;
-    _remainingSeconds = _countdownSeconds;
-    start(_countdownSeconds);
+
+    _startMilliseconds = countdownSeconds * 1000;
+    _remainingMilliseconds = _startMilliseconds;
+    _countdownMilliseconds = _startMilliseconds;
+    start(_countdownMilliseconds);
 }
 
 //Constructor to specify members
-Timer::Timer(int id, int countdownSeconds, string name, string desc){
-    _countdownSeconds = countdownSeconds;
-    _remainingSeconds = countdownSeconds;
-    _startSeconds = countdownSeconds;
+Timer::Timer(int id, int countdownMilliseconds, string name, string desc){
+    _countdownMilliseconds = countdownMilliseconds;
+    _remainingMilliseconds = countdownMilliseconds;
+    _startMilliseconds = countdownMilliseconds;
     _name = name;
     _desc = desc;
-    start(_countdownSeconds);
+    start(_countdownMilliseconds);
 }
 
 Timer::~Timer(){
@@ -66,40 +68,40 @@ Timer::~Timer(){
 }
 
 
-void Timer::start(int countdownSeconds) {
+void Timer::start(int countdownMilliseconds) {
     _running = true;
-    _endTime = chrono::steady_clock::now() + chrono::seconds(_countdownSeconds);
+    _endTime = chrono::steady_clock::now() + chrono::milliseconds(_countdownMilliseconds);
 }
 
 void Timer::pause(){
     if(_running){
        _pauseTime = chrono::steady_clock::now();
-       _remainingSeconds = chrono::duration_cast<chrono::seconds>(_endTime - _pauseTime).count();
+       _remainingMilliseconds = chrono::duration_cast<chrono::milliseconds>(_endTime - _pauseTime).count();
        _running = false;
     }
 }
 
 void Timer::resume(){
     if(!_running){
-        _endTime = chrono::steady_clock::now() + chrono::seconds(_remainingSeconds);
+        _endTime = chrono::steady_clock::now() + chrono::milliseconds(_remainingMilliseconds);
         _running = true;
     }
 }
 
 void Timer::reset(){
     pause();
-    _remainingSeconds = _startSeconds;
-    _countdownSeconds = _startSeconds;
+    _remainingMilliseconds = _startMilliseconds;
+    _countdownMilliseconds = _startMilliseconds;
 }
 
-int Timer::remainingSeconds() const {
+int Timer::remainingMilliseconds() const {
     if(_running){
         auto now = chrono::steady_clock::now();
-        auto remaining = chrono::duration_cast<chrono::seconds>(_endTime - now).count();
+        auto remaining = chrono::duration_cast<chrono::milliseconds>(_endTime - now).count();
         return remaining > 0 ? remaining : 0;
     }
     else{
-        return _remainingSeconds;
+        return _remainingMilliseconds;
     }
 }
 

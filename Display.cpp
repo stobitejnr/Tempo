@@ -209,12 +209,13 @@ PARSING TIMER, CALLING PRINT FUNCTION
 ========================================================= */
 
 void Display::tick(){
-    int remaining = _timer.remainingSeconds();
+    int remaining = _timer.remainingMilliseconds();
     
-    int hours = remaining / 3600;
-    remaining %= 3600;
-    int minutes = remaining / 60;
-    int seconds = (remaining % 60);
+    int hours = remaining / 3600000;
+    remaining %= 3600000;
+    int minutes = remaining / 60000;
+    remaining %= 60000;
+    int seconds = (remaining / 1000);
     
     printTimer(hours, minutes, seconds);
     printActions();
