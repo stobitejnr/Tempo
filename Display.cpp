@@ -123,7 +123,7 @@ vector<string> _colon = {
 vector<vector<string>> ascii = {_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _colon};
 
 /* =========================================================
-FUNCTION HANDLING TRERMINAL CLEARING FOR SEAMLESS FRAMES
+=TRERMINAL CLEARING FOR SEAMLESS FRAMES
 ========================================================= */
 
 void Display::clearScreen() {
@@ -135,10 +135,10 @@ void Display::clearScreen() {
 }
 
 /* =========================================================
-FUNCTION HANDLING PRINTING OF TIMER IN ASCII
+PRINTING OF TIMER IN ASCII
 ========================================================= */
 
-void Display::printTime(int hours, int minutes, int seconds){
+void Display::printTimer(int hours, int minutes, int seconds){
     clearScreen();
 
     string padding = "  ";
@@ -180,8 +180,32 @@ void Display::printTime(int hours, int minutes, int seconds){
     }
 }
 
+
+void Display::printActions(){
+    cout << endl;
+    cout << "===========================================" << endl;
+    cout << "Control your timer with the following keys: " << endl;
+    cout << "===========================================" << endl;
+    cout << endl;
+    cout << "S : Start/Pause your timer." << endl;
+    cout << "R : Reset your timer." << endl;
+    cout << "Q : End your timer immediately and quit." << endl;
+    cout << endl;
+}
+
+void Display::setSplash(string str){
+    _splash = str;
+}
+
+void Display::printSplash(){
+    if(_splash != ""){
+        cout << endl;
+        cout << " >> " << _splash << " << " << endl;
+    }
+}
+
 /* =========================================================
-FUNCTION TO HANDLE PARSING TIMER, CALLS PRINT
+PARSING TIMER, CALLING PRINT FUNCTION
 ========================================================= */
 
 void Display::tick(){
@@ -192,5 +216,7 @@ void Display::tick(){
     int minutes = remaining / 60;
     int seconds = (remaining % 60);
     
-    printTime(hours, minutes, seconds);
+    printTimer(hours, minutes, seconds);
+    printActions();
+    printSplash();
 }

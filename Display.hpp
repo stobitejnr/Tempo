@@ -12,11 +12,15 @@ public:
     Display(Timer& timer);
 
     void tick();
-    void printTime(int hours, int minutes, int seconds);
+    void printTimer(int hours, int minutes, int seconds);
+    void printActions();
+    void setSplash(string str);
+    void printSplash();
     static void clearScreen();
 
 private:
     Timer& _timer;
+    string _splash;
 };
 
 #endif // DISPLAY_HPP

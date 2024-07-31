@@ -3,6 +3,7 @@
 
 #include <chrono>
 #include <iostream>
+#include <regex>
 
 using namespace std;
 
@@ -18,13 +19,19 @@ public:
     void start(int countdownSeconds);
     void pause();
     void resume();
+    void reset();
 
+    void createTimer();
+
+    bool isRunning();
     int remainingSeconds() const;
 
 private:
-    int _id;
+    int _startSeconds;
     int _countdownSeconds;
     int _remainingSeconds;
+
+
     string _name;
     string _desc;
     bool _running;
