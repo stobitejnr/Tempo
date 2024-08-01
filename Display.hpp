@@ -12,7 +12,7 @@ public:
     Display(Timer& timer);
 
     void tick();
-    void printTimer(int hours, int minutes, int seconds);
+    void printTimer(int hours, int minutes, int seconds, int tenths);
     void printActions();
     void setSplash(string str);
     void printSplash();

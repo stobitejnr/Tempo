@@ -120,6 +120,16 @@ vector<string> _colon = {
 "\\__|",
 "    "};
     
+vector<string> _period = {
+"    ",
+"    ",
+"    " ,
+"    ",
+"    ",
+"    ",
+"$$\\ ",
+"\\__|"};
+
 vector<vector<string>> ascii = {_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _colon};
 
 /* =========================================================
@@ -138,7 +148,7 @@ void Display::clearScreen() {
 PRINTING OF TIMER IN ASCII
 ========================================================= */
 
-void Display::printTimer(int hours, int minutes, int seconds){
+void Display::printTimer(int hours, int minutes, int seconds, int tenths){
     clearScreen();
 
     string padding = "  ";
@@ -165,10 +175,20 @@ void Display::printTimer(int hours, int minutes, int seconds){
         to_print += "0" + to_string(seconds);
     }
 
+ /* =========================================================
+JUST FOR TESTING TENTHS
+========================================================= */
+    to_print += "." + to_string(tenths);
+    
+
     for(int i = 0; i < ASCII_HEIGHT; i++){
         for(char ch : to_print){
             if(ch == ':'){
                 cout << _colon[i];
+                cout << padding;
+            }
+            else if(ch == '.'){
+                cout << _period[i];
                 cout << padding;
             }
             else{
@@ -200,7 +220,7 @@ void Display::setSplash(string str){
 void Display::printSplash(){
     if(_splash != ""){
         cout << endl;
-        cout << " >> " << _splash << " << " << endl;
+        cout << " << " << _splash << " >> " << endl;
     }
 }
 
@@ -215,9 +235,11 @@ void Display::tick(){
     remaining %= 3600000;
     int minutes = remaining / 60000;
     remaining %= 60000;
-    int seconds = (remaining / 1000);
+    int seconds = remaining / 1000;
+    remaining %= 1000;
+    int tenths = remaining / 100;
     
-    printTimer(hours, minutes, seconds);
+    printTimer(hours, minutes, seconds, tenths);
     printActions();
     printSplash();
 }

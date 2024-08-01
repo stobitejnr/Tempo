@@ -35,7 +35,7 @@ void checkInput(Timer& timer, Display& display, bool& run){
         }
         if(ch == 'r'){
             timer.reset();
-            display.setSplash("TIMER RESET");
+            display.setSplash("TIMER RESET, PRESS 'S' TO START");
             return;
         }
         if(ch == 'q'){
@@ -55,7 +55,7 @@ int main() {
     //Main loop
     while (run) {
 
-        if(timer.remainingMilliseconds() == 0) { run = false; }
+        if(timer.remainingMilliseconds() == 0) { display.setSplash("TIMER FINISHED"); }
 
         display.tick();
 
@@ -64,6 +64,7 @@ int main() {
         wait(0.05);
     }
 
-    cout << "\nTimer finished!" << endl;
+    display.setSplash("PROGRAM QUIT");
+    display.tick();
     return 0;
 }

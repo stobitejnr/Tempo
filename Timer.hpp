@@ -11,7 +11,7 @@ class Timer {
 public:
     //Constructors
     Timer();
-    Timer(int id, int, string name, string desc);
+    Timer(int hours, int minutes, int seconds, string name, string desc);
 
     //Destructor
     ~Timer();
