@@ -7,46 +7,52 @@
 #include "Timer.hpp"
 #include "Display.hpp"
 
-#define MAINLOOPTIME 0.1
+#define LOOPTIME 0.1
 
 using namespace std;
 
+/* =========================================================
+BUSY-WAIT FOR A SPECIFIED AMOUNT OF TIME (IN SECONDS)
+========================================================= */
 void wait(double seconds) {
     auto start = chrono::high_resolution_clock::now();
     auto duration = chrono::duration<double>(seconds);
     while (chrono::high_resolution_clock::now() - start < duration) { }
 }
 
+/* =========================================================
+HANDLE KEYBOARD INPUT
+========================================================= */
 void checkInput(Timer& timer, Display& display, bool& run){
-    //Handle keypresses
     if(_kbhit()){
         char ch = _getch();
-        if(ch == 's'){
-            if(timer.isRunning()){
-                timer.pause();
-                display.setSplash("TIMER PAUSED");
-                return;
-            }
-            else{
-                display.setSplash("");
-                timer.resume();
-                return;
-                
-            }
-            
-        }
-        if(ch == 'r'){
-            timer.reset();
-            display.setSplash("TIMER RESET, PRESS 'S' TO START");
-            return;
-        }
-        if(ch == 'q'){
-            run = false;
+        switch(ch){
+            case 's':
+                if(timer.isRunning()){
+                    timer.pause();
+                    display.setSplash("TIMER PAUSED");
+                }
+                else{
+                    display.setSplash("");
+                    timer.resume();        
+                }
+                break;
+            case 'r':
+                timer.reset();
+                display.setSplash("TIMER RESET, PRESS 'S' TO START");
+                break;
+            case 'q':
+                run = false;
+                break;
+            default:
+                break;
         }
     }
 }
 
-// Main function
+/* =========================================================
+MAIN FUNCTION
+========================================================= */
 int main() {
 
     bool run = true;
@@ -58,15 +64,16 @@ int main() {
     while (run) {
 
         if(timer.remainingMilliseconds() == 0) { display.setSplash("TIMER FINISHED"); }
-
+ 
         display.tick();
 
         checkInput(timer, display, run);
 
-        wait(MAINLOOPTIME);
+        wait(LOOPTIME);
     }
 
     display.setSplash("PROGRAM QUIT");
     display.tick();
+
     return 0;
 }
