@@ -178,7 +178,7 @@ void Display::printTimer(int hours, int minutes, int seconds, int tenths){
  /* =========================================================
 JUST FOR TESTING TENTHS
 ========================================================= */
-    to_print += "." + to_string(tenths);
+    //to_print += "." + to_string(tenths);
     
 
     for(int i = 0; i < ASCII_HEIGHT; i++){

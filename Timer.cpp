@@ -3,7 +3,7 @@
 
 using namespace std;
 
-//Default constructor
+//Default constructor to take user input
 Timer::Timer(){
     int h = 0;
     int m = 0;
@@ -13,6 +13,7 @@ Timer::Timer(){
     Display::clearScreen();
 
     while(true){
+        Display::clearScreen();
         cout << "How long would you like to set a timer for?" << endl;
         string input = "";
         getline(cin,input);
@@ -41,6 +42,7 @@ Timer::Timer(){
         }
         
         countdownSeconds = (3600*h) + (60*m) + (s);
+        if(countdownSeconds == 0){ continue; }
         if (countdownSeconds <= 360000){break;}
         else{
             cout << "Cannot set a timer for more than 100 hours." << endl;
@@ -53,7 +55,7 @@ Timer::Timer(){
     start(_countdownMilliseconds);
 }
 
-//Constructor to specify members
+//Constructor to specify members directly
 Timer::Timer(int hours, int minutes, int seconds, string name, string desc){
     int milli = 3600000 * hours + 60000 * minutes + 1000 * seconds;
     _countdownMilliseconds = milli;

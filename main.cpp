@@ -7,6 +7,8 @@
 #include "Timer.hpp"
 #include "Display.hpp"
 
+#define MAINLOOPTIME 0.1
+
 using namespace std;
 
 void wait(double seconds) {
@@ -61,7 +63,7 @@ int main() {
 
         checkInput(timer, display, run);
 
-        wait(0.05);
+        wait(MAINLOOPTIME);
     }
 
     display.setSplash("PROGRAM QUIT");
