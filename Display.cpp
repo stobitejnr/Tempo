@@ -120,10 +120,20 @@ vector<string> _colon = {
 "\\__|",
 "    "};
     
+vector<string> _period = {
+"    ",
+"    ",
+"    " ,
+"    ",
+"    ",
+"    ",
+"$$\\ ",
+"\\__|"};
+
 vector<vector<string>> ascii = {_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _colon};
 
 /* =========================================================
-FUNCTION HANDLING TRERMINAL CLEARING FOR SEAMLESS FRAMES
+=TRERMINAL CLEARING FOR SEAMLESS FRAMES
 ========================================================= */
 
 void Display::clearScreen() {
@@ -135,10 +145,10 @@ void Display::clearScreen() {
 }
 
 /* =========================================================
-FUNCTION HANDLING PRINTING OF TIMER IN ASCII
+PRINTING OF TIMER IN ASCII
 ========================================================= */
 
-void Display::printTime(int hours, int minutes, int seconds){
+void Display::printTimer(int hours, int minutes, int seconds, int tenths){
     clearScreen();
 
     string padding = "  ";
@@ -165,10 +175,20 @@ void Display::printTime(int hours, int minutes, int seconds){
         to_print += "0" + to_string(seconds);
     }
 
+ /* =========================================================
+JUST FOR TESTING TENTHS
+========================================================= */
+    //to_print += "." + to_string(tenths);
+    
+
     for(int i = 0; i < ASCII_HEIGHT; i++){
         for(char ch : to_print){
             if(ch == ':'){
                 cout << _colon[i];
+                cout << padding;
+            }
+            else if(ch == '.'){
+                cout << _period[i];
                 cout << padding;
             }
             else{
@@ -180,17 +200,46 @@ void Display::printTime(int hours, int minutes, int seconds){
     }
 }
 
+
+void Display::printActions(){
+    cout << endl;
+    cout << "===========================================" << endl;
+    cout << "Control your timer with the following keys: " << endl;
+    cout << "===========================================" << endl;
+    cout << endl;
+    cout << "S : Start/Pause your timer." << endl;
+    cout << "R : Reset your timer." << endl;
+    cout << "Q : End your timer immediately and quit." << endl;
+    cout << endl;
+}
+
+void Display::setSplash(string str){
+    _splash = str;
+}
+
+void Display::printSplash(){
+    if(_splash != ""){
+        cout << endl;
+        cout << " << " << _splash << " >> " << endl;
+    }
+}
+
 /* =========================================================
-FUNCTION TO HANDLE PARSING TIMER, CALLS PRINT
+PARSING TIMER, CALLING PRINT FUNCTION
 ========================================================= */
 
 void Display::tick(){
-    int remaining = _timer.remainingSeconds();
+    int remaining = _timer.remainingMilliseconds();
     
-    int hours = remaining / 3600;
-    remaining %= 3600;
-    int minutes = remaining / 60;
-    int seconds = (remaining % 60);
+    int hours = remaining / 3600000;
+    remaining %= 3600000;
+    int minutes = remaining / 60000;
+    remaining %= 60000;
+    int seconds = remaining / 1000;
+    remaining %= 1000;
+    int tenths = remaining / 100;
     
-    printTime(hours, minutes, seconds);
+    printTimer(hours, minutes, seconds, tenths);
+    printActions();
+    printSplash();
 }
