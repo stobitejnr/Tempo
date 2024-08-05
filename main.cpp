@@ -1,11 +1,13 @@
-#include <iostream>
-#include <chrono>
-#include <conio.h>
-#include <vector>
 
 
 #include "Timer.hpp"
 #include "Display.hpp"
+
+
+#include <iostream>
+#include <chrono>
+#include <conio.h>
+#include <vector>
 
 #define LOOPTIME 0.1
 

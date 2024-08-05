@@ -1,3 +1,5 @@
+#include <windows.h>
+
 #include "Display.hpp"
 
 using namespace std;
@@ -130,7 +132,7 @@ vector<string> _period = {
 "$$\\ ",
 "\\__|"};
 
-vector<vector<string>> ascii = {_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _colon};
+vector<vector<string>> font1 = {_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _colon};
 
 /* =========================================================
 =TRERMINAL CLEARING FOR SEAMLESS FRAMES
@@ -148,8 +150,7 @@ void Display::clearScreen() {
 PRINTING OF TIMER IN ASCII
 ========================================================= */
 
-void Display::printTimer(int hours, int minutes, int seconds, int tenths){
-    clearScreen();
+void Display::stageTimer(int hours, int minutes, int seconds, int tenths){
 
     string padding = "  ";
     string to_print = "";
@@ -182,46 +183,66 @@ JUST FOR TESTING TENTHS
     
 
     for(int i = 0; i < ASCII_HEIGHT; i++){
+        string line;
         for(char ch : to_print){
             if(ch == ':'){
-                cout << _colon[i];
-                cout << padding;
+                line += _colon[i];
+                line += padding;
             }
             else if(ch == '.'){
-                cout << _period[i];
-                cout << padding;
+                line += _period[i];
+                line += padding;
             }
             else{
-                cout << ascii.at(ch-'0')[i];
-                cout << padding;
+                line += font1.at(ch-'0')[i];
+                line += padding;
             }
         }
-        cout << endl;
+        _buffer.push_back(line+"\n");
     }
 }
 
 
-void Display::printActions(){
-    cout << endl;
-    cout << "===========================================" << endl;
-    cout << "Control your timer with the following keys: " << endl;
-    cout << "===========================================" << endl;
-    cout << endl;
-    cout << "S : Start/Pause your timer." << endl;
-    cout << "R : Reset your timer." << endl;
-    cout << "Q : End your timer immediately and quit." << endl;
-    cout << endl;
+void Display::stageActions(){
+    _buffer.push_back("\n");
+    _buffer.push_back("===========================================\n");
+    _buffer.push_back("Control your timer with the following keys: \n");
+    _buffer.push_back("===========================================\n");
+    _buffer.push_back("\n");
+    _buffer.push_back("S : Start/Pause your timer.\n");
+    _buffer.push_back("R : Reset your timer.\n");
+    _buffer.push_back("Q : End your timer immediately and quit.\n");
+    _buffer.push_back("\n");
 }
 
 void Display::setSplash(string str){
     _splash = str;
 }
 
-void Display::printSplash(){
+void Display::stageSplash(){
     if(_splash != ""){
-        cout << endl;
-        cout << " << " << _splash << " >> " << endl;
+        _buffer.push_back("\n");
+        _buffer.push_back(" << " + _splash + " >> \n");
     }
+}
+
+void Display::printStaged(){
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    
+    for(string str : _buffer){
+        const char* line = str.c_str();
+        DWORD written;
+        // Write the text to the console
+        WriteConsoleA(
+            hConsole,           // Handle to the console
+            line,               // Buffer to write from
+            strlen(line),       // Number of characters to write
+            &written,           // Number of characters written
+            NULL                // Reserved, must be NULL
+        );
+        // cout << str << endl;
+    }
+    _buffer.clear();
 }
 
 /* =========================================================
@@ -239,7 +260,10 @@ void Display::tick(){
     remaining %= 1000;
     int tenths = remaining / 100;
     
-    printTimer(hours, minutes, seconds, tenths);
-    printActions();
-    printSplash();
+    stageTimer(hours, minutes, seconds, tenths);
+    stageActions();
+    stageSplash();
+
+    clearScreen();
+    printStaged();
 }
