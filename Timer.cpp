@@ -97,6 +97,18 @@ void Timer::reset(){
     _countdownMilliseconds = _startMilliseconds;
 }
 
+void Timer::increment(){
+
+    if ( _running) {
+        pause();
+    }
+
+    _remainingMilliseconds += 10000;
+    _countdownMilliseconds += 10000;
+
+    resume();
+}
+
 int Timer::remainingMilliseconds() const {
     if(_running){
         auto now = chrono::steady_clock::now();

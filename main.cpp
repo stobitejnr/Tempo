@@ -9,7 +9,7 @@
 #include <conio.h>
 #include <vector>
 
-#define LOOPTIME 0.1
+#define LOOPTIME 1
 
 using namespace std;
 
@@ -45,6 +45,10 @@ void checkInput(Timer& timer, Display& display, bool& run){
                 break;
             case 'q':
                 run = false;
+                break;
+            case 'i':
+                timer.increment();
+                display.setSplash("TIMER INCREMENTED");
                 break;
             default:
                 break;
