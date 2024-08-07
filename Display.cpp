@@ -1,3 +1,5 @@
+#include <windows.h>
+
 #include "Display.hpp"
 
 using namespace std;
@@ -120,10 +122,20 @@ vector<string> _colon = {
 "\\__|",
 "    "};
     
-vector<vector<string>> ascii = {_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _colon};
+vector<string> _period = {
+"    ",
+"    ",
+"    " ,
+"    ",
+"    ",
+"    ",
+"$$\\ ",
+"\\__|"};
+
+vector<vector<string>> font1 = {_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _colon};
 
 /* =========================================================
-FUNCTION HANDLING TRERMINAL CLEARING FOR SEAMLESS FRAMES
+=TRERMINAL CLEARING FOR SEAMLESS FRAMES
 ========================================================= */
 
 void Display::clearScreen() {
@@ -135,11 +147,10 @@ void Display::clearScreen() {
 }
 
 /* =========================================================
-FUNCTION HANDLING PRINTING OF TIMER IN ASCII
+PRINTING OF TIMER IN ASCII
 ========================================================= */
 
-void Display::printTime(int hours, int minutes, int seconds){
-    clearScreen();
+void Display::stageTimer(int hours, int minutes, int seconds, int tenths){
 
     string padding = "  ";
     string to_print = "";
@@ -165,32 +176,94 @@ void Display::printTime(int hours, int minutes, int seconds){
         to_print += "0" + to_string(seconds);
     }
 
+ /* =========================================================
+JUST FOR TESTING TENTHS
+========================================================= */
+    //to_print += "." + to_string(tenths);
+    
+
     for(int i = 0; i < ASCII_HEIGHT; i++){
+        string line;
         for(char ch : to_print){
             if(ch == ':'){
-                cout << _colon[i];
-                cout << padding;
+                line += _colon[i];
+                line += padding;
+            }
+            else if(ch == '.'){
+                line += _period[i];
+                line += padding;
             }
             else{
-                cout << ascii.at(ch-'0')[i];
-                cout << padding;
+                line += font1.at(ch-'0')[i];
+                line += padding;
             }
         }
-        cout << endl;
+        _buffer.push_back((line+"\n"));
     }
 }
 
+
+void Display::stageActions(){
+    _buffer.push_back("\n");
+    _buffer.push_back("===========================================\n");
+    _buffer.push_back("Control your timer with the following keys: \n");
+    _buffer.push_back("===========================================\n");
+    _buffer.push_back("\n");
+    _buffer.push_back("S : Start/Pause your timer.\n");
+    _buffer.push_back("R : Reset your timer.\n");
+    _buffer.push_back("Q : End your timer immediately and quit.\n");
+    _buffer.push_back("I : Add 10 seconds to your timer.\n");
+    _buffer.push_back("\n");
+}
+
+void Display::setSplash(string str){
+    _splash = str;
+}
+
+void Display::stageSplash(){
+    if(_splash != ""){
+        _buffer.push_back("\n");
+        _buffer.push_back((" << " + _splash + " >> \n"));
+    }
+}
+
+void Display::printStaged(){
+    // HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    
+    for(string line : _buffer){
+        // DWORD written;
+        // Write the text to the console
+        // WriteConsoleA(
+        //     hConsole,           // Handle to the console
+        //     line,               // Buffer to write from
+        //     strlen(line),       // Number of characters to write
+        //     &written,           // Number of characters written
+        //     NULL                // Reserved, must be NULL
+        // );
+        cout << line;
+    }
+    _buffer.clear();
+}
+
 /* =========================================================
-FUNCTION TO HANDLE PARSING TIMER, CALLS PRINT
+PARSING TIMER, CALLING PRINT FUNCTION
 ========================================================= */
 
 void Display::tick(){
-    int remaining = _timer.remainingSeconds();
+    int remaining = _timer.remainingMilliseconds();
     
-    int hours = remaining / 3600;
-    remaining %= 3600;
-    int minutes = remaining / 60;
-    int seconds = (remaining % 60);
+    int hours = remaining / 3600000;
+    remaining %= 3600000;
+    int minutes = remaining / 60000;
+    remaining %= 60000;
+    int seconds = remaining / 1000;
+    remaining %= 1000;
+    int tenths = remaining / 100;
     
-    printTime(hours, minutes, seconds);
+    stageTimer(hours, minutes, seconds, tenths);
+    stageActions();
+    stageSplash();
+
+    clearScreen();
+    printStaged();
 }

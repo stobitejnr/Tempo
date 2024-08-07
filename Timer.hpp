@@ -3,6 +3,7 @@
 
 #include <chrono>
 #include <iostream>
+#include <regex>
 
 using namespace std;
 
@@ -10,7 +11,7 @@ class Timer {
 public:
     //Constructors
     Timer();
-    Timer(int id, int, string name, string desc);
+    Timer(int hours, int minutes, int seconds, string name, string desc);
 
     //Destructor
     ~Timer();
@@ -18,13 +19,20 @@ public:
     void start(int countdownSeconds);
     void pause();
     void resume();
+    void reset();
+    void addSeconds(int seconds);
 
-    int remainingSeconds() const;
+    void createTimer();
+
+    bool isRunning();
+    int remainingMilliseconds() const;
 
 private:
-    int _id;
-    int _countdownSeconds;
-    int _remainingSeconds;
+    int _startMilliseconds;
+    int _countdownMilliseconds;
+    int _remainingMilliseconds;
+
+
     string _name;
     string _desc;
     bool _running;

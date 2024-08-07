@@ -2,6 +2,7 @@
 #define DISPLAY_HPP
 
 #include "Timer.hpp"
+#include <cstring>
 #include <iostream>
 #include <vector>
 
@@ -12,11 +13,17 @@ public:
     Display(Timer& timer);
 
     void tick();
-    void printTime(int hours, int minutes, int seconds);
+    void stageTimer(int hours, int minutes, int seconds, int tenths);
+    void stageActions();
+    void setSplash(string str);
+    void stageSplash();
+    void printStaged();
     static void clearScreen();
 
 private:
     Timer& _timer;
+    string _splash;
+    vector<string> _buffer;
 };
 
 #endif // DISPLAY_HPP
