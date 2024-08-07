@@ -198,7 +198,7 @@ JUST FOR TESTING TENTHS
                 line += padding;
             }
         }
-        _buffer.push_back(line+"\n");
+        _buffer.push_back((line+"\n"));
     }
 }
 
@@ -212,7 +212,7 @@ void Display::stageActions(){
     _buffer.push_back("S : Start/Pause your timer.\n");
     _buffer.push_back("R : Reset your timer.\n");
     _buffer.push_back("Q : End your timer immediately and quit.\n");
-    _buffer.push_back("I : Increment your timer by 10 seconds.\n");
+    _buffer.push_back("I : Add 10 seconds to your timer.\n");
     _buffer.push_back("\n");
 }
 
@@ -223,25 +223,24 @@ void Display::setSplash(string str){
 void Display::stageSplash(){
     if(_splash != ""){
         _buffer.push_back("\n");
-        _buffer.push_back(" << " + _splash + " >> \n");
+        _buffer.push_back((" << " + _splash + " >> \n"));
     }
 }
 
 void Display::printStaged(){
-    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    // HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     
-    for(string str : _buffer){
-        const char* line = str.c_str();
-        DWORD written;
+    for(string line : _buffer){
+        // DWORD written;
         // Write the text to the console
-        WriteConsoleA(
-            hConsole,           // Handle to the console
-            line,               // Buffer to write from
-            strlen(line),       // Number of characters to write
-            &written,           // Number of characters written
-            NULL                // Reserved, must be NULL
-        );
-        // cout << str << endl;
+        // WriteConsoleA(
+        //     hConsole,           // Handle to the console
+        //     line,               // Buffer to write from
+        //     strlen(line),       // Number of characters to write
+        //     &written,           // Number of characters written
+        //     NULL                // Reserved, must be NULL
+        // );
+        cout << line;
     }
     _buffer.clear();
 }

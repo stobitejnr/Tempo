@@ -9,7 +9,7 @@
 #include <conio.h>
 #include <vector>
 
-#define LOOPTIME 1
+#define LOOPTIME 0.01
 
 using namespace std;
 
@@ -47,12 +47,13 @@ void checkInput(Timer& timer, Display& display, bool& run){
                 run = false;
                 break;
             case 'i':
-                timer.increment();
-                display.setSplash("TIMER INCREMENTED");
+                timer.addSeconds(10);
+                display.setSplash("10 SECONDS ADDED TO TIMER");
                 break;
             default:
                 break;
         }
+        display.tick();
     }
 }
 
@@ -66,12 +67,20 @@ int main() {
     Timer timer = Timer();
     Display display = Display(timer);
 
+    int cycleCount = 0;
+
     //Main loop
     while (run) {
 
         if(timer.remainingMilliseconds() == 0) { display.setSplash("TIMER FINISHED"); }
- 
-        display.tick();
+
+        if(cycleCount == 1/LOOPTIME){
+            display.tick();
+            cycleCount = 0;
+        }
+        else{
+            ++cycleCount;
+        }
 
         checkInput(timer, display, run);
 

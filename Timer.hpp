@@ -20,7 +20,7 @@ public:
     void pause();
     void resume();
     void reset();
-    void increment();
+    void addSeconds(int seconds);
 
     void createTimer();
 
