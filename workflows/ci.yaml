@@ -1,0 +1,26 @@
+name: C++ CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: sudo apt-get install g++
+
+    - name: Build
+      run: g++ -static-libgcc -static-libstdc++ main.cpp timer.cpp display.cpp -o timerapp
+
+    - name: Run tests
+      run: ./timerapp
