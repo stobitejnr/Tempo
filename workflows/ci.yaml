@@ -4,9 +4,11 @@ on:
   push:
     branches:
       - main
+      - timer-updates
   pull_request:
     branches:
       - main
+      - timer-updates
 
 jobs:
   build:
