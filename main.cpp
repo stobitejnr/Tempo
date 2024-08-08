@@ -12,8 +12,6 @@
 
 #define LOOPTIME 0.01
 
-#define LOOPTIME 0.1
-
 using namespace std;
 
 /* =========================================================

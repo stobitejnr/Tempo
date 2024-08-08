@@ -18,6 +18,7 @@ public:
     void setSplash(string str);
     void stageSplash();
     void printStaged();
+    static void clearScreen();
 
 
 private:
