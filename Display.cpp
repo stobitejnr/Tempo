@@ -132,7 +132,9 @@ vector<string> _period = {
 "$$\\ ",
 "\\__|"};
 
+
 vector<vector<string>> font1 = {_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _colon};
+
 
 /* =========================================================
 =TRERMINAL CLEARING FOR SEAMLESS FRAMES
@@ -150,7 +152,9 @@ void Display::clearScreen() {
 PRINTING OF TIMER IN ASCII
 ========================================================= */
 
+
 void Display::stageTimer(int hours, int minutes, int seconds, int tenths){
+
 
     string padding = "  ";
     string to_print = "";
@@ -193,6 +197,10 @@ JUST FOR TESTING TENTHS
                 line += _period[i];
                 line += padding;
             }
+            else if(ch == '.'){
+                cout << _period[i];
+                cout << padding;
+            }
             else{
                 line += font1.at(ch-'0')[i];
                 line += padding;
@@ -214,6 +222,7 @@ void Display::stageActions(){
     _buffer.push_back("Q : End your timer immediately and quit.\n");
     _buffer.push_back("I : Add 10 seconds to your timer.\n");
     _buffer.push_back("\n");
+
 }
 
 void Display::setSplash(string str){
@@ -259,11 +268,12 @@ void Display::tick(){
     int seconds = remaining / 1000;
     remaining %= 1000;
     int tenths = remaining / 100;
-    
+
     stageTimer(hours, minutes, seconds, tenths);
     stageActions();
     stageSplash();
 
     clearScreen();
     printStaged();
+
 }
