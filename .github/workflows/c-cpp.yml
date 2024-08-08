@@ -12,17 +12,21 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest 
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
 
     - name: Install dependencies
-      run: sudo apt-get install g++
+      run: choco install mingw
+
+    - name: Add MinGW to PATH
+      run: |
+        echo "C:\Program Files\mingw-w64\bin" >> $env:GITHUB_PATH
 
     - name: Build
       run: g++ -static-libgcc -static-libstdc++ main.cpp timer.cpp display.cpp -o timerapp
 
     - name: Run tests
-      run: ./timerapp
+      run: .\timerapp.exe
