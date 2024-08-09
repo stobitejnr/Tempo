@@ -20,6 +20,8 @@ public:
     void pause();
     void resume();
     void reset();
+    void addSeconds(int seconds);
+
 
     void createTimer();
 
