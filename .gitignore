@@ -1,1 +1,41 @@
-.vscode
+# Ignore build directory (CMake output)
+build/
+
+# Ignore generated CMake files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Ignore VSCode settings if you don't want to share them
+.vscode/
+
+# Ignore compiled binary files
+*.exe
+*.out
+*.o
+*.a
+*.so
+*.dll
+*.dylib
+
+# Ignore generated logs and files from development
+*.log
+*.tmp
+*.swp
+
+# Ignore OS specific files (Mac, Windows)
+.DS_Store
+Thumbs.db
+
+# Ignore additional files generated during compilation
+*.obj
+*.pdb
+*.pch
+*.idb
+*.ilk
+*.lib
+*.exp
+
+# Ignore documentation or assignment submission files
+*.pdf
