@@ -12,8 +12,12 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 
 # Add the executable
 add_executable(Tempo
+    #cpps
     src/main.cpp
     src/Menu.cpp
     src/Display.cpp
     src/Timer.cpp
+
+    #fonts
+    fonts/font1.cpp
 )
