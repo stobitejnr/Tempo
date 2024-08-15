@@ -16,10 +16,12 @@ public:
     Menu();
     void printMenu();
     char getMenuInput();
+
     void wait(double seconds);
     void waitForInput();
 
     void checkTimerInput(Timer& timer, bool& run);
+    void checkStopwatchInput(Stopwatch& stopwatch, bool& run);
 
     void start();
 

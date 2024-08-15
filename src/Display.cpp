@@ -139,11 +139,8 @@ void Display::stageStopwatchDisplay(int hours, int minutes, int seconds, int ten
     else{
         to_print += "0" + to_string(seconds);
     }
-
- /* =========================================================
-JUST FOR TESTING TENTHS
-========================================================= */
-    //to_print += "." + to_string(tenths);
+    
+    to_print += "." + to_string(tenths);
     
 
     for(int i = 0; i < ASCII_HEIGHT; i++){
@@ -174,6 +171,7 @@ void Display::stageStopwatchActions(){
     _buffer.push_back("\n");
     _buffer.push_back("S : Start/Stop your stopwatch.\n");
     _buffer.push_back("R : Reset your stopwatch.\n");
+    _buffer.push_back("A : Create a split at the current time.\n");
     _buffer.push_back("Q : Stop your stopwatch immediately and return to menu.\n");
     _buffer.push_back("\n");
 

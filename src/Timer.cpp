@@ -56,13 +56,11 @@ Timer::Timer(){
 }
 
 //Constructor to specify members directly
-Timer::Timer(int hours, int minutes, int seconds, string name, string desc){
+Timer::Timer(int hours, int minutes, int seconds){
     int milli = 3600000 * hours + 60000 * minutes + 1000 * seconds;
     _countdownMilliseconds = milli;
     _remainingMilliseconds = milli;
     _startMilliseconds = milli;
-    _name = name;
-    _desc = desc;
     start(_countdownMilliseconds);
 }
 

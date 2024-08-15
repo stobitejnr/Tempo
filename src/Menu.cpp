@@ -18,9 +18,10 @@ void Menu::start(){
 
     //ENTER TIMER SEQUENCE
     if(in == '1'){
+        Timer timer;
+
         bool run = true;
 
-        Timer timer;
         while(run){
             if(timer.remainingMilliseconds() == 0) {
                 _display.setSplash("TIMER FINISHED"); 
@@ -38,6 +39,25 @@ void Menu::start(){
     //ENTER STOPWATCH SEQUENCE
     else if(in == '2'){
         Stopwatch stopwatch;
+
+        bool run = true;
+
+        _display.tickStopwatch(stopwatch);
+
+        cout << "\n Press any key to start your stopwatch." << endl;
+
+        waitForInput();
+
+        stopwatch.start();
+        
+        while(run){
+
+            _display.tickStopwatch(stopwatch);
+
+            checkStopwatchInput(stopwatch, run);
+
+            wait(0.1);
+        }
     }
 
     //ENTER ALARM SEQUENCE
@@ -66,7 +86,6 @@ WAIT FOR ANY USER INPUT
 ========================================================= */
 void Menu::waitForInput() {
     _getch();
-    start();
 }
 
 /* =========================================================
@@ -105,6 +124,41 @@ void Menu::checkTimerInput(Timer& timer, bool& run){
                 break;
         }
         _display.tickTimer(timer);
+    }
+}
+
+void Menu::checkStopwatchInput(Stopwatch& stopwatch, bool& run){
+    if(_kbhit()){
+        char ch = _getch();
+        switch(ch){
+            case 's':
+                if(stopwatch.isRunning()){
+                    stopwatch.pause();
+                    _display.setSplash("STOPWATCH PAUSED");
+                }
+                else{
+                    _display.setSplash("");
+                    stopwatch.resume();        
+                }
+                break;
+            case 'r':
+                stopwatch.reset();
+                _display.setSplash("STOPWATCH RESET, PRESS 'S' TO START");
+                break;
+            case 'a':
+                stopwatch.split();
+                _display.setSplash("SPLIT CREATED");
+                break;
+            case 'q':
+                run = false;
+                return;
+            default:
+                if(!run){
+                    return;
+                }
+                break;
+        }
+        _display.tickStopwatch(stopwatch);
     }
 }
 

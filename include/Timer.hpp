@@ -11,16 +11,13 @@ class Timer {
 public:
     //Constructors
     Timer();
-    Timer(int hours, int minutes, int seconds, string name, string desc);
+    Timer(int hours, int minutes, int seconds);
 
-    void start(int countdownSeconds);
+    void start(int countdownMilliseconds);
     void pause();
     void resume();
     void reset();
     void addSeconds(int seconds);
-
-
-    void createTimer();
 
     bool isRunning();
     int remainingMilliseconds() const;
@@ -30,9 +27,6 @@ private:
     int _countdownMilliseconds;
     int _remainingMilliseconds;
 
-
-    string _name;
-    string _desc;
     bool _running;
     
     chrono::time_point<chrono::steady_clock> _endTime;
