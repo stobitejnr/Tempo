@@ -2,6 +2,8 @@
 
 using namespace std;
 
+#define LOOPTIME 0.1
+
 Menu::Menu(){ 
     _run = true;
 }
@@ -36,7 +38,6 @@ void Menu::start(){
         Alarm alarm;
     }
     else if(in == 'q'){
-        _run = false;
         return;
     }
 }
@@ -76,6 +77,7 @@ void Menu::checkTimerInput(Timer& timer){
                 _display.setSplash("10 SECONDS ADDED TO TIMER");
                 break;
             case 'q':
+                start();
                 break;
 
             default:
@@ -97,6 +99,7 @@ char Menu::getMenuInput(){
                 case '3':
                     return '3';
                 case 'q':
+                case 'Q':
                     return 'q';
                 default:
                     break;
