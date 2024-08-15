@@ -17,6 +17,8 @@ add_executable(Tempo
     src/Menu.cpp
     src/Display.cpp
     src/Timer.cpp
+    src/Stopwatch.cpp
+    src/Alarm.cpp
 
     #fonts
     fonts/font1.cpp
