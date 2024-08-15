@@ -16,30 +16,40 @@ void Menu::start(){
 
     char in = getMenuInput();
 
+    //ENTER TIMER SEQUENCE
     if(in == '1'){
-
         bool run = true;
 
         Timer timer;
         while(run){
-            if(timer.remainingMilliseconds() == 0) { _display.setSplash("TIMER FINISHED"); }
+            if(timer.remainingMilliseconds() == 0) {
+                _display.setSplash("TIMER FINISHED"); 
+                run = false;
+            }
 
             _display.tickTimer(timer);
 
-            checkTimerInput(timer);
+            checkTimerInput(timer, run);
 
             wait(0.1);
         }
     }
+
+    //ENTER STOPWATCH SEQUENCE
     else if(in == '2'){
         Stopwatch stopwatch;
     }
+
+    //ENTER ALARM SEQUENCE
     else if(in == '3'){
         Alarm alarm;
     }
+
+    //QUIT
     else if(in == 'q'){
         return;
     }
+    start();
 }
 
 /* =========================================================
@@ -52,9 +62,17 @@ void Menu::wait(double seconds) {
 }
 
 /* =========================================================
+WAIT FOR ANY USER INPUT
+========================================================= */
+void Menu::waitForInput() {
+    _getch();
+    start();
+}
+
+/* =========================================================
 HANDLE KEYBOARD INPUT FOR TIMER
 ========================================================= */
-void Menu::checkTimerInput(Timer& timer){
+void Menu::checkTimerInput(Timer& timer, bool& run){
     if(_kbhit()){
         char ch = _getch();
         switch(ch){
@@ -77,10 +95,13 @@ void Menu::checkTimerInput(Timer& timer){
                 _display.setSplash("10 SECONDS ADDED TO TIMER");
                 break;
             case 'q':
-                start();
-                break;
+                run = false;
+                return;
 
             default:
+                if(!run){
+                    return;
+                }
                 break;
         }
         _display.tickTimer(timer);
@@ -99,7 +120,6 @@ char Menu::getMenuInput(){
                 case '3':
                     return '3';
                 case 'q':
-                case 'Q':
                     return 'q';
                 default:
                     break;

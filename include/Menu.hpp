@@ -17,8 +17,9 @@ public:
     void printMenu();
     char getMenuInput();
     void wait(double seconds);
+    void waitForInput();
 
-    void checkTimerInput(Timer& timer);
+    void checkTimerInput(Timer& timer, bool& run);
 
     void start();
 
