@@ -26,7 +26,7 @@ public:
     void stageTimerDisplay(int hours, int minutes, int seconds, int tenths);
     void stageTimerActions();
 
-    void stageStopwatchDisplay(int hours, int minutes, int seconds, int tenths, int millis);
+    void stageStopwatchDisplay(int hours, int minutes, int seconds, int hundredths);
     void stageStopwatchActions();
 
     void stageAlarmDisplay();

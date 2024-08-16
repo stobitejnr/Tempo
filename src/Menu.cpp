@@ -24,6 +24,8 @@ void Menu::start(){
 
         bool run = true;
 
+        Display::clearScreen();
+
         while(run){
             if(timer.remainingMilliseconds() == 0) {
                 _display.setSplash("TIMER FINISHED"); 
@@ -33,7 +35,7 @@ void Menu::start(){
 
             checkTimerInput(timer, run);
 
-            wait(0.1);
+            wait(0.01);
         }
 
     }
@@ -50,6 +52,8 @@ void Menu::start(){
 
         waitForInput();
 
+        Display::clearScreen();
+
         stopwatch.start();
         
         while(run){
@@ -58,7 +62,7 @@ void Menu::start(){
 
             checkStopwatchInput(stopwatch, run);
 
-            wait(0.1);
+            wait(0.01);
         }
     }
 
@@ -95,6 +99,7 @@ HANDLE KEYBOARD INPUT FOR TIMER
 ========================================================= */
 void Menu::checkTimerInput(Timer& timer, bool& run){
     if(_kbhit()){
+        Display::clearScreen();
         char ch = _getch();
         switch(ch){
             case 's':
@@ -128,6 +133,7 @@ void Menu::checkTimerInput(Timer& timer, bool& run){
 
 void Menu::checkStopwatchInput(Stopwatch& stopwatch, bool& run){
     if(_kbhit()){
+        Display::clearScreen();
         char ch = _getch();
         switch(ch){
             case 's':

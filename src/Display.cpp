@@ -115,7 +115,7 @@ void Display::stageTimerActions(){
 STAGE STOPWATCH IN ASCII
 ========================================================= */
 
-void Display::stageStopwatchDisplay(int hours, int minutes, int seconds, int tenths, int millis){
+void Display::stageStopwatchDisplay(int hours, int minutes, int seconds, int hundredths){
 
 
     string padding = "  ";
@@ -141,8 +141,16 @@ void Display::stageStopwatchDisplay(int hours, int minutes, int seconds, int ten
     else{
         to_print += "0" + to_string(seconds);
     }
-    
-    to_print += "." + to_string(tenths);
+
+    //Check if millis need leading zero
+    to_print += ".";
+    if(int(hundredths/10)!=0){
+        to_print += to_string(hundredths);
+    }
+    else{
+        to_print += "0" + to_string(hundredths);
+    }
+
     
 
     for(int i = 0; i < ASCII_HEIGHT; i++){
@@ -181,6 +189,7 @@ void Display::stageStopwatchActions(){
 
 void Display::printStaged(){
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    resetCursor();
     fast_print(_buffer);
     _buffer = "";
 }
@@ -204,7 +213,6 @@ void Display::tickTimer(Timer& timer){
     stageTimerActions();
     stageSplash();
 
-    clearScreen();
     printStaged();
 
 }
@@ -218,14 +226,12 @@ void Display::tickStopwatch(Stopwatch& stopwatch){
     milliseconds %= 60000;
     int seconds = milliseconds / 1000;
     milliseconds %= 1000;
-    int tenths = milliseconds / 100;
-    milliseconds %= 100;
+    int hundredths = milliseconds / 10;
 
-    stageStopwatchDisplay(hours, minutes, seconds, tenths, milliseconds);
+    stageStopwatchDisplay(hours, minutes, seconds, hundredths);
     stageStopwatchActions();
     stageSplash();
 
-    clearScreen();
     printStaged();
 
 }
