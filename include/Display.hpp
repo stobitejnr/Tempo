@@ -41,13 +41,14 @@ public:
 
 
     template<typename char_type>
-    auto fast_print(const std::basic_string<char_type>& sss) -> void;
+    static auto fast_print(const std::basic_string<char_type>& sss) -> void;
+    auto enable_vt_mode() -> void;
 
 
 private:
 
     string _splash;
-    vector<string> _buffer;
+    string _buffer;
     
 };
 

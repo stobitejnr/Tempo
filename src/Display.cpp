@@ -6,8 +6,9 @@
 using namespace std;
 
 Display::Display() {
+    enable_vt_mode();
     _splash = "";
-    _buffer.clear();
+    _buffer = "";
 }
 
 
@@ -18,11 +19,8 @@ TERMINAL CLEARING FOR SEAMLESS FRAMES
 ========================================================= */
 
 void Display::clearScreen() {
-#ifdef _WIN32
-    system("cls");
-#else
-    system("clear");
-#endif
+    string resetcursor = "\033[H";
+    fast_print(resetcursor);
 }
 
 void Display::setSplash(string str){
@@ -31,8 +29,8 @@ void Display::setSplash(string str){
 
 void Display::stageSplash(){
     if(_splash != ""){
-        _buffer.push_back("\n");
-        _buffer.push_back((" << " + _splash + " >> \n"));
+        _buffer+=("\n");
+        _buffer+=((" << " + _splash + " >> \n"));
     }
 }
 
@@ -90,22 +88,22 @@ JUST FOR TESTING TENTHS
                 line += padding;
             }
         }
-        _buffer.push_back((line+"\n"));
+        _buffer+=((line+"\n"));
     }
 }
 
 
 void Display::stageTimerActions(){
-    _buffer.push_back("\n");
-    _buffer.push_back("===========================================\n");
-    _buffer.push_back("Control your timer with the following keys: \n");
-    _buffer.push_back("===========================================\n");
-    _buffer.push_back("\n");
-    _buffer.push_back("S : Start/Pause your timer.\n");
-    _buffer.push_back("R : Reset your timer.\n");
-    _buffer.push_back("I : Add 10 seconds to your timer.\n");
-    _buffer.push_back("Q : End your timer immediately and return to menu.\n");
-    _buffer.push_back("\n");
+    _buffer+=("\n");
+    _buffer+=("===========================================\n");
+    _buffer+=("Control your timer with the following keys: \n");
+    _buffer+=("===========================================\n");
+    _buffer+=("\n");
+    _buffer+=("S : Start/Pause your timer.\n");
+    _buffer+=("R : Reset your timer.\n");
+    _buffer+=("I : Add 10 seconds to your timer.\n");
+    _buffer+=("Q : End your timer immediately and return to menu.\n");
+    _buffer+=("\n");
 
 }
 
@@ -159,31 +157,28 @@ void Display::stageStopwatchDisplay(int hours, int minutes, int seconds, int ten
                 line += padding;
             }
         }
-        _buffer.push_back((line+"\n"));
+        _buffer+=((line+"\n"));
     }
 }
 
 void Display::stageStopwatchActions(){
-    _buffer.push_back("\n");
-    _buffer.push_back("===========================================\n");
-    _buffer.push_back("Control your stopwatch with the following keys: \n");
-    _buffer.push_back("===========================================\n");
-    _buffer.push_back("\n");
-    _buffer.push_back("S : Start/Stop your stopwatch.\n");
-    _buffer.push_back("R : Reset your stopwatch.\n");
-    _buffer.push_back("A : Create a split at the current time.\n");
-    _buffer.push_back("Q : Stop your stopwatch immediately and return to menu.\n");
-    _buffer.push_back("\n");
+    _buffer+=("\n");
+    _buffer+=("===========================================\n");
+    _buffer+=("Control your stopwatch with the following keys: \n");
+    _buffer+=("===========================================\n");
+    _buffer+=("\n");
+    _buffer+=("S : Start/Stop your stopwatch.\n");
+    _buffer+=("R : Reset your stopwatch.\n");
+    _buffer+=("A : Create a split at the current time.\n");
+    _buffer+=("Q : Stop your stopwatch immediately and return to menu.\n");
+    _buffer+=("\n");
 
 }
 
 void Display::printStaged(){
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    
-    for(string line : _buffer){
-        fast_print(line);
-    }
-    _buffer.clear();
+    fast_print(_buffer);
+    _buffer = "";
 }
 
 /* =========================================================
@@ -242,7 +237,7 @@ auto Display::fast_print(const std::basic_string<char_type>& sss) -> void
       WriteConsoleW(output_handle, sss.c_str(), char_count, nullptr, nullptr);
 }
 
-auto enable_vt_mode() -> void
+auto Display::enable_vt_mode() -> void
 {
    HANDLE const handle = GetStdHandle(STD_OUTPUT_HANDLE);
    if (handle == INVALID_HANDLE_VALUE)
