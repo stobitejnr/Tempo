@@ -3,36 +3,54 @@
 using namespace std;
 
 Stopwatch::Stopwatch(){ 
+    _running = false;
+    _currMilliseconds = 0;
 }
 
-int Stopwatch::currentMilliseconds() const { return 0;}
+int Stopwatch::currentMilliseconds() { 
+    if(_running){
+        auto now = chrono::steady_clock::now();
+        return _currMilliseconds + chrono::duration_cast<chrono::milliseconds>(now - _startTime).count();
+    }
+    else{
+        return _currMilliseconds;
+    }
+}
 
 void Stopwatch::split() {
-    int splitMilliseconds = chrono::duration_cast<chrono::milliseconds>(_pauseTime - _startTime).count();
+    if (_running) {
+        int splitMilliseconds = chrono::duration_cast<chrono::milliseconds>(chrono::steady_clock::now() - _startTime).count();
+        cout << "Split time: " << _currMilliseconds + splitMilliseconds << " milliseconds" << endl;
+    } else {
+        cout << "Split time: " << _currMilliseconds << " milliseconds" << endl;
+    }
 }
 
 void Stopwatch::start() {
-    _running = true;
-    _startTime = chrono::steady_clock::now();
+    if (!_running) {
+        _running = true;
+        _startTime = chrono::steady_clock::now();
+        _currMilliseconds = 0;
+    }
 }
 
 void Stopwatch::pause(){
     if(_running){
        _pauseTime = chrono::steady_clock::now();
-       _currMilliseconds = chrono::duration_cast<chrono::milliseconds>(_pauseTime - _startTime).count();
+       _currMilliseconds += chrono::duration_cast<chrono::milliseconds>(_pauseTime - _startTime).count();
        _running = false;
     }
 }
 
 void Stopwatch::resume(){
     if(!_running){
-        _startTime = chrono::steady_clock::now() + chrono::milliseconds(_currMilliseconds);
+        _startTime = chrono::steady_clock::now();
         _running = true;
     }
 }
 
 void Stopwatch::reset(){
-    pause();
+    _running = false;
     _currMilliseconds = 0;
 }
 

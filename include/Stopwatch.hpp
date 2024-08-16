@@ -18,7 +18,7 @@ public:
     void reset();
 
     bool isRunning();
-    int currentMilliseconds() const;
+    int currentMilliseconds();
 
 private:
 

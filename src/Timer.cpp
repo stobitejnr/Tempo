@@ -20,9 +20,9 @@ Timer::Timer(){
 
     
         //Regular expressions :D
-        regex hours_regex(R"((\d+)\s*hours?)");
-        regex minutes_regex(R"((\d+)\s*minutes?)");
-        regex seconds_regex(R"((\d+)\s*seconds?)");
+        regex hours_regex(R"((\d+)\s*hour?)");
+        regex minutes_regex(R"((\d+)\s*minute?)");
+        regex seconds_regex(R"((\d+)\s*second?)");
 
         smatch match;
 
@@ -92,23 +92,29 @@ void Timer::reset(){
 }
 
 void Timer::addSeconds(int seconds){
-
-    if ( _running) {
+    if(_running){
         pause();
+        _remainingMilliseconds += 1000 * seconds;
+        _countdownMilliseconds += 1000 * seconds;
+        resume();
     }
-
-    _remainingMilliseconds += 1000 * seconds;
-    _countdownMilliseconds += 1000 * seconds;
-
-    resume();
+    else{
+        _remainingMilliseconds += 1000 * seconds;
+        _countdownMilliseconds += 1000 * seconds;
+    }
 }
 
-int Timer::remainingMilliseconds() const {
+int Timer::remainingMilliseconds() {
     if(_running){
         auto now = chrono::steady_clock::now();
         auto remaining = chrono::duration_cast<chrono::milliseconds>(_endTime - now).count();
-        return remaining > 0 ? remaining : 0;
-    }
+        if(remaining > 0){ return remaining; } 
+        else{ 
+            _running = false; 
+            _remainingMilliseconds = 0; 
+            return 0; 
+        }
+    }   
     else{
         return _remainingMilliseconds;
     }

@@ -11,7 +11,7 @@ int main() {
     
     menu.start();
 
-    cout << "PROGRAM QUIT" << endl;
+    cout << "<< PROGRAM QUIT >>" << endl;
 
     return 0;
 }

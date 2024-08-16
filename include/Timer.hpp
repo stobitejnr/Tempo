@@ -20,7 +20,7 @@ public:
     void addSeconds(int seconds);
 
     bool isRunning();
-    int remainingMilliseconds() const;
+    int remainingMilliseconds();
 
 private:
     int _startMilliseconds;

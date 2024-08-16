@@ -25,7 +25,6 @@ void Menu::start(){
         while(run){
             if(timer.remainingMilliseconds() == 0) {
                 _display.setSplash("TIMER FINISHED"); 
-                run = false;
             }
 
             _display.tickTimer(timer);
@@ -34,6 +33,7 @@ void Menu::start(){
 
             wait(0.1);
         }
+
     }
 
     //ENTER STOPWATCH SEQUENCE
@@ -100,7 +100,7 @@ void Menu::checkTimerInput(Timer& timer, bool& run){
                     timer.pause();
                     _display.setSplash("TIMER PAUSED");
                 }
-                else{
+                else if(timer.remainingMilliseconds() > 0){
                     _display.setSplash("");
                     timer.resume();        
                 }
@@ -118,9 +118,6 @@ void Menu::checkTimerInput(Timer& timer, bool& run){
                 return;
 
             default:
-                if(!run){
-                    return;
-                }
                 break;
         }
         _display.tickTimer(timer);
@@ -179,5 +176,6 @@ char Menu::getMenuInput(){
                     break;
             }
         }
+        wait(0.1);
     }
 }
