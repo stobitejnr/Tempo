@@ -181,7 +181,7 @@ void Display::printStaged(){
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     
     for(string line : _buffer){
-        cout << line;
+        fast_print(line);
     }
     _buffer.clear();
 }
@@ -229,4 +229,42 @@ void Display::tickStopwatch(Stopwatch& stopwatch){
     clearScreen();
     printStaged();
 
+}
+
+template<typename char_type>
+auto Display::fast_print(const std::basic_string<char_type>& sss) -> void
+{
+   HANDLE const output_handle = GetStdHandle(STD_OUTPUT_HANDLE);
+   const auto char_count = static_cast<DWORD>(sss.length());
+   if constexpr (std::is_same_v<char_type, char>)
+      WriteConsoleA(output_handle, sss.c_str(), char_count, nullptr, nullptr);
+   else
+      WriteConsoleW(output_handle, sss.c_str(), char_count, nullptr, nullptr);
+}
+
+auto enable_vt_mode() -> void
+{
+   HANDLE const handle = GetStdHandle(STD_OUTPUT_HANDLE);
+   if (handle == INVALID_HANDLE_VALUE)
+   {
+      std::terminate(); // error handling
+   }
+
+   DWORD dwMode = 0;
+   if (!GetConsoleMode(handle, &dwMode))
+   {
+      std::terminate(); // error handling
+   }
+
+   if (dwMode & ENABLE_VIRTUAL_TERMINAL_PROCESSING)
+   {
+      // VT mode is already enabled
+      return;
+   }
+
+   dwMode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING;
+   if (!SetConsoleMode(handle, dwMode))
+   {
+      std::terminate(); // error handling
+   }
 }
