@@ -38,11 +38,11 @@ public:
     void printStaged();
 
     static void clearScreen();
+    static void resetCursor();
 
 
     template<typename char_type>
     static auto fast_print(const std::basic_string<char_type>& sss) -> void;
-    auto enable_vt_mode() -> void;
 
 
 private:

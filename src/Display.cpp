@@ -6,7 +6,6 @@
 using namespace std;
 
 Display::Display() {
-    enable_vt_mode();
     _splash = "";
     _buffer = "";
 }
@@ -19,6 +18,11 @@ TERMINAL CLEARING FOR SEAMLESS FRAMES
 ========================================================= */
 
 void Display::clearScreen() {
+    string clearscreen = "\033[2J\033[H";
+    fast_print(clearscreen);
+}
+
+void Display::resetCursor() {
     string resetcursor = "\033[H";
     fast_print(resetcursor);
 }
@@ -235,31 +239,4 @@ auto Display::fast_print(const std::basic_string<char_type>& sss) -> void
       WriteConsoleA(output_handle, sss.c_str(), char_count, nullptr, nullptr);
    else
       WriteConsoleW(output_handle, sss.c_str(), char_count, nullptr, nullptr);
-}
-
-auto Display::enable_vt_mode() -> void
-{
-   HANDLE const handle = GetStdHandle(STD_OUTPUT_HANDLE);
-   if (handle == INVALID_HANDLE_VALUE)
-   {
-      std::terminate(); // error handling
-   }
-
-   DWORD dwMode = 0;
-   if (!GetConsoleMode(handle, &dwMode))
-   {
-      std::terminate(); // error handling
-   }
-
-   if (dwMode & ENABLE_VIRTUAL_TERMINAL_PROCESSING)
-   {
-      // VT mode is already enabled
-      return;
-   }
-
-   dwMode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING;
-   if (!SetConsoleMode(handle, dwMode))
-   {
-      std::terminate(); // error handling
-   }
 }
