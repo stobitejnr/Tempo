@@ -12,7 +12,7 @@ Menu::Menu(){
 
 void Menu::start(){
 
-    Display::clearScreen();
+    _display.clearScreen();
 
     cout << "1: Timer\n2: Stopwatch\n3: Alarm\nQ: Quit Program" << endl;
 
@@ -20,11 +20,13 @@ void Menu::start(){
 
     //ENTER TIMER SEQUENCE
     if(in == '1'){
+        _display.clearScreen();
+
         Timer timer;
 
         bool run = true;
 
-        Display::clearScreen();
+        _display.clearScreen();
 
         while(run){
             if(timer.remainingMilliseconds() == 0) {
@@ -52,7 +54,7 @@ void Menu::start(){
 
         waitForInput();
 
-        Display::clearScreen();
+        _display.clearScreen();
 
         stopwatch.start();
         
@@ -99,7 +101,6 @@ HANDLE KEYBOARD INPUT FOR TIMER
 ========================================================= */
 void Menu::checkTimerInput(Timer& timer, bool& run){
     if(_kbhit()){
-        Display::clearScreen();
         char ch = _getch();
         switch(ch){
             case 's':
@@ -133,7 +134,6 @@ void Menu::checkTimerInput(Timer& timer, bool& run){
 
 void Menu::checkStopwatchInput(Stopwatch& stopwatch, bool& run){
     if(_kbhit()){
-        Display::clearScreen();
         char ch = _getch();
         switch(ch){
             case 's':

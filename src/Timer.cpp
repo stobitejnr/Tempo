@@ -10,10 +10,8 @@ Timer::Timer(){
     int s = 0;
     int countdownSeconds = 0;
 
-    Display::clearScreen();
-
     while(true){
-        Display::clearScreen();
+        
         cout << "How long would you like to set a timer for?" << endl;
         string input = "";
         getline(cin,input);

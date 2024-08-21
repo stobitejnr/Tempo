@@ -2,12 +2,18 @@
 
 #include "../include/Display.hpp"
 
+#define PADDING "  "
 
 using namespace std;
 
 Display::Display() {
     _splash = "";
-    _buffer = "";
+    _asciiBuffer = "";
+    _controlBuffer = "";
+
+    _oldAscii = "";
+    _oldControls= "";
+    _oldSplash = "";
 }
 
 
@@ -19,24 +25,29 @@ TERMINAL CLEARING FOR SEAMLESS FRAMES
 
 void Display::clearScreen() {
     string clearscreen = "\033[2J\033[H";
+
+    _oldAscii = "";
+    _oldControls = "";
+    _oldSplash = "";
+
     fast_print(clearscreen);
 }
 
-void Display::resetCursor() {
-    string resetcursor = "\033[H";
-    fast_print(resetcursor);
+void Display::setCursor(int row, int col) {
+    string setcursor = "\033[";
+    setcursor.append(to_string(row));
+    setcursor.append(";");
+    setcursor.append(to_string(col));
+    setcursor.append("H");
+
+    fast_print(setcursor);
 }
 
 void Display::setSplash(string str){
     _splash = str;
 }
 
-void Display::stageSplash(){
-    if(_splash != ""){
-        _buffer+=("\n");
-        _buffer+=((" << " + _splash + " >> \n"));
-    }
-}
+
 
 /* =========================================================
 STAGE TIMER IN ASCII
@@ -45,8 +56,6 @@ STAGE TIMER IN ASCII
 
 void Display::stageTimerDisplay(int hours, int minutes, int seconds, int tenths){
 
-
-    string padding = "  ";
     string to_print = "";
 
     //Only show hours if over 1 left
@@ -69,45 +78,39 @@ void Display::stageTimerDisplay(int hours, int minutes, int seconds, int tenths)
     else{
         to_print += "0" + to_string(seconds);
     }
-
- /* =========================================================
-JUST FOR TESTING TENTHS
-========================================================= */
-    //to_print += "." + to_string(tenths);
     
-
     for(int i = 0; i < ASCII_HEIGHT; i++){
         string line;
         for(char ch : to_print){
             if(ch == ':'){
                 line += font1.at(10)[i];
-                line += padding;
+                line += PADDING;
             }
             else if(ch == '.'){
                 line += font1.at(11)[i];
-                line += padding;
+                line += PADDING;
             }
             else{
                 line += font1.at(ch-'0')[i];
-                line += padding;
+                line += PADDING;
             }
         }
-        _buffer+=((line+"\n"));
+        _asciiBuffer+=((line+"\n"));
     }
 }
 
 
-void Display::stageTimerActions(){
-    _buffer+=("\n");
-    _buffer+=("===========================================\n");
-    _buffer+=("Control your timer with the following keys: \n");
-    _buffer+=("===========================================\n");
-    _buffer+=("\n");
-    _buffer+=("S : Start/Pause your timer.\n");
-    _buffer+=("R : Reset your timer.\n");
-    _buffer+=("I : Add 10 seconds to your timer.\n");
-    _buffer+=("Q : End your timer immediately and return to menu.\n");
-    _buffer+=("\n");
+void Display::stageTimerControls(){
+    _controlBuffer+=("\n");
+    _controlBuffer+=("===========================================\n");
+    _controlBuffer+=("Control your timer with the following keys: \n");
+    _controlBuffer+=("===========================================\n");
+    _controlBuffer+=("\n");
+    _controlBuffer+=("S : Start/Pause your timer.\n");
+    _controlBuffer+=("R : Reset your timer.\n");
+    _controlBuffer+=("I : Add 10 seconds to your timer.\n");
+    _controlBuffer+=("Q : End your timer immediately and return to menu.\n");
+    _controlBuffer+=("\n");
 
 }
 
@@ -117,8 +120,6 @@ STAGE STOPWATCH IN ASCII
 
 void Display::stageStopwatchDisplay(int hours, int minutes, int seconds, int hundredths){
 
-
-    string padding = "  ";
     string to_print = "";
 
     //Only show hours if over 1 left
@@ -142,15 +143,16 @@ void Display::stageStopwatchDisplay(int hours, int minutes, int seconds, int hun
         to_print += "0" + to_string(seconds);
     }
 
-    //Check if millis need leading zero
-    to_print += ".";
-    if(int(hundredths/10)!=0){
-        to_print += to_string(hundredths);
+    if(hours == 0){
+        //Check if millis need leading zero
+        to_print += ".";
+        if(int(hundredths/10)!=0){
+            to_print += to_string(hundredths);
+        }
+        else{
+            to_print += "0" + to_string(hundredths);
+        }
     }
-    else{
-        to_print += "0" + to_string(hundredths);
-    }
-
     
 
     for(int i = 0; i < ASCII_HEIGHT; i++){
@@ -158,40 +160,63 @@ void Display::stageStopwatchDisplay(int hours, int minutes, int seconds, int hun
         for(char ch : to_print){
             if(ch == ':'){
                 line += font1.at(10)[i];
-                line += padding;
+                line += PADDING;
             }
             else if(ch == '.'){
                 line += font1.at(11)[i];
-                line += padding;
+                line += PADDING;
             }
             else{
                 line += font1.at(ch-'0')[i];
-                line += padding;
+                line += PADDING;
             }
         }
-        _buffer+=((line+"\n"));
+        _asciiBuffer+=((line+"\n"));
     }
 }
 
-void Display::stageStopwatchActions(){
-    _buffer+=("\n");
-    _buffer+=("===========================================\n");
-    _buffer+=("Control your stopwatch with the following keys: \n");
-    _buffer+=("===========================================\n");
-    _buffer+=("\n");
-    _buffer+=("S : Start/Stop your stopwatch.\n");
-    _buffer+=("R : Reset your stopwatch.\n");
-    _buffer+=("A : Create a split at the current time.\n");
-    _buffer+=("Q : Stop your stopwatch immediately and return to menu.\n");
-    _buffer+=("\n");
+void Display::stageStopwatchControls(){
+    _controlBuffer+=("\n");
+    _controlBuffer+=("===========================================\n");
+    _controlBuffer+=("Control your stopwatch with the following keys: \n");
+    _controlBuffer+=("===========================================\n");
+    _controlBuffer+=("\n");
+    _controlBuffer+=("S : Start/Stop your stopwatch.\n");
+    _controlBuffer+=("R : Reset your stopwatch.\n");
+    _controlBuffer+=("A : Create a split at the current time.\n");
+    _controlBuffer+=("Q : Stop your stopwatch immediately and return to menu.\n");
+    _controlBuffer+=("\n");
 
 }
 
-void Display::printStaged(){
-    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    resetCursor();
-    fast_print(_buffer);
-    _buffer = "";
+void Display::printAscii(){
+    if(_asciiBuffer != _oldAscii){
+        setCursor(1,1);
+        fast_print(_asciiBuffer);
+        _oldAscii = _asciiBuffer;
+    }
+    _asciiBuffer = "";
+}
+
+void Display::printControls(){
+    if(_controlBuffer != _oldControls){
+        setCursor(9,1);
+        fast_print(_controlBuffer);
+        _oldControls = _controlBuffer;
+    }
+    _controlBuffer = "";
+}
+
+void Display::printSplash(){
+    if(_splash != _oldSplash){
+        setCursor(20,1);
+        string clearline = "\033[2K";
+        fast_print(clearline);
+        setCursor(20,1);
+        fast_print(_splash);
+        _oldSplash = _splash;
+    }
+    _splash = "";
 }
 
 /* =========================================================
@@ -209,11 +234,14 @@ void Display::tickTimer(Timer& timer){
     remaining %= 1000;
     int tenths = remaining / 100;
 
-    stageTimerDisplay(hours, minutes, seconds, tenths);
-    stageTimerActions();
-    stageSplash();
 
-    printStaged();
+
+    stageTimerDisplay(hours, minutes, seconds, tenths);
+    stageTimerControls();
+
+    printAscii();
+    printControls();
+    printSplash();
 
 }
 
@@ -229,11 +257,11 @@ void Display::tickStopwatch(Stopwatch& stopwatch){
     int hundredths = milliseconds / 10;
 
     stageStopwatchDisplay(hours, minutes, seconds, hundredths);
-    stageStopwatchActions();
-    stageSplash();
+    stageStopwatchControls();
 
-    printStaged();
-
+    printAscii();
+    printControls();
+    printSplash();
 }
 
 template<typename char_type>

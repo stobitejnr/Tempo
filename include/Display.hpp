@@ -24,21 +24,23 @@ public:
     void tickAlarm(Alarm& alarm);
 
     void stageTimerDisplay(int hours, int minutes, int seconds, int tenths);
-    void stageTimerActions();
+    void stageTimerControls();
 
     void stageStopwatchDisplay(int hours, int minutes, int seconds, int hundredths);
-    void stageStopwatchActions();
+    void stageStopwatchControls();
 
     void stageAlarmDisplay();
-    void stageAlarmActions();
+    void stageAlarmControls();
 
     void setSplash(string str);
-    void stageSplash();
+    void printSplash();
 
-    void printStaged();
+    void printAscii();
+    void printControls();
 
-    static void clearScreen();
-    static void resetCursor();
+
+    void clearScreen();
+    void setCursor(int, int);
 
 
     template<typename char_type>
@@ -47,8 +49,13 @@ public:
 
 private:
 
+    string _asciiBuffer;
+    string _controlBuffer;
     string _splash;
-    string _buffer;
+
+    string _oldAscii;
+    string _oldControls;
+    string _oldSplash;
     
 };
 
