@@ -90,15 +90,14 @@ void Timer::reset(){
 }
 
 void Timer::addSeconds(int seconds){
-    if(_running){
-        pause();
-        _remainingMilliseconds += 1000 * seconds;
-        _countdownMilliseconds += 1000 * seconds;
+    bool wasRunning = _running;
+    pause();
+    
+    _remainingMilliseconds += 1000 * seconds;
+    _countdownMilliseconds += 1000 * seconds;
+
+    if(wasRunning){
         resume();
-    }
-    else{
-        _remainingMilliseconds += 1000 * seconds;
-        _countdownMilliseconds += 1000 * seconds;
     }
 }
 
@@ -120,4 +119,19 @@ int Timer::remainingMilliseconds() {
 
 bool Timer::isRunning(){
     return _running;
+}
+
+double Timer::percentElapsed() {
+    int start = 0;
+    if(_remainingMilliseconds > _startMilliseconds){
+        start = _remainingMilliseconds;
+    }
+    else{
+        start = _startMilliseconds;
+    }
+    if (start == 0) { return 100.0; }
+
+    int elapsedMilliseconds = start - remainingMilliseconds();
+    double percentage = ((double)(elapsedMilliseconds) / start) * 100;
+    return percentage;
 }

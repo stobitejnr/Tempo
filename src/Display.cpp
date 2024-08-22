@@ -3,24 +3,26 @@
 #include "../include/Display.hpp"
 
 #define PADDING "  "
+#define ASCII_HEIGHT 8
+
 
 using namespace std;
 
 Display::Display() {
     _splash = "";
     _asciiBuffer = "";
+    _barBuffer = "";
     _controlBuffer = "";
 
     _oldAscii = "";
     _oldControls= "";
     _oldSplash = "";
+
+    _asciiWidth = 0;
 }
 
-
-#define ASCII_HEIGHT 8
-
 /* =========================================================
-TERMINAL CLEARING FOR SEAMLESS FRAMES
+TERMINAL INTERACTION HELPERS
 ========================================================= */
 
 void Display::clearScreen() {
@@ -34,17 +36,27 @@ void Display::clearScreen() {
 }
 
 void Display::setCursor(int row, int col) {
-    string setcursor = "\033[";
-    setcursor.append(to_string(row));
-    setcursor.append(";");
-    setcursor.append(to_string(col));
-    setcursor.append("H");
-
+    string setcursor = "\033["+to_string(row)+";"+to_string(col)+"H";
     fast_print(setcursor);
 }
 
+void Display::clearLine(int row){
+    string clearline = "\033[K";
+    setCursor(row,1);
+    fast_print(clearline);
+
+}
+
+/* =========================================================
+SPLASH TEXT HELPERS
+========================================================= */
+
 void Display::setSplash(string str){
-    _splash = str;
+    _splash = "<< " + str + " >>";
+}
+
+void Display::clearSplash(){
+    _splash = "";
 }
 
 
@@ -95,9 +107,41 @@ void Display::stageTimerDisplay(int hours, int minutes, int seconds, int tenths)
                 line += PADDING;
             }
         }
+        _asciiWidth = line.length();
         _asciiBuffer+=((line+"\n"));
     }
 }
+
+void Display::stageTimerBar(double percentage){
+    int width = _asciiWidth-2;
+    int filled = (int)((percentage/100)*width);
+
+    string border = "";
+    
+    //build outline
+    border += "+";
+    for(int i=0; i<width; ++i){
+        border+="-";
+    }
+    border += "+\n";
+
+    _barBuffer += border;
+    
+    _barBuffer += "|";
+
+    for(int i=0; i<width; ++i){
+        if(i<filled){
+            _barBuffer += "#";
+        }
+        else{
+            _barBuffer += " ";
+        }
+    }
+
+    _barBuffer += "|\n";
+
+    _barBuffer += border;
+};
 
 
 void Display::stageTimerControls(){
@@ -122,25 +166,35 @@ void Display::stageStopwatchDisplay(int hours, int minutes, int seconds, int hun
 
     string to_print = "";
 
-    //Only show hours if over 1 left
+    //Only show hours if over 1
     if(hours != 0){
         to_print += to_string(hours) + ":";
     }
 
-    //Check if minutes need leading 0
-    if(int(minutes/10)!=0){
+    //Only show minutes if over 1
+    if(hours){
+        if(int(minutes/10)!=0){
+            to_print += to_string(minutes) + ":";
+        }
+        else{
+            to_print += "0" + to_string(minutes) + ":";
+        }  
+    }
+    else if(minutes){
         to_print += to_string(minutes) + ":";
     }
-    else{
-        to_print += "0" + to_string(minutes) + ":";
-    }
 
-    //Check if seconds need leading zero
-    if(int(seconds/10)!=0){
-        to_print += to_string(seconds);
+
+    if(hours || minutes){
+        if(int(seconds/10)!=0){
+            to_print += to_string(seconds);
+        }
+        else{
+            to_print += "0" + to_string(seconds);
+        }
     }
     else{
-        to_print += "0" + to_string(seconds);
+        to_print += to_string(seconds);
     }
 
     if(hours == 0){
@@ -189,34 +243,40 @@ void Display::stageStopwatchControls(){
 
 }
 
-void Display::printAscii(){
+void Display::printAscii(int row){
     if(_asciiBuffer != _oldAscii){
-        setCursor(1,1);
+        setCursor(row,1);
         fast_print(_asciiBuffer);
         _oldAscii = _asciiBuffer;
     }
     _asciiBuffer = "";
 }
 
-void Display::printControls(){
+void Display::printControls(int row){
     if(_controlBuffer != _oldControls){
-        setCursor(9,1);
+        setCursor(row,1);
         fast_print(_controlBuffer);
         _oldControls = _controlBuffer;
     }
     _controlBuffer = "";
 }
 
-void Display::printSplash(){
+void Display::printBar(int row){
+    if(_barBuffer != _oldBar){
+        setCursor(row,1);
+        fast_print(_barBuffer);
+        _oldBar = _barBuffer;
+    }
+    _barBuffer = "";
+}
+
+void Display::printSplash(int row){
     if(_splash != _oldSplash){
-        setCursor(20,1);
-        string clearline = "\033[2K";
-        fast_print(clearline);
-        setCursor(20,1);
+        clearLine(row);
+        setCursor(row,1);
         fast_print(_splash);
         _oldSplash = _splash;
     }
-    _splash = "";
 }
 
 /* =========================================================
@@ -237,12 +297,15 @@ void Display::tickTimer(Timer& timer){
 
 
     stageTimerDisplay(hours, minutes, seconds, tenths);
+    stageTimerBar(timer.percentElapsed());
     stageTimerControls();
 
-    printAscii();
-    printControls();
-    printSplash();
+    printAscii(1);
+    printBar(10);
+    printControls(13);
+    printSplash(24);
 
+    setCursor(26,1);
 }
 
 void Display::tickStopwatch(Stopwatch& stopwatch){
@@ -259,9 +322,11 @@ void Display::tickStopwatch(Stopwatch& stopwatch){
     stageStopwatchDisplay(hours, minutes, seconds, hundredths);
     stageStopwatchControls();
 
-    printAscii();
-    printControls();
-    printSplash();
+    printAscii(1);
+    printControls(9);
+    printSplash(20);
+
+    setCursor(22,1);
 }
 
 template<typename char_type>

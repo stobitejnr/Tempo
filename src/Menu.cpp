@@ -44,6 +44,7 @@ void Menu::start(){
 
     //ENTER STOPWATCH SEQUENCE
     else if(in == '2'){
+        //Stopwatch stopwatch = Stopwatch(0,59,55);
         Stopwatch stopwatch;
 
         bool run = true;
@@ -103,24 +104,29 @@ void Menu::checkTimerInput(Timer& timer, bool& run){
     if(_kbhit()){
         char ch = _getch();
         switch(ch){
+            case 'S':
             case 's':
                 if(timer.isRunning()){
                     timer.pause();
                     _display.setSplash("TIMER PAUSED");
                 }
                 else if(timer.remainingMilliseconds() > 0){
-                    _display.setSplash("");
+                    _display.clearSplash();
                     timer.resume();        
                 }
                 break;
+            case 'R':
             case 'r':
                 timer.reset();
+                _display.clearScreen();
                 _display.setSplash("TIMER RESET, PRESS 'S' TO START");
                 break;
+            case 'I':
             case 'i':
                 timer.addSeconds(10);
                 _display.setSplash("10 SECONDS ADDED TO TIMER");
                 break;
+            case 'Q':
             case 'q':
                 run = false;
                 return;
@@ -136,24 +142,29 @@ void Menu::checkStopwatchInput(Stopwatch& stopwatch, bool& run){
     if(_kbhit()){
         char ch = _getch();
         switch(ch){
+            case 'S':
             case 's':
                 if(stopwatch.isRunning()){
                     stopwatch.pause();
                     _display.setSplash("STOPWATCH PAUSED");
                 }
                 else{
-                    _display.setSplash("");
+                    _display.clearSplash();
                     stopwatch.resume();        
                 }
                 break;
+            case 'R':
             case 'r':
                 stopwatch.reset();
+                _display.clearScreen();
                 _display.setSplash("STOPWATCH RESET, PRESS 'S' TO START");
                 break;
+            case 'A':
             case 'a':
                 stopwatch.split();
                 _display.setSplash("SPLIT CREATED");
                 break;
+            case 'Q':
             case 'q':
                 run = false;
                 return;

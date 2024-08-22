@@ -21,6 +21,7 @@ public:
 
     bool isRunning();
     int remainingMilliseconds();
+    double percentElapsed();
 
 private:
     int _startMilliseconds;
