@@ -123,14 +123,18 @@ void Menu::checkTimerInput(Timer& timer, bool& run){
                 break;
             case 'I':
             case 'i':
-                timer.addSeconds(10);
+                timer.addTime(10);
                 _display.setSplash("10 SECONDS ADDED TO TIMER");
+                break;
+            case 'C':
+            case 'c':
+                timer.changeIncrementTime();
+                _display.setSplash("INCREMENT TIME CHANGED");
                 break;
             case 'Q':
             case 'q':
                 run = false;
                 return;
-
             default:
                 break;
         }

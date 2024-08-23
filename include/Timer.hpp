@@ -17,7 +17,8 @@ public:
     void pause();
     void resume();
     void reset();
-    void addSeconds(int seconds);
+    void addTime(int seconds);
+    void changeIncrementTime();
 
     bool isRunning();
     int remainingMilliseconds();
@@ -27,7 +28,7 @@ private:
     int _startMilliseconds;
     int _countdownMilliseconds;
     int _remainingMilliseconds;
-
+    int _incrementMilliseconds;
     bool _running;
     
     chrono::time_point<chrono::steady_clock> _endTime;
