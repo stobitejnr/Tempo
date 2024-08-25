@@ -10,8 +10,10 @@ using namespace std;
 CONSTRUCTOR
 ========================================================= */
 
-// Constructor initializes the Menu object with a running state
-Menu::Menu(){ 
+/**
+ * @brief Constructs a Menu object and initializes its state.
+ */
+Menu::Menu() { 
     _run = true;
 }
 
@@ -19,8 +21,14 @@ Menu::Menu(){
 MAIN MENU SEQUENCE
 ========================================================= */
 
-// Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm
-void Menu::start(){
+/**
+ * @brief Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm.
+ * 
+ * The menu displays options to the user, processes the user's selection, and runs the appropriate sequence
+ * for Timer, Stopwatch, or Alarm. It handles the input and output and returns to the menu after each operation
+ * unless the user chooses to quit.
+ */
+void Menu::start() {
 
     _display.clearScreen();
 
@@ -55,8 +63,6 @@ void Menu::start(){
 
     // ENTER STOPWATCH SEQUENCE
     else if(in == '2'){
-        // Initialize stopwatch, potentially with a custom start time
-        //Stopwatch stopwatch = Stopwatch(0,59,55);
         Stopwatch stopwatch;
 
         bool run = true;
@@ -72,7 +78,6 @@ void Menu::start(){
         stopwatch.start();
         
         while(run){
-
             _display.tickStopwatch(stopwatch);
 
             checkStopwatchInput(stopwatch, run);
@@ -99,7 +104,14 @@ void Menu::start(){
 BUSY-WAIT FOR A SPECIFIED AMOUNT OF TIME (IN SECONDS)
 ========================================================= */
 
-// Waits for a specific duration (in seconds) using busy-waiting
+/**
+ * @brief Waits for a specific duration using busy-waiting.
+ * 
+ * This function uses a high-resolution clock to wait for the specified amount of time (in seconds). 
+ * It continuously checks the elapsed time until the desired duration has passed.
+ * 
+ * @param seconds The amount of time to wait, in seconds.
+ */
 void Menu::wait(double seconds) {
     auto start = chrono::high_resolution_clock::now();
     auto duration = chrono::duration<double>(seconds);
@@ -110,7 +122,11 @@ void Menu::wait(double seconds) {
 WAIT FOR ANY USER INPUT
 ========================================================= */
 
-// Waits for any key press from the user (blocking)
+/**
+ * @brief Waits for any key press from the user.
+ * 
+ * This function blocks until the user presses a key, using `_getch()` to capture the input.
+ */
 void Menu::waitForInput() {
     _getch();
 }
@@ -119,7 +135,14 @@ void Menu::waitForInput() {
 HANDLE KEYBOARD INPUT FOR TIMER
 ========================================================= */
 
-// Checks and handles user input for the Timer, updating its state based on the key pressed
+/**
+ * @brief Checks and handles user input for the Timer.
+ * 
+ * This function processes user input to control the Timer. It updates the Timer's state based on the key pressed.
+ * 
+ * @param timer The Timer object to control.
+ * @param run A boolean reference that determines whether to continue the loop.
+ */
 void Menu::checkTimerInput(Timer& timer, bool& run){
     if(_kbhit()){
         char ch = _getch();
@@ -166,7 +189,14 @@ void Menu::checkTimerInput(Timer& timer, bool& run){
 HANDLE KEYBOARD INPUT FOR STOPWATCH
 ========================================================= */
 
-// Checks and handles user input for the Stopwatch, updating its state based on the key pressed
+/**
+ * @brief Checks and handles user input for the Stopwatch.
+ * 
+ * This function processes user input to control the Stopwatch. It updates the Stopwatch's state based on the key pressed.
+ * 
+ * @param stopwatch The Stopwatch object to control.
+ * @param run A boolean reference that determines whether to continue the loop.
+ */
 void Menu::checkStopwatchInput(Stopwatch& stopwatch, bool& run){
     if(_kbhit()){
         char ch = _getch();
@@ -211,7 +241,14 @@ void Menu::checkStopwatchInput(Stopwatch& stopwatch, bool& run){
 GET USER INPUT FOR MENU SELECTION
 ========================================================= */
 
-// Waits for the user to press a valid key (1, 2, 3, or Q) to make a menu selection
+/**
+ * @brief Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection.
+ * 
+ * This function repeatedly checks for user input until a valid menu option is pressed. It then returns
+ * the corresponding character for the selected menu option.
+ * 
+ * @return char The character corresponding to the user's menu selection.
+ */
 char Menu::getMenuInput(){
     while(true){
         if(_kbhit()){

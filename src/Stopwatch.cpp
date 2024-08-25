@@ -6,14 +6,22 @@ using namespace std;
 CONSTRUCTORS
 ========================================================= */
 
-// Default constructor initializes a Stopwatch with 0 milliseconds and not running
-Stopwatch::Stopwatch(){ 
+/**
+ * @brief Default constructor initializes a Stopwatch with 0 milliseconds and not running.
+ */
+Stopwatch::Stopwatch() { 
     _running = false;
     _currMilliseconds = 0;
 }
 
-// Constructor initializes a Stopwatch with a specified time (in hours, minutes, and seconds)
-Stopwatch::Stopwatch(int hours, int minutes, int seconds){
+/**
+ * @brief Constructor initializes a Stopwatch with a specified time (in hours, minutes, and seconds).
+ * 
+ * @param hours The number of hours to set.
+ * @param minutes The number of minutes to set.
+ * @param seconds The number of seconds to set.
+ */
+Stopwatch::Stopwatch(int hours, int minutes, int seconds) {
     int milli = 3600000 * hours + 60000 * minutes + 1000 * seconds;
     _running = false;
     _currMilliseconds = milli;
@@ -23,8 +31,14 @@ Stopwatch::Stopwatch(int hours, int minutes, int seconds){
 GET CURRENT ELAPSED TIME IN MILLISECONDS
 ========================================================= */
 
-// Returns the current elapsed time in milliseconds. If the stopwatch is running,
-// it includes the time since it was started; otherwise, it returns the last recorded time.
+/**
+ * @brief Returns the current elapsed time in milliseconds.
+ * 
+ * If the stopwatch is running, this includes the time since it was started; otherwise, it returns
+ * the last recorded time.
+ * 
+ * @return int The current elapsed time in milliseconds.
+ */
 int Stopwatch::currentMilliseconds() { 
     if(_running){
         auto now = chrono::steady_clock::now();
@@ -39,8 +53,12 @@ int Stopwatch::currentMilliseconds() {
 SPLIT TIME
 ========================================================= */
 
-// Records and prints the current split time in milliseconds. A split time is a snapshot
-// of the time elapsed, which can be useful for time intervals without stopping the stopwatch.
+/**
+ * @brief Records and prints the current split time in milliseconds.
+ * 
+ * A split time is a snapshot of the time elapsed, which can be useful for time intervals
+ * without stopping the stopwatch.
+ */
 void Stopwatch::split() {
     if (_running) {
         int splitMilliseconds = chrono::duration_cast<chrono::milliseconds>(chrono::steady_clock::now() - _startTime).count();
@@ -54,7 +72,11 @@ void Stopwatch::split() {
 START THE STOPWATCH
 ========================================================= */
 
-// Starts the stopwatch. If already running, this function does nothing.
+/**
+ * @brief Starts the stopwatch.
+ * 
+ * If the stopwatch is already running, this function does nothing.
+ */
 void Stopwatch::start() {
     if (!_running) {
         _running = true;
@@ -66,9 +88,13 @@ void Stopwatch::start() {
 PAUSE THE STOPWATCH
 ========================================================= */
 
-// Pauses the stopwatch, stopping the time count until resumed. The current time is recorded.
-void Stopwatch::pause(){
-    if(_running){
+/**
+ * @brief Pauses the stopwatch.
+ * 
+ * Stops the time count until resumed. The current time is recorded.
+ */
+void Stopwatch::pause() {
+    if (_running) {
        _pauseTime = chrono::steady_clock::now();
        _currMilliseconds += chrono::duration_cast<chrono::milliseconds>(_pauseTime - _startTime).count();
        _running = false;
@@ -79,9 +105,11 @@ void Stopwatch::pause(){
 RESUME THE STOPWATCH
 ========================================================= */
 
-// Resumes the stopwatch from the last paused time.
-void Stopwatch::resume(){
-    if(!_running){
+/**
+ * @brief Resumes the stopwatch from the last paused time.
+ */
+void Stopwatch::resume() {
+    if (!_running) {
         _startTime = chrono::steady_clock::now();
         _running = true;
     }
@@ -91,8 +119,10 @@ void Stopwatch::resume(){
 RESET THE STOPWATCH
 ========================================================= */
 
-// Resets the stopwatch to 0 milliseconds and stops it.
-void Stopwatch::reset(){
+/**
+ * @brief Resets the stopwatch to 0 milliseconds and stops it.
+ */
+void Stopwatch::reset() {
     _running = false;
     _currMilliseconds = 0;
 }
@@ -101,7 +131,11 @@ void Stopwatch::reset(){
 CHECK IF STOPWATCH IS RUNNING
 ========================================================= */
 
-// Returns whether the stopwatch is currently running.
-bool Stopwatch::isRunning(){
+/**
+ * @brief Checks if the stopwatch is currently running.
+ * 
+ * @return bool True if the stopwatch is running, false otherwise.
+ */
+bool Stopwatch::isRunning() {
     return _running;
 }
