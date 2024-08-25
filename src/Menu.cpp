@@ -6,10 +6,20 @@ using namespace std;
 
 #define LOOPTIME 0.1
 
+/* =========================================================
+CONSTRUCTOR
+========================================================= */
+
+// Constructor initializes the Menu object with a running state
 Menu::Menu(){ 
     _run = true;
 }
 
+/* =========================================================
+MAIN MENU SEQUENCE
+========================================================= */
+
+// Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm
 void Menu::start(){
 
     _display.clearScreen();
@@ -18,7 +28,7 @@ void Menu::start(){
 
     char in = getMenuInput();
 
-    //ENTER TIMER SEQUENCE
+    // ENTER TIMER SEQUENCE
     if(in == '1'){
         _display.clearScreen();
 
@@ -29,6 +39,7 @@ void Menu::start(){
         _display.clearScreen();
 
         while(run){
+            // Display a message when the timer finishes
             if(timer.remainingMilliseconds() == 0) {
                 _display.setSplash("TIMER FINISHED"); 
             }
@@ -42,8 +53,9 @@ void Menu::start(){
 
     }
 
-    //ENTER STOPWATCH SEQUENCE
+    // ENTER STOPWATCH SEQUENCE
     else if(in == '2'){
+        // Initialize stopwatch, potentially with a custom start time
         //Stopwatch stopwatch = Stopwatch(0,59,55);
         Stopwatch stopwatch;
 
@@ -69,21 +81,25 @@ void Menu::start(){
         }
     }
 
-    //ENTER ALARM SEQUENCE
+    // ENTER ALARM SEQUENCE
     else if(in == '3'){
         Alarm alarm;
     }
 
-    //QUIT
+    // QUIT PROGRAM
     else if(in == 'q'){
         return;
     }
+    
+    // Restart menu loop
     start();
 }
 
 /* =========================================================
 BUSY-WAIT FOR A SPECIFIED AMOUNT OF TIME (IN SECONDS)
 ========================================================= */
+
+// Waits for a specific duration (in seconds) using busy-waiting
 void Menu::wait(double seconds) {
     auto start = chrono::high_resolution_clock::now();
     auto duration = chrono::duration<double>(seconds);
@@ -93,6 +109,8 @@ void Menu::wait(double seconds) {
 /* =========================================================
 WAIT FOR ANY USER INPUT
 ========================================================= */
+
+// Waits for any key press from the user (blocking)
 void Menu::waitForInput() {
     _getch();
 }
@@ -100,6 +118,8 @@ void Menu::waitForInput() {
 /* =========================================================
 HANDLE KEYBOARD INPUT FOR TIMER
 ========================================================= */
+
+// Checks and handles user input for the Timer, updating its state based on the key pressed
 void Menu::checkTimerInput(Timer& timer, bool& run){
     if(_kbhit()){
         char ch = _getch();
@@ -142,6 +162,11 @@ void Menu::checkTimerInput(Timer& timer, bool& run){
     }
 }
 
+/* =========================================================
+HANDLE KEYBOARD INPUT FOR STOPWATCH
+========================================================= */
+
+// Checks and handles user input for the Stopwatch, updating its state based on the key pressed
 void Menu::checkStopwatchInput(Stopwatch& stopwatch, bool& run){
     if(_kbhit()){
         char ch = _getch();
@@ -182,6 +207,11 @@ void Menu::checkStopwatchInput(Stopwatch& stopwatch, bool& run){
     }
 }
 
+/* =========================================================
+GET USER INPUT FOR MENU SELECTION
+========================================================= */
+
+// Waits for the user to press a valid key (1, 2, 3, or Q) to make a menu selection
 char Menu::getMenuInput(){
     while(true){
         if(_kbhit()){
@@ -199,6 +229,6 @@ char Menu::getMenuInput(){
                     break;
             }
         }
-        wait(0.1);
+        wait(0.1); // Slight delay before checking input again
     }
 }
