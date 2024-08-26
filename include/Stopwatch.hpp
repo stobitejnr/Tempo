@@ -9,7 +9,7 @@ using namespace std;
 class Stopwatch {
 public:
     Stopwatch();
-
+    Stopwatch(int hours, int minutes, int seconds);
     void start();
 
     void split();
