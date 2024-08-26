@@ -21,5 +21,5 @@ add_executable(Tempo
     src/Alarm.cpp
 
     #fonts
-    fonts/font1.cpp
+    fonts/fonts.cpp
 )

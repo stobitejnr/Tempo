@@ -5,7 +5,7 @@
 #include "Stopwatch.hpp"
 #include "Alarm.hpp"
 
-#include "../fonts/font1.hpp"
+#include "../fonts/fonts.hpp"
 
 #include <cstring>
 #include <iostream>
@@ -32,6 +32,9 @@ public:
 
     void stageAlarmDisplay();
     void stageAlarmControls();
+
+    void setFont(vector<vector<string>> newFont);
+    vector<vector<string>> getFont();
 
     //Splash helpers
     void setSplash(string str);
@@ -64,6 +67,8 @@ private:
     string _oldControls;
     string _oldBar;
     string _oldSplash;
+
+    vector<vector<string>> font;
 
     int _asciiWidth;
     

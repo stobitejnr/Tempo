@@ -40,11 +40,24 @@ void Display::setCursor(int row, int col) {
     fast_print(setcursor);
 }
 
+
+
 void Display::clearLine(int row){
     string clearline = "\033[K";
     setCursor(row,1);
     fast_print(clearline);
 
+}
+
+/* =========================================================\
+FONT INTERACTION
+========================================================= */
+void Display::setFont(vector<vector<string>> newFont){
+    font = newFont;
+}
+
+vector<vector<string>> Display::getFont(){
+    return font;
 }
 
 /* =========================================================
@@ -95,15 +108,15 @@ void Display::stageTimerDisplay(int hours, int minutes, int seconds, int tenths)
         string line;
         for(char ch : to_print){
             if(ch == ':'){
-                line += font1.at(10)[i];
+                line += getFont().at(10)[i];
                 line += PADDING;
             }
             else if(ch == '.'){
-                line += font1.at(11)[i];
+                line += getFont().at(11)[i];
                 line += PADDING;
             }
             else{
-                line += font1.at(ch-'0')[i];
+                line += getFont().at(ch-'0')[i];
                 line += PADDING;
             }
         }
@@ -213,15 +226,15 @@ void Display::stageStopwatchDisplay(int hours, int minutes, int seconds, int hun
         string line;
         for(char ch : to_print){
             if(ch == ':'){
-                line += font1.at(10)[i];
+                line += getFont().at(10)[i];
                 line += PADDING;
             }
             else if(ch == '.'){
-                line += font1.at(11)[i];
+                line += getFont().at(11)[i];
                 line += PADDING;
             }
             else{
-                line += font1.at(ch-'0')[i];
+                line += getFont().at(ch-'0')[i];
                 line += PADDING;
             }
         }

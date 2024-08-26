@@ -14,7 +14,7 @@ void Menu::start(){
 
     _display.clearScreen();
 
-    cout << "1: Timer\n2: Stopwatch\n3: Alarm\nQ: Quit Program" << endl;
+    cout << "1: Timer\n2: Stopwatch\n3: Alarm\n4: Font List\nQ: Quit Program" << endl;
 
     char in = getMenuInput();
 
@@ -72,6 +72,26 @@ void Menu::start(){
     //ENTER ALARM SEQUENCE
     else if(in == '3'){
         Alarm alarm;
+    }
+
+    else if(in == '4'){
+        cout << "1: Font One\n2: Font Two\nQ: Back to Menu" << endl;
+        char settingIn = getMenuInput();
+
+        if(settingIn == '1'){
+            _display.setFont(Font1::font1);
+            _display.setSplash("Font set to font1");
+        }
+
+        else if(settingIn == '2'){
+            _display.setFont(Font2::font2);
+            _display.setSplash("Font set to font2");
+        }
+
+        else if(settingIn =='q'){
+            _display.clearSplash();
+            return;
+        }
     }
 
     //QUIT
@@ -193,6 +213,8 @@ char Menu::getMenuInput(){
                     return '2';
                 case '3':
                     return '3';
+                case '4':
+                    return '4';
                 case 'q':
                     return 'q';
                 default:
