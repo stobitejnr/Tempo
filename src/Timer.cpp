@@ -9,11 +9,10 @@ Timer::Timer(){
     int m = 0;
     int s = 0;
     int countdownSeconds = 0;
-
-    Display::clearScreen();
+    int _incrementMilliseconds = 1000;
 
     while(true){
-        Display::clearScreen();
+        
         cout << "How long would you like to set a timer for?" << endl;
         string input = "";
         getline(cin,input);
@@ -91,16 +90,69 @@ void Timer::reset(){
     _countdownMilliseconds = _startMilliseconds;
 }
 
-void Timer::addSeconds(int seconds){
-    if(_running){
-        pause();
-        _remainingMilliseconds += 1000 * seconds;
-        _countdownMilliseconds += 1000 * seconds;
+void Timer::addTime(int seconds){
+    bool wasRunning = _running;
+    pause();
+    
+    _remainingMilliseconds += _incrementMilliseconds * seconds;
+    _countdownMilliseconds += _incrementMilliseconds * seconds;
+
+    if(wasRunning){
         resume();
     }
-    else{
-        _remainingMilliseconds += 1000 * seconds;
-        _countdownMilliseconds += 1000 * seconds;
+}
+
+void Timer::changeIncrementTime() {
+    // Pause the timer to safely change the increment time
+    bool wasRunning = _running;
+    pause();
+
+    cout << "Enter the increment time (e.g., '5 seconds', '2 minutes', '1 hour'): ";
+    string input;
+    getline(cin, input);
+    
+    // Regular expressions to match hours, minutes, and seconds
+    regex hours_regex(R"((\d+)\s*hour?)");
+    regex minutes_regex(R"((\d+)\s*minute?)");
+    regex seconds_regex(R"((\d+)\s*second?)");
+
+    smatch match;
+    int newIncrementMilliseconds = 0;
+    string unit;
+
+    try {
+        // Convert input to milliseconds based on what unit is specified
+        if (regex_search(input, match, hours_regex)) {
+            newIncrementMilliseconds = stoi(match[1].str()) * 360000;
+            unit = "hour(s)";
+        } else if (regex_search(input, match, minutes_regex)) {
+            newIncrementMilliseconds = stoi(match[1].str()) * 6000;
+            unit = "minute(s)";
+        } else if (regex_search(input, match, seconds_regex)) {
+            newIncrementMilliseconds = stoi(match[1].str()) * 100;
+            unit = "second(s)";
+        } else {
+            cout << "Invalid input format. Increment time must be specified in hours, minutes, or seconds." << endl;
+            return;
+        }
+
+        if(newIncrementMilliseconds <= 0) {
+            cout << "Increment time must be a positive value. Keeping the previous value of " << _incrementMilliseconds << " milliseconds." << endl;
+        } else {
+            _incrementMilliseconds = newIncrementMilliseconds;
+            cout << "Increment time set to " << match[1].str() << " " << unit << "." << endl;
+        }
+    } catch (invalid_argument& e) {
+        cout << "Invalid input. Please enter a valid numeric value. Keeping the previous value of " << _incrementMilliseconds << " milliseconds." << endl;
+    } catch (out_of_range& e) {
+        cout << "The value is too large. Keeping the previous value of " << _incrementMilliseconds << " milliseconds." << endl;
+    }
+
+    std::this_thread::sleep_for(std::chrono::seconds(1)); 
+    cout << "\r\033[K"; 
+
+    if(wasRunning){
+        resume();
     }
 }
 
@@ -122,4 +174,19 @@ int Timer::remainingMilliseconds() {
 
 bool Timer::isRunning(){
     return _running;
+}
+
+double Timer::percentElapsed() {
+    int start = 0;
+    if(_remainingMilliseconds > _startMilliseconds){
+        start = _remainingMilliseconds;
+    }
+    else{
+        start = _startMilliseconds;
+    }
+    if (start == 0) { return 100.0; }
+
+    int elapsedMilliseconds = start - remainingMilliseconds();
+    double percentage = ((double)(elapsedMilliseconds) / start) * 100;
+    return percentage;
 }
