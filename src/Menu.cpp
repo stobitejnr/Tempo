@@ -7,6 +7,7 @@ using namespace std;
 #define LOOPTIME 0.1
 
 Menu::Menu(){ 
+    _display = Display();
     _run = true;
 }
 
@@ -121,18 +122,19 @@ void Menu::checkTimerInput(Timer& timer, bool& run){
                 _display.clearScreen();
                 _display.setSplash("TIMER RESET, PRESS 'S' TO START");
                 break;
-            case 'I':
-            case 'i':
-                timer.addTime(10);
-                _display.setSplash("10 SECONDS ADDED TO TIMER");
+            case 'A':
+            case 'a':
+                timer.addTime();
+                _display.setSplash("X ADDED TO TIMER");
                 break;
             case 'C':
             case 'c':
                 timer.changeIncrementTime();
-                _display.setSplash("INCREMENT TIME CHANGED");
+                _display.setSplash("TIME INCREMENT CHANGED");
                 break;
             case 'Q':
             case 'q':
+                _display.clearSplash();
                 run = false;
                 return;
             default:
@@ -169,6 +171,7 @@ void Menu::checkStopwatchInput(Stopwatch& stopwatch, bool& run){
                 break;
             case 'Q':
             case 'q':
+            _display.clearSplash();
                 run = false;
                 return;
             default:

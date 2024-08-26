@@ -147,9 +147,9 @@ void Display::stageTimerBar(double percentage){
 
 void Display::stageTimerControls() {
     _controlBuffer += "\n";
-    _controlBuffer += "======================================================\n";
-    _controlBuffer += "S: Start/Pause | R: Reset | I: Add Time | Q: Main Menu \n";
-    _controlBuffer += "======================================================\n";
+    _controlBuffer += "============================================================================\n";
+    _controlBuffer += "S: Start/Pause | R: Reset | A: Add Time | C: Change Increment | Q: Main Menu \n";
+    _controlBuffer += "============================================================================\n";
     _controlBuffer += "\n";
     // _controlBuffer += "S : Start/Pause your timer.\n";
     // _controlBuffer += "R : Reset your timer.\n";
@@ -295,8 +295,6 @@ void Display::tickTimer(Timer& timer){
     remaining %= 1000;
     int tenths = remaining / 100;
 
-
-
     stageTimerDisplay(hours, minutes, seconds, tenths);
     stageTimerBar(timer.percentElapsed());
     stageTimerControls();
@@ -304,9 +302,9 @@ void Display::tickTimer(Timer& timer){
     printAscii(1);
     printBar(10);
     printControls(13);
-    printSplash(24);
+    printSplash(18);
 
-    setCursor(26,1);
+    setCursor(20,1);
 }
 
 void Display::tickStopwatch(Stopwatch& stopwatch){
@@ -325,9 +323,9 @@ void Display::tickStopwatch(Stopwatch& stopwatch){
 
     printAscii(1);
     printControls(9);
-    printSplash(20);
+    printSplash(14);
 
-    setCursor(22,1);
+    setCursor(16,1);
 }
 
 template<typename char_type>

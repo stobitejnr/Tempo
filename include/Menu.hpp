@@ -27,7 +27,7 @@ public:
 
 private:
 
-Display _display = Display();
+Display _display;
 bool _run;
 
 };

@@ -17,7 +17,9 @@ public:
     void pause();
     void resume();
     void reset();
+
     void addTime(int seconds);
+    void addTime();
     void changeIncrementTime();
 
     bool isRunning();
