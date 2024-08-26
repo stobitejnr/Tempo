@@ -31,6 +31,7 @@ void Display::clearScreen() {
     _oldAscii = "";
     _oldControls = "";
     _oldSplash = "";
+    _oldBar = "";
 
     fast_print(clearscreen);
 }
@@ -231,15 +232,15 @@ void Display::stageStopwatchDisplay(int hours, int minutes, int seconds, int hun
 
 void Display::stageStopwatchControls(){
     _controlBuffer+=("\n");
-    _controlBuffer+=("===========================================\n");
-    _controlBuffer+=("Control your stopwatch with the following keys: \n");
-    _controlBuffer+=("===========================================\n");
+    _controlBuffer+=("======================================================\n");
+    _controlBuffer+=("S: Start/Stop | R: Reset | A: Lap/Split | Q: Main Menu\n");
+    _controlBuffer+=("======================================================\n");
     _controlBuffer+=("\n");
-    _controlBuffer+=("S : Start/Stop your stopwatch.\n");
-    _controlBuffer+=("R : Reset your stopwatch.\n");
-    _controlBuffer+=("A : Create a split at the current time.\n");
-    _controlBuffer+=("Q : Stop your stopwatch immediately and return to menu.\n");
-    _controlBuffer+=("\n");
+    // _controlBuffer+=("S : Start/Stop your stopwatch.\n");
+    // _controlBuffer+=("R : Reset your stopwatch.\n");
+    // _controlBuffer+=("A : Create a split at the current time.\n");
+    // _controlBuffer+=("Q : Stop your stopwatch immediately and return to menu.\n");
+    // _controlBuffer+=("\n");
 
 }
 

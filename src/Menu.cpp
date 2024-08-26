@@ -138,7 +138,6 @@ void Menu::checkTimerInput(Timer& timer, bool& run){
             default:
                 break;
         }
-        _display.tickTimer(timer);
     }
 }
 
@@ -178,7 +177,6 @@ void Menu::checkStopwatchInput(Stopwatch& stopwatch, bool& run){
                 }
                 break;
         }
-        _display.tickStopwatch(stopwatch);
     }
 }
 
