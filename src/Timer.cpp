@@ -3,47 +3,56 @@
 
 using namespace std;
 
-//Default constructor to take user input
-Timer::Timer(){
+/* =========================================================
+CONSTRUCTORS
+========================================================= */
+
+/**
+ * @brief Default constructor prompts the user to set a timer with a specific duration.
+ * 
+ * The user can specify the duration in hours, minutes, and seconds. The timer is initialized
+ * and started based on the user input.
+ */
+Timer::Timer() {
     int h = 0;
     int m = 0;
     int s = 0;
     int countdownSeconds = 0;
     _incrementMilliseconds = 10000;
 
-    while(true){
-        
+    while (true) {
         cout << "How long would you like to set a timer for?" << endl;
         string input = "";
-        getline(cin,input);
+        getline(cin, input);
 
-    
-        //Regular expressions :D
+        // Regular expressions to match hours, minutes, and seconds
         regex hours_regex(R"((\d+)\s*hour?)");
         regex minutes_regex(R"((\d+)\s*minute?)");
         regex seconds_regex(R"((\d+)\s*second?)");
 
         smatch match;
 
-        //Find hours
+        // Extract hours
         if (regex_search(input, match, hours_regex)) {
             h = stoi(match[1].str());
         }
 
-        // Find minutes
+        // Extract minutes
         if (regex_search(input, match, minutes_regex)) {
             m = stoi(match[1].str());
         }
-
-        // Find seconds
+        // Extract seconds
         if (regex_search(input, match, seconds_regex)) {
             s = stoi(match[1].str());
         }
-        
-        countdownSeconds = (3600*h) + (60*m) + (s);
-        if(countdownSeconds == 0){ continue; }
-        if (countdownSeconds <= 360000){break;}
-        else{
+
+        countdownSeconds = (3600 * h) + (60 * m) + (s);
+        if (countdownSeconds == 0) { 
+            continue; 
+        }
+        if (countdownSeconds <= 360000) { 
+            break; 
+        } else {
             cout << "Cannot set a timer for more than 100 hours." << endl;
         }
     }
@@ -54,8 +63,16 @@ Timer::Timer(){
     start(_countdownMilliseconds);
 }
 
-//Constructor to specify members directly
-Timer::Timer(int hours, int minutes, int seconds){
+/**
+ * @brief Constructor to specify the timer duration directly in hours, minutes, and seconds.
+ * 
+ * Initializes and starts the timer with the specified duration.
+ * 
+ * @param hours The number of hours to set.
+ * @param minutes The number of minutes to set.
+ * @param seconds The number of seconds to set.
+ */
+Timer::Timer(int hours, int minutes, int seconds) {
     int milli = 3600000 * hours + 60000 * minutes + 1000 * seconds;
     _countdownMilliseconds = milli;
     _remainingMilliseconds = milli;
@@ -64,34 +81,73 @@ Timer::Timer(int hours, int minutes, int seconds){
     start(_countdownMilliseconds);
 }
 
+/* =========================================================
+START THE TIMER
+========================================================= */
 
+/**
+ * @brief Starts the timer by setting the end time based on the current time plus the countdown duration.
+ * 
+ * @param countdownMilliseconds The duration for the countdown in milliseconds.
+ */
 void Timer::start(int countdownMilliseconds) {
     _running = true;
     _endTime = chrono::steady_clock::now() + chrono::milliseconds(_countdownMilliseconds);
 }
 
-void Timer::pause(){
-    if(_running){
+/* =========================================================
+PAUSE THE TIMER
+========================================================= */
+
+/**
+ * @brief Pauses the timer and calculates the remaining milliseconds.
+ */
+void Timer::pause() {
+    if (_running) {
        _pauseTime = chrono::steady_clock::now();
        _remainingMilliseconds = chrono::duration_cast<chrono::milliseconds>(_endTime - _pauseTime).count();
        _running = false;
     }
 }
 
-void Timer::resume(){
-    if(!_running){
+/* =========================================================
+RESUME THE TIMER
+========================================================= */
+
+/**
+ * @brief Resumes the timer from where it was paused by recalculating the end time.
+ */
+void Timer::resume() {
+    if (!_running) {
         _endTime = chrono::steady_clock::now() + chrono::milliseconds(_remainingMilliseconds);
         _running = true;
     }
 }
+/* =========================================================
+RESET THE TIMER
+========================================================= */
 
-void Timer::reset(){
+/**
+ * @brief Resets the timer to its original duration and pauses it.
+ */
+void Timer::reset() {
     pause();
     _remainingMilliseconds = _startMilliseconds;
     _countdownMilliseconds = _startMilliseconds;
 }
 
-void Timer::addTime(int seconds){
+/* =========================================================
+ADD TIME TO THE TIMER
+========================================================= */
+
+/**
+ * @brief Adds a specified amount of time (in seconds) to the timer.
+ * 
+ * If the timer is running, it resumes after adding time.
+ * 
+ * @param seconds The number of seconds to add to the timer.
+ */
+void Timer::addTime(int seconds) {
     bool wasRunning = _running;
     pause();
     
@@ -115,11 +171,20 @@ void Timer::addTime(){
         _countdownMilliseconds = 359999999;
     }
 
-    if(wasRunning){
+    if (wasRunning) {
         resume();
     }
 }
 
+/* =========================================================
+CHANGE INCREMENT TIME
+========================================================= */
+
+/**
+ * @brief Allows the user to change the increment time used for adding time to the timer.
+ * 
+ * The increment time can be specified in hours, minutes, or seconds.
+ */
 void Timer::changeIncrementTime() {
     // Pause the timer to safely change the increment time
     bool wasRunning = _running;
@@ -154,7 +219,7 @@ void Timer::changeIncrementTime() {
             return;
         }
 
-        if(newIncrementMilliseconds <= 0) {
+        if (newIncrementMilliseconds <= 0) {
             cout << "Increment time must be a positive value. Keeping the previous value of " << _incrementMilliseconds << " milliseconds." << endl;
         } else {
             _incrementMilliseconds = newIncrementMilliseconds;
@@ -167,42 +232,72 @@ void Timer::changeIncrementTime() {
     }
 
     std::this_thread::sleep_for(std::chrono::seconds(1)); 
-    //cout << "\r\033[K"; 
+    //cout << "\r\033[K"; // Clear the line after waiting for input
 
-    if(wasRunning){
+    if (wasRunning) {
         resume();
     }
 }
 
+/* =========================================================
+GET REMAINING TIME IN MILLISECONDS
+========================================================= */
+
+/**
+ * @brief Returns the remaining time in milliseconds.
+ * 
+ * If the timer has expired, it returns 0.
+ * 
+ * @return int The remaining time in milliseconds.
+ */
 int Timer::remainingMilliseconds() {
-    if(_running){
+    if (_running) {
         auto now = chrono::steady_clock::now();
         auto remaining = chrono::duration_cast<chrono::milliseconds>(_endTime - now).count();
-        if(remaining > 0){ return remaining; } 
-        else{ 
+        if (remaining > 0) { 
+            return remaining; 
+        } else { 
             _running = false; 
             _remainingMilliseconds = 0; 
             return 0; 
         }
-    }   
-    else{
+    } else {
         return _remainingMilliseconds;
     }
 }
 
-bool Timer::isRunning(){
+/* =========================================================
+CHECK IF TIMER IS RUNNING
+========================================================= */
+
+/**
+ * @brief Checks if the timer is currently running.
+ * 
+ * @return bool True if the timer is running, false otherwise.
+ */
+bool Timer::isRunning() {
     return _running;
 }
 
+/* =========================================================
+GET PERCENTAGE OF TIME ELAPSED
+========================================================= */
+
+/**
+ * @brief Returns the percentage of time that has elapsed since the timer started.
+ * 
+ * @return double The percentage of time elapsed.
+ */
 double Timer::percentElapsed() {
     int start = 0;
-    if(_remainingMilliseconds > _startMilliseconds){
+    if (_remainingMilliseconds > _startMilliseconds) {
         start = _remainingMilliseconds;
-    }
-    else{
+    } else {
         start = _startMilliseconds;
     }
-    if (start == 0) { return 100.0; }
+    if (start == 0) { 
+        return 100.0; 
+    }
 
     int elapsedMilliseconds = start - remainingMilliseconds();
     double percentage = ((double)(elapsedMilliseconds) / start) * 100;
