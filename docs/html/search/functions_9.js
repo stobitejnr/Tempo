@@ -1,11 +1,15 @@
 var searchData=
 [
-  ['paperservice_0',['PaperService',['../classotago_1_1_study_buddy_1_1service_1_1_paper_service.html#a223ba8c27dec79628a14a9cb6d71e0b0',1,'otago::StudyBuddy::service::PaperService']]],
-  ['passwordencoder_1',['passwordEncoder',['../classotago_1_1_study_buddy_1_1config_1_1_security_config.html#a81930579d7e47b31926c313a4568d8cf',1,'otago::StudyBuddy::config::SecurityConfig']]],
-  ['pause_2',['pause',['../class_stopwatch.html#a2cc48295d6b083361d062b8eb68d753a',1,'Stopwatch::pause()'],['../class_timer.html#a0289effad7b573c508bc27e405900a23',1,'Timer::pause()']]],
-  ['percentelapsed_3',['percentElapsed',['../class_timer.html#a97ab4bd97e34c2ce2b8afa7c993fbaec',1,'Timer']]],
-  ['printascii_4',['printAscii',['../class_display.html#aab9a518037074ce68da2a7792771908d',1,'Display']]],
-  ['printbar_5',['printBar',['../class_display.html#a034871a688ea9c2cf5801d120b0cfcf6',1,'Display']]],
-  ['printcontrols_6',['printControls',['../class_display.html#a3480427024243711ee66efc51ddf0fa3',1,'Display']]],
-  ['printsplash_7',['printSplash',['../class_display.html#a62d8435627ea69fbccaef4cef32d785d',1,'Display']]]
+  ['setcursor_0',['setCursor',['../class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3',1,'Display']]],
+  ['setsplash_1',['setSplash',['../class_display.html#a3a0e77e68157e55d67ac3f28dffdd00c',1,'Display']]],
+  ['split_2',['split',['../class_stopwatch.html#ab7695f590d6b5067f4ff0e0389182861',1,'Stopwatch']]],
+  ['stagealarmcontrols_3',['stageAlarmControls',['../class_display.html#ae6055127511e098a4ce8ea10d0ca2e43',1,'Display']]],
+  ['stagealarmdisplay_4',['stageAlarmDisplay',['../class_display.html#a90235f60d9b1239198ceca9e24df2e33',1,'Display']]],
+  ['stagestopwatchcontrols_5',['stageStopwatchControls',['../class_display.html#aa68e271db8f91c18ae2c1e5e38d0f1ee',1,'Display']]],
+  ['stagestopwatchdisplay_6',['stageStopwatchDisplay',['../class_display.html#ac878f4b1987c4e33c173478fd5bbf34c',1,'Display']]],
+  ['stagetimerbar_7',['stageTimerBar',['../class_display.html#a91e41747e83f0d8d53251811addd566e',1,'Display']]],
+  ['stagetimercontrols_8',['stageTimerControls',['../class_display.html#af7327c3f58c211e500f4fff386f222e4',1,'Display']]],
+  ['stagetimerdisplay_9',['stageTimerDisplay',['../class_display.html#a02e23b9a142c52d7dfa0169c58c77e24',1,'Display']]],
+  ['start_10',['start',['../class_menu.html#ae1ec62e738dda7faaaec850bd0b58ffe',1,'Menu::start()'],['../class_stopwatch.html#a6d01ecc80c92f1d5210cd9c3eb72883d',1,'Stopwatch::start()'],['../class_timer.html#aded1ecf859b397258dcfa95d3d7cfc41',1,'Timer::start()']]],
+  ['stopwatch_11',['Stopwatch',['../class_stopwatch.html#a628b5ebeed5df065dd847e68fb6336cf',1,'Stopwatch::Stopwatch()'],['../class_stopwatch.html#a8c9e3153e50c02aa22be7acdd3f4912c',1,'Stopwatch::Stopwatch(int hours, int minutes, int seconds)']]]
 ];

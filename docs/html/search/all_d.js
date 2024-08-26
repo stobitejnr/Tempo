@@ -1,23 +1,8 @@
 var searchData=
 [
-  ['main_0',['main',['../classotago_1_1_study_buddy_1_1_study_buddy_application.html#a13389c7647f346b221c9777a023a52a3',1,'otago.StudyBuddy.StudyBuddyApplication.main()'],['../_c_make_c_compiler_id_8c.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;CMakeCXXCompilerId.cpp'],['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;main.cpp']]],
+  ['main_0',['main',['../_c_make_c_compiler_id_8c.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;CMakeCXXCompilerId.cpp'],['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;main.cpp']]],
   ['main_2ecpp_1',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['main_2ecpp_2eobj_2ed_2',['main.cpp.obj.d',['../main_8cpp_8obj_8d.html',1,'']]],
-  ['matchcontroller_3',['MatchController',['../classotago_1_1_study_buddy_1_1controller_1_1_match_controller.html',1,'otago::StudyBuddy::controller']]],
-  ['matchcontroller_2ejava_4',['MatchController.java',['../_match_controller_8java.html',1,'']]],
-  ['matchservice_5',['MatchService',['../classotago_1_1_study_buddy_1_1service_1_1_match_service.html',1,'otago.StudyBuddy.service.MatchService'],['../classotago_1_1_study_buddy_1_1service_1_1_match_service.html#afd35f498f838c4abc171c63f1b602cb8',1,'otago.StudyBuddy.service.MatchService.MatchService()']]],
-  ['matchservice_2ejava_6',['MatchService.java',['../_match_service_8java.html',1,'']]],
-  ['matchusers_7',['matchUsers',['../classotago_1_1_study_buddy_1_1service_1_1_match_service.html#ab8c5a5d27aa7df49419c2332ccb1ac04',1,'otago::StudyBuddy::service::MatchService']]],
-  ['menu_8',['Menu',['../class_menu.html',1,'Menu'],['../class_menu.html#ad466dd83355124a6ed958430450bfe94',1,'Menu::Menu()']]],
-  ['menu_2ecpp_9',['Menu.cpp',['../_menu_8cpp.html',1,'']]],
-  ['menu_2ecpp_2eobj_2ed_10',['Menu.cpp.obj.d',['../_menu_8cpp_8obj_8d.html',1,'']]],
-  ['menu_2ehpp_11',['Menu.hpp',['../_menu_8hpp.html',1,'']]],
-  ['message_12',['Message',['../classotago_1_1_study_buddy_1_1domain_1_1_message.html',1,'otago.StudyBuddy.domain.Message'],['../classotago_1_1_study_buddy_1_1domain_1_1_message.html#aa9f5a21de68eef29e636a2587d392868',1,'otago.StudyBuddy.domain.Message.Message()'],['../classotago_1_1_study_buddy_1_1domain_1_1_message.html#a363270aa9831c907f62f7a875c20f3e6',1,'otago.StudyBuddy.domain.Message.Message(Integer messageId, String content, Integer userId, ChatRoom chatRoom, Timestamp timestamp)']]],
-  ['message_2ejava_13',['Message.java',['../_message_8java.html',1,'']]],
-  ['messagerepository_14',['MessageRepository',['../interfaceotago_1_1_study_buddy_1_1repository_1_1_message_repository.html',1,'otago::StudyBuddy::repository']]],
-  ['messagerepository_2ejava_15',['MessageRepository.java',['../_message_repository_8java.html',1,'']]],
-  ['messageservice_16',['MessageService',['../classotago_1_1_study_buddy_1_1service_1_1_message_service.html',1,'otago::StudyBuddy::service']]],
-  ['messageservice_2ejava_17',['MessageService.java',['../_message_service_8java.html',1,'']]],
-  ['myuserdetailsservice_18',['MyUserDetailsService',['../classotago_1_1_study_buddy_1_1domain_1_1_my_user_details_service.html',1,'otago.StudyBuddy.domain.MyUserDetailsService'],['../classotago_1_1_study_buddy_1_1domain_1_1_my_user_details_service.html#a192f42ae6ae7aea4a4bf15027de16c03',1,'otago.StudyBuddy.domain.MyUserDetailsService.MyUserDetailsService()']]],
-  ['myuserdetailsservice_2ejava_19',['MyUserDetailsService.java',['../_my_user_details_service_8java.html',1,'']]]
+  ['menu_2',['Menu',['../class_menu.html',1,'Menu'],['../class_menu.html#ad466dd83355124a6ed958430450bfe94',1,'Menu::Menu()']]],
+  ['menu_2ecpp_3',['Menu.cpp',['../_menu_8cpp.html',1,'']]],
+  ['menu_2ehpp_4',['Menu.hpp',['../_menu_8hpp.html',1,'']]]
 ];

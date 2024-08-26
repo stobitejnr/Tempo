@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['loadmessages_0',['loadMessages',['../classotago_1_1_study_buddy_1_1controller_1_1_chat_controller.html#acedc6941d49fe1a463731f79b80fedd2',1,'otago::StudyBuddy::controller::ChatController']]],
-  ['loaduserbyusername_1',['loadUserByUsername',['../classotago_1_1_study_buddy_1_1domain_1_1_my_user_details_service.html#a0ccf68a4922da55b65121d39d8025722',1,'otago::StudyBuddy::domain::MyUserDetailsService']]],
-  ['loadusers_2',['loadUsers',['../classotago_1_1_study_buddy_1_1controller_1_1_chat_controller.html#a8ba91aeb2dd7157fdc452922d07440ab',1,'otago::StudyBuddy::controller::ChatController']]],
-  ['login_3',['logIn',['../classotago_1_1_study_buddy_1_1controller_1_1_user_controller.html#a932cf0ef1311976a2386a0c453be097f',1,'otago::StudyBuddy::controller::UserController']]],
-  ['loginuser_4',['logInUser',['../classotago_1_1_study_buddy_1_1service_1_1_user_service.html#a72915f046c47fd8f81f9864a1bc062bb',1,'otago::StudyBuddy::service::UserService']]]
+  ['main_0',['main',['../_c_make_c_compiler_id_8c.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;CMakeCXXCompilerId.cpp'],['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;main.cpp']]],
+  ['menu_1',['Menu',['../class_menu.html#ad466dd83355124a6ed958430450bfe94',1,'Menu']]]
 ];
