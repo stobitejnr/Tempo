@@ -54,6 +54,7 @@ public:
      */
     void reset();
 
+    void addTime();
     /**
      * @brief Adds a specified amount of time (in seconds) to the timer.
      *
