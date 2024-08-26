@@ -146,16 +146,16 @@ void Display::stageTimerBar(double percentage){
 
 void Display::stageTimerControls() {
     _controlBuffer += "\n";
-    _controlBuffer += "===========================================\n";
-    _controlBuffer += "Control your timer with the following keys: \n";
-    _controlBuffer += "===========================================\n";
+    _controlBuffer += "======================================================\n";
+    _controlBuffer += "S: Start/Pause | R: Reset | I: Add Time | Q: Main Menu \n";
+    _controlBuffer += "======================================================\n";
     _controlBuffer += "\n";
-    _controlBuffer += "S : Start/Pause your timer.\n";
-    _controlBuffer += "R : Reset your timer.\n";
-    _controlBuffer += "I : Add 10 seconds to your timer.\n";
-    _controlBuffer += "C : Change increment time.\n";
-    _controlBuffer += "Q : End your timer immediately and return to menu.\n";
-    _controlBuffer += "\n";
+    // _controlBuffer += "S : Start/Pause your timer.\n";
+    // _controlBuffer += "R : Reset your timer.\n";
+    // _controlBuffer += "I : Add 10 seconds to your timer.\n";
+    // _controlBuffer += "C : Change increment time.\n";
+    // _controlBuffer += "Q : End your timer immediately and return to menu.\n";
+    // _controlBuffer += "\n";
 }
 
 /* =========================================================
