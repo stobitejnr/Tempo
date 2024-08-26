@@ -41,7 +41,6 @@ Timer::Timer() {
         if (regex_search(input, match, minutes_regex)) {
             m = stoi(match[1].str());
         }
-
         // Extract seconds
         if (regex_search(input, match, seconds_regex)) {
             s = stoi(match[1].str());
@@ -123,7 +122,6 @@ void Timer::resume() {
         _running = true;
     }
 }
-
 /* =========================================================
 RESET THE TIMER
 ========================================================= */

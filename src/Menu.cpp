@@ -1,5 +1,4 @@
 #define OOF_IMPL
-
 #include "../include/Menu.hpp"
 
 using namespace std;

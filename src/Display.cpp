@@ -402,7 +402,6 @@ PARSING TIMER, CALLING PRINT FUNCTION
 void Display::tickTimer(Timer &timer)
 {
     int remaining = timer.remainingMilliseconds();
-
     int hours = remaining / 3600000;
     remaining %= 3600000;
     int minutes = remaining / 60000;
