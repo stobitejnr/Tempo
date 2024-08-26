@@ -1,1 +1,0 @@
-g++ -static-libgcc -static-libstdc++ main.cpp timer.cpp display.cpp -o timerapp
