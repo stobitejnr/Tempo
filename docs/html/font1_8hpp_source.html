@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TEMPO: Tempo 1.0</title>
+<title>TEMPO: fonts/font1.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -56,8 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="doc-content">
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function(){ initResizable(false); });
@@ -84,85 +82,30 @@ $(function(){ initResizable(false); });
 </div>
 </div>
 
-<div><div class="header">
-  <div class="headertitle"><div class="title">Tempo 1.0 </div></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_f315b379889fde23168cba3fe99c18a3.html">fonts</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">font1.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a></p>
-<p>Tempo is a versatile command-line application that allows users to create and manage timers, stopwatches, and alarms.</p>
-<h1><a class="anchor" id="autotoc_md1"></a>
-Created by</h1>
-<ul>
-<li>William Donnelly</li>
-<li>Kevin Albert</li>
-<li>Rowan Zeszut</li>
-<li>Ben Sampson</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md2"></a>
-Features</h1>
-<ol type="1">
-<li><b><a class="el" href="class_timer.html" title="The Timer class provides a countdown timer with start, pause, resume, reset, and time adjustment func...">Timer</a></b>: Set custom countdown timers with precise control.<ul>
-<li>Start, pause, and resume functionality</li>
-<li>Add time to running timers</li>
-<li>Reset timer</li>
-<li>Visual progress bar</li>
-<li>Customizable time increment</li>
-</ul>
-</li>
-<li><b><a class="el" href="class_stopwatch.html" title="The Stopwatch class provides a simple timer with start, pause, resume, and reset functionalities.">Stopwatch</a></b>: Measure elapsed time with millisecond precision.<ul>
-<li>Start, pause, and resume functionality</li>
-<li>Reset stopwatch</li>
-<li>Create split times</li>
-</ul>
-</li>
-<li><b><a class="el" href="class_alarm.html">Alarm</a></b>: (Feature to be implemented)</li>
-<li><b>User-friendly Interface</b>:<ul>
-<li>ASCII art time display</li>
-<li>Clear on-screen instructions</li>
-<li>Responsive keyboard controls</li>
-</ul>
-</li>
-</ol>
-<h1><a class="anchor" id="autotoc_md3"></a>
-How to Run</h1>
-<ol type="1">
-<li>Ensure you have CMAKE installed on your system.</li>
-<li>Open an IDE and navigate to the project directory.</li>
-<li>Run the CMakeLists.txt file to generate the project files.</li>
-<li>Build and run the project.</li>
-</ol>
-<h1><a class="anchor" id="autotoc_md4"></a>
-Usage</h1>
-<ol type="1">
-<li>Upon starting the application, you'll be presented with a menu: <img src="startup.png" alt="" class="inline" title="Start up"/>    </li>
-</ol>
-<div class="fragment"><div class="line">alarm feature is currently under development and is not available.</div>
-</div><!-- fragment --><ol type="1">
-<li>Use the number keys to select a function or 'Q' to quit.</li>
-<li>Follow the on-screen instructions to control each feature.</li>
-</ol>
-<h1><a class="anchor" id="autotoc_md5"></a>
-Requirements</h1>
-<ul>
-<li>C++ compiler with C++11 support</li>
-<li>Windows operating system (due to use of Windows-specific libraries)</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md6"></a>
-Future Enhancements</h1>
-<ul>
-<li>Implement <a class="el" href="class_alarm.html">Alarm</a> functionality</li>
-<li>Add sound notifications</li>
-<li>Expand platform support beyond Windows</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md7"></a>
-Contributing</h1>
-<p>We welcome contributions to Tempo! Please feel free to submit issues and pull requests.</p>
-<h1><a class="anchor" id="autotoc_md8"></a>
-License</h1>
-<p>This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. </p>
-</div></div><!-- PageDoc -->
-<a href="doxygen_crawl.html"></a>
-</div><!-- contents -->
+<a href="font1_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef FONT1_HPP</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define FONT1_HPP</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">using </span>std::vector;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">using </span>std::string;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">extern</span> vector&lt;vector&lt;string&gt;&gt; <a class="code hl_variable" href="font1_8hpp.html#a7d449c4766baf4b4da1b2714ea55b674">font1</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#endif </span><span class="comment">// FONT1_HPP</span></div>
+<div class="ttc" id="afont1_8hpp_html_a7d449c4766baf4b4da1b2714ea55b674"><div class="ttname"><a href="font1_8hpp.html#a7d449c4766baf4b4da1b2714ea55b674">font1</a></div><div class="ttdeci">vector&lt; vector&lt; string &gt; &gt; font1</div><div class="ttdef"><b>Definition</b> font1.cpp:123</div></div>
+</div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0
