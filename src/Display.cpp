@@ -42,6 +42,7 @@ void Display::clearScreen()
     _oldAscii = "";
     _oldControls = "";
     _oldSplash = "";
+    _oldBar = "";
 
     fast_print(clearscreen);
 }
@@ -203,16 +204,16 @@ void Display::stageTimerBar(double percentage)
 void Display::stageTimerControls()
 {
     _controlBuffer += "\n";
-    _controlBuffer += "===========================================\n";
-    _controlBuffer += "Control your timer with the following keys: \n";
-    _controlBuffer += "===========================================\n";
+    _controlBuffer += "============================================================================\n";
+    _controlBuffer += "S: Start/Pause | R: Reset | A: Add Time | C: Change Increment | Q: Main Menu \n";
+    _controlBuffer += "============================================================================\n";
     _controlBuffer += "\n";
-    _controlBuffer += "S : Start/Pause your timer.\n";
-    _controlBuffer += "R : Reset your timer.\n";
-    _controlBuffer += "I : Add 10 seconds to your timer.\n";
-    _controlBuffer += "C : Change increment time.\n";
-    _controlBuffer += "Q : End your timer immediately and return to menu.\n";
-    _controlBuffer += "\n";
+    // _controlBuffer += "S : Start/Pause your timer.\n";
+    // _controlBuffer += "R : Reset your timer.\n";
+    // _controlBuffer += "I : Add 10 seconds to your timer.\n";
+    // _controlBuffer += "C : Change increment time.\n";
+    // _controlBuffer += "Q : End your timer immediately and return to menu.\n";
+    // _controlBuffer += "\n";
 }
 
 /* =========================================================
@@ -313,18 +314,17 @@ void Display::stageStopwatchDisplay(int hours, int minutes, int seconds, int hun
 /**
  * @brief Stages the controls for the stopwatch to be displayed in the terminal.
  */
-void Display::stageStopwatchControls()
-{
-    _controlBuffer += "\n";
-    _controlBuffer += "===========================================\n";
-    _controlBuffer += "Control your stopwatch with the following keys: \n";
-    _controlBuffer += "===========================================\n";
-    _controlBuffer += "\n";
-    _controlBuffer += "S : Start/Stop your stopwatch.\n";
-    _controlBuffer += "R : Reset your stopwatch.\n";
-    _controlBuffer += "A : Create a split at the current time.\n";
-    _controlBuffer += "Q : Stop your stopwatch immediately and return to menu.\n";
-    _controlBuffer += "\n";
+void Display::stageStopwatchControls(){
+    _controlBuffer+=("\n");
+    _controlBuffer+=("======================================================\n");
+    _controlBuffer+=("S: Start/Stop | R: Reset | A: Lap/Split | Q: Main Menu\n");
+    _controlBuffer+=("======================================================\n");
+    _controlBuffer+=("\n");
+    // _controlBuffer+=("S : Start/Stop your stopwatch.\n");
+    // _controlBuffer+=("R : Reset your stopwatch.\n");
+    // _controlBuffer+=("A : Create a split at the current time.\n");
+    // _controlBuffer+=("Q : Stop your stopwatch immediately and return to menu.\n");
+    // _controlBuffer+=("\n");
 }
 
 /* =========================================================
@@ -417,9 +417,9 @@ void Display::tickTimer(Timer &timer)
     printAscii(1);
     printBar(10);
     printControls(13);
-    printSplash(24);
+    printSplash(18);
 
-    setCursor(26, 1);
+    setCursor(20,1);
 }
 
 /**
@@ -443,9 +443,9 @@ void Display::tickStopwatch(Stopwatch &stopwatch)
 
     printAscii(1);
     printControls(9);
-    printSplash(20);
+    printSplash(14);
 
-    setCursor(22, 1);
+    setCursor(16,1);
 }
 
 /* =========================================================
