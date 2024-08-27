@@ -1,0 +1,12 @@
+digraph "Timer::reset"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="Timer::reset",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Resets the timer to its original duration and pauses it."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Timer::pause",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_timer.html#a0289effad7b573c508bc27e405900a23",tooltip="Pauses the timer and calculates the remaining milliseconds."];
+}
