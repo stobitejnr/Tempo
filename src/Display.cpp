@@ -20,10 +20,12 @@ Display::Display()
     _asciiBuffer = "";
     _barBuffer = "";
     _controlBuffer = "";
+    _splitBuffer = "";
 
     _oldAscii = "";
     _oldControls = "";
     _oldSplash = "";
+    _oldSplits = "";
 
     _asciiWidth = 0;
 }
@@ -204,9 +206,9 @@ void Display::stageTimerBar(double percentage)
 void Display::stageTimerControls()
 {
     _controlBuffer += "\n";
-    _controlBuffer += "============================================================================\n";
-    _controlBuffer += "S: Start/Pause | R: Reset | A: Add Time | C: Change Increment | Q: Main Menu \n";
-    _controlBuffer += "============================================================================\n";
+    _controlBuffer += "=======================================================\n";
+    _controlBuffer += "S: Start/Pause | R: Reset | A: New Timer | Q: Main Menu \n";
+    _controlBuffer += "=======================================================\n";
     _controlBuffer += "\n";
     // _controlBuffer += "S : Start/Pause your timer.\n";
     // _controlBuffer += "R : Reset your timer.\n";
@@ -327,6 +329,86 @@ void Display::stageStopwatchControls(){
     // _controlBuffer+=("\n");
 }
 
+void Display::stageStopwatchSplits(vector<int> splits){
+    if(!splits.empty()){
+        _splitBuffer+= "-+=| SPLITS |=+-\n";
+        int i;
+        if (splits.size()>10){ i = splits.size()-10; }
+        else { i = 0; }
+        for(i; i<splits.size(); ++i){
+
+            int milliseconds = splits.at(i);
+            int hours = milliseconds / 3600000;
+            milliseconds %= 3600000;
+            int minutes = milliseconds / 60000;
+            milliseconds %= 60000;
+            int seconds = milliseconds / 1000;
+            milliseconds %= 1000;
+            int hundredths = milliseconds / 10;
+            string to_print = "";
+
+            // Only show hours if there are more than 0
+            if (hours != 0)
+            {
+                to_print += to_string(hours) + ":";
+            }
+
+            // Show minutes with a leading zero if needed
+            if (hours)
+            {
+                if (int(minutes / 10) != 0)
+                {
+                    to_print += to_string(minutes) + ":";
+                }
+                else
+                {
+                    to_print += "0" + to_string(minutes) + ":";
+                }
+            }
+            else if (minutes)
+            {
+                to_print += to_string(minutes) + ":";
+            }
+
+            // Show seconds with a leading zero if needed
+            if (hours || minutes)
+            {
+                if (int(seconds / 10) != 0)
+                {
+                    to_print += to_string(seconds);
+                }
+                else
+                {
+                    to_print += "0" + to_string(seconds);
+                }
+            }
+            else
+            {
+                to_print += to_string(seconds);
+            }
+
+            // Show hundredths of a second if there are no hours
+            if (hours == 0)
+            {
+                to_print += ".";
+                if (int(hundredths / 10) != 0)
+                {
+                    to_print += to_string(hundredths);
+                }
+                else
+                {
+                    to_print += "0" + to_string(hundredths);
+                }
+            }
+            string fullprint = "Split " + to_string(i+1) + ": " + to_print + "\n";
+            _splitBuffer += fullprint;
+        }
+    }
+    else{
+        _splitBuffer = "";
+    }
+}
+
 /* =========================================================
 PRINTING TO TERMINAL
 ========================================================= */
@@ -391,6 +473,17 @@ void Display::printSplash(int row)
     }
 }
 
+void Display::printSplits(int row)
+{
+    if (_splitBuffer != _oldSplits)
+    {
+        setCursor(row, 1);
+        fast_print(_splitBuffer);
+        _oldSplits = _splitBuffer;
+    }
+    _splitBuffer = "";
+}
+
 /* =========================================================
 PARSING TIMER, CALLING PRINT FUNCTION
 ========================================================= */
@@ -440,12 +533,13 @@ void Display::tickStopwatch(Stopwatch &stopwatch)
 
     stageStopwatchDisplay(hours, minutes, seconds, hundredths);
     stageStopwatchControls();
+    stageStopwatchSplits(stopwatch.getSplits());
 
     printAscii(1);
     printControls(9);
     printSplash(14);
-
-    setCursor(16,1);
+    printSplits(16);
+    setCursor(15,1);
 }
 
 /* =========================================================

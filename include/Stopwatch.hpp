@@ -3,6 +3,7 @@
 
 #include <chrono>
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -39,7 +40,11 @@ public:
      * A split time is a snapshot of the time elapsed, which can be useful for time intervals
      * without stopping the stopwatch.
      */
-    void split();
+    void addSplit();
+
+    void clearSplits();
+
+    vector<int> getSplits();
 
     /**
      * @brief Pauses the stopwatch.
@@ -77,8 +82,9 @@ public:
 
 private:
     int _currMilliseconds;  ///< The current elapsed time in milliseconds.
-
     bool _running;  ///< Indicates whether the stopwatch is currently running.
+
+    vector<int> _splits;
 
     chrono::time_point<chrono::steady_clock> _startTime;  ///< The time point when the stopwatch was started.
     chrono::time_point<chrono::steady_clock> _pauseTime;  ///< The time point when the stopwatch was paused.
