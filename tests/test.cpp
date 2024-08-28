@@ -28,7 +28,10 @@ void testDisplay(){
 int main(){
 
     testTimer();
-
-
+    testStopwatch();
+    testAlarm();
+    testMenu();
+    testDisplay();
+    
     return 0;
 }
