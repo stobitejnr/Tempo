@@ -53,7 +53,7 @@ public:
      * @brief Resets the timer to its original duration and pauses it.
      */
     void reset();
-  
+
     void addTime();
     /**
      * @brief Adds a specified amount of time (in seconds) to the timer.

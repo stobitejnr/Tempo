@@ -32,7 +32,10 @@ void Menu::start() {
 
     _display.clearScreen();
 
-    cout << "1: Timer\n2: Stopwatch\n3: Alarm\nQ: Quit Program" << endl;
+    cout << "1: Timer\n";
+    cout << "2: Stopwatch\n";
+    //cout << "3: Alarm\n";
+    cout << "Q: Quit Program\n";
 
     char in = getMenuInput();
 
@@ -166,13 +169,8 @@ void Menu::checkTimerInput(Timer& timer, bool& run){
                 break;
             case 'A':
             case 'a':
-                timer.addTime();
-                _display.setSplash("X ADDED TO TIMER");
-                break;
-            case 'C':
-            case 'c':
-                timer.changeIncrementTime();
-                _display.setSplash("TIME INCREMENT CHANGED");
+                _display.clearScreen();
+                timer = Timer();
                 break;
             case 'Q':
             case 'q':
@@ -220,7 +218,7 @@ void Menu::checkStopwatchInput(Stopwatch& stopwatch, bool& run){
                 break;
             case 'A':
             case 'a':
-                stopwatch.split();
+                stopwatch.addSplit();
                 _display.setSplash("SPLIT CREATED");
                 break;
             case 'Q':

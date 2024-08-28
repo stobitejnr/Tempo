@@ -6,7 +6,12 @@ var searchData=
   ['ticktimer_3',['tickTimer',['../class_display.html#a02b2228e05be168eda0b817d1ecf5db7',1,'Display']]],
   ['timer_4',['Timer',['../class_timer.html',1,'Timer'],['../class_timer.html#a5f16e8da27d2a5a5242dead46de05d97',1,'Timer::Timer()'],['../class_timer.html#af3774b6f9a3f6759e6852be35617b405',1,'Timer::Timer(int hours, int minutes, int seconds)']]],
   ['timer_2ecpp_5',['Timer.cpp',['../_timer_8cpp.html',1,'']]],
+<<<<<<< HEAD:html/search/all_12.js
   ['timer_2ecpp_2eobj_2ed_6',['Timer.cpp.obj.d',['../_timer_8cpp_8obj_8d.html',1,'']]],
   ['timer_2ehpp_7',['Timer.hpp',['../_timer_8hpp.html',1,'']]],
   ['to_20run_8',['How to Run',['../index.html#autotoc_md3',1,'']]]
+=======
+  ['timer_2ehpp_6',['Timer.hpp',['../_timer_8hpp.html',1,'']]],
+  ['to_20run_7',['How to Run',['../index.html#autotoc_md3',1,'']]]
+>>>>>>> 1d7033c3f6d30daaaeedcc16ca538dfe175eb81d:docs/html/search/all_12.js
 ];

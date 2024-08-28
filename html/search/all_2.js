@@ -11,6 +11,7 @@ var searchData=
   ['_5f8_8',['_8',['../font1_8cpp.html#a1b7b2648b6f6fb55ec2552e55967b760',1,'font1.cpp']]],
   ['_5f9_9',['_9',['../font1_8cpp.html#a41527aba23513943a91deec05a148e02',1,'font1.cpp']]],
   ['_5f_5fhas_5finclude_10',['__has_include',['../_c_make_c_compiler_id_8c.html#ae5510d82e4946f1656f4969911c54736',1,'__has_include:&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#ae5510d82e4946f1656f4969911c54736',1,'__has_include:&#160;CMakeCXXCompilerId.cpp']]],
+<<<<<<< HEAD:html/search/all_2.js
   ['_5fasciibuffer_11',['_asciiBuffer',['../class_display.html#a49a8492ba729f03c53362d5e5ed56c6b',1,'Display']]],
   ['_5fasciiwidth_12',['_asciiWidth',['../class_display.html#a86958d8d094d9a2697a111d8e3ef405c',1,'Display']]],
   ['_5fbarbuffer_13',['_barBuffer',['../class_display.html#ad4a3014d328a66c55fec8215cc33475d',1,'Display']]],
@@ -33,4 +34,8 @@ var searchData=
   ['_5fsplash_30',['_splash',['../class_display.html#a0fe617dbd36bde30e5cb5c388fc19156',1,'Display']]],
   ['_5fstartmilliseconds_31',['_startMilliseconds',['../class_timer.html#a82b2a7bb825239edeaf391dd3b0e9dd9',1,'Timer']]],
   ['_5fstarttime_32',['_startTime',['../class_stopwatch.html#aa233b039e113db698689e64e13cd73a4',1,'Stopwatch']]]
+=======
+  ['_5fcolon_11',['_colon',['../font1_8cpp.html#ad0ae8779c9aca027ffe2e1a892f072b6',1,'font1.cpp']]],
+  ['_5fperiod_12',['_period',['../font1_8cpp.html#a737c2ac6cb5f02ba8958226f65206eda',1,'font1.cpp']]]
+>>>>>>> 1d7033c3f6d30daaaeedcc16ca538dfe175eb81d:docs/html/search/all_2.js
 ];
