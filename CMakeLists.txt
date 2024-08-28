@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.10)
+ cmake_minimum_required(VERSION 3.10)
 
 # Set the project name and version
 project(Tempo VERSION 0.1)
