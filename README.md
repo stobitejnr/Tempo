@@ -12,12 +12,11 @@ Tempo is a versatile command-line application that allows users to create and ma
 
 1. **Timer**: Set custom countdown timers with precise control.
    - Start, pause, and resume functionality
-   - Add time to running timers
+   - Quickly create new timers
    - Reset timer
    - Visual progress bar
-   - Customizable time increment
 
-2. **Stopwatch**: Measure elapsed time with millisecond precision.
+2. **Stopwatch**: Measure elapsed time with hundredth of a second precision.
    - Start, pause, and resume functionality
    - Reset stopwatch
    - Create split times
@@ -33,7 +32,7 @@ Tempo is a versatile command-line application that allows users to create and ma
 
 1. Ensure you have CMAKE installed on your system.
 2. Open an IDE and navigate to the project directory.
-3. Run the CMakeLists.txt file to generate the project files.
+3. Configure the directory with CMake.
 4. Build and run the project.
 
 ## Usage
@@ -45,6 +44,8 @@ Tempo is a versatile command-line application that allows users to create and ma
 ```The alarm feature is currently under development and is not available.```
 
 2. Use the number keys to select a function or 'Q' to quit.
+
+1. To start a timer, you must type the desired amount of time. (ex. '4 hours 2 minutes 30 seconds')
 
 3. Follow the on-screen instructions to control each feature.
 

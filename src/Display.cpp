@@ -27,6 +27,8 @@ Display::Display()
     _oldSplash = "";
     _oldSplits = "";
 
+    _fontName = "font1";
+
     _asciiWidth = 0;
 }
 
