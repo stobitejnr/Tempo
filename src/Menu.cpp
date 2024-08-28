@@ -29,6 +29,7 @@ MAIN MENU SEQUENCE
  * unless the user chooses to quit.
  */
 void Menu::start() {
+    
 
     _display.clearScreen();
 

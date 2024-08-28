@@ -75,10 +75,17 @@ void Stopwatch::addSplit() {
     _splits.push_back(splitMilliseconds);
 }
 
+/**
+ * @brief Clears the splits vector.
+ */
 void Stopwatch::clearSplits(){
     _splits = {};
 }
 
+/**
+ * @brief Returns the splits vector.
+ * @return vector<int> the vector containing split times in milliseconds.
+ */
 vector<int> Stopwatch::getSplits(){
     return _splits;
 }

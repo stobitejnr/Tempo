@@ -42,8 +42,15 @@ public:
      */
     void addSplit();
 
+    /**
+     * @brief Clears the splits vector.
+     */
     void clearSplits();
 
+    /**
+     * @brief Returns the splits vector
+     * @return vector<int> _splits, the splits vector.
+     */
     vector<int> getSplits();
 
     /**
@@ -84,7 +91,7 @@ private:
     int _currMilliseconds;  ///< The current elapsed time in milliseconds.
     bool _running;  ///< Indicates whether the stopwatch is currently running.
 
-    vector<int> _splits;
+    vector<int> _splits; ///< Vector of all splits for the stopwatch.
 
     chrono::time_point<chrono::steady_clock> _startTime;  ///< The time point when the stopwatch was started.
     chrono::time_point<chrono::steady_clock> _pauseTime;  ///< The time point when the stopwatch was paused.

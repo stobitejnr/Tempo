@@ -322,13 +322,11 @@ void Display::stageStopwatchControls(){
     _controlBuffer+=("S: Start/Stop | R: Reset | A: Lap/Split | Q: Main Menu\n");
     _controlBuffer+=("======================================================\n");
     _controlBuffer+=("\n");
-    // _controlBuffer+=("S : Start/Stop your stopwatch.\n");
-    // _controlBuffer+=("R : Reset your stopwatch.\n");
-    // _controlBuffer+=("A : Create a split at the current time.\n");
-    // _controlBuffer+=("Q : Stop your stopwatch immediately and return to menu.\n");
-    // _controlBuffer+=("\n");
 }
 
+/**
+ * @brief Stages the splits block to be displayed.
+ */
 void Display::stageStopwatchSplits(vector<int> splits){
     if(!splits.empty()){
         _splitBuffer+= "-+=| SPLITS |=+-\n";
@@ -473,6 +471,9 @@ void Display::printSplash(int row)
     }
 }
 
+/**
+ * @brief Prints the stopwatch splits to the terminal.
+ */
 void Display::printSplits(int row)
 {
     if (_splitBuffer != _oldSplits)
