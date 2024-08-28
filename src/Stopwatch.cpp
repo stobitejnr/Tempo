@@ -12,6 +12,7 @@ CONSTRUCTORS
 Stopwatch::Stopwatch() { 
     _running = false;
     _currMilliseconds = 0;
+    _splits = {};
 }
 
 /**
@@ -59,13 +60,34 @@ SPLIT TIME
  * A split time is a snapshot of the time elapsed, which can be useful for time intervals
  * without stopping the stopwatch.
  */
-void Stopwatch::split() {
+void Stopwatch::addSplit() {
+    int splitMilliseconds = 0;
     if (_running) {
-        int splitMilliseconds = chrono::duration_cast<chrono::milliseconds>(chrono::steady_clock::now() - _startTime).count();
-        cout << "Split time: " << _currMilliseconds + splitMilliseconds << " milliseconds" << endl;
-    } else {
-        cout << "Split time: " << _currMilliseconds << " milliseconds" << endl;
+        splitMilliseconds = chrono::duration_cast<chrono::milliseconds>(chrono::steady_clock::now() - _startTime).count();
+        splitMilliseconds += _currMilliseconds;
+        //cout << "Split time: " << _currMilliseconds + splitMilliseconds << " milliseconds" << endl;
+    } 
+    else {
+        splitMilliseconds = _currMilliseconds;
+
+        //cout << "Split time: " << _currMilliseconds << " milliseconds" << endl;
     }
+    _splits.push_back(splitMilliseconds);
+}
+
+/**
+ * @brief Clears the splits vector.
+ */
+void Stopwatch::clearSplits(){
+    _splits = {};
+}
+
+/**
+ * @brief Returns the splits vector.
+ * @return vector<int> the vector containing split times in milliseconds.
+ */
+vector<int> Stopwatch::getSplits(){
+    return _splits;
 }
 
 /* =========================================================
@@ -124,6 +146,7 @@ RESET THE STOPWATCH
  */
 void Stopwatch::reset() {
     _running = false;
+    clearSplits();
     _currMilliseconds = 0;
 }
 

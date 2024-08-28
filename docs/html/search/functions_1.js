@@ -6,5 +6,6 @@ var searchData=
   ['clearline_3',['clearLine',['../class_display.html#aaa0ffb7318a45caa0b74d3d439e623f0',1,'Display']]],
   ['clearscreen_4',['clearScreen',['../class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62',1,'Display']]],
   ['clearsplash_5',['clearSplash',['../class_display.html#ad226aa44204137c5a8fe774967532af4',1,'Display']]],
-  ['currentmilliseconds_6',['currentMilliseconds',['../class_stopwatch.html#aaf61c1ada98a22cc1c2bc589bdd4134a',1,'Stopwatch']]]
+  ['clearsplits_6',['clearSplits',['../class_stopwatch.html#a0edfa283c9d5e706cef4a43a6cbfbaf5',1,'Stopwatch']]],
+  ['currentmilliseconds_7',['currentMilliseconds',['../class_stopwatch.html#aaf61c1ada98a22cc1c2bc589bdd4134a',1,'Stopwatch']]]
 ];

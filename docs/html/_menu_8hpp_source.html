@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TEMPO: include/Menu.hpp Source File</title>
+<title>Tempo: include/Menu.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,8 +24,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TEMPO
+   <div id="projectname">Tempo
    </div>
    <div id="projectbrief">Tempo is an app that allows users to create and manage timers, stopwatches, and alarms.</div>
   </td>
@@ -124,8 +125,8 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_menu.html#ae1ec62e738dda7faaaec850bd0b58ffe">start</a>();</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <a class="code hl_class" href="class_display.html">Display</a> _display;  </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordtype">bool</span> _run;         </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="class_menu.html#a836f729dae007026c27f10b3354709fd">   82</a></span>    <a class="code hl_class" href="class_display.html">Display</a> <a class="code hl_variable" href="class_menu.html#a836f729dae007026c27f10b3354709fd">_display</a>;  </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="class_menu.html#a091dfbcc90fd8793d85784996e32443d">   83</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_menu.html#a091dfbcc90fd8793d85784996e32443d">_run</a>;         </div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>};</div>
 </div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
@@ -134,21 +135,23 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="a_display_8hpp_html"><div class="ttname"><a href="_display_8hpp.html">Display.hpp</a></div></div>
 <div class="ttc" id="a_stopwatch_8hpp_html"><div class="ttname"><a href="_stopwatch_8hpp.html">Stopwatch.hpp</a></div></div>
 <div class="ttc" id="a_timer_8hpp_html"><div class="ttname"><a href="_timer_8hpp.html">Timer.hpp</a></div></div>
-<div class="ttc" id="aclass_display_html"><div class="ttname"><a href="class_display.html">Display</a></div><div class="ttdoc">The Display class manages the visual representation and interaction logic for timers,...</div><div class="ttdef"><b>Definition</b> Display.hpp:22</div></div>
-<div class="ttc" id="aclass_menu_html"><div class="ttname"><a href="class_menu.html">Menu</a></div><div class="ttdoc">The Menu class manages the main menu and user input for the Timer, Stopwatch, and Alarm.</div><div class="ttdef"><b>Definition</b> Menu.hpp:18</div></div>
-<div class="ttc" id="aclass_menu_html_a0699f1b4c5bd69ae1d5bee2e5043c452"><div class="ttname"><a href="class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452">Menu::getMenuInput</a></div><div class="ttdeci">char getMenuInput()</div><div class="ttdoc">Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection.</div><div class="ttdef"><b>Definition</b> Menu.cpp:251</div></div>
-<div class="ttc" id="aclass_menu_html_a4ab7d9809ad0f490ad7634a76b37589b"><div class="ttname"><a href="class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b">Menu::wait</a></div><div class="ttdeci">void wait(double seconds)</div><div class="ttdoc">Waits for a specific duration using busy-waiting.</div><div class="ttdef"><b>Definition</b> Menu.cpp:114</div></div>
-<div class="ttc" id="aclass_menu_html_a537a69bfbe3b8c29e3dfd3e2f5dd88b5"><div class="ttname"><a href="class_menu.html#a537a69bfbe3b8c29e3dfd3e2f5dd88b5">Menu::waitForInput</a></div><div class="ttdeci">void waitForInput()</div><div class="ttdoc">Waits for any key press from the user.</div><div class="ttdef"><b>Definition</b> Menu.cpp:129</div></div>
-<div class="ttc" id="aclass_menu_html_a81188fdf5f017799f9e7f7eaaf98c3ec"><div class="ttname"><a href="class_menu.html#a81188fdf5f017799f9e7f7eaaf98c3ec">Menu::checkStopwatchInput</a></div><div class="ttdeci">void checkStopwatchInput(Stopwatch &amp;stopwatch, bool &amp;run)</div><div class="ttdoc">Checks and handles user input for the Stopwatch.</div><div class="ttdef"><b>Definition</b> Menu.cpp:199</div></div>
-<div class="ttc" id="aclass_menu_html_ab8d3cccd5b39987a6546f7dc1187b71e"><div class="ttname"><a href="class_menu.html#ab8d3cccd5b39987a6546f7dc1187b71e">Menu::checkTimerInput</a></div><div class="ttdeci">void checkTimerInput(Timer &amp;timer, bool &amp;run)</div><div class="ttdoc">Checks and handles user input for the Timer.</div><div class="ttdef"><b>Definition</b> Menu.cpp:145</div></div>
-<div class="ttc" id="aclass_menu_html_ad466dd83355124a6ed958430450bfe94"><div class="ttname"><a href="class_menu.html#ad466dd83355124a6ed958430450bfe94">Menu::Menu</a></div><div class="ttdeci">Menu()</div><div class="ttdoc">Constructs a Menu object and initializes its state.</div><div class="ttdef"><b>Definition</b> Menu.cpp:15</div></div>
-<div class="ttc" id="aclass_menu_html_ae1ec62e738dda7faaaec850bd0b58ffe"><div class="ttname"><a href="class_menu.html#ae1ec62e738dda7faaaec850bd0b58ffe">Menu::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm.</div><div class="ttdef"><b>Definition</b> Menu.cpp:30</div></div>
-<div class="ttc" id="aclass_stopwatch_html"><div class="ttname"><a href="class_stopwatch.html">Stopwatch</a></div><div class="ttdoc">The Stopwatch class provides a simple timer with start, pause, resume, and reset functionalities.</div><div class="ttdef"><b>Definition</b> Stopwatch.hpp:13</div></div>
-<div class="ttc" id="aclass_timer_html"><div class="ttname"><a href="class_timer.html">Timer</a></div><div class="ttdoc">The Timer class provides a countdown timer with start, pause, resume, reset, and time adjustment func...</div><div class="ttdef"><b>Definition</b> Timer.hpp:14</div></div>
+<div class="ttc" id="aclass_display_html"><div class="ttname"><a href="class_display.html">Display</a></div><div class="ttdoc">The Display class manages the visual representation and interaction logic for timers,...</div><div class="ttdef"><b>Definition</b> <a href="_display_8hpp_source.html#l00021">Display.hpp:22</a></div></div>
+<div class="ttc" id="aclass_menu_html"><div class="ttname"><a href="class_menu.html">Menu</a></div><div class="ttdoc">The Menu class manages the main menu and user input for the Timer, Stopwatch, and Alarm.</div><div class="ttdef"><b>Definition</b> <a href="#l00017">Menu.hpp:18</a></div></div>
+<div class="ttc" id="aclass_menu_html_a0699f1b4c5bd69ae1d5bee2e5043c452"><div class="ttname"><a href="class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452">Menu::getMenuInput</a></div><div class="ttdeci">char getMenuInput()</div><div class="ttdoc">Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00251">Menu.cpp:251</a></div></div>
+<div class="ttc" id="aclass_menu_html_a091dfbcc90fd8793d85784996e32443d"><div class="ttname"><a href="class_menu.html#a091dfbcc90fd8793d85784996e32443d">Menu::_run</a></div><div class="ttdeci">bool _run</div><div class="ttdoc">Boolean to control the main loop execution.</div><div class="ttdef"><b>Definition</b> <a href="#l00083">Menu.hpp:83</a></div></div>
+<div class="ttc" id="aclass_menu_html_a4ab7d9809ad0f490ad7634a76b37589b"><div class="ttname"><a href="class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b">Menu::wait</a></div><div class="ttdeci">void wait(double seconds)</div><div class="ttdoc">Waits for a specific duration using busy-waiting.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00119">Menu.cpp:119</a></div></div>
+<div class="ttc" id="aclass_menu_html_a537a69bfbe3b8c29e3dfd3e2f5dd88b5"><div class="ttname"><a href="class_menu.html#a537a69bfbe3b8c29e3dfd3e2f5dd88b5">Menu::waitForInput</a></div><div class="ttdeci">void waitForInput()</div><div class="ttdoc">Waits for any key press from the user.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00134">Menu.cpp:134</a></div></div>
+<div class="ttc" id="aclass_menu_html_a81188fdf5f017799f9e7f7eaaf98c3ec"><div class="ttname"><a href="class_menu.html#a81188fdf5f017799f9e7f7eaaf98c3ec">Menu::checkStopwatchInput</a></div><div class="ttdeci">void checkStopwatchInput(Stopwatch &amp;stopwatch, bool &amp;run)</div><div class="ttdoc">Checks and handles user input for the Stopwatch.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00199">Menu.cpp:199</a></div></div>
+<div class="ttc" id="aclass_menu_html_a836f729dae007026c27f10b3354709fd"><div class="ttname"><a href="class_menu.html#a836f729dae007026c27f10b3354709fd">Menu::_display</a></div><div class="ttdeci">Display _display</div><div class="ttdoc">Instance of Display to manage the visual representation.</div><div class="ttdef"><b>Definition</b> <a href="#l00082">Menu.hpp:82</a></div></div>
+<div class="ttc" id="aclass_menu_html_ab8d3cccd5b39987a6546f7dc1187b71e"><div class="ttname"><a href="class_menu.html#ab8d3cccd5b39987a6546f7dc1187b71e">Menu::checkTimerInput</a></div><div class="ttdeci">void checkTimerInput(Timer &amp;timer, bool &amp;run)</div><div class="ttdoc">Checks and handles user input for the Timer.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00150">Menu.cpp:150</a></div></div>
+<div class="ttc" id="aclass_menu_html_ad466dd83355124a6ed958430450bfe94"><div class="ttname"><a href="class_menu.html#ad466dd83355124a6ed958430450bfe94">Menu::Menu</a></div><div class="ttdeci">Menu()</div><div class="ttdoc">Constructs a Menu object and initializes its state.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00015">Menu.cpp:15</a></div></div>
+<div class="ttc" id="aclass_menu_html_ae1ec62e738dda7faaaec850bd0b58ffe"><div class="ttname"><a href="class_menu.html#ae1ec62e738dda7faaaec850bd0b58ffe">Menu::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00031">Menu.cpp:31</a></div></div>
+<div class="ttc" id="aclass_stopwatch_html"><div class="ttname"><a href="class_stopwatch.html">Stopwatch</a></div><div class="ttdoc">The Stopwatch class provides a simple timer with start, pause, resume, and reset functionalities.</div><div class="ttdef"><b>Definition</b> <a href="_stopwatch_8hpp_source.html#l00013">Stopwatch.hpp:14</a></div></div>
+<div class="ttc" id="aclass_timer_html"><div class="ttname"><a href="class_timer.html">Timer</a></div><div class="ttdoc">The Timer class provides a countdown timer with start, pause, resume, reset, and time adjustment func...</div><div class="ttdef"><b>Definition</b> <a href="_timer_8hpp_source.html#l00013">Timer.hpp:14</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0
+Generated on Wed Aug 28 2024 15:39:45 for Tempo by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0
 </small></address>
 </div><!-- doc-content -->
 </body>

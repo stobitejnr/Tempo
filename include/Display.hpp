@@ -79,6 +79,11 @@ public:
     void stageStopwatchControls();
 
     /**
+     * @brief Stages the splits block to be displayed.
+     */
+    void stageStopwatchSplits(vector<int> splits);
+
+    /**
      * @brief Stages the display for the alarm.
      */
     void stageAlarmDisplay();
@@ -124,6 +129,11 @@ public:
     void printBar(int barIndex);
 
     /**
+     * @brief Prints the stopwatch splits to the terminal.
+     */
+    void printSplits(int splitsIndex);
+
+    /**
      * @brief Clears the terminal screen.
      */
     void clearScreen();
@@ -153,12 +163,14 @@ private:
     string _asciiBuffer;   ///< Buffer for ASCII art.
     string _barBuffer;     ///< Buffer for progress bar.
     string _controlBuffer; ///< Buffer for controls.
+    string _splitBuffer;   ///< Buffer for the splits block.
     string _splash;        ///< String for splash screen.
 
     string _oldAscii;    ///< Previous ASCII art for comparison.
     string _oldControls; ///< Previous controls for comparison.
     string _oldBar;      ///< Previous progress bar for comparison.
     string _oldSplash;   ///< Previous splash screen for comparison.
+    string _oldSplits;   ///< Previous splits for comparison.
 
     int _asciiWidth; ///< Width of the ASCII art.
 };

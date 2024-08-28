@@ -7,5 +7,6 @@ var searchData=
   ['printascii_4',['printAscii',['../class_display.html#aab9a518037074ce68da2a7792771908d',1,'Display']]],
   ['printbar_5',['printBar',['../class_display.html#a034871a688ea9c2cf5801d120b0cfcf6',1,'Display']]],
   ['printcontrols_6',['printControls',['../class_display.html#a3480427024243711ee66efc51ddf0fa3',1,'Display']]],
-  ['printsplash_7',['printSplash',['../class_display.html#a62d8435627ea69fbccaef4cef32d785d',1,'Display']]]
+  ['printsplash_7',['printSplash',['../class_display.html#a62d8435627ea69fbccaef4cef32d785d',1,'Display']]],
+  ['printsplits_8',['printSplits',['../class_display.html#ac4f2f5445af6a65554ad9646cc27f3cc',1,'Display']]]
 ];

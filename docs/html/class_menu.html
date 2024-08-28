@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TEMPO: Menu Class Reference</title>
+<title>Tempo: Menu Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,8 +24,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TEMPO
+   <div id="projectname">Tempo
    </div>
    <div id="projectbrief">Tempo is an app that allows users to create and manage timers, stopwatches, and alarms.</div>
   </td>
@@ -87,7 +88,7 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="class_menu-members.html">List of all members</a>  </div>
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle"><div class="title">Menu Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -96,6 +97,11 @@ $(function(){ initResizable(false); });
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_menu_8hpp_source.html">Menu.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Menu:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_menu__coll__graph.png" border="0" usemap="#a_menu_coll__map" alt="Collaboration graph"/></div>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -120,9 +126,20 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae1ec62e738dda7faaaec850bd0b58ffe" id="r_ae1ec62e738dda7faaaec850bd0b58ffe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1ec62e738dda7faaaec850bd0b58ffe">start</a> ()</td></tr>
 <tr class="memdesc:ae1ec62e738dda7faaaec850bd0b58ffe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the main menu loop, allowing the user to choose between <a class="el" href="class_timer.html" title="The Timer class provides a countdown timer with start, pause, resume, reset, and time adjustment func...">Timer</a>, <a class="el" href="class_stopwatch.html" title="The Stopwatch class provides a simple timer with start, pause, resume, and reset functionalities.">Stopwatch</a>, and <a class="el" href="class_alarm.html">Alarm</a>.  <br /></td></tr>
 <tr class="separator:ae1ec62e738dda7faaaec850bd0b58ffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a836f729dae007026c27f10b3354709fd" id="r_a836f729dae007026c27f10b3354709fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_display.html">Display</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a836f729dae007026c27f10b3354709fd">_display</a></td></tr>
+<tr class="memdesc:a836f729dae007026c27f10b3354709fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instance of <a class="el" href="class_display.html" title="The Display class manages the visual representation and interaction logic for timers,...">Display</a> to manage the visual representation.  <br /></td></tr>
+<tr class="separator:a836f729dae007026c27f10b3354709fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a091dfbcc90fd8793d85784996e32443d" id="r_a091dfbcc90fd8793d85784996e32443d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a091dfbcc90fd8793d85784996e32443d">_run</a></td></tr>
+<tr class="memdesc:a091dfbcc90fd8793d85784996e32443d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boolean to control the main loop execution.  <br /></td></tr>
+<tr class="separator:a091dfbcc90fd8793d85784996e32443d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="class_menu.html" title="The Menu class manages the main menu and user input for the Timer, Stopwatch, and Alarm.">Menu</a> class manages the main menu and user input for the <a class="el" href="class_timer.html" title="The Timer class provides a countdown timer with start, pause, resume, reset, and time adjustment func...">Timer</a>, <a class="el" href="class_stopwatch.html" title="The Stopwatch class provides a simple timer with start, pause, resume, and reset functionalities.">Stopwatch</a>, and <a class="el" href="class_alarm.html">Alarm</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="_menu_8hpp_source.html#l00017">17</a> of file <a class="el" href="_menu_8hpp_source.html">Menu.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad466dd83355124a6ed958430450bfe94" name="ad466dd83355124a6ed958430450bfe94"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad466dd83355124a6ed958430450bfe94">&#9670;&#160;</a></span>Menu()</h2>
@@ -140,6 +157,17 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs a <a class="el" href="class_menu.html" title="The Menu class manages the main menu and user input for the Timer, Stopwatch, and Alarm.">Menu</a> object and initializes its state. </p>
+
+<p class="definition">Definition at line <a class="el" href="_menu_8cpp_source.html#l00015">15</a> of file <a class="el" href="_menu_8cpp_source.html">Menu.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   15</span>          { </div>
+<div class="line"><span class="lineno">   16</span>    <a class="code hl_variable" href="#a836f729dae007026c27f10b3354709fd">_display</a> = <a class="code hl_class" href="class_display.html">Display</a>();</div>
+<div class="line"><span class="lineno">   17</span>    <a class="code hl_variable" href="#a091dfbcc90fd8793d85784996e32443d">_run</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   18</span>}</div>
+<div class="ttc" id="aclass_display_html"><div class="ttname"><a href="class_display.html">Display</a></div><div class="ttdoc">The Display class manages the visual representation and interaction logic for timers,...</div><div class="ttdef"><b>Definition</b> <a href="_display_8hpp_source.html#l00021">Display.hpp:22</a></div></div>
+<div class="ttc" id="aclass_menu_html_a091dfbcc90fd8793d85784996e32443d"><div class="ttname"><a href="#a091dfbcc90fd8793d85784996e32443d">Menu::_run</a></div><div class="ttdeci">bool _run</div><div class="ttdoc">Boolean to control the main loop execution.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8hpp_source.html#l00083">Menu.hpp:83</a></div></div>
+<div class="ttc" id="aclass_menu_html_a836f729dae007026c27f10b3354709fd"><div class="ttname"><a href="#a836f729dae007026c27f10b3354709fd">Menu::_display</a></div><div class="ttdeci">Display _display</div><div class="ttdoc">Instance of Display to manage the visual representation.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8hpp_source.html#l00082">Menu.hpp:82</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_menu_8hpp_source.html#l00082">_display</a>, and <a class="el" href="_menu_8hpp_source.html#l00083">_run</a>.</p>
 
 </div>
 </div>
@@ -173,6 +201,69 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="_menu_8cpp_source.html#l00199">199</a> of file <a class="el" href="_menu_8cpp_source.html">Menu.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  199</span>                                                             {</div>
+<div class="line"><span class="lineno">  200</span>    <span class="keywordflow">if</span>(_kbhit()){</div>
+<div class="line"><span class="lineno">  201</span>        <span class="keywordtype">char</span> ch = _getch();</div>
+<div class="line"><span class="lineno">  202</span>        <span class="keywordflow">switch</span>(ch){</div>
+<div class="line"><span class="lineno">  203</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;S&#39;</span>:</div>
+<div class="line"><span class="lineno">  204</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;s&#39;</span>:</div>
+<div class="line"><span class="lineno">  205</span>                <span class="keywordflow">if</span>(stopwatch.<a class="code hl_function" href="class_stopwatch.html#ae20cb58892efc6ca55117583aac8c392">isRunning</a>()){</div>
+<div class="line"><span class="lineno">  206</span>                    stopwatch.<a class="code hl_function" href="class_stopwatch.html#a2cc48295d6b083361d062b8eb68d753a">pause</a>();</div>
+<div class="line"><span class="lineno">  207</span>                    <a class="code hl_variable" href="#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#a3a0e77e68157e55d67ac3f28dffdd00c">setSplash</a>(<span class="stringliteral">&quot;STOPWATCH PAUSED&quot;</span>);</div>
+<div class="line"><span class="lineno">  208</span>                }</div>
+<div class="line"><span class="lineno">  209</span>                <span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  210</span>                    <a class="code hl_variable" href="#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#ad226aa44204137c5a8fe774967532af4">clearSplash</a>();</div>
+<div class="line"><span class="lineno">  211</span>                    stopwatch.<a class="code hl_function" href="class_stopwatch.html#a789461171238250633eeb26b8f3b0dce">resume</a>();        </div>
+<div class="line"><span class="lineno">  212</span>                }</div>
+<div class="line"><span class="lineno">  213</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  214</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;R&#39;</span>:</div>
+<div class="line"><span class="lineno">  215</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;r&#39;</span>:</div>
+<div class="line"><span class="lineno">  216</span>                stopwatch.<a class="code hl_function" href="class_stopwatch.html#a42c7014e7fffcf4c56ca6fb07f8eb31c">reset</a>();</div>
+<div class="line"><span class="lineno">  217</span>                <a class="code hl_variable" href="#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62">clearScreen</a>();</div>
+<div class="line"><span class="lineno">  218</span>                <a class="code hl_variable" href="#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#a3a0e77e68157e55d67ac3f28dffdd00c">setSplash</a>(<span class="stringliteral">&quot;STOPWATCH RESET, PRESS &#39;S&#39; TO START&quot;</span>);</div>
+<div class="line"><span class="lineno">  219</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  220</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;A&#39;</span>:</div>
+<div class="line"><span class="lineno">  221</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;a&#39;</span>:</div>
+<div class="line"><span class="lineno">  222</span>                stopwatch.<a class="code hl_function" href="class_stopwatch.html#aa0a6e6e55261fa0d2b239800bc7a782d">addSplit</a>();</div>
+<div class="line"><span class="lineno">  223</span>                <a class="code hl_variable" href="#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#a3a0e77e68157e55d67ac3f28dffdd00c">setSplash</a>(<span class="stringliteral">&quot;SPLIT CREATED&quot;</span>);</div>
+<div class="line"><span class="lineno">  224</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  225</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;Q&#39;</span>:</div>
+<div class="line"><span class="lineno">  226</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;q&#39;</span>:</div>
+<div class="line"><span class="lineno">  227</span>            <a class="code hl_variable" href="#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#ad226aa44204137c5a8fe774967532af4">clearSplash</a>();</div>
+<div class="line"><span class="lineno">  228</span>                run = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  229</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  230</span>            <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  231</span>                <span class="keywordflow">if</span>(!run){</div>
+<div class="line"><span class="lineno">  232</span>                    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  233</span>                }</div>
+<div class="line"><span class="lineno">  234</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  235</span>        }</div>
+<div class="line"><span class="lineno">  236</span>    }</div>
+<div class="line"><span class="lineno">  237</span>}</div>
+<div class="ttc" id="aclass_display_html_a3a0e77e68157e55d67ac3f28dffdd00c"><div class="ttname"><a href="class_display.html#a3a0e77e68157e55d67ac3f28dffdd00c">Display::setSplash</a></div><div class="ttdeci">void setSplash(string str)</div><div class="ttdoc">Sets the splash screen text.</div><div class="ttdef"><b>Definition</b> <a href="_display_8cpp_source.html#l00082">Display.cpp:82</a></div></div>
+<div class="ttc" id="aclass_display_html_a729a08fa7f1f33907b6c2ba13fcf6d62"><div class="ttname"><a href="class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62">Display::clearScreen</a></div><div class="ttdeci">void clearScreen()</div><div class="ttdoc">Clears the terminal screen.</div><div class="ttdef"><b>Definition</b> <a href="_display_8cpp_source.html#l00040">Display.cpp:40</a></div></div>
+<div class="ttc" id="aclass_display_html_ad226aa44204137c5a8fe774967532af4"><div class="ttname"><a href="class_display.html#ad226aa44204137c5a8fe774967532af4">Display::clearSplash</a></div><div class="ttdeci">void clearSplash()</div><div class="ttdoc">Clears the splash screen.</div><div class="ttdef"><b>Definition</b> <a href="_display_8cpp_source.html#l00090">Display.cpp:90</a></div></div>
+<div class="ttc" id="aclass_stopwatch_html_a2cc48295d6b083361d062b8eb68d753a"><div class="ttname"><a href="class_stopwatch.html#a2cc48295d6b083361d062b8eb68d753a">Stopwatch::pause</a></div><div class="ttdeci">void pause()</div><div class="ttdoc">Pauses the stopwatch.</div><div class="ttdef"><b>Definition</b> <a href="_stopwatch_8cpp_source.html#l00118">Stopwatch.cpp:118</a></div></div>
+<div class="ttc" id="aclass_stopwatch_html_a42c7014e7fffcf4c56ca6fb07f8eb31c"><div class="ttname"><a href="class_stopwatch.html#a42c7014e7fffcf4c56ca6fb07f8eb31c">Stopwatch::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdoc">Resets the stopwatch to 0 milliseconds and stops it.</div><div class="ttdef"><b>Definition</b> <a href="_stopwatch_8cpp_source.html#l00147">Stopwatch.cpp:147</a></div></div>
+<div class="ttc" id="aclass_stopwatch_html_a789461171238250633eeb26b8f3b0dce"><div class="ttname"><a href="class_stopwatch.html#a789461171238250633eeb26b8f3b0dce">Stopwatch::resume</a></div><div class="ttdeci">void resume()</div><div class="ttdoc">Resumes the stopwatch from the last paused time.</div><div class="ttdef"><b>Definition</b> <a href="_stopwatch_8cpp_source.html#l00133">Stopwatch.cpp:133</a></div></div>
+<div class="ttc" id="aclass_stopwatch_html_aa0a6e6e55261fa0d2b239800bc7a782d"><div class="ttname"><a href="class_stopwatch.html#aa0a6e6e55261fa0d2b239800bc7a782d">Stopwatch::addSplit</a></div><div class="ttdeci">void addSplit()</div><div class="ttdoc">Records and prints the current split time in milliseconds.</div><div class="ttdef"><b>Definition</b> <a href="_stopwatch_8cpp_source.html#l00063">Stopwatch.cpp:63</a></div></div>
+<div class="ttc" id="aclass_stopwatch_html_ae20cb58892efc6ca55117583aac8c392"><div class="ttname"><a href="class_stopwatch.html#ae20cb58892efc6ca55117583aac8c392">Stopwatch::isRunning</a></div><div class="ttdeci">bool isRunning()</div><div class="ttdoc">Checks if the stopwatch is currently running.</div><div class="ttdef"><b>Definition</b> <a href="_stopwatch_8cpp_source.html#l00162">Stopwatch.cpp:162</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_menu_8hpp_source.html#l00082">_display</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00063">Stopwatch::addSplit()</a>, <a class="el" href="_display_8cpp_source.html#l00040">Display::clearScreen()</a>, <a class="el" href="_display_8cpp_source.html#l00090">Display::clearSplash()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00162">Stopwatch::isRunning()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00118">Stopwatch::pause()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00147">Stopwatch::reset()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00133">Stopwatch::resume()</a>, and <a class="el" href="_display_8cpp_source.html#l00082">Display::setSplash()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00031">start()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_menu_a81188fdf5f017799f9e7f7eaaf98c3ec_cgraph.png" border="0" usemap="#aclass_menu_a81188fdf5f017799f9e7f7eaaf98c3ec_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_menu_a81188fdf5f017799f9e7f7eaaf98c3ec_icgraph.png" border="0" usemap="#aclass_menu_a81188fdf5f017799f9e7f7eaaf98c3ec_icgraph" alt=""/></div>
+</div>
+
 </div>
 </div>
 <a id="ab8d3cccd5b39987a6546f7dc1187b71e" name="ab8d3cccd5b39987a6546f7dc1187b71e"></a>
@@ -204,6 +295,64 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="_menu_8cpp_source.html#l00150">150</a> of file <a class="el" href="_menu_8cpp_source.html">Menu.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  150</span>                                                 {</div>
+<div class="line"><span class="lineno">  151</span>    <span class="keywordflow">if</span>(_kbhit()){</div>
+<div class="line"><span class="lineno">  152</span>        <span class="keywordtype">char</span> ch = _getch();</div>
+<div class="line"><span class="lineno">  153</span>        <span class="keywordflow">switch</span>(ch){</div>
+<div class="line"><span class="lineno">  154</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;S&#39;</span>:</div>
+<div class="line"><span class="lineno">  155</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;s&#39;</span>:</div>
+<div class="line"><span class="lineno">  156</span>                <span class="keywordflow">if</span>(timer.<a class="code hl_function" href="class_timer.html#a2ef50bfc604ea9fb88d3000c9ad0edd9">isRunning</a>()){</div>
+<div class="line"><span class="lineno">  157</span>                    timer.<a class="code hl_function" href="class_timer.html#a0289effad7b573c508bc27e405900a23">pause</a>();</div>
+<div class="line"><span class="lineno">  158</span>                    <a class="code hl_variable" href="#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#a3a0e77e68157e55d67ac3f28dffdd00c">setSplash</a>(<span class="stringliteral">&quot;TIMER PAUSED&quot;</span>);</div>
+<div class="line"><span class="lineno">  159</span>                }</div>
+<div class="line"><span class="lineno">  160</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span>(timer.<a class="code hl_function" href="class_timer.html#a330607659937f497389c9989812cd925">remainingMilliseconds</a>() &gt; 0){</div>
+<div class="line"><span class="lineno">  161</span>                    <a class="code hl_variable" href="#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#ad226aa44204137c5a8fe774967532af4">clearSplash</a>();</div>
+<div class="line"><span class="lineno">  162</span>                    timer.<a class="code hl_function" href="class_timer.html#a4ac55a73bb3431db9d4d2fd70ae9a2e8">resume</a>();        </div>
+<div class="line"><span class="lineno">  163</span>                }</div>
+<div class="line"><span class="lineno">  164</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  165</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;R&#39;</span>:</div>
+<div class="line"><span class="lineno">  166</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;r&#39;</span>:</div>
+<div class="line"><span class="lineno">  167</span>                timer.<a class="code hl_function" href="class_timer.html#a9020542d73357a4eef512eefaf57524b">reset</a>();</div>
+<div class="line"><span class="lineno">  168</span>                <a class="code hl_variable" href="#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62">clearScreen</a>();</div>
+<div class="line"><span class="lineno">  169</span>                <a class="code hl_variable" href="#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#a3a0e77e68157e55d67ac3f28dffdd00c">setSplash</a>(<span class="stringliteral">&quot;TIMER RESET, PRESS &#39;S&#39; TO START&quot;</span>);</div>
+<div class="line"><span class="lineno">  170</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  171</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;A&#39;</span>:</div>
+<div class="line"><span class="lineno">  172</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;a&#39;</span>:</div>
+<div class="line"><span class="lineno">  173</span>                <a class="code hl_variable" href="#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62">clearScreen</a>();</div>
+<div class="line"><span class="lineno">  174</span>                timer = <a class="code hl_class" href="class_timer.html">Timer</a>();</div>
+<div class="line"><span class="lineno">  175</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  176</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;Q&#39;</span>:</div>
+<div class="line"><span class="lineno">  177</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;q&#39;</span>:</div>
+<div class="line"><span class="lineno">  178</span>                <a class="code hl_variable" href="#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#ad226aa44204137c5a8fe774967532af4">clearSplash</a>();</div>
+<div class="line"><span class="lineno">  179</span>                run = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  180</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  181</span>            <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  182</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  183</span>        }</div>
+<div class="line"><span class="lineno">  184</span>    }</div>
+<div class="line"><span class="lineno">  185</span>}</div>
+<div class="ttc" id="aclass_timer_html"><div class="ttname"><a href="class_timer.html">Timer</a></div><div class="ttdoc">The Timer class provides a countdown timer with start, pause, resume, reset, and time adjustment func...</div><div class="ttdef"><b>Definition</b> <a href="_timer_8hpp_source.html#l00013">Timer.hpp:14</a></div></div>
+<div class="ttc" id="aclass_timer_html_a0289effad7b573c508bc27e405900a23"><div class="ttname"><a href="class_timer.html#a0289effad7b573c508bc27e405900a23">Timer::pause</a></div><div class="ttdeci">void pause()</div><div class="ttdoc">Pauses the timer and calculates the remaining milliseconds.</div><div class="ttdef"><b>Definition</b> <a href="_timer_8cpp_source.html#l00105">Timer.cpp:105</a></div></div>
+<div class="ttc" id="aclass_timer_html_a2ef50bfc604ea9fb88d3000c9ad0edd9"><div class="ttname"><a href="class_timer.html#a2ef50bfc604ea9fb88d3000c9ad0edd9">Timer::isRunning</a></div><div class="ttdeci">bool isRunning()</div><div class="ttdoc">Checks if the timer is currently running.</div><div class="ttdef"><b>Definition</b> <a href="_timer_8cpp_source.html#l00276">Timer.cpp:276</a></div></div>
+<div class="ttc" id="aclass_timer_html_a330607659937f497389c9989812cd925"><div class="ttname"><a href="class_timer.html#a330607659937f497389c9989812cd925">Timer::remainingMilliseconds</a></div><div class="ttdeci">int remainingMilliseconds()</div><div class="ttdoc">Returns the remaining time in milliseconds.</div><div class="ttdef"><b>Definition</b> <a href="_timer_8cpp_source.html#l00251">Timer.cpp:251</a></div></div>
+<div class="ttc" id="aclass_timer_html_a4ac55a73bb3431db9d4d2fd70ae9a2e8"><div class="ttname"><a href="class_timer.html#a4ac55a73bb3431db9d4d2fd70ae9a2e8">Timer::resume</a></div><div class="ttdeci">void resume()</div><div class="ttdoc">Resumes the timer from where it was paused by recalculating the end time.</div><div class="ttdef"><b>Definition</b> <a href="_timer_8cpp_source.html#l00120">Timer.cpp:120</a></div></div>
+<div class="ttc" id="aclass_timer_html_a9020542d73357a4eef512eefaf57524b"><div class="ttname"><a href="class_timer.html#a9020542d73357a4eef512eefaf57524b">Timer::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdoc">Resets the timer to its original duration and pauses it.</div><div class="ttdef"><b>Definition</b> <a href="_timer_8cpp_source.html#l00133">Timer.cpp:133</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_menu_8hpp_source.html#l00082">_display</a>, <a class="el" href="_display_8cpp_source.html#l00040">Display::clearScreen()</a>, <a class="el" href="_display_8cpp_source.html#l00090">Display::clearSplash()</a>, <a class="el" href="_timer_8cpp_source.html#l00276">Timer::isRunning()</a>, <a class="el" href="_timer_8cpp_source.html#l00105">Timer::pause()</a>, <a class="el" href="_timer_8cpp_source.html#l00251">Timer::remainingMilliseconds()</a>, <a class="el" href="_timer_8cpp_source.html#l00133">Timer::reset()</a>, <a class="el" href="_timer_8cpp_source.html#l00120">Timer::resume()</a>, and <a class="el" href="_display_8cpp_source.html#l00082">Display::setSplash()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00031">start()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_menu_ab8d3cccd5b39987a6546f7dc1187b71e_cgraph.png" border="0" usemap="#aclass_menu_ab8d3cccd5b39987a6546f7dc1187b71e_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_menu_ab8d3cccd5b39987a6546f7dc1187b71e_icgraph.png" border="0" usemap="#aclass_menu_ab8d3cccd5b39987a6546f7dc1187b71e_icgraph" alt=""/></div>
+</div>
+
 </div>
 </div>
 <a id="a0699f1b4c5bd69ae1d5bee2e5043c452" name="a0699f1b4c5bd69ae1d5bee2e5043c452"></a>
@@ -225,6 +374,43 @@ Public Member Functions</h2></td></tr>
 <p>This function repeatedly checks for user input until a valid menu option is pressed. It then returns the corresponding character for the selected menu option.</p>
 <dl class="section return"><dt>Returns</dt><dd>char The character corresponding to the user's menu selection. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_menu_8cpp_source.html#l00251">251</a> of file <a class="el" href="_menu_8cpp_source.html">Menu.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  251</span>                       {</div>
+<div class="line"><span class="lineno">  252</span>    <span class="keywordflow">while</span>(<span class="keyword">true</span>){</div>
+<div class="line"><span class="lineno">  253</span>        <span class="keywordflow">if</span>(_kbhit()){</div>
+<div class="line"><span class="lineno">  254</span>            <span class="keywordtype">char</span> ch = _getch();</div>
+<div class="line"><span class="lineno">  255</span>            <span class="keywordflow">switch</span>(ch){</div>
+<div class="line"><span class="lineno">  256</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;1&#39;</span>:</div>
+<div class="line"><span class="lineno">  257</span>                    <span class="keywordflow">return</span> <span class="charliteral">&#39;1&#39;</span>;</div>
+<div class="line"><span class="lineno">  258</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;2&#39;</span>:</div>
+<div class="line"><span class="lineno">  259</span>                    <span class="keywordflow">return</span> <span class="charliteral">&#39;2&#39;</span>;</div>
+<div class="line"><span class="lineno">  260</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;3&#39;</span>:</div>
+<div class="line"><span class="lineno">  261</span>                    <span class="keywordflow">return</span> <span class="charliteral">&#39;3&#39;</span>;</div>
+<div class="line"><span class="lineno">  262</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;q&#39;</span>:</div>
+<div class="line"><span class="lineno">  263</span>                    <span class="keywordflow">return</span> <span class="charliteral">&#39;q&#39;</span>;</div>
+<div class="line"><span class="lineno">  264</span>                <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  265</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  266</span>            }</div>
+<div class="line"><span class="lineno">  267</span>        }</div>
+<div class="line"><span class="lineno">  268</span>        <a class="code hl_function" href="#a4ab7d9809ad0f490ad7634a76b37589b">wait</a>(0.1); <span class="comment">// Slight delay before checking input again</span></div>
+<div class="line"><span class="lineno">  269</span>    }</div>
+<div class="line"><span class="lineno">  270</span>}</div>
+<div class="ttc" id="aclass_menu_html_a4ab7d9809ad0f490ad7634a76b37589b"><div class="ttname"><a href="#a4ab7d9809ad0f490ad7634a76b37589b">Menu::wait</a></div><div class="ttdeci">void wait(double seconds)</div><div class="ttdoc">Waits for a specific duration using busy-waiting.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00119">Menu.cpp:119</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_menu_8cpp_source.html#l00119">wait()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00031">start()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_menu_a0699f1b4c5bd69ae1d5bee2e5043c452_cgraph.png" border="0" usemap="#aclass_menu_a0699f1b4c5bd69ae1d5bee2e5043c452_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_menu_a0699f1b4c5bd69ae1d5bee2e5043c452_icgraph.png" border="0" usemap="#aclass_menu_a0699f1b4c5bd69ae1d5bee2e5043c452_icgraph" alt=""/></div>
+</div>
+
 </div>
 </div>
 <a id="ae1ec62e738dda7faaaec850bd0b58ffe" name="ae1ec62e738dda7faaaec850bd0b58ffe"></a>
@@ -244,6 +430,107 @@ Public Member Functions</h2></td></tr>
 
 <p>Starts the main menu loop, allowing the user to choose between <a class="el" href="class_timer.html" title="The Timer class provides a countdown timer with start, pause, resume, reset, and time adjustment func...">Timer</a>, <a class="el" href="class_stopwatch.html" title="The Stopwatch class provides a simple timer with start, pause, resume, and reset functionalities.">Stopwatch</a>, and <a class="el" href="class_alarm.html">Alarm</a>. </p>
 <p>The menu displays options to the user, processes the user's selection, and runs the appropriate sequence for <a class="el" href="class_timer.html" title="The Timer class provides a countdown timer with start, pause, resume, reset, and time adjustment func...">Timer</a>, <a class="el" href="class_stopwatch.html" title="The Stopwatch class provides a simple timer with start, pause, resume, and reset functionalities.">Stopwatch</a>, or <a class="el" href="class_alarm.html">Alarm</a>. It handles the input and output and returns to the menu after each operation unless the user chooses to quit. </p>
+
+<p class="definition">Definition at line <a class="el" href="_menu_8cpp_source.html#l00031">31</a> of file <a class="el" href="_menu_8cpp_source.html">Menu.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   31</span>                 {</div>
+<div class="line"><span class="lineno">   32</span>    </div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span>    <a class="code hl_variable" href="#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62">clearScreen</a>();</div>
+<div class="line"><span class="lineno">   35</span> </div>
+<div class="line"><span class="lineno">   36</span>    cout &lt;&lt; <span class="stringliteral">&quot;1: Timer\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   37</span>    cout &lt;&lt; <span class="stringliteral">&quot;2: Stopwatch\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   38</span>    <span class="comment">//cout &lt;&lt; &quot;3: Alarm\n&quot;;</span></div>
+<div class="line"><span class="lineno">   39</span>    cout &lt;&lt; <span class="stringliteral">&quot;Q: Quit Program\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   40</span> </div>
+<div class="line"><span class="lineno">   41</span>    <span class="keywordtype">char</span> in = <a class="code hl_function" href="#a0699f1b4c5bd69ae1d5bee2e5043c452">getMenuInput</a>();</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>    <span class="comment">// ENTER TIMER SEQUENCE</span></div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">if</span>(in == <span class="charliteral">&#39;1&#39;</span>){</div>
+<div class="line"><span class="lineno">   45</span>        <a class="code hl_variable" href="#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62">clearScreen</a>();</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>        <a class="code hl_class" href="class_timer.html">Timer</a> timer;</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>        <span class="keywordtype">bool</span> run = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>        <a class="code hl_variable" href="#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62">clearScreen</a>();</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>        <span class="keywordflow">while</span>(run){</div>
+<div class="line"><span class="lineno">   54</span>            <span class="comment">// Display a message when the timer finishes</span></div>
+<div class="line"><span class="lineno">   55</span>            <span class="keywordflow">if</span>(timer.<a class="code hl_function" href="class_timer.html#a330607659937f497389c9989812cd925">remainingMilliseconds</a>() == 0) {</div>
+<div class="line"><span class="lineno">   56</span>                <a class="code hl_variable" href="#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#a3a0e77e68157e55d67ac3f28dffdd00c">setSplash</a>(<span class="stringliteral">&quot;TIMER FINISHED&quot;</span>); </div>
+<div class="line"><span class="lineno">   57</span>            }</div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>            <a class="code hl_variable" href="#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#a02b2228e05be168eda0b817d1ecf5db7">tickTimer</a>(timer);</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>            <a class="code hl_function" href="#ab8d3cccd5b39987a6546f7dc1187b71e">checkTimerInput</a>(timer, run);</div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span>            <a class="code hl_function" href="#a4ab7d9809ad0f490ad7634a76b37589b">wait</a>(0.01);</div>
+<div class="line"><span class="lineno">   64</span>        }</div>
+<div class="line"><span class="lineno">   65</span> </div>
+<div class="line"><span class="lineno">   66</span>    }</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>    <span class="comment">// ENTER STOPWATCH SEQUENCE</span></div>
+<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(in == <span class="charliteral">&#39;2&#39;</span>){</div>
+<div class="line"><span class="lineno">   70</span>        <a class="code hl_class" href="class_stopwatch.html">Stopwatch</a> stopwatch;</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>        <span class="keywordtype">bool</span> run = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>        <a class="code hl_variable" href="#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#a670c8db4c53ae0f09d6d3b57f1813b7f">tickStopwatch</a>(stopwatch);</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>        cout &lt;&lt; <span class="stringliteral">&quot;\n Press any key to start your stopwatch.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">   77</span> </div>
+<div class="line"><span class="lineno">   78</span>        <a class="code hl_function" href="#a537a69bfbe3b8c29e3dfd3e2f5dd88b5">waitForInput</a>();</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>        <a class="code hl_variable" href="#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62">clearScreen</a>();</div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span>        stopwatch.<a class="code hl_function" href="class_stopwatch.html#a6d01ecc80c92f1d5210cd9c3eb72883d">start</a>();</div>
+<div class="line"><span class="lineno">   83</span>        </div>
+<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">while</span>(run){</div>
+<div class="line"><span class="lineno">   85</span>            <a class="code hl_variable" href="#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#a670c8db4c53ae0f09d6d3b57f1813b7f">tickStopwatch</a>(stopwatch);</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>            <a class="code hl_function" href="#a81188fdf5f017799f9e7f7eaaf98c3ec">checkStopwatchInput</a>(stopwatch, run);</div>
+<div class="line"><span class="lineno">   88</span> </div>
+<div class="line"><span class="lineno">   89</span>            <a class="code hl_function" href="#a4ab7d9809ad0f490ad7634a76b37589b">wait</a>(0.01);</div>
+<div class="line"><span class="lineno">   90</span>        }</div>
+<div class="line"><span class="lineno">   91</span>    }</div>
+<div class="line"><span class="lineno">   92</span> </div>
+<div class="line"><span class="lineno">   93</span>    <span class="comment">// ENTER ALARM SEQUENCE</span></div>
+<div class="line"><span class="lineno">   94</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(in == <span class="charliteral">&#39;3&#39;</span>){</div>
+<div class="line"><span class="lineno">   95</span>        <a class="code hl_class" href="class_alarm.html">Alarm</a> alarm;</div>
+<div class="line"><span class="lineno">   96</span>    }</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>    <span class="comment">// QUIT PROGRAM</span></div>
+<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(in == <span class="charliteral">&#39;q&#39;</span>){</div>
+<div class="line"><span class="lineno">  100</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  101</span>    }</div>
+<div class="line"><span class="lineno">  102</span>    </div>
+<div class="line"><span class="lineno">  103</span>    <span class="comment">// Restart menu loop</span></div>
+<div class="line"><span class="lineno">  104</span>    <a class="code hl_function" href="#ae1ec62e738dda7faaaec850bd0b58ffe">start</a>();</div>
+<div class="line"><span class="lineno">  105</span>}</div>
+<div class="ttc" id="aclass_alarm_html"><div class="ttname"><a href="class_alarm.html">Alarm</a></div><div class="ttdef"><b>Definition</b> <a href="_alarm_8hpp_source.html#l00008">Alarm.hpp:8</a></div></div>
+<div class="ttc" id="aclass_display_html_a02b2228e05be168eda0b817d1ecf5db7"><div class="ttname"><a href="class_display.html#a02b2228e05be168eda0b817d1ecf5db7">Display::tickTimer</a></div><div class="ttdeci">void tickTimer(Timer &amp;timer)</div><div class="ttdoc">Updates the display based on the state of the provided Timer object.</div><div class="ttdef"><b>Definition</b> <a href="_display_8cpp_source.html#l00496">Display.cpp:496</a></div></div>
+<div class="ttc" id="aclass_display_html_a670c8db4c53ae0f09d6d3b57f1813b7f"><div class="ttname"><a href="class_display.html#a670c8db4c53ae0f09d6d3b57f1813b7f">Display::tickStopwatch</a></div><div class="ttdeci">void tickStopwatch(Stopwatch &amp;stopwatch)</div><div class="ttdoc">Updates the display based on the state of the provided Stopwatch object.</div><div class="ttdef"><b>Definition</b> <a href="_display_8cpp_source.html#l00523">Display.cpp:523</a></div></div>
+<div class="ttc" id="aclass_menu_html_a0699f1b4c5bd69ae1d5bee2e5043c452"><div class="ttname"><a href="#a0699f1b4c5bd69ae1d5bee2e5043c452">Menu::getMenuInput</a></div><div class="ttdeci">char getMenuInput()</div><div class="ttdoc">Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00251">Menu.cpp:251</a></div></div>
+<div class="ttc" id="aclass_menu_html_a537a69bfbe3b8c29e3dfd3e2f5dd88b5"><div class="ttname"><a href="#a537a69bfbe3b8c29e3dfd3e2f5dd88b5">Menu::waitForInput</a></div><div class="ttdeci">void waitForInput()</div><div class="ttdoc">Waits for any key press from the user.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00134">Menu.cpp:134</a></div></div>
+<div class="ttc" id="aclass_menu_html_a81188fdf5f017799f9e7f7eaaf98c3ec"><div class="ttname"><a href="#a81188fdf5f017799f9e7f7eaaf98c3ec">Menu::checkStopwatchInput</a></div><div class="ttdeci">void checkStopwatchInput(Stopwatch &amp;stopwatch, bool &amp;run)</div><div class="ttdoc">Checks and handles user input for the Stopwatch.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00199">Menu.cpp:199</a></div></div>
+<div class="ttc" id="aclass_menu_html_ab8d3cccd5b39987a6546f7dc1187b71e"><div class="ttname"><a href="#ab8d3cccd5b39987a6546f7dc1187b71e">Menu::checkTimerInput</a></div><div class="ttdeci">void checkTimerInput(Timer &amp;timer, bool &amp;run)</div><div class="ttdoc">Checks and handles user input for the Timer.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00150">Menu.cpp:150</a></div></div>
+<div class="ttc" id="aclass_menu_html_ae1ec62e738dda7faaaec850bd0b58ffe"><div class="ttname"><a href="#ae1ec62e738dda7faaaec850bd0b58ffe">Menu::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00031">Menu.cpp:31</a></div></div>
+<div class="ttc" id="aclass_stopwatch_html"><div class="ttname"><a href="class_stopwatch.html">Stopwatch</a></div><div class="ttdoc">The Stopwatch class provides a simple timer with start, pause, resume, and reset functionalities.</div><div class="ttdef"><b>Definition</b> <a href="_stopwatch_8hpp_source.html#l00013">Stopwatch.hpp:14</a></div></div>
+<div class="ttc" id="aclass_stopwatch_html_a6d01ecc80c92f1d5210cd9c3eb72883d"><div class="ttname"><a href="class_stopwatch.html#a6d01ecc80c92f1d5210cd9c3eb72883d">Stopwatch::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">Starts the stopwatch.</div><div class="ttdef"><b>Definition</b> <a href="_stopwatch_8cpp_source.html#l00102">Stopwatch.cpp:102</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_menu_8hpp_source.html#l00082">_display</a>, <a class="el" href="_menu_8cpp_source.html#l00199">checkStopwatchInput()</a>, <a class="el" href="_menu_8cpp_source.html#l00150">checkTimerInput()</a>, <a class="el" href="_display_8cpp_source.html#l00040">Display::clearScreen()</a>, <a class="el" href="_menu_8cpp_source.html#l00251">getMenuInput()</a>, <a class="el" href="_timer_8cpp_source.html#l00251">Timer::remainingMilliseconds()</a>, <a class="el" href="_display_8cpp_source.html#l00082">Display::setSplash()</a>, <a class="el" href="_menu_8cpp_source.html#l00031">start()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00102">Stopwatch::start()</a>, <a class="el" href="_display_8cpp_source.html#l00523">Display::tickStopwatch()</a>, <a class="el" href="_display_8cpp_source.html#l00496">Display::tickTimer()</a>, <a class="el" href="_menu_8cpp_source.html#l00119">wait()</a>, and <a class="el" href="_menu_8cpp_source.html#l00134">waitForInput()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00017">main()</a>, <a class="el" href="_menu_8cpp_source.html#l00031">start()</a>, and <a class="el" href="_menu_8cpp_source.html#l00119">wait()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_menu_ae1ec62e738dda7faaaec850bd0b58ffe_cgraph.png" border="0" usemap="#aclass_menu_ae1ec62e738dda7faaaec850bd0b58ffe_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_menu_ae1ec62e738dda7faaaec850bd0b58ffe_icgraph.png" border="0" usemap="#aclass_menu_ae1ec62e738dda7faaaec850bd0b58ffe_icgraph" alt=""/></div>
+</div>
 
 </div>
 </div>
@@ -271,6 +558,27 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="_menu_8cpp_source.html#l00119">119</a> of file <a class="el" href="_menu_8cpp_source.html">Menu.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  119</span>                              {</div>
+<div class="line"><span class="lineno">  120</span>    <span class="keyword">auto</span> <a class="code hl_function" href="#ae1ec62e738dda7faaaec850bd0b58ffe">start</a> = chrono::high_resolution_clock::now();</div>
+<div class="line"><span class="lineno">  121</span>    <span class="keyword">auto</span> duration = chrono::duration&lt;double&gt;(seconds);</div>
+<div class="line"><span class="lineno">  122</span>    <span class="keywordflow">while</span> (chrono::high_resolution_clock::now() - <a class="code hl_function" href="#ae1ec62e738dda7faaaec850bd0b58ffe">start</a> &lt; duration) { }</div>
+<div class="line"><span class="lineno">  123</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_menu_8cpp_source.html#l00031">start()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00251">getMenuInput()</a>, and <a class="el" href="_menu_8cpp_source.html#l00031">start()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_menu_a4ab7d9809ad0f490ad7634a76b37589b_cgraph.png" border="0" usemap="#aclass_menu_a4ab7d9809ad0f490ad7634a76b37589b_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_menu_a4ab7d9809ad0f490ad7634a76b37589b_icgraph.png" border="0" usemap="#aclass_menu_a4ab7d9809ad0f490ad7634a76b37589b_icgraph" alt=""/></div>
+</div>
+
 </div>
 </div>
 <a id="a537a69bfbe3b8c29e3dfd3e2f5dd88b5" name="a537a69bfbe3b8c29e3dfd3e2f5dd88b5"></a>
@@ -291,16 +599,85 @@ Public Member Functions</h2></td></tr>
 <p>Waits for any key press from the user. </p>
 <p>This function blocks until the user presses a key, using <code>_getch()</code> to capture the input. </p>
 
+<p class="definition">Definition at line <a class="el" href="_menu_8cpp_source.html#l00134">134</a> of file <a class="el" href="_menu_8cpp_source.html">Menu.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  134</span>                        {</div>
+<div class="line"><span class="lineno">  135</span>    _getch();</div>
+<div class="line"><span class="lineno">  136</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00031">start()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_menu_a537a69bfbe3b8c29e3dfd3e2f5dd88b5_icgraph.png" border="0" usemap="#aclass_menu_a537a69bfbe3b8c29e3dfd3e2f5dd88b5_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="a836f729dae007026c27f10b3354709fd" name="a836f729dae007026c27f10b3354709fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a836f729dae007026c27f10b3354709fd">&#9670;&#160;</a></span>_display</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_display.html">Display</a> Menu::_display</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Instance of <a class="el" href="class_display.html" title="The Display class manages the visual representation and interaction logic for timers,...">Display</a> to manage the visual representation. </p>
+
+<p class="definition">Definition at line <a class="el" href="_menu_8hpp_source.html#l00082">82</a> of file <a class="el" href="_menu_8hpp_source.html">Menu.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00199">checkStopwatchInput()</a>, <a class="el" href="_menu_8cpp_source.html#l00150">checkTimerInput()</a>, <a class="el" href="_menu_8cpp_source.html#l00015">Menu()</a>, and <a class="el" href="_menu_8cpp_source.html#l00031">start()</a>.</p>
+
+</div>
+</div>
+<a id="a091dfbcc90fd8793d85784996e32443d" name="a091dfbcc90fd8793d85784996e32443d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a091dfbcc90fd8793d85784996e32443d">&#9670;&#160;</a></span>_run</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Menu::_run</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Boolean to control the main loop execution. </p>
+
+<p class="definition">Definition at line <a class="el" href="_menu_8hpp_source.html#l00083">83</a> of file <a class="el" href="_menu_8hpp_source.html">Menu.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00015">Menu()</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/<a class="el" href="_menu_8hpp_source.html">Menu.hpp</a></li>
-<li>src/<a class="el" href="_menu_8cpp.html">Menu.cpp</a></li>
+<li>src/<a class="el" href="_menu_8cpp_source.html">Menu.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0
+Generated on Wed Aug 28 2024 15:39:47 for Tempo by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0
 </small></address>
 </div><!-- doc-content -->
 </body>

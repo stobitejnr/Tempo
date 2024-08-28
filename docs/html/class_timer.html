@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TEMPO: Timer Class Reference</title>
+<title>Tempo: Timer Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,8 +24,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TEMPO
+   <div id="projectname">Tempo
    </div>
    <div id="projectbrief">Tempo is an app that allows users to create and manage timers, stopwatches, and alarms.</div>
   </td>
@@ -87,7 +88,7 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="class_timer-members.html">List of all members</a>  </div>
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle"><div class="title">Timer Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -96,6 +97,11 @@ $(function(){ initResizable(false); });
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_timer_8hpp_source.html">Timer.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Timer:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_timer__coll__graph.png" border="0" usemap="#a_timer_coll__map" alt="Collaboration graph"/></div>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -117,6 +123,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9020542d73357a4eef512eefaf57524b" id="r_a9020542d73357a4eef512eefaf57524b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9020542d73357a4eef512eefaf57524b">reset</a> ()</td></tr>
 <tr class="memdesc:a9020542d73357a4eef512eefaf57524b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the timer to its original duration and pauses it.  <br /></td></tr>
 <tr class="separator:a9020542d73357a4eef512eefaf57524b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8eb4527fb1f93315c79ed1fb375e6e12" id="r_a8eb4527fb1f93315c79ed1fb375e6e12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8eb4527fb1f93315c79ed1fb375e6e12">addTime</a> ()</td></tr>
+<tr class="separator:a8eb4527fb1f93315c79ed1fb375e6e12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae85c869ff61b97b53ade8e701014dde6" id="r_ae85c869ff61b97b53ade8e701014dde6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae85c869ff61b97b53ade8e701014dde6">addTime</a> (int seconds)</td></tr>
 <tr class="memdesc:ae85c869ff61b97b53ade8e701014dde6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a specified amount of time (in seconds) to the timer.  <br /></td></tr>
 <tr class="separator:ae85c869ff61b97b53ade8e701014dde6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,9 +140,35 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a97ab4bd97e34c2ce2b8afa7c993fbaec" id="r_a97ab4bd97e34c2ce2b8afa7c993fbaec"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97ab4bd97e34c2ce2b8afa7c993fbaec">percentElapsed</a> ()</td></tr>
 <tr class="memdesc:a97ab4bd97e34c2ce2b8afa7c993fbaec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the percentage of time that has elapsed since the timer started.  <br /></td></tr>
 <tr class="separator:a97ab4bd97e34c2ce2b8afa7c993fbaec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a82b2a7bb825239edeaf391dd3b0e9dd9" id="r_a82b2a7bb825239edeaf391dd3b0e9dd9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82b2a7bb825239edeaf391dd3b0e9dd9">_startMilliseconds</a></td></tr>
+<tr class="memdesc:a82b2a7bb825239edeaf391dd3b0e9dd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The initial duration of the timer in milliseconds.  <br /></td></tr>
+<tr class="separator:a82b2a7bb825239edeaf391dd3b0e9dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a751e8cad5b33a2157d1f4ed0dff10d9a" id="r_a751e8cad5b33a2157d1f4ed0dff10d9a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a751e8cad5b33a2157d1f4ed0dff10d9a">_countdownMilliseconds</a></td></tr>
+<tr class="memdesc:a751e8cad5b33a2157d1f4ed0dff10d9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The duration of the countdown in milliseconds.  <br /></td></tr>
+<tr class="separator:a751e8cad5b33a2157d1f4ed0dff10d9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad16481efed1a745745148ef6f0dfd3e" id="r_aad16481efed1a745745148ef6f0dfd3e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad16481efed1a745745148ef6f0dfd3e">_remainingMilliseconds</a></td></tr>
+<tr class="memdesc:aad16481efed1a745745148ef6f0dfd3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The remaining time in milliseconds.  <br /></td></tr>
+<tr class="separator:aad16481efed1a745745148ef6f0dfd3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8f27b761a340cbab040e05412711056" id="r_aa8f27b761a340cbab040e05412711056"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8f27b761a340cbab040e05412711056">_incrementMilliseconds</a></td></tr>
+<tr class="memdesc:aa8f27b761a340cbab040e05412711056"><td class="mdescLeft">&#160;</td><td class="mdescRight">The increment time in milliseconds for adding time.  <br /></td></tr>
+<tr class="separator:aa8f27b761a340cbab040e05412711056"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e92367e8b9f4fe50e7395d01db259af" id="r_a0e92367e8b9f4fe50e7395d01db259af"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e92367e8b9f4fe50e7395d01db259af">_running</a></td></tr>
+<tr class="memdesc:a0e92367e8b9f4fe50e7395d01db259af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the timer is currently running.  <br /></td></tr>
+<tr class="separator:a0e92367e8b9f4fe50e7395d01db259af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9c1fdb6d15ad4aac9080bf7e84283cf" id="r_af9c1fdb6d15ad4aac9080bf7e84283cf"><td class="memItemLeft" align="right" valign="top">chrono::time_point&lt; chrono::steady_clock &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9c1fdb6d15ad4aac9080bf7e84283cf">_endTime</a></td></tr>
+<tr class="memdesc:af9c1fdb6d15ad4aac9080bf7e84283cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">The time point when the timer will end.  <br /></td></tr>
+<tr class="separator:af9c1fdb6d15ad4aac9080bf7e84283cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd2dad285d0de4df16d3504a7b4a26f4" id="r_acd2dad285d0de4df16d3504a7b4a26f4"><td class="memItemLeft" align="right" valign="top">chrono::time_point&lt; chrono::steady_clock &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd2dad285d0de4df16d3504a7b4a26f4">_pauseTime</a></td></tr>
+<tr class="memdesc:acd2dad285d0de4df16d3504a7b4a26f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The time point when the timer was paused.  <br /></td></tr>
+<tr class="separator:acd2dad285d0de4df16d3504a7b4a26f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="class_timer.html" title="The Timer class provides a countdown timer with start, pause, resume, reset, and time adjustment func...">Timer</a> class provides a countdown timer with start, pause, resume, reset, and time adjustment functionalities. </p>
+
+<p class="definition">Definition at line <a class="el" href="_timer_8hpp_source.html#l00013">13</a> of file <a class="el" href="_timer_8hpp_source.html">Timer.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a5f16e8da27d2a5a5242dead46de05d97" name="a5f16e8da27d2a5a5242dead46de05d97"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5f16e8da27d2a5a5242dead46de05d97">&#9670;&#160;</a></span>Timer() <span class="overload">[1/2]</span></h2>
@@ -153,6 +187,69 @@ Public Member Functions</h2></td></tr>
 
 <p>Default constructor prompts the user to set a timer with a specific duration. </p>
 <p>The user can specify the duration in hours, minutes, and seconds. The timer is initialized and started based on the user input. </p>
+
+<p class="definition">Definition at line <a class="el" href="_timer_8cpp_source.html#l00016">16</a> of file <a class="el" href="_timer_8cpp_source.html">Timer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>             {</div>
+<div class="line"><span class="lineno">   17</span>    <span class="keywordtype">int</span> h = 0;</div>
+<div class="line"><span class="lineno">   18</span>    <span class="keywordtype">int</span> m = 0;</div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordtype">int</span> s = 0;</div>
+<div class="line"><span class="lineno">   20</span>    <span class="keywordtype">int</span> countdownSeconds = 0;</div>
+<div class="line"><span class="lineno">   21</span>    <a class="code hl_variable" href="#aa8f27b761a340cbab040e05412711056">_incrementMilliseconds</a> = 0;</div>
+<div class="line"><span class="lineno">   22</span> </div>
+<div class="line"><span class="lineno">   23</span>    <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
+<div class="line"><span class="lineno">   24</span>        cout &lt;&lt; <span class="stringliteral">&quot;How long would you like to set a timer for?&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">   25</span>        <span class="keywordtype">string</span> input = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">   26</span>        getline(cin, input);</div>
+<div class="line"><span class="lineno">   27</span> </div>
+<div class="line"><span class="lineno">   28</span>        <span class="comment">// Regular expressions to match hours, minutes, and seconds</span></div>
+<div class="line"><span class="lineno">   29</span>        regex hours_regex(R<span class="stringliteral">&quot;((\d+)\s*hour?)&quot;);</span></div>
+<div class="line"><span class="lineno">   30</span><span class="stringliteral">        regex minutes_regex(R</span><span class="stringliteral">&quot;((\d+)\s*minute?)&quot;);</span></div>
+<div class="line"><span class="lineno">   31</span><span class="stringliteral">        regex seconds_regex(R</span><span class="stringliteral">&quot;((\d+)\s*second?)&quot;);</span></div>
+<div class="line"><span class="lineno">   32</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno">   33</span><span class="stringliteral">        smatch match;</span></div>
+<div class="line"><span class="lineno">   34</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno">   35</span><span class="stringliteral">        </span><span class="comment">// Extract hours</span></div>
+<div class="line"><span class="lineno">   36</span>        <span class="keywordflow">if</span> (regex_search(input, match, hours_regex)) {</div>
+<div class="line"><span class="lineno">   37</span>            h = stoi(match[1].str());</div>
+<div class="line"><span class="lineno">   38</span>        }</div>
+<div class="line"><span class="lineno">   39</span> </div>
+<div class="line"><span class="lineno">   40</span>        <span class="comment">// Extract minutes</span></div>
+<div class="line"><span class="lineno">   41</span>        <span class="keywordflow">if</span> (regex_search(input, match, minutes_regex)) {</div>
+<div class="line"><span class="lineno">   42</span>            m = stoi(match[1].str());</div>
+<div class="line"><span class="lineno">   43</span>        }</div>
+<div class="line"><span class="lineno">   44</span>        <span class="comment">// Extract seconds</span></div>
+<div class="line"><span class="lineno">   45</span>        <span class="keywordflow">if</span> (regex_search(input, match, seconds_regex)) {</div>
+<div class="line"><span class="lineno">   46</span>            s = stoi(match[1].str());</div>
+<div class="line"><span class="lineno">   47</span>        }</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>        countdownSeconds = (3600 * h) + (60 * m) + (s);</div>
+<div class="line"><span class="lineno">   50</span>        <span class="keywordflow">if</span> (countdownSeconds == 0) { </div>
+<div class="line"><span class="lineno">   51</span>            <span class="keywordflow">continue</span>; </div>
+<div class="line"><span class="lineno">   52</span>        }</div>
+<div class="line"><span class="lineno">   53</span>        <span class="keywordflow">if</span> (countdownSeconds &lt;= 360000) { </div>
+<div class="line"><span class="lineno">   54</span>            <span class="keywordflow">break</span>; </div>
+<div class="line"><span class="lineno">   55</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   56</span>            cout &lt;&lt; <span class="stringliteral">&quot;Cannot set a timer for more than 100 hours.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">   57</span>        }</div>
+<div class="line"><span class="lineno">   58</span>    }</div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>    <a class="code hl_variable" href="#a82b2a7bb825239edeaf391dd3b0e9dd9">_startMilliseconds</a> = countdownSeconds * 1000;</div>
+<div class="line"><span class="lineno">   61</span>    <a class="code hl_variable" href="#aad16481efed1a745745148ef6f0dfd3e">_remainingMilliseconds</a> = <a class="code hl_variable" href="#a82b2a7bb825239edeaf391dd3b0e9dd9">_startMilliseconds</a>;</div>
+<div class="line"><span class="lineno">   62</span>    <a class="code hl_variable" href="#a751e8cad5b33a2157d1f4ed0dff10d9a">_countdownMilliseconds</a> = <a class="code hl_variable" href="#a82b2a7bb825239edeaf391dd3b0e9dd9">_startMilliseconds</a>;</div>
+<div class="line"><span class="lineno">   63</span>    <a class="code hl_function" href="#aded1ecf859b397258dcfa95d3d7cfc41">start</a>(<a class="code hl_variable" href="#a751e8cad5b33a2157d1f4ed0dff10d9a">_countdownMilliseconds</a>);</div>
+<div class="line"><span class="lineno">   64</span>}</div>
+<div class="ttc" id="aclass_timer_html_a751e8cad5b33a2157d1f4ed0dff10d9a"><div class="ttname"><a href="#a751e8cad5b33a2157d1f4ed0dff10d9a">Timer::_countdownMilliseconds</a></div><div class="ttdeci">int _countdownMilliseconds</div><div class="ttdoc">The duration of the countdown in milliseconds.</div><div class="ttdef"><b>Definition</b> <a href="_timer_8hpp_source.html#l00099">Timer.hpp:99</a></div></div>
+<div class="ttc" id="aclass_timer_html_a82b2a7bb825239edeaf391dd3b0e9dd9"><div class="ttname"><a href="#a82b2a7bb825239edeaf391dd3b0e9dd9">Timer::_startMilliseconds</a></div><div class="ttdeci">int _startMilliseconds</div><div class="ttdoc">The initial duration of the timer in milliseconds.</div><div class="ttdef"><b>Definition</b> <a href="_timer_8hpp_source.html#l00098">Timer.hpp:98</a></div></div>
+<div class="ttc" id="aclass_timer_html_aa8f27b761a340cbab040e05412711056"><div class="ttname"><a href="#aa8f27b761a340cbab040e05412711056">Timer::_incrementMilliseconds</a></div><div class="ttdeci">int _incrementMilliseconds</div><div class="ttdoc">The increment time in milliseconds for adding time.</div><div class="ttdef"><b>Definition</b> <a href="_timer_8hpp_source.html#l00101">Timer.hpp:101</a></div></div>
+<div class="ttc" id="aclass_timer_html_aad16481efed1a745745148ef6f0dfd3e"><div class="ttname"><a href="#aad16481efed1a745745148ef6f0dfd3e">Timer::_remainingMilliseconds</a></div><div class="ttdeci">int _remainingMilliseconds</div><div class="ttdoc">The remaining time in milliseconds.</div><div class="ttdef"><b>Definition</b> <a href="_timer_8hpp_source.html#l00100">Timer.hpp:100</a></div></div>
+<div class="ttc" id="aclass_timer_html_aded1ecf859b397258dcfa95d3d7cfc41"><div class="ttname"><a href="#aded1ecf859b397258dcfa95d3d7cfc41">Timer::start</a></div><div class="ttdeci">void start(int countdownMilliseconds)</div><div class="ttdoc">Starts the timer by setting the end time based on the current time plus the countdown duration.</div><div class="ttdef"><b>Definition</b> <a href="_timer_8cpp_source.html#l00093">Timer.cpp:93</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_timer_8hpp_source.html#l00099">_countdownMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00101">_incrementMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00100">_remainingMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00098">_startMilliseconds</a>, and <a class="el" href="_timer_8cpp_source.html#l00093">start()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_timer_a5f16e8da27d2a5a5242dead46de05d97_cgraph.png" border="0" usemap="#aclass_timer_a5f16e8da27d2a5a5242dead46de05d97_cgraph" alt=""/></div>
+</div>
 
 </div>
 </div>
@@ -191,11 +288,78 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="_timer_8cpp_source.html#l00075">75</a> of file <a class="el" href="_timer_8cpp_source.html">Timer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   75</span>                                                {</div>
+<div class="line"><span class="lineno">   76</span>    <span class="keywordtype">int</span> milli = 3600000 * hours + 60000 * minutes + 1000 * seconds;</div>
+<div class="line"><span class="lineno">   77</span>    <a class="code hl_variable" href="#a751e8cad5b33a2157d1f4ed0dff10d9a">_countdownMilliseconds</a> = milli;</div>
+<div class="line"><span class="lineno">   78</span>    <a class="code hl_variable" href="#aad16481efed1a745745148ef6f0dfd3e">_remainingMilliseconds</a> = milli;</div>
+<div class="line"><span class="lineno">   79</span>    <a class="code hl_variable" href="#a82b2a7bb825239edeaf391dd3b0e9dd9">_startMilliseconds</a> = milli;</div>
+<div class="line"><span class="lineno">   80</span>    <a class="code hl_variable" href="#aa8f27b761a340cbab040e05412711056">_incrementMilliseconds</a> = 0;</div>
+<div class="line"><span class="lineno">   81</span>    <a class="code hl_function" href="#aded1ecf859b397258dcfa95d3d7cfc41">start</a>(<a class="code hl_variable" href="#a751e8cad5b33a2157d1f4ed0dff10d9a">_countdownMilliseconds</a>);</div>
+<div class="line"><span class="lineno">   82</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_timer_8hpp_source.html#l00099">_countdownMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00101">_incrementMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00100">_remainingMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00098">_startMilliseconds</a>, and <a class="el" href="_timer_8cpp_source.html#l00093">start()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_timer_af3774b6f9a3f6759e6852be35617b405_cgraph.png" border="0" usemap="#aclass_timer_af3774b6f9a3f6759e6852be35617b405_cgraph" alt=""/></div>
+</div>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a8eb4527fb1f93315c79ed1fb375e6e12" name="a8eb4527fb1f93315c79ed1fb375e6e12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8eb4527fb1f93315c79ed1fb375e6e12">&#9670;&#160;</a></span>addTime() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Timer::addTime </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_timer_8cpp_source.html#l00162">162</a> of file <a class="el" href="_timer_8cpp_source.html">Timer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  162</span>                   {</div>
+<div class="line"><span class="lineno">  163</span>    <span class="keywordtype">bool</span> wasRunning = <a class="code hl_variable" href="#a0e92367e8b9f4fe50e7395d01db259af">_running</a>;</div>
+<div class="line"><span class="lineno">  164</span>    <a class="code hl_function" href="#a0289effad7b573c508bc27e405900a23">pause</a>();</div>
+<div class="line"><span class="lineno">  165</span>    </div>
+<div class="line"><span class="lineno">  166</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="#aa8f27b761a340cbab040e05412711056">_incrementMilliseconds</a>){</div>
+<div class="line"><span class="lineno">  167</span>        <a class="code hl_function" href="#a1af9140ed7938e9252aef7a1e40475fb">changeIncrementTime</a>();</div>
+<div class="line"><span class="lineno">  168</span>    }</div>
+<div class="line"><span class="lineno">  169</span>    <a class="code hl_variable" href="#aad16481efed1a745745148ef6f0dfd3e">_remainingMilliseconds</a> += <a class="code hl_variable" href="#aa8f27b761a340cbab040e05412711056">_incrementMilliseconds</a>;</div>
+<div class="line"><span class="lineno">  170</span>    <a class="code hl_variable" href="#a751e8cad5b33a2157d1f4ed0dff10d9a">_countdownMilliseconds</a> += <a class="code hl_variable" href="#aa8f27b761a340cbab040e05412711056">_incrementMilliseconds</a>;</div>
+<div class="line"><span class="lineno">  171</span> </div>
+<div class="line"><span class="lineno">  172</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="#aad16481efed1a745745148ef6f0dfd3e">_remainingMilliseconds</a> &gt;=  360000000){</div>
+<div class="line"><span class="lineno">  173</span>        <a class="code hl_variable" href="#aad16481efed1a745745148ef6f0dfd3e">_remainingMilliseconds</a> = 359999999;</div>
+<div class="line"><span class="lineno">  174</span>        <a class="code hl_variable" href="#a751e8cad5b33a2157d1f4ed0dff10d9a">_countdownMilliseconds</a> = 359999999;</div>
+<div class="line"><span class="lineno">  175</span>    }</div>
+<div class="line"><span class="lineno">  176</span> </div>
+<div class="line"><span class="lineno">  177</span>    </div>
+<div class="line"><span class="lineno">  178</span>    <span class="keywordflow">if</span> (wasRunning) {</div>
+<div class="line"><span class="lineno">  179</span>        <a class="code hl_function" href="#a4ac55a73bb3431db9d4d2fd70ae9a2e8">resume</a>();</div>
+<div class="line"><span class="lineno">  180</span>    }</div>
+<div class="line"><span class="lineno">  181</span>}</div>
+<div class="ttc" id="aclass_timer_html_a0289effad7b573c508bc27e405900a23"><div class="ttname"><a href="#a0289effad7b573c508bc27e405900a23">Timer::pause</a></div><div class="ttdeci">void pause()</div><div class="ttdoc">Pauses the timer and calculates the remaining milliseconds.</div><div class="ttdef"><b>Definition</b> <a href="_timer_8cpp_source.html#l00105">Timer.cpp:105</a></div></div>
+<div class="ttc" id="aclass_timer_html_a0e92367e8b9f4fe50e7395d01db259af"><div class="ttname"><a href="#a0e92367e8b9f4fe50e7395d01db259af">Timer::_running</a></div><div class="ttdeci">bool _running</div><div class="ttdoc">Indicates whether the timer is currently running.</div><div class="ttdef"><b>Definition</b> <a href="_timer_8hpp_source.html#l00103">Timer.hpp:103</a></div></div>
+<div class="ttc" id="aclass_timer_html_a1af9140ed7938e9252aef7a1e40475fb"><div class="ttname"><a href="#a1af9140ed7938e9252aef7a1e40475fb">Timer::changeIncrementTime</a></div><div class="ttdeci">void changeIncrementTime()</div><div class="ttdoc">Allows the user to change the increment time used for adding time to the timer.</div><div class="ttdef"><b>Definition</b> <a href="_timer_8cpp_source.html#l00192">Timer.cpp:192</a></div></div>
+<div class="ttc" id="aclass_timer_html_a4ac55a73bb3431db9d4d2fd70ae9a2e8"><div class="ttname"><a href="#a4ac55a73bb3431db9d4d2fd70ae9a2e8">Timer::resume</a></div><div class="ttdeci">void resume()</div><div class="ttdoc">Resumes the timer from where it was paused by recalculating the end time.</div><div class="ttdef"><b>Definition</b> <a href="_timer_8cpp_source.html#l00120">Timer.cpp:120</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_timer_8hpp_source.html#l00099">_countdownMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00101">_incrementMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00100">_remainingMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00103">_running</a>, <a class="el" href="_timer_8cpp_source.html#l00192">changeIncrementTime()</a>, <a class="el" href="_timer_8cpp_source.html#l00105">pause()</a>, and <a class="el" href="_timer_8cpp_source.html#l00120">resume()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_timer_a8eb4527fb1f93315c79ed1fb375e6e12_cgraph.png" border="0" usemap="#aclass_timer_a8eb4527fb1f93315c79ed1fb375e6e12_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
 <a id="ae85c869ff61b97b53ade8e701014dde6" name="ae85c869ff61b97b53ade8e701014dde6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae85c869ff61b97b53ade8e701014dde6">&#9670;&#160;</a></span>addTime()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae85c869ff61b97b53ade8e701014dde6">&#9670;&#160;</a></span>addTime() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -218,6 +382,26 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="_timer_8cpp_source.html#l00150">150</a> of file <a class="el" href="_timer_8cpp_source.html">Timer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  150</span>                               {</div>
+<div class="line"><span class="lineno">  151</span>    <span class="keywordtype">bool</span> wasRunning = <a class="code hl_variable" href="#a0e92367e8b9f4fe50e7395d01db259af">_running</a>;</div>
+<div class="line"><span class="lineno">  152</span>    <a class="code hl_function" href="#a0289effad7b573c508bc27e405900a23">pause</a>();</div>
+<div class="line"><span class="lineno">  153</span>    </div>
+<div class="line"><span class="lineno">  154</span>    <a class="code hl_variable" href="#aad16481efed1a745745148ef6f0dfd3e">_remainingMilliseconds</a> += 1000 * seconds;</div>
+<div class="line"><span class="lineno">  155</span>    <a class="code hl_variable" href="#a751e8cad5b33a2157d1f4ed0dff10d9a">_countdownMilliseconds</a> += 1000 * seconds;</div>
+<div class="line"><span class="lineno">  156</span> </div>
+<div class="line"><span class="lineno">  157</span>    <span class="keywordflow">if</span>(wasRunning){</div>
+<div class="line"><span class="lineno">  158</span>        <a class="code hl_function" href="#a4ac55a73bb3431db9d4d2fd70ae9a2e8">resume</a>();</div>
+<div class="line"><span class="lineno">  159</span>    }</div>
+<div class="line"><span class="lineno">  160</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_timer_8hpp_source.html#l00099">_countdownMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00100">_remainingMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00103">_running</a>, <a class="el" href="_timer_8cpp_source.html#l00105">pause()</a>, and <a class="el" href="_timer_8cpp_source.html#l00120">resume()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_timer_ae85c869ff61b97b53ade8e701014dde6_cgraph.png" border="0" usemap="#aclass_timer_ae85c869ff61b97b53ade8e701014dde6_cgraph" alt=""/></div>
+</div>
+
 </div>
 </div>
 <a id="a1af9140ed7938e9252aef7a1e40475fb" name="a1af9140ed7938e9252aef7a1e40475fb"></a>
@@ -237,6 +421,64 @@ Public Member Functions</h2></td></tr>
 
 <p>Allows the user to change the increment time used for adding time to the timer. </p>
 <p>The increment time can be specified in hours, minutes, or seconds. </p>
+
+<p class="definition">Definition at line <a class="el" href="_timer_8cpp_source.html#l00192">192</a> of file <a class="el" href="_timer_8cpp_source.html">Timer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  192</span>                                {</div>
+<div class="line"><span class="lineno">  193</span> </div>
+<div class="line"><span class="lineno">  194</span>    cout &lt;&lt; <span class="stringliteral">&quot;Enter the amount of time to add for each press: &quot;</span>;</div>
+<div class="line"><span class="lineno">  195</span>    <span class="keywordtype">string</span> input;</div>
+<div class="line"><span class="lineno">  196</span>    cin &gt;&gt; input;</div>
+<div class="line"><span class="lineno">  197</span>    </div>
+<div class="line"><span class="lineno">  198</span>    <span class="comment">// Regular expressions to match hours, minutes, and seconds</span></div>
+<div class="line"><span class="lineno">  199</span>    regex hours_regex(R<span class="stringliteral">&quot;((\d+)\s*hour?)&quot;);</span></div>
+<div class="line"><span class="lineno">  200</span><span class="stringliteral">    regex minutes_regex(R</span><span class="stringliteral">&quot;((\d+)\s*minute?)&quot;);</span></div>
+<div class="line"><span class="lineno">  201</span><span class="stringliteral">    regex seconds_regex(R</span><span class="stringliteral">&quot;((\d+)\s*second?)&quot;);</span></div>
+<div class="line"><span class="lineno">  202</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno">  203</span><span class="stringliteral">    smatch match;</span></div>
+<div class="line"><span class="lineno">  204</span><span class="stringliteral">    </span><span class="keywordtype">int</span> newIncrementMilliseconds = 0;</div>
+<div class="line"><span class="lineno">  205</span>    <span class="keywordtype">string</span> unit;</div>
+<div class="line"><span class="lineno">  206</span> </div>
+<div class="line"><span class="lineno">  207</span>    <span class="keywordflow">try</span> {</div>
+<div class="line"><span class="lineno">  208</span>        <span class="comment">// Convert input to milliseconds based on what unit is specified</span></div>
+<div class="line"><span class="lineno">  209</span>        <span class="keywordflow">if</span> (regex_search(input, match, hours_regex)) {</div>
+<div class="line"><span class="lineno">  210</span>            newIncrementMilliseconds = stoi(match[1].str()) * 3600000;</div>
+<div class="line"><span class="lineno">  211</span>            unit = <span class="stringliteral">&quot;hours&quot;</span>;</div>
+<div class="line"><span class="lineno">  212</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (regex_search(input, match, minutes_regex)) {</div>
+<div class="line"><span class="lineno">  213</span>            newIncrementMilliseconds = stoi(match[1].str()) * 60000;</div>
+<div class="line"><span class="lineno">  214</span>            unit = <span class="stringliteral">&quot;minutes&quot;</span>;</div>
+<div class="line"><span class="lineno">  215</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (regex_search(input, match, seconds_regex)) {</div>
+<div class="line"><span class="lineno">  216</span>            newIncrementMilliseconds = stoi(match[1].str()) * 1000;</div>
+<div class="line"><span class="lineno">  217</span>            unit = <span class="stringliteral">&quot;seconds&quot;</span>;</div>
+<div class="line"><span class="lineno">  218</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  219</span>            cout &lt;&lt; <span class="stringliteral">&quot;Invalid input format. Increment time must be specified in hours, minutes, or seconds.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  220</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  221</span>        }</div>
+<div class="line"><span class="lineno">  222</span> </div>
+<div class="line"><span class="lineno">  223</span>        <span class="keywordflow">if</span> (newIncrementMilliseconds &lt;= 0) {</div>
+<div class="line"><span class="lineno">  224</span>            cout &lt;&lt; <span class="stringliteral">&quot;Increment time must be a positive value. Keeping the previous value of &quot;</span> &lt;&lt; <a class="code hl_variable" href="#aa8f27b761a340cbab040e05412711056">_incrementMilliseconds</a> &lt;&lt; <span class="stringliteral">&quot; milliseconds.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  225</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  226</span>            <a class="code hl_variable" href="#aa8f27b761a340cbab040e05412711056">_incrementMilliseconds</a> = newIncrementMilliseconds;</div>
+<div class="line"><span class="lineno">  227</span>            cout &lt;&lt; <span class="stringliteral">&quot;Increment time set to &quot;</span> &lt;&lt; match[1].str() &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; unit &lt;&lt; <span class="stringliteral">&quot;.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  228</span>        }</div>
+<div class="line"><span class="lineno">  229</span>    } <span class="keywordflow">catch</span> (invalid_argument&amp; e) {</div>
+<div class="line"><span class="lineno">  230</span>        cout &lt;&lt; <span class="stringliteral">&quot;Invalid input. Please enter a valid numeric value. Keeping the previous value of &quot;</span> &lt;&lt; <a class="code hl_variable" href="#aa8f27b761a340cbab040e05412711056">_incrementMilliseconds</a> &lt;&lt; <span class="stringliteral">&quot; milliseconds.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  231</span>    } <span class="keywordflow">catch</span> (out_of_range&amp; e) {</div>
+<div class="line"><span class="lineno">  232</span>        cout &lt;&lt; <span class="stringliteral">&quot;The value is too large. Keeping the previous value of &quot;</span> &lt;&lt; <a class="code hl_variable" href="#aa8f27b761a340cbab040e05412711056">_incrementMilliseconds</a> &lt;&lt; <span class="stringliteral">&quot; milliseconds.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  233</span>    }</div>
+<div class="line"><span class="lineno">  234</span> </div>
+<div class="line"><span class="lineno">  235</span>    std::this_thread::sleep_for(std::chrono::seconds(1)); </div>
+<div class="line"><span class="lineno">  236</span>    <span class="comment">//cout &lt;&lt; &quot;\r\033[K&quot;; // Clear the line after waiting for input</span></div>
+<div class="line"><span class="lineno">  237</span> </div>
+<div class="line"><span class="lineno">  238</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_timer_8hpp_source.html#l00101">_incrementMilliseconds</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_timer_8cpp_source.html#l00162">addTime()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_timer_a1af9140ed7938e9252aef7a1e40475fb_icgraph.png" border="0" usemap="#aclass_timer_a1af9140ed7938e9252aef7a1e40475fb_icgraph" alt=""/></div>
+</div>
 
 </div>
 </div>
@@ -258,6 +500,20 @@ Public Member Functions</h2></td></tr>
 <p>Checks if the timer is currently running. </p>
 <dl class="section return"><dt>Returns</dt><dd>bool True if the timer is running, false otherwise. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_timer_8cpp_source.html#l00276">276</a> of file <a class="el" href="_timer_8cpp_source.html">Timer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  276</span>                      {</div>
+<div class="line"><span class="lineno">  277</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#a0e92367e8b9f4fe50e7395d01db259af">_running</a>;</div>
+<div class="line"><span class="lineno">  278</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_timer_8hpp_source.html#l00103">_running</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00150">Menu::checkTimerInput()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_timer_a2ef50bfc604ea9fb88d3000c9ad0edd9_icgraph.png" border="0" usemap="#aclass_timer_a2ef50bfc604ea9fb88d3000c9ad0edd9_icgraph" alt=""/></div>
+</div>
+
 </div>
 </div>
 <a id="a0289effad7b573c508bc27e405900a23" name="a0289effad7b573c508bc27e405900a23"></a>
@@ -276,6 +532,26 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Pauses the timer and calculates the remaining milliseconds. </p>
+
+<p class="definition">Definition at line <a class="el" href="_timer_8cpp_source.html#l00105">105</a> of file <a class="el" href="_timer_8cpp_source.html">Timer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  105</span>                  {</div>
+<div class="line"><span class="lineno">  106</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a0e92367e8b9f4fe50e7395d01db259af">_running</a>) {</div>
+<div class="line"><span class="lineno">  107</span>       <a class="code hl_variable" href="#acd2dad285d0de4df16d3504a7b4a26f4">_pauseTime</a> = chrono::steady_clock::now();</div>
+<div class="line"><span class="lineno">  108</span>       <a class="code hl_variable" href="#aad16481efed1a745745148ef6f0dfd3e">_remainingMilliseconds</a> = chrono::duration_cast&lt;chrono::milliseconds&gt;(<a class="code hl_variable" href="#af9c1fdb6d15ad4aac9080bf7e84283cf">_endTime</a> - <a class="code hl_variable" href="#acd2dad285d0de4df16d3504a7b4a26f4">_pauseTime</a>).count();</div>
+<div class="line"><span class="lineno">  109</span>       <a class="code hl_variable" href="#a0e92367e8b9f4fe50e7395d01db259af">_running</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  110</span>    }</div>
+<div class="line"><span class="lineno">  111</span>}</div>
+<div class="ttc" id="aclass_timer_html_acd2dad285d0de4df16d3504a7b4a26f4"><div class="ttname"><a href="#acd2dad285d0de4df16d3504a7b4a26f4">Timer::_pauseTime</a></div><div class="ttdeci">chrono::time_point&lt; chrono::steady_clock &gt; _pauseTime</div><div class="ttdoc">The time point when the timer was paused.</div><div class="ttdef"><b>Definition</b> <a href="_timer_8hpp_source.html#l00106">Timer.hpp:106</a></div></div>
+<div class="ttc" id="aclass_timer_html_af9c1fdb6d15ad4aac9080bf7e84283cf"><div class="ttname"><a href="#af9c1fdb6d15ad4aac9080bf7e84283cf">Timer::_endTime</a></div><div class="ttdeci">chrono::time_point&lt; chrono::steady_clock &gt; _endTime</div><div class="ttdoc">The time point when the timer will end.</div><div class="ttdef"><b>Definition</b> <a href="_timer_8hpp_source.html#l00105">Timer.hpp:105</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_timer_8hpp_source.html#l00105">_endTime</a>, <a class="el" href="_timer_8hpp_source.html#l00106">_pauseTime</a>, <a class="el" href="_timer_8hpp_source.html#l00100">_remainingMilliseconds</a>, and <a class="el" href="_timer_8hpp_source.html#l00103">_running</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_timer_8cpp_source.html#l00162">addTime()</a>, <a class="el" href="_timer_8cpp_source.html#l00150">addTime()</a>, <a class="el" href="_menu_8cpp_source.html#l00150">Menu::checkTimerInput()</a>, and <a class="el" href="_timer_8cpp_source.html#l00133">reset()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_timer_a0289effad7b573c508bc27e405900a23_icgraph.png" border="0" usemap="#aclass_timer_a0289effad7b573c508bc27e405900a23_icgraph" alt=""/></div>
+</div>
 
 </div>
 </div>
@@ -296,6 +572,38 @@ Public Member Functions</h2></td></tr>
 
 <p>Returns the percentage of time that has elapsed since the timer started. </p>
 <dl class="section return"><dt>Returns</dt><dd>double The percentage of time elapsed. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_timer_8cpp_source.html#l00289">289</a> of file <a class="el" href="_timer_8cpp_source.html">Timer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  289</span>                             {</div>
+<div class="line"><span class="lineno">  290</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="#aded1ecf859b397258dcfa95d3d7cfc41">start</a> = 0;</div>
+<div class="line"><span class="lineno">  291</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aad16481efed1a745745148ef6f0dfd3e">_remainingMilliseconds</a> &gt; <a class="code hl_variable" href="#a82b2a7bb825239edeaf391dd3b0e9dd9">_startMilliseconds</a>) {</div>
+<div class="line"><span class="lineno">  292</span>        <a class="code hl_function" href="#aded1ecf859b397258dcfa95d3d7cfc41">start</a> = <a class="code hl_variable" href="#aad16481efed1a745745148ef6f0dfd3e">_remainingMilliseconds</a>;</div>
+<div class="line"><span class="lineno">  293</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  294</span>        <a class="code hl_function" href="#aded1ecf859b397258dcfa95d3d7cfc41">start</a> = <a class="code hl_variable" href="#a82b2a7bb825239edeaf391dd3b0e9dd9">_startMilliseconds</a>;</div>
+<div class="line"><span class="lineno">  295</span>    }</div>
+<div class="line"><span class="lineno">  296</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="#aded1ecf859b397258dcfa95d3d7cfc41">start</a> == 0) { </div>
+<div class="line"><span class="lineno">  297</span>        <span class="keywordflow">return</span> 100.0; </div>
+<div class="line"><span class="lineno">  298</span>    }</div>
+<div class="line"><span class="lineno">  299</span> </div>
+<div class="line"><span class="lineno">  300</span>    <span class="keywordtype">int</span> elapsedMilliseconds = <a class="code hl_function" href="#aded1ecf859b397258dcfa95d3d7cfc41">start</a> - <a class="code hl_function" href="#a330607659937f497389c9989812cd925">remainingMilliseconds</a>();</div>
+<div class="line"><span class="lineno">  301</span>    <span class="keywordtype">double</span> percentage = ((double)(elapsedMilliseconds) / <a class="code hl_function" href="#aded1ecf859b397258dcfa95d3d7cfc41">start</a>) * 100;</div>
+<div class="line"><span class="lineno">  302</span>    <span class="keywordflow">return</span> percentage;</div>
+<div class="line"><span class="lineno">  303</span>}</div>
+<div class="ttc" id="aclass_timer_html_a330607659937f497389c9989812cd925"><div class="ttname"><a href="#a330607659937f497389c9989812cd925">Timer::remainingMilliseconds</a></div><div class="ttdeci">int remainingMilliseconds()</div><div class="ttdoc">Returns the remaining time in milliseconds.</div><div class="ttdef"><b>Definition</b> <a href="_timer_8cpp_source.html#l00251">Timer.cpp:251</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_timer_8hpp_source.html#l00100">_remainingMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00098">_startMilliseconds</a>, <a class="el" href="_timer_8cpp_source.html#l00251">remainingMilliseconds()</a>, and <a class="el" href="_timer_8cpp_source.html#l00093">start()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00496">Display::tickTimer()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_timer_a97ab4bd97e34c2ce2b8afa7c993fbaec_cgraph.png" border="0" usemap="#aclass_timer_a97ab4bd97e34c2ce2b8afa7c993fbaec_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_timer_a97ab4bd97e34c2ce2b8afa7c993fbaec_icgraph.png" border="0" usemap="#aclass_timer_a97ab4bd97e34c2ce2b8afa7c993fbaec_icgraph" alt=""/></div>
+</div>
 
 </div>
 </div>
@@ -318,6 +626,32 @@ Public Member Functions</h2></td></tr>
 <p>If the timer has expired, it returns 0.</p>
 <dl class="section return"><dt>Returns</dt><dd>int The remaining time in milliseconds. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="_timer_8cpp_source.html#l00251">251</a> of file <a class="el" href="_timer_8cpp_source.html">Timer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  251</span>                                 {</div>
+<div class="line"><span class="lineno">  252</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a0e92367e8b9f4fe50e7395d01db259af">_running</a>) {</div>
+<div class="line"><span class="lineno">  253</span>        <span class="keyword">auto</span> now = chrono::steady_clock::now();</div>
+<div class="line"><span class="lineno">  254</span>        <span class="keyword">auto</span> remaining = chrono::duration_cast&lt;chrono::milliseconds&gt;(<a class="code hl_variable" href="#af9c1fdb6d15ad4aac9080bf7e84283cf">_endTime</a> - now).count();</div>
+<div class="line"><span class="lineno">  255</span>        <span class="keywordflow">if</span> (remaining &gt; 0) { </div>
+<div class="line"><span class="lineno">  256</span>            <span class="keywordflow">return</span> remaining; </div>
+<div class="line"><span class="lineno">  257</span>        } <span class="keywordflow">else</span> { </div>
+<div class="line"><span class="lineno">  258</span>            <a class="code hl_variable" href="#a0e92367e8b9f4fe50e7395d01db259af">_running</a> = <span class="keyword">false</span>; </div>
+<div class="line"><span class="lineno">  259</span>            <a class="code hl_variable" href="#aad16481efed1a745745148ef6f0dfd3e">_remainingMilliseconds</a> = 0; </div>
+<div class="line"><span class="lineno">  260</span>            <span class="keywordflow">return</span> 0; </div>
+<div class="line"><span class="lineno">  261</span>        }</div>
+<div class="line"><span class="lineno">  262</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  263</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="#aad16481efed1a745745148ef6f0dfd3e">_remainingMilliseconds</a>;</div>
+<div class="line"><span class="lineno">  264</span>    }</div>
+<div class="line"><span class="lineno">  265</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_timer_8hpp_source.html#l00105">_endTime</a>, <a class="el" href="_timer_8hpp_source.html#l00100">_remainingMilliseconds</a>, and <a class="el" href="_timer_8hpp_source.html#l00103">_running</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00150">Menu::checkTimerInput()</a>, <a class="el" href="_timer_8cpp_source.html#l00289">percentElapsed()</a>, <a class="el" href="_menu_8cpp_source.html#l00031">Menu::start()</a>, and <a class="el" href="_display_8cpp_source.html#l00496">Display::tickTimer()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_timer_a330607659937f497389c9989812cd925_icgraph.png" border="0" usemap="#aclass_timer_a330607659937f497389c9989812cd925_icgraph" alt=""/></div>
+</div>
+
 </div>
 </div>
 <a id="a9020542d73357a4eef512eefaf57524b" name="a9020542d73357a4eef512eefaf57524b"></a>
@@ -337,6 +671,27 @@ Public Member Functions</h2></td></tr>
 
 <p>Resets the timer to its original duration and pauses it. </p>
 
+<p class="definition">Definition at line <a class="el" href="_timer_8cpp_source.html#l00133">133</a> of file <a class="el" href="_timer_8cpp_source.html">Timer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  133</span>                  {</div>
+<div class="line"><span class="lineno">  134</span>    <a class="code hl_function" href="#a0289effad7b573c508bc27e405900a23">pause</a>();</div>
+<div class="line"><span class="lineno">  135</span>    <a class="code hl_variable" href="#aad16481efed1a745745148ef6f0dfd3e">_remainingMilliseconds</a> = <a class="code hl_variable" href="#a82b2a7bb825239edeaf391dd3b0e9dd9">_startMilliseconds</a>;</div>
+<div class="line"><span class="lineno">  136</span>    <a class="code hl_variable" href="#a751e8cad5b33a2157d1f4ed0dff10d9a">_countdownMilliseconds</a> = <a class="code hl_variable" href="#a82b2a7bb825239edeaf391dd3b0e9dd9">_startMilliseconds</a>;</div>
+<div class="line"><span class="lineno">  137</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_timer_8hpp_source.html#l00099">_countdownMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00100">_remainingMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00098">_startMilliseconds</a>, and <a class="el" href="_timer_8cpp_source.html#l00105">pause()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00150">Menu::checkTimerInput()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_timer_a9020542d73357a4eef512eefaf57524b_cgraph.png" border="0" usemap="#aclass_timer_a9020542d73357a4eef512eefaf57524b_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_timer_a9020542d73357a4eef512eefaf57524b_icgraph.png" border="0" usemap="#aclass_timer_a9020542d73357a4eef512eefaf57524b_icgraph" alt=""/></div>
+</div>
+
 </div>
 </div>
 <a id="a4ac55a73bb3431db9d4d2fd70ae9a2e8" name="a4ac55a73bb3431db9d4d2fd70ae9a2e8"></a>
@@ -355,6 +710,23 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Resumes the timer from where it was paused by recalculating the end time. </p>
+
+<p class="definition">Definition at line <a class="el" href="_timer_8cpp_source.html#l00120">120</a> of file <a class="el" href="_timer_8cpp_source.html">Timer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  120</span>                   {</div>
+<div class="line"><span class="lineno">  121</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a0e92367e8b9f4fe50e7395d01db259af">_running</a>) {</div>
+<div class="line"><span class="lineno">  122</span>        <a class="code hl_variable" href="#af9c1fdb6d15ad4aac9080bf7e84283cf">_endTime</a> = chrono::steady_clock::now() + chrono::milliseconds(<a class="code hl_variable" href="#aad16481efed1a745745148ef6f0dfd3e">_remainingMilliseconds</a>);</div>
+<div class="line"><span class="lineno">  123</span>        <a class="code hl_variable" href="#a0e92367e8b9f4fe50e7395d01db259af">_running</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  124</span>    }</div>
+<div class="line"><span class="lineno">  125</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_timer_8hpp_source.html#l00105">_endTime</a>, <a class="el" href="_timer_8hpp_source.html#l00100">_remainingMilliseconds</a>, and <a class="el" href="_timer_8hpp_source.html#l00103">_running</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_timer_8cpp_source.html#l00162">addTime()</a>, <a class="el" href="_timer_8cpp_source.html#l00150">addTime()</a>, and <a class="el" href="_menu_8cpp_source.html#l00150">Menu::checkTimerInput()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_timer_a4ac55a73bb3431db9d4d2fd70ae9a2e8_icgraph.png" border="0" usemap="#aclass_timer_a4ac55a73bb3431db9d4d2fd70ae9a2e8_icgraph" alt=""/></div>
+</div>
 
 </div>
 </div>
@@ -381,16 +753,228 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="_timer_8cpp_source.html#l00093">93</a> of file <a class="el" href="_timer_8cpp_source.html">Timer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   93</span>                                           {</div>
+<div class="line"><span class="lineno">   94</span>    <a class="code hl_variable" href="#a0e92367e8b9f4fe50e7395d01db259af">_running</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   95</span>    <a class="code hl_variable" href="#af9c1fdb6d15ad4aac9080bf7e84283cf">_endTime</a> = chrono::steady_clock::now() + chrono::milliseconds(<a class="code hl_variable" href="#a751e8cad5b33a2157d1f4ed0dff10d9a">_countdownMilliseconds</a>);</div>
+<div class="line"><span class="lineno">   96</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_timer_8hpp_source.html#l00099">_countdownMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00105">_endTime</a>, and <a class="el" href="_timer_8hpp_source.html#l00103">_running</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_timer_8cpp_source.html#l00289">percentElapsed()</a>, <a class="el" href="_timer_8cpp_source.html#l00016">Timer()</a>, and <a class="el" href="_timer_8cpp_source.html#l00075">Timer()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_timer_aded1ecf859b397258dcfa95d3d7cfc41_icgraph.png" border="0" usemap="#aclass_timer_aded1ecf859b397258dcfa95d3d7cfc41_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="a751e8cad5b33a2157d1f4ed0dff10d9a" name="a751e8cad5b33a2157d1f4ed0dff10d9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a751e8cad5b33a2157d1f4ed0dff10d9a">&#9670;&#160;</a></span>_countdownMilliseconds</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Timer::_countdownMilliseconds</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The duration of the countdown in milliseconds. </p>
+
+<p class="definition">Definition at line <a class="el" href="_timer_8hpp_source.html#l00099">99</a> of file <a class="el" href="_timer_8hpp_source.html">Timer.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_timer_8cpp_source.html#l00162">addTime()</a>, <a class="el" href="_timer_8cpp_source.html#l00150">addTime()</a>, <a class="el" href="_timer_8cpp_source.html#l00133">reset()</a>, <a class="el" href="_timer_8cpp_source.html#l00093">start()</a>, <a class="el" href="_timer_8cpp_source.html#l00016">Timer()</a>, and <a class="el" href="_timer_8cpp_source.html#l00075">Timer()</a>.</p>
+
+</div>
+</div>
+<a id="af9c1fdb6d15ad4aac9080bf7e84283cf" name="af9c1fdb6d15ad4aac9080bf7e84283cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9c1fdb6d15ad4aac9080bf7e84283cf">&#9670;&#160;</a></span>_endTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">chrono::time_point&lt;chrono::steady_clock&gt; Timer::_endTime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The time point when the timer will end. </p>
+
+<p class="definition">Definition at line <a class="el" href="_timer_8hpp_source.html#l00105">105</a> of file <a class="el" href="_timer_8hpp_source.html">Timer.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_timer_8cpp_source.html#l00105">pause()</a>, <a class="el" href="_timer_8cpp_source.html#l00251">remainingMilliseconds()</a>, <a class="el" href="_timer_8cpp_source.html#l00120">resume()</a>, and <a class="el" href="_timer_8cpp_source.html#l00093">start()</a>.</p>
+
+</div>
+</div>
+<a id="aa8f27b761a340cbab040e05412711056" name="aa8f27b761a340cbab040e05412711056"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8f27b761a340cbab040e05412711056">&#9670;&#160;</a></span>_incrementMilliseconds</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Timer::_incrementMilliseconds</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The increment time in milliseconds for adding time. </p>
+
+<p class="definition">Definition at line <a class="el" href="_timer_8hpp_source.html#l00101">101</a> of file <a class="el" href="_timer_8hpp_source.html">Timer.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_timer_8cpp_source.html#l00162">addTime()</a>, <a class="el" href="_timer_8cpp_source.html#l00192">changeIncrementTime()</a>, <a class="el" href="_timer_8cpp_source.html#l00016">Timer()</a>, and <a class="el" href="_timer_8cpp_source.html#l00075">Timer()</a>.</p>
+
+</div>
+</div>
+<a id="acd2dad285d0de4df16d3504a7b4a26f4" name="acd2dad285d0de4df16d3504a7b4a26f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd2dad285d0de4df16d3504a7b4a26f4">&#9670;&#160;</a></span>_pauseTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">chrono::time_point&lt;chrono::steady_clock&gt; Timer::_pauseTime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The time point when the timer was paused. </p>
+
+<p class="definition">Definition at line <a class="el" href="_timer_8hpp_source.html#l00106">106</a> of file <a class="el" href="_timer_8hpp_source.html">Timer.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_timer_8cpp_source.html#l00105">pause()</a>.</p>
+
+</div>
+</div>
+<a id="aad16481efed1a745745148ef6f0dfd3e" name="aad16481efed1a745745148ef6f0dfd3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad16481efed1a745745148ef6f0dfd3e">&#9670;&#160;</a></span>_remainingMilliseconds</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Timer::_remainingMilliseconds</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The remaining time in milliseconds. </p>
+
+<p class="definition">Definition at line <a class="el" href="_timer_8hpp_source.html#l00100">100</a> of file <a class="el" href="_timer_8hpp_source.html">Timer.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_timer_8cpp_source.html#l00162">addTime()</a>, <a class="el" href="_timer_8cpp_source.html#l00150">addTime()</a>, <a class="el" href="_timer_8cpp_source.html#l00105">pause()</a>, <a class="el" href="_timer_8cpp_source.html#l00289">percentElapsed()</a>, <a class="el" href="_timer_8cpp_source.html#l00251">remainingMilliseconds()</a>, <a class="el" href="_timer_8cpp_source.html#l00133">reset()</a>, <a class="el" href="_timer_8cpp_source.html#l00120">resume()</a>, <a class="el" href="_timer_8cpp_source.html#l00016">Timer()</a>, and <a class="el" href="_timer_8cpp_source.html#l00075">Timer()</a>.</p>
+
+</div>
+</div>
+<a id="a0e92367e8b9f4fe50e7395d01db259af" name="a0e92367e8b9f4fe50e7395d01db259af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e92367e8b9f4fe50e7395d01db259af">&#9670;&#160;</a></span>_running</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Timer::_running</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indicates whether the timer is currently running. </p>
+
+<p class="definition">Definition at line <a class="el" href="_timer_8hpp_source.html#l00103">103</a> of file <a class="el" href="_timer_8hpp_source.html">Timer.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_timer_8cpp_source.html#l00162">addTime()</a>, <a class="el" href="_timer_8cpp_source.html#l00150">addTime()</a>, <a class="el" href="_timer_8cpp_source.html#l00276">isRunning()</a>, <a class="el" href="_timer_8cpp_source.html#l00105">pause()</a>, <a class="el" href="_timer_8cpp_source.html#l00251">remainingMilliseconds()</a>, <a class="el" href="_timer_8cpp_source.html#l00120">resume()</a>, and <a class="el" href="_timer_8cpp_source.html#l00093">start()</a>.</p>
+
+</div>
+</div>
+<a id="a82b2a7bb825239edeaf391dd3b0e9dd9" name="a82b2a7bb825239edeaf391dd3b0e9dd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82b2a7bb825239edeaf391dd3b0e9dd9">&#9670;&#160;</a></span>_startMilliseconds</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Timer::_startMilliseconds</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The initial duration of the timer in milliseconds. </p>
+
+<p class="definition">Definition at line <a class="el" href="_timer_8hpp_source.html#l00098">98</a> of file <a class="el" href="_timer_8hpp_source.html">Timer.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_timer_8cpp_source.html#l00289">percentElapsed()</a>, <a class="el" href="_timer_8cpp_source.html#l00133">reset()</a>, <a class="el" href="_timer_8cpp_source.html#l00016">Timer()</a>, and <a class="el" href="_timer_8cpp_source.html#l00075">Timer()</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/<a class="el" href="_timer_8hpp_source.html">Timer.hpp</a></li>
-<li>src/<a class="el" href="_timer_8cpp.html">Timer.cpp</a></li>
+<li>src/<a class="el" href="_timer_8cpp_source.html">Timer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0
+Generated on Wed Aug 28 2024 15:39:48 for Tempo by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0
 </small></address>
 </div><!-- doc-content -->
 </body>

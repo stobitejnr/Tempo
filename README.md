@@ -39,6 +39,7 @@ Tempo is a versatile command-line application that allows users to create and ma
 ## Usage
 
 1. Upon starting the application, you'll be presented with a menu:
+
 ![Start up](./startup.png)
 
 ```The alarm feature is currently under development and is not available.```
@@ -64,4 +65,4 @@ We welcome contributions to Tempo! Please feel free to submit issues and pull re
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](../LICENSE) file for details.
