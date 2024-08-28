@@ -6,7 +6,6 @@ project(Tempo VERSION 0.1)
 # Enable testing
 enable_testing()
 
-
 # Specify the C++ standard
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
@@ -16,8 +15,6 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 
 # Add the main executable
 add_executable(Tempo
-
-    #cpps
     src/main.cpp
     src/Menu.cpp
     src/Display.cpp
@@ -27,17 +24,17 @@ add_executable(Tempo
     fonts/font1.cpp
 )
 
-# Add the test executable
-add_executable(timer_test
-    tests/timer_test.cpp
-    src/Timer.cpp  # Include the Timer implementation
+# Add the test executables
+add_executable(TimerTest
+    tests/TimerTest.cpp
+    src/Timer.cpp
 )
 
-# Add the test
-add_test(NAME TimerTest COMMAND timer_test)
-
-# Optional: Add a custom target to run all tests
-add_custom_target(run_tests
-    COMMAND ${CMAKE_CTEST_COMMAND}
-    DEPENDS timer_test
+add_executable(StopwatchTest
+    tests/StopwatchTest.cpp
+    src/Stopwatch.cpp
 )
+
+# Add the tests
+add_test(NAME TimerTest COMMAND TimerTest)
+add_test(NAME StopwatchTest COMMAND StopwatchTest)
