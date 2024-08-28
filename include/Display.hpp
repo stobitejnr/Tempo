@@ -172,6 +172,8 @@ private:
     string _oldSplash;   ///< Previous splash screen for comparison.
     string _oldSplits;   ///< Previous splits for comparison.
 
+    string _fontName;   ///< Name of font used for loading.
+
     int _asciiWidth; ///< Width of the ASCII art.
 };
 

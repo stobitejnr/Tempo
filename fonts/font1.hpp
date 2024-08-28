@@ -8,5 +8,7 @@ using std::vector;
 using std::string;
 
 extern vector<vector<string>> font1;
+extern const int FONTHEIGHT = 8;
+extern const int FONTWIDTH = 10;
 
 #endif // FONT1_HPP

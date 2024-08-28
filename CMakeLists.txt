@@ -3,6 +3,8 @@
 # Set the project name and version
 project(Tempo VERSION 0.1)
 
+enable_testing()
+
 # Specify the C++ standard
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
@@ -12,6 +14,7 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 
 # Add the executable
 add_executable(Tempo
+
     #cpps
     src/main.cpp
     src/Menu.cpp
@@ -22,4 +25,5 @@ add_executable(Tempo
 
     #fonts
     fonts/font1.cpp
+
 )
