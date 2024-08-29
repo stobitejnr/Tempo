@@ -37,7 +37,7 @@ jobs:
       - name: Run Tests and Generate Coverage Report
         shell: cmd
         run: |
-          OpenCppCoverage --verbose --modules build${{env.BUILD_CONFIGURATION}}* --export_type cobertura:coverage.xml -- "build\Debug\Test.exe"
+          OpenCppCoverage --verbose --modules build${{env.BUILD_CONFIGURATION}}* --export_type cobertura:coverage.xml -- "build\Debug\Tempo.exe"
 
       - name: Upload Coverage Report to Codecov
         uses: codecov/codecov-action@v4
