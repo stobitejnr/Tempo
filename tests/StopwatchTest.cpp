@@ -10,12 +10,14 @@ using namespace std;
 void test_constructor() {
     Stopwatch stopwatch(0,0,0);
     assert(stopwatch.currentMilliseconds() == 0);
+    stopwatch.start();
     assert(stopwatch.isRunning());
     cout << "Constructor test passed.\n";
 }
 
 void test_pause_resume() {
     Stopwatch stopwatch(0, 1, 0); // 1 minute
+    stopwatch.start();
     this_thread::sleep_for(chrono::seconds(1));
     stopwatch.pause();
     int currentAfterPause = stopwatch.currentMilliseconds();
@@ -30,6 +32,7 @@ void test_pause_resume() {
 
 void test_reset() {
     Stopwatch stopwatch(0, 1, 0); // 1 minute
+    stopwatch.start();
     this_thread::sleep_for(chrono::seconds(1));
     stopwatch.reset();
     assert(stopwatch.currentMilliseconds() == 0);
@@ -39,6 +42,7 @@ void test_reset() {
 
 void test_splits() {
     Stopwatch stopwatch(0, 0, 0);
+    stopwatch.start();
     this_thread::sleep_for(chrono::seconds(1));
     stopwatch.addSplit();
     assert(stopwatch.getSplits().at(0) >= 990 && stopwatch.getSplits().at(0) <= 1010);

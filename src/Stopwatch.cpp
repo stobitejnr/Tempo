@@ -26,7 +26,6 @@ Stopwatch::Stopwatch(int hours, int minutes, int seconds) {
     int milli = 3600000 * hours + 60000 * minutes + 1000 * seconds;
     _running = false;
     _currMilliseconds = milli;
-    start();
 }
 
 /* =========================================================
