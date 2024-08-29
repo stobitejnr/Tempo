@@ -8,6 +8,9 @@
   <a href="https://app.codacy.com/gh/stobitejnr/Tempo/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade">
     <img src="https://app.codacy.com/project/badge/Grade/8b2c325c2cc14f8c83427c59c616a839" alt="Codacy Badge">
   </a>
+  <a href="https://github.com/stobitejnr/Tempo/actions/workflows/cmake.yml">
+    <img src="https://github.com/stobitejnr/Tempo/actions/workflows/cmake.yml/badge.svg" alt="CMake Build">
+  </a>
 </p>
 
 <p align="center">
@@ -20,10 +23,24 @@
 
 ## Developers
 ---
-- William Donnelly 
-- Kevin Albert 
-- Rowan Zeszut ![Rowam](./images/Rowan.png)
-- Ben Sampson
+<p align="center">
+  <span style="display: inline-block; text-align: center; margin: 0 10px;">
+    <strong>William Donnelly</strong><br>
+    <img src="./images/Will.png" alt="Will" style="width: 100px; height: auto;">
+  </span>
+  <span style="display: inline-block; text-align: center; margin: 0 10px;">
+    <strong>Kevin Albert</strong><br>
+    <img src="./images/Kevin.jpg" alt="Kevin" style="width: 100px; height: auto;">
+  </span>
+  <span style="display: inline-block; text-align: center; margin: 0 10px;">
+    <strong>Rowan Zeszut</strong><br>
+    <img src="./images/Rowan.png" alt="Rowan" style="width: 100px; height: auto;">
+  </span>
+  <span style="display: inline-block; text-align: center; margin: 0 10px;">
+    <strong>Ben Sampson</strong><br>
+    <img src="./images/Ben.png" alt="Ben" style="width: 100px; height: auto;">
+  </span>
+</p>
 
 ## Features
 ---
