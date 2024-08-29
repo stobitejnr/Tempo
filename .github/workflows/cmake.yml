@@ -19,5 +19,6 @@ jobs:
     - name: Build with CMake
       run: cmake --build build
 
-    - name: Run tests
-      run: cd build && ctest
+    - name: Run Tests
+      run: cd build && ctest --output-on-failure -C Debug
+    
