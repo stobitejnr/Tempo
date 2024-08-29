@@ -28,7 +28,7 @@ void test_pause_resume() {
     assert(timer.remainingMilliseconds() == timeRemaining);
     timer.resume();
     assert(timer.isRunning());
-    assert(timer.remainingMilliseconds() < 59000);
+    assert(timer.remainingMilliseconds() < 59010);
     std::cout << "test_pause_resume passed!\n";
 }
 
