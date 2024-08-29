@@ -23,12 +23,12 @@ jobs:
       run: cmake -B ${{github.workspace}}/build
 
     - name: Build
-      # Build your program with the default configuration
+      # Build your program with the Debug configuration
       run: cmake --build ${{github.workspace}}/build --config Debug
 
     - name: Generate Coverage Report
       shell: cmd
-      run: OpenCppCoverage --modules=* --export_type cobertura:cmakeci.xml --cover_children -- ctest -C Debug --test-dir build
+      run: OpenCppCoverage --modules=* --export_type cobertura:cmakeci.xml --cover_children -- ctest -C Debug --test-dir build --output-on-failure
 
     - name: Upload Report to Codecov
       uses: codecov/codecov-action@v4
