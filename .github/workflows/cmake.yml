@@ -20,4 +20,4 @@ jobs:
       run: cmake --build build
 
     - name: Run tests
-      run: ctest --tests build
+      run: ctest
