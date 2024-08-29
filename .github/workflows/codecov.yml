@@ -37,7 +37,9 @@ jobs:
       - name: Generate coverage report
         run: |
           cd build
-          llvm-cov gcov *.o -o . > coverage.info   # Generate coverage report using llvm-cov
+          llvm-profdata merge -sparse default.profraw -o coverage.profdata
+          llvm-cov show ./Tempo -instr-profile=coverage.profdata > coverage.info
+
           
       - name: Upload coverage report to Codecov
         uses: codecov/codecov-action@v4
