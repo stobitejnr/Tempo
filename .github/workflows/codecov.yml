@@ -37,7 +37,7 @@ jobs:
       - name: Verify Coverage Files
         run: |
           cd build
-          Get-ChildItem -Recurse -Include *.gcno,*.gcda
+          Get-ChildItem -Recurse -Include *.gcno,*.gcda | Select-Object FullName
 
       - name: Generate coverage report
         run: |
@@ -48,8 +48,12 @@ jobs:
             Write-Error "No .gcno or .gcda files found."
             exit 1
           }
-          $filesToProcess = $gcnoFiles + $gcdaFiles
-          llvm-cov gcov $filesToProcess > coverage.info
+          foreach ($file in $gcnoFiles) {
+            llvm-cov gcov $file > coverage.info
+          }
+          foreach ($file in $gcdaFiles) {
+            llvm-cov gcov $file >> coverage.info
+          }
 
       - name: Upload coverage report to Codecov
         uses: codecov/codecov-action@v3
