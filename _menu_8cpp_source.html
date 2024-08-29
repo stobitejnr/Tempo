@@ -20,6 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
    <div id="projectname">Tempo
    </div>
@@ -219,87 +220,88 @@ $(function() {
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;A&#39;</span>:</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;a&#39;</span>:</div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>                <a class="code hl_variable" href="class_menu.html#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62">clearScreen</a>();</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>                timer = <a class="code hl_class" href="class_timer.html">Timer</a>();</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;Q&#39;</span>:</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;q&#39;</span>:</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                <a class="code hl_variable" href="class_menu.html#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#ad226aa44204137c5a8fe774967532af4">clearSplash</a>();</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>                run = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>            <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        }</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    }</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>}</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="comment">/* =========================================================</span></div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="comment">HANDLE KEYBOARD INPUT FOR STOPWATCH</span></div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="comment">========================================================= */</span></div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno"><a class="line" href="class_menu.html#a81188fdf5f017799f9e7f7eaaf98c3ec">  199</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_menu.html#a81188fdf5f017799f9e7f7eaaf98c3ec">Menu::checkStopwatchInput</a>(<a class="code hl_class" href="class_stopwatch.html">Stopwatch</a>&amp; stopwatch, <span class="keywordtype">bool</span>&amp; run){</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    <span class="keywordflow">if</span>(_kbhit()){</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        <span class="keywordtype">char</span> ch = _getch();</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        <span class="keywordflow">switch</span>(ch){</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;S&#39;</span>:</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;s&#39;</span>:</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>                <span class="keywordflow">if</span>(stopwatch.<a class="code hl_function" href="class_stopwatch.html#ae20cb58892efc6ca55117583aac8c392">isRunning</a>()){</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>                    stopwatch.<a class="code hl_function" href="class_stopwatch.html#a2cc48295d6b083361d062b8eb68d753a">pause</a>();</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>                    <a class="code hl_variable" href="class_menu.html#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#a3a0e77e68157e55d67ac3f28dffdd00c">setSplash</a>(<span class="stringliteral">&quot;STOPWATCH PAUSED&quot;</span>);</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>                }</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>                <span class="keywordflow">else</span>{</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>                    <a class="code hl_variable" href="class_menu.html#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#ad226aa44204137c5a8fe774967532af4">clearSplash</a>();</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>                    stopwatch.<a class="code hl_function" href="class_stopwatch.html#a789461171238250633eeb26b8f3b0dce">resume</a>();        </div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>                }</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;R&#39;</span>:</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;r&#39;</span>:</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>                stopwatch.<a class="code hl_function" href="class_stopwatch.html#a42c7014e7fffcf4c56ca6fb07f8eb31c">reset</a>();</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>                <a class="code hl_variable" href="class_menu.html#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62">clearScreen</a>();</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>                <a class="code hl_variable" href="class_menu.html#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#a3a0e77e68157e55d67ac3f28dffdd00c">setSplash</a>(<span class="stringliteral">&quot;STOPWATCH RESET, PRESS &#39;S&#39; TO START&quot;</span>);</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;A&#39;</span>:</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;a&#39;</span>:</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>                stopwatch.<a class="code hl_function" href="class_stopwatch.html#aa0a6e6e55261fa0d2b239800bc7a782d">addSplit</a>();</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>                <a class="code hl_variable" href="class_menu.html#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#a3a0e77e68157e55d67ac3f28dffdd00c">setSplash</a>(<span class="stringliteral">&quot;SPLIT CREATED&quot;</span>);</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;Q&#39;</span>:</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;q&#39;</span>:</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>            <a class="code hl_variable" href="class_menu.html#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#ad226aa44204137c5a8fe774967532af4">clearSplash</a>();</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>                run = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>            <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>                <span class="keywordflow">if</span>(!run){</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>                    <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>                }</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>        }</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    }</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>}</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span><span class="comment">/* =========================================================</span></div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span><span class="comment">GET USER INPUT FOR MENU SELECTION</span></div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span><span class="comment">========================================================= */</span></div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span> </div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno"><a class="line" href="class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452">  251</a></span><span class="keywordtype">char</span> <a class="code hl_function" href="class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452">Menu::getMenuInput</a>(){</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    <span class="keywordflow">while</span>(<span class="keyword">true</span>){</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        <span class="keywordflow">if</span>(_kbhit()){</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>            <span class="keywordtype">char</span> ch = _getch();</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>            <span class="keywordflow">switch</span>(ch){</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;1&#39;</span>:</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>                    <span class="keywordflow">return</span> <span class="charliteral">&#39;1&#39;</span>;</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;2&#39;</span>:</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>                    <span class="keywordflow">return</span> <span class="charliteral">&#39;2&#39;</span>;</div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;3&#39;</span>:</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>                    <span class="keywordflow">return</span> <span class="charliteral">&#39;3&#39;</span>;</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;q&#39;</span>:</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>                    <span class="keywordflow">return</span> <span class="charliteral">&#39;q&#39;</span>;</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>                <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>            }</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        }</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        <a class="code hl_function" href="class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b">wait</a>(0.1); <span class="comment">// Slight delay before checking input again</span></div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    }</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>}</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>                <a class="code hl_variable" href="class_menu.html#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#ad226aa44204137c5a8fe774967532af4">clearSplash</a>();</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>                timer = <a class="code hl_class" href="class_timer.html">Timer</a>();</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;Q&#39;</span>:</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;q&#39;</span>:</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>                <a class="code hl_variable" href="class_menu.html#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#ad226aa44204137c5a8fe774967532af4">clearSplash</a>();</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>                run = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>            <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        }</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    }</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>}</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="comment">/* =========================================================</span></div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="comment">HANDLE KEYBOARD INPUT FOR STOPWATCH</span></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span><span class="comment">========================================================= */</span></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno"><a class="line" href="class_menu.html#a81188fdf5f017799f9e7f7eaaf98c3ec">  200</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_menu.html#a81188fdf5f017799f9e7f7eaaf98c3ec">Menu::checkStopwatchInput</a>(<a class="code hl_class" href="class_stopwatch.html">Stopwatch</a>&amp; stopwatch, <span class="keywordtype">bool</span>&amp; run){</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <span class="keywordflow">if</span>(_kbhit()){</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        <span class="keywordtype">char</span> ch = _getch();</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        <span class="keywordflow">switch</span>(ch){</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;S&#39;</span>:</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;s&#39;</span>:</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>                <span class="keywordflow">if</span>(stopwatch.<a class="code hl_function" href="class_stopwatch.html#ae20cb58892efc6ca55117583aac8c392">isRunning</a>()){</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>                    stopwatch.<a class="code hl_function" href="class_stopwatch.html#a2cc48295d6b083361d062b8eb68d753a">pause</a>();</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>                    <a class="code hl_variable" href="class_menu.html#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#a3a0e77e68157e55d67ac3f28dffdd00c">setSplash</a>(<span class="stringliteral">&quot;STOPWATCH PAUSED&quot;</span>);</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>                }</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>                <span class="keywordflow">else</span>{</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>                    <a class="code hl_variable" href="class_menu.html#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#ad226aa44204137c5a8fe774967532af4">clearSplash</a>();</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>                    stopwatch.<a class="code hl_function" href="class_stopwatch.html#a789461171238250633eeb26b8f3b0dce">resume</a>();        </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>                }</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;R&#39;</span>:</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;r&#39;</span>:</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>                stopwatch.<a class="code hl_function" href="class_stopwatch.html#a42c7014e7fffcf4c56ca6fb07f8eb31c">reset</a>();</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>                <a class="code hl_variable" href="class_menu.html#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62">clearScreen</a>();</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>                <a class="code hl_variable" href="class_menu.html#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#a3a0e77e68157e55d67ac3f28dffdd00c">setSplash</a>(<span class="stringliteral">&quot;STOPWATCH RESET, PRESS &#39;S&#39; TO START&quot;</span>);</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;A&#39;</span>:</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;a&#39;</span>:</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>                stopwatch.<a class="code hl_function" href="class_stopwatch.html#aa0a6e6e55261fa0d2b239800bc7a782d">addSplit</a>();</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>                <a class="code hl_variable" href="class_menu.html#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#a3a0e77e68157e55d67ac3f28dffdd00c">setSplash</a>(<span class="stringliteral">&quot;SPLIT CREATED&quot;</span>);</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;Q&#39;</span>:</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>            <span class="keywordflow">case</span> <span class="charliteral">&#39;q&#39;</span>:</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>            <a class="code hl_variable" href="class_menu.html#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#ad226aa44204137c5a8fe774967532af4">clearSplash</a>();</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>                run = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>            <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>                <span class="keywordflow">if</span>(!run){</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>                    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>                }</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>        }</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    }</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>}</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span><span class="comment">/* =========================================================</span></div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span><span class="comment">GET USER INPUT FOR MENU SELECTION</span></div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span><span class="comment">========================================================= */</span></div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno"><a class="line" href="class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452">  252</a></span><span class="keywordtype">char</span> <a class="code hl_function" href="class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452">Menu::getMenuInput</a>(){</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    <span class="keywordflow">while</span>(<span class="keyword">true</span>){</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        <span class="keywordflow">if</span>(_kbhit()){</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>            <span class="keywordtype">char</span> ch = _getch();</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>            <span class="keywordflow">switch</span>(ch){</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;1&#39;</span>:</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>                    <span class="keywordflow">return</span> <span class="charliteral">&#39;1&#39;</span>;</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;2&#39;</span>:</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>                    <span class="keywordflow">return</span> <span class="charliteral">&#39;2&#39;</span>;</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;3&#39;</span>:</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>                    <span class="keywordflow">return</span> <span class="charliteral">&#39;3&#39;</span>;</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;q&#39;</span>:</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>                    <span class="keywordflow">return</span> <span class="charliteral">&#39;q&#39;</span>;</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>                <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>            }</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        }</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>        <a class="code hl_function" href="class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b">wait</a>(0.1); <span class="comment">// Slight delay before checking input again</span></div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    }</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>}</div>
 <div class="ttc" id="aclass_alarm_html"><div class="ttname"><a href="class_alarm.html">Alarm</a></div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8hpp_source.html#l00008">Alarm.hpp:8</a></div></div>
 <div class="ttc" id="aclass_display_html"><div class="ttname"><a href="class_display.html">Display</a></div><div class="ttdoc">The Display class manages the visual representation and interaction logic for timers,...</div><div class="ttdef"><b>Definition:</b> <a href="_display_8hpp_source.html#l00021">Display.hpp:22</a></div></div>
 <div class="ttc" id="aclass_display_html_a02b2228e05be168eda0b817d1ecf5db7"><div class="ttname"><a href="class_display.html#a02b2228e05be168eda0b817d1ecf5db7">Display::tickTimer</a></div><div class="ttdeci">void tickTimer(Timer &amp;timer)</div><div class="ttdoc">Updates the display based on the state of the provided Timer object.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8cpp_source.html#l00496">Display.cpp:496</a></div></div>
@@ -307,11 +309,11 @@ $(function() {
 <div class="ttc" id="aclass_display_html_a670c8db4c53ae0f09d6d3b57f1813b7f"><div class="ttname"><a href="class_display.html#a670c8db4c53ae0f09d6d3b57f1813b7f">Display::tickStopwatch</a></div><div class="ttdeci">void tickStopwatch(Stopwatch &amp;stopwatch)</div><div class="ttdoc">Updates the display based on the state of the provided Stopwatch object.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8cpp_source.html#l00523">Display.cpp:523</a></div></div>
 <div class="ttc" id="aclass_display_html_a729a08fa7f1f33907b6c2ba13fcf6d62"><div class="ttname"><a href="class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62">Display::clearScreen</a></div><div class="ttdeci">void clearScreen()</div><div class="ttdoc">Clears the terminal screen.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8cpp_source.html#l00040">Display.cpp:40</a></div></div>
 <div class="ttc" id="aclass_display_html_ad226aa44204137c5a8fe774967532af4"><div class="ttname"><a href="class_display.html#ad226aa44204137c5a8fe774967532af4">Display::clearSplash</a></div><div class="ttdeci">void clearSplash()</div><div class="ttdoc">Clears the splash screen.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8cpp_source.html#l00090">Display.cpp:90</a></div></div>
-<div class="ttc" id="aclass_menu_html_a0699f1b4c5bd69ae1d5bee2e5043c452"><div class="ttname"><a href="class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452">Menu::getMenuInput</a></div><div class="ttdeci">char getMenuInput()</div><div class="ttdoc">Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00251">Menu.cpp:251</a></div></div>
+<div class="ttc" id="aclass_menu_html_a0699f1b4c5bd69ae1d5bee2e5043c452"><div class="ttname"><a href="class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452">Menu::getMenuInput</a></div><div class="ttdeci">char getMenuInput()</div><div class="ttdoc">Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00252">Menu.cpp:252</a></div></div>
 <div class="ttc" id="aclass_menu_html_a091dfbcc90fd8793d85784996e32443d"><div class="ttname"><a href="class_menu.html#a091dfbcc90fd8793d85784996e32443d">Menu::_run</a></div><div class="ttdeci">bool _run</div><div class="ttdoc">Boolean to control the main loop execution.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8hpp_source.html#l00083">Menu.hpp:83</a></div></div>
 <div class="ttc" id="aclass_menu_html_a4ab7d9809ad0f490ad7634a76b37589b"><div class="ttname"><a href="class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b">Menu::wait</a></div><div class="ttdeci">void wait(double seconds)</div><div class="ttdoc">Waits for a specific duration using busy-waiting.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00119">Menu.cpp:119</a></div></div>
 <div class="ttc" id="aclass_menu_html_a537a69bfbe3b8c29e3dfd3e2f5dd88b5"><div class="ttname"><a href="class_menu.html#a537a69bfbe3b8c29e3dfd3e2f5dd88b5">Menu::waitForInput</a></div><div class="ttdeci">void waitForInput()</div><div class="ttdoc">Waits for any key press from the user.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00134">Menu.cpp:134</a></div></div>
-<div class="ttc" id="aclass_menu_html_a81188fdf5f017799f9e7f7eaaf98c3ec"><div class="ttname"><a href="class_menu.html#a81188fdf5f017799f9e7f7eaaf98c3ec">Menu::checkStopwatchInput</a></div><div class="ttdeci">void checkStopwatchInput(Stopwatch &amp;stopwatch, bool &amp;run)</div><div class="ttdoc">Checks and handles user input for the Stopwatch.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00199">Menu.cpp:199</a></div></div>
+<div class="ttc" id="aclass_menu_html_a81188fdf5f017799f9e7f7eaaf98c3ec"><div class="ttname"><a href="class_menu.html#a81188fdf5f017799f9e7f7eaaf98c3ec">Menu::checkStopwatchInput</a></div><div class="ttdeci">void checkStopwatchInput(Stopwatch &amp;stopwatch, bool &amp;run)</div><div class="ttdoc">Checks and handles user input for the Stopwatch.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00200">Menu.cpp:200</a></div></div>
 <div class="ttc" id="aclass_menu_html_a836f729dae007026c27f10b3354709fd"><div class="ttname"><a href="class_menu.html#a836f729dae007026c27f10b3354709fd">Menu::_display</a></div><div class="ttdeci">Display _display</div><div class="ttdoc">Instance of Display to manage the visual representation.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8hpp_source.html#l00082">Menu.hpp:82</a></div></div>
 <div class="ttc" id="aclass_menu_html_ab8d3cccd5b39987a6546f7dc1187b71e"><div class="ttname"><a href="class_menu.html#ab8d3cccd5b39987a6546f7dc1187b71e">Menu::checkTimerInput</a></div><div class="ttdeci">void checkTimerInput(Timer &amp;timer, bool &amp;run)</div><div class="ttdoc">Checks and handles user input for the Timer.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00150">Menu.cpp:150</a></div></div>
 <div class="ttc" id="aclass_menu_html_ad466dd83355124a6ed958430450bfe94"><div class="ttname"><a href="class_menu.html#ad466dd83355124a6ed958430450bfe94">Menu::Menu</a></div><div class="ttdeci">Menu()</div><div class="ttdoc">Constructs a Menu object and initializes its state.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00015">Menu.cpp:15</a></div></div>
@@ -332,7 +334,7 @@ $(function() {
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 29 2024 02:30:36 for Tempo by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+Generated on Thu Aug 29 2024 02:42:29 for Tempo by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
 </small></address>
 </body>
 </html>
