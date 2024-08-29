@@ -15,39 +15,32 @@ jobs:
 
       - name: Install dependencies
         run: |
-          choco install cmake --no-progress -y
-          choco install llvm --no-progress -y
-          
+          choco install cmake --no-progress -y  # Install CMake
+          choco install opencppcoverage --no-progress -y  # Install OpenCppCoverage
+
       - name: Configure CMake
         run: |
           mkdir build
           cd build
-          cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="-fprofile-instr-generate -fcoverage-mapping" ..
-          
+          cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug ..
+
       - name: Build
         run: |
           cd build
           cmake --build .
-          
-      - name: Run tests and generate profiling data
+
+      - name: Run tests with coverage
         run: |
-          cd build
-          export LLVM_PROFILE_FILE="coverage.profraw"
-          ctest -C Debug --output-on-failure
-          
-      - name: Merge profiling data
+          mkdir coverage
+          OpenCppCoverage --export_type binary:coverage/coverage.bin --working_dir build --sources .. -- ctest -C Debug --output-on-failure
+
+      - name: Convert coverage report to lcov format
         run: |
-          cd build
-          llvm-profdata merge -sparse coverage.profraw -o coverage.profdata
-          
-      - name: Generate coverage report
-        run: |
-          cd build
-          llvm-cov show ./Tempo -instr-profile=coverage.profdata > coverage.info
-          
+          OpenCppCoverageToLcov --input coverage/coverage.bin --output coverage/coverage.info
+
       - name: Upload coverage report to Codecov
         uses: codecov/codecov-action@v4
         with:
-          files: build/coverage.info
+          files: coverage/coverage.info
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
