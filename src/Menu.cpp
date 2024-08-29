@@ -171,6 +171,7 @@ void Menu::checkTimerInput(Timer& timer, bool& run){
             case 'A':
             case 'a':
                 _display.clearScreen();
+                _display.clearSplash();
                 timer = Timer();
                 break;
             case 'Q':
