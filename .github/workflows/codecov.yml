@@ -9,7 +9,7 @@ on:
 
 jobs:
   codecov:
-    runs-on: windows-latest  # Use a Windows runner; change to 'ubuntu-latest' if you prefer Ubuntu
+    runs-on: windows-latest  # Use a Windows runner
     steps:
       - uses: actions/checkout@v3
 
@@ -17,7 +17,6 @@ jobs:
         run: |
           choco install cmake --no-progress -y  # Install CMake using Chocolatey
           choco install llvm --no-progress -y   # Install LLVM for coverage reporting
-          choco install lcov --no-progress -y   # Install lcov for coverage data
 
       - name: Configure CMake
         run: |
@@ -38,11 +37,11 @@ jobs:
       - name: Generate coverage report
         run: |
           cd build
-          lcov --capture --directory . --output-file coverage.info
-          lcov --remove coverage.info '/usr/*' '*/test/*' --output-file coverage.info
-          lcov --list coverage.info
+          llvm-cov gcov *.o -o . > coverage.info   # Generate coverage report using llvm-cov
 
       - name: Upload coverage report to Codecov
-        uses: codecov/codecov-action@v4.0.1
+        uses: codecov/codecov-action@v4
         with:
-          token: ${{ secrets.CODECOV_TOKEN }}
+          files: build/coverage.info
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
