@@ -1,0 +1,19 @@
+digraph "Display::printSplash"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="Display::printSplash",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Prints the splash screen to the terminal."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Display::clearLine",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_display.html#aaa0ffb7318a45caa0b74d3d439e623f0",tooltip="Clears a specific line in the terminal."];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="Display::fast_print",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_display.html#a1233671411c2af0367dc72e4451d0ba2",tooltip="Efficiently prints a string to the terminal."];
+  Node2 -> Node4 [id="edge3_Node000002_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="Display::setCursor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3",tooltip="Sets the cursor position in the terminal."];
+  Node4 -> Node3 [id="edge4_Node000004_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node3 [id="edge5_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node4 [id="edge6_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
+}
