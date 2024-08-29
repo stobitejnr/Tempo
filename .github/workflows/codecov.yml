@@ -9,30 +9,30 @@ on:
 
 jobs:
   codecov:
-    runs-on: windows-latest  # Use a Windows runner
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
 
       - name: Install dependencies
         run: |
-          choco install cmake --no-progress -y  # Install CMake using Chocolatey
-          choco install llvm --no-progress -y   # Install LLVM for coverage reporting
+          choco install cmake --no-progress -y
+          choco install llvm --no-progress -y
 
       - name: Configure CMake
         run: |
           mkdir build
           cd build
-          cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="-fprofile-arcs -ftest-coverage" ..
+          cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="-fprofile-instr-generate -fcoverage-mapping" ..
 
       - name: Build
         run: |
           cd build
           cmake --build .
 
-      - name: Run tests
+      - name: Run the executable to generate coverage data
         run: |
           cd build
-          ctest -C Debug --output-on-failure
+          ./Tempo  # Use .\Tempo for Windows if needed
 
       - name: Generate coverage data
         run: |
