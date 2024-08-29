@@ -11,32 +11,28 @@ jobs:
   codecov:
     runs-on: windows-latest  # Use a Windows runner
     steps:
-      - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: |
-          choco install OpenCppCoverage
-          echo "C:\Program Files\OpenCppCoverage" >> $env:GITHUB_PATH
-          
-      - name: Configure CMake
-        run: |
-          run: cmake -B ${{github.workspace}}/build
-          
-      - name: Build
-        run: cmake --build ${{github.workspace}}/build --config 
-          
-      - name: Run tests
-        run: |
-          cd build
-          ctest -C Debug --output-on-failure
-          
-      - name: Generate Coverage Report
-        shell: cmd
-        run: OpenCppCoverage --modules Debug --export_type cobertura:cmakeci.xml --cover_children -- ctest -C Debug --output-on-failure
-          
-      - name: Upload Report to Codecov
-        uses: codecov/codecov-action@v4
-        with:
-          fail_ci_if_error: true
-          files: cmakeci.xml
-          token: ${{ secrets.CODECOV_TOKEN }}
+    - name: Install OpenCppCoverage
+      run: |
+        choco install OpenCppCoverage
+        echo "C:\Program Files\OpenCppCoverage" >> $env:GITHUB_PATH
+
+    - name: Configure CMake
+      # Configure CMake in a 'build' subdirectory. No specific build type is set here.
+      run: cmake -B ${{github.workspace}}/build
+
+    - name: Build
+      # Build your program with the default configuration
+      run: cmake --build ${{github.workspace}}/build
+
+    - name: Generate Coverage Report
+      shell: cmd
+      run: OpenCppCoverage --modules Debug --export_type cobertura:cmakeci.xml --cover_children -- ctest --test-dir build
+
+    - name: Upload Report to Codecov
+      uses: codecov/codecov-action@v4
+      with:
+        fail_ci_if_error: true
+        files: cmakeci.xml
+        token: ${{ secrets.CODECOV_TOKEN }}
