@@ -38,13 +38,16 @@ jobs:
         run: |
           cd build
           llvm-cov gcov *.o -o . > coverage.info   # Use llvm-cov as lcov equivalent
-          del /F /Q coverage.info                  # Adjust cleanup if necessary
 
       - name: List files
         run: |
           dir /S
           dir /S *.gcda *.gcno
-      
+
+      - name: Clean up coverage report
+        run: |
+          Remove-Item build\coverage.info -Force  # PowerShell equivalent of del /Q
+          
       - name: Run Codacy Coverage Reporter
         uses: codacy/codacy-coverage-reporter-action@v1
         with:
