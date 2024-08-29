@@ -41,7 +41,11 @@ jobs:
 
       - name: List files
         run: |
-          dir /s build  # List files in the build directory to verify coverage report
+          if (Test-Path -Path build) {
+            Get-ChildItem -Recurse build  # List files in the build directory to verify coverage report
+          } else {
+            Write-Host "Build directory not found."
+          }
 
       - name: Download Codacy Coverage Reporter
         run: |
