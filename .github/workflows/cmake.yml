@@ -21,4 +21,6 @@ jobs:
 
     - name: Run Tests
       run: cd build && ctest --output-on-failure -C Debug
+
+    
     

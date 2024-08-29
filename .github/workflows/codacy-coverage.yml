@@ -33,11 +33,17 @@ jobs:
   
       - name: Generate Coverage Report
         shell: cmd
-        run: OpenCppCoverage --modules Debug --export_type cobertura:cmakeci.xml --cover_children -- ctest -C ${{env.BUILD_TYPE}} --test-dir build
+        run: OpenCppCoverage --modules Debug --sources src --export_type cobertura:tempo.xml --cover_children -- ctest -C Debug --test-dir build
   
       - name: Upload Report to Codecov
         uses: codecov/codecov-action@v4
         with:
           fail_ci_if_error: true
-          files: cmakeci.xml
+          files: tempo.xml
           token: ${{ secrets.CODECOV_TOKEN }}
+  
+      - name: Upload Report to Codacy
+        uses: codacy/codacy-coverage-reporter-action@v1.3.0
+        with:
+          coverage-reports: tempo.xml
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
