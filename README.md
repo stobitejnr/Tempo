@@ -11,7 +11,7 @@ A versatile command-line application that allows users to create and manage time
 
 ![Team Image](team.webp)
 
-## Features
+## Feature
 
 1. **Timer**: Set custom countdown timers with precise control.
    - Start, pause, and resume functionality
