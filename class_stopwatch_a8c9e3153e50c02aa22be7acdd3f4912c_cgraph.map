@@ -1,4 +1,0 @@
-<map id="Stopwatch::Stopwatch" name="Stopwatch::Stopwatch">
-<area shape="rect" id="node1" title="Constructor initializes a Stopwatch with a specified time (in hours, minutes, and seconds)." alt="" coords="5,5,172,31"/>
-<area shape="rect" id="node2" href="$class_stopwatch.html#a6d01ecc80c92f1d5210cd9c3eb72883d" title="Starts the stopwatch." alt="" coords="220,5,348,31"/>
-</map>

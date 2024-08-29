@@ -1,7 +1,0 @@
-<map id="test_pause_resume" name="test_pause_resume">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,155,105"/>
-<area shape="rect" id="node2" href="$class_stopwatch.html#aaf61c1ada98a22cc1c2bc589bdd4134a" title="Returns the current elapsed time in milliseconds." alt="" coords="203,5,428,31"/>
-<area shape="rect" id="node3" href="$class_stopwatch.html#ae20cb58892efc6ca55117583aac8c392" title="Checks if the stopwatch is currently running." alt="" coords="234,55,397,80"/>
-<area shape="rect" id="node4" href="$class_stopwatch.html#a2cc48295d6b083361d062b8eb68d753a" title="Pauses the stopwatch." alt="" coords="247,104,384,129"/>
-<area shape="rect" id="node5" href="$class_stopwatch.html#a789461171238250633eeb26b8f3b0dce" title="Resumes the stopwatch from the last paused time." alt="" coords="242,153,389,179"/>
-</map>

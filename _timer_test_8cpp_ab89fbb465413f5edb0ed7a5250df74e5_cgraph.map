@@ -1,7 +1,0 @@
-<map id="test_reset" name="test_reset">
-<area shape="rect" id="node1" title=" " alt="" coords="5,55,92,80"/>
-<area shape="rect" id="node2" href="$class_timer.html#a2ef50bfc604ea9fb88d3000c9ad0edd9" title="Checks if the timer is currently running." alt="" coords="181,5,313,31"/>
-<area shape="rect" id="node3" href="$class_timer.html#a330607659937f497389c9989812cd925" title="Returns the remaining time in milliseconds." alt="" coords="140,55,355,80"/>
-<area shape="rect" id="node4" href="$class_timer.html#a9020542d73357a4eef512eefaf57524b" title="Resets the timer to its original duration and pauses it." alt="" coords="197,104,298,129"/>
-<area shape="rect" id="node5" href="$class_timer.html#a0289effad7b573c508bc27e405900a23" title="Pauses the timer and calculates the remaining milliseconds." alt="" coords="403,104,509,129"/>
-</map>

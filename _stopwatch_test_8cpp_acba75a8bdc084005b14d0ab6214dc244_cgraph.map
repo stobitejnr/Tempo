@@ -1,6 +1,0 @@
-<map id="test_constructor" name="test_constructor">
-<area shape="rect" id="node1" title=" " alt="" coords="5,55,132,80"/>
-<area shape="rect" id="node2" href="$class_stopwatch.html#aaf61c1ada98a22cc1c2bc589bdd4134a" title="Returns the current elapsed time in milliseconds." alt="" coords="180,5,405,31"/>
-<area shape="rect" id="node3" href="$class_stopwatch.html#ae20cb58892efc6ca55117583aac8c392" title="Checks if the stopwatch is currently running." alt="" coords="211,55,374,80"/>
-<area shape="rect" id="node4" href="$class_stopwatch.html#a6d01ecc80c92f1d5210cd9c3eb72883d" title="Starts the stopwatch." alt="" coords="229,104,357,129"/>
-</map>

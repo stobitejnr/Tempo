@@ -1,6 +1,0 @@
-<map id="test_percent_elapsed" name="test_percent_elapsed">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,167,56"/>
-<area shape="rect" id="node2" href="$class_timer.html#a97ab4bd97e34c2ce2b8afa7c993fbaec" title="Returns the percentage of time that has elapsed since the timer started." alt="" coords="215,31,383,56"/>
-<area shape="rect" id="node3" href="$class_timer.html#a330607659937f497389c9989812cd925" title="Returns the remaining time in milliseconds." alt="" coords="431,5,645,31"/>
-<area shape="rect" id="node4" href="$class_timer.html#aded1ecf859b397258dcfa95d3d7cfc41" title="Starts the timer by setting the end time based on the current time plus the countdown duration." alt="" coords="489,55,587,80"/>
-</map>

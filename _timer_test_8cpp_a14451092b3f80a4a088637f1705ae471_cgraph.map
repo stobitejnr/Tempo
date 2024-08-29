@@ -1,5 +1,0 @@
-<map id="test_expiration" name="test_expiration">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,125,56"/>
-<area shape="rect" id="node2" href="$class_timer.html#a2ef50bfc604ea9fb88d3000c9ad0edd9" title="Checks if the timer is currently running." alt="" coords="215,5,347,31"/>
-<area shape="rect" id="node3" href="$class_timer.html#a330607659937f497389c9989812cd925" title="Returns the remaining time in milliseconds." alt="" coords="173,55,388,80"/>
-</map>

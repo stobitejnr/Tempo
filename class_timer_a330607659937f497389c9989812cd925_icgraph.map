@@ -1,17 +1,10 @@
 <map id="Timer::remainingMilliseconds" name="Timer::remainingMilliseconds">
-<area shape="rect" id="node1" title="Returns the remaining time in milliseconds." alt="" coords="935,232,1149,257"/>
-<area shape="rect" id="node2" href="$class_menu.html#ab8d3cccd5b39987a6546f7dc1187b71e" title="Checks and handles user input for the Timer." alt="" coords="496,31,671,56"/>
-<area shape="rect" id="node3" href="$class_menu.html#ae1ec62e738dda7faaaec850bd0b58ffe" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="352,81,448,107"/>
-<area shape="rect" id="node7" href="$class_timer.html#a97ab4bd97e34c2ce2b8afa7c993fbaec" title="Returns the percentage of time that has elapsed since the timer started." alt="" coords="719,183,887,208"/>
-<area shape="rect" id="node10" href="$class_display.html#a02b2228e05be168eda0b817d1ecf5db7" title="Updates the display based on the state of the provided Timer object." alt="" coords="513,132,653,157"/>
-<area shape="rect" id="node11" href="$_timer_test_8cpp.html#ad6d1baf23a5b08ce7c326940832f8a05" title=" " alt="" coords="526,384,641,409"/>
-<area shape="rect" id="node12" href="$_timer_test_8cpp.html#acba75a8bdc084005b14d0ab6214dc244" title=" " alt="" coords="520,433,647,459"/>
-<area shape="rect" id="node13" href="$_timer_test_8cpp.html#a14451092b3f80a4a088637f1705ae471" title=" " alt="" coords="743,232,863,257"/>
-<area shape="rect" id="node14" href="$_timer_test_8cpp.html#ae968c56d18bef1bf9802840c2349192b" title=" " alt="" coords="728,281,877,307"/>
-<area shape="rect" id="node15" href="$_timer_test_8cpp.html#ab89fbb465413f5edb0ed7a5250df74e5" title=" " alt="" coords="759,331,846,356"/>
-<area shape="rect" id="node4" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="229,5,284,31"/>
-<area shape="rect" id="node5" href="$class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="209,107,304,132"/>
+<area shape="rect" id="node1" title="Returns the remaining time in milliseconds." alt="" coords="935,81,1149,107"/>
+<area shape="rect" id="node2" href="$class_menu.html#ab8d3cccd5b39987a6546f7dc1187b71e" title="Checks and handles user input for the Timer." alt="" coords="496,5,671,31"/>
+<area shape="rect" id="node3" href="$class_menu.html#ae1ec62e738dda7faaaec850bd0b58ffe" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="352,56,448,81"/>
+<area shape="rect" id="node7" href="$class_timer.html#a97ab4bd97e34c2ce2b8afa7c993fbaec" title="Returns the percentage of time that has elapsed since the timer started." alt="" coords="719,107,887,132"/>
+<area shape="rect" id="node8" href="$class_display.html#a02b2228e05be168eda0b817d1ecf5db7" title="Updates the display based on the state of the provided Timer object." alt="" coords="513,107,653,132"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="229,7,284,32"/>
+<area shape="rect" id="node5" href="$class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="209,56,304,81"/>
 <area shape="rect" id="node6" href="$class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452" title="Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection." alt="" coords="5,81,161,107"/>
-<area shape="rect" id="node8" href="$_timer_test_8cpp.html#a975480003033c372805a43801b7c2a02" title=" " alt="" coords="503,181,664,207"/>
-<area shape="rect" id="node9" href="$_timer_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="373,308,427,333"/>
 </map>
