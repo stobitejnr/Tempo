@@ -4,6 +4,7 @@
 [![CMake Build](https://github.com/stobitejnr/Tempo/actions/workflows/cmake.yml/badge.svg)](https://github.com/stobitejnr/Tempo/actions/workflows/cmake.yml)
 [![Clang-Tidy Linting](https://github.com/stobitejnr/Tempo/actions/workflows/clang-tidy.yml/badge.svg)](https://github.com/stobitejnr/Tempo/actions/workflows/clang-tidy.yml)
 ![GitHub License](https://img.shields.io/github/license/stobitejnr/Tempo)
+[![Documentation Status](https://codedocs.xyz/stobitejnr/Tempo.svg)](https://codedocs.xyz/stobitejnr/Tempo/)
 
 A versatile command-line application that allows users to create and manage timers and stopwatches
 
