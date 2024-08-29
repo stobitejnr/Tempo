@@ -26,25 +26,35 @@ Timer::Timer() {
         getline(cin, input);
 
         // Regular expressions to match hours, minutes, and seconds
-        regex hours_regex(R"((\d+)\s*hour?)");
-        regex minutes_regex(R"((\d+)\s*minute?)");
-        regex seconds_regex(R"((\d+)\s*second?)");
+        regex hours_regex(R"((\d+)\s*(hour|hours|h|hr|hrs)?)");
+        regex minutes_regex(R"((\d+)\s*(minute|minutes|m|mins|m|min)?)");
+        regex seconds_regex(R"((\d+)\s*(second|seconds|s|sec|secs)?)");
 
         smatch match;
 
-        // Extract hours
-        if (regex_search(input, match, hours_regex)) {
-            h = stoi(match[1].str());
-        }
+          // Extract hours
+    auto hours_begin = sregex_iterator(input.begin(), input.end(), hours_regex);
+    auto hours_end = sregex_iterator();
+    for (sregex_iterator i = hours_begin; i != hours_end; ++i) {
+        match = *i;
+        h = stoi(match[1].str());
+    }
 
-        // Extract minutes
-        if (regex_search(input, match, minutes_regex)) {
-            m = stoi(match[1].str());
-        }
-        // Extract seconds
-        if (regex_search(input, match, seconds_regex)) {
-            s = stoi(match[1].str());
-        }
+    // Extract minutes
+    auto minutes_begin = sregex_iterator(input.begin(), input.end(), minutes_regex);
+    auto minutes_end = sregex_iterator();
+    for (sregex_iterator i = minutes_begin; i != minutes_end; ++i) {
+        match = *i;
+        m = stoi(match[1].str());
+    }
+
+    // Extract seconds
+    auto seconds_begin = sregex_iterator(input.begin(), input.end(), seconds_regex);
+    auto seconds_end = sregex_iterator();
+    for (sregex_iterator i = seconds_begin; i != seconds_end; ++i) {
+        match = *i;
+        s = stoi(match[1].str());
+    }
 
         countdownSeconds = (3600 * h) + (60 * m) + (s);
         if (countdownSeconds == 0) { 
