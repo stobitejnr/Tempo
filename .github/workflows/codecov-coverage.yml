@@ -9,14 +9,14 @@ on:
 
 jobs:
   codecov-coverage-reporter:
-    runs-on: windows-latest  # Use a Windows runner
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
       
       - name: Install dependencies
         run: |
-          choco install cmake --no-progress -y  # Install CMake using Chocolatey
-          choco install llvm --no-progress -y   # Install LLVM for lcov equivalent
+          choco install cmake --no-progress -y  # Install CMake
+          choco install llvm --no-progress -y   # Install LLVM for coverage tools
 
       - name: Configure CMake
         run: |
@@ -37,22 +37,24 @@ jobs:
       - name: Generate coverage report
         run: |
           cd build
-          llvm-cov gcov *.o -o . > coverage.info   # Use llvm-cov as lcov equivalent
+          llvm-cov gcov -b . > coverage.txt   # Generate a coverage report in text format for inspection
+          llvm-cov gcov *.o -o .  # You might need to adjust or verify the files targeted here
 
       - name: List files
         run: |
-          Get-ChildItem -Recurse   # PowerShell equivalent of dir /S
-          Get-ChildItem -Recurse -Include *.gcda,*.gcno  # List specific files
+          Get-ChildItem -Recurse  # List all files recursively
+          Get-ChildItem -Recurse -Include *.gcda,*.gcno  # Specifically list coverage files if generated
 
       - name: Clean up coverage report
         run: |
-          Remove-Item build\coverage.info -Force  # PowerShell equivalent of del /Q
-          
+          Remove-Item build\coverage.txt -Force  # Ensure you are deleting the correct files
+
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
-          files: build\coverage.info
-          token: ${{ secrets.CODECOV_TOKEN }}  # Ensure you have this secret set in GitHub
+          files: build\coverage.txt  # Ensure this matches the actual coverage report path
+          token: ${{ secrets.CODECOV_TOKEN }}  # This should be set in GitHub secrets
           flags: unittests
           name: codecov-coverage
           fail_ci_if_error: true  # Fail the job if Codecov fails
+
