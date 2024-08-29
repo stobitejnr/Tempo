@@ -22,7 +22,7 @@ jobs:
         run: |
           mkdir build
           cd build
-          cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="--coverage" ..
+          cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="--coverage -fprofile-arcs -ftest-coverage" ..
           
       - name: Build
         run: |
@@ -37,7 +37,9 @@ jobs:
       - name: Generate coverage report
         run: |
           cd build
-          llvm-cov gcov *.o -o . > coverage.info   # Generate coverage report using llvm-cov
+          # Find all .gcno and .gcda files and use llvm-cov to generate the report
+          llvm-cov gcov $(find . -name '*.gcno' -or -name '*.gcda') > coverage.info
+
           
       - name: Upload coverage report to Codecov
         uses: codecov/codecov-action@v4
