@@ -34,10 +34,12 @@ jobs:
           cd build
           ctest -C Debug --output-on-failure
 
-      - name: Generate coverage report
+      - name: Generate coverage data
         run: |
           cd build
-          llvm-cov gcov *.o -o . > coverage.info   # Generate coverage report using llvm-cov
+          llvm-profdata merge -sparse default.profraw -o default.profdata
+          llvm-cov show ./Tempo -instr-profile=default.profdata > coverage.txt
+          llvm-cov export ./Tempo -instr-profile=default.profdata -format=lcov > coverage.info
 
       - name: Upload coverage report to Codecov
         uses: codecov/codecov-action@v4
