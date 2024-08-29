@@ -17,7 +17,6 @@ void test_constructor() {
 
 void test_pause_resume() {
     Stopwatch stopwatch(0, 1, 0); // 1 minute
-    stopwatch.start();
     this_thread::sleep_for(chrono::seconds(1));
     stopwatch.pause();
     int currentAfterPause = stopwatch.currentMilliseconds();
