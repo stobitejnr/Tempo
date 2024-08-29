@@ -17,7 +17,6 @@ jobs:
         run: |
           choco install cmake --no-progress -y  # Install CMake using Chocolatey
           choco install llvm --no-progress -y   # Install LLVM for coverage reporting
-          choco install git -y                  # Install Git to use Git Bash
 
       - name: Configure CMake
         run: |
@@ -44,15 +43,12 @@ jobs:
         run: |
           dir /s build  # List files in the build directory to verify coverage report
 
-      - name: Install Git Bash for Codacy
-        shell: cmd
+      - name: Download Codacy Coverage Reporter
         run: |
-          curl -Ls https://github.com/git-for-windows/git/releases/download/v2.39.1.windows.1/Git-2.39.1-64-bit.exe -o git-installer.exe
-          start /wait git-installer.exe /VERYSILENT
+          Invoke-WebRequest -Uri "https://artifacts.codacy.com/bin/codacy-coverage-reporter/latest/windows/codacy-coverage-reporter.exe" -OutFile "codacy-coverage-reporter.exe"
 
       - name: Run Codacy Coverage Reporter
-        shell: bash
         run: |
-          curl -Ls https://coverage.codacy.com/get.sh | bash -s report -r build/coverage.info
+          .\codacy-coverage-reporter.exe report -r build\coverage.info
         env:
           CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
