@@ -9,31 +9,44 @@ on:
 
 jobs:
   codacy-coverage-reporter:
-    runs-on: windows-latest  # Use a Windows runner
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       
-      - name: Install OpenCppCoverage
+      - name: Install dependencies
         run: |
-          choco install OpenCppCoverage
-          echo "C:\Program Files\OpenCppCoverage" >> $env:GITHUB_PATH
-  
+          sudo apt-get update
+          sudo apt-get install -y cmake lcov
+      
       - name: Configure CMake
-        # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
-        # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
-        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
-  
+        run: |
+          mkdir build && cd build
+          cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="--coverage" ..
+      
       - name: Build
-        # Build your program with the given configuration
-        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
-  
-      - name: Generate Coverage Report
-        shell: cmd
-        run: OpenCppCoverage --modules Debug --export_type cobertura:cmakeci.xml --cover_children -- ctest -C ${{env.BUILD_TYPE}} --test-dir build
-  
-      - name: Upload Report to Codecov
-        uses: codecov/codecov-action@v4
+        working-directory: ${{github.workspace}}/build
+        run: cmake --build .
+      
+      - name: Run tests
+        working-directory: ${{github.workspace}}/build
+        run: ctest -C Debug --output-on-failure
+      
+      - name: Generate coverage report
+        if: always()
+        working-directory: ${{github.workspace}}/build
+        run: |
+          lcov --capture --directory . --output-file coverage.info
+          lcov --remove coverage.info '/usr/*' --output-file coverage.info
+      
+      - name: List files
+        working-directory: ${{github.workspace}}/build
+        run: |
+          ls -R
+          find . -name "*.gcda" -o -name "*.gcno"
+      
+      - name: Run Codacy Coverage Reporter
+        uses: codacy/codacy-coverage-reporter-action@v1
+        if: always()
         with:
-          fail_ci_if_error: true
-          files: cmakeci.xml
-          token: ${{ secrets.CODECOV_TOKEN }}
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          coverage-reports: build/coverage.info
