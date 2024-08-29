@@ -33,7 +33,7 @@ jobs:
   
       - name: Generate Coverage Report
         shell: cmd
-        run: OpenCppCoverage --modules Debug --sources src --export_type cobertura:tempo.xml --cover_children -- ctest -C Debug --test-dir build
+        run: OpenCppCoverage --export_type cobertura:tempo.xml --cover_children -- ctest -C Debug
   
       - name: Upload Report to Codecov
         uses: codecov/codecov-action@v4
