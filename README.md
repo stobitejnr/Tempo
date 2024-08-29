@@ -1,6 +1,10 @@
-# Tempo 1.0
+# Tempo
 
 Tempo is a versatile command-line application that allows users to create and manage timers, stopwatches, and alarms.
+
+
+[Click here](https://forms.gle/yQKxxhWpJ1LWqaSq7) If you want to participate in the beta testing of the application.
+
 
 ## Created by
 - William Donnelly
