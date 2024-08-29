@@ -1,0 +1,23 @@
+name: Clang-Tidy Linting
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Clang-Tidy
+        run: choco install llvm
+
+      - name: Run Clang-Tidy
+        run: clang-tidy src/*.cpp -- -Iinclude
