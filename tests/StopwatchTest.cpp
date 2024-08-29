@@ -1,4 +1,6 @@
 #include <cassert>
+#include <iostream>
+#include <chrono>
 #include <thread>
 
 #include "../include/Stopwatch.hpp"
@@ -14,11 +16,11 @@ void test_constructor() {
 
 void test_pause_resume() {
     Stopwatch stopwatch(0, 1, 0); // 1 minute
-    std::this_thread::sleep_for(chrono::seconds(1));
+    this_thread::sleep_for(chrono::seconds(1));
     stopwatch.pause();
     int currentAfterPause = stopwatch.currentMilliseconds();
     assert(!stopwatch.isRunning());
-    std::this_thread::sleep_for(chrono::seconds(1));
+    this_thread::sleep_for(chrono::seconds(1));
     assert(stopwatch.currentMilliseconds() == currentAfterPause);
     stopwatch.resume();
     assert(stopwatch.isRunning());
@@ -28,7 +30,7 @@ void test_pause_resume() {
 
 void test_reset() {
     Stopwatch stopwatch(0, 1, 0); // 1 minute
-    std::this_thread::sleep_for(chrono::seconds(1));
+    this_thread::sleep_for(chrono::seconds(1));
     stopwatch.reset();
     assert(stopwatch.currentMilliseconds() == 0);
     assert(!stopwatch.isRunning());
@@ -37,7 +39,7 @@ void test_reset() {
 
 void test_splits() {
     Stopwatch stopwatch(0, 0, 0);
-    std::this_thread::sleep_for(chrono::seconds(1));
+    this_thread::sleep_for(chrono::seconds(1));
     stopwatch.addSplit();
     assert(stopwatch.getSplits().at(0) >= 990 && stopwatch.getSplits().at(0) <= 1010);
     stopwatch.clearSplits();

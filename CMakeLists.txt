@@ -35,6 +35,12 @@ add_executable(StopwatchTest
     src/Stopwatch.cpp
 )
 
+add_executable(AlarmTest
+    tests/AlarmTest.cpp
+    src/Alarm.cpp
+)
+
+
 # Add the tests
 add_test(NAME TimerTest COMMAND TimerTest)
 add_test(NAME StopwatchTest COMMAND StopwatchTest)
