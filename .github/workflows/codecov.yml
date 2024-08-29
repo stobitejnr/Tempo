@@ -16,13 +16,13 @@ jobs:
       - name: Install dependencies
         run: |
           choco install cmake --no-progress -y  # Install CMake using Chocolatey
-          choco install llvm --no-progress -y   # Install LLVM for coverage reporting
+          choco install mingw --no-progress -y  # Install MinGW for GCC
 
       - name: Configure CMake
         run: |
           mkdir build
           cd build
-          cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="--coverage -fprofile-arcs -ftest-coverage" ..
+          cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="--coverage" ..
 
       - name: Build
         run: |
@@ -34,26 +34,13 @@ jobs:
           cd build
           ctest -C Debug --output-on-failure
 
-      - name: Verify Coverage Files
-        run: |
-          cd build
-          Get-ChildItem -Recurse -Include *.gcno,*.gcda | Select-Object FullName
-
       - name: Generate coverage report
         run: |
           cd build
-          $gcnoFiles = Get-ChildItem -Recurse -Filter *.gcno | ForEach-Object { $_.FullName }
-          $gcdaFiles = Get-ChildItem -Recurse -Filter *.gcda | ForEach-Object { $_.FullName }
-          if ($gcnoFiles.Count -eq 0 -or $gcdaFiles.Count -eq 0) {
-            Write-Error "No .gcno or .gcda files found."
-            exit 1
+          Get-ChildItem -Recurse -Include *.gcno,*.gcda | ForEach-Object { 
+            gcc -fprofile-arcs -ftest-coverage $_.FullName
           }
-          foreach ($file in $gcnoFiles) {
-            llvm-cov gcov $file > coverage.info
-          }
-          foreach ($file in $gcdaFiles) {
-            llvm-cov gcov $file >> coverage.info
-          }
+          gcov *.o > coverage.info
 
       - name: Upload coverage report to Codecov
         uses: codecov/codecov-action@v3
