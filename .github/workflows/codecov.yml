@@ -28,8 +28,9 @@ jobs:
           cd build
           & "C:\Program Files\OpenCppCoverage\OpenCppCoverage.exe" --sources Tempo\build --export_type cobertura:coverage.xml -- ctest -C Debug
 
-      - name: Upload Report to Codecov
-        uses: codecov/codecov-action@v2
+      - name: Upload coverage report to Codecov
+        uses: codecov/codecov-action@v4
         with:
           files: build/coverage.xml
-          fail_ci_if_error: true
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
