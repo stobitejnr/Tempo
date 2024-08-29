@@ -1,0 +1,5 @@
+<map id="Timer::addTime" name="Timer::addTime">
+<area shape="rect" id="node1" title="Adds a specified amount of time (in seconds) to the timer." alt="" coords="5,31,131,56"/>
+<area shape="rect" id="node2" href="$class_timer.html#a0289effad7b573c508bc27e405900a23" title="Pauses the timer and calculates the remaining milliseconds." alt="" coords="184,5,291,31"/>
+<area shape="rect" id="node3" href="$class_timer.html#a4ac55a73bb3431db9d4d2fd70ae9a2e8" title="Resumes the timer from where it was paused by recalculating the end time." alt="" coords="179,55,296,80"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Timer::Timer" name="Timer::Timer">
+<area shape="rect" id="node1" title="Default constructor prompts the user to set a timer with a specific duration." alt="" coords="5,5,112,31"/>
+<area shape="rect" id="node2" href="$class_timer.html#aded1ecf859b397258dcfa95d3d7cfc41" title="Starts the timer by setting the end time based on the current time plus the countdown duration." alt="" coords="160,5,259,31"/>
+</map>

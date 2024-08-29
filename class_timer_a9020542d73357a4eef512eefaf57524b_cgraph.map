@@ -1,0 +1,4 @@
+<map id="Timer::reset" name="Timer::reset">
+<area shape="rect" id="node1" title="Resets the timer to its original duration and pauses it." alt="" coords="5,5,107,31"/>
+<area shape="rect" id="node2" href="$class_timer.html#a0289effad7b573c508bc27e405900a23" title="Pauses the timer and calculates the remaining milliseconds." alt="" coords="155,5,261,31"/>
+</map>

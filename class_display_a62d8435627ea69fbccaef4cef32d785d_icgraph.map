@@ -1,0 +1,9 @@
+<map id="Display::printSplash" name="Display::printSplash">
+<area shape="rect" id="node1" title="Prints the splash screen to the terminal." alt="" coords="715,55,865,80"/>
+<area shape="rect" id="node2" href="$class_display.html#a670c8db4c53ae0f09d6d3b57f1813b7f" title="Updates the display based on the state of the provided Stopwatch object." alt="" coords="496,29,667,55"/>
+<area shape="rect" id="node7" href="$class_display.html#a02b2228e05be168eda0b817d1ecf5db7" title="Updates the display based on the state of the provided Timer object." alt="" coords="511,79,651,104"/>
+<area shape="rect" id="node3" href="$class_menu.html#ae1ec62e738dda7faaaec850bd0b58ffe" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="352,55,448,80"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="229,5,284,31"/>
+<area shape="rect" id="node5" href="$class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="209,55,304,80"/>
+<area shape="rect" id="node6" href="$class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452" title="Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection." alt="" coords="5,80,161,105"/>
+</map>

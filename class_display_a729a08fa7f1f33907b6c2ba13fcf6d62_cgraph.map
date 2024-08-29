@@ -1,0 +1,4 @@
+<map id="Display::clearScreen" name="Display::clearScreen">
+<area shape="rect" id="node1" title="Clears the terminal screen." alt="" coords="5,5,160,31"/>
+<area shape="rect" id="node2" href="$class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="208,5,348,31"/>
+</map>

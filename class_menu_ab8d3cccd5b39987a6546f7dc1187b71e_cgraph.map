@@ -1,0 +1,12 @@
+<map id="Menu::checkTimerInput" name="Menu::checkTimerInput">
+<area shape="rect" id="node1" title="Checks and handles user input for the Timer." alt="" coords="5,180,180,205"/>
+<area shape="rect" id="node2" href="$class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62" title="Clears the terminal screen." alt="" coords="258,5,413,31"/>
+<area shape="rect" id="node4" href="$class_display.html#ad226aa44204137c5a8fe774967532af4" title="Clears the splash screen." alt="" coords="259,55,412,80"/>
+<area shape="rect" id="node5" href="$class_timer.html#a2ef50bfc604ea9fb88d3000c9ad0edd9" title="Checks if the timer is currently running." alt="" coords="269,104,401,129"/>
+<area shape="rect" id="node6" href="$class_timer.html#a0289effad7b573c508bc27e405900a23" title="Pauses the timer and calculates the remaining milliseconds." alt="" coords="507,204,614,229"/>
+<area shape="rect" id="node7" href="$class_timer.html#a330607659937f497389c9989812cd925" title="Returns the remaining time in milliseconds." alt="" coords="228,205,443,231"/>
+<area shape="rect" id="node8" href="$class_timer.html#a9020542d73357a4eef512eefaf57524b" title="Resets the timer to its original duration and pauses it." alt="" coords="285,255,386,280"/>
+<area shape="rect" id="node9" href="$class_timer.html#a4ac55a73bb3431db9d4d2fd70ae9a2e8" title="Resumes the timer from where it was paused by recalculating the end time." alt="" coords="277,304,394,329"/>
+<area shape="rect" id="node10" href="$class_display.html#a3a0e77e68157e55d67ac3f28dffdd00c" title="Sets the splash screen text." alt="" coords="265,353,406,379"/>
+<area shape="rect" id="node3" href="$class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="491,5,631,31"/>
+</map>

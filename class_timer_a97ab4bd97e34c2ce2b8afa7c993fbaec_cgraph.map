@@ -1,0 +1,5 @@
+<map id="Timer::percentElapsed" name="Timer::percentElapsed">
+<area shape="rect" id="node1" title="Returns the percentage of time that has elapsed since the timer started." alt="" coords="5,31,173,56"/>
+<area shape="rect" id="node2" href="$class_timer.html#a330607659937f497389c9989812cd925" title="Returns the remaining time in milliseconds." alt="" coords="221,5,436,31"/>
+<area shape="rect" id="node3" href="$class_timer.html#aded1ecf859b397258dcfa95d3d7cfc41" title="Starts the timer by setting the end time based on the current time plus the countdown duration." alt="" coords="279,55,378,80"/>
+</map>

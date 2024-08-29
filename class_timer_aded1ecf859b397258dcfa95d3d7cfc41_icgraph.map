@@ -1,0 +1,10 @@
+<map id="Timer::start" name="Timer::start">
+<area shape="rect" id="node1" title="Starts the timer by setting the end time based on the current time plus the countdown duration." alt="" coords="900,80,999,105"/>
+<area shape="rect" id="node2" href="$class_timer.html#a97ab4bd97e34c2ce2b8afa7c993fbaec" title="Returns the percentage of time that has elapsed since the timer started." alt="" coords="684,55,852,80"/>
+<area shape="rect" id="node8" href="$class_timer.html#a5f16e8da27d2a5a5242dead46de05d97" title="Default constructor prompts the user to set a timer with a specific duration." alt="" coords="715,104,821,129"/>
+<area shape="rect" id="node3" href="$class_display.html#a02b2228e05be168eda0b817d1ecf5db7" title="Updates the display based on the state of the provided Timer object." alt="" coords="496,55,636,80"/>
+<area shape="rect" id="node4" href="$class_menu.html#ae1ec62e738dda7faaaec850bd0b58ffe" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="352,55,448,80"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="229,5,284,31"/>
+<area shape="rect" id="node6" href="$class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="209,55,304,80"/>
+<area shape="rect" id="node7" href="$class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452" title="Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection." alt="" coords="5,80,161,105"/>
+</map>

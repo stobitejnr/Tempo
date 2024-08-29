@@ -1,0 +1,15 @@
+<map id="Display::tickStopwatch" name="Display::tickStopwatch">
+<area shape="rect" id="node1" title="Updates the display based on the state of the provided Stopwatch object." alt="" coords="5,232,176,257"/>
+<area shape="rect" id="node2" href="$class_stopwatch.html#aaf61c1ada98a22cc1c2bc589bdd4134a" title="Returns the current elapsed time in milliseconds." alt="" coords="229,5,455,31"/>
+<area shape="rect" id="node3" href="$class_stopwatch.html#ae401b2a4016b104fc210e54a5041c9e2" title="Returns the splits vector." alt="" coords="265,55,419,80"/>
+<area shape="rect" id="node4" href="$class_display.html#aab9a518037074ce68da2a7792771908d" title="Prints ASCII art to the terminal." alt="" coords="520,107,659,132"/>
+<area shape="rect" id="node6" href="$class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="719,257,859,283"/>
+<area shape="rect" id="node7" href="$class_display.html#a3480427024243711ee66efc51ddf0fa3" title="Prints controls to the terminal." alt="" coords="508,156,671,181"/>
+<area shape="rect" id="node8" href="$class_display.html#a62d8435627ea69fbccaef4cef32d785d" title="Prints the splash screen to the terminal." alt="" coords="267,257,417,283"/>
+<area shape="rect" id="node10" href="$class_display.html#ac4f2f5445af6a65554ad9646cc27f3cc" title="Prints the stopwatch splits to the terminal." alt="" coords="517,409,661,435"/>
+<area shape="rect" id="node11" href="$class_display.html#aa68e271db8f91c18ae2c1e5e38d0f1ee" title="Stages the controls for the stopwatch." alt="" coords="224,359,460,384"/>
+<area shape="rect" id="node12" href="$class_display.html#ac878f4b1987c4e33c173478fd5bbf34c" title="Stages the stopwatch display with provided time values." alt="" coords="227,408,457,433"/>
+<area shape="rect" id="node13" href="$class_display.html#a8b0e743648629b44c19cb59b1cbe467e" title="Stages the splits block to be displayed." alt="" coords="233,457,451,483"/>
+<area shape="rect" id="node5" href="$class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="907,283,1047,308"/>
+<area shape="rect" id="node9" href="$class_display.html#aaa0ffb7318a45caa0b74d3d439e623f0" title="Clears a specific line in the terminal." alt="" coords="521,308,658,333"/>
+</map>

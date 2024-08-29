@@ -1,0 +1,4 @@
+<map id="Stopwatch::reset" name="Stopwatch::reset">
+<area shape="rect" id="node1" title="Resets the stopwatch to 0 milliseconds and stops it." alt="" coords="5,5,136,31"/>
+<area shape="rect" id="node2" href="$class_stopwatch.html#a0edfa283c9d5e706cef4a43a6cbfbaf5" title="Clears the splits vector." alt="" coords="184,5,351,31"/>
+</map>
