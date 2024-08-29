@@ -9,47 +9,44 @@ on:
 
 jobs:
   codacy-coverage-reporter:
-    runs-on: windows-latest
+    runs-on: windows-latest  # Use a Windows runner
     steps:
       - uses: actions/checkout@v3
       
       - name: Install dependencies
         run: |
-          choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System' -y
-          choco install lcov -y
-          
+          choco install cmake --no-progress -y  # Install CMake using Chocolatey
+          choco install llvm --no-progress -y   # Install LLVM for lcov equivalent
+
       - name: Configure CMake
         run: |
           mkdir build
           cd build
           cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="--coverage" ..
-          
+      
       - name: Build
         run: |
           cd build
-          mingw32-make
+          cmake --build .
       
       - name: Run tests
         run: |
           cd build
           ctest -C Debug --output-on-failure
-      
+
       - name: Generate coverage report
-        if: always()
         run: |
           cd build
-          lcov --capture --directory . --output-file coverage.info
-          lcov --remove coverage.info '/usr/*' --output-file coverage.info
-      
+          llvm-cov gcov *.o -o . > coverage.info   # Use llvm-cov as lcov equivalent
+          del /F /Q coverage.info                  # Adjust cleanup if necessary
+
       - name: List files
         run: |
-          cd build
-          dir /S /B
-          dir /S /B *.gcda *.gcno
+          dir /S
+          dir /S *.gcda *.gcno
       
       - name: Run Codacy Coverage Reporter
         uses: codacy/codacy-coverage-reporter-action@v1
-        if: always()
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          coverage-reports: build/coverage.info
+          coverage-reports: build\coverage.info
