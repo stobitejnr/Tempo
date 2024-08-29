@@ -10,7 +10,7 @@ jobs:
   codecov:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       
       - name: Install dependencies
         run: |
@@ -31,17 +31,30 @@ jobs:
       - name: Run tests
         run: |
           cd build
-          set LLVM_PROFILE_FILE=coverage.profraw
+          echo "Current directory: $pwd"
+          echo "Content of current directory:"
+          dir
+          set LLVM_PROFILE_FILE="coverage.profraw"
           ctest -C Debug --output-on-failure
+          echo "Content of current directory after tests:"
+          dir
       
       - name: Generate coverage report
         run: |
           cd build
-          llvm-profdata merge -sparse coverage.profraw -o coverage.profdata
-          llvm-cov show -instr-profile=coverage.profdata ./*.exe > coverage.txt
+          echo "Current directory: $pwd"
+          echo "Content of current directory:"
+          dir
+          if not exist coverage.profraw (
+            echo "coverage.profraw not found!"
+          ) else (
+            echo "coverage.profraw found, proceeding with coverage generation"
+            llvm-profdata merge -sparse coverage.profraw -o coverage.profdata
+            llvm-cov show -instr-profile=coverage.profdata ./*.exe > coverage.txt
+          )
       
       - name: Upload coverage report to Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
           files: ./build/coverage.txt
         env:
