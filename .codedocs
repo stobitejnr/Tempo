@@ -21,6 +21,8 @@ INPUT = src/ include/ fonts/ README.md
 # Doxygen Configuration
 #---------------------------------------------------------------------------
 
+IMAGE_PATH = 
+
 # Doxygen configuration options
 USE_MDFILE_AS_MAINPAGE = README.md
 INPUT += README.md
