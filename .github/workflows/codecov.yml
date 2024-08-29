@@ -24,11 +24,11 @@ jobs:
 
     - name: Build
       # Build your program with the default configuration
-      run: cmake --build ${{github.workspace}}/build
+      run: cmake --build ${{github.workspace}}/build --config Debug
 
     - name: Generate Coverage Report
       shell: cmd
-      run: OpenCppCoverage --modules=* --export_type cobertura:cmakeci.xml --cover_children -- ctest --test-dir build
+      run: OpenCppCoverage --modules=* --export_type cobertura:cmakeci.xml --cover_children -- ctest -C Debug --test-dir build
 
     - name: Upload Report to Codecov
       uses: codecov/codecov-action@v4
@@ -36,4 +36,3 @@ jobs:
         fail_ci_if_error: true
         files: cmakeci.xml
         token: ${{ secrets.CODECOV_TOKEN }}
-
