@@ -11,6 +11,7 @@ jobs:
       - name: Install OpenCppCoverage
         run: |
           choco install OpenCppCoverage
+          echo "C:\Program Files\OpenCppCoverage" >> $env:GITHUB_PATH
 
       - name: Configure CMake
         run: |
@@ -23,10 +24,9 @@ jobs:
           cd build
           cmake --build .
 
-      - name: Run Tests with Coverage
-        run: |
-          cd build
-          & "C:\Program Files\OpenCppCoverage\OpenCppCoverage.exe" --sources Tempo\build --export_type cobertura:coverage.xml -- ctest -C Debug
+      - name: Generate Coverage Report
+        shell: cmd
+        run: OpenCppCoverage --modules Debug --export_type cobertura:coverage.xml --cover_children -- ctest -C Debug --test-dir build
 
       - name: Upload coverage report to Codecov
         uses: codecov/codecov-action@v4
