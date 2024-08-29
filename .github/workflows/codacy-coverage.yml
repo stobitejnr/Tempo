@@ -15,33 +15,36 @@ jobs:
       
       - name: Install dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y cmake lcov
-      
+          choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System' -y
+          choco install lcov -y
+          
       - name: Configure CMake
         run: |
-          mkdir build && cd build
-          cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="--coverage" ..
-      
+          mkdir build
+          cd build
+          cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="--coverage" ..
+          
       - name: Build
-        working-directory: ${{github.workspace}}/build
-        run: cmake --build .
+        run: |
+          cd build
+          mingw32-make
       
       - name: Run tests
-        working-directory: ${{github.workspace}}/build
-        run: ctest -C Debug --output-on-failure
+        run: |
+          cd build
+          ctest -C Debug --output-on-failure
       
       - name: Generate coverage report
-        working-directory: ${{github.workspace}}/build
         run: |
+          cd build
           lcov --capture --directory . --output-file coverage.info
           lcov --remove coverage.info '/usr/*' --output-file coverage.info
       
       - name: List files
-        working-directory: ${{github.workspace}}/build
         run: |
-          ls -R
-          find . -name "*.gcda" -o -name "*.gcno"
+          cd build
+          dir /S /B
+          dir /S /B *.gcda *.gcno
       
       - name: Run Codacy Coverage Reporter
         uses: codacy/codacy-coverage-reporter-action@v1
