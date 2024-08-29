@@ -1,11 +1,6 @@
 name: Codecov Coverage Report
 
-on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-
+on: [push, pull_request]
 
 jobs:
   codecov:
@@ -38,4 +33,4 @@ jobs:
         with:
           files: build/coverage.xml
         env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN 
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
