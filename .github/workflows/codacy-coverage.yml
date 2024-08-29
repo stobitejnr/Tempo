@@ -49,7 +49,7 @@ jobs:
           Remove-Item build\coverage.info -Force  # PowerShell equivalent of del /Q
           
       - name: Run Codacy Coverage Reporter
-        uses: codacy/codacy-coverage-reporter-action@v1
+        uses: codacy/codacy-coverage-reporter-action@v1.3.0
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
           coverage-reports: build\coverage.info
