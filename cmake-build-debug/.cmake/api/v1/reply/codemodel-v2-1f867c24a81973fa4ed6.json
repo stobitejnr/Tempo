@@ -1,0 +1,87 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Tempo",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "AlarmTest::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AlarmTest-Debug-ac601971d75db4967915.json",
+					"name" : "AlarmTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "StopwatchTest::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-StopwatchTest-Debug-b2f480402013d79ed2f2.json",
+					"name" : "StopwatchTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Tempo::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Tempo-Debug-48a22d68fecc95770f93.json",
+					"name" : "Tempo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "TimerTest::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TimerTest-Debug-25e46c4bf0995058654b.json",
+					"name" : "TimerTest",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "J:/COSC 345 - Group Assignment/cmake-build-debug",
+		"source" : "J:/COSC 345 - Group Assignment"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 5
+	}
+}
