@@ -9,56 +9,50 @@ on:
 
 jobs:
   codacy-coverage-reporter:
-    runs-on: windows-latest
+    runs-on: windows-latest  # Use a Windows runner
     steps:
       - uses: actions/checkout@v3
-
+      
       - name: Install dependencies
         run: |
-          choco install cmake --no-progress -y
-          choco install llvm --no-progress -y
+          choco install cmake --no-progress -y  # Install CMake using Chocolatey
+          choco install llvm --no-progress -y   # Install LLVM for coverage reporting
+          choco install git -y                  # Install Git to use Git Bash
 
       - name: Configure CMake
         run: |
           mkdir build
           cd build
           cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="--coverage" ..
-
+      
       - name: Build
         run: |
           cd build
           cmake --build .
-
+      
       - name: Run tests
         run: |
           cd build
           ctest -C Debug --output-on-failure
 
-      - name: List coverage files
-        run: |
-          cd build
-          dir *.gcno, *.gcda
-
       - name: Generate coverage report
         run: |
           cd build
-          # Generating the coverage info
-          llvm-cov gcov *.gcno -o . > coverage.info || exit 1
-          # Check if coverage.info is created successfully
-          if (Test-Path coverage.info) {
-            Write-Output "Coverage report generated successfully."
-          } else {
-            Write-Output "Coverage report not found."
-            exit 1
-          }
+          llvm-cov gcov *.o -o . > coverage.info   # Use llvm-cov as lcov equivalent
 
-      - name: List files in build directory
+      - name: List files
         run: |
-          cd build
-          Get-ChildItem -Recurse
+          dir /s build  # List files in the build directory to verify coverage report
+
+      - name: Install Git Bash for Codacy
+        shell: cmd
+        run: |
+          curl -Ls https://github.com/git-for-windows/git/releases/download/v2.39.1.windows.1/Git-2.39.1-64-bit.exe -o git-installer.exe
+          start /wait git-installer.exe /VERYSILENT
 
       - name: Run Codacy Coverage Reporter
-        uses: codacy/codacy-coverage-reporter-action@v1.3.0
-        with:
-          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          coverage-reports: .\build\coverage.info
+        shell: bash
+        run: |
+          curl -Ls https://coverage.codacy.com/get.sh | bash -s report -r build/coverage.info
+        env:
+          CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
