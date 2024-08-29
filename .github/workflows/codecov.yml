@@ -1,0 +1,50 @@
+name: Codecov Coverage Report
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  codecov:
+    runs-on: windows-latest  # Use a Windows runner; change to 'ubuntu-latest' if you prefer Ubuntu
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          choco install cmake --no-progress -y  # Install CMake using Chocolatey
+          choco install llvm --no-progress -y   # Install LLVM for coverage reporting
+          choco install lcov --no-progress -y   # Install lcov for coverage data
+
+      - name: Configure CMake
+        run: |
+          mkdir build
+          cd build
+          cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="--coverage" ..
+
+      - name: Build
+        run: |
+          cd build
+          cmake --build .
+
+      - name: Run tests
+        run: |
+          cd build
+          ctest -C Debug --output-on-failure
+
+      - name: Generate coverage report
+        run: |
+          cd build
+          lcov --capture --directory . --output-file coverage.info
+          lcov --remove coverage.info '/usr/*' '*/test/*' --output-file coverage.info
+          lcov --list coverage.info
+
+      - name: Upload coverage report to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          files: build/coverage.info
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
