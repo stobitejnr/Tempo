@@ -1,5 +1,7 @@
 name: Codecov Coverage Report
 
+name: Codecov Coverage Report
+
 on:
   push:
     branches: [master]
@@ -17,10 +19,14 @@ jobs:
         run: |
           choco install OpenCppCoverage
 
+      - name: Download OpenCppCoverageToLcov
+        run: |
+          Invoke-WebRequest -Uri "https://path-to-open-cpp-coverage-to-lcov-binary" -OutFile "C:\Program Files\OpenCppCoverage\OpenCppCoverageToLcov.exe"
+        # Replace the URL with the actual download link if available
+
       - name: Verify Installation
         run: |
           Get-Command OpenCppCoverage
-          # Check if OpenCppCoverageToLcov is available
           Get-Command OpenCppCoverageToLcov
         continue-on-error: true
 
