@@ -25,7 +25,7 @@
 ---
 <p align="center">
   <span style="display: inline-block; text-align: center; margin: 0px;">
-    <img src="./images/The boys.png">
+    <img src="./images/team.png">
 </p>
 
 ## Features
