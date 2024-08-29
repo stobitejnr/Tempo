@@ -15,33 +15,28 @@ jobs:
 
       - name: Install dependencies
         run: |
-          choco install cmake --no-progress -y  # Install CMake using Chocolatey
-          choco install llvm --no-progress -y   # Install LLVM for coverage reporting
+          choco install OpenCppCoverage
+          echo "C:\Program Files\OpenCppCoverage" >> $env:GITHUB_PATH
           
       - name: Configure CMake
         run: |
-          mkdir build
-          cd build
-          cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="--coverage" ..
+          run: cmake -B ${{github.workspace}}/build
           
       - name: Build
-        run: |
-          cd build
-          cmake --build .
+        run: cmake --build ${{github.workspace}}/build --config 
           
       - name: Run tests
         run: |
           cd build
           ctest -C Debug --output-on-failure
           
-      - name: Generate coverage report
-        run: |
-          cd build
-          llvm-cov gcov *.o -o . > coverage.info   # Generate coverage report using llvm-cov
+      - name: Generate Coverage Report
+        shell: cmd
+        run: OpenCppCoverage --modules Debug --export_type cobertura:cmakeci.xml --cover_children -- ctest -C Debug --output-on-failure
           
-      - name: Upload coverage report to Codecov
+      - name: Upload Report to Codecov
         uses: codecov/codecov-action@v4
         with:
-          files: build/coverage.info
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: true
+          files: cmakeci.xml
+          token: ${{ secrets.CODECOV_TOKEN }}
