@@ -23,11 +23,12 @@ jobs:
           cd build
           cmake --build .
 
-      - name: Generate Report
-        run: OpenCppCoverage.exe --sources Tempo --export_type cobertura:coverage.xml -- "vstest.console.exe" Debug\coverage.dll
+      - name: Run Tests with Coverage
+        run: |
+          "C:/Program Files/OpenCppCoverage/OpenCppCoverage.exe" --sources Tempo --export_type cobertura:coverage.xml -- ctest -C Debug
+
       - name: Upload Report to Codecov
         uses: codecov/codecov-action@v2
         with:
-          files: ./coverage.xml
+          files: build/coverage.xml
           fail_ci_if_error: true
-          functionalities: fix
