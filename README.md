@@ -59,7 +59,7 @@
 <ol>
   <li>Ensure you have CMAKE installed on your system.</li>
   <li>Open an IDE and navigate to the project directory.</li>
-  <li>Run the CMakeLists.txt file to generate the project files.</li>
+  <li>Configure the directory with CMake.</li>
   <li>Build and run the project.</li>
 </ol>
 
