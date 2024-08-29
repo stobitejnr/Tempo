@@ -2,10 +2,9 @@ name: Codecov Coverage Report
 
 on:
   push:
-    branches: [master]
+    branches: [master, Rowan-Test]
   pull_request:
     branches: [master]
-  workflow_dispatch:
 
 jobs:
   codecov:
