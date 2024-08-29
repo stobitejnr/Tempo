@@ -24,15 +24,15 @@
 ## Developers
 ---
 <p align="center">
-  <span style="display: inline-block; text-align: center; margin: 0 10px;">
+  <span style="display: inline-block; text-align: center; margin: 0px;">
     <strong>William Donnelly</strong><br>
     <img src="./images/Will.png" alt="Will" style="width: 100px; height: auto;">
   </span>
-  <span style="display: inline-block; text-align: center; margin: 0 10px;">
+  <span style="display: inline-block; text-align: center; margin: 0 px;">
     <strong>Kevin Albert</strong><br>
     <img src="./images/Kevin.jpg" alt="Kevin" style="width: 100px; height: auto;">
   </span>
-  <span style="display: inline-block; text-align: center; margin: 0 10px;">
+  <span style="display: inline-block; text-align: center; margin: 0 px;">
     <strong>Rowan Zeszut</strong><br>
     <img src="./images/Rowan.png" alt="Rowan" style="width: 100px; height: auto;">
   </span>
