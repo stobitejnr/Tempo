@@ -37,12 +37,9 @@ jobs:
       - name: Generate coverage report
         run: |
           cd build
-          # Adjust this command as needed to properly generate coverage.info
-          llvm-cov gcov *.o > coverage.info
-
-      - name: Check coverage file
-        run: |
-          cd build
+          # Generating the coverage info, make sure the command is correct
+          llvm-cov gcov *.o > coverage.info || exit 1
+          # Check if coverage.info is created successfully
           if (Test-Path coverage.info) {
             Write-Output "Coverage report generated successfully."
           } else {
@@ -50,8 +47,9 @@ jobs:
             exit 1
           }
 
-      - name: List files
+      - name: List files in build directory
         run: |
+          cd build
           Get-ChildItem -Recurse
 
       - name: Run Codacy Coverage Reporter
