@@ -1,7 +1,5 @@
 name: Codecov Coverage Report
 
-name: Codecov Coverage Report
-
 on:
   push:
     branches: [master]
