@@ -13,46 +13,27 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
-      - name: Install dependencies
+      - name: Install OpenCppCoverage
         run: |
-          choco install cmake --no-progress -y  # Install CMake using Chocolatey
-          choco install llvm --no-progress -y   # Install LLVM for coverage reporting
-
+          choco install OpenCppCoverage
+          echo "C:\Program Files\OpenCppCoverage" >> $env:GITHUB_PATH
+  
       - name: Configure CMake
-        run: |
-          mkdir build
-          cd build
-          cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="--coverage" ..
-      
+        # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
+        # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
+        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+  
       - name: Build
-        run: |
-          cd build
-          cmake --build .
-      
-      - name: Run tests
-        run: |
-          cd build
-          ctest -C Debug --output-on-failure
-
-      - name: Generate coverage report
-        run: |
-          cd build
-          llvm-cov gcov *.o -o . > coverage.info   # Use llvm-cov as lcov equivalent
-
-      - name: List files
-        run: |
-          if (Test-Path -Path build) {
-            Get-ChildItem -Recurse build  # List files in the build directory to verify coverage report
-          } else {
-            Write-Host "Build directory not found."
-          }
-
-      - name: Download Codacy Coverage Reporter
-        run: |
-          Invoke-WebRequest -Uri "https://artifacts.codacy.com/bin/codacy-coverage-reporter/latest/windows/codacy-coverage-reporter.exe" -OutFile "codacy-coverage-reporter.exe"
-
-      - name: Run Codacy Coverage Reporter
-        run: |
-          .\codacy-coverage-reporter.exe report -r build\coverage.info
-        env:
-          CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
+        # Build your program with the given configuration
+        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+  
+      - name: Generate Coverage Report
+        shell: cmd
+        run: OpenCppCoverage --modules Debug --export_type cobertura:cmakeci.xml --cover_children -- ctest -C ${{env.BUILD_TYPE}} --test-dir build
+  
+      - name: Upload Report to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          fail_ci_if_error: true
+          files: cmakeci.xml
+          token: ${{ secrets.CODECOV_TOKEN }}
