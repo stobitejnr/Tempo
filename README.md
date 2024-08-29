@@ -9,7 +9,7 @@ A versatile command-line application that allows users to create and manage time
 
 ## Developers
 
-![Team Image](team.png)
+![Team Image](team.webp)
 
 ## Features
 
