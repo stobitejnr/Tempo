@@ -3,6 +3,7 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/8b2c325c2cc14f8c83427c59c616a839)](https://app.codacy.com/gh/stobitejnr/Tempo/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![CMake Build](https://github.com/stobitejnr/Tempo/actions/workflows/cmake.yml/badge.svg)](https://github.com/stobitejnr/Tempo/actions/workflows/cmake.yml)
 [![Clang-Tidy Linting](https://github.com/stobitejnr/Tempo/actions/workflows/clang-tidy.yml/badge.svg)](https://github.com/stobitejnr/Tempo/actions/workflows/clang-tidy.yml)
+![GitHub License](https://img.shields.io/github/license/stobitejnr/Tempo)
 
 A versatile command-line application that allows users to create and manage timers and stopwatches
 
