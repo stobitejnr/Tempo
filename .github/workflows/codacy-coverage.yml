@@ -9,26 +9,26 @@ on:
 
 jobs:
   codacy-coverage-reporter:
-    runs-on: windows-latest  # Use a Windows runner
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Install dependencies
         run: |
-          choco install cmake --no-progress -y  # Install CMake using Chocolatey
-          choco install llvm --no-progress -y   # Install LLVM for lcov equivalent
+          choco install cmake --no-progress -y
+          choco install llvm --no-progress -y
 
       - name: Configure CMake
         run: |
           mkdir build
           cd build
           cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="--coverage" ..
-      
+
       - name: Build
         run: |
           cd build
           cmake --build .
-      
+
       - name: Run tests
         run: |
           cd build
@@ -37,17 +37,23 @@ jobs:
       - name: Generate coverage report
         run: |
           cd build
-          llvm-cov gcov *.o -o . > coverage.info   # Use llvm-cov as lcov equivalent
+          # Adjust this command as needed to properly generate coverage.info
+          llvm-cov gcov *.o > coverage.info
+
+      - name: Check coverage file
+        run: |
+          cd build
+          if (Test-Path coverage.info) {
+            Write-Output "Coverage report generated successfully."
+          } else {
+            Write-Output "Coverage report not found."
+            exit 1
+          }
 
       - name: List files
         run: |
-          Get-ChildItem -Recurse   # PowerShell equivalent of dir /S
-          Get-ChildItem -Recurse -Include *.gcda,*.gcno  # List specific files
+          Get-ChildItem -Recurse
 
-      - name: Clean up coverage report
-        run: |
-          Remove-Item build\coverage.info -Force  # PowerShell equivalent of del /Q
-          
       - name: Run Codacy Coverage Reporter
         uses: codacy/codacy-coverage-reporter-action@v1.3.0
         with:
