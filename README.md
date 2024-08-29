@@ -34,7 +34,7 @@ A versatile command-line application that allows users to create and manage time
 
 1. Ensure you have CMAKE installed on your system.
 2. Open an IDE and navigate to the project directory.
-3. Run the CMakeLists.txt file to generate the project files.
+3. Configure the project directory with CMake.
 4. Build and run the project.
 
 ## Usage
