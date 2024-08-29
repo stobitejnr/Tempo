@@ -1,4 +1,4 @@
-name: Codacy Coverage Reporter
+name: Codecov Coverage Reporter
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  codacy-coverage-reporter:
+  codecov-coverage-reporter:
     runs-on: windows-latest  # Use a Windows runner
     steps:
       - uses: actions/checkout@v3
@@ -48,8 +48,11 @@ jobs:
         run: |
           Remove-Item build\coverage.info -Force  # PowerShell equivalent of del /Q
           
-      - name: Run Codacy Coverage Reporter
-        uses: codacy/codacy-coverage-reporter-action@v1.3.0
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
         with:
-          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          coverage-reports: build\coverage.info
+          files: build\coverage.info
+          token: ${{ secrets.CODECOV_TOKEN }}  # Ensure you have this secret set in GitHub
+          flags: unittests
+          name: codecov-coverage
+          fail_ci_if_error: true  # Fail the job if Codecov fails
