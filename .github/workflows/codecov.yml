@@ -16,11 +16,11 @@ jobs:
       - name: Install OpenCppCoverage
         run: |
           choco install OpenCppCoverage
-          echo "C:\Program Files\OpenCppCoverage" | Out-File -FilePath $env:GITHUB_PATH -Encoding ascii -Append
 
-      - name: Verify Installation and Path
+      - name: Verify Installation
         run: |
           Get-Command OpenCppCoverage
+          # Check if OpenCppCoverageToLcov is available
           Get-Command OpenCppCoverageToLcov
         continue-on-error: true
 
@@ -38,11 +38,12 @@ jobs:
       - name: Run tests with coverage
         run: |
           mkdir coverage
-          & "C:\Program Files\OpenCppCoverage\OpenCppCoverage" --export_type binary:coverage/coverage.bin --working_dir build --sources .. -- ctest -C Debug --output-on-failure
+          & "C:\Program Files\OpenCppCoverage\OpenCppCoverage.exe" --export_type binary:coverage/coverage.bin --working_dir build --sources "path\to\source\directory" -- ctest -C Debug --output-on-failure
 
       - name: Convert coverage report to lcov format
         run: |
-          & "C:\Program Files\OpenCppCoverage\OpenCppCoverageToLcov" --input coverage/coverage.bin --output coverage/coverage.info
+          & "C:\Program Files\OpenCppCoverage\OpenCppCoverageToLcov.exe" --input coverage/coverage.bin --output coverage/coverage.info
+        continue-on-error: true
 
       - name: Upload coverage report to Codecov
         uses: codecov/codecov-action@v4
