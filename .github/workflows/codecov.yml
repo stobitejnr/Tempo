@@ -13,10 +13,16 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install dependencies
+      - name: Install OpenCppCoverage
         run: |
-          choco install cmake --no-progress -y  # Install CMake
-          choco install opencppcoverage --no-progress -y  # Install OpenCppCoverage
+          choco install OpenCppCoverage
+          echo "C:\Program Files\OpenCppCoverage" | Out-File -FilePath $env:GITHUB_PATH -Encoding ascii -Append
+
+      - name: Verify Installation and Path
+        run: |
+          Get-Command OpenCppCoverage
+          Get-Command OpenCppCoverageToLcov
+        continue-on-error: true
 
       - name: Configure CMake
         run: |
@@ -32,11 +38,11 @@ jobs:
       - name: Run tests with coverage
         run: |
           mkdir coverage
-          OpenCppCoverage --export_type binary:coverage/coverage.bin --working_dir build --sources .. -- ctest -C Debug --output-on-failure
+          & "C:\Program Files\OpenCppCoverage\OpenCppCoverage" --export_type binary:coverage/coverage.bin --working_dir build --sources .. -- ctest -C Debug --output-on-failure
 
       - name: Convert coverage report to lcov format
         run: |
-          OpenCppCoverageToLcov --input coverage/coverage.bin --output coverage/coverage.info
+          & "C:\Program Files\OpenCppCoverage\OpenCppCoverageToLcov" --input coverage/coverage.bin --output coverage/coverage.info
 
       - name: Upload coverage report to Codecov
         uses: codecov/codecov-action@v4
