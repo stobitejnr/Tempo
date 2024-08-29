@@ -9,37 +9,41 @@ on:
 
 jobs:
   codecov:
-    runs-on: windows-latest  # Use a Windows runner
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
 
       - name: Install dependencies
         run: |
-          choco install cmake --no-progress -y  # Install CMake using Chocolatey
-          choco install llvm --no-progress -y   # Install LLVM for coverage reporting
+          choco install cmake --no-progress -y
+          choco install llvm --no-progress -y
           
       - name: Configure CMake
         run: |
           mkdir build
           cd build
-          cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="--coverage" ..
+          cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="-fprofile-instr-generate -fcoverage-mapping" ..
           
       - name: Build
         run: |
           cd build
           cmake --build .
           
-      - name: Run tests
+      - name: Run tests and generate profiling data
         run: |
           cd build
+          export LLVM_PROFILE_FILE="coverage.profraw"
           ctest -C Debug --output-on-failure
+          
+      - name: Merge profiling data
+        run: |
+          cd build
+          llvm-profdata merge -sparse coverage.profraw -o coverage.profdata
           
       - name: Generate coverage report
         run: |
           cd build
-          llvm-profdata merge -sparse default.profraw -o coverage.profdata
           llvm-cov show ./Tempo -instr-profile=coverage.profdata > coverage.info
-
           
       - name: Upload coverage report to Codecov
         uses: codecov/codecov-action@v4
