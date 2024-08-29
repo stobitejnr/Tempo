@@ -41,8 +41,8 @@ jobs:
 
       - name: List files
         run: |
-          dir /S
-          dir /S *.gcda *.gcno
+          Get-ChildItem -Recurse   # PowerShell equivalent of dir /S
+          Get-ChildItem -Recurse -Include *.gcda,*.gcno  # List specific files
 
       - name: Clean up coverage report
         run: |
