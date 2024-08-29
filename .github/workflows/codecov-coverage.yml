@@ -1,4 +1,4 @@
-name: Codecov Coverage Reporter
+name: Codacy Coverage Reporter
 
 on:
   push:
@@ -8,15 +8,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  codecov-coverage-reporter:
-    runs-on: windows-latest
+  codacy-coverage-reporter:
+    runs-on: windows-latest  # Use a Windows runner
     steps:
       - uses: actions/checkout@v3
       
       - name: Install dependencies
         run: |
-          choco install cmake --no-progress -y  # Install CMake
-          choco install llvm --no-progress -y   # Install LLVM for coverage tools
+          choco install cmake --no-progress -y  # Install CMake using Chocolatey
+          choco install llvm --no-progress -y   # Install LLVM for lcov equivalent
 
       - name: Configure CMake
         run: |
@@ -37,24 +37,19 @@ jobs:
       - name: Generate coverage report
         run: |
           cd build
-          llvm-cov gcov -b . > coverage.txt   # Generate a coverage report in text format for inspection
-          llvm-cov gcov *.o -o .  # You might need to adjust or verify the files targeted here
+          llvm-cov gcov *.o -o . > coverage.info   # Use llvm-cov as lcov equivalent
 
       - name: List files
         run: |
-          Get-ChildItem -Recurse  # List all files recursively
-          Get-ChildItem -Recurse -Include *.gcda,*.gcno  # Specifically list coverage files if generated
+          Get-ChildItem -Recurse   # PowerShell equivalent of dir /S
+          Get-ChildItem -Recurse -Include *.gcda,*.gcno  # List specific files
 
       - name: Clean up coverage report
         run: |
-          Remove-Item build\coverage.txt -Force  # Ensure you are deleting the correct files
-
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
+          Remove-Item build\coverage.info -Force  # PowerShell equivalent of del /Q
+          
+      - name: Run Codacy Coverage Reporter
+        uses: codacy/codacy-coverage-reporter-action@v1.3.0
         with:
-          files: build\coverage.txt  # Ensure this matches the actual coverage report path
-          token: ${{ secrets.CODECOV_TOKEN }}  # This should be set in GitHub secrets
-          flags: unittests
-          name: codecov-coverage
-          fail_ci_if_error: true  # Fail the job if Codecov fails
-
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          coverage-reports: build\coverage.info
