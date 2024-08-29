@@ -12,40 +12,43 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
-      
+
+      - name: Install MSYS2
+        uses: msys2/setup-msys2@v2
+
       - name: Install dependencies
         run: |
-          choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System' -y
-          choco install lcov -y
-          
+          pacman --noconfirm -Syuu
+          pacman --noconfirm -S base-devel mingw-w64-x86_64-toolchain mingw-w64-x86_64-cmake mingw-w64-x86_64-lcov
+
       - name: Configure CMake
         run: |
           mkdir build
           cd build
           cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="--coverage" ..
-          
+        
       - name: Build
         run: |
           cd build
           mingw32-make
-      
+
       - name: Run tests
         run: |
           cd build
           ctest -C Debug --output-on-failure
-      
+
       - name: Generate coverage report
         run: |
           cd build
           lcov --capture --directory . --output-file coverage.info
           lcov --remove coverage.info '/usr/*' --output-file coverage.info
-      
+
       - name: List files
         run: |
           cd build
           dir /S /B
           dir /S /B *.gcda *.gcno
-      
+
       - name: Run Codacy Coverage Reporter
         uses: codacy/codacy-coverage-reporter-action@v1
         with:
