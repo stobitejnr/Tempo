@@ -40,8 +40,7 @@ jobs:
       - name: Generate coverage report
         run: |
           cd build
-          llvm-profdata merge -sparse *.profraw -o coverage.profdata
-          llvm-cov report ./my_program -instr-profile=coverage.profdata > coverage.info
+          llvm-cov gcov *.o-o > coverage.info
           
       - name: Upload coverage report to Codecov
         uses: codecov/codecov-action@v4
