@@ -240,9 +240,20 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   26</span>    <span class="keywordtype">int</span> milli = 3600000 * hours + 60000 * minutes + 1000 * seconds;</div>
 <div class="line"><span class="lineno">   27</span>    <a class="code hl_variable" href="class_stopwatch.html#a19fd0ac167f4610ff151b5148a840cac">_running</a> = <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">   28</span>    <a class="code hl_variable" href="class_stopwatch.html#a8ac2e1a03677ec1033902179f4d1bcee">_currMilliseconds</a> = milli;</div>
-<div class="line"><span class="lineno">   29</span>}</div>
+<div class="line"><span class="lineno">   29</span>    <a class="code hl_function" href="class_stopwatch.html#a6d01ecc80c92f1d5210cd9c3eb72883d">start</a>();</div>
+<div class="line"><span class="lineno">   30</span>}</div>
+<div class="ttc" id="aclass_stopwatch_html_a6d01ecc80c92f1d5210cd9c3eb72883d"><div class="ttname"><a href="class_stopwatch.html#a6d01ecc80c92f1d5210cd9c3eb72883d">Stopwatch::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">Starts the stopwatch.</div><div class="ttdef"><b>Definition:</b> <a href="_stopwatch_8cpp_source.html#l00103">Stopwatch.cpp:103</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_stopwatch_8hpp_source.html#l00091">_currMilliseconds</a>, and <a class="el" href="_stopwatch_8hpp_source.html#l00092">_running</a>.</p>
+<p class="reference">References <a class="el" href="_stopwatch_8hpp_source.html#l00091">_currMilliseconds</a>, <a class="el" href="_stopwatch_8hpp_source.html#l00092">_running</a>, and <a class="el" href="_stopwatch_8cpp_source.html#l00103">start()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_stopwatch_a8c9e3153e50c02aa22be7acdd3f4912c_cgraph.png" border="0" usemap="#aclass_stopwatch_a8c9e3153e50c02aa22be7acdd3f4912c_cgraph" alt=""/></div>
+<map name="aclass_stopwatch_a8c9e3153e50c02aa22be7acdd3f4912c_cgraph" id="aclass_stopwatch_a8c9e3153e50c02aa22be7acdd3f4912c_cgraph">
+<area shape="rect" title="Constructor initializes a Stopwatch with a specified time (in hours, minutes, and seconds)." alt="" coords="5,5,172,31"/>
+<area shape="rect" href="class_stopwatch.html#a6d01ecc80c92f1d5210cd9c3eb72883d" title="Starts the stopwatch." alt="" coords="220,5,348,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -266,37 +277,39 @@ Private Attributes</h2></td></tr>
 <p><a class="el" href="class_a.html">A</a> split time is a snapshot of the time elapsed, which can be useful for time intervals without stopping the stopwatch.</p>
 <p><a class="el" href="class_a.html">A</a> split time is a snapshot of the time elapsed, which can be useful for time intervals without stopping the stopwatch. </p>
 
-<p class="definition">Definition at line <a class="el" href="_stopwatch_8cpp_source.html#l00063">63</a> of file <a class="el" href="_stopwatch_8cpp_source.html">Stopwatch.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   63</span>                         {</div>
-<div class="line"><span class="lineno">   64</span>    <span class="keywordtype">int</span> splitMilliseconds = 0;</div>
-<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_stopwatch.html#a19fd0ac167f4610ff151b5148a840cac">_running</a>) {</div>
-<div class="line"><span class="lineno">   66</span>        splitMilliseconds = chrono::duration_cast&lt;chrono::milliseconds&gt;(chrono::steady_clock::now() - <a class="code hl_variable" href="class_stopwatch.html#aa233b039e113db698689e64e13cd73a4">_startTime</a>).count();</div>
-<div class="line"><span class="lineno">   67</span>        splitMilliseconds += <a class="code hl_variable" href="class_stopwatch.html#a8ac2e1a03677ec1033902179f4d1bcee">_currMilliseconds</a>;</div>
-<div class="line"><span class="lineno">   68</span>        <span class="comment">//cout &lt;&lt; &quot;Split time: &quot; &lt;&lt; _currMilliseconds + splitMilliseconds &lt;&lt; &quot; milliseconds&quot; &lt;&lt; endl;</span></div>
-<div class="line"><span class="lineno">   69</span>    } </div>
-<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   71</span>        splitMilliseconds = <a class="code hl_variable" href="class_stopwatch.html#a8ac2e1a03677ec1033902179f4d1bcee">_currMilliseconds</a>;</div>
-<div class="line"><span class="lineno">   72</span> </div>
-<div class="line"><span class="lineno">   73</span>        <span class="comment">//cout &lt;&lt; &quot;Split time: &quot; &lt;&lt; _currMilliseconds &lt;&lt; &quot; milliseconds&quot; &lt;&lt; endl;</span></div>
-<div class="line"><span class="lineno">   74</span>    }</div>
-<div class="line"><span class="lineno">   75</span>    <a class="code hl_variable" href="class_stopwatch.html#a389d02f3c6da417c1b93886e6e1e76c3">_splits</a>.push_back(splitMilliseconds);</div>
-<div class="line"><span class="lineno">   76</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_stopwatch_8cpp_source.html#l00064">64</a> of file <a class="el" href="_stopwatch_8cpp_source.html">Stopwatch.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>                         {</div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordtype">int</span> splitMilliseconds = 0;</div>
+<div class="line"><span class="lineno">   66</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_stopwatch.html#a19fd0ac167f4610ff151b5148a840cac">_running</a>) {</div>
+<div class="line"><span class="lineno">   67</span>        splitMilliseconds = chrono::duration_cast&lt;chrono::milliseconds&gt;(chrono::steady_clock::now() - <a class="code hl_variable" href="class_stopwatch.html#aa233b039e113db698689e64e13cd73a4">_startTime</a>).count();</div>
+<div class="line"><span class="lineno">   68</span>        splitMilliseconds += <a class="code hl_variable" href="class_stopwatch.html#a8ac2e1a03677ec1033902179f4d1bcee">_currMilliseconds</a>;</div>
+<div class="line"><span class="lineno">   69</span>        <span class="comment">//cout &lt;&lt; &quot;Split time: &quot; &lt;&lt; _currMilliseconds + splitMilliseconds &lt;&lt; &quot; milliseconds&quot; &lt;&lt; endl;</span></div>
+<div class="line"><span class="lineno">   70</span>    } </div>
+<div class="line"><span class="lineno">   71</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   72</span>        splitMilliseconds = <a class="code hl_variable" href="class_stopwatch.html#a8ac2e1a03677ec1033902179f4d1bcee">_currMilliseconds</a>;</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>        <span class="comment">//cout &lt;&lt; &quot;Split time: &quot; &lt;&lt; _currMilliseconds &lt;&lt; &quot; milliseconds&quot; &lt;&lt; endl;</span></div>
+<div class="line"><span class="lineno">   75</span>    }</div>
+<div class="line"><span class="lineno">   76</span>    <a class="code hl_variable" href="class_stopwatch.html#a389d02f3c6da417c1b93886e6e1e76c3">_splits</a>.push_back(splitMilliseconds);</div>
+<div class="line"><span class="lineno">   77</span>}</div>
 <div class="ttc" id="aclass_stopwatch_html_aa233b039e113db698689e64e13cd73a4"><div class="ttname"><a href="class_stopwatch.html#aa233b039e113db698689e64e13cd73a4">Stopwatch::_startTime</a></div><div class="ttdeci">chrono::time_point&lt; chrono::steady_clock &gt; _startTime</div><div class="ttdoc">The time point when the stopwatch was started.</div><div class="ttdef"><b>Definition:</b> <a href="_stopwatch_8hpp_source.html#l00096">Stopwatch.hpp:96</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_stopwatch_8hpp_source.html#l00091">_currMilliseconds</a>, <a class="el" href="_stopwatch_8hpp_source.html#l00092">_running</a>, <a class="el" href="_stopwatch_8hpp_source.html#l00094">_splits</a>, and <a class="el" href="_stopwatch_8hpp_source.html#l00096">_startTime</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00200">Menu::checkStopwatchInput()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00200">Menu::checkStopwatchInput()</a>, and <a class="el" href="_stopwatch_test_8cpp_source.html#l00042">test_splits()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_stopwatch_aa0a6e6e55261fa0d2b239800bc7a782d_icgraph.png" border="0" usemap="#aclass_stopwatch_aa0a6e6e55261fa0d2b239800bc7a782d_icgraph" alt=""/></div>
 <map name="aclass_stopwatch_aa0a6e6e55261fa0d2b239800bc7a782d_icgraph" id="aclass_stopwatch_aa0a6e6e55261fa0d2b239800bc7a782d_icgraph">
-<area shape="rect" title="Records and prints the current split time in milliseconds." alt="" coords="749,55,900,80"/>
+<area shape="rect" title="Records and prints the current split time in milliseconds." alt="" coords="749,80,900,105"/>
 <area shape="rect" href="class_menu.html#a81188fdf5f017799f9e7f7eaaf98c3ec" title="Checks and handles user input for the Stopwatch." alt="" coords="496,55,701,80"/>
+<area shape="rect" href="_stopwatch_test_8cpp.html#af44d971f0b7666e71e7d2b554b989292" title=" " alt="" coords="554,104,643,129"/>
 <area shape="rect" href="class_menu.html#ae1ec62e738dda7faaaec850bd0b58ffe" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="352,55,448,80"/>
 <area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="229,5,284,31"/>
 <area shape="rect" href="class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="209,55,304,80"/>
 <area shape="rect" href="class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452" title="Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection." alt="" coords="5,80,161,105"/>
+<area shape="rect" href="_stopwatch_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="373,104,427,129"/>
 </map>
 </div>
 
@@ -319,26 +332,29 @@ Here is the caller graph for this function:</div>
 
 <p>Clears the splits vector. </p>
 
-<p class="definition">Definition at line <a class="el" href="_stopwatch_8cpp_source.html#l00081">81</a> of file <a class="el" href="_stopwatch_8cpp_source.html">Stopwatch.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   81</span>                           {</div>
-<div class="line"><span class="lineno">   82</span>    <a class="code hl_variable" href="class_stopwatch.html#a389d02f3c6da417c1b93886e6e1e76c3">_splits</a> = {};</div>
-<div class="line"><span class="lineno">   83</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_stopwatch_8cpp_source.html#l00082">82</a> of file <a class="el" href="_stopwatch_8cpp_source.html">Stopwatch.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   82</span>                           {</div>
+<div class="line"><span class="lineno">   83</span>    <a class="code hl_variable" href="class_stopwatch.html#a389d02f3c6da417c1b93886e6e1e76c3">_splits</a> = {};</div>
+<div class="line"><span class="lineno">   84</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_stopwatch_8hpp_source.html#l00094">_splits</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_stopwatch_8cpp_source.html#l00147">reset()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_stopwatch_8cpp_source.html#l00148">reset()</a>, and <a class="el" href="_stopwatch_test_8cpp_source.html#l00042">test_splits()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_stopwatch_a0edfa283c9d5e706cef4a43a6cbfbaf5_icgraph.png" border="0" usemap="#aclass_stopwatch_a0edfa283c9d5e706cef4a43a6cbfbaf5_icgraph" alt=""/></div>
 <map name="aclass_stopwatch_a0edfa283c9d5e706cef4a43a6cbfbaf5_icgraph" id="aclass_stopwatch_a0edfa283c9d5e706cef4a43a6cbfbaf5_icgraph">
-<area shape="rect" title="Clears the splits vector." alt="" coords="928,55,1095,80"/>
-<area shape="rect" href="class_stopwatch.html#a42c7014e7fffcf4c56ca6fb07f8eb31c" title="Resets the stopwatch to 0 milliseconds and stops it." alt="" coords="749,55,880,80"/>
+<area shape="rect" title="Clears the splits vector." alt="" coords="928,129,1095,155"/>
+<area shape="rect" href="class_stopwatch.html#a42c7014e7fffcf4c56ca6fb07f8eb31c" title="Resets the stopwatch to 0 milliseconds and stops it." alt="" coords="749,104,880,129"/>
+<area shape="rect" href="_stopwatch_test_8cpp.html#af44d971f0b7666e71e7d2b554b989292" title=" " alt="" coords="770,153,859,179"/>
 <area shape="rect" href="class_menu.html#a81188fdf5f017799f9e7f7eaaf98c3ec" title="Checks and handles user input for the Stopwatch." alt="" coords="496,55,701,80"/>
+<area shape="rect" href="_stopwatch_test_8cpp.html#ab89fbb465413f5edb0ed7a5250df74e5" title=" " alt="" coords="555,104,642,129"/>
 <area shape="rect" href="class_menu.html#ae1ec62e738dda7faaaec850bd0b58ffe" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="352,55,448,80"/>
 <area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="229,5,284,31"/>
 <area shape="rect" href="class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="209,55,304,80"/>
 <area shape="rect" href="class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452" title="Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection." alt="" coords="5,80,161,105"/>
+<area shape="rect" href="_stopwatch_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="373,129,427,155"/>
 </map>
 </div>
 
@@ -365,31 +381,35 @@ Here is the caller graph for this function:</div>
 <p>If the stopwatch is running, this includes the time since it was started; otherwise, it returns the last recorded time.</p>
 <dl class="section return"><dt>Returns</dt><dd>int The current elapsed time in milliseconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_stopwatch_8cpp_source.html#l00043">43</a> of file <a class="el" href="_stopwatch_8cpp_source.html">Stopwatch.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   43</span>                                   { </div>
-<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_stopwatch.html#a19fd0ac167f4610ff151b5148a840cac">_running</a>){</div>
-<div class="line"><span class="lineno">   45</span>        <span class="keyword">auto</span> now = chrono::steady_clock::now();</div>
-<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="class_stopwatch.html#a8ac2e1a03677ec1033902179f4d1bcee">_currMilliseconds</a> + chrono::duration_cast&lt;chrono::milliseconds&gt;(now - <a class="code hl_variable" href="class_stopwatch.html#aa233b039e113db698689e64e13cd73a4">_startTime</a>).count();</div>
-<div class="line"><span class="lineno">   47</span>    }</div>
-<div class="line"><span class="lineno">   48</span>    <span class="keywordflow">else</span>{</div>
-<div class="line"><span class="lineno">   49</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="class_stopwatch.html#a8ac2e1a03677ec1033902179f4d1bcee">_currMilliseconds</a>;</div>
-<div class="line"><span class="lineno">   50</span>    }</div>
-<div class="line"><span class="lineno">   51</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_stopwatch_8cpp_source.html#l00044">44</a> of file <a class="el" href="_stopwatch_8cpp_source.html">Stopwatch.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>                                   { </div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_stopwatch.html#a19fd0ac167f4610ff151b5148a840cac">_running</a>){</div>
+<div class="line"><span class="lineno">   46</span>        <span class="keyword">auto</span> now = chrono::steady_clock::now();</div>
+<div class="line"><span class="lineno">   47</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="class_stopwatch.html#a8ac2e1a03677ec1033902179f4d1bcee">_currMilliseconds</a> + chrono::duration_cast&lt;chrono::milliseconds&gt;(now - <a class="code hl_variable" href="class_stopwatch.html#aa233b039e113db698689e64e13cd73a4">_startTime</a>).count();</div>
+<div class="line"><span class="lineno">   48</span>    }</div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">   50</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="class_stopwatch.html#a8ac2e1a03677ec1033902179f4d1bcee">_currMilliseconds</a>;</div>
+<div class="line"><span class="lineno">   51</span>    }</div>
+<div class="line"><span class="lineno">   52</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_stopwatch_8hpp_source.html#l00091">_currMilliseconds</a>, <a class="el" href="_stopwatch_8hpp_source.html#l00092">_running</a>, and <a class="el" href="_stopwatch_8hpp_source.html#l00096">_startTime</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00523">Display::tickStopwatch()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_stopwatch_test_8cpp_source.html#l00010">test_constructor()</a>, <a class="el" href="_stopwatch_test_8cpp_source.html#l00018">test_pause_resume()</a>, <a class="el" href="_stopwatch_test_8cpp_source.html#l00032">test_reset()</a>, and <a class="el" href="_display_8cpp_source.html#l00525">Display::tickStopwatch()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_stopwatch_aaf61c1ada98a22cc1c2bc589bdd4134a_icgraph.png" border="0" usemap="#aclass_stopwatch_aaf61c1ada98a22cc1c2bc589bdd4134a_icgraph" alt=""/></div>
 <map name="aclass_stopwatch_aaf61c1ada98a22cc1c2bc589bdd4134a_icgraph" id="aclass_stopwatch_aaf61c1ada98a22cc1c2bc589bdd4134a_icgraph">
-<area shape="rect" title="Returns the current elapsed time in milliseconds." alt="" coords="715,55,940,80"/>
-<area shape="rect" href="class_display.html#a670c8db4c53ae0f09d6d3b57f1813b7f" title="Updates the display based on the state of the provided Stopwatch object." alt="" coords="496,55,667,80"/>
-<area shape="rect" href="class_menu.html#ae1ec62e738dda7faaaec850bd0b58ffe" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="352,55,448,80"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="229,5,284,31"/>
-<area shape="rect" href="class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="209,55,304,80"/>
-<area shape="rect" href="class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452" title="Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection." alt="" coords="5,80,161,105"/>
+<area shape="rect" title="Returns the current elapsed time in milliseconds." alt="" coords="715,80,940,105"/>
+<area shape="rect" href="_stopwatch_test_8cpp.html#acba75a8bdc084005b14d0ab6214dc244" title=" " alt="" coords="518,5,645,31"/>
+<area shape="rect" href="_stopwatch_test_8cpp.html#ae968c56d18bef1bf9802840c2349192b" title=" " alt="" coords="507,55,656,80"/>
+<area shape="rect" href="_stopwatch_test_8cpp.html#ab89fbb465413f5edb0ed7a5250df74e5" title=" " alt="" coords="538,104,625,129"/>
+<area shape="rect" href="class_display.html#a670c8db4c53ae0f09d6d3b57f1813b7f" title="Updates the display based on the state of the provided Stopwatch object." alt="" coords="496,153,667,179"/>
+<area shape="rect" href="_stopwatch_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="373,55,427,80"/>
+<area shape="rect" href="class_menu.html#ae1ec62e738dda7faaaec850bd0b58ffe" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="352,153,448,179"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="229,104,284,129"/>
+<area shape="rect" href="class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="209,153,304,179"/>
+<area shape="rect" href="class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452" title="Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection." alt="" coords="5,179,161,204"/>
 </map>
 </div>
 
@@ -415,25 +435,27 @@ Here is the caller graph for this function:</div>
 <dd>
 vector&lt;int&gt; the vector containing split times in milliseconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_stopwatch_8cpp_source.html#l00089">89</a> of file <a class="el" href="_stopwatch_8cpp_source.html">Stopwatch.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   89</span>                                {</div>
-<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_stopwatch.html#a389d02f3c6da417c1b93886e6e1e76c3">_splits</a>;</div>
-<div class="line"><span class="lineno">   91</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_stopwatch_8cpp_source.html#l00090">90</a> of file <a class="el" href="_stopwatch_8cpp_source.html">Stopwatch.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   90</span>                                {</div>
+<div class="line"><span class="lineno">   91</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_stopwatch.html#a389d02f3c6da417c1b93886e6e1e76c3">_splits</a>;</div>
+<div class="line"><span class="lineno">   92</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_stopwatch_8hpp_source.html#l00094">_splits</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00523">Display::tickStopwatch()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_stopwatch_test_8cpp_source.html#l00042">test_splits()</a>, and <a class="el" href="_display_8cpp_source.html#l00525">Display::tickStopwatch()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_stopwatch_ae401b2a4016b104fc210e54a5041c9e2_icgraph.png" border="0" usemap="#aclass_stopwatch_ae401b2a4016b104fc210e54a5041c9e2_icgraph" alt=""/></div>
 <map name="aclass_stopwatch_ae401b2a4016b104fc210e54a5041c9e2_icgraph" id="aclass_stopwatch_ae401b2a4016b104fc210e54a5041c9e2_icgraph">
-<area shape="rect" title="Returns the splits vector." alt="" coords="715,55,869,80"/>
-<area shape="rect" href="class_display.html#a670c8db4c53ae0f09d6d3b57f1813b7f" title="Updates the display based on the state of the provided Stopwatch object." alt="" coords="496,55,667,80"/>
-<area shape="rect" href="class_menu.html#ae1ec62e738dda7faaaec850bd0b58ffe" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="352,55,448,80"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="229,5,284,31"/>
-<area shape="rect" href="class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="209,55,304,80"/>
-<area shape="rect" href="class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452" title="Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection." alt="" coords="5,80,161,105"/>
+<area shape="rect" title="Returns the splits vector." alt="" coords="715,43,869,68"/>
+<area shape="rect" href="_stopwatch_test_8cpp.html#af44d971f0b7666e71e7d2b554b989292" title=" " alt="" coords="537,12,626,37"/>
+<area shape="rect" href="class_display.html#a670c8db4c53ae0f09d6d3b57f1813b7f" title="Updates the display based on the state of the provided Stopwatch object." alt="" coords="496,67,667,92"/>
+<area shape="rect" href="_stopwatch_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="373,5,427,31"/>
+<area shape="rect" href="class_menu.html#ae1ec62e738dda7faaaec850bd0b58ffe" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="352,79,448,104"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="229,29,284,55"/>
+<area shape="rect" href="class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="209,79,304,104"/>
+<area shape="rect" href="class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452" title="Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection." alt="" coords="5,104,161,129"/>
 </map>
 </div>
 
@@ -458,25 +480,29 @@ Here is the caller graph for this function:</div>
 <dl class="section return"><dt>Returns</dt><dd>bool True if the stopwatch is running, false otherwise.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>bool True if the stopwatch is running, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_stopwatch_8cpp_source.html#l00162">162</a> of file <a class="el" href="_stopwatch_8cpp_source.html">Stopwatch.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  162</span>                          {</div>
-<div class="line"><span class="lineno">  163</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_stopwatch.html#a19fd0ac167f4610ff151b5148a840cac">_running</a>;</div>
-<div class="line"><span class="lineno">  164</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_stopwatch_8cpp_source.html#l00163">163</a> of file <a class="el" href="_stopwatch_8cpp_source.html">Stopwatch.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  163</span>                          {</div>
+<div class="line"><span class="lineno">  164</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_stopwatch.html#a19fd0ac167f4610ff151b5148a840cac">_running</a>;</div>
+<div class="line"><span class="lineno">  165</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_stopwatch_8hpp_source.html#l00092">_running</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00200">Menu::checkStopwatchInput()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00200">Menu::checkStopwatchInput()</a>, <a class="el" href="_stopwatch_test_8cpp_source.html#l00010">test_constructor()</a>, <a class="el" href="_stopwatch_test_8cpp_source.html#l00018">test_pause_resume()</a>, and <a class="el" href="_stopwatch_test_8cpp_source.html#l00032">test_reset()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_stopwatch_ae20cb58892efc6ca55117583aac8c392_icgraph.png" border="0" usemap="#aclass_stopwatch_ae20cb58892efc6ca55117583aac8c392_icgraph" alt=""/></div>
 <map name="aclass_stopwatch_ae20cb58892efc6ca55117583aac8c392_icgraph" id="aclass_stopwatch_ae20cb58892efc6ca55117583aac8c392_icgraph">
-<area shape="rect" title="Checks if the stopwatch is currently running." alt="" coords="749,55,912,80"/>
+<area shape="rect" title="Checks if the stopwatch is currently running." alt="" coords="749,129,912,155"/>
 <area shape="rect" href="class_menu.html#a81188fdf5f017799f9e7f7eaaf98c3ec" title="Checks and handles user input for the Stopwatch." alt="" coords="496,55,701,80"/>
+<area shape="rect" href="_stopwatch_test_8cpp.html#acba75a8bdc084005b14d0ab6214dc244" title=" " alt="" coords="535,104,662,129"/>
+<area shape="rect" href="_stopwatch_test_8cpp.html#ae968c56d18bef1bf9802840c2349192b" title=" " alt="" coords="524,153,673,179"/>
+<area shape="rect" href="_stopwatch_test_8cpp.html#ab89fbb465413f5edb0ed7a5250df74e5" title=" " alt="" coords="555,203,642,228"/>
 <area shape="rect" href="class_menu.html#ae1ec62e738dda7faaaec850bd0b58ffe" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="352,55,448,80"/>
 <area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="229,5,284,31"/>
 <area shape="rect" href="class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="209,55,304,80"/>
 <area shape="rect" href="class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452" title="Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection." alt="" coords="5,80,161,105"/>
+<area shape="rect" href="_stopwatch_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="373,153,427,179"/>
 </map>
 </div>
 
@@ -501,30 +527,32 @@ Here is the caller graph for this function:</div>
 <p>Stops the time count until resumed. The current time is recorded.</p>
 <p>Stops the time count until resumed. The current time is recorded. </p>
 
-<p class="definition">Definition at line <a class="el" href="_stopwatch_8cpp_source.html#l00118">118</a> of file <a class="el" href="_stopwatch_8cpp_source.html">Stopwatch.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  118</span>                      {</div>
-<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_stopwatch.html#a19fd0ac167f4610ff151b5148a840cac">_running</a>) {</div>
-<div class="line"><span class="lineno">  120</span>       <a class="code hl_variable" href="class_stopwatch.html#a1a7c58ec5829ef9d6cc9b0f07638ce25">_pauseTime</a> = chrono::steady_clock::now();</div>
-<div class="line"><span class="lineno">  121</span>       <a class="code hl_variable" href="class_stopwatch.html#a8ac2e1a03677ec1033902179f4d1bcee">_currMilliseconds</a> += chrono::duration_cast&lt;chrono::milliseconds&gt;(<a class="code hl_variable" href="class_stopwatch.html#a1a7c58ec5829ef9d6cc9b0f07638ce25">_pauseTime</a> - <a class="code hl_variable" href="class_stopwatch.html#aa233b039e113db698689e64e13cd73a4">_startTime</a>).count();</div>
-<div class="line"><span class="lineno">  122</span>       <a class="code hl_variable" href="class_stopwatch.html#a19fd0ac167f4610ff151b5148a840cac">_running</a> = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  123</span>    }</div>
-<div class="line"><span class="lineno">  124</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_stopwatch_8cpp_source.html#l00119">119</a> of file <a class="el" href="_stopwatch_8cpp_source.html">Stopwatch.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  119</span>                      {</div>
+<div class="line"><span class="lineno">  120</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_stopwatch.html#a19fd0ac167f4610ff151b5148a840cac">_running</a>) {</div>
+<div class="line"><span class="lineno">  121</span>       <a class="code hl_variable" href="class_stopwatch.html#a1a7c58ec5829ef9d6cc9b0f07638ce25">_pauseTime</a> = chrono::steady_clock::now();</div>
+<div class="line"><span class="lineno">  122</span>       <a class="code hl_variable" href="class_stopwatch.html#a8ac2e1a03677ec1033902179f4d1bcee">_currMilliseconds</a> += chrono::duration_cast&lt;chrono::milliseconds&gt;(<a class="code hl_variable" href="class_stopwatch.html#a1a7c58ec5829ef9d6cc9b0f07638ce25">_pauseTime</a> - <a class="code hl_variable" href="class_stopwatch.html#aa233b039e113db698689e64e13cd73a4">_startTime</a>).count();</div>
+<div class="line"><span class="lineno">  123</span>       <a class="code hl_variable" href="class_stopwatch.html#a19fd0ac167f4610ff151b5148a840cac">_running</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  124</span>    }</div>
+<div class="line"><span class="lineno">  125</span>}</div>
 <div class="ttc" id="aclass_stopwatch_html_a1a7c58ec5829ef9d6cc9b0f07638ce25"><div class="ttname"><a href="class_stopwatch.html#a1a7c58ec5829ef9d6cc9b0f07638ce25">Stopwatch::_pauseTime</a></div><div class="ttdeci">chrono::time_point&lt; chrono::steady_clock &gt; _pauseTime</div><div class="ttdoc">The time point when the stopwatch was paused.</div><div class="ttdef"><b>Definition:</b> <a href="_stopwatch_8hpp_source.html#l00097">Stopwatch.hpp:97</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_stopwatch_8hpp_source.html#l00091">_currMilliseconds</a>, <a class="el" href="_stopwatch_8hpp_source.html#l00097">_pauseTime</a>, <a class="el" href="_stopwatch_8hpp_source.html#l00092">_running</a>, and <a class="el" href="_stopwatch_8hpp_source.html#l00096">_startTime</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00200">Menu::checkStopwatchInput()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00200">Menu::checkStopwatchInput()</a>, and <a class="el" href="_stopwatch_test_8cpp_source.html#l00018">test_pause_resume()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_stopwatch_a2cc48295d6b083361d062b8eb68d753a_icgraph.png" border="0" usemap="#aclass_stopwatch_a2cc48295d6b083361d062b8eb68d753a_icgraph" alt=""/></div>
 <map name="aclass_stopwatch_a2cc48295d6b083361d062b8eb68d753a_icgraph" id="aclass_stopwatch_a2cc48295d6b083361d062b8eb68d753a_icgraph">
-<area shape="rect" title="Pauses the stopwatch." alt="" coords="749,55,887,80"/>
+<area shape="rect" title="Pauses the stopwatch." alt="" coords="749,80,887,105"/>
 <area shape="rect" href="class_menu.html#a81188fdf5f017799f9e7f7eaaf98c3ec" title="Checks and handles user input for the Stopwatch." alt="" coords="496,55,701,80"/>
+<area shape="rect" href="_stopwatch_test_8cpp.html#ae968c56d18bef1bf9802840c2349192b" title=" " alt="" coords="524,104,673,129"/>
 <area shape="rect" href="class_menu.html#ae1ec62e738dda7faaaec850bd0b58ffe" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="352,55,448,80"/>
 <area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="229,5,284,31"/>
 <area shape="rect" href="class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="209,55,304,80"/>
 <area shape="rect" href="class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452" title="Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection." alt="" coords="5,80,161,105"/>
+<area shape="rect" href="_stopwatch_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="373,104,427,129"/>
 </map>
 </div>
 
@@ -547,17 +575,17 @@ Here is the caller graph for this function:</div>
 
 <p>Resets the stopwatch to 0 milliseconds and stops it. </p>
 
-<p class="definition">Definition at line <a class="el" href="_stopwatch_8cpp_source.html#l00147">147</a> of file <a class="el" href="_stopwatch_8cpp_source.html">Stopwatch.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  147</span>                      {</div>
-<div class="line"><span class="lineno">  148</span>    <a class="code hl_variable" href="class_stopwatch.html#a19fd0ac167f4610ff151b5148a840cac">_running</a> = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  149</span>    <a class="code hl_function" href="class_stopwatch.html#a0edfa283c9d5e706cef4a43a6cbfbaf5">clearSplits</a>();</div>
-<div class="line"><span class="lineno">  150</span>    <a class="code hl_variable" href="class_stopwatch.html#a8ac2e1a03677ec1033902179f4d1bcee">_currMilliseconds</a> = 0;</div>
-<div class="line"><span class="lineno">  151</span>}</div>
-<div class="ttc" id="aclass_stopwatch_html_a0edfa283c9d5e706cef4a43a6cbfbaf5"><div class="ttname"><a href="class_stopwatch.html#a0edfa283c9d5e706cef4a43a6cbfbaf5">Stopwatch::clearSplits</a></div><div class="ttdeci">void clearSplits()</div><div class="ttdoc">Clears the splits vector.</div><div class="ttdef"><b>Definition:</b> <a href="_stopwatch_8cpp_source.html#l00081">Stopwatch.cpp:81</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_stopwatch_8cpp_source.html#l00148">148</a> of file <a class="el" href="_stopwatch_8cpp_source.html">Stopwatch.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  148</span>                      {</div>
+<div class="line"><span class="lineno">  149</span>    <a class="code hl_variable" href="class_stopwatch.html#a19fd0ac167f4610ff151b5148a840cac">_running</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  150</span>    <a class="code hl_function" href="class_stopwatch.html#a0edfa283c9d5e706cef4a43a6cbfbaf5">clearSplits</a>();</div>
+<div class="line"><span class="lineno">  151</span>    <a class="code hl_variable" href="class_stopwatch.html#a8ac2e1a03677ec1033902179f4d1bcee">_currMilliseconds</a> = 0;</div>
+<div class="line"><span class="lineno">  152</span>}</div>
+<div class="ttc" id="aclass_stopwatch_html_a0edfa283c9d5e706cef4a43a6cbfbaf5"><div class="ttname"><a href="class_stopwatch.html#a0edfa283c9d5e706cef4a43a6cbfbaf5">Stopwatch::clearSplits</a></div><div class="ttdeci">void clearSplits()</div><div class="ttdoc">Clears the splits vector.</div><div class="ttdef"><b>Definition:</b> <a href="_stopwatch_8cpp_source.html#l00082">Stopwatch.cpp:82</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_stopwatch_8hpp_source.html#l00091">_currMilliseconds</a>, <a class="el" href="_stopwatch_8hpp_source.html#l00092">_running</a>, and <a class="el" href="_stopwatch_8cpp_source.html#l00081">clearSplits()</a>.</p>
+<p class="reference">References <a class="el" href="_stopwatch_8hpp_source.html#l00091">_currMilliseconds</a>, <a class="el" href="_stopwatch_8hpp_source.html#l00092">_running</a>, and <a class="el" href="_stopwatch_8cpp_source.html#l00082">clearSplits()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00200">Menu::checkStopwatchInput()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00200">Menu::checkStopwatchInput()</a>, and <a class="el" href="_stopwatch_test_8cpp_source.html#l00032">test_reset()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -572,12 +600,14 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_stopwatch_a42c7014e7fffcf4c56ca6fb07f8eb31c_icgraph.png" border="0" usemap="#aclass_stopwatch_a42c7014e7fffcf4c56ca6fb07f8eb31c_icgraph" alt=""/></div>
 <map name="aclass_stopwatch_a42c7014e7fffcf4c56ca6fb07f8eb31c_icgraph" id="aclass_stopwatch_a42c7014e7fffcf4c56ca6fb07f8eb31c_icgraph">
-<area shape="rect" title="Resets the stopwatch to 0 milliseconds and stops it." alt="" coords="749,55,880,80"/>
+<area shape="rect" title="Resets the stopwatch to 0 milliseconds and stops it." alt="" coords="749,80,880,105"/>
 <area shape="rect" href="class_menu.html#a81188fdf5f017799f9e7f7eaaf98c3ec" title="Checks and handles user input for the Stopwatch." alt="" coords="496,55,701,80"/>
+<area shape="rect" href="_stopwatch_test_8cpp.html#ab89fbb465413f5edb0ed7a5250df74e5" title=" " alt="" coords="555,104,642,129"/>
 <area shape="rect" href="class_menu.html#ae1ec62e738dda7faaaec850bd0b58ffe" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="352,55,448,80"/>
 <area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="229,5,284,31"/>
 <area shape="rect" href="class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="209,55,304,80"/>
 <area shape="rect" href="class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452" title="Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection." alt="" coords="5,80,161,105"/>
+<area shape="rect" href="_stopwatch_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="373,104,427,129"/>
 </map>
 </div>
 
@@ -600,28 +630,30 @@ Here is the caller graph for this function:</div>
 
 <p>Resumes the stopwatch from the last paused time. </p>
 
-<p class="definition">Definition at line <a class="el" href="_stopwatch_8cpp_source.html#l00133">133</a> of file <a class="el" href="_stopwatch_8cpp_source.html">Stopwatch.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  133</span>                       {</div>
-<div class="line"><span class="lineno">  134</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_stopwatch.html#a19fd0ac167f4610ff151b5148a840cac">_running</a>) {</div>
-<div class="line"><span class="lineno">  135</span>        <a class="code hl_variable" href="class_stopwatch.html#aa233b039e113db698689e64e13cd73a4">_startTime</a> = chrono::steady_clock::now();</div>
-<div class="line"><span class="lineno">  136</span>        <a class="code hl_variable" href="class_stopwatch.html#a19fd0ac167f4610ff151b5148a840cac">_running</a> = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  137</span>    }</div>
-<div class="line"><span class="lineno">  138</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_stopwatch_8cpp_source.html#l00134">134</a> of file <a class="el" href="_stopwatch_8cpp_source.html">Stopwatch.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  134</span>                       {</div>
+<div class="line"><span class="lineno">  135</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_stopwatch.html#a19fd0ac167f4610ff151b5148a840cac">_running</a>) {</div>
+<div class="line"><span class="lineno">  136</span>        <a class="code hl_variable" href="class_stopwatch.html#aa233b039e113db698689e64e13cd73a4">_startTime</a> = chrono::steady_clock::now();</div>
+<div class="line"><span class="lineno">  137</span>        <a class="code hl_variable" href="class_stopwatch.html#a19fd0ac167f4610ff151b5148a840cac">_running</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  138</span>    }</div>
+<div class="line"><span class="lineno">  139</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_stopwatch_8hpp_source.html#l00092">_running</a>, and <a class="el" href="_stopwatch_8hpp_source.html#l00096">_startTime</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00200">Menu::checkStopwatchInput()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00200">Menu::checkStopwatchInput()</a>, and <a class="el" href="_stopwatch_test_8cpp_source.html#l00018">test_pause_resume()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_stopwatch_a789461171238250633eeb26b8f3b0dce_icgraph.png" border="0" usemap="#aclass_stopwatch_a789461171238250633eeb26b8f3b0dce_icgraph" alt=""/></div>
 <map name="aclass_stopwatch_a789461171238250633eeb26b8f3b0dce_icgraph" id="aclass_stopwatch_a789461171238250633eeb26b8f3b0dce_icgraph">
-<area shape="rect" title="Resumes the stopwatch from the last paused time." alt="" coords="749,55,896,80"/>
+<area shape="rect" title="Resumes the stopwatch from the last paused time." alt="" coords="749,80,896,105"/>
 <area shape="rect" href="class_menu.html#a81188fdf5f017799f9e7f7eaaf98c3ec" title="Checks and handles user input for the Stopwatch." alt="" coords="496,55,701,80"/>
+<area shape="rect" href="_stopwatch_test_8cpp.html#ae968c56d18bef1bf9802840c2349192b" title=" " alt="" coords="524,104,673,129"/>
 <area shape="rect" href="class_menu.html#ae1ec62e738dda7faaaec850bd0b58ffe" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="352,55,448,80"/>
 <area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="229,5,284,31"/>
 <area shape="rect" href="class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="209,55,304,80"/>
 <area shape="rect" href="class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452" title="Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection." alt="" coords="5,80,161,105"/>
+<area shape="rect" href="_stopwatch_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="373,104,427,129"/>
 </map>
 </div>
 
@@ -646,27 +678,32 @@ Here is the caller graph for this function:</div>
 <p>If the stopwatch is already running, this function does nothing.</p>
 <p>If the stopwatch is already running, this function does nothing. </p>
 
-<p class="definition">Definition at line <a class="el" href="_stopwatch_8cpp_source.html#l00102">102</a> of file <a class="el" href="_stopwatch_8cpp_source.html">Stopwatch.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  102</span>                      {</div>
-<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_stopwatch.html#a19fd0ac167f4610ff151b5148a840cac">_running</a>) {</div>
-<div class="line"><span class="lineno">  104</span>        <a class="code hl_variable" href="class_stopwatch.html#a19fd0ac167f4610ff151b5148a840cac">_running</a> = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  105</span>        <a class="code hl_variable" href="class_stopwatch.html#aa233b039e113db698689e64e13cd73a4">_startTime</a> = chrono::steady_clock::now();</div>
-<div class="line"><span class="lineno">  106</span>    }</div>
-<div class="line"><span class="lineno">  107</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_stopwatch_8cpp_source.html#l00103">103</a> of file <a class="el" href="_stopwatch_8cpp_source.html">Stopwatch.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  103</span>                      {</div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_stopwatch.html#a19fd0ac167f4610ff151b5148a840cac">_running</a>) {</div>
+<div class="line"><span class="lineno">  105</span>        <a class="code hl_variable" href="class_stopwatch.html#a19fd0ac167f4610ff151b5148a840cac">_running</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  106</span>        <a class="code hl_variable" href="class_stopwatch.html#aa233b039e113db698689e64e13cd73a4">_startTime</a> = chrono::steady_clock::now();</div>
+<div class="line"><span class="lineno">  107</span>    }</div>
+<div class="line"><span class="lineno">  108</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_stopwatch_8hpp_source.html#l00092">_running</a>, and <a class="el" href="_stopwatch_8hpp_source.html#l00096">_startTime</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00031">Menu::start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00031">Menu::start()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00025">Stopwatch()</a>, <a class="el" href="_stopwatch_test_8cpp_source.html#l00010">test_constructor()</a>, <a class="el" href="_stopwatch_test_8cpp_source.html#l00032">test_reset()</a>, and <a class="el" href="_stopwatch_test_8cpp_source.html#l00042">test_splits()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_stopwatch_a6d01ecc80c92f1d5210cd9c3eb72883d_icgraph.png" border="0" usemap="#aclass_stopwatch_a6d01ecc80c92f1d5210cd9c3eb72883d_icgraph" alt=""/></div>
 <map name="aclass_stopwatch_a6d01ecc80c92f1d5210cd9c3eb72883d_icgraph" id="aclass_stopwatch_a6d01ecc80c92f1d5210cd9c3eb72883d_icgraph">
-<area shape="rect" title="Starts the stopwatch." alt="" coords="496,55,624,80"/>
-<area shape="rect" href="class_menu.html#ae1ec62e738dda7faaaec850bd0b58ffe" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="352,55,448,80"/>
+<area shape="rect" title="Starts the stopwatch." alt="" coords="567,153,695,179"/>
+<area shape="rect" href="class_menu.html#ae1ec62e738dda7faaaec850bd0b58ffe" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="387,55,483,80"/>
+<area shape="rect" href="class_stopwatch.html#a8c9e3153e50c02aa22be7acdd3f4912c" title="Constructor initializes a Stopwatch with a specified time (in hours, minutes, and seconds)." alt="" coords="352,104,519,129"/>
+<area shape="rect" href="_stopwatch_test_8cpp.html#acba75a8bdc084005b14d0ab6214dc244" title=" " alt="" coords="372,153,499,179"/>
+<area shape="rect" href="_stopwatch_test_8cpp.html#ab89fbb465413f5edb0ed7a5250df74e5" title=" " alt="" coords="392,203,479,228"/>
+<area shape="rect" href="_stopwatch_test_8cpp.html#af44d971f0b7666e71e7d2b554b989292" title=" " alt="" coords="391,252,480,277"/>
 <area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="229,5,284,31"/>
 <area shape="rect" href="class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="209,55,304,80"/>
 <area shape="rect" href="class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452" title="Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection." alt="" coords="5,80,161,105"/>
+<area shape="rect" href="_stopwatch_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="229,203,284,228"/>
 </map>
 </div>
 
@@ -697,7 +734,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_stopwatch_8hpp_source.html#l00091">91</a> of file <a class="el" href="_stopwatch_8hpp_source.html">Stopwatch.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_stopwatch_8cpp_source.html#l00063">addSplit()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00043">currentMilliseconds()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00118">pause()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00147">reset()</a>, and <a class="el" href="_stopwatch_8cpp_source.html#l00012">Stopwatch()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_stopwatch_8cpp_source.html#l00064">addSplit()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00044">currentMilliseconds()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00119">pause()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00148">reset()</a>, and <a class="el" href="_stopwatch_8cpp_source.html#l00012">Stopwatch()</a>.</p>
 
 </div>
 </div>
@@ -725,7 +762,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_stopwatch_8hpp_source.html#l00097">97</a> of file <a class="el" href="_stopwatch_8hpp_source.html">Stopwatch.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_stopwatch_8cpp_source.html#l00118">pause()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_stopwatch_8cpp_source.html#l00119">pause()</a>.</p>
 
 </div>
 </div>
@@ -753,7 +790,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_stopwatch_8hpp_source.html#l00092">92</a> of file <a class="el" href="_stopwatch_8hpp_source.html">Stopwatch.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_stopwatch_8cpp_source.html#l00063">addSplit()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00043">currentMilliseconds()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00162">isRunning()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00118">pause()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00147">reset()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00133">resume()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00102">start()</a>, and <a class="el" href="_stopwatch_8cpp_source.html#l00012">Stopwatch()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_stopwatch_8cpp_source.html#l00064">addSplit()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00044">currentMilliseconds()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00163">isRunning()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00119">pause()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00148">reset()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00134">resume()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00103">start()</a>, and <a class="el" href="_stopwatch_8cpp_source.html#l00012">Stopwatch()</a>.</p>
 
 </div>
 </div>
@@ -781,7 +818,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_stopwatch_8hpp_source.html#l00094">94</a> of file <a class="el" href="_stopwatch_8hpp_source.html">Stopwatch.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_stopwatch_8cpp_source.html#l00063">addSplit()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00081">clearSplits()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00089">getSplits()</a>, and <a class="el" href="_stopwatch_8cpp_source.html#l00012">Stopwatch()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_stopwatch_8cpp_source.html#l00064">addSplit()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00082">clearSplits()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00090">getSplits()</a>, and <a class="el" href="_stopwatch_8cpp_source.html#l00012">Stopwatch()</a>.</p>
 
 </div>
 </div>
@@ -809,7 +846,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_stopwatch_8hpp_source.html#l00096">96</a> of file <a class="el" href="_stopwatch_8hpp_source.html">Stopwatch.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_stopwatch_8cpp_source.html#l00063">addSplit()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00043">currentMilliseconds()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00118">pause()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00133">resume()</a>, and <a class="el" href="_stopwatch_8cpp_source.html#l00102">start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_stopwatch_8cpp_source.html#l00064">addSplit()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00044">currentMilliseconds()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00119">pause()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00134">resume()</a>, and <a class="el" href="_stopwatch_8cpp_source.html#l00103">start()</a>.</p>
 
 </div>
 </div>
@@ -820,7 +857,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 29 2024 13:00:00 for Tempo by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+Generated on Fri Aug 30 2024 02:11:07 for Tempo by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
 </small></address>
 </body>
 </html>

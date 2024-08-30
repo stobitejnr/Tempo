@@ -1,4 +1,6 @@
 <map id="Timer::changeIncrementTime" name="Timer::changeIncrementTime">
-<area shape="rect" id="node1" title="Allows the user to change the increment time used for adding time to the timer." alt="" coords="179,5,393,31"/>
-<area shape="rect" id="node2" href="$class_timer.html#a8eb4527fb1f93315c79ed1fb375e6e12" title=" " alt="" coords="5,5,131,31"/>
+<area shape="rect" id="node1" title="Allows the user to change the increment time used for adding time to the timer." alt="" coords="444,5,659,31"/>
+<area shape="rect" id="node2" href="$class_timer.html#a8eb4527fb1f93315c79ed1fb375e6e12" title=" " alt="" coords="271,5,396,31"/>
+<area shape="rect" id="node3" href="$_timer_test_8cpp.html#ad6d1baf23a5b08ce7c326940832f8a05" title=" " alt="" coords="108,5,223,31"/>
+<area shape="rect" id="node4" href="$_timer_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
 </map>

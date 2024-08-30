@@ -1,10 +1,13 @@
 <map id="Timer::pause" name="Timer::pause">
-<area shape="rect" id="node1" title="Pauses the timer and calculates the remaining milliseconds." alt="" coords="892,56,999,81"/>
+<area shape="rect" id="node1" title="Pauses the timer and calculates the remaining milliseconds." alt="" coords="892,81,999,107"/>
 <area shape="rect" id="node2" href="$class_timer.html#ae85c869ff61b97b53ade8e701014dde6" title="Adds a specified amount of time (in seconds) to the timer." alt="" coords="719,5,844,31"/>
-<area shape="rect" id="node3" href="$class_menu.html#ab8d3cccd5b39987a6546f7dc1187b71e" title="Checks and handles user input for the Timer." alt="" coords="496,81,671,107"/>
+<area shape="rect" id="node3" href="$class_menu.html#ab8d3cccd5b39987a6546f7dc1187b71e" title="Checks and handles user input for the Timer." alt="" coords="496,57,671,83"/>
 <area shape="rect" id="node8" href="$class_timer.html#a9020542d73357a4eef512eefaf57524b" title="Resets the timer to its original duration and pauses it." alt="" coords="731,107,832,132"/>
-<area shape="rect" id="node4" href="$class_menu.html#ae1ec62e738dda7faaaec850bd0b58ffe" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="352,81,448,107"/>
-<area shape="rect" id="node5" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="229,32,284,57"/>
-<area shape="rect" id="node6" href="$class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="209,81,304,107"/>
-<area shape="rect" id="node7" href="$class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452" title="Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection." alt="" coords="5,107,161,132"/>
+<area shape="rect" id="node11" href="$_timer_test_8cpp.html#ae968c56d18bef1bf9802840c2349192b" title=" " alt="" coords="509,157,658,183"/>
+<area shape="rect" id="node4" href="$class_menu.html#ae1ec62e738dda7faaaec850bd0b58ffe" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="352,57,448,83"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="229,8,284,33"/>
+<area shape="rect" id="node6" href="$class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="209,57,304,83"/>
+<area shape="rect" id="node7" href="$class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452" title="Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection." alt="" coords="5,83,161,108"/>
+<area shape="rect" id="node9" href="$_timer_test_8cpp.html#ab89fbb465413f5edb0ed7a5250df74e5" title=" " alt="" coords="540,108,627,133"/>
+<area shape="rect" id="node10" href="$_timer_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="373,131,427,156"/>
 </map>
