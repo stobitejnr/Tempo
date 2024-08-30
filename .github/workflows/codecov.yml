@@ -7,51 +7,44 @@ on:
     branches: [master]
   workflow_dispatch:
 
+env:
+  BUILD_TYPE: Debug
+
 jobs:
   codecov:
-    runs-on: windows-latest
+    runs-on: windows-latest  # Use a Windows runner
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install OpenCppCoverage
+      - name: Install dependencies
         run: |
-          choco install OpenCppCoverage
-
-      - name: Download OpenCppCoverageToLcov
-        run: |
-          Invoke-WebRequest -Uri "https://path-to-open-cpp-coverage-to-lcov-binary" -OutFile "C:\Program Files\OpenCppCoverage\OpenCppCoverageToLcov.exe"
-        # Replace the URL with the actual download link if available
-
-      - name: Verify Installation
-        run: |
-          Get-Command OpenCppCoverage
-          Get-Command OpenCppCoverageToLcov
-        continue-on-error: true
+          choco install cmake --no-progress -y  # Install CMake using Chocolatey
+          choco install llvm --no-progress -y   # Install LLVM for coverage reporting
 
       - name: Configure CMake
         run: |
           mkdir build
           cd build
-          cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug ..
+          cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="--coverage" ..
 
       - name: Build
         run: |
           cd build
           cmake --build .
 
-      - name: Run tests with coverage
+      - name: Run tests
         run: |
-          mkdir coverage
-          & "C:\Program Files\OpenCppCoverage\OpenCppCoverage.exe" --export_type binary:coverage/coverage.bin --working_dir build --sources "path\to\source\directory" -- ctest -C Debug --output-on-failure
+          cd build
+          ctest -C Debug --output-on-failure
 
-      - name: Convert coverage report to lcov format
+      - name: Generate coverage report
         run: |
-          & "C:\Program Files\OpenCppCoverage\OpenCppCoverageToLcov.exe" --input coverage/coverage.bin --output coverage/coverage.info
-        continue-on-error: true
-
+          cd build
+          llvm-cov gcov *.o-o > coverage.info
+          
       - name: Upload coverage report to Codecov
         uses: codecov/codecov-action@v4
         with:
-          files: coverage/coverage.info
+          files: build/coverage.info
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
