@@ -40,7 +40,7 @@ jobs:
       - name: Generate coverage report
         run: |
           cd build
-          llvm-cov gcov *.o-o > coverage.info
+          llvm-cov gcov *.o > coverage.info
           
       - name: Upload coverage report to Codecov
         uses: codecov/codecov-action@v4
