@@ -34,13 +34,15 @@ jobs:
 
       - name: Run tests
         run: |
+          mkdir coverage
+          & "C:\Program Files\OpenCppCoverage\OpenCppCoverage.exe" --export_type binary:coverage/coverage.bin --working_dir build --sources "${{ github.workspace }}\src" -- ctest -C Debug --output-on-failure
           cd build
           ctest -C Debug --output-on-failure
 
       - name: Generate coverage report
         run: |
           cd build
-          llvm-cov gcov *.o > coverage.info
+          llvm-cov gcov *.o-o > coverage.info
           
       - name: Upload coverage report to Codecov
         uses: codecov/codecov-action@v4
