@@ -21,11 +21,12 @@ jobs:
       - name: Build
         run: |
           cd build
-          cmake --build .
+          cmake --build . --config Debug
 
       - name: Run Tests with Coverage
         run: |
-          & "C:\Program Files\OpenCppCoverage\OpenCppCoverage.exe" --sources=Tempo --export_type cobertura:coverage.xml -- cmake --build build --target test -- -C Debug
+          cd build
+          & "C:\Program Files\OpenCppCoverage\OpenCppCoverage.exe" --sources=* --export_type cobertura:coverage.xml -- ctest -C Debug
 
       - name: Upload coverage report to Codecov
         uses: codecov/codecov-action@v4
@@ -33,3 +34,4 @@ jobs:
           files: build/coverage.xml
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
