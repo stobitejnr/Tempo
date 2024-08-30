@@ -1,35 +1,46 @@
- cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.10)
 
- # Set the project name and version
- project(Tempo VERSION 0.1)
+# Set the project name and version
+project("Tempo")
 
- # Specify the C++ standard
- set(CMAKE_CXX_STANDARD 17)
- set(CMAKE_CXX_STANDARD_REQUIRED True)
+# Enable testing
+include(CTest)
 
- # Include directories for header files
- include_directories(${PROJECT_SOURCE_DIR}/include)
+# Specify the C++ standard
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
 
- # Add the executable
- add_executable(Tempo
-         #cpps
-         src/main.cpp
-         src/Menu.cpp
-         src/Display.cpp
-         src/Timer.cpp
-         src/Stopwatch.cpp
-         src/Alarm.cpp
+# Include directories for header files
+include_directories(${PROJECT_SOURCE_DIR}/include)
 
-         #fonts
-         fonts/font1.cpp
- )
+# Add the main executable
+add_executable(Tempo
+    src/main.cpp
+    src/Menu.cpp
+    src/Display.cpp
+    src/Timer.cpp
+    src/Stopwatch.cpp
+    src/Alarm.cpp
+    fonts/font1.cpp
+)
 
- # Coverage flags for building coverage
- if (CMAKE_BUILD_TYPE STREQUAL "Coverage")
-     #Check for GCC and Clang
-     if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
-         # Add code coverage flags
-         target_compile_options(Tempo PRIVATE --coverage)
-         target_link_libraries(Tempo PRIVATE --coverage)
-     endif ()
- endif ()
+# Add the test executables
+add_executable(TimerTest
+    test/TimerTest.cpp
+    src/Timer.cpp
+)
+
+add_executable(StopwatchTest
+    test/StopwatchTest.cpp
+    src/Stopwatch.cpp
+)
+
+add_executable(AlarmTest
+    test/AlarmTest.cpp
+    src/Alarm.cpp
+)
+
+# Add the tests
+add_test(NAME TimerTest COMMAND TimerTest)
+add_test(NAME StopwatchTest COMMAND StopwatchTest)
+add_test(NAME AlarmTest COMMAND AlarmTest)
