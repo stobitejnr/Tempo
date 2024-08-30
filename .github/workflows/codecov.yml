@@ -17,27 +17,28 @@ jobs:
         run: |
           choco install cmake --no-progress -y  # Install CMake using Chocolatey
           choco install llvm --no-progress -y   # Install LLVM for coverage reporting
-          
+
       - name: Configure CMake
         run: |
           mkdir build
           cd build
           cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="--coverage" ..
-          
+
       - name: Build
         run: |
           cd build
           cmake --build .
-          
+
       - name: Run tests
         run: |
           cd build
           ctest -C Debug --output-on-failure
-          
+
       - name: Generate coverage report
         run: |
           cd build
-          llvm-cov gcov *.o -o . > coverage.info   # Generate coverage report using llvm-cov
+          llvm-profdata merge -sparse *.profraw -o coverage.profdata
+          llvm-cov report ./my_program -instr-profile=coverage.profdata > coverage.info
           
       - name: Upload coverage report to Codecov
         uses: codecov/codecov-action@v4
@@ -45,3 +46,4 @@ jobs:
           files: build/coverage.info
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
