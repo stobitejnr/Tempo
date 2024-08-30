@@ -1,0 +1,10 @@
+# ninja log v5
+36	2896	7465196557082790	CMakeFiles/Tempo.dir/src/Display.cpp.obj	adc1c8f95b9856c7
+42	1150	7465196539676360	CMakeFiles/Tempo.dir/src/Stopwatch.cpp.obj	ba61258af73b8087
+28	439	7465196532532500	CMakeFiles/Tempo.dir/src/Alarm.cpp.obj	fe80890bf5845283
+29	3460	7465952679600570	CMakeFiles/Tempo.dir/src/Timer.cpp.obj	2a6068f3dcf8f5c5
+14	1824	7465196545558390	CMakeFiles/Tempo.dir/src/Menu.cpp.obj	b365fcad54d86b5d
+51	996	7465196538139840	CMakeFiles/Tempo.dir/fonts/font1.cpp.obj	9688e527dc4eedd5
+21	1703	7465196545246020	CMakeFiles/Tempo.dir/src/main.cpp.obj	b5b2be724adcee5
+3468	5880	7465952703626210	Tempo.exe	ca00c85c993e1771
+39	2329	7465975444910470	build.ninja	2b11afe0ffb9d8ef

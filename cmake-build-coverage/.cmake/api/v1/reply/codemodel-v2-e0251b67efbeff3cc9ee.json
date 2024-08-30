@@ -1,0 +1,87 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Coverage-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Coverage",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Tempo",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "AlarmTest::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-AlarmTest-Coverage-662654196da56fde68e1.json",
+					"name" : "AlarmTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "StopwatchTest::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-StopwatchTest-Coverage-6bfeb658237505cb9544.json",
+					"name" : "StopwatchTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Tempo::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Tempo-Coverage-c1c4c9d83e1e2fcbdb6f.json",
+					"name" : "Tempo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "TimerTest::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TimerTest-Coverage-54c665d74c68e32d60c3.json",
+					"name" : "TimerTest",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "J:/COSC 345 - Group Assignment/cmake-build-coverage",
+		"source" : "J:/COSC 345 - Group Assignment"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 5
+	}
+}

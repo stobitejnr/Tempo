@@ -35,7 +35,7 @@ void Menu::start() {
 
     cout << "1: Timer\n";
     cout << "2: Stopwatch\n";
-    //cout << "3: Alarm\n";
+    cout << "3: Alarm **Beta Feature**\n";
     cout << "Q: Quit Program\n";
 
     char in = getMenuInput();
