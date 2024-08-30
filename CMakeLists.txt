@@ -24,24 +24,24 @@ add_executable(Tempo
     fonts/font1.cpp
 )
 
-# Add the combined test executable
-add_executable(Tests
+# Add the test executables
+add_executable(TimerTest
     tests/TimerTest.cpp
-    tests/StopwatchTest.cpp
-    tests/AlarmTest.cpp
+    src/Timer.cpp
 )
 
-# Link test sources
-target_sources(Tests PRIVATE
-    src/Timer.cpp
+add_executable(StopwatchTest
+    tests/StopwatchTest.cpp
     src/Stopwatch.cpp
+)
+
+add_executable(AlarmTest
+    tests/AlarmTest.cpp
     src/Alarm.cpp
 )
 
-# Optionally, link any required libraries
-# target_link_libraries(Tests <libraries>)
 
 # Add the tests
-add_test(NAME TimerTest COMMAND Tests --gtest_filter=TimerTest*)
-add_test(NAME StopwatchTest COMMAND Tests --gtest_filter=StopwatchTest*)
-add_test(NAME AlarmTest COMMAND Tests --gtest_filter=AlarmTest*)
+add_test(NAME TimerTest COMMAND TimerTest)
+add_test(NAME StopwatchTest COMMAND StopwatchTest)
+add_test(NAME AlarmTest COMMAND AlarmTest)
