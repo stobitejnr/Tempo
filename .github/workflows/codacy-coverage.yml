@@ -1,4 +1,4 @@
-name: Codacy Coverage Reporter
+name: Codecov Coverage Report
 
 on:
   push:
@@ -8,42 +8,44 @@ on:
   workflow_dispatch:
 
 env:
-  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
   BUILD_TYPE: Debug
 
 jobs:
-  codacy-coverage-reporter:
+  codecov:
     runs-on: windows-latest  # Use a Windows runner
     steps:
       - uses: actions/checkout@v3
-      
-      - name: Install OpenCppCoverage
+
+      - name: Install dependencies
         run: |
-          choco install OpenCppCoverage
-          echo "C:\Program Files\OpenCppCoverage" >> $env:GITHUB_PATH
-  
+          choco install cmake --no-progress -y  # Install CMake using Chocolatey
+          choco install llvm --no-progress -y   # Install LLVM for coverage reporting
+          choco install lcov --no-progress -y   # Install lcov for coverage reporting
+
       - name: Configure CMake
-        # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
-        # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
-        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
-  
+        run: |
+          mkdir build
+          cd build
+          cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="--coverage" ..
+
       - name: Build
-        # Build your program with the given configuration
-        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
-  
-      - name: Generate Coverage Report
-        shell: cmd
-        run: OpenCppCoverage --export_type cobertura:tempo.xml --cover_children -- ctest -C Debug
-  
-      - name: Upload Report to Codecov
+        run: |
+          cd build
+          cmake --build .
+
+      - name: Run tests
+        run: |
+          mkdir coverage
+          ctest -C Debug --output-on-failure
+          
+      - name: Generate coverage report
+        run: |
+          cd build
+          llvm-cov gcov *.gcno > coverage.info
+          
+      - name: Upload coverage report to Codecov
         uses: codecov/codecov-action@v4
         with:
-          fail_ci_if_error: true
-          files: tempo.xml
-          token: ${{ secrets.CODECOV_TOKEN }}
-  
-      - name: Upload Report to Codacy
-        uses: codacy/codacy-coverage-reporter-action@v1.3.0
-        with:
-          coverage-reports: tempo.xml
-          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          files: build/coverage.info
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
