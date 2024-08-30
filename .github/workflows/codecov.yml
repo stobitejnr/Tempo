@@ -25,7 +25,7 @@ jobs:
         run: |
           mkdir build
           cd build
-          cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="--coverage" ..
+          cmake -G "Ninja" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="--coverage" ..
 
       - name: Build
         run: |
@@ -35,14 +35,13 @@ jobs:
       - name: Run tests
         run: |
           mkdir coverage
-          & "C:\Program Files\OpenCppCoverage\OpenCppCoverage.exe" --export_type binary:coverage/coverage.bin --working_dir build --sources "${{ github.workspace }}\src" -- ctest -C Debug --output-on-failure
           cd build
           ctest -C Debug --output-on-failure
 
       - name: Generate coverage report
         run: |
           cd build
-          llvm-cov gcov *.o-o > coverage.info
+          llvm-cov gcov *.gcno > coverage.info
           
       - name: Upload coverage report to Codecov
         uses: codecov/codecov-action@v4
