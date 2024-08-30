@@ -1,4 +1,4 @@
-name: Codacy Coverage Reporter
+name: Codecov Coverage Report
 
 on:
   push:
@@ -8,46 +8,40 @@ on:
   workflow_dispatch:
 
 jobs:
-  codacy-coverage-reporter:
-    runs-on: ubuntu-latest
+  codecov:
+    runs-on: windows-latest  # Use a Windows runner
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Install dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y cmake lcov
-      
+          choco install cmake --no-progress -y  # Install CMake using Chocolatey
+          choco install llvm --no-progress -y   # Install LLVM for coverage reporting
+          
       - name: Configure CMake
         run: |
-          mkdir build && cd build
-          cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="--coverage" ..
-      
+          mkdir build
+          cd build
+          cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="--coverage" ..
+          
       - name: Build
-        working-directory: ${{github.workspace}}/build
-        run: cmake --build .
-      
+        run: |
+          cd build
+          cmake --build .
+          
       - name: Run tests
-        working-directory: ${{github.workspace}}/build
-        run: ctest -C Debug --output-on-failure
-      
+        run: |
+          cd build
+          ctest -C Debug --output-on-failure
+          
       - name: Generate coverage report
-        if: always()
-        working-directory: ${{github.workspace}}/build
         run: |
-          lcov --capture --directory . --output-file coverage.info
-          lcov --remove coverage.info '/usr/*' --output-file coverage.info
-      
-      - name: List files
-        working-directory: ${{github.workspace}}/build
-        run: |
-          ls -R
-          find . -name "*.gcda" -o -name "*.gcno"
-      
-      - name: Run Codacy Coverage Reporter
-        uses: codacy/codacy-coverage-reporter-action@v1
-        if: always()
+          cd build
+          llvm-cov gcov *.o -o . > coverage.info   # Generate coverage report using llvm-cov
+          
+      - name: Upload coverage report to Codecov
+        uses: codecov/codecov-action@v4
         with:
-          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          coverage-reports: build/coverage.info
-
+          files: build/coverage.info
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
