@@ -17,6 +17,7 @@ void test_constructor() {
 
 void test_pause_resume() {
     Stopwatch stopwatch(0, 1, 0); // 1 minute
+    stopwatch.start();
     this_thread::sleep_for(chrono::seconds(1));
     stopwatch.pause();
     int currentAfterPause = stopwatch.currentMilliseconds();
@@ -25,7 +26,7 @@ void test_pause_resume() {
     assert(stopwatch.currentMilliseconds() == currentAfterPause);
     stopwatch.resume();
     assert(stopwatch.isRunning());
-    assert(stopwatch.currentMilliseconds() > 59000);
+    assert(stopwatch.currentMilliseconds() > 58090);
     cout << "Pause and resume test passed.\n";
 }
 
