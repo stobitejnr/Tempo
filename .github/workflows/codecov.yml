@@ -35,6 +35,12 @@ jobs:
       # Build your program with the given configuration
       run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
+    - name: Run tests
+      run: |
+        mkdir coverage
+        cd build
+        ctest -C Debug --output-on-failure
+
     - name: Generate Coverage Report
       shell: cmd
       run: OpenCppCoverage --modules Debug --sources src --export_type cobertura:coverage.xml --cover_children -- ctest -C ${{env.BUILD_TYPE}} --test-dir build
