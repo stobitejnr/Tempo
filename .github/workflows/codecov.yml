@@ -1,0 +1,57 @@
+name: Codecov Coverage Report
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  codecov:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install OpenCppCoverage
+        run: |
+          choco install OpenCppCoverage
+
+      - name: Download OpenCppCoverageToLcov
+        run: |
+          Invoke-WebRequest -Uri "https://path-to-open-cpp-coverage-to-lcov-binary" -OutFile "C:\Program Files\OpenCppCoverage\OpenCppCoverageToLcov.exe"
+        # Replace the URL with the actual download link if available
+
+      - name: Verify Installation
+        run: |
+          Get-Command OpenCppCoverage
+          Get-Command OpenCppCoverageToLcov
+        continue-on-error: true
+
+      - name: Configure CMake
+        run: |
+          mkdir build
+          cd build
+          cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug ..
+
+      - name: Build
+        run: |
+          cd build
+          cmake --build .
+
+      - name: Run tests with coverage
+        run: |
+          mkdir coverage
+          & "C:\Program Files\OpenCppCoverage\OpenCppCoverage.exe" --export_type binary:coverage/coverage.bin --working_dir build --sources "path\to\source\directory" -- ctest -C Debug --output-on-failure
+
+      - name: Convert coverage report to lcov format
+        run: |
+          & "C:\Program Files\OpenCppCoverage\OpenCppCoverageToLcov.exe" --input coverage/coverage.bin --output coverage/coverage.info
+        continue-on-error: true
+
+      - name: Upload coverage report to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          files: coverage/coverage.info
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}

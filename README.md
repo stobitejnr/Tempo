@@ -19,12 +19,11 @@ A versatile command-line application that allows users to create and manage time
 
 1. **Timer**: Set custom countdown timers with precise control.
    - Start, pause, and resume functionality
-   - Add time to running timers
+   - Quickly create new timers
    - Reset timer
    - Visual progress bar
-   - Customizable time increment
 
-2. **Stopwatch**: Measure elapsed time with millisecond precision.
+2. **Stopwatch**: Measure elapsed time with hundredth of a second precision.
    - Start, pause, and resume functionality
    - Reset stopwatch
    - Create split times
