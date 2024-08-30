@@ -25,7 +25,8 @@ jobs:
 
       - name: Run Tests with Coverage
         run: |
-          & "C:\Program Files\OpenCppCoverage\OpenCppCoverage.exe" --sources=Tempo\src --export_type cobertura:coverage.xml -- cd build && ctest -C Debug
+          cd build
+          & "C:\Program Files\OpenCppCoverage\OpenCppCoverage.exe" --sources=..\src --export_type cobertura:coverage.xml -- ctest -C Debug
 
       - name: Upload coverage report to Codecov
         uses: codecov/codecov-action@v4
