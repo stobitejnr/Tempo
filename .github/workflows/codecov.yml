@@ -29,7 +29,7 @@ jobs:
 
     - name: Generate Coverage Report
       shell: cmd
-      run: OpenCppCoverage --export_type cobertura:coverage.xml --test-dir build
+      run: OpenCppCoverage --export_type cobertura:coverage.xml --tests-dir build
       
     - name: Upload Report to Codecov
       uses: codecov/codecov-action@v4
