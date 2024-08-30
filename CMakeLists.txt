@@ -29,12 +29,16 @@ add_executable(Tests
     tests/TimerTest.cpp
     tests/StopwatchTest.cpp
     tests/AlarmTest.cpp
+)
+
+# Link test sources
+target_sources(Tests PRIVATE
     src/Timer.cpp
     src/Stopwatch.cpp
     src/Alarm.cpp
 )
 
-# Link the combined test executable with the necessary libraries or targets
+# Optionally, link any required libraries
 # target_link_libraries(Tests <libraries>)
 
 # Add the tests
