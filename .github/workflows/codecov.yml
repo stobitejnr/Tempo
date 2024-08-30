@@ -1,16 +1,26 @@
-name: Codecov Coverage Report
+name: Upload CodeCov Report
 
 on: [push, pull_request]
 
 jobs:
-  codecov:
+  build_and_test:
     runs-on: windows-latest
+    name: Build, Test, Upload Code Coverage Report
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: '2'
+        id: checkout_code
+
+      - name: Setup CMake and add to PATH
+        uses: github/setup-cmake@v3
+        id: setup_cmake
 
       - name: Install OpenCppCoverage
         run: |
-          choco install OpenCppCoverage
+          choco install OpenCppCoverage -y
+          echo "C:\Program Files\OpenCppCoverage" >> $env:GITHUB_PATH
 
       - name: Configure CMake
         run: |
@@ -26,12 +36,10 @@ jobs:
       - name: Run Tests with Coverage
         run: |
           cd build
-          & "C:\Program Files\OpenCppCoverage\OpenCppCoverage.exe" --sources=* --export_type cobertura:coverage.info -- ctest -C Debug
+          OpenCppCoverage.exe --sources=* --export_type cobertura:coverage.xml -- ctest -C Debug
 
-      - name: Upload coverage report to Codecov
-        uses: codecov/codecov-action@v4
+      - name: Upload Report to Codecov
+        uses: codecov/codecov-action@v2
         with:
-          files: build/coverage.info
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-
+          files: ./build/coverage.xml
+          fail_ci_if_error: true
