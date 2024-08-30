@@ -1,47 +1,35 @@
-name: CMakeBuild
+name: Codecov Coverage Report
 
 on: [push, pull_request]
 
-env:
-  # Configuration type to build.
-  BUILD_CONFIGURATION: Debug
-
-permissions:
-  contents: write
-
 jobs:
-  build:
+  codecov:
     runs-on: windows-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up CMake
-        uses: lukka/get-cmake@v3.28.1
-
-      - name: Add MSBuild to PATH
-        uses: microsoft/setup-msbuild@v1.0.2
-
-      - name: Configure CMake
-        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=${{env.BUILD_CONFIGURATION}}
-
-      - name: Build with CMake
-        run: cmake --build build --config ${{env.BUILD_CONFIGURATION}} --parallel
+      - uses: actions/checkout@v4
 
       - name: Install OpenCppCoverage
         run: |
           choco install OpenCppCoverage
-          echo "C:\Program Files\OpenCppCoverage" >> $env:GITHUB_PATH
 
-      - name: Run Tests and Generate Coverage Report
-        shell: cmd
+      - name: Configure CMake
         run: |
-          OpenCppCoverage --verbose --modules build${{env.BUILD_CONFIGURATION}}* --export_type cobertura:coverage.xml -- "build\Debug\Tempo.exe"
+          mkdir build
+          cd build
+          cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Debug ..
 
-      - name: Upload Coverage Report to Codecov
+      - name: Build
+        run: |
+          cd build
+          cmake --build .
+
+      - name: Run Tests with Coverage
+        run: |
+          & "C:\Program Files\OpenCppCoverage\OpenCppCoverage.exe" --sources=Tempo/src --export_type cobertura:coverage.xml -- cd build && ctest -C Debug
+
+      - name: Upload coverage report to Codecov
         uses: codecov/codecov-action@v4
         with:
-          fail_ci_if_error: true
-          files: coverage.xml
-          token: ${{ secrets.CODECOV_TOKEN }}
+          files: build/coverage.xml
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
