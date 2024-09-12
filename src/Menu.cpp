@@ -17,6 +17,24 @@ Menu::Menu(){
     _run = true;
 }
 
+void Menu::start(){
+    _display.clearScreen();
+
+    string lBuffer = "                ";
+
+    for (string line : _logoArt){
+        cout << line << endl;
+    }
+
+    cout << endl;
+
+    for (string line : _credits){
+        cout << lBuffer << line << endl;
+    }
+
+    waitForInput();
+}
+
 /* =========================================================
 MAIN MENU SEQUENCE
 ========================================================= */
@@ -28,10 +46,13 @@ MAIN MENU SEQUENCE
  * for Timer, Stopwatch, or Alarm. It handles the input and output and returns to the menu after each operation
  * unless the user chooses to quit.
  */
-void Menu::start() {
-    
+void Menu::mainMenu() {
 
     _display.clearScreen();
+
+    for (string line : _menuArt){
+        cout << "" << line << endl;
+    }
 
     cout << "1: Timer\n";
     cout << "2: Stopwatch\n";
@@ -42,57 +63,17 @@ void Menu::start() {
 
     // ENTER TIMER SEQUENCE
     if(in == '1'){
-        _display.clearScreen();
-
-        Timer timer;
-
-        bool run = true;
-
-        _display.clearScreen();
-
-        while(run){
-            // Display a message when the timer finishes
-            if(timer.remainingMilliseconds() == 0) {
-                _display.setSplash("TIMER FINISHED"); 
-            }
-
-            _display.tickTimer(timer);
-
-            checkTimerInput(timer, run);
-
-            wait(0.01);
-        }
-
+        timerSequence();
     }
 
     // ENTER STOPWATCH SEQUENCE
     else if(in == '2'){
-        Stopwatch stopwatch;
-
-        bool run = true;
-
-        _display.tickStopwatch(stopwatch);
-
-        cout << "\n Press any key to start your stopwatch." << endl;
-
-        waitForInput();
-
-        _display.clearScreen();
-
-        stopwatch.start();
-        
-        while(run){
-            _display.tickStopwatch(stopwatch);
-
-            checkStopwatchInput(stopwatch, run);
-
-            wait(0.01);
-        }
+        stopwatchSequence();
     }
 
     // ENTER ALARM SEQUENCE
     else if(in == '3'){
-        Alarm alarm;
+        alarmSequence();
     }
 
     // QUIT PROGRAM
@@ -101,12 +82,103 @@ void Menu::start() {
     }
     
     // Restart menu loop
-    start();
+    mainMenu();
 }
 
-/* =========================================================
-BUSY-WAIT FOR A SPECIFIED AMOUNT OF TIME (IN SECONDS)
-========================================================= */
+void Menu::timerSequence(){
+    _display.clearScreen();
+
+    Timer timer = createTimer();
+
+    bool run = true;
+
+    _display.clearScreen();
+
+    while(run){
+        // Display a message when the timer finishes
+        if(timer.remainingMilliseconds() == 0) {
+            _display.setSplash("TIMER FINISHED"); 
+        }
+
+        _display.tickTimer(timer);
+
+        checkTimerInput(timer, run);
+
+        wait(0.01);
+    }
+}
+
+void Menu::stopwatchSequence(){
+
+    _display.clearScreen();
+
+    Stopwatch stopwatch;
+
+    bool run = true;
+
+    _display.setSplash("PRESS 'S' TO START");
+
+    _display.tickStopwatch(stopwatch);
+
+    //_display.clearScreen();
+    
+    while(run){
+        _display.tickStopwatch(stopwatch);
+
+        checkStopwatchInput(stopwatch, run);
+
+        wait(0.01);
+    }
+}
+
+void Menu::alarmSequence(){
+    Alarm alarm;
+}
+
+Timer Menu::createTimer(){
+    int h = 0;
+    int m = 0;
+    int s = 0;
+    int countdownSeconds = 0;
+
+    string input = "000000";  // To store the HHMMSS as string
+
+    string to_print = "00:00:00";
+
+    _display.tickTimerSetup(to_print);
+    
+    int index = 5;
+    
+    while (true) {
+        char ch = _getch();  // Get input without waiting for Enter
+
+        if (ch == 13 && (h || m || s)) {  // Enter key to submit input
+            break;
+        } else if (ch >= '0' && ch <= '9') {
+            // Shift all the digits to the left by one position
+            input = input.substr(1) + ch;  // Drop the leftmost character and add the new character at the end
+        } else if (ch == 8) {  // Backspace to reset last input
+            // Shift all digits to the right and put '0' at the end
+            input = '0' + input.substr(0, 5);  // Move everything one step to the right
+        }
+
+        // Convert input string to hours, minutes, and seconds
+        h = stoi(input.substr(0, 2));
+        m = stoi(input.substr(2, 2));
+        s = stoi(input.substr(4, 2));
+
+        to_print = (h < 10 ? "0" : "") + to_string(h) + ":" 
+                 + (m < 10 ? "0" : "") + to_string(m) + ":" 
+                 + (s < 10 ? "0" : "") + to_string(s);
+
+        _display.tickTimerSetup(to_print);
+        
+        wait(0.01);
+    }
+    Timer timer(h,m,s);
+    cout << endl;
+    return timer;
+}
 
 /**
  * @brief Waits for a specific duration using busy-waiting.
@@ -172,7 +244,7 @@ void Menu::checkTimerInput(Timer& timer, bool& run){
             case 'a':
                 _display.clearScreen();
                 _display.clearSplash();
-                timer = Timer();
+                timer = createTimer();
                 break;
             case 'Q':
             case 'q':

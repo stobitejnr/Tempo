@@ -18,10 +18,12 @@ int main() {
     // Create a Menu object
     Menu menu;
     
-    // Start the menu system
+    // Start the main menu system
     menu.start();
+    
+    menu.mainMenu();
 
-    //cout << "<< PROGRAM QUIT >>" << endl;
+    cout << "<< PROGRAM QUIT >>" << endl;
 
     return 0;
 }

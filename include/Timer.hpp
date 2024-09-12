@@ -14,14 +14,6 @@ class Timer
 {
 public:
     /**
-     * @brief Default constructor prompts the user to set a timer with a specific duration.
-     *
-     * The user can specify the duration in hours, minutes, and seconds. The timer is initialized
-     * and started based on the user input.
-     */
-    Timer();
-
-    /**
      * @brief Constructor to specify the timer duration directly in hours, minutes, and seconds.
      *
      * Initializes and starts the timer with the specified duration.

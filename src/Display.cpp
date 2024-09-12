@@ -491,6 +491,32 @@ void Display::printSplits(int row)
 PARSING TIMER, CALLING PRINT FUNCTION
 ========================================================= */
 
+void Display::tickTimerSetup(string to_print)
+{
+    for (int i = 0; i < ASCII_HEIGHT; i++)
+    {
+        string line;
+        for (char ch : to_print)
+        {
+            if (ch == ':')
+            {
+                line += font1.at(10)[i]; // Colon character
+                line += PADDING;
+            }
+            else
+            {
+                line += font1.at(ch - '0')[i]; // Numeric character
+                line += PADDING;
+            }
+        }
+        _asciiWidth = line.length(); // Update ASCII width
+        _asciiBuffer += (line + "\n");
+    }
+
+    printAscii(1);
+    
+}
+
 /**
  * @brief Updates the timer display on each tick, converting time into ASCII and updating the terminal.
  * @param timer The Timer object to get the remaining time from.

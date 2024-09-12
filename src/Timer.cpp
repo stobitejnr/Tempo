@@ -4,64 +4,8 @@
 using namespace std;
 
 /* =========================================================
-CONSTRUCTORS
+CONSTRUCTOR
 ========================================================= */
-
-/**
- * @brief Default constructor prompts the user to set a timer with a specific duration.
- * 
- * The user can specify the duration in hours, minutes, and seconds. The timer is initialized
- * and started based on the user input.
- */
-Timer::Timer() {
-    int h = 0;
-    int m = 0;
-    int s = 0;
-    int countdownSeconds = 0;
-    _incrementMilliseconds = 0;
-
-    while (true) {
-        cout << "How long would you like to set a timer for?" << endl;
-        string input = "";
-        getline(cin, input);
-
-        // Regular expressions to match hours, minutes, and seconds
-        regex hours_regex(R"((\d+)\s*hour?)");
-        regex minutes_regex(R"((\d+)\s*minute?)");
-        regex seconds_regex(R"((\d+)\s*second?)");
-
-        smatch match;
-
-        // Extract hours
-        if (regex_search(input, match, hours_regex)) {
-            h = stoi(match[1].str());
-        }
-
-        // Extract minutes
-        if (regex_search(input, match, minutes_regex)) {
-            m = stoi(match[1].str());
-        }
-        // Extract seconds
-        if (regex_search(input, match, seconds_regex)) {
-            s = stoi(match[1].str());
-        }
-
-        countdownSeconds = (3600 * h) + (60 * m) + (s);
-        if (countdownSeconds == 0) { 
-            continue; 
-        }
-        if (countdownSeconds <= 360000) { 
-            break; 
-        } else {
-            cout << "Cannot set a timer for more than 100 hours." << endl;
-        }
-    }
-
-    _startMilliseconds = countdownSeconds * 1000;
-    _remainingMilliseconds = _startMilliseconds;
-    _countdownMilliseconds = _startMilliseconds;
-    start(_countdownMilliseconds);
-}
 
 /**
  * @brief Constructor to specify the timer duration directly in hours, minutes, and seconds.
@@ -74,6 +18,7 @@ Timer::Timer() {
  */
 Timer::Timer(int hours, int minutes, int seconds) {
     int milli = 3600000 * hours + 60000 * minutes + 1000 * seconds;
+    if (milli >= 360000000) { milli = 359999999; }
     _countdownMilliseconds = milli;
     _remainingMilliseconds = milli;
     _startMilliseconds = milli;
