@@ -1,11 +1,15 @@
 # Ignore build directory (CMake output)
 build/
+cmake-build-coverage/
+cmake-build-debug/
 
 # Ignore generated CMake files
 CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
 Makefile
+
+
 
 # Ignore VSCode settings if you don't want to share them
 .vscode/
