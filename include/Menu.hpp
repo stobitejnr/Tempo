@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <conio.h>
+#include <cstdlib>
 
 using namespace std;
 
@@ -133,7 +134,14 @@ private:
     " / /  / / /_/ / / / / /  / /  / /  __/ / / / /_/ / ",
     "/_/  /_/\\__,_/_/_/ /_/  /_/  /_/\\___/_/ /_/\\____/  ",
     "=================================================="
-};
+    };
+
+    vector<string> _stopMessages = {
+        "EXACTLY ON THE DOT! YOU MUST BE A TIME WIZARD.",
+        "THERE'S NO WAY YOU MEANT TO DO THAT...",
+        "YOU'VE ACHIEVED STOPWATCH ZEN.",
+        "IF YOU DID THAT ON PURPOSE, I'M IMPRESSED.",
+    };
 
 };
 
