@@ -514,7 +514,9 @@ void Display::tickTimerSetup(string to_print)
     }
 
     printAscii(1);
-    
+
+    setCursor(10,1);
+
 }
 
 /**
