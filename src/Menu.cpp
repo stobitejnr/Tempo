@@ -175,8 +175,8 @@ Timer Menu::createTimer(){
         
         wait(0.01);
     }
+    _display.clearScreen();
     Timer timer(h,m,s);
-    cout << endl;
     return timer;
 }
 
