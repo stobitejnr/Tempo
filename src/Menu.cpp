@@ -277,7 +277,13 @@ void Menu::checkStopwatchInput(Stopwatch& stopwatch, bool& run){
             case 's':
                 if(stopwatch.isRunning()){
                     stopwatch.pause();
-                    _display.setSplash("STOPWATCH PAUSED");
+                    if ((stopwatch.currentMilliseconds() / 10) % 100 == 0){
+                        int i = rand() % _stopMessages.size();
+                        _display.setSplash(_stopMessages[i]);
+                    }
+                    else{
+                        _display.setSplash("STOPWATCH PAUSED");
+                    }
                 }
                 else{
                     _display.clearSplash();
