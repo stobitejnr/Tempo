@@ -13,7 +13,7 @@ void test_constructor() {
     int timeRemaining = timer.remainingMilliseconds();
     assert(timeRemaining < 1000);
     assert(timer.isRunning());
-    cout << "test_constructor passed!\n";
+    //cout << "test_constructor passed!\n";
 }
 
 /*
@@ -30,7 +30,7 @@ void test_pause_resume() {
     assert(timer.isRunning());
     this_thread::sleep_for(chrono::milliseconds(10));
     assert(timer.remainingMilliseconds() < 1000);
-    std::cout << "test_pause_resume passed!\n";
+    //std::cout << "test_pause_resume passed!\n";
 }
 
 /*
@@ -42,7 +42,7 @@ void test_reset() {
     timer.reset();
     assert(timer.remainingMilliseconds() == 60000);
     assert(!timer.isRunning());
-    std::cout << "test_reset passed!\n";
+    //std::cout << "test_reset passed!\n";
 }
 
 /*
@@ -53,7 +53,7 @@ void test_add_time() {
     timer.addTime(1);
     int timeRemaining = timer.remainingMilliseconds();
     assert(timeRemaining > 1000 && timeRemaining <= 2000);
-    std::cout << "test_add_time passed!\n";
+    //std::cout << "test_add_time passed!\n";
 }
 
 /*
@@ -64,7 +64,7 @@ void test_percent_elapsed() {
     this_thread::sleep_for(chrono::milliseconds(100));
     double percent = timer.percentElapsed();
     assert(percent <= 90); // allows for a bit or margin of error
-    std::cout << "test_percent_elapsed passed!\n";
+    //std::cout << "test_percent_elapsed passed!\n";
 }
 
 /*
@@ -74,7 +74,7 @@ void test_expiration() {
     Timer timer(0, 0, 0); // 1 second
     assert(timer.remainingMilliseconds() == 0);
     assert(!timer.isRunning());
-    cout << "test_expiration passed!\n";
+    //cout << "test_expiration passed!\n";
 }
 
 int main() {

@@ -43,11 +43,21 @@ add_executable(AlarmTest
 add_executable(DisplayTest
     test/DisplayTest.cpp
     src/Display.cpp
+    src/Menu.cpp
+    src/Timer.cpp
+    src/Stopwatch.cpp
+    src/Alarm.cpp
+    fonts/font1.cpp
 )
 
 add_executable(MenuTest
     test/MenuTest.cpp
     src/Menu.cpp
+    src/Display.cpp
+    src/Timer.cpp
+    src/Stopwatch.cpp
+    src/Alarm.cpp
+    fonts/font1.cpp
 )
 
 # Add the tests

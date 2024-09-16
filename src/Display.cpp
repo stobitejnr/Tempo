@@ -573,6 +573,11 @@ void Display::tickStopwatch(Stopwatch &stopwatch)
     setCursor(15,1);
 }
 
+void Display::tickAlarm(Alarm &alarm)
+{
+    return;
+}
+
 /* =========================================================
 FAST PRINTING HELPER
 ========================================================= */
