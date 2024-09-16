@@ -7,6 +7,10 @@
 
 using namespace std;
 
+void test_constructor(){
+    Alarm alarm;
+}
+
 
 int main() {
     try {
