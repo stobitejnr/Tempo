@@ -1,10 +1,11 @@
 <map id="Stopwatch::resume" name="Stopwatch::resume">
-<area shape="rect" id="node1" title="Resumes the stopwatch from the last paused time." alt="" coords="749,80,896,105"/>
-<area shape="rect" id="node2" href="$class_menu.html#a81188fdf5f017799f9e7f7eaaf98c3ec" title="Checks and handles user input for the Stopwatch." alt="" coords="496,55,701,80"/>
-<area shape="rect" id="node7" href="$_stopwatch_test_8cpp.html#ae968c56d18bef1bf9802840c2349192b" title=" " alt="" coords="524,104,673,129"/>
-<area shape="rect" id="node3" href="$class_menu.html#ae1ec62e738dda7faaaec850bd0b58ffe" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="352,55,448,80"/>
-<area shape="rect" id="node4" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="229,5,284,31"/>
-<area shape="rect" id="node5" href="$class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="209,55,304,80"/>
-<area shape="rect" id="node6" href="$class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452" title="Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection." alt="" coords="5,80,161,105"/>
-<area shape="rect" id="node8" href="$_stopwatch_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="373,104,427,129"/>
+<area shape="rect" id="node1" title="Resumes the stopwatch from the last paused time." alt="" coords="927,56,1073,81"/>
+<area shape="rect" id="node2" href="$class_menu.html#a81188fdf5f017799f9e7f7eaaf98c3ec" title="Checks and handles user input for the Stopwatch." alt="" coords="673,31,879,56"/>
+<area shape="rect" id="node8" href="$_stopwatch_test_8cpp.html#ae968c56d18bef1bf9802840c2349192b" title=" " alt="" coords="701,80,851,105"/>
+<area shape="rect" id="node3" href="$class_menu.html#aca5927a856a8d20d738323c2261cc9e4" title=" " alt="" coords="429,31,625,56"/>
+<area shape="rect" id="node4" href="$class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="247,31,381,56"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,5,181,31"/>
+<area shape="rect" id="node6" href="$_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,55,199,80"/>
+<area shape="rect" id="node7" href="$_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,55,60,80"/>
+<area shape="rect" id="node9" href="$_stopwatch_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="500,80,555,105"/>
 </map>

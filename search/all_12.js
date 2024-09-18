@@ -17,11 +17,12 @@ var searchData=
   ['stopwatch_14',['Stopwatch',['../class_stopwatch.html#a628b5ebeed5df065dd847e68fb6336cf',1,'Stopwatch::Stopwatch()'],['../class_stopwatch.html#a8c9e3153e50c02aa22be7acdd3f4912c',1,'Stopwatch::Stopwatch(int hours, int minutes, int seconds)'],['../class_stopwatch.html',1,'Stopwatch']]],
   ['stopwatch_2ecpp_15',['Stopwatch.cpp',['../_stopwatch_8cpp.html',1,'']]],
   ['stopwatch_2ehpp_16',['Stopwatch.hpp',['../_stopwatch_8hpp.html',1,'']]],
-  ['stopwatchtest_2ecpp_17',['StopwatchTest.cpp',['../_stopwatch_test_8cpp.html',1,'']]],
-  ['strcmp_18',['strcmp',['../class_string.html#ae3c243f0bc797b9e4b15d2ef5e5aaa7c',1,'String::strcmp()'],['../relates_8cpp.html#a7ceb7d379a52f7e26418e7a446b4a41a',1,'strcmp(const String &amp;s1, const String &amp;s2):&#160;relates.cpp']]],
-  ['string_19',['String',['../class_string.html',1,'']]],
-  ['stringdebug_20',['stringDebug',['../class_string.html#a5c07384b505d25ae6f61fc7abf0b0e61',1,'String']]],
-  ['strip_5fexample_21',['strip_example',['../namespacestrip__example.html',1,'']]],
-  ['strip_5fexample_2epy_22',['strip_example.py',['../strip__example_8py.html',1,'']]],
-  ['structcmd_2eh_23',['structcmd.h',['../structcmd_8h.html',1,'']]]
+  ['stopwatchsequence_17',['stopwatchSequence',['../class_menu.html#aca5927a856a8d20d738323c2261cc9e4',1,'Menu']]],
+  ['stopwatchtest_2ecpp_18',['StopwatchTest.cpp',['../_stopwatch_test_8cpp.html',1,'']]],
+  ['strcmp_19',['strcmp',['../class_string.html#ae3c243f0bc797b9e4b15d2ef5e5aaa7c',1,'String::strcmp()'],['../relates_8cpp.html#a7ceb7d379a52f7e26418e7a446b4a41a',1,'strcmp(const String &amp;s1, const String &amp;s2):&#160;relates.cpp']]],
+  ['string_20',['String',['../class_string.html',1,'']]],
+  ['stringdebug_21',['stringDebug',['../class_string.html#a5c07384b505d25ae6f61fc7abf0b0e61',1,'String']]],
+  ['strip_5fexample_22',['strip_example',['../namespacestrip__example.html',1,'']]],
+  ['strip_5fexample_2epy_23',['strip_example.py',['../strip__example_8py.html',1,'']]],
+  ['structcmd_2eh_24',['structcmd.h',['../structcmd_8h.html',1,'']]]
 ];

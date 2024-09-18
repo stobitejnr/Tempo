@@ -7,5 +7,6 @@ var searchData=
   ['printcontrols_4',['printControls',['../class_display.html#a3480427024243711ee66efc51ddf0fa3',1,'Display']]],
   ['printsplash_5',['printSplash',['../class_display.html#a62d8435627ea69fbccaef4cef32d785d',1,'Display']]],
   ['printsplits_6',['printSplits',['../class_display.html#ac4f2f5445af6a65554ad9646cc27f3cc',1,'Display']]],
-  ['pymethod_7',['PyMethod',['../classdocstring_1_1_py_class.html#af092e1eacc10334e0e8630531a3473b4',1,'docstring.PyClass.PyMethod()'],['../classpyexample_1_1_py_class.html#a654596774eb28a0c6d26eea565de3a9d',1,'pyexample.PyClass.PyMethod()']]]
+  ['printtimerinput_7',['printTimerInput',['../class_menu.html#a83b07e2146a2549f2444e56183b33931',1,'Menu']]],
+  ['pymethod_8',['PyMethod',['../classdocstring_1_1_py_class.html#af092e1eacc10334e0e8630531a3473b4',1,'docstring.PyClass.PyMethod()'],['../classpyexample_1_1_py_class.html#a654596774eb28a0c6d26eea565de3a9d',1,'pyexample.PyClass.PyMethod()']]]
 ];

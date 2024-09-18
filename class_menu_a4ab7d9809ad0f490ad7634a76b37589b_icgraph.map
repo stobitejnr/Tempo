@@ -1,6 +1,12 @@
 <map id="Menu::wait" name="Menu::wait">
-<area shape="rect" id="node1" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="456,68,551,93"/>
-<area shape="rect" id="node2" href="$class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452" title="Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection." alt="" coords="252,5,408,31"/>
-<area shape="rect" id="node3" href="$class_menu.html#ae1ec62e738dda7faaaec850bd0b58ffe" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="108,68,204,93"/>
-<area shape="rect" id="node4" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="5,68,60,93"/>
+<area shape="rect" id="node1" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="1089,132,1184,157"/>
+<area shape="rect" id="node2" href="$class_menu.html#ac9d86f12b0ed98dddaeb1ae9b9602f41" title=" " alt="" coords="896,56,1041,81"/>
+<area shape="rect" id="node4" href="$class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title=" " alt="" coords="445,81,609,107"/>
+<area shape="rect" id="node9" href="$class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452" title="Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection." alt="" coords="683,157,839,183"/>
+<area shape="rect" id="node10" href="$class_menu.html#aca5927a856a8d20d738323c2261cc9e4" title=" " alt="" coords="429,208,625,233"/>
+<area shape="rect" id="node3" href="$class_menu.html#ab8d3cccd5b39987a6546f7dc1187b71e" title="Checks and handles user input for the Timer." alt="" coords="673,5,848,31"/>
+<area shape="rect" id="node5" href="$class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="247,157,381,183"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,132,181,157"/>
+<area shape="rect" id="node7" href="$_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,181,199,207"/>
+<area shape="rect" id="node8" href="$_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,181,60,207"/>
 </map>

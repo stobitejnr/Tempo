@@ -1,0 +1,6 @@
+<map id="Display::tickTimerSetup" name="Display::tickTimerSetup">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,183,56"/>
+<area shape="rect" id="node2" href="$class_display.html#aab9a518037074ce68da2a7792771908d" title="Prints ASCII art to the terminal." alt="" coords="231,5,369,31"/>
+<area shape="rect" id="node4" href="$class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="417,56,557,81"/>
+<area shape="rect" id="node3" href="$class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="605,31,745,56"/>
+</map>

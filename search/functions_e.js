@@ -12,6 +12,7 @@ var searchData=
   ['stagetimerdisplay_9',['stageTimerDisplay',['../class_display.html#a02e23b9a142c52d7dfa0169c58c77e24',1,'Display']]],
   ['start_10',['start',['../class_menu.html#ae1ec62e738dda7faaaec850bd0b58ffe',1,'Menu::start()'],['../class_stopwatch.html#a6d01ecc80c92f1d5210cd9c3eb72883d',1,'Stopwatch::start()'],['../class_timer.html#aded1ecf859b397258dcfa95d3d7cfc41',1,'Timer::start()']]],
   ['stopwatch_11',['Stopwatch',['../class_stopwatch.html#a628b5ebeed5df065dd847e68fb6336cf',1,'Stopwatch::Stopwatch()'],['../class_stopwatch.html#a8c9e3153e50c02aa22be7acdd3f4912c',1,'Stopwatch::Stopwatch(int hours, int minutes, int seconds)']]],
-  ['strcmp_12',['strcmp',['../relates_8cpp.html#a7ceb7d379a52f7e26418e7a446b4a41a',1,'relates.cpp']]],
-  ['stringdebug_13',['stringDebug',['../class_string.html#a5c07384b505d25ae6f61fc7abf0b0e61',1,'String']]]
+  ['stopwatchsequence_12',['stopwatchSequence',['../class_menu.html#aca5927a856a8d20d738323c2261cc9e4',1,'Menu']]],
+  ['strcmp_13',['strcmp',['../relates_8cpp.html#a7ceb7d379a52f7e26418e7a446b4a41a',1,'relates.cpp']]],
+  ['stringdebug_14',['stringDebug',['../class_string.html#a5c07384b505d25ae6f61fc7abf0b0e61',1,'String']]]
 ];

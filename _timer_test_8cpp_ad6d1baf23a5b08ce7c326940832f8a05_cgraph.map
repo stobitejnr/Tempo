@@ -1,8 +1,7 @@
 <map id="test_add_time" name="test_add_time">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,120,105"/>
-<area shape="rect" id="node2" href="$class_timer.html#a8eb4527fb1f93315c79ed1fb375e6e12" title=" " alt="" coords="213,55,338,80"/>
-<area shape="rect" id="node6" href="$class_timer.html#a330607659937f497389c9989812cd925" title="Returns the remaining time in milliseconds." alt="" coords="168,104,383,129"/>
-<area shape="rect" id="node3" href="$class_timer.html#a1af9140ed7938e9252aef7a1e40475fb" title="Allows the user to change the increment time used for adding time to the timer." alt="" coords="431,5,645,31"/>
-<area shape="rect" id="node4" href="$class_timer.html#a0289effad7b573c508bc27e405900a23" title="Pauses the timer and calculates the remaining milliseconds." alt="" coords="485,55,591,80"/>
-<area shape="rect" id="node5" href="$class_timer.html#a4ac55a73bb3431db9d4d2fd70ae9a2e8" title="Resumes the timer from where it was paused by recalculating the end time." alt="" coords="479,104,597,129"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,55,120,80"/>
+<area shape="rect" id="node2" href="$class_timer.html#ae85c869ff61b97b53ade8e701014dde6" title="Adds a specified amount of time (in seconds) to the timer." alt="" coords="213,29,338,55"/>
+<area shape="rect" id="node5" href="$class_timer.html#a330607659937f497389c9989812cd925" title="Returns the remaining time in milliseconds." alt="" coords="168,79,383,104"/>
+<area shape="rect" id="node3" href="$class_timer.html#a0289effad7b573c508bc27e405900a23" title="Pauses the timer and calculates the remaining milliseconds." alt="" coords="436,5,543,31"/>
+<area shape="rect" id="node4" href="$class_timer.html#a4ac55a73bb3431db9d4d2fd70ae9a2e8" title="Resumes the timer from where it was paused by recalculating the end time." alt="" coords="431,55,548,80"/>
 </map>

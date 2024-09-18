@@ -5,5 +5,6 @@ var searchData=
   ['memgrp_2ecpp_2',['memgrp.cpp',['../memgrp_8cpp.html',1,'']]],
   ['menu_2ecpp_3',['Menu.cpp',['../_menu_8cpp.html',1,'']]],
   ['menu_2ehpp_4',['Menu.hpp',['../_menu_8hpp.html',1,'']]],
-  ['mux_2evhdl_5',['mux.vhdl',['../mux_8vhdl.html',1,'']]]
+  ['menutest_2ecpp_5',['MenuTest.cpp',['../_menu_test_8cpp.html',1,'']]],
+  ['mux_2evhdl_6',['mux.vhdl',['../mux_8vhdl.html',1,'']]]
 ];

@@ -1,43 +1,4 @@
 <map id="Menu::getMenuInput" name="Menu::getMenuInput">
-<area shape="rect" id="node1" title="Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection." alt="" coords="5,1283,161,1309"/>
-<area shape="rect" id="node2" href="$class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="209,1258,304,1283"/>
-<area shape="rect" id="node3" href="$class_menu.html#ae1ec62e738dda7faaaec850bd0b58ffe" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="352,1258,448,1283"/>
-<area shape="rect" id="node4" href="$class_menu.html#a81188fdf5f017799f9e7f7eaaf98c3ec" title="Checks and handles user input for the Stopwatch." alt="" coords="496,1207,701,1233"/>
-<area shape="rect" id="node6" href="$class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62" title="Clears the terminal screen." alt="" coords="790,1357,945,1382"/>
-<area shape="rect" id="node14" href="$class_display.html#a3a0e77e68157e55d67ac3f28dffdd00c" title="Sets the splash screen text." alt="" coords="797,1258,938,1283"/>
-<area shape="rect" id="node15" href="$class_menu.html#ab8d3cccd5b39987a6546f7dc1187b71e" title="Checks and handles user input for the Timer." alt="" coords="511,1359,686,1385"/>
-<area shape="rect" id="node18" href="$class_timer.html#a330607659937f497389c9989812cd925" title="Returns the remaining time in milliseconds." alt="" coords="1033,935,1248,961"/>
-<area shape="rect" id="node21" href="$class_stopwatch.html#a6d01ecc80c92f1d5210cd9c3eb72883d" title="Starts the stopwatch." alt="" coords="535,1409,663,1434"/>
-<area shape="rect" id="node22" href="$class_display.html#a670c8db4c53ae0f09d6d3b57f1813b7f" title="Updates the display based on the state of the provided Stopwatch object." alt="" coords="513,257,684,282"/>
-<area shape="rect" id="node34" href="$class_display.html#a02b2228e05be168eda0b817d1ecf5db7" title="Updates the display based on the state of the provided Timer object." alt="" coords="529,710,669,735"/>
-<area shape="rect" id="node41" href="$class_menu.html#a537a69bfbe3b8c29e3dfd3e2f5dd88b5" title="Waits for any key press from the user." alt="" coords="525,1458,672,1483"/>
-<area shape="rect" id="node5" href="$class_stopwatch.html#aa0a6e6e55261fa0d2b239800bc7a782d" title="Records and prints the current split time in milliseconds." alt="" coords="792,1061,943,1086"/>
-<area shape="rect" id="node8" href="$class_display.html#ad226aa44204137c5a8fe774967532af4" title="Clears the splash screen." alt="" coords="791,1307,944,1333"/>
-<area shape="rect" id="node9" href="$class_stopwatch.html#ae20cb58892efc6ca55117583aac8c392" title="Checks if the stopwatch is currently running." alt="" coords="786,1110,949,1135"/>
-<area shape="rect" id="node10" href="$class_stopwatch.html#a2cc48295d6b083361d062b8eb68d753a" title="Pauses the stopwatch." alt="" coords="799,1011,936,1037"/>
-<area shape="rect" id="node11" href="$class_stopwatch.html#a42c7014e7fffcf4c56ca6fb07f8eb31c" title="Resets the stopwatch to 0 milliseconds and stops it." alt="" coords="802,1209,933,1234"/>
-<area shape="rect" id="node13" href="$class_stopwatch.html#a789461171238250633eeb26b8f3b0dce" title="Resumes the stopwatch from the last paused time." alt="" coords="794,1159,941,1185"/>
-<area shape="rect" id="node7" href="$class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="1484,534,1624,559"/>
-<area shape="rect" id="node12" href="$class_stopwatch.html#a0edfa283c9d5e706cef4a43a6cbfbaf5" title="Clears the splits vector." alt="" coords="1057,1209,1224,1234"/>
-<area shape="rect" id="node16" href="$class_timer.html#a2ef50bfc604ea9fb88d3000c9ad0edd9" title="Checks if the timer is currently running." alt="" coords="801,1507,933,1533"/>
-<area shape="rect" id="node17" href="$class_timer.html#a0289effad7b573c508bc27e405900a23" title="Pauses the timer and calculates the remaining milliseconds." alt="" coords="1087,1583,1194,1609"/>
-<area shape="rect" id="node19" href="$class_timer.html#a9020542d73357a4eef512eefaf57524b" title="Resets the timer to its original duration and pauses it." alt="" coords="817,1609,918,1634"/>
-<area shape="rect" id="node20" href="$class_timer.html#a4ac55a73bb3431db9d4d2fd70ae9a2e8" title="Resumes the timer from where it was paused by recalculating the end time." alt="" coords="809,1458,926,1483"/>
-<area shape="rect" id="node23" href="$class_stopwatch.html#aaf61c1ada98a22cc1c2bc589bdd4134a" title="Returns the current elapsed time in milliseconds." alt="" coords="755,57,980,82"/>
-<area shape="rect" id="node24" href="$class_stopwatch.html#ae401b2a4016b104fc210e54a5041c9e2" title="Returns the splits vector." alt="" coords="790,106,945,131"/>
-<area shape="rect" id="node25" href="$class_display.html#aab9a518037074ce68da2a7792771908d" title="Prints ASCII art to the terminal." alt="" coords="1071,358,1210,383"/>
-<area shape="rect" id="node26" href="$class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="1296,509,1436,534"/>
-<area shape="rect" id="node27" href="$class_display.html#a3480427024243711ee66efc51ddf0fa3" title="Prints controls to the terminal." alt="" coords="1059,407,1222,433"/>
-<area shape="rect" id="node28" href="$class_display.html#a62d8435627ea69fbccaef4cef32d785d" title="Prints the splash screen to the terminal." alt="" coords="792,610,943,635"/>
-<area shape="rect" id="node30" href="$class_display.html#ac4f2f5445af6a65554ad9646cc27f3cc" title="Prints the stopwatch splits to the terminal." alt="" coords="1069,309,1213,334"/>
-<area shape="rect" id="node31" href="$class_display.html#aa68e271db8f91c18ae2c1e5e38d0f1ee" title="Stages the controls for the stopwatch." alt="" coords="749,207,985,233"/>
-<area shape="rect" id="node32" href="$class_display.html#ac878f4b1987c4e33c173478fd5bbf34c" title="Stages the stopwatch display with provided time values." alt="" coords="752,257,983,282"/>
-<area shape="rect" id="node33" href="$class_display.html#a8b0e743648629b44c19cb59b1cbe467e" title="Stages the splits block to be displayed." alt="" coords="758,306,977,331"/>
-<area shape="rect" id="node29" href="$class_display.html#aaa0ffb7318a45caa0b74d3d439e623f0" title="Clears a specific line in the terminal." alt="" coords="1072,610,1209,635"/>
-<area shape="rect" id="node35" href="$class_timer.html#a97ab4bd97e34c2ce2b8afa7c993fbaec" title="Returns the percentage of time that has elapsed since the timer started." alt="" coords="783,859,951,885"/>
-<area shape="rect" id="node37" href="$class_display.html#a034871a688ea9c2cf5801d120b0cfcf6" title="Prints the progress bar to the terminal." alt="" coords="1075,711,1206,737"/>
-<area shape="rect" id="node38" href="$class_display.html#a91e41747e83f0d8d53251811addd566e" title="Stages the progress bar for the timer." alt="" coords="780,761,955,786"/>
-<area shape="rect" id="node39" href="$class_display.html#af7327c3f58c211e500f4fff386f222e4" title="Stages the controls for the timer." alt="" coords="764,810,971,835"/>
-<area shape="rect" id="node40" href="$class_display.html#a02e23b9a142c52d7dfa0169c58c77e24" title="Stages the timer display with provided time values." alt="" coords="767,659,968,685"/>
-<area shape="rect" id="node36" href="$class_timer.html#aded1ecf859b397258dcfa95d3d7cfc41" title="Starts the timer by setting the end time based on the current time plus the countdown duration." alt="" coords="1091,859,1190,885"/>
+<area shape="rect" id="node1" title="Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection." alt="" coords="5,5,161,31"/>
+<area shape="rect" id="node2" href="$class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="209,5,304,31"/>
 </map>

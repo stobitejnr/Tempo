@@ -1,12 +1,13 @@
 <map id="src/Menu.cpp" name="src/Menu.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="245,5,353,31"/>
-<area shape="rect" id="node2" href="$_menu_8hpp.html" title=" " alt="" coords="225,79,374,104"/>
+<area shape="rect" id="node1" title=" " alt="" coords="324,5,432,31"/>
+<area shape="rect" id="node2" href="$_menu_8hpp.html" title=" " alt="" coords="303,79,453,104"/>
 <area shape="rect" id="node3" href="$_timer_8hpp.html" title=" " alt="" coords="5,225,92,251"/>
 <area shape="rect" id="node5" title=" " alt="" coords="187,299,267,324"/>
 <area shape="rect" id="node7" href="$_stopwatch_8hpp.html" title=" " alt="" coords="168,225,287,251"/>
 <area shape="rect" id="node9" href="$_alarm_8hpp.html" title=" " alt="" coords="749,225,839,251"/>
 <area shape="rect" id="node10" href="$_display_8hpp.html" title=" " alt="" coords="329,152,427,177"/>
 <area shape="rect" id="node15" title=" " alt="" coords="502,152,571,177"/>
+<area shape="rect" id="node16" title=" " alt="" coords="596,152,661,177"/>
 <area shape="rect" id="node4" title=" " alt="" coords="97,299,163,324"/>
 <area shape="rect" id="node6" title=" " alt="" coords="14,299,73,324"/>
 <area shape="rect" id="node8" title=" " alt="" coords="432,299,495,324"/>

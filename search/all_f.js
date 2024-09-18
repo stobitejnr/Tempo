@@ -11,9 +11,10 @@ var searchData=
   ['printcontrols_8',['printControls',['../class_display.html#a3480427024243711ee66efc51ddf0fa3',1,'Display']]],
   ['printsplash_9',['printSplash',['../class_display.html#a62d8435627ea69fbccaef4cef32d785d',1,'Display']]],
   ['printsplits_10',['printSplits',['../class_display.html#ac4f2f5445af6a65554ad9646cc27f3cc',1,'Display']]],
-  ['publicvar_11',['publicVar',['../class_javadoc___test.html#a44a516fbc3a4865e2dcae34649c9df6a',1,'Javadoc_Test::publicVar()'],['../class_q_tstyle___test.html#aabf7b2e9ed83ea44aca4d213baae06d3',1,'QTstyle_Test::publicVar()']]],
-  ['pyclass_12',['PyClass',['../classdocstring_1_1_py_class.html',1,'docstring.PyClass'],['../classpyexample_1_1_py_class.html',1,'pyexample.PyClass']]],
-  ['pyexample_13',['pyexample',['../namespacepyexample.html',1,'']]],
-  ['pyexample_2epy_14',['pyexample.py',['../pyexample_8py.html',1,'']]],
-  ['pymethod_15',['PyMethod',['../classdocstring_1_1_py_class.html#af092e1eacc10334e0e8630531a3473b4',1,'docstring.PyClass.PyMethod()'],['../classpyexample_1_1_py_class.html#a654596774eb28a0c6d26eea565de3a9d',1,'pyexample.PyClass.PyMethod()']]]
+  ['printtimerinput_11',['printTimerInput',['../class_menu.html#a83b07e2146a2549f2444e56183b33931',1,'Menu']]],
+  ['publicvar_12',['publicVar',['../class_javadoc___test.html#a44a516fbc3a4865e2dcae34649c9df6a',1,'Javadoc_Test::publicVar()'],['../class_q_tstyle___test.html#aabf7b2e9ed83ea44aca4d213baae06d3',1,'QTstyle_Test::publicVar()']]],
+  ['pyclass_13',['PyClass',['../classdocstring_1_1_py_class.html',1,'docstring.PyClass'],['../classpyexample_1_1_py_class.html',1,'pyexample.PyClass']]],
+  ['pyexample_14',['pyexample',['../namespacepyexample.html',1,'']]],
+  ['pyexample_2epy_15',['pyexample.py',['../pyexample_8py.html',1,'']]],
+  ['pymethod_16',['PyMethod',['../classdocstring_1_1_py_class.html#af092e1eacc10334e0e8630531a3473b4',1,'docstring.PyClass.PyMethod()'],['../classpyexample_1_1_py_class.html#a654596774eb28a0c6d26eea565de3a9d',1,'pyexample.PyClass.PyMethod()']]]
 ];

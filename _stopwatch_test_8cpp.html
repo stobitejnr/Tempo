@@ -245,16 +245,16 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_stopwatch_test_8cpp_source.html#l00018">18</a> of file <a class="el" href="_stopwatch_test_8cpp_source.html">StopwatchTest.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   18</span>                         {</div>
-<div class="line"><span class="lineno">   19</span>    <a class="code hl_class" href="class_stopwatch.html">Stopwatch</a> stopwatch(0, 1, 0); <span class="comment">// 1 minute</span></div>
-<div class="line"><span class="lineno">   20</span>    this_thread::sleep_for(chrono::seconds(1));</div>
+<div class="line"><span class="lineno">   19</span>    <a class="code hl_class" href="class_stopwatch.html">Stopwatch</a> stopwatch(0, 0, 0);</div>
+<div class="line"><span class="lineno">   20</span>    this_thread::sleep_for(chrono::milliseconds(10));</div>
 <div class="line"><span class="lineno">   21</span>    stopwatch.pause();</div>
 <div class="line"><span class="lineno">   22</span>    <span class="keywordtype">int</span> currentAfterPause = stopwatch.currentMilliseconds();</div>
 <div class="line"><span class="lineno">   23</span>    assert(!stopwatch.isRunning());</div>
-<div class="line"><span class="lineno">   24</span>    this_thread::sleep_for(chrono::seconds(1));</div>
+<div class="line"><span class="lineno">   24</span>    this_thread::sleep_for(chrono::milliseconds(10));</div>
 <div class="line"><span class="lineno">   25</span>    assert(stopwatch.currentMilliseconds() == currentAfterPause);</div>
 <div class="line"><span class="lineno">   26</span>    stopwatch.resume();</div>
 <div class="line"><span class="lineno">   27</span>    assert(stopwatch.isRunning());</div>
-<div class="line"><span class="lineno">   28</span>    assert(stopwatch.currentMilliseconds() &gt; 59000);</div>
+<div class="line"><span class="lineno">   28</span>    assert(stopwatch.currentMilliseconds() &gt;= 10);</div>
 <div class="line"><span class="lineno">   29</span>    cout &lt;&lt; <span class="stringliteral">&quot;Pause and resume test passed.\n&quot;</span>;</div>
 <div class="line"><span class="lineno">   30</span>}</div>
 </div><!-- fragment -->
@@ -302,9 +302,9 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_stopwatch_test_8cpp_source.html#l00032">32</a> of file <a class="el" href="_stopwatch_test_8cpp_source.html">StopwatchTest.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   32</span>                  {</div>
-<div class="line"><span class="lineno">   33</span>    <a class="code hl_class" href="class_stopwatch.html">Stopwatch</a> stopwatch(0, 1, 0); <span class="comment">// 1 minute</span></div>
+<div class="line"><span class="lineno">   33</span>    <a class="code hl_class" href="class_stopwatch.html">Stopwatch</a> stopwatch(0, 0, 0);</div>
 <div class="line"><span class="lineno">   34</span>    stopwatch.start();</div>
-<div class="line"><span class="lineno">   35</span>    this_thread::sleep_for(chrono::seconds(1));</div>
+<div class="line"><span class="lineno">   35</span>    this_thread::sleep_for(chrono::milliseconds(10));</div>
 <div class="line"><span class="lineno">   36</span>    stopwatch.reset();</div>
 <div class="line"><span class="lineno">   37</span>    assert(stopwatch.currentMilliseconds() == 0);</div>
 <div class="line"><span class="lineno">   38</span>    assert(!stopwatch.isRunning());</div>
@@ -358,9 +358,9 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">   42</span>                   {</div>
 <div class="line"><span class="lineno">   43</span>    <a class="code hl_class" href="class_stopwatch.html">Stopwatch</a> stopwatch(0, 0, 0);</div>
 <div class="line"><span class="lineno">   44</span>    stopwatch.start();</div>
-<div class="line"><span class="lineno">   45</span>    this_thread::sleep_for(chrono::seconds(1));</div>
+<div class="line"><span class="lineno">   45</span>    this_thread::sleep_for(chrono::milliseconds(10));</div>
 <div class="line"><span class="lineno">   46</span>    stopwatch.addSplit();</div>
-<div class="line"><span class="lineno">   47</span>    assert(stopwatch.getSplits().at(0) &gt;= 990 &amp;&amp; stopwatch.getSplits().at(0) &lt;= 1010);</div>
+<div class="line"><span class="lineno">   47</span>    assert(stopwatch.getSplits().at(0) &gt; 0 &amp;&amp; stopwatch.getSplits().at(0) &lt;= 20);</div>
 <div class="line"><span class="lineno">   48</span>    stopwatch.clearSplits();</div>
 <div class="line"><span class="lineno">   49</span>    assert(stopwatch.getSplits().empty());</div>
 <div class="line"><span class="lineno">   50</span>    cout &lt;&lt; <span class="stringliteral">&quot;Split tests passed.\n&quot;</span>;</div>
@@ -396,7 +396,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 30 2024 02:50:42 for Tempo by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+Generated on Wed Sep 18 2024 02:42:03 for Tempo by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
 </small></address>
 </body>
 </html>
