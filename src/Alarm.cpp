@@ -2,5 +2,10 @@
 
 using namespace std;
 
-Alarm::Alarm(){ 
+Alarm::Alarm(string time) {
+    _time = parseTime(time);
+}
+
+chrono::system_clock::time_point Alarm::parseTime(string time){
+    
 }
