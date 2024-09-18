@@ -10,7 +10,6 @@ using namespace std;
 void test_menu(){
     Menu menu(true);
     menu.start();
-    cout << "start passed." << endl;
     menu.mainMenu();
     return;
 }
