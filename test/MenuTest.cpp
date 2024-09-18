@@ -2,15 +2,16 @@
 #include <iostream>
 #include <chrono>
 #include <thread>
+#include <sstream>
 
 #include "../include/Menu.hpp"
 
 using namespace std;
 
 void simIn(const std::string& input) {
-    std::stringstream simulatedInput;
-    simulatedInput << input << std::endl;
-    std::cin.rdbuf(simulatedInput.rdbuf());
+    stringstream simulatedInput;
+    simulatedInput << input << endl;
+    cin.rdbuf(simulatedInput.rdbuf());
 }
 
 void test_timer(){
