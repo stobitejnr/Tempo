@@ -8,9 +8,9 @@
 using namespace std;
 
 void simIn(const std::string& input) {
-    stringstream simulatedInput;
+    std::stringstream simulatedInput;
     simulatedInput << input << std::endl;
-    cin.rdbuf(simulatedInput.rdbuf());
+    std::cin.rdbuf(simulatedInput.rdbuf());
 }
 
 void test_timer(){
