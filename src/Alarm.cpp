@@ -3,4 +3,5 @@
 using namespace std;
 
 Alarm::Alarm(){ 
+    
 }
