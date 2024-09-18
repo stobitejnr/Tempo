@@ -2,39 +2,24 @@
 #include <iostream>
 #include <chrono>
 #include <thread>
-#include <sstream>
 
 #include "../include/Menu.hpp"
 
 using namespace std;
 
-void simIn(const std::string& input) {
-    stringstream simulatedInput;
-    simulatedInput << input << endl;
-    cin.rdbuf(simulatedInput.rdbuf());
-}
-
-void test_timer(){
-    Menu menu;
+void test_menu(){
+    Menu menu(true);
     menu.start();
-    simIn("a");
+    cout << "start passed." << endl;
     menu.mainMenu();
-    simIn("1");
-    Timer timer = menu.createTimer();
-    menu.timerSequence();
-    simIn("1");
-    simIn("\n");
-    simIn("q");
-    simIn("q");
-
-
-    cin.rdbuf(nullptr);
+    return;
 }
 
 
 int main() {
     try {
-        //calls here
+        test_menu();
+
         cout << "All tests passed successfully!\n";
     } catch (const exception& e) {
         cerr << "Test failed with exception: " << e.what() << std::endl;

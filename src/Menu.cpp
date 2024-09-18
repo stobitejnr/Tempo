@@ -12,9 +12,10 @@ CONSTRUCTOR
 /**
  * @brief Constructs a Menu object and initializes its state.
  */
-Menu::Menu(){ 
+Menu::Menu(bool testing){ 
     _display = Display();
     _run = true;
+    _testing = testing;
 }
 
 void Menu::start(){
@@ -31,7 +32,6 @@ void Menu::start(){
     for (string line : _credits){
         cout << lBuffer << line << endl;
     }
-
     waitForInput();
 }
 
@@ -59,8 +59,14 @@ void Menu::mainMenu() {
     cout << "3: Alarm **Beta Feature**\n";
     cout << "Q: Quit Program\n";
 
+    if(_testing){
+        timerSequence();
+        stopwatchSequence();
+        alarmSequence();
+        return;
+    }
+    
     char in = getMenuInput();
-
     // ENTER TIMER SEQUENCE
     if(in == '1'){
         timerSequence();
@@ -105,6 +111,10 @@ void Menu::timerSequence(){
         checkTimerInput(timer, run);
 
         wait(0.01);
+
+        if(_testing){
+            run = false;
+        }
     }
 }
 
@@ -128,6 +138,10 @@ void Menu::stopwatchSequence(){
         checkStopwatchInput(stopwatch, run);
 
         wait(0.01);
+
+        if(_testing){
+            run = false;
+        }
     }
 }
 
@@ -141,7 +155,7 @@ Timer Menu::createTimer(){
     int s = 0;
     int countdownSeconds = 0;
 
-    string input = "000000";  // To store the HHMMSS as string
+    string input = "000000";
 
     string to_print = "00:00:00";
 
@@ -150,19 +164,24 @@ Timer Menu::createTimer(){
     int index = 5;
     
     while (true) {
-        char ch = _getch();  // Get input without waiting for Enter
-
-        if (ch == 13 && (h || m || s)) {  // Enter key to submit input
-            break;
-        } else if (ch >= '0' && ch <= '9') {
-            // Shift all the digits to the left by one position
-            input = input.substr(1) + ch;  // Drop the leftmost character and add the new character at the end
-        } else if (ch == 8) {  // Backspace to reset last input
-            // Shift all digits to the right and put '0' at the end
-            input = '0' + input.substr(0, 5);  // Move everything one step to the right
+        char ch; 
+        if(_testing){
+            ch = '1';
+        }
+        else{
+            ch = _getch();
         }
 
-        // Convert input string to hours, minutes, and seconds
+        if (ch == 13 && (h || m || s)) {
+            break;
+        } 
+        else if (ch >= '0' && ch <= '9') {
+            input = input.substr(1) + ch; 
+        } 
+        else if (ch == 8) { 
+            input = '0' + input.substr(0, 5);
+        }
+
         h = stoi(input.substr(0, 2));
         m = stoi(input.substr(2, 2));
         s = stoi(input.substr(4, 2));
@@ -174,6 +193,10 @@ Timer Menu::createTimer(){
         _display.tickTimerSetup(to_print);
         
         wait(0.01);
+
+        if(_testing){
+            break;
+        }
     }
     _display.clearScreen();
     Timer timer(h,m,s);
@@ -189,9 +212,8 @@ Timer Menu::createTimer(){
  * @param seconds The amount of time to wait, in seconds.
  */
 void Menu::wait(double seconds) {
-    auto start = chrono::high_resolution_clock::now();
-    auto duration = chrono::duration<double>(seconds);
-    while (chrono::high_resolution_clock::now() - start < duration) { }
+    int milli = 1000 * seconds;
+    this_thread::sleep_for(chrono::milliseconds(milli));
 }
 
 /* =========================================================
@@ -204,6 +226,9 @@ WAIT FOR ANY USER INPUT
  * This function blocks until the user presses a key, using `_getch()` to capture the input.
  */
 void Menu::waitForInput() {
+    if(_testing){
+        return;
+    }
     _getch();
 }
 
@@ -344,6 +369,6 @@ char Menu::getMenuInput(){
                     break;
             }
         }
-        wait(0.1); // Slight delay before checking input again
+        wait(0.01); // Slight delay before checking input again
     }
 }

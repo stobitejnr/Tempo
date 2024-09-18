@@ -19,9 +19,9 @@ class Menu
 {
 public:
     /**
-     * @brief Constructs a Menu object and initializes its state.
+     * @brief Constructs a Menu object.
      */
-    Menu();
+    Menu(bool testing);
 
     /**
      * @brief Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection.
@@ -94,6 +94,7 @@ public:
 private:
     Display _display;  ///< Instance of Display to manage the visual representation.
     bool _run;         ///< Boolean to control the main loop execution.
+    bool _testing;
     vector<string> _logoArt = {                                                                                   
         "  +@@@@@@@@@@@+                                                               ",           
         " :@@@@@@@@@@@@+                                                               ",          

@@ -46,7 +46,6 @@ public:
      */
     void reset();
 
-    void addTime();
     /**
      * @brief Adds a specified amount of time (in seconds) to the timer.
      *
@@ -55,13 +54,6 @@ public:
      * @param seconds The number of seconds to add to the timer.
      */
     void addTime(int seconds);
-
-    /**
-     * @brief Allows the user to change the increment time used for adding time to the timer.
-     *
-     * The increment time can be specified in hours, minutes, or seconds.
-     */
-    void changeIncrementTime();
 
     /**
      * @brief Checks if the timer is currently running.
