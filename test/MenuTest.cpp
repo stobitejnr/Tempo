@@ -3,18 +3,22 @@
 #include <chrono>
 #include <thread>
 
-#include "../include/Alarm.hpp"
+#include "../include/Menu.hpp"
 
 using namespace std;
 
-void test_constructor(){
-    Alarm alarm;
+void test_menu(){
+    Menu menu(true);
+    menu.start();
+    menu.mainMenu();
+    return;
 }
 
 
 int main() {
     try {
-        //calls here
+        test_menu();
+
         cout << "All tests passed successfully!\n";
     } catch (const exception& e) {
         cerr << "Test failed with exception: " << e.what() << std::endl;

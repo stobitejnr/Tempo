@@ -26,6 +26,8 @@ public:
      */
     Display();
 
+    void tickTimerSetup(string to_print);
+
     /**
      * @brief Updates the display based on the state of the provided Timer object.
      * @param timer Reference to the Timer object.

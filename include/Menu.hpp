@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <conio.h>
+#include <cstdlib>
 
 using namespace std;
 
@@ -18,9 +19,9 @@ class Menu
 {
 public:
     /**
-     * @brief Constructs a Menu object and initializes its state.
+     * @brief Constructs a Menu object.
      */
-    Menu();
+    Menu(bool testing);
 
     /**
      * @brief Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection.
@@ -76,11 +77,73 @@ public:
      * for Timer, Stopwatch, or Alarm. It handles the input and output and returns to the menu after each operation
      * unless the user chooses to quit.
      */
+    void mainMenu();
+
     void start();
+
+    void timerSequence();
+
+    void stopwatchSequence();
+
+    void alarmSequence();
+
+    Timer createTimer();
+
+    void printTimerInput(int, int ,int);
 
 private:
     Display _display;  ///< Instance of Display to manage the visual representation.
     bool _run;         ///< Boolean to control the main loop execution.
+    bool _testing;
+    vector<string> _logoArt = {                                                                                   
+        "  +@@@@@@@@@@@+                                                               ",           
+        " :@@@@@@@@@@@@+                                                               ",          
+        " .:::@@@@@=:::  .-=======:   .====-.===-. .-===:   :====::===-.    :-=======: ",          
+        "    =@@@@%    .#@@@@@@@@@@%  #@@@@@@@@@@@#@@@@@@=  %@@@@@@@@@@@. :%@@@@@@@@@@+",          
+        "    %@@@@=    #@@@@- -@@@@% .@@@@@==@@@@@+-%@@@@= :@@@@%==@@@@@. %@@@@-:#@@@@+",           
+        "   :@@@@@    .@@@@%==*@@@@= +@@@@+ -@@@@# .@@@@@  *@@@@= =@@@@# -@@@@#  %@@@@.",           
+        "   *@@@@+    +@@@@@@@@@@@@  @@@@@. #@@@@- +@@@@* .@@@@@  %@@@@: #@@@@: -@@@@# ",            
+        "  .@@@@@.    @@@@%  .++++: =@@@@# .@@@@@  %@@@@: +@@@@* :@@@@% :@@@@%  %@@@@: ",            
+        "  +@@@@#    -@@@@@##@@@@@. %@@@@- *@@@@+ -@@@@#  @@@@@@%@@@@@- +@@@@@#%@@@@#  ",             
+        "  @@@@@-     *%@@@@@@@%+. :@@@@% .@@@@@  %@@@@- =@@@@##@@@%*:  .#@@@@@@@@#    ",              
+        "  ==============================================%@@@@*======================  ",             
+        " ==============================================+@@@@@===================      ",                 
+        "===============================================@@@@@*=============            "
+    };
+
+    vector<string> _credits = {
+        "-------------------------------------",
+        "             Tempo v1.0              ",
+        "-------------------------------------",
+        "    A lightweight timer, stopwatch,",
+        "       and alarm terminal app.",
+        "-------------------------------------",
+        "            Developed by:",
+        "          William Donnelly",
+        "            Kevin Albert",
+        "            Rowan Zeszut",
+        "            Ben Sampson",
+        "-------------------------------------"
+        "",
+        "    Press any key to continue..."
+    };
+
+    vector<string> _menuArt = {
+    "    __  ___      _          __  ___                ",
+    "   /  |/  /___ _(_)___     /  |/  /__  ____  __  __",
+    "  / /|_/ / __ `/ / __ \\   / /|_/ / _ \\/ __ \\/ / / /",
+    " / /  / / /_/ / / / / /  / /  / /  __/ / / / /_/ / ",
+    "/_/  /_/\\__,_/_/_/ /_/  /_/  /_/\\___/_/ /_/\\____/  ",
+    "=================================================="
+    };
+
+    vector<string> _stopMessages = {
+        "EXACTLY ON THE DOT! YOU MUST BE A TIME WIZARD.",
+        "THERE'S NO WAY YOU MEANT TO DO THAT...",
+        "YOU'VE ACHIEVED STOPWATCH ZEN.",
+        "IF YOU DID THAT ON PURPOSE, I'M IMPRESSED.",
+    };
+
 };
 
 #endif // MENU_HPP

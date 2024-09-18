@@ -4,64 +4,8 @@
 using namespace std;
 
 /* =========================================================
-CONSTRUCTORS
+CONSTRUCTOR
 ========================================================= */
-
-/**
- * @brief Default constructor prompts the user to set a timer with a specific duration.
- * 
- * The user can specify the duration in hours, minutes, and seconds. The timer is initialized
- * and started based on the user input.
- */
-Timer::Timer() {
-    int h = 0;
-    int m = 0;
-    int s = 0;
-    int countdownSeconds = 0;
-    _incrementMilliseconds = 0;
-
-    while (true) {
-        cout << "How long would you like to set a timer for?" << endl;
-        string input = "";
-        getline(cin, input);
-
-        // Regular expressions to match hours, minutes, and seconds
-        regex hours_regex(R"((\d+)\s*hour?)");
-        regex minutes_regex(R"((\d+)\s*minute?)");
-        regex seconds_regex(R"((\d+)\s*second?)");
-
-        smatch match;
-
-        // Extract hours
-        if (regex_search(input, match, hours_regex)) {
-            h = stoi(match[1].str());
-        }
-
-        // Extract minutes
-        if (regex_search(input, match, minutes_regex)) {
-            m = stoi(match[1].str());
-        }
-        // Extract seconds
-        if (regex_search(input, match, seconds_regex)) {
-            s = stoi(match[1].str());
-        }
-
-        countdownSeconds = (3600 * h) + (60 * m) + (s);
-        if (countdownSeconds == 0) { 
-            continue; 
-        }
-        if (countdownSeconds <= 360000) { 
-            break; 
-        } else {
-            cout << "Cannot set a timer for more than 100 hours." << endl;
-        }
-    }
-
-    _startMilliseconds = countdownSeconds * 1000;
-    _remainingMilliseconds = _startMilliseconds;
-    _countdownMilliseconds = _startMilliseconds;
-    start(_countdownMilliseconds);
-}
 
 /**
  * @brief Constructor to specify the timer duration directly in hours, minutes, and seconds.
@@ -74,6 +18,7 @@ Timer::Timer() {
  */
 Timer::Timer(int hours, int minutes, int seconds) {
     int milli = 3600000 * hours + 60000 * minutes + 1000 * seconds;
+    if (milli >= 360000000) { milli = 359999999; }
     _countdownMilliseconds = milli;
     _remainingMilliseconds = milli;
     _startMilliseconds = milli;
@@ -157,84 +102,6 @@ void Timer::addTime(int seconds) {
     if(wasRunning){
         resume();
     }
-}
-
-void Timer::addTime(){
-    bool wasRunning = _running;
-    pause();
-    
-    if(!_incrementMilliseconds){
-        changeIncrementTime();
-    }
-    _remainingMilliseconds += _incrementMilliseconds;
-    _countdownMilliseconds += _incrementMilliseconds;
-
-    if(_remainingMilliseconds >=  360000000){
-        _remainingMilliseconds = 359999999;
-        _countdownMilliseconds = 359999999;
-    }
-
-    
-    if (wasRunning) {
-        resume();
-    }
-}
-
-/* =========================================================
-CHANGE INCREMENT TIME
-========================================================= */
-
-/**
- * @brief Allows the user to change the increment time used for adding time to the timer.
- * 
- * The increment time can be specified in hours, minutes, or seconds.
- */
-void Timer::changeIncrementTime() {
-
-    cout << "Enter the amount of time to add for each press: ";
-    string input;
-    cin >> input;
-    
-    // Regular expressions to match hours, minutes, and seconds
-    regex hours_regex(R"((\d+)\s*hour?)");
-    regex minutes_regex(R"((\d+)\s*minute?)");
-    regex seconds_regex(R"((\d+)\s*second?)");
-
-    smatch match;
-    int newIncrementMilliseconds = 0;
-    string unit;
-
-    try {
-        // Convert input to milliseconds based on what unit is specified
-        if (regex_search(input, match, hours_regex)) {
-            newIncrementMilliseconds = stoi(match[1].str()) * 3600000;
-            unit = "hours";
-        } else if (regex_search(input, match, minutes_regex)) {
-            newIncrementMilliseconds = stoi(match[1].str()) * 60000;
-            unit = "minutes";
-        } else if (regex_search(input, match, seconds_regex)) {
-            newIncrementMilliseconds = stoi(match[1].str()) * 1000;
-            unit = "seconds";
-        } else {
-            cout << "Invalid input format. Increment time must be specified in hours, minutes, or seconds." << endl;
-            return;
-        }
-
-        if (newIncrementMilliseconds <= 0) {
-            cout << "Increment time must be a positive value. Keeping the previous value of " << _incrementMilliseconds << " milliseconds." << endl;
-        } else {
-            _incrementMilliseconds = newIncrementMilliseconds;
-            cout << "Increment time set to " << match[1].str() << " " << unit << "." << endl;
-        }
-    } catch (invalid_argument& e) {
-        cout << "Invalid input. Please enter a valid numeric value. Keeping the previous value of " << _incrementMilliseconds << " milliseconds." << endl;
-    } catch (out_of_range& e) {
-        cout << "The value is too large. Keeping the previous value of " << _incrementMilliseconds << " milliseconds." << endl;
-    }
-
-    std::this_thread::sleep_for(std::chrono::seconds(1)); 
-    //cout << "\r\033[K"; // Clear the line after waiting for input
-
 }
 
 /* =========================================================

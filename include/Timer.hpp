@@ -14,14 +14,6 @@ class Timer
 {
 public:
     /**
-     * @brief Default constructor prompts the user to set a timer with a specific duration.
-     *
-     * The user can specify the duration in hours, minutes, and seconds. The timer is initialized
-     * and started based on the user input.
-     */
-    Timer();
-
-    /**
      * @brief Constructor to specify the timer duration directly in hours, minutes, and seconds.
      *
      * Initializes and starts the timer with the specified duration.
@@ -54,7 +46,6 @@ public:
      */
     void reset();
 
-    void addTime();
     /**
      * @brief Adds a specified amount of time (in seconds) to the timer.
      *
@@ -63,13 +54,6 @@ public:
      * @param seconds The number of seconds to add to the timer.
      */
     void addTime(int seconds);
-
-    /**
-     * @brief Allows the user to change the increment time used for adding time to the timer.
-     *
-     * The increment time can be specified in hours, minutes, or seconds.
-     */
-    void changeIncrementTime();
 
     /**
      * @brief Checks if the timer is currently running.
