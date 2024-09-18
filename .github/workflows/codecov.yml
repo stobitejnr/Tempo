@@ -67,11 +67,3 @@ jobs:
        fail_ci_if_error: true
        files: coverage.xml
        token: ${{ secrets.CODECOV_TOKEN }}
-
-
-
-   - name: codacy-coverage-reporter
-     uses: actions/checkout@v2
-     with:
-       project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-       coverage-reporter-version: 13.13.15
