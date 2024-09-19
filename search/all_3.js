@@ -18,11 +18,13 @@ var searchData=
   ['clearsplash_15',['clearSplash',['../class_display.html#ad226aa44204137c5a8fe774967532af4',1,'Display']]],
   ['clearsplits_16',['clearSplits',['../class_stopwatch.html#a0edfa283c9d5e706cef4a43a6cbfbaf5',1,'Stopwatch']]],
   ['close_17',['close',['../structcmd_8h.html#ae152484c890a24e4d9b4980e7b965be0',1,'structcmd.h']]],
-  ['coord_18',['Coord',['../restypedef_8cpp.html#a013489fb99c6a5b012db8ec66544a507',1,'restypedef.cpp']]],
-  ['coordstruct_19',['CoordStruct',['../struct_coord_struct.html',1,'']]],
-  ['createalarm_20',['createAlarm',['../class_menu.html#a76c8148cc85fcc305b80c52b2f9df2ca',1,'Menu']]],
-  ['createtimer_21',['createTimer',['../class_menu.html#a1a90c9e670b33e2c9aaddc01f47b3b88',1,'Menu']]],
-  ['cstyle_22',['cstyle',['../javadoc-banner_8h.html#a6ec4bf0132201719721e103451590a9e',1,'javadoc-banner.h']]],
-  ['currentmilliseconds_23',['currentMilliseconds',['../class_stopwatch.html#aaf61c1ada98a22cc1c2bc589bdd4134a',1,'Stopwatch']]],
-  ['currenttime_24',['currentTime',['../class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f',1,'Alarm']]]
+  ['code_5fof_5fconduct_2emd_18',['CODE_OF_CONDUCT.md',['../_c_o_d_e___o_f___c_o_n_d_u_c_t_8md.html',1,'']]],
+  ['contributor_20covenant_20code_20of_20conduct_19',['Contributor Covenant Code of Conduct',['../md__c_o_d_e__o_f__c_o_n_d_u_c_t.html',1,'']]],
+  ['coord_20',['Coord',['../restypedef_8cpp.html#a013489fb99c6a5b012db8ec66544a507',1,'restypedef.cpp']]],
+  ['coordstruct_21',['CoordStruct',['../struct_coord_struct.html',1,'']]],
+  ['createalarm_22',['createAlarm',['../class_menu.html#a76c8148cc85fcc305b80c52b2f9df2ca',1,'Menu']]],
+  ['createtimer_23',['createTimer',['../class_menu.html#a1a90c9e670b33e2c9aaddc01f47b3b88',1,'Menu']]],
+  ['cstyle_24',['cstyle',['../javadoc-banner_8h.html#a6ec4bf0132201719721e103451590a9e',1,'javadoc-banner.h']]],
+  ['currentmilliseconds_25',['currentMilliseconds',['../class_stopwatch.html#aaf61c1ada98a22cc1c2bc589bdd4134a',1,'Stopwatch']]],
+  ['currenttime_26',['currentTime',['../class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f',1,'Alarm']]]
 ];

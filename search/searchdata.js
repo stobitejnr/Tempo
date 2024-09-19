@@ -12,7 +12,7 @@ var indexSectionsWithContent =
   9: "s",
   10: "_ablmopw",
   11: "t",
-  12: "bpt"
+  12: "bcpt"
 };
 
 var indexSectionNames =
