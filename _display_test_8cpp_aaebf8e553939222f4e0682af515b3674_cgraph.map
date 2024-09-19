@@ -10,7 +10,7 @@
 <area shape="rect" id="node11" href="$class_display.html#a034871a688ea9c2cf5801d120b0cfcf6" title="Prints the progress bar to the terminal." alt="" coords="627,257,758,283"/>
 <area shape="rect" id="node12" href="$class_display.html#a3480427024243711ee66efc51ddf0fa3" title="Prints controls to the terminal." alt="" coords="611,359,774,384"/>
 <area shape="rect" id="node13" href="$class_display.html#a62d8435627ea69fbccaef4cef32d785d" title="Prints the splash screen to the terminal." alt="" coords="359,409,509,435"/>
-<area shape="rect" id="node15" href="$class_display.html#a83ed7e4a6928b93390e552ac6dbc9007" title=" " alt="" coords="362,459,506,484"/>
+<area shape="rect" id="node15" href="$class_display.html#adb4502abd3d3dd9ca70a97c1f3d66ad7" title=" " alt="" coords="362,459,506,484"/>
 <area shape="rect" id="node16" href="$class_display.html#a91e41747e83f0d8d53251811addd566e" title="Stages the progress bar for the timer." alt="" coords="347,508,521,533"/>
 <area shape="rect" id="node17" href="$class_display.html#af7327c3f58c211e500f4fff386f222e4" title="Stages the controls for the timer." alt="" coords="331,557,537,583"/>
 <area shape="rect" id="node18" href="$class_display.html#a02e23b9a142c52d7dfa0169c58c77e24" title="Stages the timer display with provided time values." alt="" coords="333,607,535,632"/>

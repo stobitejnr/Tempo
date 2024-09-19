@@ -2,7 +2,7 @@ var searchData=
 [
   ['sel_0',['sel',['../classmux__using__with.html#ac474329b8f25c575e4376d65f6a3e43f',1,'mux_using_with']]],
   ['setcursor_1',['setCursor',['../class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3',1,'Display']]],
-  ['setformat_2',['setFormat',['../class_display.html#a83ed7e4a6928b93390e552ac6dbc9007',1,'Display']]],
+  ['setformat_2',['setFormat',['../class_display.html#adb4502abd3d3dd9ca70a97c1f3d66ad7',1,'Display']]],
   ['setsplash_3',['setSplash',['../class_display.html#a3a0e77e68157e55d67ac3f28dffdd00c',1,'Display']]],
   ['shownotification_4',['ShowNotification',['../_notification_8cpp.html#ad23fe8f5aaf1d0460387522c8d85cdb2',1,'Notification.cpp']]],
   ['someniceclass_5',['SomeNiceClass',['../class_some_nice_class.html',1,'']]],

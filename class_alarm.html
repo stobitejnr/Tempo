@@ -180,19 +180,21 @@ Private Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   10</span>                        {</div>
 <div class="line"><span class="lineno">   11</span>    <a class="code hl_variable" href="class_alarm.html#a6195c687d8393ce87c804ef6478ee1d5">_startTime</a> = <a class="code hl_function" href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">currentTime</a>();</div>
 <div class="line"><span class="lineno">   12</span>    <a class="code hl_variable" href="class_alarm.html#a217703cc3e557bd820255f064d458b93">_endTime</a> = <a class="code hl_function" href="class_alarm.html#af67e929b3875f73d8edba526265d5d64">getTime</a>(h, m);</div>
-<div class="line"><span class="lineno">   13</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_alarm.html#a6195c687d8393ce87c804ef6478ee1d5">_startTime</a> &gt;= <a class="code hl_variable" href="class_alarm.html#a217703cc3e557bd820255f064d458b93">_endTime</a>){</div>
-<div class="line"><span class="lineno">   14</span>        <a class="code hl_variable" href="class_alarm.html#a217703cc3e557bd820255f064d458b93">_endTime</a> = <a class="code hl_function" href="class_alarm.html#af67e929b3875f73d8edba526265d5d64">getTime</a>(h+24, m);</div>
-<div class="line"><span class="lineno">   15</span>    }</div>
-<div class="line"><span class="lineno">   16</span>    <a class="code hl_variable" href="class_alarm.html#ad464c4de831a8aa5363431a4a1f0b5d8">_running</a> = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   17</span> </div>
-<div class="line"><span class="lineno">   18</span>}</div>
+<div class="line"><span class="lineno">   13</span>    <a class="code hl_variable" href="class_alarm.html#a951293e840b44912d2ca4abd8e63be8e">_remainingMilliseconds</a> = 0;</div>
+<div class="line"><span class="lineno">   14</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_alarm.html#a6195c687d8393ce87c804ef6478ee1d5">_startTime</a> &gt;= <a class="code hl_variable" href="class_alarm.html#a217703cc3e557bd820255f064d458b93">_endTime</a>){</div>
+<div class="line"><span class="lineno">   15</span>        <a class="code hl_variable" href="class_alarm.html#a217703cc3e557bd820255f064d458b93">_endTime</a> = <a class="code hl_function" href="class_alarm.html#af67e929b3875f73d8edba526265d5d64">getTime</a>(h+24, m);</div>
+<div class="line"><span class="lineno">   16</span>    }</div>
+<div class="line"><span class="lineno">   17</span>    <a class="code hl_variable" href="class_alarm.html#ad464c4de831a8aa5363431a4a1f0b5d8">_running</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   18</span> </div>
+<div class="line"><span class="lineno">   19</span>}</div>
 <div class="ttc" id="aclass_alarm_html_a217703cc3e557bd820255f064d458b93"><div class="ttname"><a href="class_alarm.html#a217703cc3e557bd820255f064d458b93">Alarm::_endTime</a></div><div class="ttdeci">chrono::time_point&lt; chrono::system_clock &gt; _endTime</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8hpp_source.html#l00042">Alarm.hpp:42</a></div></div>
-<div class="ttc" id="aclass_alarm_html_a387c6a3ab4f521e108f092c6bcce611f"><div class="ttname"><a href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">Alarm::currentTime</a></div><div class="ttdeci">static chrono::time_point&lt; chrono::system_clock &gt; currentTime()</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8cpp_source.html#l00136">Alarm.cpp:136</a></div></div>
+<div class="ttc" id="aclass_alarm_html_a387c6a3ab4f521e108f092c6bcce611f"><div class="ttname"><a href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">Alarm::currentTime</a></div><div class="ttdeci">static chrono::time_point&lt; chrono::system_clock &gt; currentTime()</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8cpp_source.html#l00137">Alarm.cpp:137</a></div></div>
 <div class="ttc" id="aclass_alarm_html_a6195c687d8393ce87c804ef6478ee1d5"><div class="ttname"><a href="class_alarm.html#a6195c687d8393ce87c804ef6478ee1d5">Alarm::_startTime</a></div><div class="ttdeci">chrono::time_point&lt; chrono::system_clock &gt; _startTime</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8hpp_source.html#l00041">Alarm.hpp:41</a></div></div>
+<div class="ttc" id="aclass_alarm_html_a951293e840b44912d2ca4abd8e63be8e"><div class="ttname"><a href="class_alarm.html#a951293e840b44912d2ca4abd8e63be8e">Alarm::_remainingMilliseconds</a></div><div class="ttdeci">int _remainingMilliseconds</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8hpp_source.html#l00037">Alarm.hpp:37</a></div></div>
 <div class="ttc" id="aclass_alarm_html_ad464c4de831a8aa5363431a4a1f0b5d8"><div class="ttname"><a href="class_alarm.html#ad464c4de831a8aa5363431a4a1f0b5d8">Alarm::_running</a></div><div class="ttdeci">bool _running</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8hpp_source.html#l00039">Alarm.hpp:39</a></div></div>
-<div class="ttc" id="aclass_alarm_html_af67e929b3875f73d8edba526265d5d64"><div class="ttname"><a href="class_alarm.html#af67e929b3875f73d8edba526265d5d64">Alarm::getTime</a></div><div class="ttdeci">chrono::time_point&lt; chrono::system_clock &gt; getTime(int h, int m)</div><div class="ttdoc">Creates nearest future time point with hours h and minutes m.</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8cpp_source.html#l00029">Alarm.cpp:29</a></div></div>
+<div class="ttc" id="aclass_alarm_html_af67e929b3875f73d8edba526265d5d64"><div class="ttname"><a href="class_alarm.html#af67e929b3875f73d8edba526265d5d64">Alarm::getTime</a></div><div class="ttdeci">chrono::time_point&lt; chrono::system_clock &gt; getTime(int h, int m)</div><div class="ttdoc">Creates nearest future time point with hours h and minutes m.</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8cpp_source.html#l00030">Alarm.cpp:30</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_alarm_8hpp_source.html#l00042">_endTime</a>, <a class="el" href="_alarm_8hpp_source.html#l00039">_running</a>, <a class="el" href="_alarm_8hpp_source.html#l00041">_startTime</a>, <a class="el" href="_alarm_8cpp_source.html#l00136">currentTime()</a>, and <a class="el" href="_alarm_8cpp_source.html#l00029">getTime()</a>.</p>
+<p class="reference">References <a class="el" href="_alarm_8hpp_source.html#l00042">_endTime</a>, <a class="el" href="_alarm_8hpp_source.html#l00037">_remainingMilliseconds</a>, <a class="el" href="_alarm_8hpp_source.html#l00039">_running</a>, <a class="el" href="_alarm_8hpp_source.html#l00041">_startTime</a>, <a class="el" href="_alarm_8cpp_source.html#l00137">currentTime()</a>, and <a class="el" href="_alarm_8cpp_source.html#l00030">getTime()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -230,14 +232,14 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00136">136</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  136</span>                                                       {</div>
-<div class="line"><span class="lineno">  137</span> </div>
-<div class="line"><span class="lineno">  138</span>    <span class="keywordflow">return</span> chrono::system_clock::now();</div>
-<div class="line"><span class="lineno">  139</span> </div>
-<div class="line"><span class="lineno">  140</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00137">137</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  137</span>                                                       {</div>
+<div class="line"><span class="lineno">  138</span> </div>
+<div class="line"><span class="lineno">  139</span>    <span class="keywordflow">return</span> chrono::system_clock::now();</div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="_alarm_8cpp_source.html#l00010">Alarm()</a>, <a class="el" href="_alarm_8cpp_source.html#l00029">getTime()</a>, <a class="el" href="_alarm_8cpp_source.html#l00062">percentElapsed()</a>, <a class="el" href="_alarm_8cpp_source.html#l00087">remainingMilliseconds()</a>, and <a class="el" href="_alarm_8cpp_source.html#l00045">timeToString()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_alarm_8cpp_source.html#l00010">Alarm()</a>, <a class="el" href="_alarm_8cpp_source.html#l00030">getTime()</a>, <a class="el" href="_alarm_8cpp_source.html#l00063">percentElapsed()</a>, <a class="el" href="_alarm_8cpp_source.html#l00088">remainingMilliseconds()</a>, and <a class="el" href="_alarm_8cpp_source.html#l00046">timeToString()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -280,12 +282,12 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00101">101</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  101</span>                                                      {</div>
-<div class="line"><span class="lineno">  102</span> </div>
-<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_alarm.html#a217703cc3e557bd820255f064d458b93">_endTime</a>;</div>
-<div class="line"><span class="lineno">  104</span> </div>
-<div class="line"><span class="lineno">  105</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00102">102</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  102</span>                                                      {</div>
+<div class="line"><span class="lineno">  103</span> </div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_alarm.html#a217703cc3e557bd820255f064d458b93">_endTime</a>;</div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_alarm_8hpp_source.html#l00042">_endTime</a>.</p>
 
@@ -326,12 +328,12 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00095">95</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   95</span>                                                        {</div>
-<div class="line"><span class="lineno">   96</span> </div>
-<div class="line"><span class="lineno">   97</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_alarm.html#a6195c687d8393ce87c804ef6478ee1d5">_startTime</a>;</div>
-<div class="line"><span class="lineno">   98</span> </div>
-<div class="line"><span class="lineno">   99</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00096">96</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   96</span>                                                        {</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_alarm.html#a6195c687d8393ce87c804ef6478ee1d5">_startTime</a>;</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_alarm_8hpp_source.html#l00041">_startTime</a>.</p>
 
@@ -373,24 +375,24 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Time point for alarm. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00029">29</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   29</span>                                                                {</div>
-<div class="line"><span class="lineno">   30</span>    </div>
-<div class="line"><span class="lineno">   31</span>    <span class="keyword">auto</span> now = <a class="code hl_function" href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">currentTime</a>();</div>
-<div class="line"><span class="lineno">   32</span> </div>
-<div class="line"><span class="lineno">   33</span>    time_t <a class="code hl_function" href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">currentTime</a> = chrono::system_clock::to_time_t(now);</div>
-<div class="line"><span class="lineno">   34</span>    tm* localTime = localtime(&amp;<a class="code hl_function" href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">currentTime</a>);</div>
-<div class="line"><span class="lineno">   35</span> </div>
-<div class="line"><span class="lineno">   36</span>    localTime-&gt;tm_hour = h;</div>
-<div class="line"><span class="lineno">   37</span>    localTime-&gt;tm_min = m;</div>
-<div class="line"><span class="lineno">   38</span>    localTime-&gt;tm_sec = 0;</div>
-<div class="line"><span class="lineno">   39</span>    </div>
-<div class="line"><span class="lineno">   40</span>    <span class="keyword">auto</span> futureTime = chrono::system_clock::from_time_t(mktime(localTime));</div>
-<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">return</span> futureTime;</div>
-<div class="line"><span class="lineno">   42</span>    </div>
-<div class="line"><span class="lineno">   43</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00030">30</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   30</span>                                                                {</div>
+<div class="line"><span class="lineno">   31</span>    </div>
+<div class="line"><span class="lineno">   32</span>    <span class="keyword">auto</span> now = <a class="code hl_function" href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">currentTime</a>();</div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span>    time_t <a class="code hl_function" href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">currentTime</a> = chrono::system_clock::to_time_t(now);</div>
+<div class="line"><span class="lineno">   35</span>    tm* localTime = localtime(&amp;<a class="code hl_function" href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">currentTime</a>);</div>
+<div class="line"><span class="lineno">   36</span> </div>
+<div class="line"><span class="lineno">   37</span>    localTime-&gt;tm_hour = h;</div>
+<div class="line"><span class="lineno">   38</span>    localTime-&gt;tm_min = m;</div>
+<div class="line"><span class="lineno">   39</span>    localTime-&gt;tm_sec = 0;</div>
+<div class="line"><span class="lineno">   40</span>    </div>
+<div class="line"><span class="lineno">   41</span>    <span class="keyword">auto</span> futureTime = chrono::system_clock::from_time_t(mktime(localTime));</div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">return</span> futureTime;</div>
+<div class="line"><span class="lineno">   43</span>    </div>
+<div class="line"><span class="lineno">   44</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_alarm_8cpp_source.html#l00136">currentTime()</a>.</p>
+<p class="reference">References <a class="el" href="_alarm_8cpp_source.html#l00137">currentTime()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_alarm_8cpp_source.html#l00010">Alarm()</a>.</p>
 <div class="dynheader">
@@ -432,23 +434,22 @@ Here is the caller graph for this function:</div>
 <p>Checks if the alarm has completed. </p>
 <dl class="section return"><dt>Returns</dt><dd>bool True if the alarm has completed, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00112">112</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  112</span>                  {</div>
-<div class="line"><span class="lineno">  113</span> </div>
-<div class="line"><span class="lineno">  114</span>    <span class="keywordtype">int</span> remaining = <a class="code hl_function" href="class_alarm.html#a8f29e4753be03a7f68c22d2697e65a43">remainingMilliseconds</a>();</div>
-<div class="line"><span class="lineno">  115</span>    <span class="keywordflow">if</span> (remaining &gt; 0) {</div>
-<div class="line"><span class="lineno">  116</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  117</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  118</span>        <a class="code hl_variable" href="class_alarm.html#ad464c4de831a8aa5363431a4a1f0b5d8">_running</a> = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  119</span>        <a class="code hl_variable" href="class_alarm.html#a951293e840b44912d2ca4abd8e63be8e">_remainingMilliseconds</a> = 0;</div>
-<div class="line"><span class="lineno">  120</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  121</span>    }</div>
-<div class="line"><span class="lineno">  122</span> </div>
-<div class="line"><span class="lineno">  123</span>}</div>
-<div class="ttc" id="aclass_alarm_html_a8f29e4753be03a7f68c22d2697e65a43"><div class="ttname"><a href="class_alarm.html#a8f29e4753be03a7f68c22d2697e65a43">Alarm::remainingMilliseconds</a></div><div class="ttdeci">int remainingMilliseconds()</div><div class="ttdoc">Calculates the remaining time in milliseconds until the alarm ends.</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8cpp_source.html#l00087">Alarm.cpp:87</a></div></div>
-<div class="ttc" id="aclass_alarm_html_a951293e840b44912d2ca4abd8e63be8e"><div class="ttname"><a href="class_alarm.html#a951293e840b44912d2ca4abd8e63be8e">Alarm::_remainingMilliseconds</a></div><div class="ttdeci">int _remainingMilliseconds</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8hpp_source.html#l00037">Alarm.hpp:37</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00113">113</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  113</span>                  {</div>
+<div class="line"><span class="lineno">  114</span> </div>
+<div class="line"><span class="lineno">  115</span>    <span class="keywordtype">int</span> remaining = <a class="code hl_function" href="class_alarm.html#a8f29e4753be03a7f68c22d2697e65a43">remainingMilliseconds</a>();</div>
+<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">if</span> (remaining &gt; 0) {</div>
+<div class="line"><span class="lineno">  117</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  118</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  119</span>        <a class="code hl_variable" href="class_alarm.html#ad464c4de831a8aa5363431a4a1f0b5d8">_running</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  120</span>        <a class="code hl_variable" href="class_alarm.html#a951293e840b44912d2ca4abd8e63be8e">_remainingMilliseconds</a> = 0;</div>
+<div class="line"><span class="lineno">  121</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  122</span>    }</div>
+<div class="line"><span class="lineno">  123</span> </div>
+<div class="line"><span class="lineno">  124</span>}</div>
+<div class="ttc" id="aclass_alarm_html_a8f29e4753be03a7f68c22d2697e65a43"><div class="ttname"><a href="class_alarm.html#a8f29e4753be03a7f68c22d2697e65a43">Alarm::remainingMilliseconds</a></div><div class="ttdeci">int remainingMilliseconds()</div><div class="ttdoc">Calculates the remaining time in milliseconds until the alarm ends.</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8cpp_source.html#l00088">Alarm.cpp:88</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_alarm_8hpp_source.html#l00037">_remainingMilliseconds</a>, <a class="el" href="_alarm_8hpp_source.html#l00039">_running</a>, and <a class="el" href="_alarm_8cpp_source.html#l00087">remainingMilliseconds()</a>.</p>
+<p class="reference">References <a class="el" href="_alarm_8hpp_source.html#l00037">_remainingMilliseconds</a>, <a class="el" href="_alarm_8hpp_source.html#l00039">_running</a>, and <a class="el" href="_alarm_8cpp_source.html#l00088">remainingMilliseconds()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00179">Menu::alarmSequence()</a>, <a class="el" href="_alarm_test_8cpp_source.html#l00010">test_alarm()</a>, and <a class="el" href="_display_8cpp_source.html#l00787">Display::tickAlarm()</a>.</p>
 <div class="dynheader">
@@ -500,12 +501,12 @@ Here is the caller graph for this function:</div>
 <p>Checks if the alarm is currently running. </p>
 <dl class="section return"><dt>Returns</dt><dd>bool True if the alarm is running, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00130">130</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  130</span>                      {</div>
-<div class="line"><span class="lineno">  131</span> </div>
-<div class="line"><span class="lineno">  132</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_alarm.html#ad464c4de831a8aa5363431a4a1f0b5d8">_running</a>;</div>
-<div class="line"><span class="lineno">  133</span> </div>
-<div class="line"><span class="lineno">  134</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00131">131</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  131</span>                      {</div>
+<div class="line"><span class="lineno">  132</span> </div>
+<div class="line"><span class="lineno">  133</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_alarm.html#ad464c4de831a8aa5363431a4a1f0b5d8">_running</a>;</div>
+<div class="line"><span class="lineno">  134</span> </div>
+<div class="line"><span class="lineno">  135</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_alarm_8hpp_source.html#l00039">_running</a>.</p>
 
@@ -541,28 +542,28 @@ Here is the caller graph for this function:</div>
 <p>Calculates the percentage of time elapsed from start to end. </p>
 <dl class="section return"><dt>Returns</dt><dd>double The percentage of time elapsed. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00062">62</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   62</span>                             {</div>
-<div class="line"><span class="lineno">   63</span> </div>
-<div class="line"><span class="lineno">   64</span>    <span class="keyword">auto</span> totalMilliseconds = chrono::duration_cast&lt;chrono::milliseconds&gt;(<a class="code hl_variable" href="class_alarm.html#a217703cc3e557bd820255f064d458b93">_endTime</a> - <a class="code hl_variable" href="class_alarm.html#a6195c687d8393ce87c804ef6478ee1d5">_startTime</a>).count();</div>
-<div class="line"><span class="lineno">   65</span>    </div>
-<div class="line"><span class="lineno">   66</span>    <span class="keywordflow">if</span> (totalMilliseconds == 0) {</div>
-<div class="line"><span class="lineno">   67</span>        <span class="keywordflow">return</span> 100.0;</div>
-<div class="line"><span class="lineno">   68</span>    }</div>
-<div class="line"><span class="lineno">   69</span> </div>
-<div class="line"><span class="lineno">   70</span>    <span class="keyword">auto</span> now = <a class="code hl_function" href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">currentTime</a>();</div>
-<div class="line"><span class="lineno">   71</span>    <span class="keyword">auto</span> elapsedMilliseconds = chrono::duration_cast&lt;chrono::milliseconds&gt;(now - <a class="code hl_variable" href="class_alarm.html#a6195c687d8393ce87c804ef6478ee1d5">_startTime</a>).count();</div>
-<div class="line"><span class="lineno">   72</span> </div>
-<div class="line"><span class="lineno">   73</span>    <span class="keywordflow">if</span> (elapsedMilliseconds &gt;= totalMilliseconds) {</div>
-<div class="line"><span class="lineno">   74</span>        <span class="keywordflow">return</span> 100.0;</div>
-<div class="line"><span class="lineno">   75</span>    }</div>
-<div class="line"><span class="lineno">   76</span> </div>
-<div class="line"><span class="lineno">   77</span>    <span class="keywordtype">double</span> percentage = (<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(elapsedMilliseconds) / totalMilliseconds) * 100.0;</div>
-<div class="line"><span class="lineno">   78</span>    <span class="keywordflow">return</span> percentage;</div>
-<div class="line"><span class="lineno">   79</span> </div>
-<div class="line"><span class="lineno">   80</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00063">63</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>                             {</div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>    <span class="keyword">auto</span> totalMilliseconds = chrono::duration_cast&lt;chrono::milliseconds&gt;(<a class="code hl_variable" href="class_alarm.html#a217703cc3e557bd820255f064d458b93">_endTime</a> - <a class="code hl_variable" href="class_alarm.html#a6195c687d8393ce87c804ef6478ee1d5">_startTime</a>).count();</div>
+<div class="line"><span class="lineno">   66</span>    </div>
+<div class="line"><span class="lineno">   67</span>    <span class="keywordflow">if</span> (totalMilliseconds == 0) {</div>
+<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">return</span> 100.0;</div>
+<div class="line"><span class="lineno">   69</span>    }</div>
+<div class="line"><span class="lineno">   70</span> </div>
+<div class="line"><span class="lineno">   71</span>    <span class="keyword">auto</span> now = <a class="code hl_function" href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">currentTime</a>();</div>
+<div class="line"><span class="lineno">   72</span>    <span class="keyword">auto</span> elapsedMilliseconds = chrono::duration_cast&lt;chrono::milliseconds&gt;(now - <a class="code hl_variable" href="class_alarm.html#a6195c687d8393ce87c804ef6478ee1d5">_startTime</a>).count();</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>    <span class="keywordflow">if</span> (elapsedMilliseconds &gt;= totalMilliseconds) {</div>
+<div class="line"><span class="lineno">   75</span>        <span class="keywordflow">return</span> 100.0;</div>
+<div class="line"><span class="lineno">   76</span>    }</div>
+<div class="line"><span class="lineno">   77</span> </div>
+<div class="line"><span class="lineno">   78</span>    <span class="keywordtype">double</span> percentage = (<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(elapsedMilliseconds) / totalMilliseconds) * 100.0;</div>
+<div class="line"><span class="lineno">   79</span>    <span class="keywordflow">return</span> percentage;</div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_alarm_8hpp_source.html#l00042">_endTime</a>, <a class="el" href="_alarm_8hpp_source.html#l00041">_startTime</a>, and <a class="el" href="_alarm_8cpp_source.html#l00136">currentTime()</a>.</p>
+<p class="reference">References <a class="el" href="_alarm_8hpp_source.html#l00042">_endTime</a>, <a class="el" href="_alarm_8hpp_source.html#l00041">_startTime</a>, and <a class="el" href="_alarm_8cpp_source.html#l00137">currentTime()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_alarm_test_8cpp_source.html#l00010">test_alarm()</a>, and <a class="el" href="_display_8cpp_source.html#l00787">Display::tickAlarm()</a>.</p>
 <div class="dynheader">
@@ -613,18 +614,18 @@ Here is the caller graph for this function:</div>
 <p>Calculates the remaining time in milliseconds until the alarm ends. </p>
 <dl class="section return"><dt>Returns</dt><dd>int The remaining milliseconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00087">87</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   87</span>                                 {</div>
-<div class="line"><span class="lineno">   88</span> </div>
-<div class="line"><span class="lineno">   89</span>    <span class="keyword">auto</span> now = <a class="code hl_function" href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">currentTime</a>();</div>
-<div class="line"><span class="lineno">   90</span>    <span class="keyword">auto</span> ms = chrono::duration_cast&lt;chrono::milliseconds&gt;(<a class="code hl_variable" href="class_alarm.html#a217703cc3e557bd820255f064d458b93">_endTime</a> - now).count();</div>
-<div class="line"><span class="lineno">   91</span>    <span class="keywordflow">return</span> ms;</div>
-<div class="line"><span class="lineno">   92</span> </div>
-<div class="line"><span class="lineno">   93</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00088">88</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   88</span>                                 {</div>
+<div class="line"><span class="lineno">   89</span> </div>
+<div class="line"><span class="lineno">   90</span>    <span class="keyword">auto</span> now = <a class="code hl_function" href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">currentTime</a>();</div>
+<div class="line"><span class="lineno">   91</span>    <span class="keyword">auto</span> ms = chrono::duration_cast&lt;chrono::milliseconds&gt;(<a class="code hl_variable" href="class_alarm.html#a217703cc3e557bd820255f064d458b93">_endTime</a> - now).count();</div>
+<div class="line"><span class="lineno">   92</span>    <span class="keywordflow">return</span> ms;</div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_alarm_8hpp_source.html#l00042">_endTime</a>, and <a class="el" href="_alarm_8cpp_source.html#l00136">currentTime()</a>.</p>
+<p class="reference">References <a class="el" href="_alarm_8hpp_source.html#l00042">_endTime</a>, and <a class="el" href="_alarm_8cpp_source.html#l00137">currentTime()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_alarm_8cpp_source.html#l00112">isDone()</a>, and <a class="el" href="_alarm_test_8cpp_source.html#l00010">test_alarm()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_alarm_8cpp_source.html#l00113">isDone()</a>, and <a class="el" href="_alarm_test_8cpp_source.html#l00010">test_alarm()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -689,20 +690,20 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00045">45</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   45</span>                                                                 {</div>
-<div class="line"><span class="lineno">   46</span> </div>
-<div class="line"><span class="lineno">   47</span>    time_t <a class="code hl_function" href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">currentTime</a> = chrono::system_clock::to_time_t(t);</div>
-<div class="line"><span class="lineno">   48</span>    tm* localTime = localtime(&amp;<a class="code hl_function" href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">currentTime</a>);</div>
-<div class="line"><span class="lineno">   49</span> </div>
-<div class="line"><span class="lineno">   50</span>    stringstream ss;</div>
-<div class="line"><span class="lineno">   51</span>    ss &lt;&lt; setw(2) &lt;&lt; setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; localTime-&gt;tm_hour &lt;&lt; <span class="stringliteral">&quot;:&quot;</span></div>
-<div class="line"><span class="lineno">   52</span>       &lt;&lt; setw(2) &lt;&lt; setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; localTime-&gt;tm_min;</div>
-<div class="line"><span class="lineno">   53</span> </div>
-<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">return</span> ss.str();</div>
-<div class="line"><span class="lineno">   55</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00046">46</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>                                                                 {</div>
+<div class="line"><span class="lineno">   47</span> </div>
+<div class="line"><span class="lineno">   48</span>    time_t <a class="code hl_function" href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">currentTime</a> = chrono::system_clock::to_time_t(t);</div>
+<div class="line"><span class="lineno">   49</span>    tm* localTime = localtime(&amp;<a class="code hl_function" href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">currentTime</a>);</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>    stringstream ss;</div>
+<div class="line"><span class="lineno">   52</span>    ss &lt;&lt; setw(2) &lt;&lt; setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; localTime-&gt;tm_hour &lt;&lt; <span class="stringliteral">&quot;:&quot;</span></div>
+<div class="line"><span class="lineno">   53</span>       &lt;&lt; setw(2) &lt;&lt; setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; localTime-&gt;tm_min;</div>
+<div class="line"><span class="lineno">   54</span> </div>
+<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">return</span> ss.str();</div>
+<div class="line"><span class="lineno">   56</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_alarm_8cpp_source.html#l00136">currentTime()</a>.</p>
+<p class="reference">References <a class="el" href="_alarm_8cpp_source.html#l00137">currentTime()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_alarm_test_8cpp_source.html#l00010">test_alarm()</a>, and <a class="el" href="_display_8cpp_source.html#l00787">Display::tickAlarm()</a>.</p>
 <div class="dynheader">
@@ -758,7 +759,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_alarm_8hpp_source.html#l00042">42</a> of file <a class="el" href="_alarm_8hpp_source.html">Alarm.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_alarm_8cpp_source.html#l00010">Alarm()</a>, <a class="el" href="_alarm_8cpp_source.html#l00101">getEndTime()</a>, <a class="el" href="_alarm_8cpp_source.html#l00062">percentElapsed()</a>, and <a class="el" href="_alarm_8cpp_source.html#l00087">remainingMilliseconds()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_alarm_8cpp_source.html#l00010">Alarm()</a>, <a class="el" href="_alarm_8cpp_source.html#l00102">getEndTime()</a>, <a class="el" href="_alarm_8cpp_source.html#l00063">percentElapsed()</a>, and <a class="el" href="_alarm_8cpp_source.html#l00088">remainingMilliseconds()</a>.</p>
 
 </div>
 </div>
@@ -784,7 +785,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_alarm_8hpp_source.html#l00037">37</a> of file <a class="el" href="_alarm_8hpp_source.html">Alarm.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_alarm_8cpp_source.html#l00112">isDone()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_alarm_8cpp_source.html#l00010">Alarm()</a>, and <a class="el" href="_alarm_8cpp_source.html#l00113">isDone()</a>.</p>
 
 </div>
 </div>
@@ -810,7 +811,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_alarm_8hpp_source.html#l00039">39</a> of file <a class="el" href="_alarm_8hpp_source.html">Alarm.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_alarm_8cpp_source.html#l00010">Alarm()</a>, <a class="el" href="_alarm_8cpp_source.html#l00112">isDone()</a>, and <a class="el" href="_alarm_8cpp_source.html#l00130">isRunning()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_alarm_8cpp_source.html#l00010">Alarm()</a>, <a class="el" href="_alarm_8cpp_source.html#l00113">isDone()</a>, and <a class="el" href="_alarm_8cpp_source.html#l00131">isRunning()</a>.</p>
 
 </div>
 </div>
@@ -836,7 +837,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_alarm_8hpp_source.html#l00041">41</a> of file <a class="el" href="_alarm_8hpp_source.html">Alarm.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_alarm_8cpp_source.html#l00010">Alarm()</a>, <a class="el" href="_alarm_8cpp_source.html#l00095">getStartTime()</a>, and <a class="el" href="_alarm_8cpp_source.html#l00062">percentElapsed()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_alarm_8cpp_source.html#l00010">Alarm()</a>, <a class="el" href="_alarm_8cpp_source.html#l00096">getStartTime()</a>, and <a class="el" href="_alarm_8cpp_source.html#l00063">percentElapsed()</a>.</p>
 
 </div>
 </div>
@@ -847,7 +848,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 19 2024 11:53:31 for Tempo by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+Generated on Thu Sep 19 2024 12:09:04 for Tempo by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
 </small></address>
 </body>
 </html>

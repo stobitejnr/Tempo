@@ -7,7 +7,7 @@
 <area shape="rect" id="node6" href="$class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62" title="Clears the terminal screen." alt="" coords="1140,953,1295,978"/>
 <area shape="rect" id="node11" href="$class_display.html#abbc05f4af18fc8665a8022e795c2d574" title=" " alt="" coords="1395,622,1551,647"/>
 <area shape="rect" id="node13" href="$class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="1677,773,1817,798"/>
-<area shape="rect" id="node15" href="$class_display.html#a83ed7e4a6928b93390e552ac6dbc9007" title=" " alt="" coords="1401,573,1545,598"/>
+<area shape="rect" id="node15" href="$class_display.html#adb4502abd3d3dd9ca70a97c1f3d66ad7" title=" " alt="" coords="1401,573,1545,598"/>
 <area shape="rect" id="node29" href="$class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452" title="Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection." alt="" coords="698,497,854,522"/>
 <area shape="rect" id="node30" href="$class_menu.html#aca5927a856a8d20d738323c2261cc9e4" title="Runs the stopwatch sequence, allowing the user to start, stop, and record splits." alt="" coords="429,1231,625,1257"/>
 <area shape="rect" id="node44" href="$class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title="Runs the timer sequence, allowing the user to set and interact with a timer." alt="" coords="445,877,609,902"/>

@@ -1,7 +1,7 @@
 var searchData=
 [
   ['setcursor_0',['setCursor',['../class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3',1,'Display']]],
-  ['setformat_1',['setFormat',['../class_display.html#a83ed7e4a6928b93390e552ac6dbc9007',1,'Display']]],
+  ['setformat_1',['setFormat',['../class_display.html#adb4502abd3d3dd9ca70a97c1f3d66ad7',1,'Display']]],
   ['setsplash_2',['setSplash',['../class_display.html#a3a0e77e68157e55d67ac3f28dffdd00c',1,'Display']]],
   ['shownotification_3',['ShowNotification',['../_notification_8cpp.html#ad23fe8f5aaf1d0460387522c8d85cdb2',1,'Notification.cpp']]],
   ['stagealarmbar_4',['stageAlarmBar',['../class_display.html#ab750543d9a82d7e90b262a772b195c1f',1,'Display']]],

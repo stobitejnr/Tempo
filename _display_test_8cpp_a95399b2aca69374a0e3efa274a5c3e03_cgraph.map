@@ -10,7 +10,7 @@
 <area shape="rect" id="node10" href="$class_display.html#a3480427024243711ee66efc51ddf0fa3" title="Prints controls to the terminal." alt="" coords="677,255,840,280"/>
 <area shape="rect" id="node11" href="$class_display.html#a62d8435627ea69fbccaef4cef32d785d" title="Prints the splash screen to the terminal." alt="" coords="436,356,587,381"/>
 <area shape="rect" id="node13" href="$class_display.html#ac4f2f5445af6a65554ad9646cc27f3cc" title="Prints the stopwatch splits to the terminal." alt="" coords="687,508,831,533"/>
-<area shape="rect" id="node14" href="$class_display.html#a83ed7e4a6928b93390e552ac6dbc9007" title=" " alt="" coords="439,457,583,483"/>
+<area shape="rect" id="node14" href="$class_display.html#adb4502abd3d3dd9ca70a97c1f3d66ad7" title=" " alt="" coords="439,457,583,483"/>
 <area shape="rect" id="node15" href="$class_display.html#aa68e271db8f91c18ae2c1e5e38d0f1ee" title="Stages the controls for the stopwatch." alt="" coords="393,507,629,532"/>
 <area shape="rect" id="node16" href="$class_display.html#ac878f4b1987c4e33c173478fd5bbf34c" title="Stages the stopwatch display with provided time values." alt="" coords="396,556,627,581"/>
 <area shape="rect" id="node17" href="$class_display.html#a8b0e743648629b44c19cb59b1cbe467e" title="Stages the splits block to be displayed." alt="" coords="402,605,621,631"/>
