@@ -1,4 +1,4 @@
 <map id="Alarm::remainingMilliseconds" name="Alarm::remainingMilliseconds">
 <area shape="rect" id="node1" title="Calculates the remaining time in milliseconds until the alarm ends." alt="" coords="5,5,221,31"/>
-<area shape="rect" id="node2" href="$class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f" title=" " alt="" coords="269,5,417,31"/>
+<area shape="rect" id="node2" href="$class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f" title="Returns the current system time." alt="" coords="269,5,417,31"/>
 </map>

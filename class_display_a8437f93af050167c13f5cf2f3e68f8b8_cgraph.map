@@ -1,9 +1,9 @@
 <map id="Display::tickAlarm" name="Display::tickAlarm">
 <area shape="rect" id="node1" title="Updates the display based on the state of the provided Alarm object." alt="" coords="5,332,147,357"/>
 <area shape="rect" id="node2" href="$class_display.html#abbc05f4af18fc8665a8022e795c2d574" title=" " alt="" coords="220,5,376,31"/>
-<area shape="rect" id="node3" href="$class_alarm.html#a4e43d8e48846d1911f5a691c129b731a" title=" " alt="" coords="225,55,371,80"/>
-<area shape="rect" id="node4" href="$class_alarm.html#a2e1cee43509c402293feeebd70c80442" title="Checks if the alarm has completed." alt="" coords="241,104,355,129"/>
-<area shape="rect" id="node7" href="$class_alarm.html#aee08b5d6eafe7e5adee07f9c30dc3fce" title="Calculates the percentage of time elapsed from start to end." alt="" coords="473,155,642,180"/>
+<area shape="rect" id="node3" href="$class_alarm.html#a4e43d8e48846d1911f5a691c129b731a" title="Returns the alarm&#39;s end time." alt="" coords="225,55,371,80"/>
+<area shape="rect" id="node4" href="$class_alarm.html#a2e1cee43509c402293feeebd70c80442" title="Checks if the alarm has finished." alt="" coords="241,104,355,129"/>
+<area shape="rect" id="node7" href="$class_alarm.html#aee08b5d6eafe7e5adee07f9c30dc3fce" title="Calculates the percentage of time that has elapsed from start to end." alt="" coords="473,155,642,180"/>
 <area shape="rect" id="node8" href="$class_display.html#aab9a518037074ce68da2a7792771908d" title="Prints ASCII art to the terminal." alt="" coords="488,307,627,332"/>
 <area shape="rect" id="node10" href="$class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="717,408,857,433"/>
 <area shape="rect" id="node11" href="$class_display.html#a034871a688ea9c2cf5801d120b0cfcf6" title="Prints the progress bar to the terminal." alt="" coords="492,357,623,383"/>
@@ -13,9 +13,9 @@
 <area shape="rect" id="node16" href="$class_display.html#ab750543d9a82d7e90b262a772b195c1f" title="Creates a visual progress bar for the alarm based on the percentage completed." alt="" coords="211,557,385,583"/>
 <area shape="rect" id="node17" href="$class_display.html#ae6055127511e098a4ce8ea10d0ca2e43" title="Stages the controls for the alarm." alt="" coords="195,607,401,632"/>
 <area shape="rect" id="node18" href="$class_display.html#a90235f60d9b1239198ceca9e24df2e33" title="Stages the display for the alarm." alt="" coords="197,656,399,681"/>
-<area shape="rect" id="node19" href="$class_alarm.html#a493f5bd8972a4c5769574701f9d92067" title=" " alt="" coords="482,204,633,229"/>
+<area shape="rect" id="node19" href="$class_alarm.html#a493f5bd8972a4c5769574701f9d92067" title="Converts a given time point to a string format (HH:MM)." alt="" coords="482,204,633,229"/>
 <area shape="rect" id="node5" href="$class_alarm.html#a8f29e4753be03a7f68c22d2697e65a43" title="Calculates the remaining time in milliseconds until the alarm ends." alt="" coords="449,104,665,129"/>
-<area shape="rect" id="node6" href="$class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f" title=" " alt="" coords="713,155,861,180"/>
+<area shape="rect" id="node6" href="$class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f" title="Returns the current system time." alt="" coords="713,155,861,180"/>
 <area shape="rect" id="node9" href="$class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="909,383,1049,408"/>
 <area shape="rect" id="node14" href="$class_display.html#aaa0ffb7318a45caa0b74d3d439e623f0" title="Clears a specific line in the terminal." alt="" coords="489,509,626,535"/>
 </map>

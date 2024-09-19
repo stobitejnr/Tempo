@@ -1,4 +1,4 @@
 <map id="Alarm::percentElapsed" name="Alarm::percentElapsed">
-<area shape="rect" id="node1" title="Calculates the percentage of time elapsed from start to end." alt="" coords="5,5,175,31"/>
-<area shape="rect" id="node2" href="$class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f" title=" " alt="" coords="223,5,371,31"/>
+<area shape="rect" id="node1" title="Calculates the percentage of time that has elapsed from start to end." alt="" coords="5,5,175,31"/>
+<area shape="rect" id="node2" href="$class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f" title="Returns the current system time." alt="" coords="223,5,371,31"/>
 </map>

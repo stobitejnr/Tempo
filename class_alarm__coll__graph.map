@@ -1,5 +1,5 @@
 <map id="Alarm" name="Alarm">
-<area shape="rect" id="node1" title=" " alt="" coords="183,123,245,148"/>
+<area shape="rect" id="node1" title="A class to manage alarms with time&#45;based triggers." alt="" coords="183,123,245,148"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,13,44,38"/>
 <area shape="rect" id="node3" title=" " alt="" coords="189,13,239,38"/>
 <area shape="rect" id="node4" title=" " alt="" coords="264,5,415,45"/>

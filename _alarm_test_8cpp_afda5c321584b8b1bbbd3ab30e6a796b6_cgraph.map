@@ -1,10 +1,10 @@
 <map id="test_alarm" name="test_alarm">
 <area shape="rect" id="node1" title=" " alt="" coords="5,131,97,156"/>
-<area shape="rect" id="node2" href="$class_alarm.html#a4e43d8e48846d1911f5a691c129b731a" title=" " alt="" coords="145,5,292,31"/>
-<area shape="rect" id="node3" href="$class_alarm.html#a2e1cee43509c402293feeebd70c80442" title="Checks if the alarm has completed." alt="" coords="161,55,276,80"/>
+<area shape="rect" id="node2" href="$class_alarm.html#a4e43d8e48846d1911f5a691c129b731a" title="Returns the alarm&#39;s end time." alt="" coords="145,5,292,31"/>
+<area shape="rect" id="node3" href="$class_alarm.html#a2e1cee43509c402293feeebd70c80442" title="Checks if the alarm has finished." alt="" coords="161,55,276,80"/>
 <area shape="rect" id="node4" href="$class_alarm.html#a8f29e4753be03a7f68c22d2697e65a43" title="Calculates the remaining time in milliseconds until the alarm ends." alt="" coords="340,105,556,131"/>
 <area shape="rect" id="node6" href="$class_alarm.html#a2fd458f8f2e6980b8a40d2e04d90e684" title="Checks if the alarm is currently running." alt="" coords="152,156,285,181"/>
-<area shape="rect" id="node7" href="$class_alarm.html#aee08b5d6eafe7e5adee07f9c30dc3fce" title="Calculates the percentage of time elapsed from start to end." alt="" coords="363,207,533,232"/>
-<area shape="rect" id="node8" href="$class_alarm.html#a493f5bd8972a4c5769574701f9d92067" title=" " alt="" coords="373,256,523,281"/>
-<area shape="rect" id="node5" href="$class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f" title=" " alt="" coords="604,207,752,232"/>
+<area shape="rect" id="node7" href="$class_alarm.html#aee08b5d6eafe7e5adee07f9c30dc3fce" title="Calculates the percentage of time that has elapsed from start to end." alt="" coords="363,207,533,232"/>
+<area shape="rect" id="node8" href="$class_alarm.html#a493f5bd8972a4c5769574701f9d92067" title="Converts a given time point to a string format (HH:MM)." alt="" coords="373,256,523,281"/>
+<area shape="rect" id="node5" href="$class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f" title="Returns the current system time." alt="" coords="604,207,752,232"/>
 </map>

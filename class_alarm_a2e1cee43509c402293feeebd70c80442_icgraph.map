@@ -1,5 +1,5 @@
 <map id="Alarm::isDone" name="Alarm::isDone">
-<area shape="rect" id="node1" title="Checks if the alarm has completed." alt="" coords="833,56,948,81"/>
+<area shape="rect" id="node1" title="Checks if the alarm has finished." alt="" coords="833,56,948,81"/>
 <area shape="rect" id="node2" href="$class_menu.html#a4663bff1fca54f0230ff0e20b6ae9ae8" title="Runs the alarm sequence, allowing the user to set and interact with an alarm." alt="" coords="429,57,596,83"/>
 <area shape="rect" id="node7" href="$_alarm_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6" title=" " alt="" coords="669,5,761,31"/>
 <area shape="rect" id="node9" href="$class_display.html#a8437f93af050167c13f5cf2f3e68f8b8" title="Updates the display based on the state of the provided Alarm object." alt="" coords="644,107,785,132"/>
