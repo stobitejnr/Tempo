@@ -68,13 +68,14 @@ A versatile command-line application that allows users to create and manage time
 3. Follow the on-screen instructions to control each feature.
 
 ## Requirements
-
 - C++ compiler with C++11 support
 - Windows operating system (due to use of Windows-specific libraries)
 
 ## Future Enhancements
-
-- Add sound/visual notifications
+- Add Windows notifications for completed timers and alarms
+- Add sound notifications
+- Add options menu with customizable fonts
+- Expand platform support beyond Windows
 
 ## Contributions
 
