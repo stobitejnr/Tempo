@@ -13,6 +13,7 @@ CONSTRUCTOR
  * @brief Constructs a Menu object and initializes its state.
  */
 Menu::Menu(bool testing){ 
+    srand(static_cast<unsigned int>(std::chrono::high_resolution_clock::now().time_since_epoch().count()));
     _display = Display();
     _run = true;
     _testing = testing;
@@ -22,16 +23,24 @@ void Menu::start(){
     _display.clearScreen();
 
     string lBuffer = "                ";
+    cout << "\033[1;36m";
 
     for (string line : _logoArt){
         cout << line << endl;
     }
+
+    cout << "\033[0m";
+    cout << "\033[37m";
 
     cout << endl;
 
     for (string line : _credits){
         cout << lBuffer << line << endl;
     }
+    cout << "\033[0m";
+
+    _display.setCursor(1,1);
+    
     waitForInput();
 }
 
@@ -50,14 +59,21 @@ void Menu::mainMenu() {
 
     _display.clearScreen();
 
+    cout << "\033[1;36m";
+
+
     for (string line : _menuArt){
         cout << "" << line << endl;
     }
 
-    cout << "1: Timer\n";
-    cout << "2: Stopwatch\n";
-    cout << "3: Alarm (24 hour format)\n";
-    cout << "Q: Quit Program\n";
+    cout << "\033[0m";
+    cout << "\033[1;37m";
+
+    for (string line : _menuOptions){
+        cout << "" << line << endl;
+    }
+
+    cout << "\033[0m";
 
     if(_testing){
         timerSequence();
@@ -65,6 +81,8 @@ void Menu::mainMenu() {
         alarmSequence();
         return;
     }
+    
+    _display.setCursor(1,1);
     
     char in = getMenuInput();
     // ENTER TIMER SEQUENCE
@@ -84,6 +102,7 @@ void Menu::mainMenu() {
 
     // QUIT PROGRAM
     else if(in == 'q'){
+        _display.clearScreen();
         return;
     }
     
@@ -94,9 +113,9 @@ void Menu::mainMenu() {
 void Menu::timerSequence(){
     _display.clearScreen();
 
-    Timer timer = createTimer();
-
     bool run = true;
+
+    Timer timer = createTimer(run);
 
     _display.clearScreen();
 
@@ -148,9 +167,9 @@ void Menu::stopwatchSequence(){
 void Menu::alarmSequence(){
     _display.clearScreen();
 
-    Alarm alarm = createAlarm();
-
     bool run = true;
+
+    Alarm alarm = createAlarm(run);
 
     _display.clearScreen();
 
@@ -172,7 +191,7 @@ void Menu::alarmSequence(){
     }
 }
 
-Timer Menu::createTimer(){
+Timer Menu::createTimer(bool& run){
     int h = 0;
     int m = 0;
     int s = 0;
@@ -191,8 +210,11 @@ Timer Menu::createTimer(){
         if(_testing){
             ch = '1';
         }
-        else{
+        else if(_kbhit()){
             ch = _getch();
+        }
+        else{
+            ch = 0;
         }
 
         if (ch == 13 && (h || m || s)) {
@@ -203,6 +225,11 @@ Timer Menu::createTimer(){
         } 
         else if (ch == 8) { 
             input = '0' + input.substr(0, 5);
+        }
+
+        if(ch == 'q' || ch == 'Q'){
+            run = false;
+            return Timer(0,0,0);
         }
 
         h = stoi(input.substr(0, 2));
@@ -226,7 +253,7 @@ Timer Menu::createTimer(){
     return timer;
 }
 
-Alarm Menu::createAlarm(){
+Alarm Menu::createAlarm(bool& run){
     int h = 0;
     int m = 0;
 
@@ -243,8 +270,11 @@ Alarm Menu::createAlarm(){
         if(_testing){
             ch = '1';
         }
-        else{
+        else if(_kbhit()){
             ch = _getch();
+        }
+        else{
+            ch = 0;
         }
 
         if (ch == 13 && (h || m)) {
@@ -257,26 +287,18 @@ Alarm Menu::createAlarm(){
             input = '0' + input.substr(0, 3);
         }
 
+        if(ch == 'q' || ch == 'Q'){
+            run = false;
+            return Alarm("00:00");
+        }
+
         h = stoi(input.substr(0, 2));
         m = stoi(input.substr(2, 2));
-
-        /*
-        // Ensure the hours are between 0 and 23, and minutes are between 0 and 59
-        if (h > 23) {
-            h = 23;  // Limit the hours to 23
-            input = "23" + input.substr(2, 2);  // Update the input to reflect this
-        }
-
-        if (m > 59) {
-            m = 59;  // Limit the minutes to 59
-            input = input.substr(0, 2) + "59";  // Update the input to reflect this
-        }
-        */
 
         to_print = (h < 10 ? "0" : "") + to_string(h) + ":" 
                  + (m < 10 ? "0" : "") + to_string(m);
 
-        _display.tickTimerSetup(to_print);
+        _display.tickAlarmSetup(to_print);
         
         wait(0.01);
 
@@ -355,7 +377,7 @@ void Menu::checkTimerInput(Timer& timer, bool& run){
             case 'a':
                 _display.clearScreen();
                 _display.clearSplash();
-                timer = createTimer();
+                timer = createTimer(run);
                 break;
             case 'Q':
             case 'q':
@@ -435,7 +457,7 @@ void Menu::checkAlarmInput(Alarm& alarm, bool& run){
             case 'a':
                 _display.clearScreen();
                 _display.clearSplash();
-                alarm = createAlarm();
+                alarm = createAlarm(run);
                 break;
             case 'Q':
             case 'q':
@@ -473,6 +495,7 @@ char Menu::getMenuInput(){
                     return '2';
                 case '3':
                     return '3';
+                case 'Q':
                 case 'q':
                     return 'q';
                 default:

@@ -424,6 +424,32 @@ void Display::stageStopwatchControls(){
     _controlBuffer+=("\n");
 }
 
+void Display::stageTimerSetupControls(){
+    _controlBuffer+=("\n");
+    _controlBuffer+=("           -=| ENTER THE LENGTH FOR YOUR TIMER |=-         \n");
+    _controlBuffer+=("===========================================================\n");
+    _controlBuffer+=("Enter: Start Timer | Backspace: Delete Digit | Q: Main Menu\n");
+    _controlBuffer+=("===========================================================\n");
+    _controlBuffer+=("\n");
+}
+
+void Display::stageAlarmSetupControls(){
+    _controlBuffer+=("\n");
+    _controlBuffer+=("        -=| ENTER THE ALARM TIME IN 24HR FORMAT |=-      \n");
+    _controlBuffer+=("=========================================================\n");
+    _controlBuffer+=("Enter: Set Alarm | Backspace: Delete Digit | Q: Main Menu\n");
+    _controlBuffer+=("=========================================================\n");
+    _controlBuffer+=("\n");
+}
+
+void Display::stageAlarmControls(){
+    _controlBuffer+=("\n");
+    _controlBuffer+=("===========================\n");
+    _controlBuffer+=("A: New Alarm | Q: Main Menu\n");
+    _controlBuffer+=("===========================\n");
+    _controlBuffer+=("\n");
+}
+
 /**
  * @brief Stages the splits block to be displayed.
  */
@@ -587,6 +613,11 @@ void Display::printSplits(int row)
 
 void Display::tickTimerSetup(string to_print)
 {
+    auto now = std::chrono::steady_clock::now();
+    auto millis = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
+
+    bool showBar = ((millis / 500) % 2 == 0);
+
     for (int i = 0; i < ASCII_HEIGHT; i++)
     {
         string line;
@@ -603,18 +634,31 @@ void Display::tickTimerSetup(string to_print)
                 line += PADDING;
             }
         }
+        if(showBar){
+            line += " |";
+        }
+        else{
+            line += "   ";
+        }
         _asciiWidth = line.length(); // Update ASCII width
         _asciiBuffer += (line + "\n");
     }
+    stageTimerSetupControls();
 
     printAscii(1);
+    printControls(10);
 
-    setCursor(10,1);
+    setCursor(1,1);
 
 }
 
 void Display::tickAlarmSetup(string to_print)
 {
+    auto now = std::chrono::steady_clock::now();
+    auto millis = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
+
+    bool showBar = ((millis / 500) % 2 == 0);
+
     for (int i = 0; i < ASCII_HEIGHT; i++)
     {
         string line;
@@ -631,13 +675,22 @@ void Display::tickAlarmSetup(string to_print)
                 line += PADDING;
             }
         }
+        if(showBar){
+            line += " |";
+        }
+        else{
+            line += "   ";
+        }
         _asciiWidth = line.length(); // Update ASCII width
         _asciiBuffer += (line + "\n");
     }
+    stageAlarmSetupControls();
+
 
     printAscii(1);
+    printControls(10);
 
-    setCursor(10,1);
+    setCursor(1,1);
 
 }
 
@@ -673,7 +726,7 @@ void Display::tickTimer(Timer &timer)
  * @param stopwatch The Stopwatch object to get the current time from.
  */
 void Display::tickStopwatch(Stopwatch &stopwatch){
-    
+
     int milliseconds = stopwatch.currentMilliseconds();
 
     int hours = milliseconds / 3600000;
@@ -702,12 +755,14 @@ void Display::tickAlarm(Alarm &alarm){
 
     stageAlarmDisplay(time);
     stageAlarmBar(alarm.percentElapsed());
+    stageAlarmControls();
 
     printAscii(1);
     printBar(10);
-    printSplash(14);
+    printControls(13);
+    printSplash(18);
     
-    setCursor(17,1);
+    setCursor(20,1);
 
     return;
 
