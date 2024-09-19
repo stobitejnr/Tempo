@@ -454,12 +454,10 @@ void Display::stageAlarmControls(){
  * @brief Stages the splits block to be displayed.
  */
 void Display::stageStopwatchSplits(vector<int> splits){
-    if(!splits.empty()){
-        _splitBuffer+= "-+=| SPLITS |=+-\n";
-        int i;
-        if (splits.size()>10){ i = splits.size()-10; }
-        else { i = 0; }
-        for (int i = 0; i < splits.size(); ++i) {
+    if (!splits.empty()) {
+        _splitBuffer += "-+=| SPLITS |=+-\n";
+        int startIdx = (splits.size() > 10) ? splits.size() - 10 : 0;
+        for (int i = startIdx; i < splits.size(); ++i) {
 
             int milliseconds = splits.at(i);
             int hours = milliseconds / 3600000;
@@ -472,63 +470,45 @@ void Display::stageStopwatchSplits(vector<int> splits){
             string to_print = "";
 
             // Only show hours if there are more than 0
-            if (hours != 0)
-            {
+            if (hours != 0) {
                 to_print += to_string(hours) + ":";
             }
 
             // Show minutes with a leading zero if needed
-            if (hours)
-            {
-                if (int(minutes / 10) != 0)
-                {
+            if (hours) {
+                if (int(minutes / 10) != 0) {
                     to_print += to_string(minutes) + ":";
-                }
-                else
-                {
+                } else {
                     to_print += "0" + to_string(minutes) + ":";
                 }
-            }
-            else if (minutes)
-            {
+            } else if (minutes) {
                 to_print += to_string(minutes) + ":";
             }
 
             // Show seconds with a leading zero if needed
-            if (hours || minutes)
-            {
-                if (int(seconds / 10) != 0)
-                {
+            if (hours || minutes) {
+                if (int(seconds / 10) != 0) {
                     to_print += to_string(seconds);
-                }
-                else
-                {
+                } else {
                     to_print += "0" + to_string(seconds);
                 }
-            }
-            else
-            {
+            } else {
                 to_print += to_string(seconds);
             }
 
             // Show hundredths of a second if there are no hours
-            if (hours == 0)
-            {
+            if (hours == 0) {
                 to_print += ".";
-                if (int(hundredths / 10) != 0)
-                {
+                if (int(hundredths / 10) != 0) {
                     to_print += to_string(hundredths);
-                }
-                else
-                {
+                } else {
                     to_print += "0" + to_string(hundredths);
                 }
             }
-            string fullprint = "Split " + to_string(i+1) + ": " + to_print + "\n";
+            string fullprint = "Split " + to_string(i + 1) + ": " + to_print + "\n";
             _splitBuffer += fullprint;
         }
-    }
-    else{
+    } else {
         _splitBuffer = "";
     }
 }
