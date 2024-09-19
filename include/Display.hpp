@@ -151,7 +151,7 @@ public:
      */
     void clearScreen();
 
-    void setFormat(string code);
+    void setFormat(const std::string& code);
 
     void clearFormat();
 
