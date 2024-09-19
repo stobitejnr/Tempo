@@ -459,7 +459,7 @@ void Display::stageStopwatchSplits(vector<int> splits){
         int i;
         if (splits.size()>10){ i = splits.size()-10; }
         else { i = 0; }
-        for(i; i<splits.size(); ++i){
+        for (int i = 0; i < splits.size(); ++i) {
 
             int milliseconds = splits.at(i);
             int hours = milliseconds / 3600000;
