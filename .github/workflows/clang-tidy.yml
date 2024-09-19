@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - Timer-Updates
   pull_request:
     branches:
       - main
@@ -16,8 +17,35 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install Clang-Tidy
-        run: choco install llvm
+      - name: Install Clang-Tidy and CMake
+        run: |
+          choco install llvm
+          choco install cmake
 
-      - name: Run Clang-Tidy
-        run: clang-tidy src/*.cpp -- -Iinclude
+      - name: Generate Compilation Database
+        run: |
+          mkdir build
+          cd build
+          cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_CXX_STANDARD=17 ..
+        shell: powershell
+
+      - name: Run Clang-Tidy and Check for Warnings
+        run: |
+          $ErrorActionPreference = "Continue"
+          $output = & clang-tidy.exe -p build --extra-arg=-std=c++17 $(Get-ChildItem -Recurse -Filter *.cpp | Select-Object -ExpandProperty FullName) 2>&1
+          $output | Out-File -FilePath clang-tidy-output.txt
+          if ($output -match "warning:" -or $output -match "error:") {
+            Write-Output "Clang-Tidy found issues:"
+            Get-Content clang-tidy-output.txt
+            exit 1
+          } else {
+            Write-Output "No Clang-Tidy issues found."
+          }
+        shell: powershell
+
+      - name: Upload Clang-Tidy Results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: clang-tidy-results
+          path: clang-tidy-output.txt

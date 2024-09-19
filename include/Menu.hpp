@@ -70,6 +70,9 @@ public:
      */
     void checkStopwatchInput(Stopwatch &stopwatch, bool &run);
 
+
+    void checkAlarmInput(Alarm& alarm, bool& run);
+
     /**
      * @brief Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm.
      *
@@ -87,7 +90,9 @@ public:
 
     void alarmSequence();
 
-    Timer createTimer();
+    Timer createTimer(bool& run);
+
+    Alarm createAlarm(bool& run);
 
     void printTimerInput(int, int ,int);
 
@@ -113,7 +118,7 @@ private:
 
     vector<string> _credits = {
         "-------------------------------------",
-        "             Tempo v1.0              ",
+        "             Tempo v0.1              ",
         "-------------------------------------",
         "    A lightweight timer, stopwatch,",
         "       and alarm terminal app.",
@@ -129,13 +134,30 @@ private:
     };
 
     vector<string> _menuArt = {
-    "    __  ___      _          __  ___                ",
-    "   /  |/  /___ _(_)___     /  |/  /__  ____  __  __",
-    "  / /|_/ / __ `/ / __ \\   / /|_/ / _ \\/ __ \\/ / / /",
-    " / /  / / /_/ / / / / /  / /  / /  __/ / / / /_/ / ",
-    "/_/  /_/\\__,_/_/_/ /_/  /_/  /_/\\___/_/ /_/\\____/  ",
-    "=================================================="
-    };
+"             ___                 _            ",
+" |\\/|   /\\    |   |\\ |    |\\/|  |_  |\\ |  | | ",
+" |  |  /--\\  _|_  | \\|    |  |  |_  | \\|  |_| ",
+"________________________________________________"
+};
+
+    vector<string> _menuOptions = {
+"          ___  ___         _   _                         ",
+" /|  o     |    |   |\\/|  |_  |_)                        ",
+"  |  o     |   _|_  |  |  |_  | \\                        ",
+"                                                         ",
+" _         __  ___   _    _                 ___   _      ",
+"  )  o    (_    |   / \\  |_)  \\    /   /\\    |   /   |_| ",
+" /_  o    __)   |   \\_/  |     \\/\\/   /--\\   |   \\_  | | ",
+"                                                         ",
+" _                         _                             ",
+" _)  o     /\\   |    /\\   |_)  |\\/|                      ",
+" _)  o    /--\\  |_  /--\\  | \\  |  |                      ",
+"                                                         ",
+" _         _        ___  ___                              ",
+"/ \\  o    / \\  | |   |    |                               ",
+"\\_X  o    \\_X  |_|  _|_   |                               ",
+"                                                         "
+};
 
     vector<string> _stopMessages = {
         "EXACTLY ON THE DOT! YOU MUST BE A TIME WIZARD.",

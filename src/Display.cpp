@@ -27,7 +27,7 @@ Display::Display()
     _oldSplash = "";
     _oldSplits = "";
 
-    _fontName = "font1";
+    _font = "font1";
 
     _asciiWidth = 0;
 }
@@ -163,6 +163,75 @@ void Display::stageTimerDisplay(int hours, int minutes, int seconds, int tenths)
 }
 
 /**
+ * @brief Converts the alarm time into an ASCII representation and stages it for display.
+ * @param time The alarm time string in "HH:MM" format.
+ */
+void Display::stageAlarmDisplay(string time){
+
+    string to_print = "";
+
+    int hours = stoi(time.substr(0,2));
+    int minutes = stoi(time.substr(3,2));
+
+    // Determine AM/PM and convert 24-hour format to 12-hour format
+    string period = (hours >= 12) ? "pm" : "am";
+    hours = hours % 12; // Convert 24-hour to 12-hour format
+    if (hours == 0) { hours = 12; } // Handle the case where hour is 0 (midnight or noon)
+
+    to_print += to_string(hours) + ":";
+
+    // Add leading zero to minutes if needed
+    if (int(minutes / 10) != 0)
+    {
+        to_print += to_string(minutes);
+    }
+    else
+    {
+        to_print += "0" + to_string(minutes);
+    }
+
+    // Add " am" or " pm"
+    to_print += period;
+
+
+    // Build the ASCII art for the alarm display
+    for (int i = 0; i < ASCII_HEIGHT; i++)
+    {
+        string line;
+        for (char ch : to_print)
+        {
+            if (ch == ':')
+            {
+                line += font1.at(10)[i];
+                line += PADDING;
+            }
+            else if (ch == 'a')
+            {
+                line += font1.at(12)[i];
+                line += PADDING;
+            }
+            else if (ch == 'p')
+            {
+                line += font1.at(13)[i];
+                line += PADDING;
+            }
+            else if (ch == 'm')
+            {
+                line += font1.at(14)[i];
+                line += PADDING;
+            }
+            else
+            {
+                line += font1.at(ch - '0')[i];
+                line += PADDING;
+            }
+        }
+        _asciiWidth = line.length();
+        _asciiBuffer += (line + "\n");
+    }
+}
+
+/**
  * @brief Creates a visual progress bar for the timer based on the percentage completed.
  * @param percentage The percentage of completion.
  */
@@ -203,6 +272,47 @@ void Display::stageTimerBar(double percentage)
 }
 
 /**
+ * @brief Creates a visual progress bar for the alarm based on the percentage completed.
+ * @param percentage The percentage of completion.
+ */
+void Display::stageAlarmBar(double percentage)
+{
+    int width = _asciiWidth - 2;
+    int filled = (int)((percentage / 100) * width);
+
+    string border = "";
+
+    // Build the top and bottom borders of the bar
+    border += "+";
+    for (int i = 0; i < width; ++i)
+    {
+        border += "-";
+    }
+    border += "+\n";
+
+    _barBuffer += border;
+
+    _barBuffer += "|";
+
+    // Fill the bar with '#' characters based on the percentage completed
+    for (int i = 0; i < width; ++i)
+    {
+        if (i < filled)
+        {
+            _barBuffer += "#";
+        }
+        else
+        {
+            _barBuffer += " ";
+        }
+    }
+
+    _barBuffer += "|\n";
+    _barBuffer += border;
+    
+}
+
+/**
  * @brief Stages the controls for the timer to be displayed in the terminal.
  */
 void Display::stageTimerControls()
@@ -212,12 +322,7 @@ void Display::stageTimerControls()
     _controlBuffer += "S: Start/Pause | R: Reset | A: New Timer | Q: Main Menu \n";
     _controlBuffer += "=======================================================\n";
     _controlBuffer += "\n";
-    // _controlBuffer += "S : Start/Pause your timer.\n";
-    // _controlBuffer += "R : Reset your timer.\n";
-    // _controlBuffer += "I : Add 10 seconds to your timer.\n";
-    // _controlBuffer += "C : Change increment time.\n";
-    // _controlBuffer += "Q : End your timer immediately and return to menu.\n";
-    // _controlBuffer += "\n";
+
 }
 
 /* =========================================================
@@ -327,15 +432,48 @@ void Display::stageStopwatchControls(){
 }
 
 /**
+ * @brief Stages the controls for the timer setup to be displayed in the terminal.
+ */
+void Display::stageTimerSetupControls(){
+    _controlBuffer+=("\n");
+    _controlBuffer+=("           -=| ENTER THE LENGTH FOR YOUR TIMER |=-         \n");
+    _controlBuffer+=("===========================================================\n");
+    _controlBuffer+=("Enter: Start Timer | Backspace: Delete Digit | Q: Main Menu\n");
+    _controlBuffer+=("===========================================================\n");
+    _controlBuffer+=("\n");
+}
+
+/**
+ * @brief Stages the controls for the alarm setup to be displayed in the terminal.
+ */
+void Display::stageAlarmSetupControls(){
+    _controlBuffer+=("\n");
+    _controlBuffer+=("        -=| ENTER THE ALARM TIME IN 24HR FORMAT |=-      \n");
+    _controlBuffer+=("=========================================================\n");
+    _controlBuffer+=("Enter: Set Alarm | Backspace: Delete Digit | Q: Main Menu\n");
+    _controlBuffer+=("=========================================================\n");
+    _controlBuffer+=("\n");
+}
+
+/**
+ * @brief Stages the controls for the alarm to be displayed in the terminal.
+ */
+void Display::stageAlarmControls(){
+    _controlBuffer+=("\n");
+    _controlBuffer+=("===========================\n");
+    _controlBuffer+=("A: New Alarm | Q: Main Menu\n");
+    _controlBuffer+=("===========================\n");
+    _controlBuffer+=("\n");
+}
+
+/**
  * @brief Stages the splits block to be displayed.
  */
 void Display::stageStopwatchSplits(vector<int> splits){
-    if(!splits.empty()){
-        _splitBuffer+= "-+=| SPLITS |=+-\n";
-        int i;
-        if (splits.size()>10){ i = splits.size()-10; }
-        else { i = 0; }
-        for(i; i<splits.size(); ++i){
+    if (!splits.empty()) {
+        _splitBuffer += "-+=| SPLITS |=+-\n";
+        int startIdx = (splits.size() > 10) ? splits.size() - 10 : 0;
+        for (int i = startIdx; i < splits.size(); ++i) {
 
             int milliseconds = splits.at(i);
             int hours = milliseconds / 3600000;
@@ -348,63 +486,45 @@ void Display::stageStopwatchSplits(vector<int> splits){
             string to_print = "";
 
             // Only show hours if there are more than 0
-            if (hours != 0)
-            {
+            if (hours != 0) {
                 to_print += to_string(hours) + ":";
             }
 
             // Show minutes with a leading zero if needed
-            if (hours)
-            {
-                if (int(minutes / 10) != 0)
-                {
+            if (hours) {
+                if (int(minutes / 10) != 0) {
                     to_print += to_string(minutes) + ":";
-                }
-                else
-                {
+                } else {
                     to_print += "0" + to_string(minutes) + ":";
                 }
-            }
-            else if (minutes)
-            {
+            } else if (minutes) {
                 to_print += to_string(minutes) + ":";
             }
 
             // Show seconds with a leading zero if needed
-            if (hours || minutes)
-            {
-                if (int(seconds / 10) != 0)
-                {
+            if (hours || minutes) {
+                if (int(seconds / 10) != 0) {
                     to_print += to_string(seconds);
-                }
-                else
-                {
+                } else {
                     to_print += "0" + to_string(seconds);
                 }
-            }
-            else
-            {
+            } else {
                 to_print += to_string(seconds);
             }
 
             // Show hundredths of a second if there are no hours
-            if (hours == 0)
-            {
+            if (hours == 0) {
                 to_print += ".";
-                if (int(hundredths / 10) != 0)
-                {
+                if (int(hundredths / 10) != 0) {
                     to_print += to_string(hundredths);
-                }
-                else
-                {
+                } else {
                     to_print += "0" + to_string(hundredths);
                 }
             }
-            string fullprint = "Split " + to_string(i+1) + ": " + to_print + "\n";
+            string fullprint = "Split " + to_string(i + 1) + ": " + to_print + "\n";
             _splitBuffer += fullprint;
         }
-    }
-    else{
+    } else {
         _splitBuffer = "";
     }
 }
@@ -475,6 +595,7 @@ void Display::printSplash(int row)
 
 /**
  * @brief Prints the stopwatch splits to the terminal.
+ * @param row The row position to print.
  */
 void Display::printSplits(int row)
 {
@@ -487,12 +608,58 @@ void Display::printSplits(int row)
     _splitBuffer = "";
 }
 
-/* =========================================================
-PARSING TIMER, CALLING PRINT FUNCTION
-========================================================= */
-
+/**
+ * @brief Updates the timer setup display, showing the current input with a blinking cursor.
+ * @param to_print The current timer setup input string.
+ */
 void Display::tickTimerSetup(string to_print)
 {
+    auto now = std::chrono::steady_clock::now();
+    auto millis = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
+
+    bool showBar = ((millis / 500) % 2 == 0);
+
+    _asciiBuffer.clear(); // Clear buffer before filling it with new content
+
+    for (int i = 0; i < ASCII_HEIGHT; ++i)
+    {
+        string line;
+        for (char ch : to_print)
+        {
+            if (ch == ':')
+            {
+                line += font1.at(10)[i]; // Colon character
+            }
+            else
+            {
+                line += font1.at(ch - '0')[i]; // Numeric character
+            }
+            line += PADDING;
+        }
+        line += showBar ? " |" : "   "; // Append progress bar indicator
+        _asciiWidth = line.length();
+        _asciiBuffer += (line + "\n");
+    }
+
+    stageTimerSetupControls();
+
+    printAscii(1);
+    printControls(10);
+
+    setCursor(1, 1);
+}
+
+/**
+ * @brief Updates the alarm setup display, showing the current input with a blinking cursor.
+ * @param to_print The current alarm setup input string.
+ */
+void Display::tickAlarmSetup(string to_print)
+{
+    auto now = std::chrono::steady_clock::now();
+    auto millis = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
+
+    bool showBar = ((millis / 500) % 2 == 0);
+
     for (int i = 0; i < ASCII_HEIGHT; i++)
     {
         string line;
@@ -509,13 +676,22 @@ void Display::tickTimerSetup(string to_print)
                 line += PADDING;
             }
         }
+        if(showBar){
+            line += " |";
+        }
+        else{
+            line += "   ";
+        }
         _asciiWidth = line.length(); // Update ASCII width
         _asciiBuffer += (line + "\n");
     }
+    stageAlarmSetupControls();
+
 
     printAscii(1);
+    printControls(10);
 
-    setCursor(10,1);
+    setCursor(1,1);
 
 }
 
@@ -550,8 +726,8 @@ void Display::tickTimer(Timer &timer)
  * @brief Updates the stopwatch display on each tick, converting time into ASCII and updating the terminal.
  * @param stopwatch The Stopwatch object to get the current time from.
  */
-void Display::tickStopwatch(Stopwatch &stopwatch)
-{
+void Display::tickStopwatch(Stopwatch &stopwatch){
+
     int milliseconds = stopwatch.currentMilliseconds();
 
     int hours = milliseconds / 3600000;
@@ -571,16 +747,31 @@ void Display::tickStopwatch(Stopwatch &stopwatch)
     printSplash(14);
     printSplits(16);
     setCursor(15,1);
+
 }
 
-void Display::tickAlarm(Alarm &alarm)
-{
+/**
+ * @brief Updates the alarm display on each tick, showing the alarm time and progress bar.
+ * @param alarm The Alarm object to get the alarm time and progress from.
+ */
+void Display::tickAlarm(Alarm &alarm){
+
+    string time = alarm.timeToString(alarm.getEndTime()).substr(0,5);
+
+    stageAlarmDisplay(time);
+    stageAlarmBar(alarm.percentElapsed());
+    stageAlarmControls();
+
+    printAscii(1);
+    printBar(10);
+    printControls(13);
+    printSplash(18);
+    
+    setCursor(20,1);
+
     return;
-}
 
-/* =========================================================
-FAST PRINTING HELPER
-========================================================= */
+}
 
 /**
  * @brief Prints a string to the console efficiently using the Windows API.
