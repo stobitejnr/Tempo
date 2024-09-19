@@ -1,5 +1,5 @@
 <map id="Menu::stopwatchSequence" name="Menu::stopwatchSequence">
-<area shape="rect" id="node1" title=" " alt="" coords="5,351,201,376"/>
+<area shape="rect" id="node1" title="Runs the stopwatch sequence, allowing the user to start, stop, and record splits." alt="" coords="5,351,201,376"/>
 <area shape="rect" id="node2" href="$class_menu.html#a81188fdf5f017799f9e7f7eaaf98c3ec" title="Checks and handles user input for the Stopwatch." alt="" coords="249,228,455,253"/>
 <area shape="rect" id="node4" href="$class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62" title="Clears the terminal screen." alt="" coords="543,5,698,31"/>
 <area shape="rect" id="node13" href="$class_display.html#a3a0e77e68157e55d67ac3f28dffdd00c" title="Sets the splash screen text." alt="" coords="550,351,691,376"/>

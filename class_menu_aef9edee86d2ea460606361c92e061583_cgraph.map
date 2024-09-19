@@ -1,46 +1,52 @@
 <map id="Menu::mainMenu" name="Menu::mainMenu">
-<area shape="rect" id="node1" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="5,1445,140,1471"/>
-<area shape="rect" id="node2" href="$class_menu.html#a4663bff1fca54f0230ff0e20b6ae9ae8" title=" " alt="" coords="188,1344,355,1369"/>
-<area shape="rect" id="node3" href="$class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62" title="Clears the terminal screen." alt="" coords="941,1483,1095,1508"/>
-<area shape="rect" id="node5" href="$class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452" title="Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection." alt="" coords="423,1736,579,1761"/>
-<area shape="rect" id="node7" href="$class_menu.html#aca5927a856a8d20d738323c2261cc9e4" title=" " alt="" coords="403,780,599,805"/>
-<area shape="rect" id="node29" href="$class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title=" " alt="" coords="189,1445,353,1471"/>
-<area shape="rect" id="node4" href="$class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="1635,929,1775,955"/>
-<area shape="rect" id="node6" href="$class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="971,1609,1065,1635"/>
-<area shape="rect" id="node8" href="$class_menu.html#a81188fdf5f017799f9e7f7eaaf98c3ec" title="Checks and handles user input for the Stopwatch." alt="" coords="647,628,852,653"/>
-<area shape="rect" id="node17" href="$class_display.html#a3a0e77e68157e55d67ac3f28dffdd00c" title="Sets the splash screen text." alt="" coords="947,703,1089,728"/>
-<area shape="rect" id="node18" href="$class_display.html#a670c8db4c53ae0f09d6d3b57f1813b7f" title="Updates the display based on the state of the provided Stopwatch object." alt="" coords="664,255,835,280"/>
-<area shape="rect" id="node9" href="$class_stopwatch.html#aa0a6e6e55261fa0d2b239800bc7a782d" title="Records and prints the current split time in milliseconds." alt="" coords="943,505,1093,531"/>
-<area shape="rect" id="node10" href="$class_display.html#ad226aa44204137c5a8fe774967532af4" title="Clears the splash screen." alt="" coords="941,752,1095,777"/>
-<area shape="rect" id="node11" href="$class_stopwatch.html#aaf61c1ada98a22cc1c2bc589bdd4134a" title="Returns the current elapsed time in milliseconds." alt="" coords="905,407,1131,432"/>
-<area shape="rect" id="node12" href="$class_stopwatch.html#ae20cb58892efc6ca55117583aac8c392" title="Checks if the stopwatch is currently running." alt="" coords="937,555,1099,580"/>
-<area shape="rect" id="node13" href="$class_stopwatch.html#a2cc48295d6b083361d062b8eb68d753a" title="Pauses the stopwatch." alt="" coords="949,604,1087,629"/>
-<area shape="rect" id="node14" href="$class_stopwatch.html#a42c7014e7fffcf4c56ca6fb07f8eb31c" title="Resets the stopwatch to 0 milliseconds and stops it." alt="" coords="953,456,1083,481"/>
-<area shape="rect" id="node16" href="$class_stopwatch.html#a789461171238250633eeb26b8f3b0dce" title="Resumes the stopwatch from the last paused time." alt="" coords="945,653,1091,679"/>
-<area shape="rect" id="node15" href="$class_stopwatch.html#a0edfa283c9d5e706cef4a43a6cbfbaf5" title="Clears the splits vector." alt="" coords="1208,753,1375,779"/>
-<area shape="rect" id="node19" href="$class_stopwatch.html#ae401b2a4016b104fc210e54a5041c9e2" title="Returns the splits vector." alt="" coords="941,5,1095,31"/>
-<area shape="rect" id="node20" href="$class_display.html#aab9a518037074ce68da2a7792771908d" title="Prints ASCII art to the terminal." alt="" coords="1222,1056,1361,1081"/>
-<area shape="rect" id="node21" href="$class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="1447,892,1587,917"/>
-<area shape="rect" id="node22" href="$class_display.html#a3480427024243711ee66efc51ddf0fa3" title="Prints controls to the terminal." alt="" coords="1210,704,1373,729"/>
-<area shape="rect" id="node23" href="$class_display.html#a62d8435627ea69fbccaef4cef32d785d" title="Prints the splash screen to the terminal." alt="" coords="943,853,1093,879"/>
-<area shape="rect" id="node25" href="$class_display.html#ac4f2f5445af6a65554ad9646cc27f3cc" title="Prints the stopwatch splits to the terminal." alt="" coords="1219,204,1363,229"/>
-<area shape="rect" id="node26" href="$class_display.html#aa68e271db8f91c18ae2c1e5e38d0f1ee" title="Stages the controls for the stopwatch." alt="" coords="900,55,1136,80"/>
-<area shape="rect" id="node27" href="$class_display.html#ac878f4b1987c4e33c173478fd5bbf34c" title="Stages the stopwatch display with provided time values." alt="" coords="903,104,1133,129"/>
-<area shape="rect" id="node28" href="$class_display.html#a8b0e743648629b44c19cb59b1cbe467e" title="Stages the splits block to be displayed." alt="" coords="909,153,1127,179"/>
-<area shape="rect" id="node24" href="$class_display.html#aaa0ffb7318a45caa0b74d3d439e623f0" title="Clears a specific line in the terminal." alt="" coords="1223,803,1360,828"/>
-<area shape="rect" id="node30" href="$class_menu.html#ab8d3cccd5b39987a6546f7dc1187b71e" title="Checks and handles user input for the Timer." alt="" coords="413,1357,588,1383"/>
-<area shape="rect" id="node31" href="$class_menu.html#ac9d86f12b0ed98dddaeb1ae9b9602f41" title=" " alt="" coords="677,1584,822,1609"/>
-<area shape="rect" id="node35" href="$class_timer.html#a330607659937f497389c9989812cd925" title="Returns the remaining time in milliseconds." alt="" coords="1184,1268,1399,1293"/>
-<area shape="rect" id="node38" href="$class_display.html#a02b2228e05be168eda0b817d1ecf5db7" title="Updates the display based on the state of the provided Timer object." alt="" coords="679,1028,819,1053"/>
-<area shape="rect" id="node33" href="$class_timer.html#a2ef50bfc604ea9fb88d3000c9ad0edd9" title="Checks if the timer is currently running." alt="" coords="683,1432,815,1457"/>
-<area shape="rect" id="node34" href="$class_timer.html#a0289effad7b573c508bc27e405900a23" title="Pauses the timer and calculates the remaining milliseconds." alt="" coords="965,1408,1071,1433"/>
-<area shape="rect" id="node36" href="$class_timer.html#a9020542d73357a4eef512eefaf57524b" title="Resets the timer to its original duration and pauses it." alt="" coords="699,1281,800,1307"/>
-<area shape="rect" id="node37" href="$class_timer.html#a4ac55a73bb3431db9d4d2fd70ae9a2e8" title="Resumes the timer from where it was paused by recalculating the end time." alt="" coords="691,1383,808,1408"/>
-<area shape="rect" id="node32" href="$class_display.html#aae213ab2d8df542fbe9b58d526a47052" title=" " alt="" coords="929,1532,1107,1557"/>
-<area shape="rect" id="node39" href="$class_timer.html#a97ab4bd97e34c2ce2b8afa7c993fbaec" title="Returns the percentage of time that has elapsed since the timer started." alt="" coords="934,1205,1102,1231"/>
-<area shape="rect" id="node41" href="$class_display.html#a034871a688ea9c2cf5801d120b0cfcf6" title="Prints the progress bar to the terminal." alt="" coords="1226,1005,1357,1031"/>
-<area shape="rect" id="node42" href="$class_display.html#a91e41747e83f0d8d53251811addd566e" title="Stages the progress bar for the timer." alt="" coords="931,955,1105,980"/>
-<area shape="rect" id="node43" href="$class_display.html#af7327c3f58c211e500f4fff386f222e4" title="Stages the controls for the timer." alt="" coords="915,1004,1121,1029"/>
-<area shape="rect" id="node44" href="$class_display.html#a02e23b9a142c52d7dfa0169c58c77e24" title="Stages the timer display with provided time values." alt="" coords="917,1053,1119,1079"/>
-<area shape="rect" id="node40" href="$class_timer.html#aded1ecf859b397258dcfa95d3d7cfc41" title="Starts the timer by setting the end time based on the current time plus the countdown duration." alt="" coords="1242,1205,1341,1231"/>
+<area shape="rect" id="node1" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="5,587,140,613"/>
+<area shape="rect" id="node2" href="$class_menu.html#a4663bff1fca54f0230ff0e20b6ae9ae8" title="Runs the alarm sequence, allowing the user to set and interact with an alarm." alt="" coords="203,423,369,449"/>
+<area shape="rect" id="node4" href="$class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62" title="Clears the terminal screen." alt="" coords="961,398,1116,423"/>
+<area shape="rect" id="node10" href="$class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="1497,675,1637,701"/>
+<area shape="rect" id="node25" href="$class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452" title="Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection." alt="" coords="208,1329,364,1354"/>
+<area shape="rect" id="node26" href="$class_menu.html#aca5927a856a8d20d738323c2261cc9e4" title="Runs the stopwatch sequence, allowing the user to start, stop, and record splits." alt="" coords="188,813,384,838"/>
+<area shape="rect" id="node40" href="$class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title="Runs the timer sequence, allowing the user to set and interact with a timer." alt="" coords="204,1127,368,1153"/>
+<area shape="rect" id="node3" href="$class_menu.html#a530b357d64d1481172d7808a453f262d" title="Checks and handles user input for the Alarm." alt="" coords="447,398,623,423"/>
+<area shape="rect" id="node7" href="$class_menu.html#a76c8148cc85fcc305b80c52b2f9df2ca" title="Creates a new Alarm object based on user input." alt="" coords="720,423,867,449"/>
+<area shape="rect" id="node12" href="$class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="991,874,1086,899"/>
+<area shape="rect" id="node13" href="$class_alarm.html#a2e1cee43509c402293feeebd70c80442" title="Checks if the alarm has completed." alt="" coords="477,221,592,246"/>
+<area shape="rect" id="node15" href="$class_display.html#a3a0e77e68157e55d67ac3f28dffdd00c" title="Sets the splash screen text." alt="" coords="723,925,864,950"/>
+<area shape="rect" id="node16" href="$class_display.html#a8437f93af050167c13f5cf2f3e68f8b8" title="Updates the display based on the state of the provided Alarm object." alt="" coords="968,297,1109,322"/>
+<area shape="rect" id="node6" href="$class_display.html#ad226aa44204137c5a8fe774967532af4" title="Clears the splash screen." alt="" coords="717,574,870,599"/>
+<area shape="rect" id="node5" href="$class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="1723,675,1863,701"/>
+<area shape="rect" id="node8" href="$class_display.html#a00b39135d34e401529265af26a9611c7" title="Updates the alarm setup display, showing the current input with a blinking cursor." alt="" coords="949,574,1128,599"/>
+<area shape="rect" id="node9" href="$class_display.html#aab9a518037074ce68da2a7792771908d" title="Prints ASCII art to the terminal." alt="" coords="1225,726,1363,751"/>
+<area shape="rect" id="node11" href="$class_display.html#a3480427024243711ee66efc51ddf0fa3" title="Prints controls to the terminal." alt="" coords="1213,625,1375,650"/>
+<area shape="rect" id="node14" href="$class_alarm.html#a8f29e4753be03a7f68c22d2697e65a43" title="Calculates the remaining time in milliseconds until the alarm ends." alt="" coords="685,221,901,246"/>
+<area shape="rect" id="node17" href="$class_alarm.html#a3ceedf3a5dafaf720eebd77e3ba8fecf" title="Gets the end time of the alarm." alt="" coords="1221,74,1367,99"/>
+<area shape="rect" id="node18" href="$class_alarm.html#aee08b5d6eafe7e5adee07f9c30dc3fce" title="Calculates the percentage of time elapsed from start to end." alt="" coords="1209,123,1379,149"/>
+<area shape="rect" id="node19" href="$class_display.html#a034871a688ea9c2cf5801d120b0cfcf6" title="Prints the progress bar to the terminal." alt="" coords="1229,473,1359,498"/>
+<area shape="rect" id="node20" href="$class_display.html#a62d8435627ea69fbccaef4cef32d785d" title="Prints the splash screen to the terminal." alt="" coords="1219,1025,1369,1050"/>
+<area shape="rect" id="node21" href="$class_display.html#ab750543d9a82d7e90b262a772b195c1f" title="Creates a visual progress bar for the alarm based on the percentage completed." alt="" coords="1207,173,1381,198"/>
+<area shape="rect" id="node22" href="$class_display.html#ae6055127511e098a4ce8ea10d0ca2e43" title="Stages the controls for the alarm." alt="" coords="1191,222,1397,247"/>
+<area shape="rect" id="node23" href="$class_display.html#a90235f60d9b1239198ceca9e24df2e33" title="Stages the display for the alarm." alt="" coords="1193,271,1395,297"/>
+<area shape="rect" id="node24" href="$class_alarm.html#acf005496b4b72ecd4e66c415a8d3f238" title="Converts a time_point to a string representation." alt="" coords="1219,321,1369,346"/>
+<area shape="rect" id="node27" href="$class_menu.html#a81188fdf5f017799f9e7f7eaaf98c3ec" title="Checks and handles user input for the Stopwatch." alt="" coords="432,701,637,726"/>
+<area shape="rect" id="node34" href="$class_display.html#a670c8db4c53ae0f09d6d3b57f1813b7f" title="Updates the display based on the state of the provided Stopwatch object." alt="" coords="953,973,1124,998"/>
+<area shape="rect" id="node28" href="$class_stopwatch.html#aa0a6e6e55261fa0d2b239800bc7a782d" title="Records and prints the current split time in milliseconds." alt="" coords="718,525,869,550"/>
+<area shape="rect" id="node29" href="$class_stopwatch.html#aaf61c1ada98a22cc1c2bc589bdd4134a" title="Returns the current elapsed time in milliseconds." alt="" coords="1181,775,1407,801"/>
+<area shape="rect" id="node30" href="$class_stopwatch.html#ae20cb58892efc6ca55117583aac8c392" title="Checks if the stopwatch is currently running." alt="" coords="712,675,875,701"/>
+<area shape="rect" id="node31" href="$class_stopwatch.html#a2cc48295d6b083361d062b8eb68d753a" title="Pauses the stopwatch." alt="" coords="725,725,862,750"/>
+<area shape="rect" id="node32" href="$class_stopwatch.html#a42c7014e7fffcf4c56ca6fb07f8eb31c" title="Resets the stopwatch to 0 milliseconds and stops it." alt="" coords="728,774,859,799"/>
+<area shape="rect" id="node33" href="$class_stopwatch.html#a789461171238250633eeb26b8f3b0dce" title="Resumes the stopwatch from the last paused time." alt="" coords="720,823,867,849"/>
+<area shape="rect" id="node35" href="$class_stopwatch.html#ae401b2a4016b104fc210e54a5041c9e2" title="Returns the splits vector." alt="" coords="1217,923,1371,949"/>
+<area shape="rect" id="node36" href="$class_display.html#ac4f2f5445af6a65554ad9646cc27f3cc" title="Prints the stopwatch splits to the terminal." alt="" coords="1222,1175,1366,1201"/>
+<area shape="rect" id="node37" href="$class_display.html#aa68e271db8f91c18ae2c1e5e38d0f1ee" title="Stages the controls for the stopwatch." alt="" coords="1176,1074,1412,1099"/>
+<area shape="rect" id="node38" href="$class_display.html#ac878f4b1987c4e33c173478fd5bbf34c" title="Stages the stopwatch display with provided time values." alt="" coords="1179,825,1409,850"/>
+<area shape="rect" id="node39" href="$class_display.html#a8b0e743648629b44c19cb59b1cbe467e" title="Stages the splits block to be displayed." alt="" coords="1185,874,1403,899"/>
+<area shape="rect" id="node41" href="$class_menu.html#ab8d3cccd5b39987a6546f7dc1187b71e" title="Checks and handles user input for the Timer." alt="" coords="447,1229,622,1254"/>
+<area shape="rect" id="node42" href="$class_menu.html#a1a90c9e670b33e2c9aaddc01f47b3b88" title="Creates a new Timer object based on user input." alt="" coords="721,1127,866,1153"/>
+<area shape="rect" id="node46" href="$class_timer.html#a330607659937f497389c9989812cd925" title="Returns the remaining time in milliseconds." alt="" coords="1460,1435,1675,1461"/>
+<area shape="rect" id="node49" href="$class_display.html#a02b2228e05be168eda0b817d1ecf5db7" title="Updates the display based on the state of the provided Timer object." alt="" coords="969,1214,1109,1239"/>
+<area shape="rect" id="node44" href="$class_timer.html#a2ef50bfc604ea9fb88d3000c9ad0edd9" title="Checks if the timer is currently running." alt="" coords="727,1278,859,1303"/>
+<area shape="rect" id="node45" href="$class_timer.html#a0289effad7b573c508bc27e405900a23" title="Pauses the timer and calculates the remaining milliseconds." alt="" coords="985,1165,1092,1190"/>
+<area shape="rect" id="node47" href="$class_timer.html#a9020542d73357a4eef512eefaf57524b" title="Resets the timer to its original duration and pauses it." alt="" coords="743,1379,844,1405"/>
+<area shape="rect" id="node48" href="$class_timer.html#a4ac55a73bb3431db9d4d2fd70ae9a2e8" title="Resumes the timer from where it was paused by recalculating the end time." alt="" coords="735,1229,852,1254"/>
+<area shape="rect" id="node43" href="$class_display.html#aae213ab2d8df542fbe9b58d526a47052" title="Updates the timer setup display, showing the current input with a blinking cursor." alt="" coords="950,923,1127,949"/>
+<area shape="rect" id="node50" href="$class_timer.html#a97ab4bd97e34c2ce2b8afa7c993fbaec" title="Returns the percentage of time that has elapsed since the timer started." alt="" coords="1210,1391,1378,1417"/>
 </map>

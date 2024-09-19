@@ -1,0 +1,11 @@
+<map id="Menu::createTimer" name="Menu::createTimer">
+<area shape="rect" id="node1" title="Creates a new Timer object based on user input." alt="" coords="5,107,151,132"/>
+<area shape="rect" id="node2" href="$class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62" title="Clears the terminal screen." alt="" coords="661,5,816,31"/>
+<area shape="rect" id="node4" href="$class_display.html#aae213ab2d8df542fbe9b58d526a47052" title="Updates the timer setup display, showing the current input with a blinking cursor." alt="" coords="199,107,376,132"/>
+<area shape="rect" id="node9" href="$class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="240,156,335,181"/>
+<area shape="rect" id="node3" href="$class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="864,81,1004,107"/>
+<area shape="rect" id="node5" href="$class_display.html#aab9a518037074ce68da2a7792771908d" title="Prints ASCII art to the terminal." alt="" coords="449,56,588,81"/>
+<area shape="rect" id="node6" href="$class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="669,107,809,132"/>
+<area shape="rect" id="node7" href="$class_display.html#a3480427024243711ee66efc51ddf0fa3" title="Prints controls to the terminal." alt="" coords="437,157,600,183"/>
+<area shape="rect" id="node8" href="$class_display.html#a8a1135ceff6c3fb0a3a83dd694914f1f" title="Stages the controls for the timer setup to be displayed in the terminal." alt="" coords="424,207,613,247"/>
+</map>

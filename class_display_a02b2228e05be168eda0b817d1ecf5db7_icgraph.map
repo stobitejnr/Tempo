@@ -1,7 +1,7 @@
 <map id="Display::tickTimer" name="Display::tickTimer">
 <area shape="rect" id="node1" title="Updates the display based on the state of the provided Timer object." alt="" coords="641,43,781,68"/>
 <area shape="rect" id="node2" href="$_display_test_8cpp.html#aaebf8e553939222f4e0682af515b3674" title=" " alt="" coords="467,12,556,37"/>
-<area shape="rect" id="node4" href="$class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title=" " alt="" coords="429,67,593,92"/>
+<area shape="rect" id="node4" href="$class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title="Runs the timer sequence, allowing the user to set and interact with a timer." alt="" coords="429,67,593,92"/>
 <area shape="rect" id="node3" href="$_display_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="287,5,341,31"/>
 <area shape="rect" id="node5" href="$class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="247,79,381,104"/>
 <area shape="rect" id="node6" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,53,181,79"/>

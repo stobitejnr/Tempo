@@ -1,6 +1,6 @@
 <map id="Display::tickStopwatch" name="Display::tickStopwatch">
 <area shape="rect" id="node1" title="Updates the display based on the state of the provided Stopwatch object." alt="" coords="673,55,844,80"/>
-<area shape="rect" id="node2" href="$class_menu.html#aca5927a856a8d20d738323c2261cc9e4" title=" " alt="" coords="429,29,625,55"/>
+<area shape="rect" id="node2" href="$class_menu.html#aca5927a856a8d20d738323c2261cc9e4" title="Runs the stopwatch sequence, allowing the user to start, stop, and record splits." alt="" coords="429,29,625,55"/>
 <area shape="rect" id="node7" href="$_display_test_8cpp.html#a95399b2aca69374a0e3efa274a5c3e03" title=" " alt="" coords="467,79,588,104"/>
 <area shape="rect" id="node3" href="$class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="247,29,381,55"/>
 <area shape="rect" id="node4" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,5,181,31"/>

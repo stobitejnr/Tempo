@@ -1,0 +1,5 @@
+<map id="Alarm::Alarm" name="Alarm::Alarm">
+<area shape="rect" id="node1" title="Constructs an Alarm object with a specified end time." alt="" coords="5,5,113,31"/>
+<area shape="rect" id="node2" href="$class_alarm.html#aed71528f9d3f7143072ab882e0ff105e" title="Gets the current time." alt="" coords="363,5,511,31"/>
+<area shape="rect" id="node3" href="$class_alarm.html#a3d95f5433b32920c929f69fbdd6224e3" title="Converts a string representation of time to a time_point." alt="" coords="161,31,315,56"/>
+</map>

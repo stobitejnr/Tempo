@@ -81,25 +81,68 @@ $(function() {
 <a href="_alarm_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef ALARM_HPP</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define ALARM_HPP</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">using namespace </span>std;</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_alarm.html">    8</a></span><span class="keyword">class </span><a class="code hl_class" href="class_alarm.html">Alarm</a> {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <a class="code hl_function" href="class_alarm.html#ac2384a1b3e766a9d8f93b2fb269b636a">Alarm</a>();</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>};</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;thread&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;ctime&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;iomanip&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_alarm.html">   13</a></span><span class="keyword">class </span><a class="code hl_class" href="class_alarm.html">Alarm</a> {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#endif </span><span class="comment">// ALARM_HPP</span></div>
-<div class="ttc" id="aclass_alarm_html"><div class="ttname"><a href="class_alarm.html">Alarm</a></div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8hpp_source.html#l00008">Alarm.hpp:8</a></div></div>
-<div class="ttc" id="aclass_alarm_html_ac2384a1b3e766a9d8f93b2fb269b636a"><div class="ttname"><a href="class_alarm.html#ac2384a1b3e766a9d8f93b2fb269b636a">Alarm::Alarm</a></div><div class="ttdeci">Alarm()</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8cpp_source.html#l00005">Alarm.cpp:5</a></div></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_class" href="class_alarm.html">Alarm</a>(<span class="keywordtype">string</span> time);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    chrono::time_point&lt;chrono::system_clock&gt; <a class="code hl_function" href="class_alarm.html#a3d95f5433b32920c929f69fbdd6224e3">stringToTime</a>(<span class="keywordtype">string</span> s);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">string</span> <a class="code hl_function" href="class_alarm.html#acf005496b4b72ecd4e66c415a8d3f238">timeToString</a>(chrono::time_point&lt;chrono::system_clock&gt; t);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    chrono::time_point&lt;chrono::system_clock&gt; <a class="code hl_function" href="class_alarm.html#af5097f8429ae373a8f0c49e68328ffc5">getStartTime</a>();</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    chrono::time_point&lt;chrono::system_clock&gt; <a class="code hl_function" href="class_alarm.html#a3ceedf3a5dafaf720eebd77e3ba8fecf">getEndTime</a>();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">static</span> chrono::time_point&lt;chrono::system_clock&gt; <a class="code hl_function" href="class_alarm.html#aed71528f9d3f7143072ab882e0ff105e">currentTime</a>();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_alarm.html#a7a0ff86736efbca04abf3dd378f91f1e">   26</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_alarm.html#a7a0ff86736efbca04abf3dd378f91f1e">start</a>();           </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_alarm.html#a2fd458f8f2e6980b8a40d2e04d90e684">isRunning</a>();    </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_alarm.html#a2e1cee43509c402293feeebd70c80442">isDone</a>();   </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_alarm.html#a8f29e4753be03a7f68c22d2697e65a43">remainingMilliseconds</a>();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_alarm.html#aee08b5d6eafe7e5adee07f9c30dc3fce">percentElapsed</a>();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_alarm.html#a951293e840b44912d2ca4abd8e63be8e">   37</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_alarm.html#a951293e840b44912d2ca4abd8e63be8e">_remainingMilliseconds</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_alarm.html#ad464c4de831a8aa5363431a4a1f0b5d8">   39</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_alarm.html#ad464c4de831a8aa5363431a4a1f0b5d8">_running</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_alarm.html#a6195c687d8393ce87c804ef6478ee1d5">   41</a></span>    chrono::time_point&lt;chrono::system_clock&gt; <a class="code hl_variable" href="class_alarm.html#a6195c687d8393ce87c804ef6478ee1d5">_startTime</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_alarm.html#a217703cc3e557bd820255f064d458b93">   42</a></span>    chrono::time_point&lt;chrono::system_clock&gt; <a class="code hl_variable" href="class_alarm.html#a217703cc3e557bd820255f064d458b93">_endTime</a>;  </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>};</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_alarm_html"><div class="ttname"><a href="class_alarm.html">Alarm</a></div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8hpp_source.html#l00013">Alarm.hpp:13</a></div></div>
+<div class="ttc" id="aclass_alarm_html_a217703cc3e557bd820255f064d458b93"><div class="ttname"><a href="class_alarm.html#a217703cc3e557bd820255f064d458b93">Alarm::_endTime</a></div><div class="ttdeci">chrono::time_point&lt; chrono::system_clock &gt; _endTime</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8hpp_source.html#l00042">Alarm.hpp:42</a></div></div>
+<div class="ttc" id="aclass_alarm_html_a2e1cee43509c402293feeebd70c80442"><div class="ttname"><a href="class_alarm.html#a2e1cee43509c402293feeebd70c80442">Alarm::isDone</a></div><div class="ttdeci">bool isDone()</div><div class="ttdoc">Checks if the alarm has completed.</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8cpp_source.html#l00126">Alarm.cpp:126</a></div></div>
+<div class="ttc" id="aclass_alarm_html_a2fd458f8f2e6980b8a40d2e04d90e684"><div class="ttname"><a href="class_alarm.html#a2fd458f8f2e6980b8a40d2e04d90e684">Alarm::isRunning</a></div><div class="ttdeci">bool isRunning()</div><div class="ttdoc">Checks if the alarm is currently running.</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8cpp_source.html#l00142">Alarm.cpp:142</a></div></div>
+<div class="ttc" id="aclass_alarm_html_a3ceedf3a5dafaf720eebd77e3ba8fecf"><div class="ttname"><a href="class_alarm.html#a3ceedf3a5dafaf720eebd77e3ba8fecf">Alarm::getEndTime</a></div><div class="ttdeci">chrono::time_point&lt; chrono::system_clock &gt; getEndTime()</div><div class="ttdoc">Gets the end time of the alarm.</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8cpp_source.html#l00117">Alarm.cpp:117</a></div></div>
+<div class="ttc" id="aclass_alarm_html_a3d95f5433b32920c929f69fbdd6224e3"><div class="ttname"><a href="class_alarm.html#a3d95f5433b32920c929f69fbdd6224e3">Alarm::stringToTime</a></div><div class="ttdeci">chrono::time_point&lt; chrono::system_clock &gt; stringToTime(string s)</div><div class="ttdoc">Converts a string representation of time to a time_point.</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8cpp_source.html#l00030">Alarm.cpp:30</a></div></div>
+<div class="ttc" id="aclass_alarm_html_a6195c687d8393ce87c804ef6478ee1d5"><div class="ttname"><a href="class_alarm.html#a6195c687d8393ce87c804ef6478ee1d5">Alarm::_startTime</a></div><div class="ttdeci">chrono::time_point&lt; chrono::system_clock &gt; _startTime</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8hpp_source.html#l00041">Alarm.hpp:41</a></div></div>
+<div class="ttc" id="aclass_alarm_html_a7a0ff86736efbca04abf3dd378f91f1e"><div class="ttname"><a href="class_alarm.html#a7a0ff86736efbca04abf3dd378f91f1e">Alarm::start</a></div><div class="ttdeci">void start()</div></div>
+<div class="ttc" id="aclass_alarm_html_a8f29e4753be03a7f68c22d2697e65a43"><div class="ttname"><a href="class_alarm.html#a8f29e4753be03a7f68c22d2697e65a43">Alarm::remainingMilliseconds</a></div><div class="ttdeci">int remainingMilliseconds()</div><div class="ttdoc">Calculates the remaining time in milliseconds until the alarm ends.</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8cpp_source.html#l00097">Alarm.cpp:97</a></div></div>
+<div class="ttc" id="aclass_alarm_html_a951293e840b44912d2ca4abd8e63be8e"><div class="ttname"><a href="class_alarm.html#a951293e840b44912d2ca4abd8e63be8e">Alarm::_remainingMilliseconds</a></div><div class="ttdeci">int _remainingMilliseconds</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8hpp_source.html#l00037">Alarm.hpp:37</a></div></div>
+<div class="ttc" id="aclass_alarm_html_acf005496b4b72ecd4e66c415a8d3f238"><div class="ttname"><a href="class_alarm.html#acf005496b4b72ecd4e66c415a8d3f238">Alarm::timeToString</a></div><div class="ttdeci">string timeToString(chrono::time_point&lt; chrono::system_clock &gt; t)</div><div class="ttdoc">Converts a time_point to a string representation.</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8cpp_source.html#l00052">Alarm.cpp:52</a></div></div>
+<div class="ttc" id="aclass_alarm_html_ad464c4de831a8aa5363431a4a1f0b5d8"><div class="ttname"><a href="class_alarm.html#ad464c4de831a8aa5363431a4a1f0b5d8">Alarm::_running</a></div><div class="ttdeci">bool _running</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8hpp_source.html#l00039">Alarm.hpp:39</a></div></div>
+<div class="ttc" id="aclass_alarm_html_aed71528f9d3f7143072ab882e0ff105e"><div class="ttname"><a href="class_alarm.html#aed71528f9d3f7143072ab882e0ff105e">Alarm::currentTime</a></div><div class="ttdeci">static chrono::time_point&lt; chrono::system_clock &gt; currentTime()</div><div class="ttdoc">Gets the current time.</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8cpp_source.html#l00151">Alarm.cpp:151</a></div></div>
+<div class="ttc" id="aclass_alarm_html_aee08b5d6eafe7e5adee07f9c30dc3fce"><div class="ttname"><a href="class_alarm.html#aee08b5d6eafe7e5adee07f9c30dc3fce">Alarm::percentElapsed</a></div><div class="ttdeci">double percentElapsed()</div><div class="ttdoc">Calculates the percentage of time elapsed from start to end.</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8cpp_source.html#l00069">Alarm.cpp:69</a></div></div>
+<div class="ttc" id="aclass_alarm_html_af5097f8429ae373a8f0c49e68328ffc5"><div class="ttname"><a href="class_alarm.html#af5097f8429ae373a8f0c49e68328ffc5">Alarm::getStartTime</a></div><div class="ttdeci">chrono::time_point&lt; chrono::system_clock &gt; getStartTime()</div><div class="ttdoc">Gets the start time of the alarm.</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8cpp_source.html#l00108">Alarm.cpp:108</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Sep 18 2024 02:42:25 for Tempo by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+Generated on Thu Sep 19 2024 10:25:55 for Tempo by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
 </small></address>
 </body>
 </html>

@@ -1,0 +1,4 @@
+<map id="Alarm::percentElapsed" name="Alarm::percentElapsed">
+<area shape="rect" id="node1" title="Calculates the percentage of time elapsed from start to end." alt="" coords="5,5,175,31"/>
+<area shape="rect" id="node2" href="$class_alarm.html#aed71528f9d3f7143072ab882e0ff105e" title="Gets the current time." alt="" coords="223,5,371,31"/>
+</map>

@@ -1,7 +1,9 @@
 <map id="test_timer_setup" name="test_timer_setup">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,137,56"/>
-<area shape="rect" id="node2" href="$class_display.html#aae213ab2d8df542fbe9b58d526a47052" title=" " alt="" coords="185,31,363,56"/>
-<area shape="rect" id="node3" href="$class_display.html#aab9a518037074ce68da2a7792771908d" title="Prints ASCII art to the terminal." alt="" coords="411,5,549,31"/>
-<area shape="rect" id="node5" href="$class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="597,56,737,81"/>
-<area shape="rect" id="node4" href="$class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="785,31,925,56"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,137,107"/>
+<area shape="rect" id="node2" href="$class_display.html#aae213ab2d8df542fbe9b58d526a47052" title="Updates the timer setup display, showing the current input with a blinking cursor." alt="" coords="185,81,363,107"/>
+<area shape="rect" id="node3" href="$class_display.html#aab9a518037074ce68da2a7792771908d" title="Prints ASCII art to the terminal." alt="" coords="436,5,575,31"/>
+<area shape="rect" id="node5" href="$class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="648,56,788,81"/>
+<area shape="rect" id="node6" href="$class_display.html#a3480427024243711ee66efc51ddf0fa3" title="Prints controls to the terminal." alt="" coords="424,107,587,132"/>
+<area shape="rect" id="node7" href="$class_display.html#a8a1135ceff6c3fb0a3a83dd694914f1f" title="Stages the controls for the timer setup to be displayed in the terminal." alt="" coords="411,157,600,197"/>
+<area shape="rect" id="node4" href="$class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="836,56,976,81"/>
 </map>

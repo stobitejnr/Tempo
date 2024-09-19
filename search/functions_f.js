@@ -17,9 +17,11 @@ var searchData=
   ['testme_14',['testMe',['../class_javadoc___test.html#a0c472683ed25ff096e8a9edfb18d550c',1,'Javadoc_Test::testMe()'],['../class_q_tstyle___test.html#a8840748753118dd468e8368a28e49c62',1,'QTstyle_Test::testMe(int a, const char *s)']]],
   ['testmetoo_15',['testMeToo',['../class_q_tstyle___test.html#ad5b201f097a720d44bf976c2f27efbda',1,'QTstyle_Test::testMeToo()'],['../class_javadoc___test.html#ac2b39cabbe80957ae3e8bc2bd4e887f6',1,'Javadoc_Test::testMeToo()']]],
   ['tickalarm_16',['tickAlarm',['../class_display.html#a8437f93af050167c13f5cf2f3e68f8b8',1,'Display']]],
-  ['tickstopwatch_17',['tickStopwatch',['../class_display.html#a670c8db4c53ae0f09d6d3b57f1813b7f',1,'Display']]],
-  ['ticktimer_18',['tickTimer',['../class_display.html#a02b2228e05be168eda0b817d1ecf5db7',1,'Display']]],
-  ['ticktimersetup_19',['tickTimerSetup',['../class_display.html#aae213ab2d8df542fbe9b58d526a47052',1,'Display']]],
-  ['timer_20',['Timer',['../class_timer.html#af3774b6f9a3f6759e6852be35617b405',1,'Timer']]],
-  ['timersequence_21',['timerSequence',['../class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a',1,'Menu']]]
+  ['tickalarmsetup_17',['tickAlarmSetup',['../class_display.html#a00b39135d34e401529265af26a9611c7',1,'Display']]],
+  ['tickstopwatch_18',['tickStopwatch',['../class_display.html#a670c8db4c53ae0f09d6d3b57f1813b7f',1,'Display']]],
+  ['ticktimer_19',['tickTimer',['../class_display.html#a02b2228e05be168eda0b817d1ecf5db7',1,'Display']]],
+  ['ticktimersetup_20',['tickTimerSetup',['../class_display.html#aae213ab2d8df542fbe9b58d526a47052',1,'Display']]],
+  ['timer_21',['Timer',['../class_timer.html#af3774b6f9a3f6759e6852be35617b405',1,'Timer']]],
+  ['timersequence_22',['timerSequence',['../class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a',1,'Menu']]],
+  ['timetostring_23',['timeToString',['../class_alarm.html#acf005496b4b72ecd4e66c415a8d3f238',1,'Alarm']]]
 ];

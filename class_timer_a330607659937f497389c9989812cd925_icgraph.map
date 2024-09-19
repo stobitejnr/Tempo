@@ -1,7 +1,7 @@
 <map id="Timer::remainingMilliseconds" name="Timer::remainingMilliseconds">
 <area shape="rect" id="node1" title="Returns the remaining time in milliseconds." alt="" coords="1080,208,1295,233"/>
 <area shape="rect" id="node2" href="$class_menu.html#ab8d3cccd5b39987a6546f7dc1187b71e" title="Checks and handles user input for the Timer." alt="" coords="641,5,816,31"/>
-<area shape="rect" id="node3" href="$class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title=" " alt="" coords="429,56,593,81"/>
+<area shape="rect" id="node3" href="$class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title="Runs the timer sequence, allowing the user to set and interact with a timer." alt="" coords="429,56,593,81"/>
 <area shape="rect" id="node8" href="$class_timer.html#a97ab4bd97e34c2ce2b8afa7c993fbaec" title="Returns the percentage of time that has elapsed since the timer started." alt="" coords="864,157,1032,183"/>
 <area shape="rect" id="node11" href="$class_display.html#a02b2228e05be168eda0b817d1ecf5db7" title="Updates the display based on the state of the provided Timer object." alt="" coords="659,107,799,132"/>
 <area shape="rect" id="node14" href="$_timer_test_8cpp.html#ad6d1baf23a5b08ce7c326940832f8a05" title=" " alt="" coords="671,208,786,233"/>

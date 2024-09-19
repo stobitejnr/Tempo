@@ -1,0 +1,8 @@
+<map id="Display::tickAlarmSetup" name="Display::tickAlarmSetup">
+<area shape="rect" id="node1" title="Updates the alarm setup display, showing the current input with a blinking cursor." alt="" coords="5,81,184,107"/>
+<area shape="rect" id="node2" href="$class_display.html#aab9a518037074ce68da2a7792771908d" title="Prints ASCII art to the terminal." alt="" coords="258,5,397,31"/>
+<area shape="rect" id="node4" href="$class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="471,56,611,81"/>
+<area shape="rect" id="node5" href="$class_display.html#a3480427024243711ee66efc51ddf0fa3" title="Prints controls to the terminal." alt="" coords="246,107,409,132"/>
+<area shape="rect" id="node6" href="$class_display.html#a40847809dd620e1a99f360c7e2ae977c" title="Stages the controls for the alarm setup to be displayed in the terminal." alt="" coords="232,157,423,197"/>
+<area shape="rect" id="node3" href="$class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="659,56,799,81"/>
+</map>

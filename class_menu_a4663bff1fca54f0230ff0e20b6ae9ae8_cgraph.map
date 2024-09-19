@@ -1,0 +1,28 @@
+<map id="Menu::alarmSequence" name="Menu::alarmSequence">
+<area shape="rect" id="node1" title="Runs the alarm sequence, allowing the user to set and interact with an alarm." alt="" coords="5,180,172,205"/>
+<area shape="rect" id="node2" href="$class_menu.html#a530b357d64d1481172d7808a453f262d" title="Checks and handles user input for the Alarm." alt="" coords="220,28,396,53"/>
+<area shape="rect" id="node3" href="$class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62" title="Clears the terminal screen." alt="" coords="734,54,889,80"/>
+<area shape="rect" id="node6" href="$class_menu.html#a76c8148cc85fcc305b80c52b2f9df2ca" title="Creates a new Alarm object based on user input." alt="" coords="479,129,625,154"/>
+<area shape="rect" id="node12" href="$class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="764,153,859,178"/>
+<area shape="rect" id="node13" href="$class_alarm.html#a2e1cee43509c402293feeebd70c80442" title="Checks if the alarm has completed." alt="" coords="251,281,365,306"/>
+<area shape="rect" id="node16" href="$class_display.html#a3a0e77e68157e55d67ac3f28dffdd00c" title="Sets the splash screen text." alt="" coords="237,330,379,356"/>
+<area shape="rect" id="node17" href="$class_display.html#a8437f93af050167c13f5cf2f3e68f8b8" title="Updates the display based on the state of the provided Alarm object." alt="" coords="481,430,623,456"/>
+<area shape="rect" id="node5" href="$class_display.html#ad226aa44204137c5a8fe774967532af4" title="Clears the splash screen." alt="" coords="475,28,629,53"/>
+<area shape="rect" id="node4" href="$class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="1389,428,1529,453"/>
+<area shape="rect" id="node7" href="$class_display.html#a00b39135d34e401529265af26a9611c7" title="Updates the alarm setup display, showing the current input with a blinking cursor." alt="" coords="722,104,901,129"/>
+<area shape="rect" id="node8" href="$class_display.html#aab9a518037074ce68da2a7792771908d" title="Prints ASCII art to the terminal." alt="" coords="989,228,1127,253"/>
+<area shape="rect" id="node9" href="$class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="1201,428,1341,453"/>
+<area shape="rect" id="node10" href="$class_display.html#a3480427024243711ee66efc51ddf0fa3" title="Prints controls to the terminal." alt="" coords="977,326,1139,352"/>
+<area shape="rect" id="node11" href="$class_display.html#a40847809dd620e1a99f360c7e2ae977c" title="Stages the controls for the alarm setup to be displayed in the terminal." alt="" coords="963,104,1153,144"/>
+<area shape="rect" id="node14" href="$class_alarm.html#a8f29e4753be03a7f68c22d2697e65a43" title="Calculates the remaining time in milliseconds until the alarm ends." alt="" coords="444,605,660,630"/>
+<area shape="rect" id="node15" href="$class_alarm.html#aed71528f9d3f7143072ab882e0ff105e" title="Gets the current time." alt="" coords="984,705,1132,730"/>
+<area shape="rect" id="node18" href="$class_alarm.html#a3ceedf3a5dafaf720eebd77e3ba8fecf" title="Gets the end time of the alarm." alt="" coords="738,656,885,681"/>
+<area shape="rect" id="node19" href="$class_alarm.html#aee08b5d6eafe7e5adee07f9c30dc3fce" title="Calculates the percentage of time elapsed from start to end." alt="" coords="727,606,896,632"/>
+<area shape="rect" id="node20" href="$class_display.html#a034871a688ea9c2cf5801d120b0cfcf6" title="Prints the progress bar to the terminal." alt="" coords="993,478,1123,504"/>
+<area shape="rect" id="node21" href="$class_display.html#a62d8435627ea69fbccaef4cef32d785d" title="Prints the splash screen to the terminal." alt="" coords="736,557,887,582"/>
+<area shape="rect" id="node23" href="$class_display.html#ab750543d9a82d7e90b262a772b195c1f" title="Creates a visual progress bar for the alarm based on the percentage completed." alt="" coords="724,254,899,280"/>
+<area shape="rect" id="node24" href="$class_display.html#ae6055127511e098a4ce8ea10d0ca2e43" title="Stages the controls for the alarm." alt="" coords="708,304,915,329"/>
+<area shape="rect" id="node25" href="$class_display.html#a90235f60d9b1239198ceca9e24df2e33" title="Stages the display for the alarm." alt="" coords="710,405,913,430"/>
+<area shape="rect" id="node26" href="$class_alarm.html#acf005496b4b72ecd4e66c415a8d3f238" title="Converts a time_point to a string representation." alt="" coords="736,705,887,730"/>
+<area shape="rect" id="node22" href="$class_display.html#aaa0ffb7318a45caa0b74d3d439e623f0" title="Clears a specific line in the terminal." alt="" coords="989,580,1127,605"/>
+</map>

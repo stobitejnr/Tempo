@@ -1,9 +1,9 @@
 <map id="Display::tickTimerSetup" name="Display::tickTimerSetup">
-<area shape="rect" id="node1" title=" " alt="" coords="1057,81,1235,107"/>
-<area shape="rect" id="node2" href="$class_menu.html#ac9d86f12b0ed98dddaeb1ae9b9602f41" title=" " alt="" coords="864,56,1009,81"/>
+<area shape="rect" id="node1" title="Updates the timer setup display, showing the current input with a blinking cursor." alt="" coords="1057,81,1235,107"/>
+<area shape="rect" id="node2" href="$class_menu.html#a1a90c9e670b33e2c9aaddc01f47b3b88" title="Creates a new Timer object based on user input." alt="" coords="864,56,1009,81"/>
 <area shape="rect" id="node9" href="$_display_test_8cpp.html#a6294fd865d398d67618ac1493f971eb1" title=" " alt="" coords="871,105,1003,131"/>
 <area shape="rect" id="node3" href="$class_menu.html#ab8d3cccd5b39987a6546f7dc1187b71e" title="Checks and handles user input for the Timer." alt="" coords="641,5,816,31"/>
-<area shape="rect" id="node4" href="$class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title=" " alt="" coords="429,31,593,56"/>
+<area shape="rect" id="node4" href="$class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title="Runs the timer sequence, allowing the user to set and interact with a timer." alt="" coords="429,31,593,56"/>
 <area shape="rect" id="node5" href="$class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="247,31,381,56"/>
 <area shape="rect" id="node6" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,5,181,31"/>
 <area shape="rect" id="node7" href="$_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,55,199,80"/>

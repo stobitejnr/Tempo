@@ -1,0 +1,4 @@
+<map id="ShowNotification" name="ShowNotification">
+<area shape="rect" id="node1" title="Shows a notification in the system tray." alt="" coords="132,5,264,31"/>
+<area shape="rect" id="node2" href="$_notification_8cpp.html#a1122673f59be78a3997ec7dd1c4688f9" title="Entry point for the Windows application." alt="" coords="5,5,84,31"/>
+</map>
