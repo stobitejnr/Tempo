@@ -90,9 +90,9 @@ public:
 
     void alarmSequence();
 
-    Timer createTimer();
+    Timer createTimer(bool& run);
 
-    Alarm createAlarm();
+    Alarm createAlarm(bool& run);
 
     void printTimerInput(int, int ,int);
 

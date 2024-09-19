@@ -94,9 +94,9 @@ void Menu::mainMenu() {
 void Menu::timerSequence(){
     _display.clearScreen();
 
-    Timer timer = createTimer();
-
     bool run = true;
+
+    Timer timer = createTimer(run);
 
     _display.clearScreen();
 
@@ -148,9 +148,9 @@ void Menu::stopwatchSequence(){
 void Menu::alarmSequence(){
     _display.clearScreen();
 
-    Alarm alarm = createAlarm();
-
     bool run = true;
+
+    Alarm alarm = createAlarm(run);
 
     _display.clearScreen();
 
@@ -172,7 +172,7 @@ void Menu::alarmSequence(){
     }
 }
 
-Timer Menu::createTimer(){
+Timer Menu::createTimer(bool& run){
     int h = 0;
     int m = 0;
     int s = 0;
@@ -205,6 +205,11 @@ Timer Menu::createTimer(){
             input = '0' + input.substr(0, 5);
         }
 
+        if(ch == 'q' || ch == 'Q'){
+            run = false;
+            return Timer(0,0,0);
+        }
+
         h = stoi(input.substr(0, 2));
         m = stoi(input.substr(2, 2));
         s = stoi(input.substr(4, 2));
@@ -226,7 +231,7 @@ Timer Menu::createTimer(){
     return timer;
 }
 
-Alarm Menu::createAlarm(){
+Alarm Menu::createAlarm(bool& run){
     int h = 0;
     int m = 0;
 
@@ -257,26 +262,18 @@ Alarm Menu::createAlarm(){
             input = '0' + input.substr(0, 3);
         }
 
+        if(ch == 'q' || ch == 'Q'){
+            run = false;
+            return Alarm("00:00");
+        }
+
         h = stoi(input.substr(0, 2));
         m = stoi(input.substr(2, 2));
-
-        /*
-        // Ensure the hours are between 0 and 23, and minutes are between 0 and 59
-        if (h > 23) {
-            h = 23;  // Limit the hours to 23
-            input = "23" + input.substr(2, 2);  // Update the input to reflect this
-        }
-
-        if (m > 59) {
-            m = 59;  // Limit the minutes to 59
-            input = input.substr(0, 2) + "59";  // Update the input to reflect this
-        }
-        */
 
         to_print = (h < 10 ? "0" : "") + to_string(h) + ":" 
                  + (m < 10 ? "0" : "") + to_string(m);
 
-        _display.tickTimerSetup(to_print);
+        _display.tickAlarmSetup(to_print);
         
         wait(0.01);
 
@@ -355,7 +352,7 @@ void Menu::checkTimerInput(Timer& timer, bool& run){
             case 'a':
                 _display.clearScreen();
                 _display.clearSplash();
-                timer = createTimer();
+                timer = createTimer(run);
                 break;
             case 'Q':
             case 'q':
@@ -435,7 +432,7 @@ void Menu::checkAlarmInput(Alarm& alarm, bool& run){
             case 'a':
                 _display.clearScreen();
                 _display.clearSplash();
-                alarm = createAlarm();
+                alarm = createAlarm(run);
                 break;
             case 'Q':
             case 'q':

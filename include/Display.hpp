@@ -86,6 +86,10 @@ public:
      */
     void stageStopwatchControls();
 
+    void stageTimerSetupControls();
+
+    void stageAlarmSetupControls();
+
     /**
      * @brief Stages the splits block to be displayed.
      */
@@ -158,6 +162,7 @@ public:
      * @param lineIndex The index of the line to clear.
      */
     void clearLine(int lineIndex);
+
 
     /**
      * @brief Efficiently prints a string to the terminal.
