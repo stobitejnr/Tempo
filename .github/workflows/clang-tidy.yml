@@ -22,5 +22,19 @@ jobs:
 
       - name: Run Clang-Tidy and Check for Warnings
         run: |
-          chmod +x ./scripts/check_clang_tidy_warnings.sh
-          ./scripts/check_clang_tidy_warnings.sh
+          $warnings = & clang-tidy.exe -p build *.cpp 2>&1
+          if ($warnings) {
+            Write-Output "Clang-Tidy found warnings:"
+            Write-Output $warnings
+            exit 1
+          } else {
+            Write-Output "No Clang-Tidy warnings found."
+          }
+        shell: powershell
+
+      - name: Upload Clang-Tidy Results
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: clang-tidy-results
+          path: clang-tidy-output.txt
