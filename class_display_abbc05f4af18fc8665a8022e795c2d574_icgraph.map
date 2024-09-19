@@ -1,6 +1,6 @@
 <map id="Display::clearFormat" name="Display::clearFormat">
 <area shape="rect" id="node1" title=" " alt="" coords="1319,257,1475,282"/>
-<area shape="rect" id="node2" href="$class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="247,145,381,170"/>
+<area shape="rect" id="node2" href="$class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="247,145,381,170"/>
 <area shape="rect" id="node6" href="$class_menu.html#ae1ec62e738dda7faaaec850bd0b58ffe" title="Displays the start screen with logo art and credits." alt="" coords="266,71,362,97"/>
 <area shape="rect" id="node7" href="$class_display.html#a8437f93af050167c13f5cf2f3e68f8b8" title="Updates the display based on the state of the provided Alarm object." alt="" coords="1111,407,1252,433"/>
 <area shape="rect" id="node11" href="$class_display.html#a00b39135d34e401529265af26a9611c7" title="Updates the alarm setup display, showing the current input with a blinking cursor." alt="" coords="1092,482,1271,507"/>

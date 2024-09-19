@@ -1,7 +1,7 @@
 <map id="Display::clearScreen" name="Display::clearScreen">
 <area shape="rect" id="node1" title="Clears the terminal screen." alt="" coords="1141,267,1296,292"/>
 <area shape="rect" id="node2" href="$class_menu.html#a4663bff1fca54f0230ff0e20b6ae9ae8" title="Runs the alarm sequence, allowing the user to set and interact with an alarm." alt="" coords="429,89,596,115"/>
-<area shape="rect" id="node3" href="$class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="247,317,381,343"/>
+<area shape="rect" id="node3" href="$class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="247,317,381,343"/>
 <area shape="rect" id="node7" href="$class_menu.html#a530b357d64d1481172d7808a453f262d" title="Checks and handles user input for the Alarm." alt="" coords="654,13,830,39"/>
 <area shape="rect" id="node8" href="$class_menu.html#a81188fdf5f017799f9e7f7eaaf98c3ec" title="Checks and handles user input for the Stopwatch." alt="" coords="888,165,1093,191"/>
 <area shape="rect" id="node9" href="$class_menu.html#aca5927a856a8d20d738323c2261cc9e4" title="Runs the stopwatch sequence, allowing the user to start, stop, and record splits." alt="" coords="644,216,840,241"/>

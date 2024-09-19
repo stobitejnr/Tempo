@@ -1,5 +1,5 @@
 <map id="Menu" name="Menu">
-<area shape="rect" id="node1" title="The Menu class manages the main menu and user input for the Timer, Stopwatch, and Alarm." alt="" coords="191,476,250,501"/>
+<area shape="rect" id="node1" title="The Menu class manages the main menu and user input for the Timer Stopwatch and Alarm." alt="" coords="191,491,250,516"/>
 <area shape="rect" id="node2" href="$class_display.html" title="The Display class manages the visual representation and interaction logic for timers,..." alt="" coords="188,329,259,355"/>
 <area shape="rect" id="node3" title=" " alt="" coords="89,95,176,120"/>
 <area shape="rect" id="node7" title=" " alt="" coords="5,329,164,355"/>

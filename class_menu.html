@@ -78,7 +78,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>The <a class="el" href="class_menu.html" title="The Menu class manages the main menu and user input for the Timer, Stopwatch, and Alarm.">Menu</a> class manages the main menu and user input for the <a class="el" href="class_timer.html" title="The Timer class provides a countdown timer with start, pause, resume, reset, and time adjustment func...">Timer</a>, <a class="el" href="class_stopwatch.html" title="The Stopwatch class provides a simple timer with start, pause, resume, and reset functionalities.">Stopwatch</a>, and <a class="el" href="class_alarm.html" title="A class to manage alarms with time-based triggers.">Alarm</a>.  
+<p>The <a class="el" href="class_menu.html" title="The Menu class manages the main menu and user input for the Timer Stopwatch and Alarm.">Menu</a> class manages the main menu and user input for the <a class="el" href="class_timer.html" title="The Timer class provides a countdown timer with start, pause, resume, reset, and time adjustment func...">Timer</a> <a class="el" href="class_stopwatch.html" title="The Stopwatch class provides a simple timer with start, pause, resume, and reset functionalities.">Stopwatch</a> and <a class="el" href="class_alarm.html" title="A class to manage alarms with time-based triggers.">Alarm</a>.  
  <a href="class_menu.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_menu_8hpp_source.html">Menu.hpp</a>&gt;</code></p>
@@ -87,7 +87,7 @@ Collaboration diagram for Menu:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_menu__coll__graph.png" border="0" usemap="#a_menu_coll__map" alt="Collaboration graph"/></div>
 <map name="a_menu_coll__map" id="a_menu_coll__map">
-<area shape="rect" title="The Menu class manages the main menu and user input for the Timer, Stopwatch, and Alarm." alt="" coords="191,476,250,501"/>
+<area shape="rect" title="The Menu class manages the main menu and user input for the Timer Stopwatch and Alarm." alt="" coords="191,491,250,516"/>
 <area shape="rect" href="class_display.html" title="The Display class manages the visual representation and interaction logic for timers,..." alt="" coords="188,329,259,355"/>
 <area shape="rect" title=" " alt="" coords="89,95,176,120"/>
 <area shape="rect" title=" " alt="" coords="5,329,164,355"/>
@@ -100,10 +100,10 @@ Collaboration diagram for Menu:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2b43753d834b64bdba7e82bc9f2af305"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu.html#a2b43753d834b64bdba7e82bc9f2af305">Menu</a> (bool testing)</td></tr>
-<tr class="memdesc:a2b43753d834b64bdba7e82bc9f2af305"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_menu.html" title="The Menu class manages the main menu and user input for the Timer, Stopwatch, and Alarm.">Menu</a> object.  <br /></td></tr>
+<tr class="memdesc:a2b43753d834b64bdba7e82bc9f2af305"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_menu.html" title="The Menu class manages the main menu and user input for the Timer Stopwatch and Alarm.">Menu</a> object.  <br /></td></tr>
 <tr class="separator:a2b43753d834b64bdba7e82bc9f2af305"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0699f1b4c5bd69ae1d5bee2e5043c452"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452">getMenuInput</a> ()</td></tr>
-<tr class="memdesc:a0699f1b4c5bd69ae1d5bee2e5043c452"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection.  <br /></td></tr>
+<tr class="memdesc:a0699f1b4c5bd69ae1d5bee2e5043c452"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for the user to press a valid key (1 2 3 or Q) for menu selection.  <br /></td></tr>
 <tr class="separator:a0699f1b4c5bd69ae1d5bee2e5043c452"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ab7d9809ad0f490ad7634a76b37589b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b">wait</a> (double seconds)</td></tr>
 <tr class="memdesc:a4ab7d9809ad0f490ad7634a76b37589b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for a specific duration using busy-waiting.  <br /></td></tr>
@@ -121,7 +121,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a530b357d64d1481172d7808a453f262d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks and handles user input for the <a class="el" href="class_alarm.html" title="A class to manage alarms with time-based triggers.">Alarm</a>.  <br /></td></tr>
 <tr class="separator:a530b357d64d1481172d7808a453f262d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef9edee86d2ea460606361c92e061583"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu.html#aef9edee86d2ea460606361c92e061583">mainMenu</a> ()</td></tr>
-<tr class="memdesc:aef9edee86d2ea460606361c92e061583"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the main menu loop, allowing the user to choose between <a class="el" href="class_timer.html" title="The Timer class provides a countdown timer with start, pause, resume, reset, and time adjustment func...">Timer</a>, <a class="el" href="class_stopwatch.html" title="The Stopwatch class provides a simple timer with start, pause, resume, and reset functionalities.">Stopwatch</a>, and <a class="el" href="class_alarm.html" title="A class to manage alarms with time-based triggers.">Alarm</a>.  <br /></td></tr>
+<tr class="memdesc:aef9edee86d2ea460606361c92e061583"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the main menu loop allowing the user to choose between <a class="el" href="class_timer.html" title="The Timer class provides a countdown timer with start, pause, resume, reset, and time adjustment func...">Timer</a> <a class="el" href="class_stopwatch.html" title="The Stopwatch class provides a simple timer with start, pause, resume, and reset functionalities.">Stopwatch</a> and <a class="el" href="class_alarm.html" title="A class to manage alarms with time-based triggers.">Alarm</a>.  <br /></td></tr>
 <tr class="separator:aef9edee86d2ea460606361c92e061583"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1ec62e738dda7faaaec850bd0b58ffe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu.html#ae1ec62e738dda7faaaec850bd0b58ffe">start</a> ()</td></tr>
 <tr class="memdesc:ae1ec62e738dda7faaaec850bd0b58ffe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the start screen with logo art and credits.  <br /></td></tr>
@@ -154,6 +154,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a091dfbcc90fd8793d85784996e32443d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a773a1b7f947f866b08e7f65858b3d44f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu.html#a773a1b7f947f866b08e7f65858b3d44f">_testing</a></td></tr>
 <tr class="separator:a773a1b7f947f866b08e7f65858b3d44f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac998f3528aa82bfc9fae539a906626c3"><td class="memItemLeft" align="right" valign="top">vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu.html#ac998f3528aa82bfc9fae539a906626c3">_logoArt2</a></td></tr>
+<tr class="separator:ac998f3528aa82bfc9fae539a906626c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d05e7243afa5ff307fe278e145991de"><td class="memItemLeft" align="right" valign="top">vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu.html#a9d05e7243afa5ff307fe278e145991de">_logoArt</a></td></tr>
 <tr class="separator:a9d05e7243afa5ff307fe278e145991de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a263eddcf7f25e87e454db2ab497559e8"><td class="memItemLeft" align="right" valign="top">vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu.html#a263eddcf7f25e87e454db2ab497559e8">_credits</a></td></tr>
@@ -166,7 +168,7 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a3d8ec3b3fa671a3c5d127983cc69ede3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The <a class="el" href="class_menu.html" title="The Menu class manages the main menu and user input for the Timer, Stopwatch, and Alarm.">Menu</a> class manages the main menu and user input for the <a class="el" href="class_timer.html" title="The Timer class provides a countdown timer with start, pause, resume, reset, and time adjustment func...">Timer</a>, <a class="el" href="class_stopwatch.html" title="The Stopwatch class provides a simple timer with start, pause, resume, and reset functionalities.">Stopwatch</a>, and <a class="el" href="class_alarm.html" title="A class to manage alarms with time-based triggers.">Alarm</a>. </p>
+<div class="textblock"><p>The <a class="el" href="class_menu.html" title="The Menu class manages the main menu and user input for the Timer Stopwatch and Alarm.">Menu</a> class manages the main menu and user input for the <a class="el" href="class_timer.html" title="The Timer class provides a countdown timer with start, pause, resume, reset, and time adjustment func...">Timer</a> <a class="el" href="class_stopwatch.html" title="The Stopwatch class provides a simple timer with start, pause, resume, and reset functionalities.">Stopwatch</a> and <a class="el" href="class_alarm.html" title="A class to manage alarms with time-based triggers.">Alarm</a>. </p>
 
 <p class="definition">Definition at line <a class="el" href="_menu_8hpp_source.html#l00018">18</a> of file <a class="el" href="_menu_8hpp_source.html">Menu.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -186,8 +188,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructs a <a class="el" href="class_menu.html" title="The Menu class manages the main menu and user input for the Timer, Stopwatch, and Alarm.">Menu</a> object. </p>
-<p>Constructs a <a class="el" href="class_menu.html" title="The Menu class manages the main menu and user input for the Timer, Stopwatch, and Alarm.">Menu</a> object and initializes its state. </p>
+<p>Constructs a <a class="el" href="class_menu.html" title="The Menu class manages the main menu and user input for the Timer Stopwatch and Alarm.">Menu</a> object. </p>
+<p>Constructs a <a class="el" href="class_menu.html" title="The Menu class manages the main menu and user input for the Timer Stopwatch and Alarm.">Menu</a> object and initializes its state. </p>
 
 <p class="definition">Definition at line <a class="el" href="_menu_8cpp_source.html#l00015">15</a> of file <a class="el" href="_menu_8cpp_source.html">Menu.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   15</span>                      { </div>
@@ -303,7 +305,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="class_menu_a4663bff1fca54f0230ff0e20b6ae9ae8_icgraph.png" border="0" usemap="#aclass_menu_a4663bff1fca54f0230ff0e20b6ae9ae8_icgraph" alt=""/></div>
 <map name="aclass_menu_a4663bff1fca54f0230ff0e20b6ae9ae8_icgraph" id="aclass_menu_a4663bff1fca54f0230ff0e20b6ae9ae8_icgraph">
 <area shape="rect" title="Runs the alarm sequence, allowing the user to set and interact with an alarm." alt="" coords="429,31,596,56"/>
-<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="247,31,381,56"/>
+<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="247,31,381,56"/>
 <area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,5,181,31"/>
 <area shape="rect" href="_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,55,199,80"/>
 <area shape="rect" href="_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,55,60,80"/>
@@ -404,7 +406,7 @@ Here is the caller graph for this function:</div>
 <map name="aclass_menu_a530b357d64d1481172d7808a453f262d_icgraph" id="aclass_menu_a530b357d64d1481172d7808a453f262d_icgraph">
 <area shape="rect" title="Checks and handles user input for the Alarm." alt="" coords="644,31,820,56"/>
 <area shape="rect" href="class_menu.html#a4663bff1fca54f0230ff0e20b6ae9ae8" title="Runs the alarm sequence, allowing the user to set and interact with an alarm." alt="" coords="429,31,596,56"/>
-<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="247,31,381,56"/>
+<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="247,31,381,56"/>
 <area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,5,181,31"/>
 <area shape="rect" href="_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,55,199,80"/>
 <area shape="rect" href="_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,55,60,80"/>
@@ -503,7 +505,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  469</span>        }</div>
 <div class="line"><span class="lineno">  470</span>    }</div>
 <div class="line"><span class="lineno">  471</span>}</div>
-<div class="ttc" id="aclass_menu_html_a3d8ec3b3fa671a3c5d127983cc69ede3"><div class="ttname"><a href="class_menu.html#a3d8ec3b3fa671a3c5d127983cc69ede3">Menu::_stopMessages</a></div><div class="ttdeci">vector&lt; string &gt; _stopMessages</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8hpp_source.html#l00162">Menu.hpp:162</a></div></div>
+<div class="ttc" id="aclass_menu_html_a3d8ec3b3fa671a3c5d127983cc69ede3"><div class="ttname"><a href="class_menu.html#a3d8ec3b3fa671a3c5d127983cc69ede3">Menu::_stopMessages</a></div><div class="ttdeci">vector&lt; string &gt; _stopMessages</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8hpp_source.html#l00180">Menu.hpp:180</a></div></div>
 <div class="ttc" id="aclass_stopwatch_html_a2cc48295d6b083361d062b8eb68d753a"><div class="ttname"><a href="class_stopwatch.html#a2cc48295d6b083361d062b8eb68d753a">Stopwatch::pause</a></div><div class="ttdeci">void pause()</div><div class="ttdoc">Pauses the stopwatch.</div><div class="ttdef"><b>Definition:</b> <a href="_stopwatch_8cpp_source.html#l00119">Stopwatch.cpp:119</a></div></div>
 <div class="ttc" id="aclass_stopwatch_html_a42c7014e7fffcf4c56ca6fb07f8eb31c"><div class="ttname"><a href="class_stopwatch.html#a42c7014e7fffcf4c56ca6fb07f8eb31c">Stopwatch::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdoc">Resets the stopwatch to 0 milliseconds and stops it.</div><div class="ttdef"><b>Definition:</b> <a href="_stopwatch_8cpp_source.html#l00148">Stopwatch.cpp:148</a></div></div>
 <div class="ttc" id="aclass_stopwatch_html_a789461171238250633eeb26b8f3b0dce"><div class="ttname"><a href="class_stopwatch.html#a789461171238250633eeb26b8f3b0dce">Stopwatch::resume</a></div><div class="ttdeci">void resume()</div><div class="ttdoc">Resumes the stopwatch from the last paused time.</div><div class="ttdef"><b>Definition:</b> <a href="_stopwatch_8cpp_source.html#l00134">Stopwatch.cpp:134</a></div></div>
@@ -511,7 +513,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclass_stopwatch_html_aaf61c1ada98a22cc1c2bc589bdd4134a"><div class="ttname"><a href="class_stopwatch.html#aaf61c1ada98a22cc1c2bc589bdd4134a">Stopwatch::currentMilliseconds</a></div><div class="ttdeci">int currentMilliseconds()</div><div class="ttdoc">Returns the current elapsed time in milliseconds.</div><div class="ttdef"><b>Definition:</b> <a href="_stopwatch_8cpp_source.html#l00044">Stopwatch.cpp:44</a></div></div>
 <div class="ttc" id="aclass_stopwatch_html_ae20cb58892efc6ca55117583aac8c392"><div class="ttname"><a href="class_stopwatch.html#ae20cb58892efc6ca55117583aac8c392">Stopwatch::isRunning</a></div><div class="ttdeci">bool isRunning()</div><div class="ttdoc">Checks if the stopwatch is currently running.</div><div class="ttdef"><b>Definition:</b> <a href="_stopwatch_8cpp_source.html#l00163">Stopwatch.cpp:163</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_menu_8hpp_source.html#l00100">_display</a>, <a class="el" href="_menu_8hpp_source.html#l00162">_stopMessages</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00064">Stopwatch::addSplit()</a>, <a class="el" href="_display_8cpp_source.html#l00042">Display::clearScreen()</a>, <a class="el" href="_display_8cpp_source.html#l00092">Display::clearSplash()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00044">Stopwatch::currentMilliseconds()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00163">Stopwatch::isRunning()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00119">Stopwatch::pause()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00148">Stopwatch::reset()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00134">Stopwatch::resume()</a>, and <a class="el" href="_display_8cpp_source.html#l00084">Display::setSplash()</a>.</p>
+<p class="reference">References <a class="el" href="_menu_8hpp_source.html#l00100">_display</a>, <a class="el" href="_menu_8hpp_source.html#l00180">_stopMessages</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00064">Stopwatch::addSplit()</a>, <a class="el" href="_display_8cpp_source.html#l00042">Display::clearScreen()</a>, <a class="el" href="_display_8cpp_source.html#l00092">Display::clearSplash()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00044">Stopwatch::currentMilliseconds()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00163">Stopwatch::isRunning()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00119">Stopwatch::pause()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00148">Stopwatch::reset()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00134">Stopwatch::resume()</a>, and <a class="el" href="_display_8cpp_source.html#l00084">Display::setSplash()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00149">stopwatchSequence()</a>.</p>
 <div class="dynheader">
@@ -540,7 +542,7 @@ Here is the caller graph for this function:</div>
 <map name="aclass_menu_a81188fdf5f017799f9e7f7eaaf98c3ec_icgraph" id="aclass_menu_a81188fdf5f017799f9e7f7eaaf98c3ec_icgraph">
 <area shape="rect" title="Checks and handles user input for the Stopwatch." alt="" coords="673,31,879,56"/>
 <area shape="rect" href="class_menu.html#aca5927a856a8d20d738323c2261cc9e4" title="Runs the stopwatch sequence, allowing the user to start, stop, and record splits." alt="" coords="429,31,625,56"/>
-<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="247,31,381,56"/>
+<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="247,31,381,56"/>
 <area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,5,181,31"/>
 <area shape="rect" href="_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,55,199,80"/>
 <area shape="rect" href="_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,55,60,80"/>
@@ -674,7 +676,7 @@ Here is the caller graph for this function:</div>
 <map name="aclass_menu_ab8d3cccd5b39987a6546f7dc1187b71e_icgraph" id="aclass_menu_ab8d3cccd5b39987a6546f7dc1187b71e_icgraph">
 <area shape="rect" title="Checks and handles user input for the Timer." alt="" coords="641,31,816,56"/>
 <area shape="rect" href="class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title="Runs the timer sequence, allowing the user to set and interact with a timer." alt="" coords="429,31,593,56"/>
-<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="247,31,381,56"/>
+<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="247,31,381,56"/>
 <area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,5,181,31"/>
 <area shape="rect" href="_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,55,199,80"/>
 <area shape="rect" href="_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,55,60,80"/>
@@ -797,7 +799,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" title="Creates a new Alarm object based on user input." alt="" coords="868,31,1015,56"/>
 <area shape="rect" href="class_menu.html#a4663bff1fca54f0230ff0e20b6ae9ae8" title="Runs the alarm sequence, allowing the user to set and interact with an alarm." alt="" coords="429,31,596,56"/>
 <area shape="rect" href="class_menu.html#a530b357d64d1481172d7808a453f262d" title="Checks and handles user input for the Alarm." alt="" coords="644,56,820,81"/>
-<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="247,31,381,56"/>
+<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="247,31,381,56"/>
 <area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,5,181,31"/>
 <area shape="rect" href="_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,55,199,80"/>
 <area shape="rect" href="_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,55,60,80"/>
@@ -925,7 +927,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" title="Creates a new Timer object based on user input." alt="" coords="864,31,1009,56"/>
 <area shape="rect" href="class_menu.html#ab8d3cccd5b39987a6546f7dc1187b71e" title="Checks and handles user input for the Timer." alt="" coords="641,5,816,31"/>
 <area shape="rect" href="class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title="Runs the timer sequence, allowing the user to set and interact with a timer." alt="" coords="429,31,593,56"/>
-<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="247,31,381,56"/>
+<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="247,31,381,56"/>
 <area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,5,181,31"/>
 <area shape="rect" href="_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,55,199,80"/>
 <area shape="rect" href="_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,55,60,80"/>
@@ -949,7 +951,8 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection. </p>
+<p>Waits for the user to press a valid key (1 2 3 or Q) for menu selection. </p>
+<p>Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection.</p>
 <p>This function repeatedly checks for user input until a valid menu option is pressed. It then returns the corresponding character for the selected menu option.</p>
 <dl class="section return"><dt>Returns</dt><dd>char The character corresponding to the user's menu selection.</dd></dl>
 <p>This function repeatedly checks for user input until a valid menu option is pressed. It then returns the corresponding character for the selected menu option.</p>
@@ -986,7 +989,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_menu_a0699f1b4c5bd69ae1d5bee2e5043c452_cgraph.png" border="0" usemap="#aclass_menu_a0699f1b4c5bd69ae1d5bee2e5043c452_cgraph" alt=""/></div>
 <map name="aclass_menu_a0699f1b4c5bd69ae1d5bee2e5043c452_cgraph" id="aclass_menu_a0699f1b4c5bd69ae1d5bee2e5043c452_cgraph">
-<area shape="rect" title="Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection." alt="" coords="5,5,161,31"/>
+<area shape="rect" title="Waits for the user to press a valid key (1 2 3 or Q) for menu selection." alt="" coords="5,5,161,31"/>
 <area shape="rect" href="class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="209,5,304,31"/>
 </map>
 </div>
@@ -995,8 +998,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_menu_a0699f1b4c5bd69ae1d5bee2e5043c452_icgraph.png" border="0" usemap="#aclass_menu_a0699f1b4c5bd69ae1d5bee2e5043c452_icgraph" alt=""/></div>
 <map name="aclass_menu_a0699f1b4c5bd69ae1d5bee2e5043c452_icgraph" id="aclass_menu_a0699f1b4c5bd69ae1d5bee2e5043c452_icgraph">
-<area shape="rect" title="Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection." alt="" coords="429,31,585,56"/>
-<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="247,31,381,56"/>
+<area shape="rect" title="Waits for the user to press a valid key (1 2 3 or Q) for menu selection." alt="" coords="429,31,585,56"/>
+<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="247,31,381,56"/>
 <area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,5,181,31"/>
 <area shape="rect" href="_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,55,199,80"/>
 <area shape="rect" href="_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,55,60,80"/>
@@ -1020,8 +1023,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Starts the main menu loop, allowing the user to choose between <a class="el" href="class_timer.html" title="The Timer class provides a countdown timer with start, pause, resume, reset, and time adjustment func...">Timer</a>, <a class="el" href="class_stopwatch.html" title="The Stopwatch class provides a simple timer with start, pause, resume, and reset functionalities.">Stopwatch</a>, and <a class="el" href="class_alarm.html" title="A class to manage alarms with time-based triggers.">Alarm</a>. </p>
-<p>The menu displays options to the user, processes the user's selection, and runs the appropriate sequence for <a class="el" href="class_timer.html" title="The Timer class provides a countdown timer with start, pause, resume, reset, and time adjustment func...">Timer</a>, <a class="el" href="class_stopwatch.html" title="The Stopwatch class provides a simple timer with start, pause, resume, and reset functionalities.">Stopwatch</a>, or <a class="el" href="class_alarm.html" title="A class to manage alarms with time-based triggers.">Alarm</a>. It handles the input and output and returns to the menu after each operation unless the user chooses to quit.</p>
+<p>Starts the main menu loop allowing the user to choose between <a class="el" href="class_timer.html" title="The Timer class provides a countdown timer with start, pause, resume, reset, and time adjustment func...">Timer</a> <a class="el" href="class_stopwatch.html" title="The Stopwatch class provides a simple timer with start, pause, resume, and reset functionalities.">Stopwatch</a> and <a class="el" href="class_alarm.html" title="A class to manage alarms with time-based triggers.">Alarm</a>. </p>
+<p>Starts the main menu loop, allowing the user to choose between <a class="el" href="class_timer.html" title="The Timer class provides a countdown timer with start, pause, resume, reset, and time adjustment func...">Timer</a>, <a class="el" href="class_stopwatch.html" title="The Stopwatch class provides a simple timer with start, pause, resume, and reset functionalities.">Stopwatch</a>, and <a class="el" href="class_alarm.html" title="A class to manage alarms with time-based triggers.">Alarm</a>.</p>
+<p>The menu displays options to the user processes the user's selection and runs the appropriate sequence for <a class="el" href="class_timer.html" title="The Timer class provides a countdown timer with start, pause, resume, reset, and time adjustment func...">Timer</a> <a class="el" href="class_stopwatch.html" title="The Stopwatch class provides a simple timer with start, pause, resume, and reset functionalities.">Stopwatch</a> or <a class="el" href="class_alarm.html" title="A class to manage alarms with time-based triggers.">Alarm</a>. It handles the input and output and returns to the menu after each operation unless the user chooses to quit.</p>
 <p>The menu displays options to the user, processes the user's selection, and runs the appropriate sequence for <a class="el" href="class_timer.html" title="The Timer class provides a countdown timer with start, pause, resume, reset, and time adjustment func...">Timer</a>, <a class="el" href="class_stopwatch.html" title="The Stopwatch class provides a simple timer with start, pause, resume, and reset functionalities.">Stopwatch</a>, or <a class="el" href="class_alarm.html" title="A class to manage alarms with time-based triggers.">Alarm</a>. It handles the input and output and returns to the menu after each operation unless the user chooses to quit. </p>
 
 <p class="definition">Definition at line <a class="el" href="_menu_8cpp_source.html#l00062">62</a> of file <a class="el" href="_menu_8cpp_source.html">Menu.cpp</a>.</p>
@@ -1081,15 +1085,15 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclass_display_html_a5454c0ff9a9d1730b3604bc15f94a5b3"><div class="ttname"><a href="class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3">Display::setCursor</a></div><div class="ttdeci">void setCursor(int x, int y)</div><div class="ttdoc">Sets the cursor position in the terminal.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8cpp_source.html#l00059">Display.cpp:59</a></div></div>
 <div class="ttc" id="aclass_display_html_abbc05f4af18fc8665a8022e795c2d574"><div class="ttname"><a href="class_display.html#abbc05f4af18fc8665a8022e795c2d574">Display::clearFormat</a></div><div class="ttdeci">void clearFormat()</div><div class="ttdef"><b>Definition:</b> <a href="_display_8cpp_source.html#l00838">Display.cpp:838</a></div></div>
 <div class="ttc" id="aclass_display_html_adb4502abd3d3dd9ca70a97c1f3d66ad7"><div class="ttname"><a href="class_display.html#adb4502abd3d3dd9ca70a97c1f3d66ad7">Display::setFormat</a></div><div class="ttdeci">void setFormat(const std::string &amp;code)</div><div class="ttdef"><b>Definition:</b> <a href="_display_8cpp_source.html#l00832">Display.cpp:832</a></div></div>
-<div class="ttc" id="aclass_menu_html_a0699f1b4c5bd69ae1d5bee2e5043c452"><div class="ttname"><a href="class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452">Menu::getMenuInput</a></div><div class="ttdeci">char getMenuInput()</div><div class="ttdoc">Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00520">Menu.cpp:520</a></div></div>
+<div class="ttc" id="aclass_menu_html_a0699f1b4c5bd69ae1d5bee2e5043c452"><div class="ttname"><a href="class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452">Menu::getMenuInput</a></div><div class="ttdeci">char getMenuInput()</div><div class="ttdoc">Waits for the user to press a valid key (1 2 3 or Q) for menu selection.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00520">Menu.cpp:520</a></div></div>
 <div class="ttc" id="aclass_menu_html_a4663bff1fca54f0230ff0e20b6ae9ae8"><div class="ttname"><a href="class_menu.html#a4663bff1fca54f0230ff0e20b6ae9ae8">Menu::alarmSequence</a></div><div class="ttdeci">void alarmSequence()</div><div class="ttdoc">Runs the alarm sequence, allowing the user to set and interact with an alarm.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00179">Menu.cpp:179</a></div></div>
 <div class="ttc" id="aclass_menu_html_a4a3468dd5028b68b1fd7fd8ecd9ea36a"><div class="ttname"><a href="class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a">Menu::timerSequence</a></div><div class="ttdeci">void timerSequence()</div><div class="ttdoc">Runs the timer sequence, allowing the user to set and interact with a timer.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00119">Menu.cpp:119</a></div></div>
-<div class="ttc" id="aclass_menu_html_a8a2cd8656da8f8ac4761e4a3cf627103"><div class="ttname"><a href="class_menu.html#a8a2cd8656da8f8ac4761e4a3cf627103">Menu::_menuOptions</a></div><div class="ttdeci">vector&lt; string &gt; _menuOptions</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8hpp_source.html#l00143">Menu.hpp:143</a></div></div>
+<div class="ttc" id="aclass_menu_html_a8a2cd8656da8f8ac4761e4a3cf627103"><div class="ttname"><a href="class_menu.html#a8a2cd8656da8f8ac4761e4a3cf627103">Menu::_menuOptions</a></div><div class="ttdeci">vector&lt; string &gt; _menuOptions</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8hpp_source.html#l00161">Menu.hpp:161</a></div></div>
 <div class="ttc" id="aclass_menu_html_aca5927a856a8d20d738323c2261cc9e4"><div class="ttname"><a href="class_menu.html#aca5927a856a8d20d738323c2261cc9e4">Menu::stopwatchSequence</a></div><div class="ttdeci">void stopwatchSequence()</div><div class="ttdoc">Runs the stopwatch sequence, allowing the user to start, stop, and record splits.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00149">Menu.cpp:149</a></div></div>
-<div class="ttc" id="aclass_menu_html_aef9edee86d2ea460606361c92e061583"><div class="ttname"><a href="class_menu.html#aef9edee86d2ea460606361c92e061583">Menu::mainMenu</a></div><div class="ttdeci">void mainMenu()</div><div class="ttdoc">Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00062">Menu.cpp:62</a></div></div>
-<div class="ttc" id="aclass_menu_html_affadebf9b7be403dab3a8ef3cf870c23"><div class="ttname"><a href="class_menu.html#affadebf9b7be403dab3a8ef3cf870c23">Menu::_menuArt</a></div><div class="ttdeci">vector&lt; string &gt; _menuArt</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8hpp_source.html#l00136">Menu.hpp:136</a></div></div>
+<div class="ttc" id="aclass_menu_html_aef9edee86d2ea460606361c92e061583"><div class="ttname"><a href="class_menu.html#aef9edee86d2ea460606361c92e061583">Menu::mainMenu</a></div><div class="ttdeci">void mainMenu()</div><div class="ttdoc">Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00062">Menu.cpp:62</a></div></div>
+<div class="ttc" id="aclass_menu_html_affadebf9b7be403dab3a8ef3cf870c23"><div class="ttname"><a href="class_menu.html#affadebf9b7be403dab3a8ef3cf870c23">Menu::_menuArt</a></div><div class="ttdeci">vector&lt; string &gt; _menuArt</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8hpp_source.html#l00154">Menu.hpp:154</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_menu_8hpp_source.html#l00100">_display</a>, <a class="el" href="_menu_8hpp_source.html#l00136">_menuArt</a>, <a class="el" href="_menu_8hpp_source.html#l00143">_menuOptions</a>, <a class="el" href="_menu_8hpp_source.html#l00102">_testing</a>, <a class="el" href="_menu_8cpp_source.html#l00179">alarmSequence()</a>, <a class="el" href="_display_8cpp_source.html#l00838">Display::clearFormat()</a>, <a class="el" href="_display_8cpp_source.html#l00042">Display::clearScreen()</a>, <a class="el" href="_menu_8cpp_source.html#l00520">getMenuInput()</a>, <a class="el" href="_menu_8cpp_source.html#l00062">mainMenu()</a>, <a class="el" href="_display_8cpp_source.html#l00059">Display::setCursor()</a>, <a class="el" href="_display_8cpp_source.html#l00832">Display::setFormat()</a>, <a class="el" href="_menu_8cpp_source.html#l00149">stopwatchSequence()</a>, and <a class="el" href="_menu_8cpp_source.html#l00119">timerSequence()</a>.</p>
+<p class="reference">References <a class="el" href="_menu_8hpp_source.html#l00100">_display</a>, <a class="el" href="_menu_8hpp_source.html#l00154">_menuArt</a>, <a class="el" href="_menu_8hpp_source.html#l00161">_menuOptions</a>, <a class="el" href="_menu_8hpp_source.html#l00102">_testing</a>, <a class="el" href="_menu_8cpp_source.html#l00179">alarmSequence()</a>, <a class="el" href="_display_8cpp_source.html#l00838">Display::clearFormat()</a>, <a class="el" href="_display_8cpp_source.html#l00042">Display::clearScreen()</a>, <a class="el" href="_menu_8cpp_source.html#l00520">getMenuInput()</a>, <a class="el" href="_menu_8cpp_source.html#l00062">mainMenu()</a>, <a class="el" href="_display_8cpp_source.html#l00059">Display::setCursor()</a>, <a class="el" href="_display_8cpp_source.html#l00832">Display::setFormat()</a>, <a class="el" href="_menu_8cpp_source.html#l00149">stopwatchSequence()</a>, and <a class="el" href="_menu_8cpp_source.html#l00119">timerSequence()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00017">main()</a>, <a class="el" href="_menu_8cpp_source.html#l00062">mainMenu()</a>, and <a class="el" href="_menu_test_8cpp_source.html#l00010">test_menu()</a>.</p>
 <div class="dynheader">
@@ -1097,13 +1101,13 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_menu_aef9edee86d2ea460606361c92e061583_cgraph.png" border="0" usemap="#aclass_menu_aef9edee86d2ea460606361c92e061583_cgraph" alt=""/></div>
 <map name="aclass_menu_aef9edee86d2ea460606361c92e061583_cgraph" id="aclass_menu_aef9edee86d2ea460606361c92e061583_cgraph">
-<area shape="rect" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="5,716,140,741"/>
+<area shape="rect" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="5,716,140,741"/>
 <area shape="rect" href="class_menu.html#a4663bff1fca54f0230ff0e20b6ae9ae8" title="Runs the alarm sequence, allowing the user to set and interact with an alarm." alt="" coords="203,503,369,528"/>
 <area shape="rect" href="class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62" title="Clears the terminal screen." alt="" coords="899,477,1053,503"/>
 <area shape="rect" href="class_display.html#abbc05f4af18fc8665a8022e795c2d574" title=" " alt="" coords="1153,555,1309,580"/>
 <area shape="rect" href="class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="1435,753,1575,779"/>
 <area shape="rect" href="class_display.html#adb4502abd3d3dd9ca70a97c1f3d66ad7" title=" " alt="" coords="1159,604,1303,629"/>
-<area shape="rect" href="class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452" title="Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection." alt="" coords="457,1711,613,1736"/>
+<area shape="rect" href="class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452" title="Waits for the user to press a valid key (1 2 3 or Q) for menu selection." alt="" coords="457,1711,613,1736"/>
 <area shape="rect" href="class_menu.html#aca5927a856a8d20d738323c2261cc9e4" title="Runs the stopwatch sequence, allowing the user to start, stop, and record splits." alt="" coords="188,940,384,965"/>
 <area shape="rect" href="class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title="Runs the timer sequence, allowing the user to set and interact with a timer." alt="" coords="204,1231,368,1256"/>
 <area shape="rect" href="class_menu.html#a530b357d64d1481172d7808a453f262d" title="Checks and handles user input for the Alarm." alt="" coords="447,579,623,604"/>
@@ -1154,7 +1158,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_menu_aef9edee86d2ea460606361c92e061583_icgraph.png" border="0" usemap="#aclass_menu_aef9edee86d2ea460606361c92e061583_icgraph" alt=""/></div>
 <map name="aclass_menu_aef9edee86d2ea460606361c92e061583_icgraph" id="aclass_menu_aef9edee86d2ea460606361c92e061583_icgraph">
-<area shape="rect" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="247,31,381,56"/>
+<area shape="rect" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="247,31,381,56"/>
 <area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,5,181,31"/>
 <area shape="rect" href="_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,55,199,80"/>
 <area shape="rect" href="_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,55,60,80"/>
@@ -1218,7 +1222,7 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">   25</span>                {</div>
 <div class="line"><span class="lineno">   26</span>    <a class="code hl_variable" href="class_menu.html#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62">clearScreen</a>();</div>
 <div class="line"><span class="lineno">   27</span> </div>
-<div class="line"><span class="lineno">   28</span>    <span class="keywordtype">string</span> lBuffer = <span class="stringliteral">&quot;                &quot;</span>;</div>
+<div class="line"><span class="lineno">   28</span>    <span class="keywordtype">string</span> lBuffer = <span class="stringliteral">&quot;                         &quot;</span>;</div>
 <div class="line"><span class="lineno">   29</span>    <a class="code hl_variable" href="class_menu.html#a836f729dae007026c27f10b3354709fd">_display</a>.<a class="code hl_function" href="class_display.html#adb4502abd3d3dd9ca70a97c1f3d66ad7">setFormat</a>(<span class="stringliteral">&quot;\033[1;36m&quot;</span>);</div>
 <div class="line"><span class="lineno">   30</span> </div>
 <div class="line"><span class="lineno">   31</span>    <span class="keywordflow">for</span> (<span class="keywordtype">string</span> line : <a class="code hl_variable" href="class_menu.html#a9d05e7243afa5ff307fe278e145991de">_logoArt</a>){</div>
@@ -1240,11 +1244,11 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   47</span>    </div>
 <div class="line"><span class="lineno">   48</span>    <a class="code hl_function" href="class_menu.html#a537a69bfbe3b8c29e3dfd3e2f5dd88b5">waitForInput</a>();</div>
 <div class="line"><span class="lineno">   49</span>}</div>
-<div class="ttc" id="aclass_menu_html_a263eddcf7f25e87e454db2ab497559e8"><div class="ttname"><a href="class_menu.html#a263eddcf7f25e87e454db2ab497559e8">Menu::_credits</a></div><div class="ttdeci">vector&lt; string &gt; _credits</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8hpp_source.html#l00119">Menu.hpp:119</a></div></div>
+<div class="ttc" id="aclass_menu_html_a263eddcf7f25e87e454db2ab497559e8"><div class="ttname"><a href="class_menu.html#a263eddcf7f25e87e454db2ab497559e8">Menu::_credits</a></div><div class="ttdeci">vector&lt; string &gt; _credits</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8hpp_source.html#l00137">Menu.hpp:137</a></div></div>
 <div class="ttc" id="aclass_menu_html_a537a69bfbe3b8c29e3dfd3e2f5dd88b5"><div class="ttname"><a href="class_menu.html#a537a69bfbe3b8c29e3dfd3e2f5dd88b5">Menu::waitForInput</a></div><div class="ttdeci">void waitForInput()</div><div class="ttdoc">Waits for any key press from the user.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00358">Menu.cpp:358</a></div></div>
-<div class="ttc" id="aclass_menu_html_a9d05e7243afa5ff307fe278e145991de"><div class="ttname"><a href="class_menu.html#a9d05e7243afa5ff307fe278e145991de">Menu::_logoArt</a></div><div class="ttdeci">vector&lt; string &gt; _logoArt</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8hpp_source.html#l00103">Menu.hpp:103</a></div></div>
+<div class="ttc" id="aclass_menu_html_a9d05e7243afa5ff307fe278e145991de"><div class="ttname"><a href="class_menu.html#a9d05e7243afa5ff307fe278e145991de">Menu::_logoArt</a></div><div class="ttdeci">vector&lt; string &gt; _logoArt</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8hpp_source.html#l00119">Menu.hpp:119</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_menu_8hpp_source.html#l00119">_credits</a>, <a class="el" href="_menu_8hpp_source.html#l00100">_display</a>, <a class="el" href="_menu_8hpp_source.html#l00103">_logoArt</a>, <a class="el" href="_display_8cpp_source.html#l00838">Display::clearFormat()</a>, <a class="el" href="_display_8cpp_source.html#l00042">Display::clearScreen()</a>, <a class="el" href="_display_8cpp_source.html#l00059">Display::setCursor()</a>, <a class="el" href="_display_8cpp_source.html#l00832">Display::setFormat()</a>, and <a class="el" href="_menu_8cpp_source.html#l00358">waitForInput()</a>.</p>
+<p class="reference">References <a class="el" href="_menu_8hpp_source.html#l00137">_credits</a>, <a class="el" href="_menu_8hpp_source.html#l00100">_display</a>, <a class="el" href="_menu_8hpp_source.html#l00119">_logoArt</a>, <a class="el" href="_display_8cpp_source.html#l00838">Display::clearFormat()</a>, <a class="el" href="_display_8cpp_source.html#l00042">Display::clearScreen()</a>, <a class="el" href="_display_8cpp_source.html#l00059">Display::setCursor()</a>, <a class="el" href="_display_8cpp_source.html#l00832">Display::setFormat()</a>, and <a class="el" href="_menu_8cpp_source.html#l00358">waitForInput()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00017">main()</a>, and <a class="el" href="_menu_test_8cpp_source.html#l00010">test_menu()</a>.</p>
 <div class="dynheader">
@@ -1366,7 +1370,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="class_menu_aca5927a856a8d20d738323c2261cc9e4_icgraph.png" border="0" usemap="#aclass_menu_aca5927a856a8d20d738323c2261cc9e4_icgraph" alt=""/></div>
 <map name="aclass_menu_aca5927a856a8d20d738323c2261cc9e4_icgraph" id="aclass_menu_aca5927a856a8d20d738323c2261cc9e4_icgraph">
 <area shape="rect" title="Runs the stopwatch sequence, allowing the user to start, stop, and record splits." alt="" coords="429,31,625,56"/>
-<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="247,31,381,56"/>
+<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="247,31,381,56"/>
 <area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,5,181,31"/>
 <area shape="rect" href="_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,55,199,80"/>
 <area shape="rect" href="_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,55,60,80"/>
@@ -1467,7 +1471,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="class_menu_a4a3468dd5028b68b1fd7fd8ecd9ea36a_icgraph.png" border="0" usemap="#aclass_menu_a4a3468dd5028b68b1fd7fd8ecd9ea36a_icgraph" alt=""/></div>
 <map name="aclass_menu_a4a3468dd5028b68b1fd7fd8ecd9ea36a_icgraph" id="aclass_menu_a4a3468dd5028b68b1fd7fd8ecd9ea36a_icgraph">
 <area shape="rect" title="Runs the timer sequence, allowing the user to set and interact with a timer." alt="" coords="429,31,593,56"/>
-<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="247,31,381,56"/>
+<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="247,31,381,56"/>
 <area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,5,181,31"/>
 <area shape="rect" href="_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,55,199,80"/>
 <area shape="rect" href="_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,55,60,80"/>
@@ -1496,7 +1500,7 @@ Here is the caller graph for this function:</div>
 <p>This function uses a high-resolution clock to wait for the specified amount of time (in seconds). It continuously checks the elapsed time until the desired duration has passed.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">seconds</td><td>The amount of time to wait, in seconds.</td></tr>
+    <tr><td class="paramname">seconds</td><td>The amount of time to wait in seconds.</td></tr>
   </table>
   </dd>
 </dl>
@@ -1525,9 +1529,9 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="class_menu.html#a76c8148cc85fcc305b80c52b2f9df2ca" title="Creates a new Alarm object based on user input." alt="" coords="897,72,1044,97"/>
 <area shape="rect" href="class_menu.html#a1a90c9e670b33e2c9aaddc01f47b3b88" title="Creates a new Timer object based on user input." alt="" coords="898,172,1043,197"/>
 <area shape="rect" href="class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title="Runs the timer sequence, allowing the user to set and interact with a timer." alt="" coords="445,197,609,222"/>
-<area shape="rect" href="class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452" title="Waits for the user to press a valid key (1, 2, 3, or Q) for menu selection." alt="" coords="683,273,839,298"/>
+<area shape="rect" href="class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452" title="Waits for the user to press a valid key (1 2 3 or Q) for menu selection." alt="" coords="683,273,839,298"/>
 <area shape="rect" href="class_menu.html#aca5927a856a8d20d738323c2261cc9e4" title="Runs the stopwatch sequence, allowing the user to start, stop, and record splits." alt="" coords="429,317,625,342"/>
-<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="247,229,381,254"/>
+<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="247,229,381,254"/>
 <area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,204,181,229"/>
 <area shape="rect" href="_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,253,199,278"/>
 <area shape="rect" href="_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,253,60,278"/>
@@ -1554,7 +1558,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Waits for any key press from the user. </p>
-<p>This function blocks until the user presses a key, using <code>_getch()</code> to capture the input.</p>
+<p>This function blocks until the user presses a key using <code>_getch()</code> to capture the input.</p>
 <p>This function blocks until the user presses a key, using <code>_getch()</code> to capture the input. </p>
 
 <p class="definition">Definition at line <a class="el" href="_menu_8cpp_source.html#l00358">358</a> of file <a class="el" href="_menu_8cpp_source.html">Menu.cpp</a>.</p>
@@ -1604,23 +1608,23 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">        <span class="stringliteral">&quot;-------------------------------------&quot;</span>, </div>
+<div class="line">        <span class="stringliteral">&quot;             Tempo v0.1              &quot;</span>, </div>
+<div class="line">        <span class="stringliteral">&quot;-------------------------------------&quot;</span>, </div>
+<div class="line">        <span class="stringliteral">&quot;    A lightweight timer  stopwatch &quot;</span>, </div>
+<div class="line">        <span class="stringliteral">&quot;       and alarm terminal app.&quot;</span>, </div>
+<div class="line">        <span class="stringliteral">&quot;-------------------------------------&quot;</span>, </div>
+<div class="line">        <span class="stringliteral">&quot;            Developed by:&quot;</span>, </div>
+<div class="line">        <span class="stringliteral">&quot;          William Donnelly&quot;</span>, </div>
+<div class="line">        <span class="stringliteral">&quot;            Kevin Albert&quot;</span>, </div>
+<div class="line">        <span class="stringliteral">&quot;            Rowan Zeszut&quot;</span>, </div>
+<div class="line">        <span class="stringliteral">&quot;            Ben Sampson&quot;</span>, </div>
 <div class="line">        <span class="stringliteral">&quot;-------------------------------------&quot;</span>,</div>
-<div class="line">        <span class="stringliteral">&quot;             Tempo v0.1              &quot;</span>,</div>
-<div class="line">        <span class="stringliteral">&quot;-------------------------------------&quot;</span>,</div>
-<div class="line">        <span class="stringliteral">&quot;    A lightweight timer, stopwatch,&quot;</span>,</div>
-<div class="line">        <span class="stringliteral">&quot;       and alarm terminal app.&quot;</span>,</div>
-<div class="line">        <span class="stringliteral">&quot;-------------------------------------&quot;</span>,</div>
-<div class="line">        <span class="stringliteral">&quot;            Developed by:&quot;</span>,</div>
-<div class="line">        <span class="stringliteral">&quot;          William Donnelly&quot;</span>,</div>
-<div class="line">        <span class="stringliteral">&quot;            Kevin Albert&quot;</span>,</div>
-<div class="line">        <span class="stringliteral">&quot;            Rowan Zeszut&quot;</span>,</div>
-<div class="line">        <span class="stringliteral">&quot;            Ben Sampson&quot;</span>,</div>
-<div class="line">        <span class="stringliteral">&quot;-------------------------------------&quot;</span></div>
-<div class="line">        <span class="stringliteral">&quot;&quot;</span>,</div>
-<div class="line">        <span class="stringliteral">&quot;    Press any key to continue...&quot;</span></div>
+<div class="line">        <span class="stringliteral">&quot;&quot;</span>, </div>
+<div class="line">        <span class="stringliteral">&quot;    Press any key to continue...&quot;</span>,</div>
 <div class="line">    }</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="_menu_8hpp_source.html#l00119">119</a> of file <a class="el" href="_menu_8hpp_source.html">Menu.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_menu_8hpp_source.html#l00137">137</a> of file <a class="el" href="_menu_8hpp_source.html">Menu.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00025">start()</a>.</p>
 
@@ -1673,25 +1677,65 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">        <span class="stringliteral">&quot;                                                                                                &quot;</span>, </div>
+<div class="line">        <span class="stringliteral">&quot;    &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;                                                                            &quot;</span>, </div>
+<div class="line">        <span class="stringliteral">&quot;    &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;                                                                             &quot;</span>, </div>
+<div class="line">        <span class="stringliteral">&quot;        &amp;&amp;&amp;&amp;&amp;&amp;       &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;   &amp;&amp;&amp;&amp;&amp;&amp; &amp;&amp;&amp;&amp;&amp;&amp;&amp; &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;    &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;      &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp; &quot;</span>, </div>
+<div class="line">        <span class="stringliteral">&quot;       &amp;&amp;&amp;&amp;&amp;%     &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;   &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;   &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;  &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;  &quot;</span>, </div>
+<div class="line">        <span class="stringliteral">&quot;      &amp;&amp;&amp;&amp;&amp;&amp;      &amp;&amp;&amp;&amp;&amp;&amp;   &amp;&amp;&amp;&amp;&amp;&amp;  &amp;&amp;&amp;&amp;&amp;&amp;   &amp;&amp;&amp;&amp;&amp;&amp;   &amp;&amp;&amp;&amp;&amp;&amp;   &amp;&amp;&amp;&amp;&amp;&amp;  &amp;&amp;&amp;&amp;&amp;&amp;   &amp;&amp;&amp;&amp;&amp;    &amp;&amp;&amp;&amp;&amp;&amp;  &quot;</span>,</div>
+<div class="line">        <span class="stringliteral">&quot;     &amp;&amp;&amp;&amp;&amp;&amp;      &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;   &amp;&amp;&amp;&amp;&amp;&amp;  &amp;&amp;&amp;&amp;&amp;&amp;&amp;  &amp;&amp;&amp;&amp;&amp;&amp;   &amp;&amp;&amp;&amp;&amp;&amp;   &amp;&amp;&amp;&amp;&amp;&amp;  &amp;&amp;&amp;&amp;&amp;&amp;    &amp;&amp;&amp;&amp;&amp;&amp;   &quot;</span>, </div>
+<div class="line">        <span class="stringliteral">&quot;    &amp;&amp;&amp;&amp;&amp;&amp;&amp;      &amp;&amp;&amp;&amp;&amp;&amp;           &amp;&amp;&amp;&amp;&amp;&amp;   &amp;&amp;&amp;&amp;&amp;&amp;   &amp;&amp;&amp;&amp;&amp;&amp;  &amp;&amp;&amp;&amp;&amp;&amp;&amp;  &amp;&amp;&amp;&amp;&amp;&amp;   &amp;&amp;&amp;&amp;&amp;&amp;   &amp;&amp;&amp;&amp;&amp;&amp;   &quot;</span>, </div>
+<div class="line">        <span class="stringliteral">&quot;    &amp;&amp;&amp;&amp;&amp;&amp;      &amp;&amp;&amp;&amp;&amp;&amp;&amp;\%\%&amp;&amp;&amp;&amp;&amp;&amp;   &amp;&amp;&amp;&amp;&amp;&amp;  &amp;&amp;&amp;&amp;&amp;&amp;#  &amp;&amp;&amp;&amp;&amp;&amp;   &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;  &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;    &quot;</span>,</div>
+<div class="line">        <span class="stringliteral">&quot;   &amp;&amp;&amp;&amp;&amp;&amp;&amp;     %&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;   &amp;&amp;&amp;&amp;&amp;&amp;   &amp;&amp;&amp;&amp;&amp;&amp;  #&amp;&amp;&amp;&amp;&amp;&amp;   &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;       &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;     &quot;</span>,</div>
+<div class="line">        <span class="stringliteral">&quot;                                                          &amp;&amp;&amp;&amp;&amp;&amp;                                &quot;</span>,</div>
+<div class="line">        <span class="stringliteral">&quot;  &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;         &quot;</span>,</div>
+<div class="line">        <span class="stringliteral">&quot; &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;                  &quot;</span>,</div>
+<div class="line">        <span class="stringliteral">&quot;                                                                                                &quot;</span></div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="_menu_8hpp_source.html#l00119">119</a> of file <a class="el" href="_menu_8hpp_source.html">Menu.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00025">start()</a>.</p>
+
+</div>
+</div>
+<a id="ac998f3528aa82bfc9fae539a906626c3" name="ac998f3528aa82bfc9fae539a906626c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac998f3528aa82bfc9fae539a906626c3">&#9670;&#160;</a></span>_logoArt2</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;string&gt; Menu::_logoArt2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {                                                                                   </div>
-<div class="line">        <span class="stringliteral">&quot;  +@@@@@@@@@@@+                                                               &quot;</span>,           </div>
-<div class="line">        <span class="stringliteral">&quot; :@@@@@@@@@@@@+                                                               &quot;</span>,          </div>
-<div class="line">        <span class="stringliteral">&quot; .:::@@@@@=:::  .-=======:   .====-.===-. .-===:   :====::===-.    :-=======: &quot;</span>,          </div>
-<div class="line">        <span class="stringliteral">&quot;    =@@@@%    .#@@@@@@@@@@%  #@@@@@@@@@@@#@@@@@@=  %@@@@@@@@@@@. :%@@@@@@@@@@+&quot;</span>,          </div>
-<div class="line">        <span class="stringliteral">&quot;    %@@@@=    #@@@@- -@@@@% .@@@@@==@@@@@+-%@@@@= :@@@@%==@@@@@. %@@@@-:#@@@@+&quot;</span>,           </div>
-<div class="line">        <span class="stringliteral">&quot;   :@@@@@    .@@@@%==*@@@@= +@@@@+ -@@@@# .@@@@@  *@@@@= =@@@@# -@@@@#  %@@@@.&quot;</span>,           </div>
-<div class="line">        <span class="stringliteral">&quot;   *@@@@+    +@@@@@@@@@@@@  @@@@@. #@@@@- +@@@@* .@@@@@  %@@@@: #@@@@: -@@@@# &quot;</span>,            </div>
-<div class="line">        <span class="stringliteral">&quot;  .@@@@@.    @@@@%  .++++: =@@@@# .@@@@@  %@@@@: +@@@@* :@@@@% :@@@@%  %@@@@: &quot;</span>,            </div>
-<div class="line">        <span class="stringliteral">&quot;  +@@@@#    -@@@@@##@@@@@. %@@@@- *@@@@+ -@@@@#  @@@@@@%@@@@@- +@@@@@#%@@@@#  &quot;</span>,             </div>
-<div class="line">        <span class="stringliteral">&quot;  @@@@@-     *%@@@@@@@%+. :@@@@% .@@@@@  %@@@@- =@@@@##@@@%*:  .#@@@@@@@@#    &quot;</span>,              </div>
-<div class="line">        <span class="stringliteral">&quot;  ==============================================%@@@@*======================  &quot;</span>,             </div>
-<div class="line">        <span class="stringliteral">&quot; ==============================================+@@@@@===================      &quot;</span>,                 </div>
+<div class="line">        <span class="stringliteral">&quot;  +@@@@@@@@@@@+                                                               &quot;</span>            </div>
+<div class="line">        <span class="stringliteral">&quot; :@@@@@@@@@@@@+                                                               &quot;</span>           </div>
+<div class="line">        <span class="stringliteral">&quot; .:::@@@@@=:::  .-=======:   .====-.===-. .-===:   :====::===-.    :-=======: &quot;</span>           </div>
+<div class="line">        <span class="stringliteral">&quot;    =@@@@%    .#@@@@@@@@@@%  #@@@@@@@@@@@#@@@@@@=  %@@@@@@@@@@@. :%@@@@@@@@@@+&quot;</span>           </div>
+<div class="line">        <span class="stringliteral">&quot;    %@@@@=    #@@@@- -@@@@% .@@@@@==@@@@@+-%@@@@= :@@@@%==@@@@@. %@@@@-:#@@@@+&quot;</span>            </div>
+<div class="line">        <span class="stringliteral">&quot;   :@@@@@    .@@@@%==*@@@@= +@@@@+ -@@@@# .@@@@@  *@@@@= =@@@@# -@@@@#  %@@@@.&quot;</span>            </div>
+<div class="line">        <span class="stringliteral">&quot;   *@@@@+    +@@@@@@@@@@@@  @@@@@. #@@@@- +@@@@* .@@@@@  %@@@@: #@@@@: -@@@@# &quot;</span>             </div>
+<div class="line">        <span class="stringliteral">&quot;  .@@@@@.    @@@@%  .++++: =@@@@# .@@@@@  %@@@@: +@@@@* :@@@@% :@@@@%  %@@@@: &quot;</span>             </div>
+<div class="line">        <span class="stringliteral">&quot;  +@@@@#    -@@@@@##@@@@@. %@@@@- *@@@@+ -@@@@#  @@@@@@%@@@@@- +@@@@@#%@@@@#  &quot;</span>              </div>
+<div class="line">        <span class="stringliteral">&quot;  @@@@@-     *%@@@@@@@%+. :@@@@% .@@@@@  %@@@@- =@@@@##@@@%*:  .#@@@@@@@@#    &quot;</span>               </div>
+<div class="line">        <span class="stringliteral">&quot;  ==============================================%@@@@*======================  &quot;</span>              </div>
+<div class="line">        <span class="stringliteral">&quot; ==============================================+@@@@@===================      &quot;</span>                  </div>
 <div class="line">        <span class="stringliteral">&quot;===============================================@@@@@*=============            &quot;</span></div>
 <div class="line">    }</div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="_menu_8hpp_source.html#l00103">103</a> of file <a class="el" href="_menu_8hpp_source.html">Menu.hpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00025">start()</a>.</p>
 
 </div>
 </div>
@@ -1715,13 +1759,13 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line"><span class="stringliteral">&quot;             ___                 _            &quot;</span>,</div>
-<div class="line"><span class="stringliteral">&quot; |\\/|   /\\    |   |\\ |    |\\/|  |_  |\\ |  | | &quot;</span>,</div>
-<div class="line"><span class="stringliteral">&quot; |  |  /--\\  _|_  | \\|    |  |  |_  | \\|  |_| &quot;</span>,</div>
-<div class="line"><span class="stringliteral">&quot;________________________________________________&quot;</span></div>
+<div class="line"><span class="stringliteral">&quot;             ___                 _            &quot;</span>, </div>
+<div class="line"><span class="stringliteral">&quot; |\\/|   /\\    |   |\\ |    |\\/|  |_  |\\ |  | | &quot;</span>, </div>
+<div class="line"><span class="stringliteral">&quot; |  |  /--\\  _|_  | \\|    |  |  |_  | \\|  |_| &quot;</span>, </div>
+<div class="line"><span class="stringliteral">&quot;________________________________________________&quot;</span>,</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="_menu_8hpp_source.html#l00136">136</a> of file <a class="el" href="_menu_8hpp_source.html">Menu.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_menu_8hpp_source.html#l00154">154</a> of file <a class="el" href="_menu_8hpp_source.html">Menu.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00062">mainMenu()</a>.</p>
 
@@ -1747,25 +1791,25 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line"><span class="stringliteral">&quot;          ___  ___         _   _                         &quot;</span>,</div>
-<div class="line"><span class="stringliteral">&quot; /|  o     |    |   |\\/|  |_  |_)                        &quot;</span>,</div>
-<div class="line"><span class="stringliteral">&quot;  |  o     |   _|_  |  |  |_  | \\                        &quot;</span>,</div>
-<div class="line"><span class="stringliteral">&quot;                                                         &quot;</span>,</div>
+<div class="line"><span class="stringliteral">&quot;          ___  ___         _   _                         &quot;</span>, </div>
+<div class="line"><span class="stringliteral">&quot; /|  o     |    |   |\\/|  |_  |_)                        &quot;</span>, </div>
+<div class="line"><span class="stringliteral">&quot;  |  o     |   _|_  |  |  |_  | \\                        &quot;</span>, </div>
+<div class="line"><span class="stringliteral">&quot;                                                         &quot;</span>, </div>
 <div class="line"><span class="stringliteral">&quot; _         __  ___   _    _                 ___   _      &quot;</span>,</div>
-<div class="line"><span class="stringliteral">&quot;  )  o    (_    |   / \\  |_)  \\    /   /\\    |   /   |_| &quot;</span>,</div>
-<div class="line"><span class="stringliteral">&quot; /_  o    __)   |   \\_/  |     \\/\\/   /--\\   |   \\_  | | &quot;</span>,</div>
+<div class="line"><span class="stringliteral">&quot;  )  o    (_    |   / \\  |_)  \\    /   /\\    |   /   |_| &quot;</span>, </div>
+<div class="line"><span class="stringliteral">&quot; /_  o    __)   |   \\_/  |     \\/\\/   /--\\   |   \\_  | | &quot;</span>, </div>
+<div class="line"><span class="stringliteral">&quot;                                                         &quot;</span>, </div>
+<div class="line"><span class="stringliteral">&quot; _                         _                             &quot;</span>, </div>
+<div class="line"><span class="stringliteral">&quot; _)  o     /\\   |    /\\   |_)  |\\/|                      &quot;</span>, </div>
+<div class="line"><span class="stringliteral">&quot; _)  o    /--\\  |_  /--\\  | \\  |  |                      &quot;</span>, </div>
+<div class="line"><span class="stringliteral">&quot;                                                         &quot;</span>, </div>
+<div class="line"><span class="stringliteral">&quot; _         _        ___  ___                              &quot;</span>, </div>
+<div class="line"><span class="stringliteral">&quot;/ \\  o    / \\  | |   |    |                               &quot;</span>, </div>
+<div class="line"><span class="stringliteral">&quot;\\_X  o    \\_X  |_|  _|_   |                               &quot;</span>, </div>
 <div class="line"><span class="stringliteral">&quot;                                                         &quot;</span>,</div>
-<div class="line"><span class="stringliteral">&quot; _                         _                             &quot;</span>,</div>
-<div class="line"><span class="stringliteral">&quot; _)  o     /\\   |    /\\   |_)  |\\/|                      &quot;</span>,</div>
-<div class="line"><span class="stringliteral">&quot; _)  o    /--\\  |_  /--\\  | \\  |  |                      &quot;</span>,</div>
-<div class="line"><span class="stringliteral">&quot;                                                         &quot;</span>,</div>
-<div class="line"><span class="stringliteral">&quot; _         _        ___  ___                              &quot;</span>,</div>
-<div class="line"><span class="stringliteral">&quot;/ \\  o    / \\  | |   |    |                               &quot;</span>,</div>
-<div class="line"><span class="stringliteral">&quot;\\_X  o    \\_X  |_|  _|_   |                               &quot;</span>,</div>
-<div class="line"><span class="stringliteral">&quot;                                                         &quot;</span></div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="_menu_8hpp_source.html#l00143">143</a> of file <a class="el" href="_menu_8hpp_source.html">Menu.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_menu_8hpp_source.html#l00161">161</a> of file <a class="el" href="_menu_8hpp_source.html">Menu.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00062">mainMenu()</a>.</p>
 
@@ -1819,13 +1863,13 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">        <span class="stringliteral">&quot;EXACTLY ON THE DOT! YOU MUST BE A TIME WIZARD.&quot;</span>,</div>
-<div class="line">        <span class="stringliteral">&quot;THERE&#39;S NO WAY YOU MEANT TO DO THAT...&quot;</span>,</div>
-<div class="line">        <span class="stringliteral">&quot;YOU&#39;VE ACHIEVED STOPWATCH ZEN.&quot;</span>,</div>
-<div class="line">        <span class="stringliteral">&quot;IF YOU DID THAT ON PURPOSE, I&#39;M IMPRESSED.&quot;</span>,</div>
+<div class="line">        <span class="stringliteral">&quot;EXACTLY ON THE DOT! YOU MUST BE A TIME WIZARD.&quot;</span>, </div>
+<div class="line">        <span class="stringliteral">&quot;THERE&#39;S NO WAY YOU MEANT TO DO THAT...&quot;</span>, </div>
+<div class="line">        <span class="stringliteral">&quot;YOU&#39;VE ACHIEVED STOPWATCH ZEN.&quot;</span>, </div>
+<div class="line">        <span class="stringliteral">&quot;IF YOU DID THAT ON PURPOSE  I&#39;M IMPRESSED.&quot;</span>, </div>
 <div class="line">    }</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="_menu_8hpp_source.html#l00162">162</a> of file <a class="el" href="_menu_8hpp_source.html">Menu.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_menu_8hpp_source.html#l00180">180</a> of file <a class="el" href="_menu_8hpp_source.html">Menu.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00427">checkStopwatchInput()</a>.</p>
 
@@ -1864,7 +1908,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 19 2024 23:37:00 for Tempo by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+Generated on Thu Sep 19 2024 23:50:28 for Tempo by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
 </small></address>
 </body>
 </html>
