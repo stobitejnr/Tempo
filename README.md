@@ -53,13 +53,13 @@ A versatile command-line application that allows users to create and manage time
 
 ## Usage
 
-1. Upon starting the application, you'll be presented with a menu:
+1. Upon starting the application, you'll be presented with the screen:
 
    ![Start up](startup.png)
 
-   Press any button to continue.
+   Press any key to continue.
 
-2. Then you will see this menu:
+2. Then you will see the main menu:
 
    ![Main Menu](menu.png)
 
