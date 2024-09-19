@@ -26,13 +26,13 @@ jobs:
         run: |
           mkdir build
           cd build
-          cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..
+          cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_CXX_STANDARD=17 ..
         shell: powershell
 
       - name: Run Clang-Tidy and Check for Warnings
         run: |
           $ErrorActionPreference = "Continue"
-          $output = & clang-tidy.exe -p build $(Get-ChildItem -Recurse -Filter *.cpp | Select-Object -ExpandProperty FullName) 2>&1
+          $output = & clang-tidy.exe -p build --extra-arg=-std=c++17 $(Get-ChildItem -Recurse -Filter *.cpp | Select-Object -ExpandProperty FullName) 2>&1
           $output | Out-File -FilePath clang-tidy-output.txt
           if ($output -match "warning:" -or $output -match "error:") {
             Write-Output "Clang-Tidy found issues:"
