@@ -13,7 +13,6 @@ Alarm::Alarm(int h, int m){
     _remainingMilliseconds = 0;
     if(_startTime >= _endTime){
         _endTime = getTime(h+24, m);
-        
     }
     _running = true;
 
