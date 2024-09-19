@@ -133,7 +133,7 @@ void Display::stageTimerDisplay(int hours, int minutes, int seconds, int tenths)
     else
     {
         to_print += "0" + to_string(seconds);
-    }
+    }  
 
     // Build the ASCII art for the timer display
     for (int i = 0; i < ASCII_HEIGHT; i++)
@@ -539,7 +539,7 @@ PRINTING TO TERMINAL
  */
 void Display::printAscii(int row)
 {
-    if (_asciiBuffer != _oldAscii)
+    if (_asciiBuffer != _oldAscii || _formatting != _oldFormatting)
     {
         setCursor(row, 1);
         fast_print(_asciiBuffer);
@@ -554,7 +554,7 @@ void Display::printAscii(int row)
  */
 void Display::printControls(int row)
 {
-    if (_controlBuffer != _oldControls)
+    if (_controlBuffer != _oldControls || _formatting != _oldFormatting)
     {
         setCursor(row, 1);
         fast_print(_controlBuffer);
@@ -569,7 +569,7 @@ void Display::printControls(int row)
  */
 void Display::printBar(int row)
 {
-    if (_barBuffer != _oldBar)
+    if (_barBuffer != _oldBar || _formatting != _oldFormatting)
     {
         setCursor(row, 1);
         fast_print(_barBuffer);
@@ -584,7 +584,7 @@ void Display::printBar(int row)
  */
 void Display::printSplash(int row)
 {
-    if (_splash != _oldSplash)
+    if (_splash != _oldSplash || _formatting != _oldFormatting)
     {
         clearLine(row);
         setCursor(row, 1);
@@ -599,7 +599,7 @@ void Display::printSplash(int row)
  */
 void Display::printSplits(int row)
 {
-    if (_splitBuffer != _oldSplits)
+    if (_splitBuffer != _oldSplits || _formatting != _oldFormatting)
     {
         setCursor(row, 1);
         fast_print(_splitBuffer);
@@ -643,10 +643,15 @@ void Display::tickTimerSetup(string to_print)
 
     stageTimerSetupControls();
 
+    setFormat("\033[1;37m"); //Bold white
     printAscii(1);
+    clearFormat();
+    setFormat("\033[37m"); //White
     printControls(10);
 
-    setCursor(1, 1);
+    clearFormat();
+    setCursor(1,1);
+
 }
 
 /**
@@ -688,9 +693,13 @@ void Display::tickAlarmSetup(string to_print)
     stageAlarmSetupControls();
 
 
+    setFormat("\033[1;37m"); //Bold white
     printAscii(1);
+    clearFormat();
+    setFormat("\033[37m"); //White
     printControls(10);
 
+    clearFormat();
     setCursor(1,1);
 
 }
@@ -713,12 +722,21 @@ void Display::tickTimer(Timer &timer)
     stageTimerDisplay(hours, minutes, seconds, tenths);
     stageTimerBar(timer.percentElapsed());
     stageTimerControls();
-
+    
+    if(!timer.isRunning()){
+        setFormat("\033[1;31m"); //Bold Red
+    }
+    else{
+        setFormat("\033[1;37m"); // Bold white
+    }
     printAscii(1);
     printBar(10);
+    clearFormat();
+    setFormat("\033[37m"); //White
     printControls(13);
     printSplash(18);
 
+    clearFormat();
     setCursor(20,1);
 }
 
@@ -742,10 +760,22 @@ void Display::tickStopwatch(Stopwatch &stopwatch){
     stageStopwatchControls();
     stageStopwatchSplits(stopwatch.getSplits());
 
+    if(!stopwatch.isRunning()){
+        setFormat("\033[1;31m"); //Bold Red
+    }
+    else{
+        setFormat("\033[1;37m"); // Bold white
+    }
     printAscii(1);
+
+    clearFormat();
+    setFormat("\033[37m"); //White
+
     printControls(9);
     printSplash(14);
     printSplits(16);
+
+    clearFormat();
     setCursor(15,1);
 
 }
@@ -762,11 +792,20 @@ void Display::tickAlarm(Alarm &alarm){
     stageAlarmBar(alarm.percentElapsed());
     stageAlarmControls();
 
+    if(alarm.isDone()){
+        setFormat("\033[1;31m"); //Bold Red
+    }
+    else{
+        setFormat("\033[1;37m"); // Bold white
+    }
     printAscii(1);
     printBar(10);
+    clearFormat();
+    setFormat("\033[37m"); //White
     printControls(13);
     printSplash(18);
     
+    clearFormat();
     setCursor(20,1);
 
     return;
@@ -787,4 +826,18 @@ auto Display::fast_print(const std::basic_string<char_type> &sss) -> void
         WriteConsoleA(output_handle, sss.c_str(), char_count, nullptr, nullptr);
     else
         WriteConsoleW(output_handle, sss.c_str(), char_count, nullptr, nullptr);
+}
+
+void Display::setFormat(string code){
+    _oldFormatting = _formatting;
+    _formatting = code;
+
+    cout << code;
+}
+
+void Display::clearFormat(){
+    _oldFormatting = _formatting;
+    _formatting = "\033[0m";
+
+    cout << "\033[0m";
 }

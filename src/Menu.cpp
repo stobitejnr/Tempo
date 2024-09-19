@@ -26,21 +26,22 @@ void Menu::start(){
     _display.clearScreen();
 
     string lBuffer = "                ";
-    cout << "\033[1;36m";
+    _display.setFormat("\033[1;36m");
 
     for (string line : _logoArt){
         cout << line << endl;
     }
 
-    cout << "\033[0m";
-    cout << "\033[37m";
+    _display.clearFormat();
+    _display.setFormat("\033[37m");
 
     cout << endl;
 
     for (string line : _credits){
         cout << lBuffer << line << endl;
     }
-    cout << "\033[0m";
+
+    _display.clearFormat();
 
     _display.setCursor(1,1);
     
@@ -62,21 +63,20 @@ void Menu::mainMenu() {
 
     _display.clearScreen();
 
-    cout << "\033[1;36m";
-
+    _display.setFormat("\033[1;36m");
 
     for (string line : _menuArt){
         cout << "" << line << endl;
     }
 
-    cout << "\033[0m";
-    cout << "\033[1;37m";
+    _display.clearFormat();
+    _display.setFormat("\033[1;37m");
 
     for (string line : _menuOptions){
         cout << "" << line << endl;
     }
 
-    cout << "\033[0m";
+    _display.clearFormat();
 
     if(_testing){
         timerSequence();
@@ -299,7 +299,7 @@ Alarm Menu::createAlarm(bool& run){
             ch = 0;
         }
 
-        if (ch == 13 && (h || m)) {
+        if (ch == 13) {
             break;
         } 
         else if (ch >= '0' && ch <= '9') {
@@ -311,7 +311,7 @@ Alarm Menu::createAlarm(bool& run){
 
         if(ch == 'q' || ch == 'Q'){
             run = false;
-            return Alarm("00:00");
+            return Alarm(0,0);
         }
 
         h = stoi(input.substr(0, 2));
@@ -329,7 +329,7 @@ Alarm Menu::createAlarm(bool& run){
         }
     }
     _display.clearScreen();
-    Alarm alarm(to_print);
+    Alarm alarm(h,m);
     return alarm;
 }
 

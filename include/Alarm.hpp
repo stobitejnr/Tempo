@@ -13,9 +13,9 @@ using namespace std;
 class Alarm {
 public:
 
-    Alarm(string time);
+    Alarm(int h, int m);
 
-    chrono::time_point<chrono::system_clock> stringToTime(string s);
+    chrono::time_point<chrono::system_clock> getTime(int h, int m);
     string timeToString(chrono::time_point<chrono::system_clock> t);
 
     chrono::time_point<chrono::system_clock> getStartTime();
