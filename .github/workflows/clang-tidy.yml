@@ -21,4 +21,4 @@ jobs:
         run: choco install llvm
 
       - name: Run Clang-Tidy
-        run: clang-tidy src/*.cpp -- -Iinclude
+        run: clang-tidy src/*.cpp -- -Iinclude -std=c++17
