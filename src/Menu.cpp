@@ -289,7 +289,7 @@ Alarm Menu::createAlarm(bool& run){
 
         if(ch == 'q' || ch == 'Q'){
             run = false;
-            return Alarm("00:00");
+            return Alarm(0,0);
         }
 
         h = stoi(input.substr(0, 2));
@@ -307,7 +307,7 @@ Alarm Menu::createAlarm(bool& run){
         }
     }
     _display.clearScreen();
-    Alarm alarm(to_print);
+    Alarm alarm(h,m);
     return alarm;
 }
 

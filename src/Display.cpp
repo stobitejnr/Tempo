@@ -786,7 +786,7 @@ void Display::tickAlarm(Alarm &alarm){
     stageAlarmBar(alarm.percentElapsed());
     stageAlarmControls();
 
-    if(!alarm.isRunning()){
+    if(alarm.isDone()){
         setFormat("\033[1;31m"); //Bold Red
     }
     else{
