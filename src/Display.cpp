@@ -212,12 +212,7 @@ void Display::stageTimerControls()
     _controlBuffer += "S: Start/Pause | R: Reset | A: New Timer | Q: Main Menu \n";
     _controlBuffer += "=======================================================\n";
     _controlBuffer += "\n";
-    // _controlBuffer += "S : Start/Pause your timer.\n";
-    // _controlBuffer += "R : Reset your timer.\n";
-    // _controlBuffer += "I : Add 10 seconds to your timer.\n";
-    // _controlBuffer += "C : Change increment time.\n";
-    // _controlBuffer += "Q : End your timer immediately and return to menu.\n";
-    // _controlBuffer += "\n";
+
 }
 
 /* =========================================================
@@ -487,11 +482,35 @@ void Display::printSplits(int row)
     _splitBuffer = "";
 }
 
-/* =========================================================
-PARSING TIMER, CALLING PRINT FUNCTION
-========================================================= */
-
 void Display::tickTimerSetup(string to_print)
+{
+    for (int i = 0; i < ASCII_HEIGHT; i++)
+    {
+        string line;
+        for (char ch : to_print)
+        {
+            if (ch == ':')
+            {
+                line += font1.at(10)[i]; // Colon character
+                line += PADDING;
+            }
+            else
+            {
+                line += font1.at(ch - '0')[i]; // Numeric character
+                line += PADDING;
+            }
+        }
+        _asciiWidth = line.length(); // Update ASCII width
+        _asciiBuffer += (line + "\n");
+    }
+
+    printAscii(1);
+
+    setCursor(10,1);
+
+}
+
+void Display::tickAlarmSetup(string to_print)
 {
     for (int i = 0; i < ASCII_HEIGHT; i++)
     {
@@ -575,6 +594,15 @@ void Display::tickStopwatch(Stopwatch &stopwatch)
 
 void Display::tickAlarm(Alarm &alarm)
 {
+    string time = alarm.timeToString(Alarm::currentTime());
+
+    cout << time << endl;
+    cout << alarm.remainingMilliseconds();
+
+    printSplash(4);
+    
+    setCursor(1,1);
+
     return;
 }
 

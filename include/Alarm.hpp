@@ -1,34 +1,39 @@
 #ifndef ALARM_HPP
 #define ALARM_HPP
 
-#include <string>
-#include <chrono>
-#include <vector>
-#include <fstream>
-#include <iostream>
-#include <sstream>
-#include <iomanip>
-#include <ctime>
-#include <chrono>
 #include <thread>
+#include <ctime>
+#include <iostream>
+#include <iomanip>
+#include <chrono>
+#include <sstream>
 
 using namespace std;
 
 class Alarm {
 public:
+
     Alarm(string time);
-    
-    bool isDone() const;
 
-    string getTimeString() const;
+    chrono::time_point<chrono::system_clock> stringToTime(string s);
+    string timeToString(chrono::time_point<chrono::system_clock> t);
 
-    static chrono::system_clock::time_point getCurrentTime();
+    static chrono::time_point<chrono::system_clock> currentTime();
 
-    static chrono::system_clock::time_point parseTime(string time);
+    void start();           
+    bool isRunning();    
+    bool isDone();   
+
+    int remainingMilliseconds();
 
 private:
 
-    chrono::system_clock::time_point _time;
+    int _remainingMilliseconds;
+
+    bool _running;
+
+    chrono::time_point<chrono::system_clock> _startTime;
+    chrono::time_point<chrono::system_clock> _endTime;  
 
 };
 

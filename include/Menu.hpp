@@ -70,6 +70,9 @@ public:
      */
     void checkStopwatchInput(Stopwatch &stopwatch, bool &run);
 
+
+    void checkAlarmInput(Alarm& alarm, bool& run);
+
     /**
      * @brief Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm.
      *
@@ -88,6 +91,8 @@ public:
     void alarmSequence();
 
     Timer createTimer();
+
+    Alarm createAlarm();
 
     void printTimerInput(int, int ,int);
 

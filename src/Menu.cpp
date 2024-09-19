@@ -146,7 +146,30 @@ void Menu::stopwatchSequence(){
 }
 
 void Menu::alarmSequence(){
-    Alarm alarm;
+    _display.clearScreen();
+
+    Alarm alarm = createAlarm();
+
+    bool run = true;
+
+    _display.clearScreen();
+
+    while(run){
+        // Display a message when the alarm finishes
+        if(alarm.isDone()) {
+            _display.setSplash("ALARM FINISHED"); 
+        }
+
+        _display.tickAlarm(alarm);
+
+        checkAlarmInput(alarm, run);
+
+        wait(0.01);
+
+        if(_testing){
+            run = false;
+        }
+    }
 }
 
 Timer Menu::createTimer(){
@@ -201,6 +224,67 @@ Timer Menu::createTimer(){
     _display.clearScreen();
     Timer timer(h,m,s);
     return timer;
+}
+
+Alarm Menu::createAlarm(){
+    int h = 0;
+    int m = 0;
+
+    string input = "0000";
+
+    string to_print = "00:00";
+
+    _display.tickAlarmSetup(to_print);
+    
+    int index = 3;
+    
+    while (true) {
+        char ch; 
+        if(_testing){
+            ch = '1';
+        }
+        else{
+            ch = _getch();
+        }
+
+        if (ch == 13 && (h || m)) {
+            break;
+        } 
+        else if (ch >= '0' && ch <= '9') {
+            input = input.substr(1) + ch; 
+        } 
+        else if (ch == 8) { 
+            input = '0' + input.substr(0, 3);
+        }
+
+        h = stoi(input.substr(0, 2));
+        m = stoi(input.substr(2, 2));
+
+        // Ensure the hours are between 0 and 23, and minutes are between 0 and 59
+        if (h > 23) {
+            h = 23;  // Limit the hours to 23
+            input = "23" + input.substr(2, 2);  // Update the input to reflect this
+        }
+
+        if (m > 59) {
+            m = 59;  // Limit the minutes to 59
+            input = input.substr(0, 2) + "59";  // Update the input to reflect this
+        }
+
+        to_print = (h < 10 ? "0" : "") + to_string(h) + ":" 
+                 + (m < 10 ? "0" : "") + to_string(m);
+
+        _display.tickTimerSetup(to_print);
+        
+        wait(0.01);
+
+        if(_testing){
+            break;
+        }
+    }
+    _display.clearScreen();
+    Alarm alarm(to_print);
+    return alarm;
 }
 
 /**
@@ -340,6 +424,16 @@ void Menu::checkStopwatchInput(Stopwatch& stopwatch, bool& run){
     }
 }
 
+
+void Menu::checkAlarmInput(Alarm& alarm, bool& run){
+    if(_kbhit()){
+        char ch = _getch();
+        switch(ch){
+            default:
+                break;
+        }
+    }
+}
 /* =========================================================
 GET USER INPUT FOR MENU SELECTION
 ========================================================= */

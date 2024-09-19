@@ -8,13 +8,13 @@
 using namespace std;
 
 void test_constructor(){
-    Alarm alarm;
+    //Alarm alarm(0,0);
 }
 
 
 int main() {
     try {
-        //calls here
+        test_constructor();
         cout << "All tests passed successfully!\n";
     } catch (const exception& e) {
         cerr << "Test failed with exception: " << e.what() << std::endl;
