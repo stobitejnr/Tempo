@@ -613,6 +613,11 @@ void Display::printSplits(int row)
 
 void Display::tickTimerSetup(string to_print)
 {
+    auto now = std::chrono::steady_clock::now();
+    auto millis = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
+
+    bool showBar = ((millis / 500) % 2 == 0);
+
     for (int i = 0; i < ASCII_HEIGHT; i++)
     {
         string line;
@@ -629,6 +634,12 @@ void Display::tickTimerSetup(string to_print)
                 line += PADDING;
             }
         }
+        if(showBar){
+            line += " |";
+        }
+        else{
+            line += "   ";
+        }
         _asciiWidth = line.length(); // Update ASCII width
         _asciiBuffer += (line + "\n");
     }
@@ -637,12 +648,17 @@ void Display::tickTimerSetup(string to_print)
     printAscii(1);
     printControls(10);
 
-    setCursor(20,1);
+    setCursor(1,1);
 
 }
 
 void Display::tickAlarmSetup(string to_print)
 {
+    auto now = std::chrono::steady_clock::now();
+    auto millis = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
+
+    bool showBar = ((millis / 500) % 2 == 0);
+
     for (int i = 0; i < ASCII_HEIGHT; i++)
     {
         string line;
@@ -658,6 +674,12 @@ void Display::tickAlarmSetup(string to_print)
                 line += font1.at(ch - '0')[i]; // Numeric character
                 line += PADDING;
             }
+        }
+        if(showBar){
+            line += " |";
+        }
+        else{
+            line += "   ";
         }
         _asciiWidth = line.length(); // Update ASCII width
         _asciiBuffer += (line + "\n");
@@ -668,7 +690,7 @@ void Display::tickAlarmSetup(string to_print)
     printAscii(1);
     printControls(10);
 
-    setCursor(20,1);
+    setCursor(1,1);
 
 }
 

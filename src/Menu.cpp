@@ -13,6 +13,7 @@ CONSTRUCTOR
  * @brief Constructs a Menu object and initializes its state.
  */
 Menu::Menu(bool testing){ 
+    srand(static_cast<unsigned int>(std::chrono::high_resolution_clock::now().time_since_epoch().count()));
     _display = Display();
     _run = true;
     _testing = testing;
@@ -22,16 +23,24 @@ void Menu::start(){
     _display.clearScreen();
 
     string lBuffer = "                ";
+    cout << "\033[1;36m";
 
     for (string line : _logoArt){
         cout << line << endl;
     }
+
+    cout << "\033[0m";
+    cout << "\033[37m";
 
     cout << endl;
 
     for (string line : _credits){
         cout << lBuffer << line << endl;
     }
+    cout << "\033[0m";
+
+    _display.setCursor(1,1);
+    
     waitForInput();
 }
 
@@ -50,14 +59,21 @@ void Menu::mainMenu() {
 
     _display.clearScreen();
 
+    cout << "\033[1;36m";
+
+
     for (string line : _menuArt){
         cout << "" << line << endl;
     }
 
-    cout << "1: Timer\n";
-    cout << "2: Stopwatch\n";
-    cout << "3: Alarm **Beta Feature**\n";
-    cout << "Q: Quit Program\n";
+    cout << "\033[0m";
+    cout << "\033[1;37m";
+
+    for (string line : _menuOptions){
+        cout << "" << line << endl;
+    }
+
+    cout << "\033[0m";
 
     if(_testing){
         timerSequence();
@@ -65,6 +81,8 @@ void Menu::mainMenu() {
         alarmSequence();
         return;
     }
+    
+    _display.setCursor(1,1);
     
     char in = getMenuInput();
     // ENTER TIMER SEQUENCE
@@ -84,6 +102,7 @@ void Menu::mainMenu() {
 
     // QUIT PROGRAM
     else if(in == 'q'){
+        _display.clearScreen();
         return;
     }
     
@@ -191,8 +210,11 @@ Timer Menu::createTimer(bool& run){
         if(_testing){
             ch = '1';
         }
-        else{
+        else if(_kbhit()){
             ch = _getch();
+        }
+        else{
+            ch = 0;
         }
 
         if (ch == 13 && (h || m || s)) {
@@ -248,8 +270,11 @@ Alarm Menu::createAlarm(bool& run){
         if(_testing){
             ch = '1';
         }
-        else{
+        else if(_kbhit()){
             ch = _getch();
+        }
+        else{
+            ch = 0;
         }
 
         if (ch == 13 && (h || m)) {
@@ -470,6 +495,7 @@ char Menu::getMenuInput(){
                     return '2';
                 case '3':
                     return '3';
+                case 'Q':
                 case 'q':
                     return 'q';
                 default:
