@@ -20,5 +20,7 @@ jobs:
       - name: Install Clang-Tidy
         run: choco install llvm
 
-      - name: Run Clang-Tidy
-        run: clang-tidy src/*.cpp -- -Iinclude -std=c++17
+      - name: Run Clang-Tidy and Check for Warnings
+        run: |
+          chmod +x ./scripts/check_clang_tidy_warnings.sh
+          ./scripts/check_clang_tidy_warnings.sh
