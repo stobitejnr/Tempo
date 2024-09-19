@@ -1,0 +1,4 @@
+<map id="Alarm::getTime" name="Alarm::getTime">
+<area shape="rect" id="node1" title="Creates nearest future time point with hours h and minutes m." alt="" coords="161,5,284,31"/>
+<area shape="rect" id="node2" href="$class_alarm.html#a9c05bd5c0a13a0774afc6f5df8c66f0f" title="Constructor for alarm object." alt="" coords="5,5,113,31"/>
+</map>

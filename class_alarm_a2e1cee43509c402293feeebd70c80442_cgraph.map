@@ -1,5 +1,5 @@
 <map id="Alarm::isDone" name="Alarm::isDone">
 <area shape="rect" id="node1" title="Checks if the alarm has completed." alt="" coords="5,5,120,31"/>
 <area shape="rect" id="node2" href="$class_alarm.html#a8f29e4753be03a7f68c22d2697e65a43" title="Calculates the remaining time in milliseconds until the alarm ends." alt="" coords="168,5,384,31"/>
-<area shape="rect" id="node3" href="$class_alarm.html#aed71528f9d3f7143072ab882e0ff105e" title="Gets the current time." alt="" coords="432,5,580,31"/>
+<area shape="rect" id="node3" href="$class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f" title=" " alt="" coords="432,5,580,31"/>
 </map>

@@ -2,8 +2,8 @@ var searchData=
 [
   ['test_0',['Test',['../class_test.html#adcf1bc755df94c4d07519c0a02aa1cc0',1,'Test::Test()'],['../class_test_3_01void_01_5_00_01200_01_4.html#aef160085cc11406b872b45fa871c7692',1,'Test&lt; void *, 200 &gt;::Test()'],['../class_test_3_01_t_01_5_01_4.html#a474e8a1211308b3f810f9eafced6cbe7',1,'Test&lt; T * &gt;::Test()'],['../class_test.html#a44e3a28c552193de099601e2910531f1',1,'Test::Test()']]],
   ['test_5fadd_5ftime_1',['test_add_time',['../_timer_test_8cpp.html#ad6d1baf23a5b08ce7c326940832f8a05',1,'TimerTest.cpp']]],
-  ['test_5falarm_2',['test_alarm',['../_display_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6',1,'DisplayTest.cpp']]],
-  ['test_5fconstructor_3',['test_constructor',['../_alarm_test_8cpp.html#acba75a8bdc084005b14d0ab6214dc244',1,'test_constructor():&#160;AlarmTest.cpp'],['../_stopwatch_test_8cpp.html#acba75a8bdc084005b14d0ab6214dc244',1,'test_constructor():&#160;StopwatchTest.cpp'],['../_timer_test_8cpp.html#acba75a8bdc084005b14d0ab6214dc244',1,'test_constructor():&#160;TimerTest.cpp']]],
+  ['test_5falarm_2',['test_alarm',['../_alarm_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6',1,'test_alarm():&#160;AlarmTest.cpp'],['../_display_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6',1,'test_alarm():&#160;DisplayTest.cpp']]],
+  ['test_5fconstructor_3',['test_constructor',['../_stopwatch_test_8cpp.html#acba75a8bdc084005b14d0ab6214dc244',1,'test_constructor():&#160;StopwatchTest.cpp'],['../_timer_test_8cpp.html#acba75a8bdc084005b14d0ab6214dc244',1,'test_constructor():&#160;TimerTest.cpp']]],
   ['test_5fexpiration_4',['test_expiration',['../_timer_test_8cpp.html#a14451092b3f80a4a088637f1705ae471',1,'TimerTest.cpp']]],
   ['test_5fmenu_5',['test_menu',['../_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186',1,'MenuTest.cpp']]],
   ['test_5fnonreturn_6',['test_nonreturn',['../_display_test_8cpp.html#a35b031d24547d7d5190227124274493d',1,'DisplayTest.cpp']]],
@@ -23,5 +23,5 @@ var searchData=
   ['ticktimersetup_20',['tickTimerSetup',['../class_display.html#aae213ab2d8df542fbe9b58d526a47052',1,'Display']]],
   ['timer_21',['Timer',['../class_timer.html#af3774b6f9a3f6759e6852be35617b405',1,'Timer']]],
   ['timersequence_22',['timerSequence',['../class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a',1,'Menu']]],
-  ['timetostring_23',['timeToString',['../class_alarm.html#acf005496b4b72ecd4e66c415a8d3f238',1,'Alarm']]]
+  ['timetostring_23',['timeToString',['../class_alarm.html#a493f5bd8972a4c5769574701f9d92067',1,'Alarm']]]
 ];

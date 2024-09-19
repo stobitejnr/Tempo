@@ -1,4 +1,11 @@
 <map id="main" name="main">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,60,31"/>
-<area shape="rect" id="node2" href="$_alarm_test_8cpp.html#acba75a8bdc084005b14d0ab6214dc244" title=" " alt="" coords="108,5,235,31"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,131,60,156"/>
+<area shape="rect" id="node2" href="$_alarm_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6" title=" " alt="" coords="108,131,200,156"/>
+<area shape="rect" id="node3" href="$class_alarm.html#a4e43d8e48846d1911f5a691c129b731a" title=" " alt="" coords="248,5,395,31"/>
+<area shape="rect" id="node4" href="$class_alarm.html#a2e1cee43509c402293feeebd70c80442" title="Checks if the alarm has completed." alt="" coords="264,55,379,80"/>
+<area shape="rect" id="node5" href="$class_alarm.html#a8f29e4753be03a7f68c22d2697e65a43" title="Calculates the remaining time in milliseconds until the alarm ends." alt="" coords="443,105,659,131"/>
+<area shape="rect" id="node7" href="$class_alarm.html#a2fd458f8f2e6980b8a40d2e04d90e684" title="Checks if the alarm is currently running." alt="" coords="255,156,388,181"/>
+<area shape="rect" id="node8" href="$class_alarm.html#aee08b5d6eafe7e5adee07f9c30dc3fce" title="Calculates the percentage of time elapsed from start to end." alt="" coords="466,207,635,232"/>
+<area shape="rect" id="node9" href="$class_alarm.html#a493f5bd8972a4c5769574701f9d92067" title=" " alt="" coords="475,256,626,281"/>
+<area shape="rect" id="node6" href="$class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f" title=" " alt="" coords="707,207,855,232"/>
 </map>

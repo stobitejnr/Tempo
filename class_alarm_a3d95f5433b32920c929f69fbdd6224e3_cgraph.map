@@ -1,4 +1,0 @@
-<map id="Alarm::stringToTime" name="Alarm::stringToTime">
-<area shape="rect" id="node1" title="Converts a string representation of time to a time_point." alt="" coords="5,5,159,31"/>
-<area shape="rect" id="node2" href="$class_alarm.html#aed71528f9d3f7143072ab882e0ff105e" title="Gets the current time." alt="" coords="207,5,355,31"/>
-</map>

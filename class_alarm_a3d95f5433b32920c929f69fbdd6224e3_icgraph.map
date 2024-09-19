@@ -1,4 +1,0 @@
-<map id="Alarm::stringToTime" name="Alarm::stringToTime">
-<area shape="rect" id="node1" title="Converts a string representation of time to a time_point." alt="" coords="161,5,315,31"/>
-<area shape="rect" id="node2" href="$class_alarm.html#a0e0ff5f0c3f8e1c34db64294ba135a7d" title="Constructs an Alarm object with a specified end time." alt="" coords="5,5,113,31"/>
-</map>

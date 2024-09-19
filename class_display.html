@@ -88,10 +88,10 @@ Collaboration diagram for Display:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_display__coll__graph.png" border="0" usemap="#a_display_coll__map" alt="Collaboration graph"/></div>
 <map name="a_display_coll__map" id="a_display_coll__map">
-<area shape="rect" title="The Display class manages the visual representation and interaction logic for timers,..." alt="" coords="101,329,171,355"/>
+<area shape="rect" title="The Display class manages the visual representation and interaction logic for timers,..." alt="" coords="103,329,174,355"/>
 <area shape="rect" title=" " alt="" coords="31,95,118,120"/>
 <area shape="rect" title=" " alt="" coords="5,5,144,45"/>
-<area shape="rect" title=" " alt="" coords="178,95,217,120"/>
+<area shape="rect" title=" " alt="" coords="185,95,223,120"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -175,6 +175,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a729a08fa7f1f33907b6c2ba13fcf6d62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62">clearScreen</a> ()</td></tr>
 <tr class="memdesc:a729a08fa7f1f33907b6c2ba13fcf6d62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the terminal screen.  <br /></td></tr>
 <tr class="separator:a729a08fa7f1f33907b6c2ba13fcf6d62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83ed7e4a6928b93390e552ac6dbc9007"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display.html#a83ed7e4a6928b93390e552ac6dbc9007">setFormat</a> (string code)</td></tr>
+<tr class="separator:a83ed7e4a6928b93390e552ac6dbc9007"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbc05f4af18fc8665a8022e795c2d574"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display.html#abbc05f4af18fc8665a8022e795c2d574">clearFormat</a> ()</td></tr>
+<tr class="separator:abbc05f4af18fc8665a8022e795c2d574"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5454c0ff9a9d1730b3604bc15f94a5b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3">setCursor</a> (int x, int y)</td></tr>
 <tr class="memdesc:a5454c0ff9a9d1730b3604bc15f94a5b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the cursor position in the terminal.  <br /></td></tr>
 <tr class="separator:a5454c0ff9a9d1730b3604bc15f94a5b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -224,6 +228,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a7fc347aef4ffc336298a67f923096013"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display.html#a7fc347aef4ffc336298a67f923096013">_font</a></td></tr>
 <tr class="memdesc:a7fc347aef4ffc336298a67f923096013"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of font used for loading.  <br /></td></tr>
 <tr class="separator:a7fc347aef4ffc336298a67f923096013"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6343ea539f7abb19103066ccd3e29061"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display.html#a6343ea539f7abb19103066ccd3e29061">_formatting</a></td></tr>
+<tr class="separator:a6343ea539f7abb19103066ccd3e29061"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1310572c232ae48e49e388a734bb5399"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display.html#a1310572c232ae48e49e388a734bb5399">_oldFormatting</a></td></tr>
+<tr class="separator:a1310572c232ae48e49e388a734bb5399"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86958d8d094d9a2697a111d8e3ef405c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display.html#a86958d8d094d9a2697a111d8e3ef405c">_asciiWidth</a></td></tr>
 <tr class="memdesc:a86958d8d094d9a2697a111d8e3ef405c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Width of the ASCII art.  <br /></td></tr>
 <tr class="separator:a86958d8d094d9a2697a111d8e3ef405c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -232,7 +240,7 @@ Private Attributes</h2></td></tr>
 <div class="textblock"><p>The <a class="el" href="class_display.html" title="The Display class manages the visual representation and interaction logic for timers,...">Display</a> class manages the visual representation and interaction logic for timers, stopwatches, and alarms. </p>
 <p>Handles the terminal display for a timer and stopwatch, including ASCII art and controls. </p>
 
-<p class="definition">Definition at line <a class="el" href="_display_8hpp_source.html#l00021">21</a> of file <a class="el" href="_display_8hpp_source.html">Display.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_display_8hpp_source.html#l00022">22</a> of file <a class="el" href="_display_8hpp_source.html">Display.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae972fffea6f7ca1d627ef48c3d841bb3" name="ae972fffea6f7ca1d627ef48c3d841bb3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae972fffea6f7ca1d627ef48c3d841bb3">&#9670;&#160;</a></span>Display()</h2>
@@ -268,23 +276,84 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   31</span> </div>
 <div class="line"><span class="lineno">   32</span>    <a class="code hl_variable" href="class_display.html#a86958d8d094d9a2697a111d8e3ef405c">_asciiWidth</a> = 0;</div>
 <div class="line"><span class="lineno">   33</span>}</div>
-<div class="ttc" id="aclass_display_html_a0fe617dbd36bde30e5cb5c388fc19156"><div class="ttname"><a href="class_display.html#a0fe617dbd36bde30e5cb5c388fc19156">Display::_splash</a></div><div class="ttdeci">string _splash</div><div class="ttdoc">String for splash screen.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8hpp_source.html#l00180">Display.hpp:180</a></div></div>
-<div class="ttc" id="aclass_display_html_a49a8492ba729f03c53362d5e5ed56c6b"><div class="ttname"><a href="class_display.html#a49a8492ba729f03c53362d5e5ed56c6b">Display::_asciiBuffer</a></div><div class="ttdeci">string _asciiBuffer</div><div class="ttdoc">Buffer for ASCII art.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8hpp_source.html#l00176">Display.hpp:176</a></div></div>
-<div class="ttc" id="aclass_display_html_a69690296c9bc96b0008faa5b2ec3c89f"><div class="ttname"><a href="class_display.html#a69690296c9bc96b0008faa5b2ec3c89f">Display::_splitBuffer</a></div><div class="ttdeci">string _splitBuffer</div><div class="ttdoc">Buffer for the splits block.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8hpp_source.html#l00179">Display.hpp:179</a></div></div>
-<div class="ttc" id="aclass_display_html_a6b748b52153ef3d12250857604677076"><div class="ttname"><a href="class_display.html#a6b748b52153ef3d12250857604677076">Display::_oldAscii</a></div><div class="ttdeci">string _oldAscii</div><div class="ttdoc">Previous ASCII art for comparison.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8hpp_source.html#l00182">Display.hpp:182</a></div></div>
-<div class="ttc" id="aclass_display_html_a7fc347aef4ffc336298a67f923096013"><div class="ttname"><a href="class_display.html#a7fc347aef4ffc336298a67f923096013">Display::_font</a></div><div class="ttdeci">string _font</div><div class="ttdoc">Name of font used for loading.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8hpp_source.html#l00188">Display.hpp:188</a></div></div>
-<div class="ttc" id="aclass_display_html_a86958d8d094d9a2697a111d8e3ef405c"><div class="ttname"><a href="class_display.html#a86958d8d094d9a2697a111d8e3ef405c">Display::_asciiWidth</a></div><div class="ttdeci">int _asciiWidth</div><div class="ttdoc">Width of the ASCII art.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8hpp_source.html#l00190">Display.hpp:190</a></div></div>
-<div class="ttc" id="aclass_display_html_aa95ea9ea6902ebed7359ae74c58469ed"><div class="ttname"><a href="class_display.html#aa95ea9ea6902ebed7359ae74c58469ed">Display::_oldControls</a></div><div class="ttdeci">string _oldControls</div><div class="ttdoc">Previous controls for comparison.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8hpp_source.html#l00183">Display.hpp:183</a></div></div>
-<div class="ttc" id="aclass_display_html_ab67608c8dcaf78b62a954ba4ea0e88a0"><div class="ttname"><a href="class_display.html#ab67608c8dcaf78b62a954ba4ea0e88a0">Display::_oldSplash</a></div><div class="ttdeci">string _oldSplash</div><div class="ttdoc">Previous splash screen for comparison.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8hpp_source.html#l00185">Display.hpp:185</a></div></div>
-<div class="ttc" id="aclass_display_html_acf2b06a5cde5dac84dc2840039d979c7"><div class="ttname"><a href="class_display.html#acf2b06a5cde5dac84dc2840039d979c7">Display::_oldSplits</a></div><div class="ttdeci">string _oldSplits</div><div class="ttdoc">Previous splits for comparison.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8hpp_source.html#l00186">Display.hpp:186</a></div></div>
-<div class="ttc" id="aclass_display_html_ad4a3014d328a66c55fec8215cc33475d"><div class="ttname"><a href="class_display.html#ad4a3014d328a66c55fec8215cc33475d">Display::_barBuffer</a></div><div class="ttdeci">string _barBuffer</div><div class="ttdoc">Buffer for progress bar.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8hpp_source.html#l00177">Display.hpp:177</a></div></div>
-<div class="ttc" id="aclass_display_html_af215f7bedad13ad9a78545ce1e53b3bc"><div class="ttname"><a href="class_display.html#af215f7bedad13ad9a78545ce1e53b3bc">Display::_controlBuffer</a></div><div class="ttdeci">string _controlBuffer</div><div class="ttdoc">Buffer for controls.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8hpp_source.html#l00178">Display.hpp:178</a></div></div>
+<div class="ttc" id="aclass_display_html_a0fe617dbd36bde30e5cb5c388fc19156"><div class="ttname"><a href="class_display.html#a0fe617dbd36bde30e5cb5c388fc19156">Display::_splash</a></div><div class="ttdeci">string _splash</div><div class="ttdoc">String for splash screen.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8hpp_source.html#l00185">Display.hpp:185</a></div></div>
+<div class="ttc" id="aclass_display_html_a49a8492ba729f03c53362d5e5ed56c6b"><div class="ttname"><a href="class_display.html#a49a8492ba729f03c53362d5e5ed56c6b">Display::_asciiBuffer</a></div><div class="ttdeci">string _asciiBuffer</div><div class="ttdoc">Buffer for ASCII art.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8hpp_source.html#l00181">Display.hpp:181</a></div></div>
+<div class="ttc" id="aclass_display_html_a69690296c9bc96b0008faa5b2ec3c89f"><div class="ttname"><a href="class_display.html#a69690296c9bc96b0008faa5b2ec3c89f">Display::_splitBuffer</a></div><div class="ttdeci">string _splitBuffer</div><div class="ttdoc">Buffer for the splits block.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8hpp_source.html#l00184">Display.hpp:184</a></div></div>
+<div class="ttc" id="aclass_display_html_a6b748b52153ef3d12250857604677076"><div class="ttname"><a href="class_display.html#a6b748b52153ef3d12250857604677076">Display::_oldAscii</a></div><div class="ttdeci">string _oldAscii</div><div class="ttdoc">Previous ASCII art for comparison.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8hpp_source.html#l00187">Display.hpp:187</a></div></div>
+<div class="ttc" id="aclass_display_html_a7fc347aef4ffc336298a67f923096013"><div class="ttname"><a href="class_display.html#a7fc347aef4ffc336298a67f923096013">Display::_font</a></div><div class="ttdeci">string _font</div><div class="ttdoc">Name of font used for loading.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8hpp_source.html#l00193">Display.hpp:193</a></div></div>
+<div class="ttc" id="aclass_display_html_a86958d8d094d9a2697a111d8e3ef405c"><div class="ttname"><a href="class_display.html#a86958d8d094d9a2697a111d8e3ef405c">Display::_asciiWidth</a></div><div class="ttdeci">int _asciiWidth</div><div class="ttdoc">Width of the ASCII art.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8hpp_source.html#l00198">Display.hpp:198</a></div></div>
+<div class="ttc" id="aclass_display_html_aa95ea9ea6902ebed7359ae74c58469ed"><div class="ttname"><a href="class_display.html#aa95ea9ea6902ebed7359ae74c58469ed">Display::_oldControls</a></div><div class="ttdeci">string _oldControls</div><div class="ttdoc">Previous controls for comparison.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8hpp_source.html#l00188">Display.hpp:188</a></div></div>
+<div class="ttc" id="aclass_display_html_ab67608c8dcaf78b62a954ba4ea0e88a0"><div class="ttname"><a href="class_display.html#ab67608c8dcaf78b62a954ba4ea0e88a0">Display::_oldSplash</a></div><div class="ttdeci">string _oldSplash</div><div class="ttdoc">Previous splash screen for comparison.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8hpp_source.html#l00190">Display.hpp:190</a></div></div>
+<div class="ttc" id="aclass_display_html_acf2b06a5cde5dac84dc2840039d979c7"><div class="ttname"><a href="class_display.html#acf2b06a5cde5dac84dc2840039d979c7">Display::_oldSplits</a></div><div class="ttdeci">string _oldSplits</div><div class="ttdoc">Previous splits for comparison.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8hpp_source.html#l00191">Display.hpp:191</a></div></div>
+<div class="ttc" id="aclass_display_html_ad4a3014d328a66c55fec8215cc33475d"><div class="ttname"><a href="class_display.html#ad4a3014d328a66c55fec8215cc33475d">Display::_barBuffer</a></div><div class="ttdeci">string _barBuffer</div><div class="ttdoc">Buffer for progress bar.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8hpp_source.html#l00182">Display.hpp:182</a></div></div>
+<div class="ttc" id="aclass_display_html_af215f7bedad13ad9a78545ce1e53b3bc"><div class="ttname"><a href="class_display.html#af215f7bedad13ad9a78545ce1e53b3bc">Display::_controlBuffer</a></div><div class="ttdeci">string _controlBuffer</div><div class="ttdoc">Buffer for controls.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8hpp_source.html#l00183">Display.hpp:183</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00176">_asciiBuffer</a>, <a class="el" href="_display_8hpp_source.html#l00190">_asciiWidth</a>, <a class="el" href="_display_8hpp_source.html#l00177">_barBuffer</a>, <a class="el" href="_display_8hpp_source.html#l00178">_controlBuffer</a>, <a class="el" href="_display_8hpp_source.html#l00188">_font</a>, <a class="el" href="_display_8hpp_source.html#l00182">_oldAscii</a>, <a class="el" href="_display_8hpp_source.html#l00183">_oldControls</a>, <a class="el" href="_display_8hpp_source.html#l00185">_oldSplash</a>, <a class="el" href="_display_8hpp_source.html#l00186">_oldSplits</a>, <a class="el" href="_display_8hpp_source.html#l00180">_splash</a>, and <a class="el" href="_display_8hpp_source.html#l00179">_splitBuffer</a>.</p>
+<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00181">_asciiBuffer</a>, <a class="el" href="_display_8hpp_source.html#l00198">_asciiWidth</a>, <a class="el" href="_display_8hpp_source.html#l00182">_barBuffer</a>, <a class="el" href="_display_8hpp_source.html#l00183">_controlBuffer</a>, <a class="el" href="_display_8hpp_source.html#l00193">_font</a>, <a class="el" href="_display_8hpp_source.html#l00187">_oldAscii</a>, <a class="el" href="_display_8hpp_source.html#l00188">_oldControls</a>, <a class="el" href="_display_8hpp_source.html#l00190">_oldSplash</a>, <a class="el" href="_display_8hpp_source.html#l00191">_oldSplits</a>, <a class="el" href="_display_8hpp_source.html#l00185">_splash</a>, and <a class="el" href="_display_8hpp_source.html#l00184">_splitBuffer</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="abbc05f4af18fc8665a8022e795c2d574" name="abbc05f4af18fc8665a8022e795c2d574"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbc05f4af18fc8665a8022e795c2d574">&#9670;&#160;</a></span>clearFormat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Display::clearFormat </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_display_8cpp_source.html#l00838">838</a> of file <a class="el" href="_display_8cpp_source.html">Display.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  838</span>                         {</div>
+<div class="line"><span class="lineno">  839</span>    <a class="code hl_variable" href="class_display.html#a1310572c232ae48e49e388a734bb5399">_oldFormatting</a> = <a class="code hl_variable" href="class_display.html#a6343ea539f7abb19103066ccd3e29061">_formatting</a>;</div>
+<div class="line"><span class="lineno">  840</span>    <a class="code hl_variable" href="class_display.html#a6343ea539f7abb19103066ccd3e29061">_formatting</a> = <span class="stringliteral">&quot;\033[0m&quot;</span>;</div>
+<div class="line"><span class="lineno">  841</span> </div>
+<div class="line"><span class="lineno">  842</span>    cout &lt;&lt; <span class="stringliteral">&quot;\033[0m&quot;</span>;</div>
+<div class="line"><span class="lineno">  843</span>}</div>
+<div class="ttc" id="aclass_display_html_a1310572c232ae48e49e388a734bb5399"><div class="ttname"><a href="class_display.html#a1310572c232ae48e49e388a734bb5399">Display::_oldFormatting</a></div><div class="ttdeci">string _oldFormatting</div><div class="ttdef"><b>Definition:</b> <a href="_display_8hpp_source.html#l00196">Display.hpp:196</a></div></div>
+<div class="ttc" id="aclass_display_html_a6343ea539f7abb19103066ccd3e29061"><div class="ttname"><a href="class_display.html#a6343ea539f7abb19103066ccd3e29061">Display::_formatting</a></div><div class="ttdeci">string _formatting</div><div class="ttdef"><b>Definition:</b> <a href="_display_8hpp_source.html#l00195">Display.hpp:195</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00195">_formatting</a>, and <a class="el" href="_display_8hpp_source.html#l00196">_oldFormatting</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00062">Menu::mainMenu()</a>, <a class="el" href="_menu_8cpp_source.html#l00025">Menu::start()</a>, <a class="el" href="_display_8cpp_source.html#l00787">tickAlarm()</a>, <a class="el" href="_display_8cpp_source.html#l00661">tickAlarmSetup()</a>, <a class="el" href="_display_8cpp_source.html#l00747">tickStopwatch()</a>, <a class="el" href="_display_8cpp_source.html#l00711">tickTimer()</a>, and <a class="el" href="_display_8cpp_source.html#l00615">tickTimerSetup()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_display_abbc05f4af18fc8665a8022e795c2d574_icgraph.png" border="0" usemap="#aclass_display_abbc05f4af18fc8665a8022e795c2d574_icgraph" alt=""/></div>
+<map name="aclass_display_abbc05f4af18fc8665a8022e795c2d574_icgraph" id="aclass_display_abbc05f4af18fc8665a8022e795c2d574_icgraph">
+<area shape="rect" title=" " alt="" coords="1319,257,1475,282"/>
+<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="247,145,381,170"/>
+<area shape="rect" href="class_menu.html#ae1ec62e738dda7faaaec850bd0b58ffe" title="Displays the start screen with logo art and credits." alt="" coords="266,71,362,97"/>
+<area shape="rect" href="class_display.html#a8437f93af050167c13f5cf2f3e68f8b8" title="Updates the display based on the state of the provided Alarm object." alt="" coords="1111,407,1252,433"/>
+<area shape="rect" href="class_display.html#a00b39135d34e401529265af26a9611c7" title="Updates the alarm setup display, showing the current input with a blinking cursor." alt="" coords="1092,482,1271,507"/>
+<area shape="rect" href="class_display.html#a670c8db4c53ae0f09d6d3b57f1813b7f" title="Updates the display based on the state of the provided Stopwatch object." alt="" coords="1096,306,1267,331"/>
+<area shape="rect" href="class_display.html#a02b2228e05be168eda0b817d1ecf5db7" title="Updates the display based on the state of the provided Timer object." alt="" coords="1111,257,1251,282"/>
+<area shape="rect" href="class_display.html#aae213ab2d8df542fbe9b58d526a47052" title="Updates the timer setup display, showing the current input with a blinking cursor." alt="" coords="1093,207,1270,233"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,133,181,158"/>
+<area shape="rect" href="_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,78,199,103"/>
+<area shape="rect" href="_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,78,60,103"/>
+<area shape="rect" href="class_menu.html#a4663bff1fca54f0230ff0e20b6ae9ae8" title="Runs the alarm sequence, allowing the user to set and interact with an alarm." alt="" coords="444,483,611,509"/>
+<area shape="rect" href="_display_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6" title=" " alt="" coords="925,407,1017,433"/>
+<area shape="rect" href="_display_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="734,270,789,295"/>
+<area shape="rect" href="class_menu.html#a76c8148cc85fcc305b80c52b2f9df2ca" title="Creates a new Alarm object based on user input." alt="" coords="897,509,1044,534"/>
+<area shape="rect" href="class_menu.html#a530b357d64d1481172d7808a453f262d" title="Checks and handles user input for the Alarm." alt="" coords="673,509,849,534"/>
+<area shape="rect" href="class_menu.html#aca5927a856a8d20d738323c2261cc9e4" title="Runs the stopwatch sequence, allowing the user to start, stop, and record splits." alt="" coords="429,275,625,301"/>
+<area shape="rect" href="_display_test_8cpp.html#a95399b2aca69374a0e3efa274a5c3e03" title=" " alt="" coords="910,306,1031,331"/>
+<area shape="rect" href="_display_test_8cpp.html#aaebf8e553939222f4e0682af515b3674" title=" " alt="" coords="926,257,1015,282"/>
+<area shape="rect" href="class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title="Runs the timer sequence, allowing the user to set and interact with a timer." alt="" coords="445,145,609,170"/>
+<area shape="rect" href="class_menu.html#a1a90c9e670b33e2c9aaddc01f47b3b88" title="Creates a new Timer object based on user input." alt="" coords="898,106,1043,131"/>
+<area shape="rect" href="_display_test_8cpp.html#a6294fd865d398d67618ac1493f971eb1" title=" " alt="" coords="905,207,1037,233"/>
+<area shape="rect" href="class_menu.html#ab8d3cccd5b39987a6546f7dc1187b71e" title="Checks and handles user input for the Timer." alt="" coords="674,94,849,119"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="aaa0ffb7318a45caa0b74d3d439e623f0" name="aaa0ffb7318a45caa0b74d3d439e623f0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaa0ffb7318a45caa0b74d3d439e623f0">&#9670;&#160;</a></span>clearLine()</h2>
 
@@ -316,10 +385,10 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   72</span>    <a class="code hl_function" href="class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3">setCursor</a>(row, 1);</div>
 <div class="line"><span class="lineno">   73</span>    <a class="code hl_function" href="class_display.html#a1233671411c2af0367dc72e4451d0ba2">fast_print</a>(clearline);</div>
 <div class="line"><span class="lineno">   74</span>}</div>
-<div class="ttc" id="aclass_display_html_a1233671411c2af0367dc72e4451d0ba2"><div class="ttname"><a href="class_display.html#a1233671411c2af0367dc72e4451d0ba2">Display::fast_print</a></div><div class="ttdeci">static auto fast_print(const std::basic_string&lt; char_type &gt; &amp;sss) -&gt; void</div><div class="ttdoc">Efficiently prints a string to the terminal.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8cpp_source.html#l00782">Display.cpp:782</a></div></div>
+<div class="ttc" id="aclass_display_html_a1233671411c2af0367dc72e4451d0ba2"><div class="ttname"><a href="class_display.html#a1233671411c2af0367dc72e4451d0ba2">Display::fast_print</a></div><div class="ttdeci">static auto fast_print(const std::basic_string&lt; char_type &gt; &amp;sss) -&gt; void</div><div class="ttdoc">Efficiently prints a string to the terminal.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8cpp_source.html#l00821">Display.cpp:821</a></div></div>
 <div class="ttc" id="aclass_display_html_a5454c0ff9a9d1730b3604bc15f94a5b3"><div class="ttname"><a href="class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3">Display::setCursor</a></div><div class="ttdeci">void setCursor(int x, int y)</div><div class="ttdoc">Sets the cursor position in the terminal.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8cpp_source.html#l00059">Display.cpp:59</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_display_8cpp_source.html#l00782">fast_print()</a>, and <a class="el" href="_display_8cpp_source.html#l00059">setCursor()</a>.</p>
+<p class="reference">References <a class="el" href="_display_8cpp_source.html#l00821">fast_print()</a>, and <a class="el" href="_display_8cpp_source.html#l00059">setCursor()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00585">printSplash()</a>, and <a class="el" href="_display_test_8cpp_source.html#l00010">test_nonreturn()</a>.</p>
 <div class="dynheader">
@@ -388,11 +457,11 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   50</span> </div>
 <div class="line"><span class="lineno">   51</span>    <a class="code hl_function" href="class_display.html#a1233671411c2af0367dc72e4451d0ba2">fast_print</a>(clearscreen);</div>
 <div class="line"><span class="lineno">   52</span>}</div>
-<div class="ttc" id="aclass_display_html_aa8779e3a49652ee73d333303a6b6566d"><div class="ttname"><a href="class_display.html#aa8779e3a49652ee73d333303a6b6566d">Display::_oldBar</a></div><div class="ttdeci">string _oldBar</div><div class="ttdoc">Previous progress bar for comparison.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8hpp_source.html#l00184">Display.hpp:184</a></div></div>
+<div class="ttc" id="aclass_display_html_aa8779e3a49652ee73d333303a6b6566d"><div class="ttname"><a href="class_display.html#aa8779e3a49652ee73d333303a6b6566d">Display::_oldBar</a></div><div class="ttdeci">string _oldBar</div><div class="ttdoc">Previous progress bar for comparison.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8hpp_source.html#l00189">Display.hpp:189</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00182">_oldAscii</a>, <a class="el" href="_display_8hpp_source.html#l00184">_oldBar</a>, <a class="el" href="_display_8hpp_source.html#l00183">_oldControls</a>, <a class="el" href="_display_8hpp_source.html#l00185">_oldSplash</a>, and <a class="el" href="_display_8cpp_source.html#l00782">fast_print()</a>.</p>
+<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00187">_oldAscii</a>, <a class="el" href="_display_8hpp_source.html#l00189">_oldBar</a>, <a class="el" href="_display_8hpp_source.html#l00188">_oldControls</a>, <a class="el" href="_display_8hpp_source.html#l00190">_oldSplash</a>, and <a class="el" href="_display_8cpp_source.html#l00821">fast_print()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00179">Menu::alarmSequence()</a>, <a class="el" href="_menu_8cpp_source.html#l00485">Menu::checkAlarmInput()</a>, <a class="el" href="_menu_8cpp_source.html#l00427">Menu::checkStopwatchInput()</a>, <a class="el" href="_menu_8cpp_source.html#l00377">Menu::checkTimerInput()</a>, <a class="el" href="_menu_8cpp_source.html#l00278">Menu::createAlarm()</a>, <a class="el" href="_menu_8cpp_source.html#l00211">Menu::createTimer()</a>, <a class="el" href="_menu_8cpp_source.html#l00061">Menu::mainMenu()</a>, <a class="el" href="_menu_8cpp_source.html#l00025">Menu::start()</a>, <a class="el" href="_menu_8cpp_source.html#l00149">Menu::stopwatchSequence()</a>, <a class="el" href="_display_test_8cpp_source.html#l00010">test_nonreturn()</a>, and <a class="el" href="_menu_8cpp_source.html#l00119">Menu::timerSequence()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00179">Menu::alarmSequence()</a>, <a class="el" href="_menu_8cpp_source.html#l00485">Menu::checkAlarmInput()</a>, <a class="el" href="_menu_8cpp_source.html#l00427">Menu::checkStopwatchInput()</a>, <a class="el" href="_menu_8cpp_source.html#l00377">Menu::checkTimerInput()</a>, <a class="el" href="_menu_8cpp_source.html#l00278">Menu::createAlarm()</a>, <a class="el" href="_menu_8cpp_source.html#l00211">Menu::createTimer()</a>, <a class="el" href="_menu_8cpp_source.html#l00062">Menu::mainMenu()</a>, <a class="el" href="_menu_8cpp_source.html#l00025">Menu::start()</a>, <a class="el" href="_menu_8cpp_source.html#l00149">Menu::stopwatchSequence()</a>, <a class="el" href="_display_test_8cpp_source.html#l00010">test_nonreturn()</a>, and <a class="el" href="_menu_8cpp_source.html#l00119">Menu::timerSequence()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -451,7 +520,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   94</span>    <a class="code hl_variable" href="class_display.html#a0fe617dbd36bde30e5cb5c388fc19156">_splash</a> = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><span class="lineno">   95</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00180">_splash</a>.</p>
+<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00185">_splash</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00485">Menu::checkAlarmInput()</a>, <a class="el" href="_menu_8cpp_source.html#l00427">Menu::checkStopwatchInput()</a>, and <a class="el" href="_menu_8cpp_source.html#l00377">Menu::checkTimerInput()</a>.</p>
 <div class="dynheader">
@@ -528,15 +597,15 @@ template&lt;typename char_type &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_display_8cpp_source.html#l00782">782</a> of file <a class="el" href="_display_8cpp_source.html">Display.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  783</span>{</div>
-<div class="line"><span class="lineno">  784</span>    HANDLE <span class="keyword">const</span> output_handle = GetStdHandle(STD_OUTPUT_HANDLE);</div>
-<div class="line"><span class="lineno">  785</span>    <span class="keyword">const</span> <span class="keyword">auto</span> char_count = <span class="keyword">static_cast&lt;</span>DWORD<span class="keyword">&gt;</span>(sss.length());</div>
-<div class="line"><span class="lineno">  786</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;char_type, char&gt;)</div>
-<div class="line"><span class="lineno">  787</span>        WriteConsoleA(output_handle, sss.c_str(), char_count, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>);</div>
-<div class="line"><span class="lineno">  788</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  789</span>        WriteConsoleW(output_handle, sss.c_str(), char_count, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>);</div>
-<div class="line"><span class="lineno">  790</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_display_8cpp_source.html#l00821">821</a> of file <a class="el" href="_display_8cpp_source.html">Display.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  822</span>{</div>
+<div class="line"><span class="lineno">  823</span>    HANDLE <span class="keyword">const</span> output_handle = GetStdHandle(STD_OUTPUT_HANDLE);</div>
+<div class="line"><span class="lineno">  824</span>    <span class="keyword">const</span> <span class="keyword">auto</span> char_count = <span class="keyword">static_cast&lt;</span>DWORD<span class="keyword">&gt;</span>(sss.length());</div>
+<div class="line"><span class="lineno">  825</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;char_type, char&gt;)</div>
+<div class="line"><span class="lineno">  826</span>        WriteConsoleA(output_handle, sss.c_str(), char_count, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>);</div>
+<div class="line"><span class="lineno">  827</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  828</span>        WriteConsoleW(output_handle, sss.c_str(), char_count, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>);</div>
+<div class="line"><span class="lineno">  829</span>}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00069">clearLine()</a>, <a class="el" href="_display_8cpp_source.html#l00042">clearScreen()</a>, <a class="el" href="_display_8cpp_source.html#l00540">printAscii()</a>, <a class="el" href="_display_8cpp_source.html#l00570">printBar()</a>, <a class="el" href="_display_8cpp_source.html#l00555">printControls()</a>, <a class="el" href="_display_8cpp_source.html#l00585">printSplash()</a>, <a class="el" href="_display_8cpp_source.html#l00600">printSplits()</a>, <a class="el" href="_display_8cpp_source.html#l00059">setCursor()</a>, and <a class="el" href="_display_test_8cpp_source.html#l00010">test_nonreturn()</a>.</p>
 <div class="dynheader">
@@ -610,7 +679,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_display_8cpp_source.html#l00540">540</a> of file <a class="el" href="_display_8cpp_source.html">Display.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  541</span>{</div>
-<div class="line"><span class="lineno">  542</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_display.html#a49a8492ba729f03c53362d5e5ed56c6b">_asciiBuffer</a> != <a class="code hl_variable" href="class_display.html#a6b748b52153ef3d12250857604677076">_oldAscii</a>)</div>
+<div class="line"><span class="lineno">  542</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_display.html#a49a8492ba729f03c53362d5e5ed56c6b">_asciiBuffer</a> != <a class="code hl_variable" href="class_display.html#a6b748b52153ef3d12250857604677076">_oldAscii</a> || <a class="code hl_variable" href="class_display.html#a6343ea539f7abb19103066ccd3e29061">_formatting</a> != <a class="code hl_variable" href="class_display.html#a1310572c232ae48e49e388a734bb5399">_oldFormatting</a>)</div>
 <div class="line"><span class="lineno">  543</span>    {</div>
 <div class="line"><span class="lineno">  544</span>        <a class="code hl_function" href="class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3">setCursor</a>(row, 1);</div>
 <div class="line"><span class="lineno">  545</span>        <a class="code hl_function" href="class_display.html#a1233671411c2af0367dc72e4451d0ba2">fast_print</a>(<a class="code hl_variable" href="class_display.html#a49a8492ba729f03c53362d5e5ed56c6b">_asciiBuffer</a>);</div>
@@ -619,9 +688,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  548</span>    <a class="code hl_variable" href="class_display.html#a49a8492ba729f03c53362d5e5ed56c6b">_asciiBuffer</a> = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><span class="lineno">  549</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00176">_asciiBuffer</a>, <a class="el" href="_display_8hpp_source.html#l00182">_oldAscii</a>, <a class="el" href="_display_8cpp_source.html#l00782">fast_print()</a>, and <a class="el" href="_display_8cpp_source.html#l00059">setCursor()</a>.</p>
+<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00181">_asciiBuffer</a>, <a class="el" href="_display_8hpp_source.html#l00195">_formatting</a>, <a class="el" href="_display_8hpp_source.html#l00187">_oldAscii</a>, <a class="el" href="_display_8hpp_source.html#l00196">_oldFormatting</a>, <a class="el" href="_display_8cpp_source.html#l00821">fast_print()</a>, and <a class="el" href="_display_8cpp_source.html#l00059">setCursor()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00757">tickAlarm()</a>, <a class="el" href="_display_8cpp_source.html#l00656">tickAlarmSetup()</a>, <a class="el" href="_display_8cpp_source.html#l00729">tickStopwatch()</a>, <a class="el" href="_display_8cpp_source.html#l00702">tickTimer()</a>, and <a class="el" href="_display_8cpp_source.html#l00615">tickTimerSetup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00787">tickAlarm()</a>, <a class="el" href="_display_8cpp_source.html#l00661">tickAlarmSetup()</a>, <a class="el" href="_display_8cpp_source.html#l00747">tickStopwatch()</a>, <a class="el" href="_display_8cpp_source.html#l00711">tickTimer()</a>, and <a class="el" href="_display_8cpp_source.html#l00615">tickTimerSetup()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -692,7 +761,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_display_8cpp_source.html#l00570">570</a> of file <a class="el" href="_display_8cpp_source.html">Display.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  571</span>{</div>
-<div class="line"><span class="lineno">  572</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_display.html#ad4a3014d328a66c55fec8215cc33475d">_barBuffer</a> != <a class="code hl_variable" href="class_display.html#aa8779e3a49652ee73d333303a6b6566d">_oldBar</a>)</div>
+<div class="line"><span class="lineno">  572</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_display.html#ad4a3014d328a66c55fec8215cc33475d">_barBuffer</a> != <a class="code hl_variable" href="class_display.html#aa8779e3a49652ee73d333303a6b6566d">_oldBar</a> || <a class="code hl_variable" href="class_display.html#a6343ea539f7abb19103066ccd3e29061">_formatting</a> != <a class="code hl_variable" href="class_display.html#a1310572c232ae48e49e388a734bb5399">_oldFormatting</a>)</div>
 <div class="line"><span class="lineno">  573</span>    {</div>
 <div class="line"><span class="lineno">  574</span>        <a class="code hl_function" href="class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3">setCursor</a>(row, 1);</div>
 <div class="line"><span class="lineno">  575</span>        <a class="code hl_function" href="class_display.html#a1233671411c2af0367dc72e4451d0ba2">fast_print</a>(<a class="code hl_variable" href="class_display.html#ad4a3014d328a66c55fec8215cc33475d">_barBuffer</a>);</div>
@@ -701,9 +770,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  578</span>    <a class="code hl_variable" href="class_display.html#ad4a3014d328a66c55fec8215cc33475d">_barBuffer</a> = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><span class="lineno">  579</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00177">_barBuffer</a>, <a class="el" href="_display_8hpp_source.html#l00184">_oldBar</a>, <a class="el" href="_display_8cpp_source.html#l00782">fast_print()</a>, and <a class="el" href="_display_8cpp_source.html#l00059">setCursor()</a>.</p>
+<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00182">_barBuffer</a>, <a class="el" href="_display_8hpp_source.html#l00195">_formatting</a>, <a class="el" href="_display_8hpp_source.html#l00189">_oldBar</a>, <a class="el" href="_display_8hpp_source.html#l00196">_oldFormatting</a>, <a class="el" href="_display_8cpp_source.html#l00821">fast_print()</a>, and <a class="el" href="_display_8cpp_source.html#l00059">setCursor()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00757">tickAlarm()</a>, and <a class="el" href="_display_8cpp_source.html#l00702">tickTimer()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00787">tickAlarm()</a>, and <a class="el" href="_display_8cpp_source.html#l00711">tickTimer()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -764,7 +833,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_display_8cpp_source.html#l00555">555</a> of file <a class="el" href="_display_8cpp_source.html">Display.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  556</span>{</div>
-<div class="line"><span class="lineno">  557</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_display.html#af215f7bedad13ad9a78545ce1e53b3bc">_controlBuffer</a> != <a class="code hl_variable" href="class_display.html#aa95ea9ea6902ebed7359ae74c58469ed">_oldControls</a>)</div>
+<div class="line"><span class="lineno">  557</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_display.html#af215f7bedad13ad9a78545ce1e53b3bc">_controlBuffer</a> != <a class="code hl_variable" href="class_display.html#aa95ea9ea6902ebed7359ae74c58469ed">_oldControls</a> || <a class="code hl_variable" href="class_display.html#a6343ea539f7abb19103066ccd3e29061">_formatting</a> != <a class="code hl_variable" href="class_display.html#a1310572c232ae48e49e388a734bb5399">_oldFormatting</a>)</div>
 <div class="line"><span class="lineno">  558</span>    {</div>
 <div class="line"><span class="lineno">  559</span>        <a class="code hl_function" href="class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3">setCursor</a>(row, 1);</div>
 <div class="line"><span class="lineno">  560</span>        <a class="code hl_function" href="class_display.html#a1233671411c2af0367dc72e4451d0ba2">fast_print</a>(<a class="code hl_variable" href="class_display.html#af215f7bedad13ad9a78545ce1e53b3bc">_controlBuffer</a>);</div>
@@ -773,9 +842,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  563</span>    <a class="code hl_variable" href="class_display.html#af215f7bedad13ad9a78545ce1e53b3bc">_controlBuffer</a> = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><span class="lineno">  564</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00178">_controlBuffer</a>, <a class="el" href="_display_8hpp_source.html#l00183">_oldControls</a>, <a class="el" href="_display_8cpp_source.html#l00782">fast_print()</a>, and <a class="el" href="_display_8cpp_source.html#l00059">setCursor()</a>.</p>
+<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00183">_controlBuffer</a>, <a class="el" href="_display_8hpp_source.html#l00195">_formatting</a>, <a class="el" href="_display_8hpp_source.html#l00188">_oldControls</a>, <a class="el" href="_display_8hpp_source.html#l00196">_oldFormatting</a>, <a class="el" href="_display_8cpp_source.html#l00821">fast_print()</a>, and <a class="el" href="_display_8cpp_source.html#l00059">setCursor()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00757">tickAlarm()</a>, <a class="el" href="_display_8cpp_source.html#l00656">tickAlarmSetup()</a>, <a class="el" href="_display_8cpp_source.html#l00729">tickStopwatch()</a>, <a class="el" href="_display_8cpp_source.html#l00702">tickTimer()</a>, and <a class="el" href="_display_8cpp_source.html#l00615">tickTimerSetup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00787">tickAlarm()</a>, <a class="el" href="_display_8cpp_source.html#l00661">tickAlarmSetup()</a>, <a class="el" href="_display_8cpp_source.html#l00747">tickStopwatch()</a>, <a class="el" href="_display_8cpp_source.html#l00711">tickTimer()</a>, and <a class="el" href="_display_8cpp_source.html#l00615">tickTimerSetup()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -846,7 +915,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_display_8cpp_source.html#l00585">585</a> of file <a class="el" href="_display_8cpp_source.html">Display.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  586</span>{</div>
-<div class="line"><span class="lineno">  587</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_display.html#a0fe617dbd36bde30e5cb5c388fc19156">_splash</a> != <a class="code hl_variable" href="class_display.html#ab67608c8dcaf78b62a954ba4ea0e88a0">_oldSplash</a>)</div>
+<div class="line"><span class="lineno">  587</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_display.html#a0fe617dbd36bde30e5cb5c388fc19156">_splash</a> != <a class="code hl_variable" href="class_display.html#ab67608c8dcaf78b62a954ba4ea0e88a0">_oldSplash</a> || <a class="code hl_variable" href="class_display.html#a6343ea539f7abb19103066ccd3e29061">_formatting</a> != <a class="code hl_variable" href="class_display.html#a1310572c232ae48e49e388a734bb5399">_oldFormatting</a>)</div>
 <div class="line"><span class="lineno">  588</span>    {</div>
 <div class="line"><span class="lineno">  589</span>        <a class="code hl_function" href="class_display.html#aaa0ffb7318a45caa0b74d3d439e623f0">clearLine</a>(row);</div>
 <div class="line"><span class="lineno">  590</span>        <a class="code hl_function" href="class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3">setCursor</a>(row, 1);</div>
@@ -856,9 +925,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  594</span>}</div>
 <div class="ttc" id="aclass_display_html_aaa0ffb7318a45caa0b74d3d439e623f0"><div class="ttname"><a href="class_display.html#aaa0ffb7318a45caa0b74d3d439e623f0">Display::clearLine</a></div><div class="ttdeci">void clearLine(int lineIndex)</div><div class="ttdoc">Clears a specific line in the terminal.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8cpp_source.html#l00069">Display.cpp:69</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00185">_oldSplash</a>, <a class="el" href="_display_8hpp_source.html#l00180">_splash</a>, <a class="el" href="_display_8cpp_source.html#l00069">clearLine()</a>, <a class="el" href="_display_8cpp_source.html#l00782">fast_print()</a>, and <a class="el" href="_display_8cpp_source.html#l00059">setCursor()</a>.</p>
+<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00195">_formatting</a>, <a class="el" href="_display_8hpp_source.html#l00196">_oldFormatting</a>, <a class="el" href="_display_8hpp_source.html#l00190">_oldSplash</a>, <a class="el" href="_display_8hpp_source.html#l00185">_splash</a>, <a class="el" href="_display_8cpp_source.html#l00069">clearLine()</a>, <a class="el" href="_display_8cpp_source.html#l00821">fast_print()</a>, and <a class="el" href="_display_8cpp_source.html#l00059">setCursor()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00757">tickAlarm()</a>, <a class="el" href="_display_8cpp_source.html#l00729">tickStopwatch()</a>, and <a class="el" href="_display_8cpp_source.html#l00702">tickTimer()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00787">tickAlarm()</a>, <a class="el" href="_display_8cpp_source.html#l00747">tickStopwatch()</a>, and <a class="el" href="_display_8cpp_source.html#l00711">tickTimer()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -921,7 +990,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_display_8cpp_source.html#l00600">600</a> of file <a class="el" href="_display_8cpp_source.html">Display.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  601</span>{</div>
-<div class="line"><span class="lineno">  602</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_display.html#a69690296c9bc96b0008faa5b2ec3c89f">_splitBuffer</a> != <a class="code hl_variable" href="class_display.html#acf2b06a5cde5dac84dc2840039d979c7">_oldSplits</a>)</div>
+<div class="line"><span class="lineno">  602</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_display.html#a69690296c9bc96b0008faa5b2ec3c89f">_splitBuffer</a> != <a class="code hl_variable" href="class_display.html#acf2b06a5cde5dac84dc2840039d979c7">_oldSplits</a> || <a class="code hl_variable" href="class_display.html#a6343ea539f7abb19103066ccd3e29061">_formatting</a> != <a class="code hl_variable" href="class_display.html#a1310572c232ae48e49e388a734bb5399">_oldFormatting</a>)</div>
 <div class="line"><span class="lineno">  603</span>    {</div>
 <div class="line"><span class="lineno">  604</span>        <a class="code hl_function" href="class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3">setCursor</a>(row, 1);</div>
 <div class="line"><span class="lineno">  605</span>        <a class="code hl_function" href="class_display.html#a1233671411c2af0367dc72e4451d0ba2">fast_print</a>(<a class="code hl_variable" href="class_display.html#a69690296c9bc96b0008faa5b2ec3c89f">_splitBuffer</a>);</div>
@@ -930,9 +999,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  608</span>    <a class="code hl_variable" href="class_display.html#a69690296c9bc96b0008faa5b2ec3c89f">_splitBuffer</a> = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><span class="lineno">  609</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00186">_oldSplits</a>, <a class="el" href="_display_8hpp_source.html#l00179">_splitBuffer</a>, <a class="el" href="_display_8cpp_source.html#l00782">fast_print()</a>, and <a class="el" href="_display_8cpp_source.html#l00059">setCursor()</a>.</p>
+<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00195">_formatting</a>, <a class="el" href="_display_8hpp_source.html#l00196">_oldFormatting</a>, <a class="el" href="_display_8hpp_source.html#l00191">_oldSplits</a>, <a class="el" href="_display_8hpp_source.html#l00184">_splitBuffer</a>, <a class="el" href="_display_8cpp_source.html#l00821">fast_print()</a>, and <a class="el" href="_display_8cpp_source.html#l00059">setCursor()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00729">tickStopwatch()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00747">tickStopwatch()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1005,9 +1074,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   62</span>    <a class="code hl_function" href="class_display.html#a1233671411c2af0367dc72e4451d0ba2">fast_print</a>(setcursor);</div>
 <div class="line"><span class="lineno">   63</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_display_8cpp_source.html#l00782">fast_print()</a>.</p>
+<p class="reference">References <a class="el" href="_display_8cpp_source.html#l00821">fast_print()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00069">clearLine()</a>, <a class="el" href="_menu_8cpp_source.html#l00061">Menu::mainMenu()</a>, <a class="el" href="_display_8cpp_source.html#l00540">printAscii()</a>, <a class="el" href="_display_8cpp_source.html#l00570">printBar()</a>, <a class="el" href="_display_8cpp_source.html#l00555">printControls()</a>, <a class="el" href="_display_8cpp_source.html#l00585">printSplash()</a>, <a class="el" href="_display_8cpp_source.html#l00600">printSplits()</a>, <a class="el" href="_menu_8cpp_source.html#l00025">Menu::start()</a>, <a class="el" href="_display_test_8cpp_source.html#l00010">test_nonreturn()</a>, <a class="el" href="_display_8cpp_source.html#l00757">tickAlarm()</a>, <a class="el" href="_display_8cpp_source.html#l00656">tickAlarmSetup()</a>, <a class="el" href="_display_8cpp_source.html#l00729">tickStopwatch()</a>, <a class="el" href="_display_8cpp_source.html#l00702">tickTimer()</a>, and <a class="el" href="_display_8cpp_source.html#l00615">tickTimerSetup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00069">clearLine()</a>, <a class="el" href="_menu_8cpp_source.html#l00062">Menu::mainMenu()</a>, <a class="el" href="_display_8cpp_source.html#l00540">printAscii()</a>, <a class="el" href="_display_8cpp_source.html#l00570">printBar()</a>, <a class="el" href="_display_8cpp_source.html#l00555">printControls()</a>, <a class="el" href="_display_8cpp_source.html#l00585">printSplash()</a>, <a class="el" href="_display_8cpp_source.html#l00600">printSplits()</a>, <a class="el" href="_menu_8cpp_source.html#l00025">Menu::start()</a>, <a class="el" href="_display_test_8cpp_source.html#l00010">test_nonreturn()</a>, <a class="el" href="_display_8cpp_source.html#l00787">tickAlarm()</a>, <a class="el" href="_display_8cpp_source.html#l00661">tickAlarmSetup()</a>, <a class="el" href="_display_8cpp_source.html#l00747">tickStopwatch()</a>, <a class="el" href="_display_8cpp_source.html#l00711">tickTimer()</a>, and <a class="el" href="_display_8cpp_source.html#l00615">tickTimerSetup()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1057,6 +1126,66 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a83ed7e4a6928b93390e552ac6dbc9007" name="a83ed7e4a6928b93390e552ac6dbc9007"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83ed7e4a6928b93390e552ac6dbc9007">&#9670;&#160;</a></span>setFormat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Display::setFormat </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>code</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_display_8cpp_source.html#l00831">831</a> of file <a class="el" href="_display_8cpp_source.html">Display.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  831</span>                                  {</div>
+<div class="line"><span class="lineno">  832</span>    <a class="code hl_variable" href="class_display.html#a1310572c232ae48e49e388a734bb5399">_oldFormatting</a> = <a class="code hl_variable" href="class_display.html#a6343ea539f7abb19103066ccd3e29061">_formatting</a>;</div>
+<div class="line"><span class="lineno">  833</span>    <a class="code hl_variable" href="class_display.html#a6343ea539f7abb19103066ccd3e29061">_formatting</a> = code;</div>
+<div class="line"><span class="lineno">  834</span> </div>
+<div class="line"><span class="lineno">  835</span>    cout &lt;&lt; code;</div>
+<div class="line"><span class="lineno">  836</span>}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00195">_formatting</a>, and <a class="el" href="_display_8hpp_source.html#l00196">_oldFormatting</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00062">Menu::mainMenu()</a>, <a class="el" href="_menu_8cpp_source.html#l00025">Menu::start()</a>, <a class="el" href="_display_8cpp_source.html#l00787">tickAlarm()</a>, <a class="el" href="_display_8cpp_source.html#l00661">tickAlarmSetup()</a>, <a class="el" href="_display_8cpp_source.html#l00747">tickStopwatch()</a>, <a class="el" href="_display_8cpp_source.html#l00711">tickTimer()</a>, and <a class="el" href="_display_8cpp_source.html#l00615">tickTimerSetup()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_display_a83ed7e4a6928b93390e552ac6dbc9007_icgraph.png" border="0" usemap="#aclass_display_a83ed7e4a6928b93390e552ac6dbc9007_icgraph" alt=""/></div>
+<map name="aclass_display_a83ed7e4a6928b93390e552ac6dbc9007_icgraph" id="aclass_display_a83ed7e4a6928b93390e552ac6dbc9007_icgraph">
+<area shape="rect" title=" " alt="" coords="1319,257,1463,282"/>
+<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop, allowing the user to choose between Timer, Stopwatch, and Alarm." alt="" coords="247,145,381,170"/>
+<area shape="rect" href="class_menu.html#ae1ec62e738dda7faaaec850bd0b58ffe" title="Displays the start screen with logo art and credits." alt="" coords="266,71,362,97"/>
+<area shape="rect" href="class_display.html#a8437f93af050167c13f5cf2f3e68f8b8" title="Updates the display based on the state of the provided Alarm object." alt="" coords="1111,407,1252,433"/>
+<area shape="rect" href="class_display.html#a00b39135d34e401529265af26a9611c7" title="Updates the alarm setup display, showing the current input with a blinking cursor." alt="" coords="1092,482,1271,507"/>
+<area shape="rect" href="class_display.html#a670c8db4c53ae0f09d6d3b57f1813b7f" title="Updates the display based on the state of the provided Stopwatch object." alt="" coords="1096,306,1267,331"/>
+<area shape="rect" href="class_display.html#a02b2228e05be168eda0b817d1ecf5db7" title="Updates the display based on the state of the provided Timer object." alt="" coords="1111,257,1251,282"/>
+<area shape="rect" href="class_display.html#aae213ab2d8df542fbe9b58d526a47052" title="Updates the timer setup display, showing the current input with a blinking cursor." alt="" coords="1093,207,1270,233"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,133,181,158"/>
+<area shape="rect" href="_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,78,199,103"/>
+<area shape="rect" href="_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,78,60,103"/>
+<area shape="rect" href="class_menu.html#a4663bff1fca54f0230ff0e20b6ae9ae8" title="Runs the alarm sequence, allowing the user to set and interact with an alarm." alt="" coords="444,483,611,509"/>
+<area shape="rect" href="_display_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6" title=" " alt="" coords="925,407,1017,433"/>
+<area shape="rect" href="_display_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="734,270,789,295"/>
+<area shape="rect" href="class_menu.html#a76c8148cc85fcc305b80c52b2f9df2ca" title="Creates a new Alarm object based on user input." alt="" coords="897,509,1044,534"/>
+<area shape="rect" href="class_menu.html#a530b357d64d1481172d7808a453f262d" title="Checks and handles user input for the Alarm." alt="" coords="673,509,849,534"/>
+<area shape="rect" href="class_menu.html#aca5927a856a8d20d738323c2261cc9e4" title="Runs the stopwatch sequence, allowing the user to start, stop, and record splits." alt="" coords="429,275,625,301"/>
+<area shape="rect" href="_display_test_8cpp.html#a95399b2aca69374a0e3efa274a5c3e03" title=" " alt="" coords="910,306,1031,331"/>
+<area shape="rect" href="_display_test_8cpp.html#aaebf8e553939222f4e0682af515b3674" title=" " alt="" coords="926,257,1015,282"/>
+<area shape="rect" href="class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title="Runs the timer sequence, allowing the user to set and interact with a timer." alt="" coords="445,145,609,170"/>
+<area shape="rect" href="class_menu.html#a1a90c9e670b33e2c9aaddc01f47b3b88" title="Creates a new Timer object based on user input." alt="" coords="898,106,1043,131"/>
+<area shape="rect" href="_display_test_8cpp.html#a6294fd865d398d67618ac1493f971eb1" title=" " alt="" coords="905,207,1037,233"/>
+<area shape="rect" href="class_menu.html#ab8d3cccd5b39987a6546f7dc1187b71e" title="Checks and handles user input for the Timer." alt="" coords="674,94,849,119"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a3a0e77e68157e55d67ac3f28dffdd00c" name="a3a0e77e68157e55d67ac3f28dffdd00c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3a0e77e68157e55d67ac3f28dffdd00c">&#9670;&#160;</a></span>setSplash()</h2>
 
@@ -1088,7 +1217,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   86</span>    <a class="code hl_variable" href="class_display.html#a0fe617dbd36bde30e5cb5c388fc19156">_splash</a> = <span class="stringliteral">&quot;&lt;&lt; &quot;</span> + str + <span class="stringliteral">&quot; &gt;&gt;&quot;</span>;</div>
 <div class="line"><span class="lineno">   87</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00180">_splash</a>.</p>
+<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00185">_splash</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00179">Menu::alarmSequence()</a>, <a class="el" href="_menu_8cpp_source.html#l00427">Menu::checkStopwatchInput()</a>, <a class="el" href="_menu_8cpp_source.html#l00377">Menu::checkTimerInput()</a>, <a class="el" href="_menu_8cpp_source.html#l00149">Menu::stopwatchSequence()</a>, and <a class="el" href="_menu_8cpp_source.html#l00119">Menu::timerSequence()</a>.</p>
 <div class="dynheader">
@@ -1172,9 +1301,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  312</span>    </div>
 <div class="line"><span class="lineno">  313</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00190">_asciiWidth</a>, and <a class="el" href="_display_8hpp_source.html#l00177">_barBuffer</a>.</p>
+<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00198">_asciiWidth</a>, and <a class="el" href="_display_8hpp_source.html#l00182">_barBuffer</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00757">tickAlarm()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00787">tickAlarm()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1221,9 +1350,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  466</span>    <a class="code hl_variable" href="class_display.html#af215f7bedad13ad9a78545ce1e53b3bc">_controlBuffer</a>+=(<span class="stringliteral">&quot;\n&quot;</span>);</div>
 <div class="line"><span class="lineno">  467</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00178">_controlBuffer</a>.</p>
+<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00183">_controlBuffer</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00757">tickAlarm()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00787">tickAlarm()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1260,7 +1389,7 @@ Here is the caller graph for this function:</div>
 
 <p>Stages the display for the alarm. </p>
 
-<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00757">tickAlarm()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00787">tickAlarm()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1373,7 +1502,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="a_display_8cpp_html_a4cbb4b078b618fa4136fc0621b204523"><div class="ttname"><a href="_display_8cpp.html#a4cbb4b078b618fa4136fc0621b204523">ASCII_HEIGHT</a></div><div class="ttdeci">#define ASCII_HEIGHT</div><div class="ttdef"><b>Definition:</b> <a href="_display_8cpp_source.html#l00005">Display.cpp:5</a></div></div>
 <div class="ttc" id="afont1_8cpp_html_a7d449c4766baf4b4da1b2714ea55b674"><div class="ttname"><a href="font1_8cpp.html#a7d449c4766baf4b4da1b2714ea55b674">font1</a></div><div class="ttdeci">vector&lt; vector&lt; string &gt; &gt; font1</div><div class="ttdef"><b>Definition:</b> <a href="font1_8cpp_source.html#l00153">font1.cpp:153</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00176">_asciiBuffer</a>, <a class="el" href="_display_8hpp_source.html#l00190">_asciiWidth</a>, <a class="el" href="_display_8cpp_source.html#l00005">ASCII_HEIGHT</a>, <a class="el" href="font1_8cpp_source.html#l00153">font1</a>, and <a class="el" href="_display_8cpp_source.html#l00004">PADDING</a>.</p>
+<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00181">_asciiBuffer</a>, <a class="el" href="_display_8hpp_source.html#l00198">_asciiWidth</a>, <a class="el" href="_display_8cpp_source.html#l00005">ASCII_HEIGHT</a>, <a class="el" href="font1_8cpp_source.html#l00153">font1</a>, and <a class="el" href="_display_8cpp_source.html#l00004">PADDING</a>.</p>
 
 </div>
 </div>
@@ -1404,9 +1533,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  455</span>    <a class="code hl_variable" href="class_display.html#af215f7bedad13ad9a78545ce1e53b3bc">_controlBuffer</a>+=(<span class="stringliteral">&quot;\n&quot;</span>);</div>
 <div class="line"><span class="lineno">  456</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00178">_controlBuffer</a>.</p>
+<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00183">_controlBuffer</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00656">tickAlarmSetup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00661">tickAlarmSetup()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1453,9 +1582,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  431</span>    <a class="code hl_variable" href="class_display.html#af215f7bedad13ad9a78545ce1e53b3bc">_controlBuffer</a>+=(<span class="stringliteral">&quot;\n&quot;</span>);</div>
 <div class="line"><span class="lineno">  432</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00178">_controlBuffer</a>.</p>
+<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00183">_controlBuffer</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00729">tickStopwatch()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00747">tickStopwatch()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1613,9 +1742,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  420</span>    }</div>
 <div class="line"><span class="lineno">  421</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00176">_asciiBuffer</a>, <a class="el" href="_display_8cpp_source.html#l00005">ASCII_HEIGHT</a>, <a class="el" href="font1_8cpp_source.html#l00153">font1</a>, and <a class="el" href="_display_8cpp_source.html#l00004">PADDING</a>.</p>
+<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00181">_asciiBuffer</a>, <a class="el" href="_display_8cpp_source.html#l00005">ASCII_HEIGHT</a>, <a class="el" href="font1_8cpp_source.html#l00153">font1</a>, and <a class="el" href="_display_8cpp_source.html#l00004">PADDING</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00729">tickStopwatch()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00747">tickStopwatch()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1714,9 +1843,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  529</span>    }</div>
 <div class="line"><span class="lineno">  530</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00179">_splitBuffer</a>.</p>
+<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00184">_splitBuffer</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00729">tickStopwatch()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00747">tickStopwatch()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1798,9 +1927,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  271</span>    <a class="code hl_variable" href="class_display.html#ad4a3014d328a66c55fec8215cc33475d">_barBuffer</a> += border;</div>
 <div class="line"><span class="lineno">  272</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00190">_asciiWidth</a>, and <a class="el" href="_display_8hpp_source.html#l00177">_barBuffer</a>.</p>
+<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00198">_asciiWidth</a>, and <a class="el" href="_display_8hpp_source.html#l00182">_barBuffer</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00702">tickTimer()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00711">tickTimer()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1848,9 +1977,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  325</span> </div>
 <div class="line"><span class="lineno">  326</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00178">_controlBuffer</a>.</p>
+<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00183">_controlBuffer</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00702">tickTimer()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00711">tickTimer()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1952,7 +2081,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  133</span>    <span class="keywordflow">else</span></div>
 <div class="line"><span class="lineno">  134</span>    {</div>
 <div class="line"><span class="lineno">  135</span>        to_print += <span class="stringliteral">&quot;0&quot;</span> + to_string(seconds);</div>
-<div class="line"><span class="lineno">  136</span>    }</div>
+<div class="line"><span class="lineno">  136</span>    }  </div>
 <div class="line"><span class="lineno">  137</span> </div>
 <div class="line"><span class="lineno">  138</span>    <span class="comment">// Build the ASCII art for the timer display</span></div>
 <div class="line"><span class="lineno">  139</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_define" href="_display_8cpp.html#a4cbb4b078b618fa4136fc0621b204523">ASCII_HEIGHT</a>; i++)</div>
@@ -1981,9 +2110,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  162</span>    }</div>
 <div class="line"><span class="lineno">  163</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00176">_asciiBuffer</a>, <a class="el" href="_display_8hpp_source.html#l00190">_asciiWidth</a>, <a class="el" href="_display_8cpp_source.html#l00005">ASCII_HEIGHT</a>, <a class="el" href="font1_8cpp_source.html#l00153">font1</a>, and <a class="el" href="_display_8cpp_source.html#l00004">PADDING</a>.</p>
+<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00181">_asciiBuffer</a>, <a class="el" href="_display_8hpp_source.html#l00198">_asciiWidth</a>, <a class="el" href="_display_8cpp_source.html#l00005">ASCII_HEIGHT</a>, <a class="el" href="font1_8cpp_source.html#l00153">font1</a>, and <a class="el" href="_display_8cpp_source.html#l00004">PADDING</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00702">tickTimer()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00711">tickTimer()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -2030,7 +2159,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  443</span>    <a class="code hl_variable" href="class_display.html#af215f7bedad13ad9a78545ce1e53b3bc">_controlBuffer</a>+=(<span class="stringliteral">&quot;\n&quot;</span>);</div>
 <div class="line"><span class="lineno">  444</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00178">_controlBuffer</a>.</p>
+<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00183">_controlBuffer</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00615">tickTimerSetup()</a>.</p>
 <div class="dynheader">
@@ -2080,37 +2209,49 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_display_8cpp_source.html#l00757">757</a> of file <a class="el" href="_display_8cpp_source.html">Display.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  757</span>                                   {</div>
-<div class="line"><span class="lineno">  758</span> </div>
-<div class="line"><span class="lineno">  759</span>    <span class="keywordtype">string</span> time = alarm.<a class="code hl_function" href="class_alarm.html#acf005496b4b72ecd4e66c415a8d3f238">timeToString</a>(alarm.<a class="code hl_function" href="class_alarm.html#a3ceedf3a5dafaf720eebd77e3ba8fecf">getEndTime</a>()).substr(0,5);</div>
-<div class="line"><span class="lineno">  760</span> </div>
-<div class="line"><span class="lineno">  761</span>    <a class="code hl_function" href="class_display.html#a90235f60d9b1239198ceca9e24df2e33">stageAlarmDisplay</a>(time);</div>
-<div class="line"><span class="lineno">  762</span>    <a class="code hl_function" href="class_display.html#ab750543d9a82d7e90b262a772b195c1f">stageAlarmBar</a>(alarm.<a class="code hl_function" href="class_alarm.html#aee08b5d6eafe7e5adee07f9c30dc3fce">percentElapsed</a>());</div>
-<div class="line"><span class="lineno">  763</span>    <a class="code hl_function" href="class_display.html#ae6055127511e098a4ce8ea10d0ca2e43">stageAlarmControls</a>();</div>
-<div class="line"><span class="lineno">  764</span> </div>
-<div class="line"><span class="lineno">  765</span>    <a class="code hl_function" href="class_display.html#aab9a518037074ce68da2a7792771908d">printAscii</a>(1);</div>
-<div class="line"><span class="lineno">  766</span>    <a class="code hl_function" href="class_display.html#a034871a688ea9c2cf5801d120b0cfcf6">printBar</a>(10);</div>
-<div class="line"><span class="lineno">  767</span>    <a class="code hl_function" href="class_display.html#a3480427024243711ee66efc51ddf0fa3">printControls</a>(13);</div>
-<div class="line"><span class="lineno">  768</span>    <a class="code hl_function" href="class_display.html#a62d8435627ea69fbccaef4cef32d785d">printSplash</a>(18);</div>
-<div class="line"><span class="lineno">  769</span>    </div>
-<div class="line"><span class="lineno">  770</span>    <a class="code hl_function" href="class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3">setCursor</a>(20,1);</div>
-<div class="line"><span class="lineno">  771</span> </div>
-<div class="line"><span class="lineno">  772</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  773</span> </div>
-<div class="line"><span class="lineno">  774</span>}</div>
-<div class="ttc" id="aclass_alarm_html_a3ceedf3a5dafaf720eebd77e3ba8fecf"><div class="ttname"><a href="class_alarm.html#a3ceedf3a5dafaf720eebd77e3ba8fecf">Alarm::getEndTime</a></div><div class="ttdeci">chrono::time_point&lt; chrono::system_clock &gt; getEndTime()</div><div class="ttdoc">Gets the end time of the alarm.</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8cpp_source.html#l00117">Alarm.cpp:117</a></div></div>
-<div class="ttc" id="aclass_alarm_html_acf005496b4b72ecd4e66c415a8d3f238"><div class="ttname"><a href="class_alarm.html#acf005496b4b72ecd4e66c415a8d3f238">Alarm::timeToString</a></div><div class="ttdeci">string timeToString(chrono::time_point&lt; chrono::system_clock &gt; t)</div><div class="ttdoc">Converts a time_point to a string representation.</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8cpp_source.html#l00052">Alarm.cpp:52</a></div></div>
-<div class="ttc" id="aclass_alarm_html_aee08b5d6eafe7e5adee07f9c30dc3fce"><div class="ttname"><a href="class_alarm.html#aee08b5d6eafe7e5adee07f9c30dc3fce">Alarm::percentElapsed</a></div><div class="ttdeci">double percentElapsed()</div><div class="ttdoc">Calculates the percentage of time elapsed from start to end.</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8cpp_source.html#l00069">Alarm.cpp:69</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_display_8cpp_source.html#l00787">787</a> of file <a class="el" href="_display_8cpp_source.html">Display.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  787</span>                                   {</div>
+<div class="line"><span class="lineno">  788</span> </div>
+<div class="line"><span class="lineno">  789</span>    <span class="keywordtype">string</span> time = alarm.<a class="code hl_function" href="class_alarm.html#a493f5bd8972a4c5769574701f9d92067">timeToString</a>(alarm.<a class="code hl_function" href="class_alarm.html#a4e43d8e48846d1911f5a691c129b731a">getEndTime</a>()).substr(0,5);</div>
+<div class="line"><span class="lineno">  790</span> </div>
+<div class="line"><span class="lineno">  791</span>    <a class="code hl_function" href="class_display.html#a90235f60d9b1239198ceca9e24df2e33">stageAlarmDisplay</a>(time);</div>
+<div class="line"><span class="lineno">  792</span>    <a class="code hl_function" href="class_display.html#ab750543d9a82d7e90b262a772b195c1f">stageAlarmBar</a>(alarm.<a class="code hl_function" href="class_alarm.html#aee08b5d6eafe7e5adee07f9c30dc3fce">percentElapsed</a>());</div>
+<div class="line"><span class="lineno">  793</span>    <a class="code hl_function" href="class_display.html#ae6055127511e098a4ce8ea10d0ca2e43">stageAlarmControls</a>();</div>
+<div class="line"><span class="lineno">  794</span> </div>
+<div class="line"><span class="lineno">  795</span>    <span class="keywordflow">if</span>(alarm.<a class="code hl_function" href="class_alarm.html#a2e1cee43509c402293feeebd70c80442">isDone</a>()){</div>
+<div class="line"><span class="lineno">  796</span>        <a class="code hl_function" href="class_display.html#a83ed7e4a6928b93390e552ac6dbc9007">setFormat</a>(<span class="stringliteral">&quot;\033[1;31m&quot;</span>); <span class="comment">//Bold Red</span></div>
+<div class="line"><span class="lineno">  797</span>    }</div>
+<div class="line"><span class="lineno">  798</span>    <span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  799</span>        <a class="code hl_function" href="class_display.html#a83ed7e4a6928b93390e552ac6dbc9007">setFormat</a>(<span class="stringliteral">&quot;\033[1;37m&quot;</span>); <span class="comment">// Bold white</span></div>
+<div class="line"><span class="lineno">  800</span>    }</div>
+<div class="line"><span class="lineno">  801</span>    <a class="code hl_function" href="class_display.html#aab9a518037074ce68da2a7792771908d">printAscii</a>(1);</div>
+<div class="line"><span class="lineno">  802</span>    <a class="code hl_function" href="class_display.html#a034871a688ea9c2cf5801d120b0cfcf6">printBar</a>(10);</div>
+<div class="line"><span class="lineno">  803</span>    <a class="code hl_function" href="class_display.html#abbc05f4af18fc8665a8022e795c2d574">clearFormat</a>();</div>
+<div class="line"><span class="lineno">  804</span>    <a class="code hl_function" href="class_display.html#a83ed7e4a6928b93390e552ac6dbc9007">setFormat</a>(<span class="stringliteral">&quot;\033[37m&quot;</span>); <span class="comment">//White</span></div>
+<div class="line"><span class="lineno">  805</span>    <a class="code hl_function" href="class_display.html#a3480427024243711ee66efc51ddf0fa3">printControls</a>(13);</div>
+<div class="line"><span class="lineno">  806</span>    <a class="code hl_function" href="class_display.html#a62d8435627ea69fbccaef4cef32d785d">printSplash</a>(18);</div>
+<div class="line"><span class="lineno">  807</span>    </div>
+<div class="line"><span class="lineno">  808</span>    <a class="code hl_function" href="class_display.html#abbc05f4af18fc8665a8022e795c2d574">clearFormat</a>();</div>
+<div class="line"><span class="lineno">  809</span>    <a class="code hl_function" href="class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3">setCursor</a>(20,1);</div>
+<div class="line"><span class="lineno">  810</span> </div>
+<div class="line"><span class="lineno">  811</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  812</span> </div>
+<div class="line"><span class="lineno">  813</span>}</div>
+<div class="ttc" id="aclass_alarm_html_a2e1cee43509c402293feeebd70c80442"><div class="ttname"><a href="class_alarm.html#a2e1cee43509c402293feeebd70c80442">Alarm::isDone</a></div><div class="ttdeci">bool isDone()</div><div class="ttdoc">Checks if the alarm has completed.</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8cpp_source.html#l00112">Alarm.cpp:112</a></div></div>
+<div class="ttc" id="aclass_alarm_html_a493f5bd8972a4c5769574701f9d92067"><div class="ttname"><a href="class_alarm.html#a493f5bd8972a4c5769574701f9d92067">Alarm::timeToString</a></div><div class="ttdeci">string timeToString(chrono::time_point&lt; chrono::system_clock &gt; t)</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8cpp_source.html#l00045">Alarm.cpp:45</a></div></div>
+<div class="ttc" id="aclass_alarm_html_a4e43d8e48846d1911f5a691c129b731a"><div class="ttname"><a href="class_alarm.html#a4e43d8e48846d1911f5a691c129b731a">Alarm::getEndTime</a></div><div class="ttdeci">chrono::time_point&lt; chrono::system_clock &gt; getEndTime()</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8cpp_source.html#l00101">Alarm.cpp:101</a></div></div>
+<div class="ttc" id="aclass_alarm_html_aee08b5d6eafe7e5adee07f9c30dc3fce"><div class="ttname"><a href="class_alarm.html#aee08b5d6eafe7e5adee07f9c30dc3fce">Alarm::percentElapsed</a></div><div class="ttdeci">double percentElapsed()</div><div class="ttdoc">Calculates the percentage of time elapsed from start to end.</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8cpp_source.html#l00062">Alarm.cpp:62</a></div></div>
 <div class="ttc" id="aclass_display_html_a034871a688ea9c2cf5801d120b0cfcf6"><div class="ttname"><a href="class_display.html#a034871a688ea9c2cf5801d120b0cfcf6">Display::printBar</a></div><div class="ttdeci">void printBar(int barIndex)</div><div class="ttdoc">Prints the progress bar to the terminal.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8cpp_source.html#l00570">Display.cpp:570</a></div></div>
 <div class="ttc" id="aclass_display_html_a3480427024243711ee66efc51ddf0fa3"><div class="ttname"><a href="class_display.html#a3480427024243711ee66efc51ddf0fa3">Display::printControls</a></div><div class="ttdeci">void printControls(int controlIndex)</div><div class="ttdoc">Prints controls to the terminal.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8cpp_source.html#l00555">Display.cpp:555</a></div></div>
 <div class="ttc" id="aclass_display_html_a62d8435627ea69fbccaef4cef32d785d"><div class="ttname"><a href="class_display.html#a62d8435627ea69fbccaef4cef32d785d">Display::printSplash</a></div><div class="ttdeci">void printSplash(int splashIndex)</div><div class="ttdoc">Prints the splash screen to the terminal.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8cpp_source.html#l00585">Display.cpp:585</a></div></div>
+<div class="ttc" id="aclass_display_html_a83ed7e4a6928b93390e552ac6dbc9007"><div class="ttname"><a href="class_display.html#a83ed7e4a6928b93390e552ac6dbc9007">Display::setFormat</a></div><div class="ttdeci">void setFormat(string code)</div><div class="ttdef"><b>Definition:</b> <a href="_display_8cpp_source.html#l00831">Display.cpp:831</a></div></div>
 <div class="ttc" id="aclass_display_html_a90235f60d9b1239198ceca9e24df2e33"><div class="ttname"><a href="class_display.html#a90235f60d9b1239198ceca9e24df2e33">Display::stageAlarmDisplay</a></div><div class="ttdeci">void stageAlarmDisplay()</div><div class="ttdoc">Stages the display for the alarm.</div></div>
 <div class="ttc" id="aclass_display_html_aab9a518037074ce68da2a7792771908d"><div class="ttname"><a href="class_display.html#aab9a518037074ce68da2a7792771908d">Display::printAscii</a></div><div class="ttdeci">void printAscii(int asciiIndex)</div><div class="ttdoc">Prints ASCII art to the terminal.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8cpp_source.html#l00540">Display.cpp:540</a></div></div>
 <div class="ttc" id="aclass_display_html_ab750543d9a82d7e90b262a772b195c1f"><div class="ttname"><a href="class_display.html#ab750543d9a82d7e90b262a772b195c1f">Display::stageAlarmBar</a></div><div class="ttdeci">void stageAlarmBar(double percentage)</div><div class="ttdoc">Creates a visual progress bar for the alarm based on the percentage completed.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8cpp_source.html#l00278">Display.cpp:278</a></div></div>
+<div class="ttc" id="aclass_display_html_abbc05f4af18fc8665a8022e795c2d574"><div class="ttname"><a href="class_display.html#abbc05f4af18fc8665a8022e795c2d574">Display::clearFormat</a></div><div class="ttdeci">void clearFormat()</div><div class="ttdef"><b>Definition:</b> <a href="_display_8cpp_source.html#l00838">Display.cpp:838</a></div></div>
 <div class="ttc" id="aclass_display_html_ae6055127511e098a4ce8ea10d0ca2e43"><div class="ttname"><a href="class_display.html#ae6055127511e098a4ce8ea10d0ca2e43">Display::stageAlarmControls</a></div><div class="ttdeci">void stageAlarmControls()</div><div class="ttdoc">Stages the controls for the alarm.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8cpp_source.html#l00461">Display.cpp:461</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_alarm_8cpp_source.html#l00117">Alarm::getEndTime()</a>, <a class="el" href="_alarm_8cpp_source.html#l00069">Alarm::percentElapsed()</a>, <a class="el" href="_display_8cpp_source.html#l00540">printAscii()</a>, <a class="el" href="_display_8cpp_source.html#l00570">printBar()</a>, <a class="el" href="_display_8cpp_source.html#l00555">printControls()</a>, <a class="el" href="_display_8cpp_source.html#l00585">printSplash()</a>, <a class="el" href="_display_8cpp_source.html#l00059">setCursor()</a>, <a class="el" href="_display_8cpp_source.html#l00278">stageAlarmBar()</a>, <a class="el" href="_display_8cpp_source.html#l00461">stageAlarmControls()</a>, <a class="el" href="class_display.html#a90235f60d9b1239198ceca9e24df2e33">stageAlarmDisplay()</a>, and <a class="el" href="_alarm_8cpp_source.html#l00052">Alarm::timeToString()</a>.</p>
+<p class="reference">References <a class="el" href="_display_8cpp_source.html#l00838">clearFormat()</a>, <a class="el" href="_alarm_8cpp_source.html#l00101">Alarm::getEndTime()</a>, <a class="el" href="_alarm_8cpp_source.html#l00112">Alarm::isDone()</a>, <a class="el" href="_alarm_8cpp_source.html#l00062">Alarm::percentElapsed()</a>, <a class="el" href="_display_8cpp_source.html#l00540">printAscii()</a>, <a class="el" href="_display_8cpp_source.html#l00570">printBar()</a>, <a class="el" href="_display_8cpp_source.html#l00555">printControls()</a>, <a class="el" href="_display_8cpp_source.html#l00585">printSplash()</a>, <a class="el" href="_display_8cpp_source.html#l00059">setCursor()</a>, <a class="el" href="_display_8cpp_source.html#l00831">setFormat()</a>, <a class="el" href="_display_8cpp_source.html#l00278">stageAlarmBar()</a>, <a class="el" href="_display_8cpp_source.html#l00461">stageAlarmControls()</a>, <a class="el" href="class_display.html#a90235f60d9b1239198ceca9e24df2e33">stageAlarmDisplay()</a>, and <a class="el" href="_alarm_8cpp_source.html#l00045">Alarm::timeToString()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00179">Menu::alarmSequence()</a>, and <a class="el" href="_display_test_8cpp_source.html#l00036">test_alarm()</a>.</p>
 <div class="dynheader">
@@ -2118,21 +2259,25 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_display_a8437f93af050167c13f5cf2f3e68f8b8_cgraph.png" border="0" usemap="#aclass_display_a8437f93af050167c13f5cf2f3e68f8b8_cgraph" alt=""/></div>
 <map name="aclass_display_a8437f93af050167c13f5cf2f3e68f8b8_cgraph" id="aclass_display_a8437f93af050167c13f5cf2f3e68f8b8_cgraph">
-<area shape="rect" title="Updates the display based on the state of the provided Alarm object." alt="" coords="5,256,147,281"/>
-<area shape="rect" href="class_alarm.html#a3ceedf3a5dafaf720eebd77e3ba8fecf" title="Gets the end time of the alarm." alt="" coords="225,5,371,31"/>
-<area shape="rect" href="class_alarm.html#aee08b5d6eafe7e5adee07f9c30dc3fce" title="Calculates the percentage of time elapsed from start to end." alt="" coords="213,104,383,129"/>
-<area shape="rect" href="class_display.html#aab9a518037074ce68da2a7792771908d" title="Prints ASCII art to the terminal." alt="" coords="461,156,600,181"/>
-<area shape="rect" href="class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="660,257,800,283"/>
-<area shape="rect" href="class_display.html#a034871a688ea9c2cf5801d120b0cfcf6" title="Prints the progress bar to the terminal." alt="" coords="465,205,596,231"/>
-<area shape="rect" href="class_display.html#a3480427024243711ee66efc51ddf0fa3" title="Prints controls to the terminal." alt="" coords="449,307,612,332"/>
-<area shape="rect" href="class_display.html#a62d8435627ea69fbccaef4cef32d785d" title="Prints the splash screen to the terminal." alt="" coords="223,357,373,383"/>
-<area shape="rect" href="class_display.html#ab750543d9a82d7e90b262a772b195c1f" title="Creates a visual progress bar for the alarm based on the percentage completed." alt="" coords="211,407,385,432"/>
-<area shape="rect" href="class_display.html#ae6055127511e098a4ce8ea10d0ca2e43" title="Stages the controls for the alarm." alt="" coords="195,456,401,481"/>
-<area shape="rect" href="class_display.html#a90235f60d9b1239198ceca9e24df2e33" title="Stages the display for the alarm." alt="" coords="197,505,399,531"/>
-<area shape="rect" href="class_alarm.html#acf005496b4b72ecd4e66c415a8d3f238" title="Converts a time_point to a string representation." alt="" coords="223,55,373,80"/>
-<area shape="rect" href="class_alarm.html#aed71528f9d3f7143072ab882e0ff105e" title="Gets the current time." alt="" coords="457,80,605,105"/>
-<area shape="rect" href="class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="848,283,988,308"/>
-<area shape="rect" href="class_display.html#aaa0ffb7318a45caa0b74d3d439e623f0" title="Clears a specific line in the terminal." alt="" coords="462,408,599,433"/>
+<area shape="rect" title="Updates the display based on the state of the provided Alarm object." alt="" coords="5,332,147,357"/>
+<area shape="rect" href="class_display.html#abbc05f4af18fc8665a8022e795c2d574" title=" " alt="" coords="220,5,376,31"/>
+<area shape="rect" href="class_alarm.html#a4e43d8e48846d1911f5a691c129b731a" title=" " alt="" coords="225,55,371,80"/>
+<area shape="rect" href="class_alarm.html#a2e1cee43509c402293feeebd70c80442" title="Checks if the alarm has completed." alt="" coords="241,104,355,129"/>
+<area shape="rect" href="class_alarm.html#aee08b5d6eafe7e5adee07f9c30dc3fce" title="Calculates the percentage of time elapsed from start to end." alt="" coords="473,155,642,180"/>
+<area shape="rect" href="class_display.html#aab9a518037074ce68da2a7792771908d" title="Prints ASCII art to the terminal." alt="" coords="488,307,627,332"/>
+<area shape="rect" href="class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="717,408,857,433"/>
+<area shape="rect" href="class_display.html#a034871a688ea9c2cf5801d120b0cfcf6" title="Prints the progress bar to the terminal." alt="" coords="492,357,623,383"/>
+<area shape="rect" href="class_display.html#a3480427024243711ee66efc51ddf0fa3" title="Prints controls to the terminal." alt="" coords="476,256,639,281"/>
+<area shape="rect" href="class_display.html#a62d8435627ea69fbccaef4cef32d785d" title="Prints the splash screen to the terminal." alt="" coords="223,459,373,484"/>
+<area shape="rect" href="class_display.html#a83ed7e4a6928b93390e552ac6dbc9007" title=" " alt="" coords="226,508,370,533"/>
+<area shape="rect" href="class_display.html#ab750543d9a82d7e90b262a772b195c1f" title="Creates a visual progress bar for the alarm based on the percentage completed." alt="" coords="211,557,385,583"/>
+<area shape="rect" href="class_display.html#ae6055127511e098a4ce8ea10d0ca2e43" title="Stages the controls for the alarm." alt="" coords="195,607,401,632"/>
+<area shape="rect" href="class_display.html#a90235f60d9b1239198ceca9e24df2e33" title="Stages the display for the alarm." alt="" coords="197,656,399,681"/>
+<area shape="rect" href="class_alarm.html#a493f5bd8972a4c5769574701f9d92067" title=" " alt="" coords="482,204,633,229"/>
+<area shape="rect" href="class_alarm.html#a8f29e4753be03a7f68c22d2697e65a43" title="Calculates the remaining time in milliseconds until the alarm ends." alt="" coords="449,104,665,129"/>
+<area shape="rect" href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f" title=" " alt="" coords="713,155,861,180"/>
+<area shape="rect" href="class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="909,383,1049,408"/>
+<area shape="rect" href="class_display.html#aaa0ffb7318a45caa0b74d3d439e623f0" title="Clears a specific line in the terminal." alt="" coords="489,509,626,535"/>
 </map>
 </div>
 <div class="dynheader">
@@ -2177,50 +2322,54 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_display_8cpp_source.html#l00656">656</a> of file <a class="el" href="_display_8cpp_source.html">Display.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  657</span>{</div>
-<div class="line"><span class="lineno">  658</span>    <span class="keyword">auto</span> now = std::chrono::steady_clock::now();</div>
-<div class="line"><span class="lineno">  659</span>    <span class="keyword">auto</span> millis = std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(now.time_since_epoch()).count();</div>
-<div class="line"><span class="lineno">  660</span> </div>
-<div class="line"><span class="lineno">  661</span>    <span class="keywordtype">bool</span> showBar = ((millis / 500) % 2 == 0);</div>
-<div class="line"><span class="lineno">  662</span> </div>
-<div class="line"><span class="lineno">  663</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_define" href="_display_8cpp.html#a4cbb4b078b618fa4136fc0621b204523">ASCII_HEIGHT</a>; i++)</div>
-<div class="line"><span class="lineno">  664</span>    {</div>
-<div class="line"><span class="lineno">  665</span>        <span class="keywordtype">string</span> line;</div>
-<div class="line"><span class="lineno">  666</span>        <span class="keywordflow">for</span> (<span class="keywordtype">char</span> ch : to_print)</div>
-<div class="line"><span class="lineno">  667</span>        {</div>
-<div class="line"><span class="lineno">  668</span>            <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39;:&#39;</span>)</div>
-<div class="line"><span class="lineno">  669</span>            {</div>
-<div class="line"><span class="lineno">  670</span>                line += <a class="code hl_variable" href="font1_8cpp.html#a7d449c4766baf4b4da1b2714ea55b674">font1</a>.at(10)[i]; <span class="comment">// Colon character</span></div>
-<div class="line"><span class="lineno">  671</span>                line += <a class="code hl_define" href="_display_8cpp.html#a3eebd09a9a94c914de17855816e6ac45">PADDING</a>;</div>
-<div class="line"><span class="lineno">  672</span>            }</div>
-<div class="line"><span class="lineno">  673</span>            <span class="keywordflow">else</span></div>
+<p class="definition">Definition at line <a class="el" href="_display_8cpp_source.html#l00661">661</a> of file <a class="el" href="_display_8cpp_source.html">Display.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  662</span>{</div>
+<div class="line"><span class="lineno">  663</span>    <span class="keyword">auto</span> now = std::chrono::steady_clock::now();</div>
+<div class="line"><span class="lineno">  664</span>    <span class="keyword">auto</span> millis = std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(now.time_since_epoch()).count();</div>
+<div class="line"><span class="lineno">  665</span> </div>
+<div class="line"><span class="lineno">  666</span>    <span class="keywordtype">bool</span> showBar = ((millis / 500) % 2 == 0);</div>
+<div class="line"><span class="lineno">  667</span> </div>
+<div class="line"><span class="lineno">  668</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_define" href="_display_8cpp.html#a4cbb4b078b618fa4136fc0621b204523">ASCII_HEIGHT</a>; i++)</div>
+<div class="line"><span class="lineno">  669</span>    {</div>
+<div class="line"><span class="lineno">  670</span>        <span class="keywordtype">string</span> line;</div>
+<div class="line"><span class="lineno">  671</span>        <span class="keywordflow">for</span> (<span class="keywordtype">char</span> ch : to_print)</div>
+<div class="line"><span class="lineno">  672</span>        {</div>
+<div class="line"><span class="lineno">  673</span>            <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39;:&#39;</span>)</div>
 <div class="line"><span class="lineno">  674</span>            {</div>
-<div class="line"><span class="lineno">  675</span>                line += <a class="code hl_variable" href="font1_8cpp.html#a7d449c4766baf4b4da1b2714ea55b674">font1</a>.at(ch - <span class="charliteral">&#39;0&#39;</span>)[i]; <span class="comment">// Numeric character</span></div>
+<div class="line"><span class="lineno">  675</span>                line += <a class="code hl_variable" href="font1_8cpp.html#a7d449c4766baf4b4da1b2714ea55b674">font1</a>.at(10)[i]; <span class="comment">// Colon character</span></div>
 <div class="line"><span class="lineno">  676</span>                line += <a class="code hl_define" href="_display_8cpp.html#a3eebd09a9a94c914de17855816e6ac45">PADDING</a>;</div>
 <div class="line"><span class="lineno">  677</span>            }</div>
-<div class="line"><span class="lineno">  678</span>        }</div>
-<div class="line"><span class="lineno">  679</span>        <span class="keywordflow">if</span>(showBar){</div>
-<div class="line"><span class="lineno">  680</span>            line += <span class="stringliteral">&quot; |&quot;</span>;</div>
-<div class="line"><span class="lineno">  681</span>        }</div>
-<div class="line"><span class="lineno">  682</span>        <span class="keywordflow">else</span>{</div>
-<div class="line"><span class="lineno">  683</span>            line += <span class="stringliteral">&quot;   &quot;</span>;</div>
-<div class="line"><span class="lineno">  684</span>        }</div>
-<div class="line"><span class="lineno">  685</span>        <a class="code hl_variable" href="class_display.html#a86958d8d094d9a2697a111d8e3ef405c">_asciiWidth</a> = line.length(); <span class="comment">// Update ASCII width</span></div>
-<div class="line"><span class="lineno">  686</span>        <a class="code hl_variable" href="class_display.html#a49a8492ba729f03c53362d5e5ed56c6b">_asciiBuffer</a> += (line + <span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  687</span>    }</div>
-<div class="line"><span class="lineno">  688</span>    <a class="code hl_function" href="class_display.html#a40847809dd620e1a99f360c7e2ae977c">stageAlarmSetupControls</a>();</div>
-<div class="line"><span class="lineno">  689</span> </div>
-<div class="line"><span class="lineno">  690</span> </div>
-<div class="line"><span class="lineno">  691</span>    <a class="code hl_function" href="class_display.html#aab9a518037074ce68da2a7792771908d">printAscii</a>(1);</div>
-<div class="line"><span class="lineno">  692</span>    <a class="code hl_function" href="class_display.html#a3480427024243711ee66efc51ddf0fa3">printControls</a>(10);</div>
-<div class="line"><span class="lineno">  693</span> </div>
-<div class="line"><span class="lineno">  694</span>    <a class="code hl_function" href="class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3">setCursor</a>(1,1);</div>
+<div class="line"><span class="lineno">  678</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  679</span>            {</div>
+<div class="line"><span class="lineno">  680</span>                line += <a class="code hl_variable" href="font1_8cpp.html#a7d449c4766baf4b4da1b2714ea55b674">font1</a>.at(ch - <span class="charliteral">&#39;0&#39;</span>)[i]; <span class="comment">// Numeric character</span></div>
+<div class="line"><span class="lineno">  681</span>                line += <a class="code hl_define" href="_display_8cpp.html#a3eebd09a9a94c914de17855816e6ac45">PADDING</a>;</div>
+<div class="line"><span class="lineno">  682</span>            }</div>
+<div class="line"><span class="lineno">  683</span>        }</div>
+<div class="line"><span class="lineno">  684</span>        <span class="keywordflow">if</span>(showBar){</div>
+<div class="line"><span class="lineno">  685</span>            line += <span class="stringliteral">&quot; |&quot;</span>;</div>
+<div class="line"><span class="lineno">  686</span>        }</div>
+<div class="line"><span class="lineno">  687</span>        <span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  688</span>            line += <span class="stringliteral">&quot;   &quot;</span>;</div>
+<div class="line"><span class="lineno">  689</span>        }</div>
+<div class="line"><span class="lineno">  690</span>        <a class="code hl_variable" href="class_display.html#a86958d8d094d9a2697a111d8e3ef405c">_asciiWidth</a> = line.length(); <span class="comment">// Update ASCII width</span></div>
+<div class="line"><span class="lineno">  691</span>        <a class="code hl_variable" href="class_display.html#a49a8492ba729f03c53362d5e5ed56c6b">_asciiBuffer</a> += (line + <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  692</span>    }</div>
+<div class="line"><span class="lineno">  693</span>    <a class="code hl_function" href="class_display.html#a40847809dd620e1a99f360c7e2ae977c">stageAlarmSetupControls</a>();</div>
+<div class="line"><span class="lineno">  694</span> </div>
 <div class="line"><span class="lineno">  695</span> </div>
-<div class="line"><span class="lineno">  696</span>}</div>
+<div class="line"><span class="lineno">  696</span>    <a class="code hl_function" href="class_display.html#a83ed7e4a6928b93390e552ac6dbc9007">setFormat</a>(<span class="stringliteral">&quot;\033[1;37m&quot;</span>); <span class="comment">//Bold white</span></div>
+<div class="line"><span class="lineno">  697</span>    <a class="code hl_function" href="class_display.html#aab9a518037074ce68da2a7792771908d">printAscii</a>(1);</div>
+<div class="line"><span class="lineno">  698</span>    <a class="code hl_function" href="class_display.html#abbc05f4af18fc8665a8022e795c2d574">clearFormat</a>();</div>
+<div class="line"><span class="lineno">  699</span>    <a class="code hl_function" href="class_display.html#a83ed7e4a6928b93390e552ac6dbc9007">setFormat</a>(<span class="stringliteral">&quot;\033[37m&quot;</span>); <span class="comment">//White</span></div>
+<div class="line"><span class="lineno">  700</span>    <a class="code hl_function" href="class_display.html#a3480427024243711ee66efc51ddf0fa3">printControls</a>(10);</div>
+<div class="line"><span class="lineno">  701</span> </div>
+<div class="line"><span class="lineno">  702</span>    <a class="code hl_function" href="class_display.html#abbc05f4af18fc8665a8022e795c2d574">clearFormat</a>();</div>
+<div class="line"><span class="lineno">  703</span>    <a class="code hl_function" href="class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3">setCursor</a>(1,1);</div>
+<div class="line"><span class="lineno">  704</span> </div>
+<div class="line"><span class="lineno">  705</span>}</div>
 <div class="ttc" id="aclass_display_html_a40847809dd620e1a99f360c7e2ae977c"><div class="ttname"><a href="class_display.html#a40847809dd620e1a99f360c7e2ae977c">Display::stageAlarmSetupControls</a></div><div class="ttdeci">void stageAlarmSetupControls()</div><div class="ttdoc">Stages the controls for the alarm setup to be displayed in the terminal.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8cpp_source.html#l00449">Display.cpp:449</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00176">_asciiBuffer</a>, <a class="el" href="_display_8hpp_source.html#l00190">_asciiWidth</a>, <a class="el" href="_display_8cpp_source.html#l00005">ASCII_HEIGHT</a>, <a class="el" href="font1_8cpp_source.html#l00153">font1</a>, <a class="el" href="_display_8cpp_source.html#l00004">PADDING</a>, <a class="el" href="_display_8cpp_source.html#l00540">printAscii()</a>, <a class="el" href="_display_8cpp_source.html#l00555">printControls()</a>, <a class="el" href="_display_8cpp_source.html#l00059">setCursor()</a>, and <a class="el" href="_display_8cpp_source.html#l00449">stageAlarmSetupControls()</a>.</p>
+<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00181">_asciiBuffer</a>, <a class="el" href="_display_8hpp_source.html#l00198">_asciiWidth</a>, <a class="el" href="_display_8cpp_source.html#l00005">ASCII_HEIGHT</a>, <a class="el" href="_display_8cpp_source.html#l00838">clearFormat()</a>, <a class="el" href="font1_8cpp_source.html#l00153">font1</a>, <a class="el" href="_display_8cpp_source.html#l00004">PADDING</a>, <a class="el" href="_display_8cpp_source.html#l00540">printAscii()</a>, <a class="el" href="_display_8cpp_source.html#l00555">printControls()</a>, <a class="el" href="_display_8cpp_source.html#l00059">setCursor()</a>, <a class="el" href="_display_8cpp_source.html#l00831">setFormat()</a>, and <a class="el" href="_display_8cpp_source.html#l00449">stageAlarmSetupControls()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00278">Menu::createAlarm()</a>.</p>
 <div class="dynheader">
@@ -2228,12 +2377,14 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_display_a00b39135d34e401529265af26a9611c7_cgraph.png" border="0" usemap="#aclass_display_a00b39135d34e401529265af26a9611c7_cgraph" alt=""/></div>
 <map name="aclass_display_a00b39135d34e401529265af26a9611c7_cgraph" id="aclass_display_a00b39135d34e401529265af26a9611c7_cgraph">
-<area shape="rect" title="Updates the alarm setup display, showing the current input with a blinking cursor." alt="" coords="5,81,184,107"/>
-<area shape="rect" href="class_display.html#aab9a518037074ce68da2a7792771908d" title="Prints ASCII art to the terminal." alt="" coords="258,5,397,31"/>
-<area shape="rect" href="class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="471,56,611,81"/>
-<area shape="rect" href="class_display.html#a3480427024243711ee66efc51ddf0fa3" title="Prints controls to the terminal." alt="" coords="246,107,409,132"/>
-<area shape="rect" href="class_display.html#a40847809dd620e1a99f360c7e2ae977c" title="Stages the controls for the alarm setup to be displayed in the terminal." alt="" coords="232,157,423,197"/>
-<area shape="rect" href="class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="659,56,799,81"/>
+<area shape="rect" title="Updates the alarm setup display, showing the current input with a blinking cursor." alt="" coords="5,131,184,156"/>
+<area shape="rect" href="class_display.html#abbc05f4af18fc8665a8022e795c2d574" title=" " alt="" coords="249,5,405,31"/>
+<area shape="rect" href="class_display.html#aab9a518037074ce68da2a7792771908d" title="Prints ASCII art to the terminal." alt="" coords="258,55,397,80"/>
+<area shape="rect" href="class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="471,105,611,131"/>
+<area shape="rect" href="class_display.html#a3480427024243711ee66efc51ddf0fa3" title="Prints controls to the terminal." alt="" coords="246,156,409,181"/>
+<area shape="rect" href="class_display.html#a83ed7e4a6928b93390e552ac6dbc9007" title=" " alt="" coords="255,205,399,231"/>
+<area shape="rect" href="class_display.html#a40847809dd620e1a99f360c7e2ae977c" title="Stages the controls for the alarm setup to be displayed in the terminal." alt="" coords="232,255,423,295"/>
+<area shape="rect" href="class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="659,105,799,131"/>
 </map>
 </div>
 <div class="dynheader">
@@ -2280,38 +2431,51 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_display_8cpp_source.html#l00729">729</a> of file <a class="el" href="_display_8cpp_source.html">Display.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  729</span>                                               {</div>
-<div class="line"><span class="lineno">  730</span> </div>
-<div class="line"><span class="lineno">  731</span>    <span class="keywordtype">int</span> milliseconds = stopwatch.<a class="code hl_function" href="class_stopwatch.html#aaf61c1ada98a22cc1c2bc589bdd4134a">currentMilliseconds</a>();</div>
-<div class="line"><span class="lineno">  732</span> </div>
-<div class="line"><span class="lineno">  733</span>    <span class="keywordtype">int</span> hours = milliseconds / 3600000;</div>
-<div class="line"><span class="lineno">  734</span>    milliseconds %= 3600000;</div>
-<div class="line"><span class="lineno">  735</span>    <span class="keywordtype">int</span> minutes = milliseconds / 60000;</div>
-<div class="line"><span class="lineno">  736</span>    milliseconds %= 60000;</div>
-<div class="line"><span class="lineno">  737</span>    <span class="keywordtype">int</span> seconds = milliseconds / 1000;</div>
-<div class="line"><span class="lineno">  738</span>    milliseconds %= 1000;</div>
-<div class="line"><span class="lineno">  739</span>    <span class="keywordtype">int</span> hundredths = milliseconds / 10;</div>
-<div class="line"><span class="lineno">  740</span> </div>
-<div class="line"><span class="lineno">  741</span>    <a class="code hl_function" href="class_display.html#ac878f4b1987c4e33c173478fd5bbf34c">stageStopwatchDisplay</a>(hours, minutes, seconds, hundredths);</div>
-<div class="line"><span class="lineno">  742</span>    <a class="code hl_function" href="class_display.html#aa68e271db8f91c18ae2c1e5e38d0f1ee">stageStopwatchControls</a>();</div>
-<div class="line"><span class="lineno">  743</span>    <a class="code hl_function" href="class_display.html#a8b0e743648629b44c19cb59b1cbe467e">stageStopwatchSplits</a>(stopwatch.<a class="code hl_function" href="class_stopwatch.html#ae401b2a4016b104fc210e54a5041c9e2">getSplits</a>());</div>
-<div class="line"><span class="lineno">  744</span> </div>
-<div class="line"><span class="lineno">  745</span>    <a class="code hl_function" href="class_display.html#aab9a518037074ce68da2a7792771908d">printAscii</a>(1);</div>
-<div class="line"><span class="lineno">  746</span>    <a class="code hl_function" href="class_display.html#a3480427024243711ee66efc51ddf0fa3">printControls</a>(9);</div>
-<div class="line"><span class="lineno">  747</span>    <a class="code hl_function" href="class_display.html#a62d8435627ea69fbccaef4cef32d785d">printSplash</a>(14);</div>
-<div class="line"><span class="lineno">  748</span>    <a class="code hl_function" href="class_display.html#ac4f2f5445af6a65554ad9646cc27f3cc">printSplits</a>(16);</div>
-<div class="line"><span class="lineno">  749</span>    <a class="code hl_function" href="class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3">setCursor</a>(15,1);</div>
+<p class="definition">Definition at line <a class="el" href="_display_8cpp_source.html#l00747">747</a> of file <a class="el" href="_display_8cpp_source.html">Display.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  747</span>                                               {</div>
+<div class="line"><span class="lineno">  748</span> </div>
+<div class="line"><span class="lineno">  749</span>    <span class="keywordtype">int</span> milliseconds = stopwatch.<a class="code hl_function" href="class_stopwatch.html#aaf61c1ada98a22cc1c2bc589bdd4134a">currentMilliseconds</a>();</div>
 <div class="line"><span class="lineno">  750</span> </div>
-<div class="line"><span class="lineno">  751</span>}</div>
+<div class="line"><span class="lineno">  751</span>    <span class="keywordtype">int</span> hours = milliseconds / 3600000;</div>
+<div class="line"><span class="lineno">  752</span>    milliseconds %= 3600000;</div>
+<div class="line"><span class="lineno">  753</span>    <span class="keywordtype">int</span> minutes = milliseconds / 60000;</div>
+<div class="line"><span class="lineno">  754</span>    milliseconds %= 60000;</div>
+<div class="line"><span class="lineno">  755</span>    <span class="keywordtype">int</span> seconds = milliseconds / 1000;</div>
+<div class="line"><span class="lineno">  756</span>    milliseconds %= 1000;</div>
+<div class="line"><span class="lineno">  757</span>    <span class="keywordtype">int</span> hundredths = milliseconds / 10;</div>
+<div class="line"><span class="lineno">  758</span> </div>
+<div class="line"><span class="lineno">  759</span>    <a class="code hl_function" href="class_display.html#ac878f4b1987c4e33c173478fd5bbf34c">stageStopwatchDisplay</a>(hours, minutes, seconds, hundredths);</div>
+<div class="line"><span class="lineno">  760</span>    <a class="code hl_function" href="class_display.html#aa68e271db8f91c18ae2c1e5e38d0f1ee">stageStopwatchControls</a>();</div>
+<div class="line"><span class="lineno">  761</span>    <a class="code hl_function" href="class_display.html#a8b0e743648629b44c19cb59b1cbe467e">stageStopwatchSplits</a>(stopwatch.<a class="code hl_function" href="class_stopwatch.html#ae401b2a4016b104fc210e54a5041c9e2">getSplits</a>());</div>
+<div class="line"><span class="lineno">  762</span> </div>
+<div class="line"><span class="lineno">  763</span>    <span class="keywordflow">if</span>(!stopwatch.<a class="code hl_function" href="class_stopwatch.html#ae20cb58892efc6ca55117583aac8c392">isRunning</a>()){</div>
+<div class="line"><span class="lineno">  764</span>        <a class="code hl_function" href="class_display.html#a83ed7e4a6928b93390e552ac6dbc9007">setFormat</a>(<span class="stringliteral">&quot;\033[1;31m&quot;</span>); <span class="comment">//Bold Red</span></div>
+<div class="line"><span class="lineno">  765</span>    }</div>
+<div class="line"><span class="lineno">  766</span>    <span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  767</span>        <a class="code hl_function" href="class_display.html#a83ed7e4a6928b93390e552ac6dbc9007">setFormat</a>(<span class="stringliteral">&quot;\033[1;37m&quot;</span>); <span class="comment">// Bold white</span></div>
+<div class="line"><span class="lineno">  768</span>    }</div>
+<div class="line"><span class="lineno">  769</span>    <a class="code hl_function" href="class_display.html#aab9a518037074ce68da2a7792771908d">printAscii</a>(1);</div>
+<div class="line"><span class="lineno">  770</span> </div>
+<div class="line"><span class="lineno">  771</span>    <a class="code hl_function" href="class_display.html#abbc05f4af18fc8665a8022e795c2d574">clearFormat</a>();</div>
+<div class="line"><span class="lineno">  772</span>    <a class="code hl_function" href="class_display.html#a83ed7e4a6928b93390e552ac6dbc9007">setFormat</a>(<span class="stringliteral">&quot;\033[37m&quot;</span>); <span class="comment">//White</span></div>
+<div class="line"><span class="lineno">  773</span> </div>
+<div class="line"><span class="lineno">  774</span>    <a class="code hl_function" href="class_display.html#a3480427024243711ee66efc51ddf0fa3">printControls</a>(9);</div>
+<div class="line"><span class="lineno">  775</span>    <a class="code hl_function" href="class_display.html#a62d8435627ea69fbccaef4cef32d785d">printSplash</a>(14);</div>
+<div class="line"><span class="lineno">  776</span>    <a class="code hl_function" href="class_display.html#ac4f2f5445af6a65554ad9646cc27f3cc">printSplits</a>(16);</div>
+<div class="line"><span class="lineno">  777</span> </div>
+<div class="line"><span class="lineno">  778</span>    <a class="code hl_function" href="class_display.html#abbc05f4af18fc8665a8022e795c2d574">clearFormat</a>();</div>
+<div class="line"><span class="lineno">  779</span>    <a class="code hl_function" href="class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3">setCursor</a>(15,1);</div>
+<div class="line"><span class="lineno">  780</span> </div>
+<div class="line"><span class="lineno">  781</span>}</div>
 <div class="ttc" id="aclass_display_html_a8b0e743648629b44c19cb59b1cbe467e"><div class="ttname"><a href="class_display.html#a8b0e743648629b44c19cb59b1cbe467e">Display::stageStopwatchSplits</a></div><div class="ttdeci">void stageStopwatchSplits(vector&lt; int &gt; splits)</div><div class="ttdoc">Stages the splits block to be displayed.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8cpp_source.html#l00472">Display.cpp:472</a></div></div>
 <div class="ttc" id="aclass_display_html_aa68e271db8f91c18ae2c1e5e38d0f1ee"><div class="ttname"><a href="class_display.html#aa68e271db8f91c18ae2c1e5e38d0f1ee">Display::stageStopwatchControls</a></div><div class="ttdeci">void stageStopwatchControls()</div><div class="ttdoc">Stages the controls for the stopwatch.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8cpp_source.html#l00426">Display.cpp:426</a></div></div>
 <div class="ttc" id="aclass_display_html_ac4f2f5445af6a65554ad9646cc27f3cc"><div class="ttname"><a href="class_display.html#ac4f2f5445af6a65554ad9646cc27f3cc">Display::printSplits</a></div><div class="ttdeci">void printSplits(int splitsIndex)</div><div class="ttdoc">Prints the stopwatch splits to the terminal.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8cpp_source.html#l00600">Display.cpp:600</a></div></div>
 <div class="ttc" id="aclass_display_html_ac878f4b1987c4e33c173478fd5bbf34c"><div class="ttname"><a href="class_display.html#ac878f4b1987c4e33c173478fd5bbf34c">Display::stageStopwatchDisplay</a></div><div class="ttdeci">void stageStopwatchDisplay(int hours, int minutes, int seconds, int hundredths)</div><div class="ttdoc">Stages the stopwatch display with provided time values.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8cpp_source.html#l00339">Display.cpp:339</a></div></div>
 <div class="ttc" id="aclass_stopwatch_html_aaf61c1ada98a22cc1c2bc589bdd4134a"><div class="ttname"><a href="class_stopwatch.html#aaf61c1ada98a22cc1c2bc589bdd4134a">Stopwatch::currentMilliseconds</a></div><div class="ttdeci">int currentMilliseconds()</div><div class="ttdoc">Returns the current elapsed time in milliseconds.</div><div class="ttdef"><b>Definition:</b> <a href="_stopwatch_8cpp_source.html#l00044">Stopwatch.cpp:44</a></div></div>
+<div class="ttc" id="aclass_stopwatch_html_ae20cb58892efc6ca55117583aac8c392"><div class="ttname"><a href="class_stopwatch.html#ae20cb58892efc6ca55117583aac8c392">Stopwatch::isRunning</a></div><div class="ttdeci">bool isRunning()</div><div class="ttdoc">Checks if the stopwatch is currently running.</div><div class="ttdef"><b>Definition:</b> <a href="_stopwatch_8cpp_source.html#l00163">Stopwatch.cpp:163</a></div></div>
 <div class="ttc" id="aclass_stopwatch_html_ae401b2a4016b104fc210e54a5041c9e2"><div class="ttname"><a href="class_stopwatch.html#ae401b2a4016b104fc210e54a5041c9e2">Stopwatch::getSplits</a></div><div class="ttdeci">vector&lt; int &gt; getSplits()</div><div class="ttdoc">Returns the splits vector.</div><div class="ttdef"><b>Definition:</b> <a href="_stopwatch_8cpp_source.html#l00090">Stopwatch.cpp:90</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_stopwatch_8cpp_source.html#l00044">Stopwatch::currentMilliseconds()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00090">Stopwatch::getSplits()</a>, <a class="el" href="_display_8cpp_source.html#l00540">printAscii()</a>, <a class="el" href="_display_8cpp_source.html#l00555">printControls()</a>, <a class="el" href="_display_8cpp_source.html#l00585">printSplash()</a>, <a class="el" href="_display_8cpp_source.html#l00600">printSplits()</a>, <a class="el" href="_display_8cpp_source.html#l00059">setCursor()</a>, <a class="el" href="_display_8cpp_source.html#l00426">stageStopwatchControls()</a>, <a class="el" href="_display_8cpp_source.html#l00339">stageStopwatchDisplay()</a>, and <a class="el" href="_display_8cpp_source.html#l00472">stageStopwatchSplits()</a>.</p>
+<p class="reference">References <a class="el" href="_display_8cpp_source.html#l00838">clearFormat()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00044">Stopwatch::currentMilliseconds()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00090">Stopwatch::getSplits()</a>, <a class="el" href="_stopwatch_8cpp_source.html#l00163">Stopwatch::isRunning()</a>, <a class="el" href="_display_8cpp_source.html#l00540">printAscii()</a>, <a class="el" href="_display_8cpp_source.html#l00555">printControls()</a>, <a class="el" href="_display_8cpp_source.html#l00585">printSplash()</a>, <a class="el" href="_display_8cpp_source.html#l00600">printSplits()</a>, <a class="el" href="_display_8cpp_source.html#l00059">setCursor()</a>, <a class="el" href="_display_8cpp_source.html#l00831">setFormat()</a>, <a class="el" href="_display_8cpp_source.html#l00426">stageStopwatchControls()</a>, <a class="el" href="_display_8cpp_source.html#l00339">stageStopwatchDisplay()</a>, and <a class="el" href="_display_8cpp_source.html#l00472">stageStopwatchSplits()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00149">Menu::stopwatchSequence()</a>, and <a class="el" href="_display_test_8cpp_source.html#l00030">test_stopwatch()</a>.</p>
 <div class="dynheader">
@@ -2319,19 +2483,22 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_display_a670c8db4c53ae0f09d6d3b57f1813b7f_cgraph.png" border="0" usemap="#aclass_display_a670c8db4c53ae0f09d6d3b57f1813b7f_cgraph" alt=""/></div>
 <map name="aclass_display_a670c8db4c53ae0f09d6d3b57f1813b7f_cgraph" id="aclass_display_a670c8db4c53ae0f09d6d3b57f1813b7f_cgraph">
-<area shape="rect" title="Updates the display based on the state of the provided Stopwatch object." alt="" coords="5,232,176,257"/>
-<area shape="rect" href="class_stopwatch.html#aaf61c1ada98a22cc1c2bc589bdd4134a" title="Returns the current elapsed time in milliseconds." alt="" coords="229,5,455,31"/>
-<area shape="rect" href="class_stopwatch.html#ae401b2a4016b104fc210e54a5041c9e2" title="Returns the splits vector." alt="" coords="265,55,419,80"/>
-<area shape="rect" href="class_display.html#aab9a518037074ce68da2a7792771908d" title="Prints ASCII art to the terminal." alt="" coords="520,107,659,132"/>
-<area shape="rect" href="class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="719,257,859,283"/>
-<area shape="rect" href="class_display.html#a3480427024243711ee66efc51ddf0fa3" title="Prints controls to the terminal." alt="" coords="508,156,671,181"/>
-<area shape="rect" href="class_display.html#a62d8435627ea69fbccaef4cef32d785d" title="Prints the splash screen to the terminal." alt="" coords="267,257,417,283"/>
-<area shape="rect" href="class_display.html#ac4f2f5445af6a65554ad9646cc27f3cc" title="Prints the stopwatch splits to the terminal." alt="" coords="517,409,661,435"/>
-<area shape="rect" href="class_display.html#aa68e271db8f91c18ae2c1e5e38d0f1ee" title="Stages the controls for the stopwatch." alt="" coords="224,359,460,384"/>
-<area shape="rect" href="class_display.html#ac878f4b1987c4e33c173478fd5bbf34c" title="Stages the stopwatch display with provided time values." alt="" coords="227,408,457,433"/>
-<area shape="rect" href="class_display.html#a8b0e743648629b44c19cb59b1cbe467e" title="Stages the splits block to be displayed." alt="" coords="233,457,451,483"/>
-<area shape="rect" href="class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="907,283,1047,308"/>
-<area shape="rect" href="class_display.html#aaa0ffb7318a45caa0b74d3d439e623f0" title="Clears a specific line in the terminal." alt="" coords="521,308,658,333"/>
+<area shape="rect" title="Updates the display based on the state of the provided Stopwatch object." alt="" coords="5,305,176,331"/>
+<area shape="rect" href="class_display.html#abbc05f4af18fc8665a8022e795c2d574" title=" " alt="" coords="264,5,420,31"/>
+<area shape="rect" href="class_stopwatch.html#aaf61c1ada98a22cc1c2bc589bdd4134a" title="Returns the current elapsed time in milliseconds." alt="" coords="229,55,455,80"/>
+<area shape="rect" href="class_stopwatch.html#ae401b2a4016b104fc210e54a5041c9e2" title="Returns the splits vector." alt="" coords="265,104,419,129"/>
+<area shape="rect" href="class_stopwatch.html#ae20cb58892efc6ca55117583aac8c392" title="Checks if the stopwatch is currently running." alt="" coords="261,153,423,179"/>
+<area shape="rect" href="class_display.html#aab9a518037074ce68da2a7792771908d" title="Prints ASCII art to the terminal." alt="" coords="520,205,659,231"/>
+<area shape="rect" href="class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="719,356,859,381"/>
+<area shape="rect" href="class_display.html#a3480427024243711ee66efc51ddf0fa3" title="Prints controls to the terminal." alt="" coords="508,255,671,280"/>
+<area shape="rect" href="class_display.html#a62d8435627ea69fbccaef4cef32d785d" title="Prints the splash screen to the terminal." alt="" coords="267,356,417,381"/>
+<area shape="rect" href="class_display.html#ac4f2f5445af6a65554ad9646cc27f3cc" title="Prints the stopwatch splits to the terminal." alt="" coords="517,508,661,533"/>
+<area shape="rect" href="class_display.html#a83ed7e4a6928b93390e552ac6dbc9007" title=" " alt="" coords="270,457,414,483"/>
+<area shape="rect" href="class_display.html#aa68e271db8f91c18ae2c1e5e38d0f1ee" title="Stages the controls for the stopwatch." alt="" coords="224,507,460,532"/>
+<area shape="rect" href="class_display.html#ac878f4b1987c4e33c173478fd5bbf34c" title="Stages the stopwatch display with provided time values." alt="" coords="227,556,457,581"/>
+<area shape="rect" href="class_display.html#a8b0e743648629b44c19cb59b1cbe467e" title="Stages the splits block to be displayed." alt="" coords="233,605,451,631"/>
+<area shape="rect" href="class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="907,381,1047,407"/>
+<area shape="rect" href="class_display.html#aaa0ffb7318a45caa0b74d3d439e623f0" title="Clears a specific line in the terminal." alt="" coords="521,407,658,432"/>
 </map>
 </div>
 <div class="dynheader">
@@ -2378,35 +2545,45 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_display_8cpp_source.html#l00702">702</a> of file <a class="el" href="_display_8cpp_source.html">Display.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  703</span>{</div>
-<div class="line"><span class="lineno">  704</span>    <span class="keywordtype">int</span> remaining = timer.<a class="code hl_function" href="class_timer.html#a330607659937f497389c9989812cd925">remainingMilliseconds</a>();</div>
-<div class="line"><span class="lineno">  705</span>    <span class="keywordtype">int</span> hours = remaining / 3600000;</div>
-<div class="line"><span class="lineno">  706</span>    remaining %= 3600000;</div>
-<div class="line"><span class="lineno">  707</span>    <span class="keywordtype">int</span> minutes = remaining / 60000;</div>
-<div class="line"><span class="lineno">  708</span>    remaining %= 60000;</div>
-<div class="line"><span class="lineno">  709</span>    <span class="keywordtype">int</span> seconds = remaining / 1000;</div>
-<div class="line"><span class="lineno">  710</span>    remaining %= 1000;</div>
-<div class="line"><span class="lineno">  711</span>    <span class="keywordtype">int</span> tenths = remaining / 100;</div>
-<div class="line"><span class="lineno">  712</span> </div>
-<div class="line"><span class="lineno">  713</span>    <a class="code hl_function" href="class_display.html#a02e23b9a142c52d7dfa0169c58c77e24">stageTimerDisplay</a>(hours, minutes, seconds, tenths);</div>
-<div class="line"><span class="lineno">  714</span>    <a class="code hl_function" href="class_display.html#a91e41747e83f0d8d53251811addd566e">stageTimerBar</a>(timer.<a class="code hl_function" href="class_timer.html#a97ab4bd97e34c2ce2b8afa7c993fbaec">percentElapsed</a>());</div>
-<div class="line"><span class="lineno">  715</span>    <a class="code hl_function" href="class_display.html#af7327c3f58c211e500f4fff386f222e4">stageTimerControls</a>();</div>
-<div class="line"><span class="lineno">  716</span> </div>
-<div class="line"><span class="lineno">  717</span>    <a class="code hl_function" href="class_display.html#aab9a518037074ce68da2a7792771908d">printAscii</a>(1);</div>
-<div class="line"><span class="lineno">  718</span>    <a class="code hl_function" href="class_display.html#a034871a688ea9c2cf5801d120b0cfcf6">printBar</a>(10);</div>
-<div class="line"><span class="lineno">  719</span>    <a class="code hl_function" href="class_display.html#a3480427024243711ee66efc51ddf0fa3">printControls</a>(13);</div>
-<div class="line"><span class="lineno">  720</span>    <a class="code hl_function" href="class_display.html#a62d8435627ea69fbccaef4cef32d785d">printSplash</a>(18);</div>
+<p class="definition">Definition at line <a class="el" href="_display_8cpp_source.html#l00711">711</a> of file <a class="el" href="_display_8cpp_source.html">Display.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  712</span>{</div>
+<div class="line"><span class="lineno">  713</span>    <span class="keywordtype">int</span> remaining = timer.<a class="code hl_function" href="class_timer.html#a330607659937f497389c9989812cd925">remainingMilliseconds</a>();</div>
+<div class="line"><span class="lineno">  714</span>    <span class="keywordtype">int</span> hours = remaining / 3600000;</div>
+<div class="line"><span class="lineno">  715</span>    remaining %= 3600000;</div>
+<div class="line"><span class="lineno">  716</span>    <span class="keywordtype">int</span> minutes = remaining / 60000;</div>
+<div class="line"><span class="lineno">  717</span>    remaining %= 60000;</div>
+<div class="line"><span class="lineno">  718</span>    <span class="keywordtype">int</span> seconds = remaining / 1000;</div>
+<div class="line"><span class="lineno">  719</span>    remaining %= 1000;</div>
+<div class="line"><span class="lineno">  720</span>    <span class="keywordtype">int</span> tenths = remaining / 100;</div>
 <div class="line"><span class="lineno">  721</span> </div>
-<div class="line"><span class="lineno">  722</span>    <a class="code hl_function" href="class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3">setCursor</a>(20,1);</div>
-<div class="line"><span class="lineno">  723</span>}</div>
+<div class="line"><span class="lineno">  722</span>    <a class="code hl_function" href="class_display.html#a02e23b9a142c52d7dfa0169c58c77e24">stageTimerDisplay</a>(hours, minutes, seconds, tenths);</div>
+<div class="line"><span class="lineno">  723</span>    <a class="code hl_function" href="class_display.html#a91e41747e83f0d8d53251811addd566e">stageTimerBar</a>(timer.<a class="code hl_function" href="class_timer.html#a97ab4bd97e34c2ce2b8afa7c993fbaec">percentElapsed</a>());</div>
+<div class="line"><span class="lineno">  724</span>    <a class="code hl_function" href="class_display.html#af7327c3f58c211e500f4fff386f222e4">stageTimerControls</a>();</div>
+<div class="line"><span class="lineno">  725</span>    </div>
+<div class="line"><span class="lineno">  726</span>    <span class="keywordflow">if</span>(!timer.<a class="code hl_function" href="class_timer.html#a2ef50bfc604ea9fb88d3000c9ad0edd9">isRunning</a>()){</div>
+<div class="line"><span class="lineno">  727</span>        <a class="code hl_function" href="class_display.html#a83ed7e4a6928b93390e552ac6dbc9007">setFormat</a>(<span class="stringliteral">&quot;\033[1;31m&quot;</span>); <span class="comment">//Bold Red</span></div>
+<div class="line"><span class="lineno">  728</span>    }</div>
+<div class="line"><span class="lineno">  729</span>    <span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  730</span>        <a class="code hl_function" href="class_display.html#a83ed7e4a6928b93390e552ac6dbc9007">setFormat</a>(<span class="stringliteral">&quot;\033[1;37m&quot;</span>); <span class="comment">// Bold white</span></div>
+<div class="line"><span class="lineno">  731</span>    }</div>
+<div class="line"><span class="lineno">  732</span>    <a class="code hl_function" href="class_display.html#aab9a518037074ce68da2a7792771908d">printAscii</a>(1);</div>
+<div class="line"><span class="lineno">  733</span>    <a class="code hl_function" href="class_display.html#a034871a688ea9c2cf5801d120b0cfcf6">printBar</a>(10);</div>
+<div class="line"><span class="lineno">  734</span>    <a class="code hl_function" href="class_display.html#abbc05f4af18fc8665a8022e795c2d574">clearFormat</a>();</div>
+<div class="line"><span class="lineno">  735</span>    <a class="code hl_function" href="class_display.html#a83ed7e4a6928b93390e552ac6dbc9007">setFormat</a>(<span class="stringliteral">&quot;\033[37m&quot;</span>); <span class="comment">//White</span></div>
+<div class="line"><span class="lineno">  736</span>    <a class="code hl_function" href="class_display.html#a3480427024243711ee66efc51ddf0fa3">printControls</a>(13);</div>
+<div class="line"><span class="lineno">  737</span>    <a class="code hl_function" href="class_display.html#a62d8435627ea69fbccaef4cef32d785d">printSplash</a>(18);</div>
+<div class="line"><span class="lineno">  738</span> </div>
+<div class="line"><span class="lineno">  739</span>    <a class="code hl_function" href="class_display.html#abbc05f4af18fc8665a8022e795c2d574">clearFormat</a>();</div>
+<div class="line"><span class="lineno">  740</span>    <a class="code hl_function" href="class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3">setCursor</a>(20,1);</div>
+<div class="line"><span class="lineno">  741</span>}</div>
 <div class="ttc" id="aclass_display_html_a02e23b9a142c52d7dfa0169c58c77e24"><div class="ttname"><a href="class_display.html#a02e23b9a142c52d7dfa0169c58c77e24">Display::stageTimerDisplay</a></div><div class="ttdeci">void stageTimerDisplay(int hours, int minutes, int seconds, int tenths)</div><div class="ttdoc">Stages the timer display with provided time values.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8cpp_source.html#l00108">Display.cpp:108</a></div></div>
 <div class="ttc" id="aclass_display_html_a91e41747e83f0d8d53251811addd566e"><div class="ttname"><a href="class_display.html#a91e41747e83f0d8d53251811addd566e">Display::stageTimerBar</a></div><div class="ttdeci">void stageTimerBar(double percentage)</div><div class="ttdoc">Stages the progress bar for the timer.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8cpp_source.html#l00238">Display.cpp:238</a></div></div>
 <div class="ttc" id="aclass_display_html_af7327c3f58c211e500f4fff386f222e4"><div class="ttname"><a href="class_display.html#af7327c3f58c211e500f4fff386f222e4">Display::stageTimerControls</a></div><div class="ttdeci">void stageTimerControls()</div><div class="ttdoc">Stages the controls for the timer.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8cpp_source.html#l00318">Display.cpp:318</a></div></div>
+<div class="ttc" id="aclass_timer_html_a2ef50bfc604ea9fb88d3000c9ad0edd9"><div class="ttname"><a href="class_timer.html#a2ef50bfc604ea9fb88d3000c9ad0edd9">Timer::isRunning</a></div><div class="ttdeci">bool isRunning()</div><div class="ttdoc">Checks if the timer is currently running.</div><div class="ttdef"><b>Definition:</b> <a href="_timer_8cpp_source.html#l00143">Timer.cpp:143</a></div></div>
 <div class="ttc" id="aclass_timer_html_a330607659937f497389c9989812cd925"><div class="ttname"><a href="class_timer.html#a330607659937f497389c9989812cd925">Timer::remainingMilliseconds</a></div><div class="ttdeci">int remainingMilliseconds()</div><div class="ttdoc">Returns the remaining time in milliseconds.</div><div class="ttdef"><b>Definition:</b> <a href="_timer_8cpp_source.html#l00118">Timer.cpp:118</a></div></div>
 <div class="ttc" id="aclass_timer_html_a97ab4bd97e34c2ce2b8afa7c993fbaec"><div class="ttname"><a href="class_timer.html#a97ab4bd97e34c2ce2b8afa7c993fbaec">Timer::percentElapsed</a></div><div class="ttdeci">double percentElapsed()</div><div class="ttdoc">Returns the percentage of time that has elapsed since the timer started.</div><div class="ttdef"><b>Definition:</b> <a href="_timer_8cpp_source.html#l00156">Timer.cpp:156</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_timer_8cpp_source.html#l00156">Timer::percentElapsed()</a>, <a class="el" href="_display_8cpp_source.html#l00540">printAscii()</a>, <a class="el" href="_display_8cpp_source.html#l00570">printBar()</a>, <a class="el" href="_display_8cpp_source.html#l00555">printControls()</a>, <a class="el" href="_display_8cpp_source.html#l00585">printSplash()</a>, <a class="el" href="_timer_8cpp_source.html#l00118">Timer::remainingMilliseconds()</a>, <a class="el" href="_display_8cpp_source.html#l00059">setCursor()</a>, <a class="el" href="_display_8cpp_source.html#l00238">stageTimerBar()</a>, <a class="el" href="_display_8cpp_source.html#l00318">stageTimerControls()</a>, and <a class="el" href="_display_8cpp_source.html#l00108">stageTimerDisplay()</a>.</p>
+<p class="reference">References <a class="el" href="_display_8cpp_source.html#l00838">clearFormat()</a>, <a class="el" href="_timer_8cpp_source.html#l00143">Timer::isRunning()</a>, <a class="el" href="_timer_8cpp_source.html#l00156">Timer::percentElapsed()</a>, <a class="el" href="_display_8cpp_source.html#l00540">printAscii()</a>, <a class="el" href="_display_8cpp_source.html#l00570">printBar()</a>, <a class="el" href="_display_8cpp_source.html#l00555">printControls()</a>, <a class="el" href="_display_8cpp_source.html#l00585">printSplash()</a>, <a class="el" href="_timer_8cpp_source.html#l00118">Timer::remainingMilliseconds()</a>, <a class="el" href="_display_8cpp_source.html#l00059">setCursor()</a>, <a class="el" href="_display_8cpp_source.html#l00831">setFormat()</a>, <a class="el" href="_display_8cpp_source.html#l00238">stageTimerBar()</a>, <a class="el" href="_display_8cpp_source.html#l00318">stageTimerControls()</a>, and <a class="el" href="_display_8cpp_source.html#l00108">stageTimerDisplay()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_display_test_8cpp_source.html#l00024">test_timer()</a>, and <a class="el" href="_menu_8cpp_source.html#l00119">Menu::timerSequence()</a>.</p>
 <div class="dynheader">
@@ -2414,20 +2591,23 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_display_a02b2228e05be168eda0b817d1ecf5db7_cgraph.png" border="0" usemap="#aclass_display_a02b2228e05be168eda0b817d1ecf5db7_cgraph" alt=""/></div>
 <map name="aclass_display_a02b2228e05be168eda0b817d1ecf5db7_cgraph" id="aclass_display_a02b2228e05be168eda0b817d1ecf5db7_cgraph">
-<area shape="rect" title="Updates the display based on the state of the provided Timer object." alt="" coords="5,242,145,267"/>
-<area shape="rect" href="class_timer.html#a97ab4bd97e34c2ce2b8afa7c993fbaec" title="Returns the percentage of time that has elapsed since the timer started." alt="" coords="213,64,381,90"/>
-<area shape="rect" href="class_timer.html#a330607659937f497389c9989812cd925" title="Returns the remaining time in milliseconds." alt="" coords="448,14,663,39"/>
-<area shape="rect" href="class_display.html#aab9a518037074ce68da2a7792771908d" title="Prints ASCII art to the terminal." alt="" coords="486,116,625,142"/>
-<area shape="rect" href="class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="711,218,851,243"/>
-<area shape="rect" href="class_display.html#a034871a688ea9c2cf5801d120b0cfcf6" title="Prints the progress bar to the terminal." alt="" coords="490,166,621,191"/>
-<area shape="rect" href="class_display.html#a3480427024243711ee66efc51ddf0fa3" title="Prints controls to the terminal." alt="" coords="474,267,637,292"/>
-<area shape="rect" href="class_display.html#a62d8435627ea69fbccaef4cef32d785d" title="Prints the splash screen to the terminal." alt="" coords="221,318,372,343"/>
-<area shape="rect" href="class_display.html#a91e41747e83f0d8d53251811addd566e" title="Stages the progress bar for the timer." alt="" coords="209,367,384,392"/>
-<area shape="rect" href="class_display.html#af7327c3f58c211e500f4fff386f222e4" title="Stages the controls for the timer." alt="" coords="193,416,400,442"/>
-<area shape="rect" href="class_display.html#a02e23b9a142c52d7dfa0169c58c77e24" title="Stages the timer display with provided time values." alt="" coords="196,466,397,491"/>
-<area shape="rect" href="class_timer.html#aded1ecf859b397258dcfa95d3d7cfc41" title="Starts the timer by setting the end time based on the current time plus the countdown duration." alt="" coords="506,64,605,90"/>
-<area shape="rect" href="class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="899,243,1039,268"/>
-<area shape="rect" href="class_display.html#aaa0ffb7318a45caa0b74d3d439e623f0" title="Clears a specific line in the terminal." alt="" coords="487,368,624,394"/>
+<area shape="rect" title="Updates the display based on the state of the provided Timer object." alt="" coords="5,308,145,333"/>
+<area shape="rect" href="class_display.html#abbc05f4af18fc8665a8022e795c2d574" title=" " alt="" coords="219,5,375,31"/>
+<area shape="rect" href="class_timer.html#a2ef50bfc604ea9fb88d3000c9ad0edd9" title="Checks if the timer is currently running." alt="" coords="231,55,363,80"/>
+<area shape="rect" href="class_timer.html#a97ab4bd97e34c2ce2b8afa7c993fbaec" title="Returns the percentage of time that has elapsed since the timer started." alt="" coords="213,156,381,181"/>
+<area shape="rect" href="class_timer.html#a330607659937f497389c9989812cd925" title="Returns the remaining time in milliseconds." alt="" coords="448,105,663,131"/>
+<area shape="rect" href="class_display.html#aab9a518037074ce68da2a7792771908d" title="Prints ASCII art to the terminal." alt="" coords="486,208,625,233"/>
+<area shape="rect" href="class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="711,309,851,335"/>
+<area shape="rect" href="class_display.html#a034871a688ea9c2cf5801d120b0cfcf6" title="Prints the progress bar to the terminal." alt="" coords="490,257,621,283"/>
+<area shape="rect" href="class_display.html#a3480427024243711ee66efc51ddf0fa3" title="Prints controls to the terminal." alt="" coords="474,359,637,384"/>
+<area shape="rect" href="class_display.html#a62d8435627ea69fbccaef4cef32d785d" title="Prints the splash screen to the terminal." alt="" coords="221,409,372,435"/>
+<area shape="rect" href="class_display.html#a83ed7e4a6928b93390e552ac6dbc9007" title=" " alt="" coords="225,459,369,484"/>
+<area shape="rect" href="class_display.html#a91e41747e83f0d8d53251811addd566e" title="Stages the progress bar for the timer." alt="" coords="209,508,384,533"/>
+<area shape="rect" href="class_display.html#af7327c3f58c211e500f4fff386f222e4" title="Stages the controls for the timer." alt="" coords="193,557,400,583"/>
+<area shape="rect" href="class_display.html#a02e23b9a142c52d7dfa0169c58c77e24" title="Stages the timer display with provided time values." alt="" coords="196,607,397,632"/>
+<area shape="rect" href="class_timer.html#aded1ecf859b397258dcfa95d3d7cfc41" title="Starts the timer by setting the end time based on the current time plus the countdown duration." alt="" coords="506,156,605,181"/>
+<area shape="rect" href="class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="899,335,1039,360"/>
+<area shape="rect" href="class_display.html#aaa0ffb7318a45caa0b74d3d439e623f0" title="Clears a specific line in the terminal." alt="" coords="487,460,624,485"/>
 </map>
 </div>
 <div class="dynheader">
@@ -2503,14 +2683,19 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  643</span> </div>
 <div class="line"><span class="lineno">  644</span>    <a class="code hl_function" href="class_display.html#a8a1135ceff6c3fb0a3a83dd694914f1f">stageTimerSetupControls</a>();</div>
 <div class="line"><span class="lineno">  645</span> </div>
-<div class="line"><span class="lineno">  646</span>    <a class="code hl_function" href="class_display.html#aab9a518037074ce68da2a7792771908d">printAscii</a>(1);</div>
-<div class="line"><span class="lineno">  647</span>    <a class="code hl_function" href="class_display.html#a3480427024243711ee66efc51ddf0fa3">printControls</a>(10);</div>
-<div class="line"><span class="lineno">  648</span> </div>
-<div class="line"><span class="lineno">  649</span>    <a class="code hl_function" href="class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3">setCursor</a>(1, 1);</div>
-<div class="line"><span class="lineno">  650</span>}</div>
+<div class="line"><span class="lineno">  646</span>    <a class="code hl_function" href="class_display.html#a83ed7e4a6928b93390e552ac6dbc9007">setFormat</a>(<span class="stringliteral">&quot;\033[1;37m&quot;</span>); <span class="comment">//Bold white</span></div>
+<div class="line"><span class="lineno">  647</span>    <a class="code hl_function" href="class_display.html#aab9a518037074ce68da2a7792771908d">printAscii</a>(1);</div>
+<div class="line"><span class="lineno">  648</span>    <a class="code hl_function" href="class_display.html#abbc05f4af18fc8665a8022e795c2d574">clearFormat</a>();</div>
+<div class="line"><span class="lineno">  649</span>    <a class="code hl_function" href="class_display.html#a83ed7e4a6928b93390e552ac6dbc9007">setFormat</a>(<span class="stringliteral">&quot;\033[37m&quot;</span>); <span class="comment">//White</span></div>
+<div class="line"><span class="lineno">  650</span>    <a class="code hl_function" href="class_display.html#a3480427024243711ee66efc51ddf0fa3">printControls</a>(10);</div>
+<div class="line"><span class="lineno">  651</span> </div>
+<div class="line"><span class="lineno">  652</span>    <a class="code hl_function" href="class_display.html#abbc05f4af18fc8665a8022e795c2d574">clearFormat</a>();</div>
+<div class="line"><span class="lineno">  653</span>    <a class="code hl_function" href="class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3">setCursor</a>(1,1);</div>
+<div class="line"><span class="lineno">  654</span> </div>
+<div class="line"><span class="lineno">  655</span>}</div>
 <div class="ttc" id="aclass_display_html_a8a1135ceff6c3fb0a3a83dd694914f1f"><div class="ttname"><a href="class_display.html#a8a1135ceff6c3fb0a3a83dd694914f1f">Display::stageTimerSetupControls</a></div><div class="ttdeci">void stageTimerSetupControls()</div><div class="ttdoc">Stages the controls for the timer setup to be displayed in the terminal.</div><div class="ttdef"><b>Definition:</b> <a href="_display_8cpp_source.html#l00437">Display.cpp:437</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00176">_asciiBuffer</a>, <a class="el" href="_display_8hpp_source.html#l00190">_asciiWidth</a>, <a class="el" href="_display_8cpp_source.html#l00005">ASCII_HEIGHT</a>, <a class="el" href="font1_8cpp_source.html#l00153">font1</a>, <a class="el" href="_display_8cpp_source.html#l00004">PADDING</a>, <a class="el" href="_display_8cpp_source.html#l00540">printAscii()</a>, <a class="el" href="_display_8cpp_source.html#l00555">printControls()</a>, <a class="el" href="_display_8cpp_source.html#l00059">setCursor()</a>, and <a class="el" href="_display_8cpp_source.html#l00437">stageTimerSetupControls()</a>.</p>
+<p class="reference">References <a class="el" href="_display_8hpp_source.html#l00181">_asciiBuffer</a>, <a class="el" href="_display_8hpp_source.html#l00198">_asciiWidth</a>, <a class="el" href="_display_8cpp_source.html#l00005">ASCII_HEIGHT</a>, <a class="el" href="_display_8cpp_source.html#l00838">clearFormat()</a>, <a class="el" href="font1_8cpp_source.html#l00153">font1</a>, <a class="el" href="_display_8cpp_source.html#l00004">PADDING</a>, <a class="el" href="_display_8cpp_source.html#l00540">printAscii()</a>, <a class="el" href="_display_8cpp_source.html#l00555">printControls()</a>, <a class="el" href="_display_8cpp_source.html#l00059">setCursor()</a>, <a class="el" href="_display_8cpp_source.html#l00831">setFormat()</a>, and <a class="el" href="_display_8cpp_source.html#l00437">stageTimerSetupControls()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00211">Menu::createTimer()</a>, and <a class="el" href="_display_test_8cpp_source.html#l00019">test_timer_setup()</a>.</p>
 <div class="dynheader">
@@ -2518,12 +2703,14 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_display_aae213ab2d8df542fbe9b58d526a47052_cgraph.png" border="0" usemap="#aclass_display_aae213ab2d8df542fbe9b58d526a47052_cgraph" alt=""/></div>
 <map name="aclass_display_aae213ab2d8df542fbe9b58d526a47052_cgraph" id="aclass_display_aae213ab2d8df542fbe9b58d526a47052_cgraph">
-<area shape="rect" title="Updates the timer setup display, showing the current input with a blinking cursor." alt="" coords="5,81,183,107"/>
-<area shape="rect" href="class_display.html#aab9a518037074ce68da2a7792771908d" title="Prints ASCII art to the terminal." alt="" coords="256,5,395,31"/>
-<area shape="rect" href="class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="468,56,608,81"/>
-<area shape="rect" href="class_display.html#a3480427024243711ee66efc51ddf0fa3" title="Prints controls to the terminal." alt="" coords="244,107,407,132"/>
-<area shape="rect" href="class_display.html#a8a1135ceff6c3fb0a3a83dd694914f1f" title="Stages the controls for the timer setup to be displayed in the terminal." alt="" coords="231,157,420,197"/>
-<area shape="rect" href="class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="656,56,796,81"/>
+<area shape="rect" title="Updates the timer setup display, showing the current input with a blinking cursor." alt="" coords="5,131,183,156"/>
+<area shape="rect" href="class_display.html#abbc05f4af18fc8665a8022e795c2d574" title=" " alt="" coords="247,5,403,31"/>
+<area shape="rect" href="class_display.html#aab9a518037074ce68da2a7792771908d" title="Prints ASCII art to the terminal." alt="" coords="256,55,395,80"/>
+<area shape="rect" href="class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="468,105,608,131"/>
+<area shape="rect" href="class_display.html#a3480427024243711ee66efc51ddf0fa3" title="Prints controls to the terminal." alt="" coords="244,156,407,181"/>
+<area shape="rect" href="class_display.html#a83ed7e4a6928b93390e552ac6dbc9007" title=" " alt="" coords="253,205,397,231"/>
+<area shape="rect" href="class_display.html#a8a1135ceff6c3fb0a3a83dd694914f1f" title="Stages the controls for the timer setup to be displayed in the terminal." alt="" coords="231,255,420,295"/>
+<area shape="rect" href="class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="656,105,796,131"/>
 </map>
 </div>
 <div class="dynheader">
@@ -2569,9 +2756,9 @@ Here is the caller graph for this function:</div>
 
 <p>Buffer for ASCII art. </p>
 
-<p class="definition">Definition at line <a class="el" href="_display_8hpp_source.html#l00176">176</a> of file <a class="el" href="_display_8hpp_source.html">Display.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_display_8hpp_source.html#l00181">181</a> of file <a class="el" href="_display_8hpp_source.html">Display.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00017">Display()</a>, <a class="el" href="_display_8cpp_source.html#l00540">printAscii()</a>, <a class="el" href="_display_8cpp_source.html#l00169">stageAlarmDisplay()</a>, <a class="el" href="_display_8cpp_source.html#l00339">stageStopwatchDisplay()</a>, <a class="el" href="_display_8cpp_source.html#l00108">stageTimerDisplay()</a>, <a class="el" href="_display_8cpp_source.html#l00656">tickAlarmSetup()</a>, and <a class="el" href="_display_8cpp_source.html#l00615">tickTimerSetup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00017">Display()</a>, <a class="el" href="_display_8cpp_source.html#l00540">printAscii()</a>, <a class="el" href="_display_8cpp_source.html#l00169">stageAlarmDisplay()</a>, <a class="el" href="_display_8cpp_source.html#l00339">stageStopwatchDisplay()</a>, <a class="el" href="_display_8cpp_source.html#l00108">stageTimerDisplay()</a>, <a class="el" href="_display_8cpp_source.html#l00661">tickAlarmSetup()</a>, and <a class="el" href="_display_8cpp_source.html#l00615">tickTimerSetup()</a>.</p>
 
 </div>
 </div>
@@ -2597,9 +2784,9 @@ Here is the caller graph for this function:</div>
 
 <p>Width of the ASCII art. </p>
 
-<p class="definition">Definition at line <a class="el" href="_display_8hpp_source.html#l00190">190</a> of file <a class="el" href="_display_8hpp_source.html">Display.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_display_8hpp_source.html#l00198">198</a> of file <a class="el" href="_display_8hpp_source.html">Display.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00017">Display()</a>, <a class="el" href="_display_8cpp_source.html#l00278">stageAlarmBar()</a>, <a class="el" href="_display_8cpp_source.html#l00169">stageAlarmDisplay()</a>, <a class="el" href="_display_8cpp_source.html#l00238">stageTimerBar()</a>, <a class="el" href="_display_8cpp_source.html#l00108">stageTimerDisplay()</a>, <a class="el" href="_display_8cpp_source.html#l00656">tickAlarmSetup()</a>, and <a class="el" href="_display_8cpp_source.html#l00615">tickTimerSetup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00017">Display()</a>, <a class="el" href="_display_8cpp_source.html#l00278">stageAlarmBar()</a>, <a class="el" href="_display_8cpp_source.html#l00169">stageAlarmDisplay()</a>, <a class="el" href="_display_8cpp_source.html#l00238">stageTimerBar()</a>, <a class="el" href="_display_8cpp_source.html#l00108">stageTimerDisplay()</a>, <a class="el" href="_display_8cpp_source.html#l00661">tickAlarmSetup()</a>, and <a class="el" href="_display_8cpp_source.html#l00615">tickTimerSetup()</a>.</p>
 
 </div>
 </div>
@@ -2625,7 +2812,7 @@ Here is the caller graph for this function:</div>
 
 <p>Buffer for progress bar. </p>
 
-<p class="definition">Definition at line <a class="el" href="_display_8hpp_source.html#l00177">177</a> of file <a class="el" href="_display_8hpp_source.html">Display.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_display_8hpp_source.html#l00182">182</a> of file <a class="el" href="_display_8hpp_source.html">Display.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00017">Display()</a>, <a class="el" href="_display_8cpp_source.html#l00570">printBar()</a>, <a class="el" href="_display_8cpp_source.html#l00278">stageAlarmBar()</a>, and <a class="el" href="_display_8cpp_source.html#l00238">stageTimerBar()</a>.</p>
 
@@ -2653,7 +2840,7 @@ Here is the caller graph for this function:</div>
 
 <p>Buffer for controls. </p>
 
-<p class="definition">Definition at line <a class="el" href="_display_8hpp_source.html#l00178">178</a> of file <a class="el" href="_display_8hpp_source.html">Display.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_display_8hpp_source.html#l00183">183</a> of file <a class="el" href="_display_8hpp_source.html">Display.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00017">Display()</a>, <a class="el" href="_display_8cpp_source.html#l00555">printControls()</a>, <a class="el" href="_display_8cpp_source.html#l00461">stageAlarmControls()</a>, <a class="el" href="_display_8cpp_source.html#l00449">stageAlarmSetupControls()</a>, <a class="el" href="_display_8cpp_source.html#l00426">stageStopwatchControls()</a>, <a class="el" href="_display_8cpp_source.html#l00318">stageTimerControls()</a>, and <a class="el" href="_display_8cpp_source.html#l00437">stageTimerSetupControls()</a>.</p>
 
@@ -2681,9 +2868,35 @@ Here is the caller graph for this function:</div>
 
 <p>Name of font used for loading. </p>
 
-<p class="definition">Definition at line <a class="el" href="_display_8hpp_source.html#l00188">188</a> of file <a class="el" href="_display_8hpp_source.html">Display.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_display_8hpp_source.html#l00193">193</a> of file <a class="el" href="_display_8hpp_source.html">Display.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00017">Display()</a>.</p>
+
+</div>
+</div>
+<a id="a6343ea539f7abb19103066ccd3e29061" name="a6343ea539f7abb19103066ccd3e29061"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6343ea539f7abb19103066ccd3e29061">&#9670;&#160;</a></span>_formatting</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Display::_formatting</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_display_8hpp_source.html#l00195">195</a> of file <a class="el" href="_display_8hpp_source.html">Display.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00838">clearFormat()</a>, <a class="el" href="_display_8cpp_source.html#l00540">printAscii()</a>, <a class="el" href="_display_8cpp_source.html#l00570">printBar()</a>, <a class="el" href="_display_8cpp_source.html#l00555">printControls()</a>, <a class="el" href="_display_8cpp_source.html#l00585">printSplash()</a>, <a class="el" href="_display_8cpp_source.html#l00600">printSplits()</a>, and <a class="el" href="_display_8cpp_source.html#l00831">setFormat()</a>.</p>
 
 </div>
 </div>
@@ -2709,7 +2922,7 @@ Here is the caller graph for this function:</div>
 
 <p>Previous ASCII art for comparison. </p>
 
-<p class="definition">Definition at line <a class="el" href="_display_8hpp_source.html#l00182">182</a> of file <a class="el" href="_display_8hpp_source.html">Display.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_display_8hpp_source.html#l00187">187</a> of file <a class="el" href="_display_8hpp_source.html">Display.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00042">clearScreen()</a>, <a class="el" href="_display_8cpp_source.html#l00017">Display()</a>, and <a class="el" href="_display_8cpp_source.html#l00540">printAscii()</a>.</p>
 
@@ -2737,7 +2950,7 @@ Here is the caller graph for this function:</div>
 
 <p>Previous progress bar for comparison. </p>
 
-<p class="definition">Definition at line <a class="el" href="_display_8hpp_source.html#l00184">184</a> of file <a class="el" href="_display_8hpp_source.html">Display.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_display_8hpp_source.html#l00189">189</a> of file <a class="el" href="_display_8hpp_source.html">Display.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00042">clearScreen()</a>, and <a class="el" href="_display_8cpp_source.html#l00570">printBar()</a>.</p>
 
@@ -2765,9 +2978,35 @@ Here is the caller graph for this function:</div>
 
 <p>Previous controls for comparison. </p>
 
-<p class="definition">Definition at line <a class="el" href="_display_8hpp_source.html#l00183">183</a> of file <a class="el" href="_display_8hpp_source.html">Display.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_display_8hpp_source.html#l00188">188</a> of file <a class="el" href="_display_8hpp_source.html">Display.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00042">clearScreen()</a>, <a class="el" href="_display_8cpp_source.html#l00017">Display()</a>, and <a class="el" href="_display_8cpp_source.html#l00555">printControls()</a>.</p>
+
+</div>
+</div>
+<a id="a1310572c232ae48e49e388a734bb5399" name="a1310572c232ae48e49e388a734bb5399"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1310572c232ae48e49e388a734bb5399">&#9670;&#160;</a></span>_oldFormatting</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Display::_oldFormatting</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_display_8hpp_source.html#l00196">196</a> of file <a class="el" href="_display_8hpp_source.html">Display.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00838">clearFormat()</a>, <a class="el" href="_display_8cpp_source.html#l00540">printAscii()</a>, <a class="el" href="_display_8cpp_source.html#l00570">printBar()</a>, <a class="el" href="_display_8cpp_source.html#l00555">printControls()</a>, <a class="el" href="_display_8cpp_source.html#l00585">printSplash()</a>, <a class="el" href="_display_8cpp_source.html#l00600">printSplits()</a>, and <a class="el" href="_display_8cpp_source.html#l00831">setFormat()</a>.</p>
 
 </div>
 </div>
@@ -2793,7 +3032,7 @@ Here is the caller graph for this function:</div>
 
 <p>Previous splash screen for comparison. </p>
 
-<p class="definition">Definition at line <a class="el" href="_display_8hpp_source.html#l00185">185</a> of file <a class="el" href="_display_8hpp_source.html">Display.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_display_8hpp_source.html#l00190">190</a> of file <a class="el" href="_display_8hpp_source.html">Display.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00042">clearScreen()</a>, <a class="el" href="_display_8cpp_source.html#l00017">Display()</a>, and <a class="el" href="_display_8cpp_source.html#l00585">printSplash()</a>.</p>
 
@@ -2821,7 +3060,7 @@ Here is the caller graph for this function:</div>
 
 <p>Previous splits for comparison. </p>
 
-<p class="definition">Definition at line <a class="el" href="_display_8hpp_source.html#l00186">186</a> of file <a class="el" href="_display_8hpp_source.html">Display.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_display_8hpp_source.html#l00191">191</a> of file <a class="el" href="_display_8hpp_source.html">Display.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00017">Display()</a>, and <a class="el" href="_display_8cpp_source.html#l00600">printSplits()</a>.</p>
 
@@ -2849,7 +3088,7 @@ Here is the caller graph for this function:</div>
 
 <p><a class="el" href="class_string.html">String</a> for splash screen. </p>
 
-<p class="definition">Definition at line <a class="el" href="_display_8hpp_source.html#l00180">180</a> of file <a class="el" href="_display_8hpp_source.html">Display.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_display_8hpp_source.html#l00185">185</a> of file <a class="el" href="_display_8hpp_source.html">Display.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00092">clearSplash()</a>, <a class="el" href="_display_8cpp_source.html#l00017">Display()</a>, <a class="el" href="_display_8cpp_source.html#l00585">printSplash()</a>, and <a class="el" href="_display_8cpp_source.html#l00084">setSplash()</a>.</p>
 
@@ -2877,7 +3116,7 @@ Here is the caller graph for this function:</div>
 
 <p>Buffer for the splits block. </p>
 
-<p class="definition">Definition at line <a class="el" href="_display_8hpp_source.html#l00179">179</a> of file <a class="el" href="_display_8hpp_source.html">Display.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_display_8hpp_source.html#l00184">184</a> of file <a class="el" href="_display_8hpp_source.html">Display.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_display_8cpp_source.html#l00017">Display()</a>, <a class="el" href="_display_8cpp_source.html#l00600">printSplits()</a>, and <a class="el" href="_display_8cpp_source.html#l00472">stageStopwatchSplits()</a>.</p>
 
@@ -2890,7 +3129,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 19 2024 10:51:43 for Tempo by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+Generated on Thu Sep 19 2024 11:35:47 for Tempo by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
 </small></address>
 </body>
 </html>

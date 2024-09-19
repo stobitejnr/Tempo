@@ -1,19 +1,21 @@
 <map id="Menu::checkTimerInput" name="Menu::checkTimerInput">
-<area shape="rect" id="node1" title="Checks and handles user input for the Timer." alt="" coords="5,208,180,234"/>
-<area shape="rect" id="node2" href="$class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62" title="Clears the terminal screen." alt="" coords="502,8,657,34"/>
-<area shape="rect" id="node4" href="$class_display.html#ad226aa44204137c5a8fe774967532af4" title="Clears the splash screen." alt="" coords="259,59,412,84"/>
-<area shape="rect" id="node5" href="$class_menu.html#a1a90c9e670b33e2c9aaddc01f47b3b88" title="Creates a new Timer object based on user input." alt="" coords="263,108,408,134"/>
-<area shape="rect" id="node12" href="$class_timer.html#a2ef50bfc604ea9fb88d3000c9ad0edd9" title="Checks if the timer is currently running." alt="" coords="269,158,401,183"/>
-<area shape="rect" id="node13" href="$class_timer.html#a0289effad7b573c508bc27e405900a23" title="Pauses the timer and calculates the remaining milliseconds." alt="" coords="526,258,633,283"/>
-<area shape="rect" id="node14" href="$class_timer.html#a330607659937f497389c9989812cd925" title="Returns the remaining time in milliseconds." alt="" coords="228,259,443,284"/>
-<area shape="rect" id="node15" href="$class_timer.html#a9020542d73357a4eef512eefaf57524b" title="Resets the timer to its original duration and pauses it." alt="" coords="285,308,386,334"/>
-<area shape="rect" id="node16" href="$class_timer.html#a4ac55a73bb3431db9d4d2fd70ae9a2e8" title="Resumes the timer from where it was paused by recalculating the end time." alt="" coords="277,358,394,383"/>
-<area shape="rect" id="node17" href="$class_display.html#a3a0e77e68157e55d67ac3f28dffdd00c" title="Sets the splash screen text." alt="" coords="265,407,406,432"/>
-<area shape="rect" id="node3" href="$class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="1141,83,1281,108"/>
-<area shape="rect" id="node6" href="$class_display.html#aae213ab2d8df542fbe9b58d526a47052" title="Updates the timer setup display, showing the current input with a blinking cursor." alt="" coords="491,108,668,134"/>
-<area shape="rect" id="node11" href="$class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="532,158,627,183"/>
-<area shape="rect" id="node7" href="$class_display.html#aab9a518037074ce68da2a7792771908d" title="Prints ASCII art to the terminal." alt="" coords="741,58,880,83"/>
-<area shape="rect" id="node8" href="$class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="953,108,1093,134"/>
-<area shape="rect" id="node9" href="$class_display.html#a3480427024243711ee66efc51ddf0fa3" title="Prints controls to the terminal." alt="" coords="729,159,892,184"/>
-<area shape="rect" id="node10" href="$class_display.html#a8a1135ceff6c3fb0a3a83dd694914f1f" title="Stages the controls for the timer setup to be displayed in the terminal." alt="" coords="716,209,905,249"/>
+<area shape="rect" id="node1" title="Checks and handles user input for the Timer." alt="" coords="5,226,180,252"/>
+<area shape="rect" id="node2" href="$class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62" title="Clears the terminal screen." alt="" coords="502,26,657,52"/>
+<area shape="rect" id="node4" href="$class_display.html#ad226aa44204137c5a8fe774967532af4" title="Clears the splash screen." alt="" coords="259,77,412,102"/>
+<area shape="rect" id="node5" href="$class_menu.html#a1a90c9e670b33e2c9aaddc01f47b3b88" title="Creates a new Timer object based on user input." alt="" coords="263,126,408,152"/>
+<area shape="rect" id="node14" href="$class_timer.html#a2ef50bfc604ea9fb88d3000c9ad0edd9" title="Checks if the timer is currently running." alt="" coords="269,176,401,201"/>
+<area shape="rect" id="node15" href="$class_timer.html#a0289effad7b573c508bc27e405900a23" title="Pauses the timer and calculates the remaining milliseconds." alt="" coords="526,276,633,301"/>
+<area shape="rect" id="node16" href="$class_timer.html#a330607659937f497389c9989812cd925" title="Returns the remaining time in milliseconds." alt="" coords="228,277,443,302"/>
+<area shape="rect" id="node17" href="$class_timer.html#a9020542d73357a4eef512eefaf57524b" title="Resets the timer to its original duration and pauses it." alt="" coords="285,326,386,352"/>
+<area shape="rect" id="node18" href="$class_timer.html#a4ac55a73bb3431db9d4d2fd70ae9a2e8" title="Resumes the timer from where it was paused by recalculating the end time." alt="" coords="277,376,394,401"/>
+<area shape="rect" id="node19" href="$class_display.html#a3a0e77e68157e55d67ac3f28dffdd00c" title="Sets the splash screen text." alt="" coords="265,425,406,450"/>
+<area shape="rect" id="node3" href="$class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="1141,101,1281,126"/>
+<area shape="rect" id="node6" href="$class_display.html#aae213ab2d8df542fbe9b58d526a47052" title="Updates the timer setup display, showing the current input with a blinking cursor." alt="" coords="491,126,668,152"/>
+<area shape="rect" id="node13" href="$class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="532,176,627,201"/>
+<area shape="rect" id="node7" href="$class_display.html#abbc05f4af18fc8665a8022e795c2d574" title=" " alt="" coords="733,26,889,52"/>
+<area shape="rect" id="node8" href="$class_display.html#aab9a518037074ce68da2a7792771908d" title="Prints ASCII art to the terminal." alt="" coords="741,76,880,101"/>
+<area shape="rect" id="node9" href="$class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="953,126,1093,152"/>
+<area shape="rect" id="node10" href="$class_display.html#a3480427024243711ee66efc51ddf0fa3" title="Prints controls to the terminal." alt="" coords="729,177,892,202"/>
+<area shape="rect" id="node11" href="$class_display.html#a83ed7e4a6928b93390e552ac6dbc9007" title=" " alt="" coords="739,226,883,252"/>
+<area shape="rect" id="node12" href="$class_display.html#a8a1135ceff6c3fb0a3a83dd694914f1f" title="Stages the controls for the timer setup to be displayed in the terminal." alt="" coords="716,276,905,316"/>
 </map>

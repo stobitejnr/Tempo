@@ -1,19 +1,20 @@
 <map id="include/Menu.hpp" name="include/Menu.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="272,5,409,31"/>
-<area shape="rect" id="node2" href="$_timer_8hpp.html" title=" " alt="" coords="24,152,111,177"/>
-<area shape="rect" id="node4" title=" " alt="" coords="109,225,189,251"/>
-<area shape="rect" id="node5" href="$_stopwatch_8hpp.html" title=" " alt="" coords="187,152,305,177"/>
-<area shape="rect" id="node7" href="$_alarm_8hpp.html" title=" " alt="" coords="680,152,769,177"/>
-<area shape="rect" id="node12" href="$_display_8hpp.html" title=" " alt="" coords="292,79,389,104"/>
-<area shape="rect" id="node16" title=" " alt="" coords="465,79,534,104"/>
-<area shape="rect" id="node17" title=" " alt="" coords="559,79,624,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="213,225,279,251"/>
-<area shape="rect" id="node6" title=" " alt="" coords="312,225,375,251"/>
-<area shape="rect" id="node8" title=" " alt="" coords="607,225,671,251"/>
-<area shape="rect" id="node9" title=" " alt="" coords="695,225,754,251"/>
-<area shape="rect" id="node10" title=" " alt="" coords="778,225,853,251"/>
-<area shape="rect" id="node11" title=" " alt="" coords="877,225,951,251"/>
-<area shape="rect" id="node13" href="$font1_8hpp.html" title=" " alt="" coords="381,152,514,177"/>
-<area shape="rect" id="node15" title=" " alt="" coords="538,152,605,177"/>
-<area shape="rect" id="node14" title=" " alt="" coords="418,225,477,251"/>
+<area shape="rect" id="node1" title=" " alt="" coords="227,5,364,31"/>
+<area shape="rect" id="node2" href="$_timer_8hpp.html" title=" " alt="" coords="23,152,109,177"/>
+<area shape="rect" id="node4" title=" " alt="" coords="26,225,106,251"/>
+<area shape="rect" id="node5" href="$_stopwatch_8hpp.html" title=" " alt="" coords="185,152,304,177"/>
+<area shape="rect" id="node7" href="$_alarm_8hpp.html" title=" " alt="" coords="328,152,417,177"/>
+<area shape="rect" id="node12" href="$_display_8hpp.html" title=" " alt="" coords="333,79,431,104"/>
+<area shape="rect" id="node17" title=" " alt="" coords="455,79,525,104"/>
+<area shape="rect" id="node18" title=" " alt="" coords="549,79,615,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="130,225,197,251"/>
+<area shape="rect" id="node6" title=" " alt="" coords="589,225,652,251"/>
+<area shape="rect" id="node8" title=" " alt="" coords="501,225,565,251"/>
+<area shape="rect" id="node9" title=" " alt="" coords="221,225,279,251"/>
+<area shape="rect" id="node10" title=" " alt="" coords="303,225,378,251"/>
+<area shape="rect" id="node11" title=" " alt="" coords="402,225,477,251"/>
+<area shape="rect" id="node13" href="$font1_8hpp.html" title=" " alt="" coords="701,152,834,177"/>
+<area shape="rect" id="node15" href="$font2_8hpp.html" title=" " alt="" coords="543,152,677,177"/>
+<area shape="rect" id="node16" title=" " alt="" coords="858,152,925,177"/>
+<area shape="rect" id="node14" title=" " alt="" coords="707,225,766,251"/>
 </map>
