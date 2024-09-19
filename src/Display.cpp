@@ -832,6 +832,7 @@ auto Display::fast_print(const std::basic_string<char_type> &sss) -> void
 void Display::setFormat(const std::string& code) {
     _oldFormatting = _formatting;
     _formatting = code;
+    cout << code;
 }
 
 void Display::clearFormat(){
