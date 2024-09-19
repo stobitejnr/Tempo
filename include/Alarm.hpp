@@ -18,6 +18,9 @@ public:
     chrono::time_point<chrono::system_clock> stringToTime(string s);
     string timeToString(chrono::time_point<chrono::system_clock> t);
 
+    chrono::time_point<chrono::system_clock> getStartTime();
+    chrono::time_point<chrono::system_clock> getEndTime();
+
     static chrono::time_point<chrono::system_clock> currentTime();
 
     void start();           
@@ -25,6 +28,9 @@ public:
     bool isDone();   
 
     int remainingMilliseconds();
+
+
+    double percentElapsed();
 
 private:
 

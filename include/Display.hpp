@@ -57,6 +57,8 @@ public:
      */
     void stageTimerDisplay(int hours, int minutes, int seconds, int tenths);
 
+    void stageAlarmDisplay(string time);
+
     /**
      * @brief Stages the controls for the timer.
      */
@@ -67,6 +69,8 @@ public:
      * @param percentage The percentage of the timer's progress to display.
      */
     void stageTimerBar(double percentage);
+
+    void stageAlarmBar(double percentage);
 
     /**
      * @brief Stages the stopwatch display with provided time values.
@@ -176,7 +180,7 @@ private:
     string _oldSplash;   ///< Previous splash screen for comparison.
     string _oldSplits;   ///< Previous splits for comparison.
 
-    string _fontName;   ///< Name of font used for loading.
+    string _font;   ///< Name of font used for loading.
 
     int _asciiWidth; ///< Width of the ASCII art.
 };

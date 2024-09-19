@@ -260,6 +260,7 @@ Alarm Menu::createAlarm(){
         h = stoi(input.substr(0, 2));
         m = stoi(input.substr(2, 2));
 
+        /*
         // Ensure the hours are between 0 and 23, and minutes are between 0 and 59
         if (h > 23) {
             h = 23;  // Limit the hours to 23
@@ -270,6 +271,7 @@ Alarm Menu::createAlarm(){
             m = 59;  // Limit the minutes to 59
             input = input.substr(0, 2) + "59";  // Update the input to reflect this
         }
+        */
 
         to_print = (h < 10 ? "0" : "") + to_string(h) + ":" 
                  + (m < 10 ? "0" : "") + to_string(m);
@@ -429,7 +431,21 @@ void Menu::checkAlarmInput(Alarm& alarm, bool& run){
     if(_kbhit()){
         char ch = _getch();
         switch(ch){
+            case 'A':
+            case 'a':
+                _display.clearScreen();
+                _display.clearSplash();
+                alarm = createAlarm();
+                break;
+            case 'Q':
+            case 'q':
+                _display.clearSplash();
+                run = false;
+                return;
             default:
+                if(!run){
+                    return;
+                }
                 break;
         }
     }

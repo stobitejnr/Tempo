@@ -41,11 +41,43 @@ string Alarm::timeToString(chrono::time_point<chrono::system_clock> t) {
 
 }
 
+double Alarm::percentElapsed() {
+    // Total duration between the start and end time in milliseconds
+    auto totalMilliseconds = chrono::duration_cast<chrono::milliseconds>(_endTime - _startTime).count();
+    
+    // If the total time is zero (which shouldn't happen unless start and end times are equal), return 100% immediately
+    if (totalMilliseconds == 0) {
+        return 100.0;
+    }
+
+    // Calculate the elapsed time since the alarm started
+    auto now = currentTime();
+    auto elapsedMilliseconds = chrono::duration_cast<chrono::milliseconds>(now - _startTime).count();
+
+    // Ensure we don't return more than 100% if the current time is after the alarm end time
+    if (elapsedMilliseconds >= totalMilliseconds) {
+        return 100.0;
+    }
+
+    // Calculate the percentage of time elapsed
+    double percentage = (static_cast<double>(elapsedMilliseconds) / totalMilliseconds) * 100.0;
+    return percentage;
+}
+
+
 
 int Alarm::remainingMilliseconds() {
     auto now = currentTime();
     auto ms = chrono::duration_cast<chrono::milliseconds>(_endTime - now).count();
     return ms;
+}
+
+chrono::time_point<chrono::system_clock> Alarm::getStartTime(){
+    return _startTime;
+}
+
+chrono::time_point<chrono::system_clock> Alarm::getEndTime(){
+    return _endTime;
 }
 
 bool Alarm::isDone(){

@@ -27,7 +27,7 @@ Display::Display()
     _oldSplash = "";
     _oldSplits = "";
 
-    _fontName = "font1";
+    _font = "font1";
 
     _asciiWidth = 0;
 }
@@ -162,6 +162,72 @@ void Display::stageTimerDisplay(int hours, int minutes, int seconds, int tenths)
     }
 }
 
+
+void Display::stageAlarmDisplay(string time){
+
+    string to_print = "";
+
+    int hours = stoi(time.substr(0,2));
+    int minutes = stoi(time.substr(3,2));
+
+    // Determine AM/PM and convert 24-hour format to 12-hour format
+    string period = (hours >= 12) ? "pm" : "am";
+    hours = hours % 12; // Convert 24-hour to 12-hour format
+    if (hours == 0) { hours = 12; } // Handle the case where hour is 0 (midnight or noon)
+
+    to_print += to_string(hours) + ":";
+
+    // Add leading zero to minutes if needed
+    if (int(minutes / 10) != 0)
+    {
+        to_print += to_string(minutes);
+    }
+    else
+    {
+        to_print += "0" + to_string(minutes);
+    }
+
+    // Add " am" or " pm"
+    to_print += period;
+
+
+    // Build the ASCII art for the alarm display
+    for (int i = 0; i < ASCII_HEIGHT; i++)
+    {
+        string line;
+        for (char ch : to_print)
+        {
+            if (ch == ':')
+            {
+                line += font1.at(10)[i];
+                line += PADDING;
+            }
+            else if (ch == 'a')
+            {
+                line += font1.at(12)[i];
+                line += PADDING;
+            }
+            else if (ch == 'p')
+            {
+                line += font1.at(13)[i];
+                line += PADDING;
+            }
+            else if (ch == 'm')
+            {
+                line += font1.at(14)[i];
+                line += PADDING;
+            }
+            else
+            {
+                line += font1.at(ch - '0')[i];
+                line += PADDING;
+            }
+        }
+        _asciiWidth = line.length();
+        _asciiBuffer += (line + "\n");
+    }
+}
+
 /**
  * @brief Creates a visual progress bar for the timer based on the percentage completed.
  * @param percentage The percentage of completion.
@@ -200,6 +266,43 @@ void Display::stageTimerBar(double percentage)
 
     _barBuffer += "|\n";
     _barBuffer += border;
+}
+
+void Display::stageAlarmBar(double percentage)
+{
+    int width = _asciiWidth - 2;
+    int filled = (int)((percentage / 100) * width);
+
+    string border = "";
+
+    // Build the top and bottom borders of the bar
+    border += "+";
+    for (int i = 0; i < width; ++i)
+    {
+        border += "-";
+    }
+    border += "+\n";
+
+    _barBuffer += border;
+
+    _barBuffer += "|";
+
+    // Fill the bar with '#' characters based on the percentage completed
+    for (int i = 0; i < width; ++i)
+    {
+        if (i < filled)
+        {
+            _barBuffer += "#";
+        }
+        else
+        {
+            _barBuffer += " ";
+        }
+    }
+
+    _barBuffer += "|\n";
+    _barBuffer += border;
+    
 }
 
 /**
@@ -569,8 +672,8 @@ void Display::tickTimer(Timer &timer)
  * @brief Updates the stopwatch display on each tick, converting time into ASCII and updating the terminal.
  * @param stopwatch The Stopwatch object to get the current time from.
  */
-void Display::tickStopwatch(Stopwatch &stopwatch)
-{
+void Display::tickStopwatch(Stopwatch &stopwatch){
+    
     int milliseconds = stopwatch.currentMilliseconds();
 
     int hours = milliseconds / 3600000;
@@ -590,25 +693,25 @@ void Display::tickStopwatch(Stopwatch &stopwatch)
     printSplash(14);
     printSplits(16);
     setCursor(15,1);
+
 }
 
-void Display::tickAlarm(Alarm &alarm)
-{
-    string time = alarm.timeToString(Alarm::currentTime());
+void Display::tickAlarm(Alarm &alarm){
 
-    cout << time << endl;
-    cout << alarm.remainingMilliseconds();
+    string time = alarm.timeToString(alarm.getEndTime()).substr(0,5);
 
-    printSplash(4);
+    stageAlarmDisplay(time);
+    stageAlarmBar(alarm.percentElapsed());
+
+    printAscii(1);
+    printBar(10);
+    printSplash(14);
     
-    setCursor(1,1);
+    setCursor(17,1);
 
     return;
-}
 
-/* =========================================================
-FAST PRINTING HELPER
-========================================================= */
+}
 
 /**
  * @brief Prints a string to the console efficiently using the Windows API.
