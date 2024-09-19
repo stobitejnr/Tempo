@@ -1,5 +1,6 @@
 ![Logo](Logo%20(Mid).png)
-# Tempo
+# Tempo (Beta Release)
+
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/8b2c325c2cc14f8c83427c59c616a839)](https://app.codacy.com/gh/stobitejnr/Tempo/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![Codecov Coverage Report](https://github.com/stobitejnr/Tempo/actions/workflows/codecov.yml/badge.svg)](https://github.com/stobitejnr/Tempo/actions/workflows/codecov.yml)
 [![CMake Build](https://github.com/stobitejnr/Tempo/actions/workflows/cmake.yml/badge.svg)](https://github.com/stobitejnr/Tempo/actions/workflows/cmake.yml)
@@ -16,6 +17,11 @@ A versatile command-line application that allows users to create and manage time
 
 ![Team Image](team.webp)
 
+## Beta Changes
+1. Added a new feature: Alarm
+2. Added color to the interface
+3. Upgraded code coverage
+
 ## Feature
 
 1. **Timer**: Set custom countdown timers with precise control.
@@ -28,6 +34,11 @@ A versatile command-line application that allows users to create and manage time
    - Start, pause, and resume functionality
    - Reset stopwatch
    - Create split times
+
+3. **Alarm**: Set alarms to notify you at a specific time.
+   - Set alarm time
+   - Start alarm
+   - Notify user
 
 3. **User-friendly Interface**:
    - ASCII art time display
@@ -47,20 +58,23 @@ A versatile command-line application that allows users to create and manage time
 
    ![Start up](startup.png)
 
-   The alarm feature is currently under development and is not available.
+   Press any button to continue.
 
-2. Use the number keys to select a function or 'Q' to quit.
+2. Then you will see this menu:
+
+   ![Main Menu](menu.png)
+
+   Use the number keys to select a function or 'Q' to quit.
 3. Follow the on-screen instructions to control each feature.
 
 ## Requirements
-
 - C++ compiler with C++11 support
 - Windows operating system (due to use of Windows-specific libraries)
 
 ## Future Enhancements
-
-- Implement Alarm functionality
+- Add Windows notifications for completed timers and alarms
 - Add sound notifications
+- Add options menu with customizable fonts
 - Expand platform support beyond Windows
 
 ## Contributions
