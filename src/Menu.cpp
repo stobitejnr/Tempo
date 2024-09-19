@@ -23,21 +23,22 @@ void Menu::start(){
     _display.clearScreen();
 
     string lBuffer = "                ";
-    cout << "\033[1;36m";
+    _display.setFormat("\033[1;36m");
 
     for (string line : _logoArt){
         cout << line << endl;
     }
 
-    cout << "\033[0m";
-    cout << "\033[37m";
+    _display.clearFormat();
+    _display.setFormat("\033[37m");
 
     cout << endl;
 
     for (string line : _credits){
         cout << lBuffer << line << endl;
     }
-    cout << "\033[0m";
+
+    _display.clearFormat();
 
     _display.setCursor(1,1);
     
@@ -59,21 +60,20 @@ void Menu::mainMenu() {
 
     _display.clearScreen();
 
-    cout << "\033[1;36m";
-
+    _display.setFormat("\033[1;36m");
 
     for (string line : _menuArt){
         cout << "" << line << endl;
     }
 
-    cout << "\033[0m";
-    cout << "\033[1;37m";
+    _display.clearFormat();
+    _display.setFormat("\033[1;37m");
 
     for (string line : _menuOptions){
         cout << "" << line << endl;
     }
 
-    cout << "\033[0m";
+    _display.clearFormat();
 
     if(_testing){
         timerSequence();

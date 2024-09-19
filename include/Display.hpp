@@ -6,6 +6,7 @@
 #include "Alarm.hpp"
 
 #include "../fonts/font1.hpp"
+#include "../fonts/font2.hpp"
 
 #include <cstring>
 #include <iostream>
@@ -150,6 +151,10 @@ public:
      */
     void clearScreen();
 
+    void setFormat(string code);
+
+    void clearFormat();
+
     /**
      * @brief Sets the cursor position in the terminal.
      * @param x The x-coordinate (column) to move the cursor to.
@@ -186,6 +191,9 @@ private:
     string _oldSplits;   ///< Previous splits for comparison.
 
     string _font;   ///< Name of font used for loading.
+
+    string _formatting;
+    string _oldFormatting;
 
     int _asciiWidth; ///< Width of the ASCII art.
 };
