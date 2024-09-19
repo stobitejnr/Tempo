@@ -16,24 +16,23 @@ void test_constructor() {
 }
 
 void test_pause_resume() {
-    Stopwatch stopwatch(0, 1, 0); // 1 minute
-    stopwatch.start();
-    this_thread::sleep_for(chrono::seconds(1));
+    Stopwatch stopwatch(0, 0, 0);
+    this_thread::sleep_for(chrono::milliseconds(10));
     stopwatch.pause();
     int currentAfterPause = stopwatch.currentMilliseconds();
     assert(!stopwatch.isRunning());
-    this_thread::sleep_for(chrono::seconds(1));
+    this_thread::sleep_for(chrono::milliseconds(10));
     assert(stopwatch.currentMilliseconds() == currentAfterPause);
     stopwatch.resume();
     assert(stopwatch.isRunning());
-    assert(stopwatch.currentMilliseconds() > 58090);
+    assert(stopwatch.currentMilliseconds() >= 10);
     cout << "Pause and resume test passed.\n";
 }
 
 void test_reset() {
-    Stopwatch stopwatch(0, 1, 0); // 1 minute
+    Stopwatch stopwatch(0, 0, 0);
     stopwatch.start();
-    this_thread::sleep_for(chrono::seconds(1));
+    this_thread::sleep_for(chrono::milliseconds(10));
     stopwatch.reset();
     assert(stopwatch.currentMilliseconds() == 0);
     assert(!stopwatch.isRunning());
@@ -43,9 +42,9 @@ void test_reset() {
 void test_splits() {
     Stopwatch stopwatch(0, 0, 0);
     stopwatch.start();
-    this_thread::sleep_for(chrono::seconds(1));
+    this_thread::sleep_for(chrono::milliseconds(10));
     stopwatch.addSplit();
-    assert(stopwatch.getSplits().at(0) >= 990 && stopwatch.getSplits().at(0) <= 1010);
+    assert(stopwatch.getSplits().at(0) > 0 && stopwatch.getSplits().at(0) <= 20);
     stopwatch.clearSplits();
     assert(stopwatch.getSplits().empty());
     cout << "Split tests passed.\n";

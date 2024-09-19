@@ -12,9 +12,37 @@ CONSTRUCTOR
 /**
  * @brief Constructs a Menu object and initializes its state.
  */
-Menu::Menu(){ 
+Menu::Menu(bool testing){ 
+    srand(static_cast<unsigned int>(std::chrono::high_resolution_clock::now().time_since_epoch().count()));
     _display = Display();
     _run = true;
+    _testing = testing;
+}
+
+void Menu::start(){
+    _display.clearScreen();
+
+    string lBuffer = "                ";
+    _display.setFormat("\033[1;36m");
+
+    for (string line : _logoArt){
+        cout << line << endl;
+    }
+
+    _display.clearFormat();
+    _display.setFormat("\033[37m");
+
+    cout << endl;
+
+    for (string line : _credits){
+        cout << lBuffer << line << endl;
+    }
+
+    _display.clearFormat();
+
+    _display.setCursor(1,1);
+    
+    waitForInput();
 }
 
 /* =========================================================
@@ -28,85 +56,260 @@ MAIN MENU SEQUENCE
  * for Timer, Stopwatch, or Alarm. It handles the input and output and returns to the menu after each operation
  * unless the user chooses to quit.
  */
-void Menu::start() {
-    
+void Menu::mainMenu() {
 
     _display.clearScreen();
 
-    cout << "1: Timer\n";
-    cout << "2: Stopwatch\n";
-    cout << "3: Alarm **Beta Feature**\n";
-    cout << "Q: Quit Program\n";
+    _display.setFormat("\033[1;36m");
 
+    for (string line : _menuArt){
+        cout << "" << line << endl;
+    }
+
+    _display.clearFormat();
+    _display.setFormat("\033[1;37m");
+
+    for (string line : _menuOptions){
+        cout << "" << line << endl;
+    }
+
+    _display.clearFormat();
+
+    if(_testing){
+        timerSequence();
+        stopwatchSequence();
+        alarmSequence();
+        return;
+    }
+    
+    _display.setCursor(1,1);
+    
     char in = getMenuInput();
-
     // ENTER TIMER SEQUENCE
     if(in == '1'){
-        _display.clearScreen();
-
-        Timer timer;
-
-        bool run = true;
-
-        _display.clearScreen();
-
-        while(run){
-            // Display a message when the timer finishes
-            if(timer.remainingMilliseconds() == 0) {
-                _display.setSplash("TIMER FINISHED"); 
-            }
-
-            _display.tickTimer(timer);
-
-            checkTimerInput(timer, run);
-
-            wait(0.01);
-        }
-
+        timerSequence();
     }
 
     // ENTER STOPWATCH SEQUENCE
     else if(in == '2'){
-        Stopwatch stopwatch;
-
-        bool run = true;
-
-        _display.tickStopwatch(stopwatch);
-
-        cout << "\n Press any key to start your stopwatch." << endl;
-
-        waitForInput();
-
-        _display.clearScreen();
-
-        stopwatch.start();
-        
-        while(run){
-            _display.tickStopwatch(stopwatch);
-
-            checkStopwatchInput(stopwatch, run);
-
-            wait(0.01);
-        }
+        stopwatchSequence();
     }
 
     // ENTER ALARM SEQUENCE
     else if(in == '3'){
-        Alarm alarm;
+        alarmSequence();
     }
 
     // QUIT PROGRAM
     else if(in == 'q'){
+        _display.clearScreen();
         return;
     }
     
     // Restart menu loop
-    start();
+    mainMenu();
 }
 
-/* =========================================================
-BUSY-WAIT FOR A SPECIFIED AMOUNT OF TIME (IN SECONDS)
-========================================================= */
+void Menu::timerSequence(){
+    _display.clearScreen();
+
+    bool run = true;
+
+    Timer timer = createTimer(run);
+
+    _display.clearScreen();
+
+    while(run){
+        // Display a message when the timer finishes
+        if(timer.remainingMilliseconds() == 0) {
+            _display.setSplash("TIMER FINISHED"); 
+        }
+
+        _display.tickTimer(timer);
+
+        checkTimerInput(timer, run);
+
+        wait(0.01);
+
+        if(_testing){
+            run = false;
+        }
+    }
+}
+
+void Menu::stopwatchSequence(){
+
+    _display.clearScreen();
+
+    Stopwatch stopwatch;
+
+    bool run = true;
+
+    _display.setSplash("PRESS 'S' TO START");
+
+    _display.tickStopwatch(stopwatch);
+
+    //_display.clearScreen();
+    
+    while(run){
+        _display.tickStopwatch(stopwatch);
+
+        checkStopwatchInput(stopwatch, run);
+
+        wait(0.01);
+
+        if(_testing){
+            run = false;
+        }
+    }
+}
+
+void Menu::alarmSequence(){
+    _display.clearScreen();
+
+    bool run = true;
+
+    Alarm alarm = createAlarm(run);
+
+    _display.clearScreen();
+
+    while(run){
+        // Display a message when the alarm finishes
+        if(alarm.isDone()) {
+            _display.setSplash("ALARM FINISHED"); 
+        }
+
+        _display.tickAlarm(alarm);
+
+        checkAlarmInput(alarm, run);
+
+        wait(0.01);
+
+        if(_testing){
+            run = false;
+        }
+    }
+}
+
+Timer Menu::createTimer(bool& run){
+    int h = 0;
+    int m = 0;
+    int s = 0;
+    int countdownSeconds = 0;
+
+    string input = "000000";
+
+    string to_print = "00:00:00";
+
+    _display.tickTimerSetup(to_print);
+    
+    int index = 5;
+    
+    while (true) {
+        char ch; 
+        if(_testing){
+            ch = '1';
+        }
+        else if(_kbhit()){
+            ch = _getch();
+        }
+        else{
+            ch = 0;
+        }
+
+        if (ch == 13 && (h || m || s)) {
+            break;
+        } 
+        else if (ch >= '0' && ch <= '9') {
+            input = input.substr(1) + ch; 
+        } 
+        else if (ch == 8) { 
+            input = '0' + input.substr(0, 5);
+        }
+
+        if(ch == 'q' || ch == 'Q'){
+            run = false;
+            return Timer(0,0,0);
+        }
+
+        h = stoi(input.substr(0, 2));
+        m = stoi(input.substr(2, 2));
+        s = stoi(input.substr(4, 2));
+
+        to_print = (h < 10 ? "0" : "") + to_string(h) + ":" 
+                 + (m < 10 ? "0" : "") + to_string(m) + ":" 
+                 + (s < 10 ? "0" : "") + to_string(s);
+
+        _display.tickTimerSetup(to_print);
+        
+        wait(0.01);
+
+        if(_testing){
+            break;
+        }
+    }
+    _display.clearScreen();
+    Timer timer(h,m,s);
+    return timer;
+}
+
+Alarm Menu::createAlarm(bool& run){
+    int h = 0;
+    int m = 0;
+
+    string input = "0000";
+
+    string to_print = "00:00";
+
+    _display.tickAlarmSetup(to_print);
+    
+    int index = 3;
+    
+    while (true) {
+        char ch; 
+        if(_testing){
+            ch = '1';
+        }
+        else if(_kbhit()){
+            ch = _getch();
+        }
+        else{
+            ch = 0;
+        }
+
+        if (ch == 13) {
+            break;
+        } 
+        else if (ch >= '0' && ch <= '9') {
+            input = input.substr(1) + ch; 
+        } 
+        else if (ch == 8) { 
+            input = '0' + input.substr(0, 3);
+        }
+
+        if(ch == 'q' || ch == 'Q'){
+            run = false;
+            return Alarm(0,0);
+        }
+
+        h = stoi(input.substr(0, 2));
+        m = stoi(input.substr(2, 2));
+
+        to_print = (h < 10 ? "0" : "") + to_string(h) + ":" 
+                 + (m < 10 ? "0" : "") + to_string(m);
+
+        _display.tickAlarmSetup(to_print);
+        
+        wait(0.01);
+
+        if(_testing){
+            break;
+        }
+    }
+    _display.clearScreen();
+    Alarm alarm(h,m);
+    return alarm;
+}
 
 /**
  * @brief Waits for a specific duration using busy-waiting.
@@ -117,9 +320,8 @@ BUSY-WAIT FOR A SPECIFIED AMOUNT OF TIME (IN SECONDS)
  * @param seconds The amount of time to wait, in seconds.
  */
 void Menu::wait(double seconds) {
-    auto start = chrono::high_resolution_clock::now();
-    auto duration = chrono::duration<double>(seconds);
-    while (chrono::high_resolution_clock::now() - start < duration) { }
+    int milli = 1000 * seconds;
+    this_thread::sleep_for(chrono::milliseconds(milli));
 }
 
 /* =========================================================
@@ -132,6 +334,9 @@ WAIT FOR ANY USER INPUT
  * This function blocks until the user presses a key, using `_getch()` to capture the input.
  */
 void Menu::waitForInput() {
+    if(_testing){
+        return;
+    }
     _getch();
 }
 
@@ -172,7 +377,7 @@ void Menu::checkTimerInput(Timer& timer, bool& run){
             case 'a':
                 _display.clearScreen();
                 _display.clearSplash();
-                timer = Timer();
+                timer = createTimer(run);
                 break;
             case 'Q':
             case 'q':
@@ -205,7 +410,13 @@ void Menu::checkStopwatchInput(Stopwatch& stopwatch, bool& run){
             case 's':
                 if(stopwatch.isRunning()){
                     stopwatch.pause();
-                    _display.setSplash("STOPWATCH PAUSED");
+                    if ((stopwatch.currentMilliseconds() / 10) % 100 == 0){
+                        int i = rand() % _stopMessages.size();
+                        _display.setSplash(_stopMessages[i]);
+                    }
+                    else{
+                        _display.setSplash("STOPWATCH PAUSED");
+                    }
                 }
                 else{
                     _display.clearSplash();
@@ -237,6 +448,30 @@ void Menu::checkStopwatchInput(Stopwatch& stopwatch, bool& run){
     }
 }
 
+
+void Menu::checkAlarmInput(Alarm& alarm, bool& run){
+    if(_kbhit()){
+        char ch = _getch();
+        switch(ch){
+            case 'A':
+            case 'a':
+                _display.clearScreen();
+                _display.clearSplash();
+                alarm = createAlarm(run);
+                break;
+            case 'Q':
+            case 'q':
+                _display.clearSplash();
+                run = false;
+                return;
+            default:
+                if(!run){
+                    return;
+                }
+                break;
+        }
+    }
+}
 /* =========================================================
 GET USER INPUT FOR MENU SELECTION
 ========================================================= */
@@ -260,12 +495,13 @@ char Menu::getMenuInput(){
                     return '2';
                 case '3':
                     return '3';
+                case 'Q':
                 case 'q':
                     return 'q';
                 default:
                     break;
             }
         }
-        wait(0.1); // Slight delay before checking input again
+        wait(0.01); // Slight delay before checking input again
     }
 }

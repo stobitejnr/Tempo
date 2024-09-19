@@ -6,6 +6,7 @@
 #include "Alarm.hpp"
 
 #include "../fonts/font1.hpp"
+#include "../fonts/font2.hpp"
 
 #include <cstring>
 #include <iostream>
@@ -25,6 +26,10 @@ public:
      * @brief Constructs a new Display object.
      */
     Display();
+
+    void tickTimerSetup(string to_print);
+
+    void tickAlarmSetup(string to_print);
 
     /**
      * @brief Updates the display based on the state of the provided Timer object.
@@ -53,6 +58,8 @@ public:
      */
     void stageTimerDisplay(int hours, int minutes, int seconds, int tenths);
 
+    void stageAlarmDisplay(string time);
+
     /**
      * @brief Stages the controls for the timer.
      */
@@ -63,6 +70,8 @@ public:
      * @param percentage The percentage of the timer's progress to display.
      */
     void stageTimerBar(double percentage);
+
+    void stageAlarmBar(double percentage);
 
     /**
      * @brief Stages the stopwatch display with provided time values.
@@ -77,6 +86,10 @@ public:
      * @brief Stages the controls for the stopwatch.
      */
     void stageStopwatchControls();
+
+    void stageTimerSetupControls();
+
+    void stageAlarmSetupControls();
 
     /**
      * @brief Stages the splits block to be displayed.
@@ -138,6 +151,10 @@ public:
      */
     void clearScreen();
 
+    void setFormat(string code);
+
+    void clearFormat();
+
     /**
      * @brief Sets the cursor position in the terminal.
      * @param x The x-coordinate (column) to move the cursor to.
@@ -150,6 +167,7 @@ public:
      * @param lineIndex The index of the line to clear.
      */
     void clearLine(int lineIndex);
+
 
     /**
      * @brief Efficiently prints a string to the terminal.
@@ -172,7 +190,10 @@ private:
     string _oldSplash;   ///< Previous splash screen for comparison.
     string _oldSplits;   ///< Previous splits for comparison.
 
-    string _fontName;   ///< Name of font used for loading.
+    string _font;   ///< Name of font used for loading.
+
+    string _formatting;
+    string _oldFormatting;
 
     int _asciiWidth; ///< Width of the ASCII art.
 };

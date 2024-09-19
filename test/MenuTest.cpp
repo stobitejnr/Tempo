@@ -3,24 +3,22 @@
 #include <chrono>
 #include <thread>
 
-#include "../include/Alarm.hpp"
+#include "../include/Menu.hpp"
 
 using namespace std;
 
-void test_alarm(){
-
-    Alarm alarm(0,0);
-    string start = alarm.timeToString(alarm.getEndTime());
-    double percent = alarm.percentElapsed();
-    int remaining = alarm.remainingMilliseconds();
-    bool runing = alarm.isRunning();
-    bool done = alarm.isDone();
+void test_menu(){
+    Menu menu(true);
+    menu.start();
+    menu.mainMenu();
+    return;
 }
 
 
 int main() {
     try {
-        test_alarm();
+        test_menu();
+
         cout << "All tests passed successfully!\n";
     } catch (const exception& e) {
         cerr << "Test failed with exception: " << e.what() << std::endl;

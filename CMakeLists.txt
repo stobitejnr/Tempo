@@ -9,6 +9,7 @@ include(CTest)
 # Specify the C++ standard
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Include directories for header files
 include_directories(${PROJECT_SOURCE_DIR}/include)
@@ -22,6 +23,7 @@ add_executable(Tempo
     src/Stopwatch.cpp
     src/Alarm.cpp
     fonts/font1.cpp
+    fonts/font2.cpp
 )
 
 # Add the test executables
@@ -40,7 +42,31 @@ add_executable(AlarmTest
     src/Alarm.cpp
 )
 
+add_executable(DisplayTest
+    test/DisplayTest.cpp
+    src/Display.cpp
+    src/Menu.cpp
+    src/Timer.cpp
+    src/Stopwatch.cpp
+    src/Alarm.cpp
+    fonts/font1.cpp
+    fonts/font2.cpp
+)
+
+add_executable(MenuTest
+    test/MenuTest.cpp
+    src/Menu.cpp
+    src/Display.cpp
+    src/Timer.cpp
+    src/Stopwatch.cpp
+    src/Alarm.cpp
+    fonts/font1.cpp
+    fonts/font2.cpp
+)
+
 # Add the tests
 add_test(NAME TimerTest COMMAND TimerTest)
 add_test(NAME StopwatchTest COMMAND StopwatchTest)
 add_test(NAME AlarmTest COMMAND AlarmTest)
+add_test(NAME DisplayTest COMMAND DisplayTest)
+add_test(NAME MenuTest COMMAND MenuTest)

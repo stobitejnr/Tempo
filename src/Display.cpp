@@ -27,7 +27,7 @@ Display::Display()
     _oldSplash = "";
     _oldSplits = "";
 
-    _fontName = "font1";
+    _font = "font1";
 
     _asciiWidth = 0;
 }
@@ -133,7 +133,7 @@ void Display::stageTimerDisplay(int hours, int minutes, int seconds, int tenths)
     else
     {
         to_print += "0" + to_string(seconds);
-    }
+    }  
 
     // Build the ASCII art for the timer display
     for (int i = 0; i < ASCII_HEIGHT; i++)
@@ -158,6 +158,72 @@ void Display::stageTimerDisplay(int hours, int minutes, int seconds, int tenths)
             }
         }
         _asciiWidth = line.length(); // Update ASCII width
+        _asciiBuffer += (line + "\n");
+    }
+}
+
+
+void Display::stageAlarmDisplay(string time){
+
+    string to_print = "";
+
+    int hours = stoi(time.substr(0,2));
+    int minutes = stoi(time.substr(3,2));
+
+    // Determine AM/PM and convert 24-hour format to 12-hour format
+    string period = (hours >= 12) ? "pm" : "am";
+    hours = hours % 12; // Convert 24-hour to 12-hour format
+    if (hours == 0) { hours = 12; } // Handle the case where hour is 0 (midnight or noon)
+
+    to_print += to_string(hours) + ":";
+
+    // Add leading zero to minutes if needed
+    if (int(minutes / 10) != 0)
+    {
+        to_print += to_string(minutes);
+    }
+    else
+    {
+        to_print += "0" + to_string(minutes);
+    }
+
+    // Add " am" or " pm"
+    to_print += period;
+
+
+    // Build the ASCII art for the alarm display
+    for (int i = 0; i < ASCII_HEIGHT; i++)
+    {
+        string line;
+        for (char ch : to_print)
+        {
+            if (ch == ':')
+            {
+                line += font1.at(10)[i];
+                line += PADDING;
+            }
+            else if (ch == 'a')
+            {
+                line += font1.at(12)[i];
+                line += PADDING;
+            }
+            else if (ch == 'p')
+            {
+                line += font1.at(13)[i];
+                line += PADDING;
+            }
+            else if (ch == 'm')
+            {
+                line += font1.at(14)[i];
+                line += PADDING;
+            }
+            else
+            {
+                line += font1.at(ch - '0')[i];
+                line += PADDING;
+            }
+        }
+        _asciiWidth = line.length();
         _asciiBuffer += (line + "\n");
     }
 }
@@ -202,6 +268,43 @@ void Display::stageTimerBar(double percentage)
     _barBuffer += border;
 }
 
+void Display::stageAlarmBar(double percentage)
+{
+    int width = _asciiWidth - 2;
+    int filled = (int)((percentage / 100) * width);
+
+    string border = "";
+
+    // Build the top and bottom borders of the bar
+    border += "+";
+    for (int i = 0; i < width; ++i)
+    {
+        border += "-";
+    }
+    border += "+\n";
+
+    _barBuffer += border;
+
+    _barBuffer += "|";
+
+    // Fill the bar with '#' characters based on the percentage completed
+    for (int i = 0; i < width; ++i)
+    {
+        if (i < filled)
+        {
+            _barBuffer += "#";
+        }
+        else
+        {
+            _barBuffer += " ";
+        }
+    }
+
+    _barBuffer += "|\n";
+    _barBuffer += border;
+    
+}
+
 /**
  * @brief Stages the controls for the timer to be displayed in the terminal.
  */
@@ -212,12 +315,7 @@ void Display::stageTimerControls()
     _controlBuffer += "S: Start/Pause | R: Reset | A: New Timer | Q: Main Menu \n";
     _controlBuffer += "=======================================================\n";
     _controlBuffer += "\n";
-    // _controlBuffer += "S : Start/Pause your timer.\n";
-    // _controlBuffer += "R : Reset your timer.\n";
-    // _controlBuffer += "I : Add 10 seconds to your timer.\n";
-    // _controlBuffer += "C : Change increment time.\n";
-    // _controlBuffer += "Q : End your timer immediately and return to menu.\n";
-    // _controlBuffer += "\n";
+
 }
 
 /* =========================================================
@@ -326,6 +424,32 @@ void Display::stageStopwatchControls(){
     _controlBuffer+=("\n");
 }
 
+void Display::stageTimerSetupControls(){
+    _controlBuffer+=("\n");
+    _controlBuffer+=("           -=| ENTER THE LENGTH FOR YOUR TIMER |=-         \n");
+    _controlBuffer+=("===========================================================\n");
+    _controlBuffer+=("Enter: Start Timer | Backspace: Delete Digit | Q: Main Menu\n");
+    _controlBuffer+=("===========================================================\n");
+    _controlBuffer+=("\n");
+}
+
+void Display::stageAlarmSetupControls(){
+    _controlBuffer+=("\n");
+    _controlBuffer+=("        -=| ENTER THE ALARM TIME IN 24HR FORMAT |=-      \n");
+    _controlBuffer+=("=========================================================\n");
+    _controlBuffer+=("Enter: Set Alarm | Backspace: Delete Digit | Q: Main Menu\n");
+    _controlBuffer+=("=========================================================\n");
+    _controlBuffer+=("\n");
+}
+
+void Display::stageAlarmControls(){
+    _controlBuffer+=("\n");
+    _controlBuffer+=("===========================\n");
+    _controlBuffer+=("A: New Alarm | Q: Main Menu\n");
+    _controlBuffer+=("===========================\n");
+    _controlBuffer+=("\n");
+}
+
 /**
  * @brief Stages the splits block to be displayed.
  */
@@ -335,7 +459,7 @@ void Display::stageStopwatchSplits(vector<int> splits){
         int i;
         if (splits.size()>10){ i = splits.size()-10; }
         else { i = 0; }
-        for(i; i<splits.size(); ++i){
+        for (int i = 0; i < splits.size(); ++i) {
 
             int milliseconds = splits.at(i);
             int hours = milliseconds / 3600000;
@@ -419,7 +543,7 @@ PRINTING TO TERMINAL
  */
 void Display::printAscii(int row)
 {
-    if (_asciiBuffer != _oldAscii)
+    if (_asciiBuffer != _oldAscii || _formatting != _oldFormatting)
     {
         setCursor(row, 1);
         fast_print(_asciiBuffer);
@@ -434,7 +558,7 @@ void Display::printAscii(int row)
  */
 void Display::printControls(int row)
 {
-    if (_controlBuffer != _oldControls)
+    if (_controlBuffer != _oldControls || _formatting != _oldFormatting)
     {
         setCursor(row, 1);
         fast_print(_controlBuffer);
@@ -449,7 +573,7 @@ void Display::printControls(int row)
  */
 void Display::printBar(int row)
 {
-    if (_barBuffer != _oldBar)
+    if (_barBuffer != _oldBar || _formatting != _oldFormatting)
     {
         setCursor(row, 1);
         fast_print(_barBuffer);
@@ -464,7 +588,7 @@ void Display::printBar(int row)
  */
 void Display::printSplash(int row)
 {
-    if (_splash != _oldSplash)
+    if (_splash != _oldSplash || _formatting != _oldFormatting)
     {
         clearLine(row);
         setCursor(row, 1);
@@ -478,7 +602,7 @@ void Display::printSplash(int row)
  */
 void Display::printSplits(int row)
 {
-    if (_splitBuffer != _oldSplits)
+    if (_splitBuffer != _oldSplits || _formatting != _oldFormatting)
     {
         setCursor(row, 1);
         fast_print(_splitBuffer);
@@ -487,9 +611,96 @@ void Display::printSplits(int row)
     _splitBuffer = "";
 }
 
-/* =========================================================
-PARSING TIMER, CALLING PRINT FUNCTION
-========================================================= */
+void Display::tickTimerSetup(string to_print)
+{
+    auto now = std::chrono::steady_clock::now();
+    auto millis = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
+
+    bool showBar = ((millis / 500) % 2 == 0);
+
+    for (int i = 0; i < ASCII_HEIGHT; i++)
+    {
+        string line;
+        for (char ch : to_print)
+        {
+            if (ch == ':')
+            {
+                line += font1.at(10)[i]; // Colon character
+                line += PADDING;
+            }
+            else
+            {
+                line += font1.at(ch - '0')[i]; // Numeric character
+                line += PADDING;
+            }
+        }
+        if(showBar){
+            line += " |";
+        }
+        else{
+            line += "   ";
+        }
+        _asciiWidth = line.length(); // Update ASCII width
+        _asciiBuffer += (line + "\n");
+    }
+    stageTimerSetupControls();
+
+    setFormat("\033[1;37m"); //Bold white
+    printAscii(1);
+    clearFormat();
+    setFormat("\033[37m"); //White
+    printControls(10);
+
+    clearFormat();
+    setCursor(1,1);
+
+}
+
+void Display::tickAlarmSetup(string to_print)
+{
+    auto now = std::chrono::steady_clock::now();
+    auto millis = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
+
+    bool showBar = ((millis / 500) % 2 == 0);
+
+    for (int i = 0; i < ASCII_HEIGHT; i++)
+    {
+        string line;
+        for (char ch : to_print)
+        {
+            if (ch == ':')
+            {
+                line += font1.at(10)[i]; // Colon character
+                line += PADDING;
+            }
+            else
+            {
+                line += font1.at(ch - '0')[i]; // Numeric character
+                line += PADDING;
+            }
+        }
+        if(showBar){
+            line += " |";
+        }
+        else{
+            line += "   ";
+        }
+        _asciiWidth = line.length(); // Update ASCII width
+        _asciiBuffer += (line + "\n");
+    }
+    stageAlarmSetupControls();
+
+
+    setFormat("\033[1;37m"); //Bold white
+    printAscii(1);
+    clearFormat();
+    setFormat("\033[37m"); //White
+    printControls(10);
+
+    clearFormat();
+    setCursor(1,1);
+
+}
 
 /**
  * @brief Updates the timer display on each tick, converting time into ASCII and updating the terminal.
@@ -509,12 +720,21 @@ void Display::tickTimer(Timer &timer)
     stageTimerDisplay(hours, minutes, seconds, tenths);
     stageTimerBar(timer.percentElapsed());
     stageTimerControls();
-
+    
+    if(!timer.isRunning()){
+        setFormat("\033[1;31m"); //Bold Red
+    }
+    else{
+        setFormat("\033[1;37m"); // Bold white
+    }
     printAscii(1);
     printBar(10);
+    clearFormat();
+    setFormat("\033[37m"); //White
     printControls(13);
     printSplash(18);
 
+    clearFormat();
     setCursor(20,1);
 }
 
@@ -522,8 +742,8 @@ void Display::tickTimer(Timer &timer)
  * @brief Updates the stopwatch display on each tick, converting time into ASCII and updating the terminal.
  * @param stopwatch The Stopwatch object to get the current time from.
  */
-void Display::tickStopwatch(Stopwatch &stopwatch)
-{
+void Display::tickStopwatch(Stopwatch &stopwatch){
+
     int milliseconds = stopwatch.currentMilliseconds();
 
     int hours = milliseconds / 3600000;
@@ -538,16 +758,53 @@ void Display::tickStopwatch(Stopwatch &stopwatch)
     stageStopwatchControls();
     stageStopwatchSplits(stopwatch.getSplits());
 
+    if(!stopwatch.isRunning()){
+        setFormat("\033[1;31m"); //Bold Red
+    }
+    else{
+        setFormat("\033[1;37m"); // Bold white
+    }
     printAscii(1);
+
+    clearFormat();
+    setFormat("\033[37m"); //White
+
     printControls(9);
     printSplash(14);
     printSplits(16);
+
+    clearFormat();
     setCursor(15,1);
+
 }
 
-/* =========================================================
-FAST PRINTING HELPER
-========================================================= */
+void Display::tickAlarm(Alarm &alarm){
+
+    string time = alarm.timeToString(alarm.getEndTime()).substr(0,5);
+
+    stageAlarmDisplay(time);
+    stageAlarmBar(alarm.percentElapsed());
+    stageAlarmControls();
+
+    if(alarm.isDone()){
+        setFormat("\033[1;31m"); //Bold Red
+    }
+    else{
+        setFormat("\033[1;37m"); // Bold white
+    }
+    printAscii(1);
+    printBar(10);
+    clearFormat();
+    setFormat("\033[37m"); //White
+    printControls(13);
+    printSplash(18);
+    
+    clearFormat();
+    setCursor(20,1);
+
+    return;
+
+}
 
 /**
  * @brief Prints a string to the console efficiently using the Windows API.
@@ -563,4 +820,18 @@ auto Display::fast_print(const std::basic_string<char_type> &sss) -> void
         WriteConsoleA(output_handle, sss.c_str(), char_count, nullptr, nullptr);
     else
         WriteConsoleW(output_handle, sss.c_str(), char_count, nullptr, nullptr);
+}
+
+void Display::setFormat(string code){
+    _oldFormatting = _formatting;
+    _formatting = code;
+
+    cout << code;
+}
+
+void Display::clearFormat(){
+    _oldFormatting = _formatting;
+    _formatting = "\033[0m";
+
+    cout << "\033[0m";
 }
