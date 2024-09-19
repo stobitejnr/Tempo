@@ -277,7 +277,7 @@ Alarm Menu::createAlarm(bool& run){
             ch = 0;
         }
 
-        if (ch == 13 && (h || m)) {
+        if (ch == 13) {
             break;
         } 
         else if (ch >= '0' && ch <= '9') {
