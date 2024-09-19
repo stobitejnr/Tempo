@@ -162,7 +162,10 @@ void Display::stageTimerDisplay(int hours, int minutes, int seconds, int tenths)
     }
 }
 
-
+/**
+ * @brief Converts the alarm time into an ASCII representation and stages it for display.
+ * @param time The alarm time string in "HH:MM" format.
+ */
 void Display::stageAlarmDisplay(string time){
 
     string to_print = "";
@@ -268,6 +271,10 @@ void Display::stageTimerBar(double percentage)
     _barBuffer += border;
 }
 
+/**
+ * @brief Creates a visual progress bar for the alarm based on the percentage completed.
+ * @param percentage The percentage of completion.
+ */
 void Display::stageAlarmBar(double percentage)
 {
     int width = _asciiWidth - 2;
@@ -424,6 +431,9 @@ void Display::stageStopwatchControls(){
     _controlBuffer+=("\n");
 }
 
+/**
+ * @brief Stages the controls for the timer setup to be displayed in the terminal.
+ */
 void Display::stageTimerSetupControls(){
     _controlBuffer+=("\n");
     _controlBuffer+=("           -=| ENTER THE LENGTH FOR YOUR TIMER |=-         \n");
@@ -433,6 +443,9 @@ void Display::stageTimerSetupControls(){
     _controlBuffer+=("\n");
 }
 
+/**
+ * @brief Stages the controls for the alarm setup to be displayed in the terminal.
+ */
 void Display::stageAlarmSetupControls(){
     _controlBuffer+=("\n");
     _controlBuffer+=("        -=| ENTER THE ALARM TIME IN 24HR FORMAT |=-      \n");
@@ -442,6 +455,9 @@ void Display::stageAlarmSetupControls(){
     _controlBuffer+=("\n");
 }
 
+/**
+ * @brief Stages the controls for the alarm to be displayed in the terminal.
+ */
 void Display::stageAlarmControls(){
     _controlBuffer+=("\n");
     _controlBuffer+=("===========================\n");
@@ -579,6 +595,7 @@ void Display::printSplash(int row)
 
 /**
  * @brief Prints the stopwatch splits to the terminal.
+ * @param row The row position to print.
  */
 void Display::printSplits(int row)
 {
@@ -591,6 +608,10 @@ void Display::printSplits(int row)
     _splitBuffer = "";
 }
 
+/**
+ * @brief Updates the timer setup display, showing the current input with a blinking cursor.
+ * @param to_print The current timer setup input string.
+ */
 void Display::tickTimerSetup(string to_print)
 {
     auto now = std::chrono::steady_clock::now();
@@ -598,7 +619,9 @@ void Display::tickTimerSetup(string to_print)
 
     bool showBar = ((millis / 500) % 2 == 0);
 
-    for (int i = 0; i < ASCII_HEIGHT; i++)
+    _asciiBuffer.clear(); // Clear buffer before filling it with new content
+
+    for (int i = 0; i < ASCII_HEIGHT; ++i)
     {
         string line;
         for (char ch : to_print)
@@ -606,32 +629,30 @@ void Display::tickTimerSetup(string to_print)
             if (ch == ':')
             {
                 line += font1.at(10)[i]; // Colon character
-                line += PADDING;
             }
             else
             {
                 line += font1.at(ch - '0')[i]; // Numeric character
-                line += PADDING;
             }
+            line += PADDING;
         }
-        if(showBar){
-            line += " |";
-        }
-        else{
-            line += "   ";
-        }
-        _asciiWidth = line.length(); // Update ASCII width
+        line += showBar ? " |" : "   "; // Append progress bar indicator
+        _asciiWidth = line.length();
         _asciiBuffer += (line + "\n");
     }
+
     stageTimerSetupControls();
 
     printAscii(1);
     printControls(10);
 
-    setCursor(1,1);
-
+    setCursor(1, 1);
 }
 
+/**
+ * @brief Updates the alarm setup display, showing the current input with a blinking cursor.
+ * @param to_print The current alarm setup input string.
+ */
 void Display::tickAlarmSetup(string to_print)
 {
     auto now = std::chrono::steady_clock::now();
@@ -729,6 +750,10 @@ void Display::tickStopwatch(Stopwatch &stopwatch){
 
 }
 
+/**
+ * @brief Updates the alarm display on each tick, showing the alarm time and progress bar.
+ * @param alarm The Alarm object to get the alarm time and progress from.
+ */
 void Display::tickAlarm(Alarm &alarm){
 
     string time = alarm.timeToString(alarm.getEndTime()).substr(0,5);

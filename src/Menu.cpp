@@ -19,6 +19,9 @@ Menu::Menu(bool testing){
     _testing = testing;
 }
 
+/**
+ * @brief Displays the start screen with logo art and credits.
+ */
 void Menu::start(){
     _display.clearScreen();
 
@@ -110,6 +113,9 @@ void Menu::mainMenu() {
     mainMenu();
 }
 
+/**
+ * @brief Runs the timer sequence, allowing the user to set and interact with a timer.
+ */
 void Menu::timerSequence(){
     _display.clearScreen();
 
@@ -137,6 +143,9 @@ void Menu::timerSequence(){
     }
 }
 
+/**
+ * @brief Runs the stopwatch sequence, allowing the user to start, stop, and record splits.
+ */
 void Menu::stopwatchSequence(){
 
     _display.clearScreen();
@@ -164,6 +173,9 @@ void Menu::stopwatchSequence(){
     }
 }
 
+/**
+ * @brief Runs the alarm sequence, allowing the user to set and interact with an alarm.
+ */
 void Menu::alarmSequence(){
     _display.clearScreen();
 
@@ -191,6 +203,11 @@ void Menu::alarmSequence(){
     }
 }
 
+/**
+ * @brief Creates a new Timer object based on user input.
+ * @param run A reference to a boolean flag indicating whether to continue running the sequence.
+ * @return A Timer object initialized with the user's input.
+ */
 Timer Menu::createTimer(bool& run){
     int h = 0;
     int m = 0;
@@ -253,6 +270,11 @@ Timer Menu::createTimer(bool& run){
     return timer;
 }
 
+/**
+ * @brief Creates a new Alarm object based on user input.
+ * @param run A reference to a boolean flag indicating whether to continue running the sequence.
+ * @return An Alarm object initialized with the user's input.
+ */
 Alarm Menu::createAlarm(bool& run){
     int h = 0;
     int m = 0;
@@ -448,7 +470,18 @@ void Menu::checkStopwatchInput(Stopwatch& stopwatch, bool& run){
     }
 }
 
+/* =========================================================
+HANDLE KEYBOARD INPUT FOR ALARM
+========================================================= */
 
+/**
+ * @brief Checks and handles user input for the Alarm.
+ * 
+ * This function processes user input to control the Alarm. It updates the Alarm's state based on the key pressed.
+ * 
+ * @param alarm The Alarm object to control.
+ * @param run A boolean reference that determines whether to continue the loop.
+ */
 void Menu::checkAlarmInput(Alarm& alarm, bool& run){
     if(_kbhit()){
         char ch = _getch();
