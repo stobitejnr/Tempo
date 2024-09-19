@@ -1,6 +1,12 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "../include/Alarm.hpp"
 
+/**
+ * @brief Constructor for alarm object.
+ * 
+ * @param h Hour value for new alarm.
+ * @param m Minute value for new alarm.
+ */
 Alarm::Alarm(int h, int m){
     _startTime = currentTime();
     _endTime = getTime(h, m);
@@ -10,6 +16,15 @@ Alarm::Alarm(int h, int m){
     _running = true;
 
 }
+
+/**
+ * @brief Creates nearest future time point with hours h and minutes m
+ * 
+ * @param h Hour value for new alarm.
+ * @param m Minute value for new alarm.
+ * 
+ * @return Time point for alarm.
+ */
 
 chrono::time_point<chrono::system_clock> Alarm::getTime(int h, int m) {
     
