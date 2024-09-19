@@ -56,7 +56,7 @@ void Menu::mainMenu() {
 
     cout << "1: Timer\n";
     cout << "2: Stopwatch\n";
-    cout << "3: Alarm **Beta Feature**\n";
+    cout << "3: Alarm (24 hour format)\n";
     cout << "Q: Quit Program\n";
 
     if(_testing){
