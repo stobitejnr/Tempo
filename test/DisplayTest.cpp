@@ -35,7 +35,7 @@ void test_stopwatch(){
 
 void test_alarm(){
     Display display;
-    Alarm alarm("00:00");
+    Alarm alarm(0,0);
     display.tickAlarm(alarm);
 }
 

@@ -1,62 +1,40 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "../include/Alarm.hpp"
 
-/* =========================================================
-CONSTRUCTOR
-========================================================= */
-
-/**
- * @brief Constructs an Alarm object with a specified end time.
- * 
- * @param time The end time for the alarm in "HH:MM:SS" format.
- */
-Alarm::Alarm(std::string time){
-    // time is formatted "HH:MM:SS"
+Alarm::Alarm(int h, int m){
     _startTime = currentTime();
-    _endTime = stringToTime(time);
+    _endTime = getTime(h, m);
+    if(_startTime >= _endTime){
+        _endTime = getTime(h+24, m);
+    }
     _running = true;
+
 }
 
-/* =========================================================
-METHODS
-========================================================= */
-
-/**
- * @brief Converts a string representation of time to a time_point.
- * 
- * @param s The time string in "HH:MM:SS" format.
- * @return std::chrono::time_point<std::chrono::system_clock> The corresponding time_point.
- */
-std::chrono::time_point<std::chrono::system_clock> Alarm::stringToTime(std::string s) {
-    int hours, minutes, seconds;
-    sscanf(s.c_str(), "%d:%d:%d", &hours, &minutes, &seconds);
+chrono::time_point<chrono::system_clock> Alarm::getTime(int h, int m) {
     
     auto now = currentTime();
-    std::time_t currentTime = std::chrono::system_clock::to_time_t(now);
-    std::tm* localTime = std::localtime(&currentTime);
 
-    localTime->tm_hour = hours;
-    localTime->tm_min = minutes;
-    localTime->tm_sec = seconds;
+    time_t currentTime = chrono::system_clock::to_time_t(now);
+    tm* localTime = localtime(&currentTime);
+
+    localTime->tm_hour = h;
+    localTime->tm_min = m;
+    localTime->tm_sec = 0;
     
-    auto futureTime = std::chrono::system_clock::from_time_t(std::mktime(localTime));
+    auto futureTime = chrono::system_clock::from_time_t(mktime(localTime));
     return futureTime;
+    
 }
 
-/**
- * @brief Converts a time_point to a string representation.
- * 
- * @param t The time_point to convert.
- * @return std::string The string representation of the time in "HH:MM:SS" format.
- */
-std::string Alarm::timeToString(std::chrono::time_point<std::chrono::system_clock> t) {
-    std::time_t currentTime = std::chrono::system_clock::to_time_t(t);
-    std::tm* localTime = std::localtime(&currentTime);
+string Alarm::timeToString(chrono::time_point<chrono::system_clock> t) {
 
-    std::stringstream ss;
-    ss << std::setw(2) << std::setfill('0') << localTime->tm_hour << ":"
-       << std::setw(2) << std::setfill('0') << localTime->tm_min << ":"
-       << std::setw(2) << std::setfill('0') << localTime->tm_sec;
+    time_t currentTime = chrono::system_clock::to_time_t(t);
+    tm* localTime = localtime(&currentTime);
+
+    stringstream ss;
+    ss << setw(2) << setfill('0') << localTime->tm_hour << ":"
+       << setw(2) << setfill('0') << localTime->tm_min;
 
     return ss.str();
 }
@@ -67,26 +45,23 @@ std::string Alarm::timeToString(std::chrono::time_point<std::chrono::system_cloc
  * @return double The percentage of time elapsed.
  */
 double Alarm::percentElapsed() {
-    // Total duration between the start and end time in milliseconds
-    auto totalMilliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(_endTime - _startTime).count();
+
+    auto totalMilliseconds = chrono::duration_cast<chrono::milliseconds>(_endTime - _startTime).count();
     
-    // If the total time is zero (which shouldn't happen unless start and end times are equal), return 100% immediately
     if (totalMilliseconds == 0) {
         return 100.0;
     }
 
-    // Calculate the elapsed time since the alarm started
     auto now = currentTime();
-    auto elapsedMilliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(now - _startTime).count();
+    auto elapsedMilliseconds = chrono::duration_cast<chrono::milliseconds>(now - _startTime).count();
 
-    // Ensure we don't return more than 100% if the current time is after the alarm end time
     if (elapsedMilliseconds >= totalMilliseconds) {
         return 100.0;
     }
 
-    // Calculate the percentage of time elapsed
     double percentage = (static_cast<double>(elapsedMilliseconds) / totalMilliseconds) * 100.0;
     return percentage;
+
 }
 
 /**
@@ -95,27 +70,23 @@ double Alarm::percentElapsed() {
  * @return int The remaining milliseconds.
  */
 int Alarm::remainingMilliseconds() {
+
     auto now = currentTime();
-    auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(_endTime - now).count();
+    auto ms = chrono::duration_cast<chrono::milliseconds>(_endTime - now).count();
     return ms;
+
 }
 
-/**
- * @brief Gets the start time of the alarm.
- * 
- * @return std::chrono::time_point<std::chrono::system_clock> The start time.
- */
-std::chrono::time_point<std::chrono::system_clock> Alarm::getStartTime(){
+chrono::time_point<chrono::system_clock> Alarm::getStartTime(){
+
     return _startTime;
+
 }
 
-/**
- * @brief Gets the end time of the alarm.
- * 
- * @return std::chrono::time_point<std::chrono::system_clock> The end time.
- */
-std::chrono::time_point<std::chrono::system_clock> Alarm::getEndTime(){
+chrono::time_point<chrono::system_clock> Alarm::getEndTime(){
+
     return _endTime;
+
 }
 
 /**
@@ -124,6 +95,7 @@ std::chrono::time_point<std::chrono::system_clock> Alarm::getEndTime(){
  * @return bool True if the alarm has completed, false otherwise.
  */
 bool Alarm::isDone(){
+
     int remaining = remainingMilliseconds();
     if (remaining > 0) {
         return false;
@@ -132,6 +104,7 @@ bool Alarm::isDone(){
         _remainingMilliseconds = 0;
         return true;
     }
+
 }
 
 /**
@@ -140,14 +113,13 @@ bool Alarm::isDone(){
  * @return bool True if the alarm is running, false otherwise.
  */
 bool Alarm::isRunning() {
+
     return _running;
+
 }
 
-/**
- * @brief Gets the current time.
- * 
- * @return std::chrono::time_point<std::chrono::system_clock> The current time.
- */
-std::chrono::time_point<std::chrono::system_clock> Alarm::currentTime(){
-    return std::chrono::system_clock::now();
+chrono::time_point<chrono::system_clock> Alarm::currentTime(){
+
+    return chrono::system_clock::now();
+
 }

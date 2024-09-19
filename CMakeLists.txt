@@ -22,6 +22,7 @@ add_executable(Tempo
     src/Stopwatch.cpp
     src/Alarm.cpp
     fonts/font1.cpp
+    fonts/font2.cpp
 )
 
 # Add the test executables
@@ -48,6 +49,7 @@ add_executable(DisplayTest
     src/Stopwatch.cpp
     src/Alarm.cpp
     fonts/font1.cpp
+    fonts/font2.cpp
 )
 
 add_executable(MenuTest
@@ -58,6 +60,7 @@ add_executable(MenuTest
     src/Stopwatch.cpp
     src/Alarm.cpp
     fonts/font1.cpp
+    fonts/font2.cpp
 )
 
 # Add the tests
