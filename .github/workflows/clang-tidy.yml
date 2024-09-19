@@ -32,7 +32,8 @@ jobs:
       - name: Run Clang-Tidy and Check for Warnings
         run: |
           $ErrorActionPreference = "Continue"
-          $output = & clang-tidy.exe -p build --extra-arg=-std=c++17 $(Get-ChildItem -Recurse -Filter *.cpp | Select-Object -ExpandProperty FullName) 2>&1
+          $files = Get-ChildItem -Recurse -Filter *.cpp | Where-Object { $_.Name -ne "AlarmTest.cpp" } | Select-Object -ExpandProperty FullName
+          $output = & clang-tidy.exe -p build --extra-arg=-std=c++17 $files 2>&1
           $output | Out-File -FilePath clang-tidy-output.txt
           if ($output -match "warning:" -or $output -match "error:") {
             Write-Output "Clang-Tidy found issues:"

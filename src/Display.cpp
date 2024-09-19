@@ -828,10 +828,10 @@ auto Display::fast_print(const std::basic_string<char_type> &sss) -> void
         WriteConsoleW(output_handle, sss.c_str(), char_count, nullptr, nullptr);
 }
 
-void Display::setFormat(string code){
+
+void Display::setFormat(const std::string& code) {
     _oldFormatting = _formatting;
     _formatting = code;
-
     cout << code;
 }
 
