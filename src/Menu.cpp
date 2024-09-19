@@ -25,7 +25,7 @@ Menu::Menu(bool testing){
 void Menu::start(){
     _display.clearScreen();
 
-    string lBuffer = "                ";
+    string lBuffer = "                         ";
     _display.setFormat("\033[1;36m");
 
     for (string line : _logoArt){

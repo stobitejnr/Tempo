@@ -35,12 +35,11 @@ A versatile command-line application that allows users to create and manage time
    - Reset stopwatch
    - Create split times
 
-3. **Alarm**: Set alarms to notify you at a specific time.
-   - Set alarm time
-   - Start alarm
-   - Notify user
+3. **Alarm**: Set an alarm to go off at any time of the day.
+   - Quickly create a new alarm
+   - Visual progress bar
 
-3. **User-friendly Interface**:
+4. **User-friendly Interface**:
    - ASCII art time display
    - Clear on-screen instructions
    - Responsive keyboard controls
@@ -54,13 +53,13 @@ A versatile command-line application that allows users to create and manage time
 
 ## Usage
 
-1. Upon starting the application, you'll be presented with a menu:
+1. Upon starting the application, you'll be presented with the screen:
 
    ![Start up](startup.png)
 
-   Press any button to continue.
+   Press any key to continue.
 
-2. Then you will see this menu:
+2. Then you will see the main menu:
 
    ![Main Menu](menu.png)
 
