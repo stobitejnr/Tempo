@@ -1,6 +1,8 @@
 #include "font1.hpp"
 
-vector<string> _0 = {
+using namespace std;
+
+vector<string> f1_0 = {
 " $$$$$$\\  ",
 "$$  __$$\\ ",
 "$$ /  $$ |",
@@ -10,7 +12,7 @@ vector<string> _0 = {
 "\\$$$$$$  /",
 " \\______/ "};
           
-vector<string> _1 = {
+vector<string> f1_1 = {
 "   $$\\    ",
 " $$$$ |   ",
 " \\_$$ |   ",
@@ -20,7 +22,7 @@ vector<string> _1 = {
 " $$$$$$\\  ",
 " \\______| "};
 
-vector<string> _2 = {
+vector<string> f1_2 = {
 " $$$$$$\\  ",
 "$$  __$$\\ ",
 "\\__/  $$ |",
@@ -30,7 +32,7 @@ vector<string> _2 = {
 "$$$$$$$$\\ ",
 "\\________|"};
 
-vector<string> _3 = {
+vector<string> f1_3 = {
 " $$$$$$\\  ",
 "$$ ___$$\\ ",
 "\\_/   $$ |",
@@ -40,7 +42,7 @@ vector<string> _3 = {
 "\\$$$$$$  |",
 " \\______/ "};
 
-vector<string> _4 = {
+vector<string> f1_4 = {
 "$$\\   $$\\ ",
 "$$ |  $$ |",
 "$$ |  $$ |",
@@ -50,7 +52,7 @@ vector<string> _4 = {
 "      $$ |",
 "      \\__|"};  
 
-vector<string> _5 = {
+vector<string> f1_5 = {
 "$$$$$$$\\  ",
 "$$  ____| ",
 "$$ |      ",
@@ -60,7 +62,7 @@ vector<string> _5 = {
 "\\$$$$$$  |",
 " \\______/ "};
           
-vector<string> _6 = {
+vector<string> f1_6 = {
 " $$$$$$\\  ",
 "$$  __$$\\ ",
 "$$ /  \\__|",
@@ -70,7 +72,7 @@ vector<string> _6 = {
 " $$$$$$  |",
 " \\______/ "};
     
-vector<string> _7 = {
+vector<string> f1_7 = {
 "$$$$$$$$\\ ",
 "\\____$$  |",
 "    $$  / ",
@@ -80,7 +82,7 @@ vector<string> _7 = {
 "$$  /     ",
 "\\__/      "};
 
-vector<string> _8 = {
+vector<string> f1_8 = {
 " $$$$$$\\  ",
 "$$  __$$\\ ",
 "$$ /  $$ |",
@@ -90,7 +92,7 @@ vector<string> _8 = {
 "\\$$$$$$  |",
 " \\______/ "};
     
-vector<string> _9 = {
+vector<string> f1_9 = {
 " $$$$$$\\  ",
 "$$  __$$\\ ",
 "$$ /  $$ |",
@@ -100,7 +102,7 @@ vector<string> _9 = {
 "\\$$$$$$  |",
 " \\______/ "};
 
-vector<string> _colon = {
+vector<string> f1_colon = {
 "    ",
 "    ",
 "$$\\ " ,
@@ -110,7 +112,7 @@ vector<string> _colon = {
 "\\__|",
 "    "};
     
-vector<string> _period = {
+vector<string> f1_period = {
 "    ",
 "    ",
 "    " ,
@@ -120,7 +122,7 @@ vector<string> _period = {
 "$$\\ ",
 "\\__|"};
 
-vector<string> _a = {
+vector<string> f1_a = {
 "        ",
 "        ",
 " $$$$$$\\  ",
@@ -130,7 +132,7 @@ vector<string> _a = {
 "\\$$$$$$$ |",
 " \\_______|"};
 
-vector<string> _p = {
+vector<string> f1_p = {
 "          ",
 " $$$$$$\\  ",
 "$$  __$$\\ ",
@@ -140,7 +142,7 @@ vector<string> _p = {
 "$$ |      ",
 "\\__|      "};
 
-vector<string> _m = {
+vector<string> f1_m = {
 "              ",
 "              ",
 "$$$$$$\\$$$$\\  ",
@@ -150,4 +152,5 @@ vector<string> _m = {
 "$$ | $$ | $$ |",
 "\\__| \\__| \\__|"};
 
-vector<vector<string>> font1 = {_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _colon, _period, _a, _p, _m};
+vector<vector<string>> f1_ascii = {f1_0, f1_1, f1_2, f1_3, f1_4, f1_5, f1_6, f1_7, f1_8, f1_9, f1_colon, f1_period, f1_a, f1_p, f1_m};
+int f1_height = f1_0.size();

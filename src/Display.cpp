@@ -1,9 +1,6 @@
 #include <windows.h>
 #include "../include/Display.hpp"
 
-#define PADDING "  "
-#define ASCII_HEIGHT 8
-
 using namespace std;
 
 /* =========================================================
@@ -27,7 +24,9 @@ Display::Display()
     _oldSplash = "";
     _oldSplits = "";
 
-    _font = "font1";
+    _fonts = {f1_ascii, f2_ascii};
+    _fontHeights = {f1_height, f2_height};
+    setFont(2);
 
     _asciiWidth = 0;
 }
@@ -49,6 +48,23 @@ void Display::clearScreen()
     _oldBar = "";
 
     fast_print(clearscreen);
+}
+
+void Display::setFont(int num)
+{
+    _currFont = _fonts.at(num-1);
+
+    ASCII_HEIGHT = _fontHeights.at(num-1);
+    
+    if(ASCII_HEIGHT >= 8){
+        PADDING = "";
+        for(int i=0; i< ASCII_HEIGHT/4; i++){
+            PADDING += " ";
+        }
+    }
+    else{
+        PADDING = " ";
+    }
 }
 
 /**
@@ -143,17 +159,17 @@ void Display::stageTimerDisplay(int hours, int minutes, int seconds, int tenths)
         {
             if (ch == ':')
             {
-                line += font1.at(10)[i]; // Colon character
+                line += _currFont.at(10)[i]; // Colon character
                 line += PADDING;
             }
             else if (ch == '.')
             {
-                line += font1.at(11)[i]; // Period character
+                line += _currFont.at(11)[i]; // Period character
                 line += PADDING;
             }
             else
             {
-                line += font1.at(ch - '0')[i]; // Numeric character
+                line += _currFont.at(ch - '0')[i]; // Numeric character
                 line += PADDING;
             }
         }
@@ -202,27 +218,27 @@ void Display::stageAlarmDisplay(string time){
         {
             if (ch == ':')
             {
-                line += font1.at(10)[i];
+                line += _currFont.at(10)[i];
                 line += PADDING;
             }
             else if (ch == 'a')
             {
-                line += font1.at(12)[i];
+                line += _currFont.at(12)[i];
                 line += PADDING;
             }
             else if (ch == 'p')
             {
-                line += font1.at(13)[i];
+                line += _currFont.at(13)[i];
                 line += PADDING;
             }
             else if (ch == 'm')
             {
-                line += font1.at(14)[i];
+                line += _currFont.at(14)[i];
                 line += PADDING;
             }
             else
             {
-                line += font1.at(ch - '0')[i];
+                line += _currFont.at(ch - '0')[i];
                 line += PADDING;
             }
         }
@@ -402,17 +418,17 @@ void Display::stageStopwatchDisplay(int hours, int minutes, int seconds, int hun
         {
             if (ch == ':')
             {
-                line += font1.at(10)[i]; // Colon character
+                line += _currFont.at(10)[i]; // Colon character
                 line += PADDING;
             }
             else if (ch == '.')
             {
-                line += font1.at(11)[i]; // Period character
+                line += _currFont.at(11)[i]; // Period character
                 line += PADDING;
             }
             else
             {
-                line += font1.at(ch - '0')[i]; // Numeric character
+                line += _currFont.at(ch - '0')[i]; // Numeric character
                 line += PADDING;
             }
         }
@@ -628,11 +644,11 @@ void Display::tickTimerSetup(string to_print)
         {
             if (ch == ':')
             {
-                line += font1.at(10)[i]; // Colon character
+                line += _currFont.at(10)[i]; // Colon character
             }
             else
             {
-                line += font1.at(ch - '0')[i]; // Numeric character
+                line += _currFont.at(ch - '0')[i]; // Numeric character
             }
             line += PADDING;
         }
@@ -672,12 +688,12 @@ void Display::tickAlarmSetup(string to_print)
         {
             if (ch == ':')
             {
-                line += font1.at(10)[i]; // Colon character
+                line += _currFont.at(10)[i]; // Colon character
                 line += PADDING;
             }
             else
             {
-                line += font1.at(ch - '0')[i]; // Numeric character
+                line += _currFont.at(ch - '0')[i]; // Numeric character
                 line += PADDING;
             }
         }
@@ -730,14 +746,14 @@ void Display::tickTimer(Timer &timer)
         setFormat("\033[1;37m"); // Bold white
     }
     printAscii(1);
-    printBar(10);
+    printBar(ASCII_HEIGHT+1);
     clearFormat();
     setFormat("\033[37m"); //White
-    printControls(13);
-    printSplash(18);
+    printControls(ASCII_HEIGHT+4);
+    printSplash(ASCII_HEIGHT+9);
 
     clearFormat();
-    setCursor(20,1);
+    setCursor(1,1);
 }
 
 /**
@@ -771,12 +787,12 @@ void Display::tickStopwatch(Stopwatch &stopwatch){
     clearFormat();
     setFormat("\033[37m"); //White
 
-    printControls(9);
-    printSplash(14);
-    printSplits(16);
+    printControls(ASCII_HEIGHT);
+    printSplash(ASCII_HEIGHT+5);
+    printSplits(ASCII_HEIGHT+7);
 
     clearFormat();
-    setCursor(15,1);
+    setCursor(1,1);
 
 }
 
@@ -799,11 +815,11 @@ void Display::tickAlarm(Alarm &alarm){
         setFormat("\033[1;37m"); // Bold white
     }
     printAscii(1);
-    printBar(10);
+    printBar(ASCII_HEIGHT+1);
     clearFormat();
     setFormat("\033[37m"); //White
-    printControls(13);
-    printSplash(18);
+    printControls(ASCII_HEIGHT+4);
+    printSplash(ASCII_HEIGHT+9);
     
     clearFormat();
     setCursor(20,1);

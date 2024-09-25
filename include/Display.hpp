@@ -168,6 +168,8 @@ public:
      */
     void clearLine(int lineIndex);
 
+    void setFont(int num);
+
 
     /**
      * @brief Efficiently prints a string to the terminal.
@@ -190,7 +192,12 @@ private:
     string _oldSplash;   ///< Previous splash screen for comparison.
     string _oldSplits;   ///< Previous splits for comparison.
 
-    string _font;   ///< Name of font used for loading.
+    vector<vector<vector<string>>> _fonts;   ///< List of font ascii
+    vector<int> _fontHeights;   ///< List of font heights
+    vector<vector<string>> _currFont;   ///< current font ascii
+
+    int ASCII_HEIGHT;
+    string PADDING;
 
     string _formatting;
     string _oldFormatting;
