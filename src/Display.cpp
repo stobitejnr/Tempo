@@ -3,6 +3,26 @@
 
 using namespace std;
 
+const string Display::BOLD = "\033[1m";
+
+const string Display::BLACK = "\033[30m";
+const string Display::RED = "\033[31m";
+const string Display::GREEN = "\033[32m";
+const string Display::YELLOW = "\033[33m";
+const string Display::BLUE = "\033[34m";
+const string Display::MAGENTA = "\033[35m";
+const string Display::CYAN = "\033[36m";
+const string Display::WHITE = "\033[37m";
+
+const string Display::BOLD_BLACK = "\033[1;30m";
+const string Display::BOLD_RED = "\033[1;31m";
+const string Display::BOLD_GREEN = "\033[1;32m";
+const string Display::BOLD_YELLOW = "\033[1;33m";
+const string Display::BOLD_BLUE = "\033[1;34m";
+const string Display::BOLD_MAGENTA = "\033[1;35m";
+const string Display::BOLD_CYAN = "\033[1;36m";
+const string Display::BOLD_WHITE = "\033[1;37m";
+
 /* =========================================================
 CONSTRUCTOR
 ========================================================= */
@@ -26,6 +46,9 @@ Display::Display()
 
     _fonts = {f1_ascii, f2_ascii};
     _fontHeights = {f1_height, f2_height};
+
+    setFont(1);
+
     setFont(2);
 
     _asciiWidth = 0;
@@ -333,11 +356,9 @@ void Display::stageAlarmBar(double percentage)
  */
 void Display::stageTimerControls()
 {
-    _controlBuffer += "\n";
     _controlBuffer += "=======================================================\n";
     _controlBuffer += "S: Start/Pause | R: Reset | A: New Timer | Q: Main Menu \n";
     _controlBuffer += "=======================================================\n";
-    _controlBuffer += "\n";
 
 }
 
@@ -440,46 +461,38 @@ void Display::stageStopwatchDisplay(int hours, int minutes, int seconds, int hun
  * @brief Stages the controls for the stopwatch to be displayed in the terminal.
  */
 void Display::stageStopwatchControls(){
-    _controlBuffer+=("\n");
     _controlBuffer+=("======================================================\n");
     _controlBuffer+=("S: Start/Stop | R: Reset | A: Lap/Split | Q: Main Menu\n");
     _controlBuffer+=("======================================================\n");
-    _controlBuffer+=("\n");
 }
 
 /**
  * @brief Stages the controls for the timer setup to be displayed in the terminal.
  */
 void Display::stageTimerSetupControls(){
-    _controlBuffer+=("\n");
     _controlBuffer+=("           -=| ENTER THE LENGTH FOR YOUR TIMER |=-         \n");
     _controlBuffer+=("===========================================================\n");
     _controlBuffer+=("Enter: Start Timer | Backspace: Delete Digit | Q: Main Menu\n");
     _controlBuffer+=("===========================================================\n");
-    _controlBuffer+=("\n");
 }
 
 /**
  * @brief Stages the controls for the alarm setup to be displayed in the terminal.
  */
 void Display::stageAlarmSetupControls(){
-    _controlBuffer+=("\n");
     _controlBuffer+=("        -=| ENTER THE ALARM TIME IN 24HR FORMAT |=-      \n");
     _controlBuffer+=("=========================================================\n");
     _controlBuffer+=("Enter: Set Alarm | Backspace: Delete Digit | Q: Main Menu\n");
     _controlBuffer+=("=========================================================\n");
-    _controlBuffer+=("\n");
 }
 
 /**
  * @brief Stages the controls for the alarm to be displayed in the terminal.
  */
 void Display::stageAlarmControls(){
-    _controlBuffer+=("\n");
     _controlBuffer+=("===========================\n");
     _controlBuffer+=("A: New Alarm | Q: Main Menu\n");
     _controlBuffer+=("===========================\n");
-    _controlBuffer+=("\n");
 }
 
 /**
@@ -659,10 +672,10 @@ void Display::tickTimerSetup(string to_print)
 
     stageTimerSetupControls();
 
-    setFormat("\033[1;37m"); //Bold white
+    setFormat(BOLD_WHITE);
     printAscii(1);
     clearFormat();
-    setFormat("\033[37m"); //White
+    setFormat(WHITE);
     printControls(10);
 
     clearFormat();
@@ -709,10 +722,10 @@ void Display::tickAlarmSetup(string to_print)
     stageAlarmSetupControls();
 
 
-    setFormat("\033[1;37m"); //Bold white
+    setFormat(BOLD_WHITE);
     printAscii(1);
     clearFormat();
-    setFormat("\033[37m"); //White
+    setFormat(WHITE);
     printControls(10);
 
     clearFormat();
@@ -740,15 +753,15 @@ void Display::tickTimer(Timer &timer)
     stageTimerControls();
     
     if(!timer.isRunning()){
-        setFormat("\033[1;31m"); //Bold Red
+        setFormat(BOLD_RED); //Bold Red
     }
     else{
-        setFormat("\033[1;37m"); // Bold white
+        setFormat(BOLD_WHITE); // Bold white
     }
     printAscii(1);
     printBar(ASCII_HEIGHT+1);
     clearFormat();
-    setFormat("\033[37m"); //White
+    setFormat(WHITE); //White
     printControls(ASCII_HEIGHT+4);
     printSplash(ASCII_HEIGHT+9);
 
@@ -777,19 +790,24 @@ void Display::tickStopwatch(Stopwatch &stopwatch){
     stageStopwatchSplits(stopwatch.getSplits());
 
     if(!stopwatch.isRunning()){
-        setFormat("\033[1;31m"); //Bold Red
+        if ((stopwatch.currentMilliseconds() / 10) % 100 == 0 && stopwatch.currentMilliseconds() != 0){
+            setFormat(BOLD_GREEN);
+        }   
+        else{
+            setFormat(BOLD_RED);
+        }
     }
     else{
-        setFormat("\033[1;37m"); // Bold white
+        setFormat(BOLD_WHITE);
     }
     printAscii(1);
 
     clearFormat();
-    setFormat("\033[37m"); //White
+    setFormat(WHITE);
 
-    printControls(ASCII_HEIGHT);
-    printSplash(ASCII_HEIGHT+5);
-    printSplits(ASCII_HEIGHT+7);
+    printControls(ASCII_HEIGHT+2);
+    printSplash(ASCII_HEIGHT+6);
+    printSplits(ASCII_HEIGHT+8);
 
     clearFormat();
     setCursor(1,1);
@@ -809,15 +827,15 @@ void Display::tickAlarm(Alarm &alarm){
     stageAlarmControls();
 
     if(alarm.isDone()){
-        setFormat("\033[1;31m"); //Bold Red
+        setFormat(BOLD_RED); //Bold Red
     }
     else{
-        setFormat("\033[1;37m"); // Bold white
+        setFormat(BOLD_WHITE);
     }
     printAscii(1);
     printBar(ASCII_HEIGHT+1);
     clearFormat();
-    setFormat("\033[37m"); //White
+    setFormat(WHITE); //White
     printControls(ASCII_HEIGHT+4);
     printSplash(ASCII_HEIGHT+9);
     

@@ -22,6 +22,28 @@ using namespace std;
 class Display
 {
 public:
+
+    static const string BOLD;
+
+    static const string BLACK;
+    static const string RED;
+    static const string GREEN;
+    static const string YELLOW;
+    static const string BLUE;
+    static const string MAGENTA;
+    static const string CYAN;
+    static const string WHITE;
+
+    static const string BOLD_BLACK;
+    static const string BOLD_RED;
+    static const string BOLD_GREEN;
+    static const string BOLD_YELLOW;
+    static const string BOLD_BLUE;
+    static const string BOLD_MAGENTA;
+    static const string BOLD_CYAN;
+    static const string BOLD_WHITE;
+
+
     /**
      * @brief Constructs a new Display object.
      */
@@ -151,7 +173,7 @@ public:
      */
     void clearScreen();
 
-    void setFormat(const std::string& code);
+    void setFormat(const string& code);
 
     void clearFormat();
 
@@ -177,7 +199,7 @@ public:
      * @param sss The string to print.
      */
     template <typename char_type>
-    static auto fast_print(const std::basic_string<char_type> &sss) -> void;
+    static auto fast_print(const basic_string<char_type> &sss) -> void;
 
 private:
     string _asciiBuffer;   ///< Buffer for ASCII art.

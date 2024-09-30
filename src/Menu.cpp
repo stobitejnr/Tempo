@@ -3,7 +3,9 @@
 
 using namespace std;
 
-#define LOOPTIME 0.1
+const double LOOPTIME = 0.01;
+
+
 
 /* =========================================================
 CONSTRUCTOR
@@ -26,14 +28,14 @@ void Menu::start(){
     _display.clearScreen();
 
     string lBuffer = "                         ";
-    _display.setFormat("\033[1;36m");
+    _display.setFormat(Display::BOLD_CYAN);
 
     for (string line : _logoArt){
         cout << line << endl;
     }
 
     _display.clearFormat();
-    _display.setFormat("\033[37m");
+    _display.setFormat(Display::WHITE);
 
     cout << endl;
 
@@ -63,14 +65,14 @@ void Menu::mainMenu() {
 
     _display.clearScreen();
 
-    _display.setFormat("\033[1;36m");
+    _display.setFormat(Display::BOLD_CYAN);
 
     for (string line : _menuArt){
         cout << "" << line << endl;
     }
 
     _display.clearFormat();
-    _display.setFormat("\033[1;37m");
+    _display.setFormat(Display::BOLD_WHITE);
 
     for (string line : _menuOptions){
         cout << "" << line << endl;
@@ -135,7 +137,7 @@ void Menu::timerSequence(){
 
         checkTimerInput(timer, run);
 
-        wait(0.01);
+        wait(LOOPTIME);
 
         if(_testing){
             run = false;
@@ -165,7 +167,7 @@ void Menu::stopwatchSequence(){
 
         checkStopwatchInput(stopwatch, run);
 
-        wait(0.01);
+        wait(LOOPTIME);
 
         if(_testing){
             run = false;
@@ -195,7 +197,7 @@ void Menu::alarmSequence(){
 
         checkAlarmInput(alarm, run);
 
-        wait(0.01);
+        wait(LOOPTIME);
 
         if(_testing){
             run = false;
@@ -259,7 +261,7 @@ Timer Menu::createTimer(bool& run){
 
         _display.tickTimerSetup(to_print);
         
-        wait(0.01);
+        wait(LOOPTIME);
 
         if(_testing){
             break;
@@ -322,7 +324,7 @@ Alarm Menu::createAlarm(bool& run){
 
         _display.tickAlarmSetup(to_print);
         
-        wait(0.01);
+        wait(LOOPTIME);
 
         if(_testing){
             break;
@@ -535,6 +537,6 @@ char Menu::getMenuInput(){
                     break;
             }
         }
-        wait(0.01); // Slight delay before checking input again
+        wait(LOOPTIME); // Slight delay before checking input again
     }
 }

@@ -138,7 +138,7 @@ private:
         "-------------------------------------", 
         "             Tempo v0.1              ", 
         "-------------------------------------", 
-        "    A lightweight timer  stopwatch ", 
+        "    A lightweight timer, stopwatch,", 
         "       and alarm terminal app.", 
         "-------------------------------------", 
         "            Developed by:", 
@@ -159,6 +159,7 @@ private:
 };
 
     vector<string> _menuOptions = {
+"",  
 "          ___  ___         _   _                         ", 
 " /|  o     |    |   |\\/|  |_  |_)                        ", 
 "  |  o     |   _|_  |  |  |_  | \\                        ", 
@@ -170,7 +171,12 @@ private:
 " _                         _                             ", 
 " _)  o     /\\   |    /\\   |_)  |\\/|                      ", 
 " _)  o    /--\\  |_  /--\\  | \\  |  |                      ", 
-"                                                         ", 
+"                                                         ",
+"", 
+"  __      __  _ ___ ___ ___       __  __", 
+" (_  o   (_  |_  |   |   |  |\\ | /__ (_",  
+" __) o   __) |_  |   |  _|_ | \\| \\_| __)",
+"",                                       
 " _         _        ___  ___                              ", 
 "/ \\  o    / \\  | |   |    |                               ", 
 "\\_X  o    \\_X  |_|  _|_   |                               ", 
@@ -181,7 +187,12 @@ private:
         "EXACTLY ON THE DOT! YOU MUST BE A TIME WIZARD.", 
         "THERE'S NO WAY YOU MEANT TO DO THAT...", 
         "YOU'VE ACHIEVED STOPWATCH ZEN.", 
-        "IF YOU DID THAT ON PURPOSE  I'M IMPRESSED.", 
+        "IF YOU DID THAT ON PURPOSE, I'M IMPRESSED.", 
+        "DAMN, NICE REFLEXES.", 
+        "YOU'RE A MEAN GREEN STOPWATCH MACHINE.", 
+        "MEAN GREEN STOPWATCH MACHINE", 
+        "YOU HAVE TO BE A ROBOT, RIGHT?", 
+        "EVEN QUICKSILVER COULDN'T HAVE DONE IT BETTER.",
     };
 
 };
