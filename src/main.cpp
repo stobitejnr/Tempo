@@ -17,11 +17,6 @@ MAIN FUNCTION
 int main() {
     // Create a Menu object
     Menu menu(false);
-    
-    // Start the main menu system
-    menu.start();
-    
-    menu.mainMenu(0);
 
     cout << "<< PROGRAM QUIT >>" << endl;
 

@@ -4,7 +4,7 @@ using namespace std;
 
 const double LOOPTIME = 0.01;
 
-
+const int NUM_FONTS = 2;
 
 /* =========================================================
 CONSTRUCTOR
@@ -19,7 +19,15 @@ Menu::Menu(bool testing){
     _run = true;
     _testing = testing;
     _menuFormats = { Display::BOLD_WHITE, Display::BOLD_WHITE, Display::BOLD_WHITE, Display::BOLD_WHITE, Display::BOLD_WHITE };
-    _settingsFormats = { Display::BOLD_WHITE, Display::BOLD_WHITE, Display::BOLD_WHITE};
+    _settingsFormats = { Display::BOLD_WHITE, Display::BOLD_WHITE, Display::BOLD_WHITE, Display::BOLD_WHITE};
+
+    _notiSetting = true;
+    _fontSetting = 1;
+
+    _display.setFont(_fontSetting);
+
+    _display.clearScreen();
+    mainMenu(0);
 }
 
 void Menu::printArt(vector<string> art, string formatting){
@@ -78,8 +86,6 @@ void Menu::mainMenu(int selected) {
         }
     }
 
-    _menuFormats.at(selected) = Display::SELECTED;
-
     _display.setCursor(1,1);
 
     printArt(_menuArt, Display::BOLD_CYAN);
@@ -122,7 +128,8 @@ void Menu::mainMenu(int selected) {
 
     // ENTER SETTINGS SEQUENCE
     else if(in == 's' || in == '4'){
-        //settingsMenu(0);
+        _display.clearScreen();
+        settingsMenu(0);
         _display.clearScreen();
     }
 
@@ -146,23 +153,51 @@ void Menu::settingsMenu(int selected) {
         }
     }
 
-    _menuFormats.at(selected) = Display::SELECTED;
-
     _display.setCursor(1,1);
 
-    //printArt(_menuArt, Display::BOLD_CYAN);
+    printArt(_settingsArt, Display::BOLD_CYAN);
 
-    //printArt(_menuTimer, _settingsFormats.at(0));
+    switch(_fontSetting){
+        case 1:
+            printArt(_settingsFont1, _settingsFormats.at(0));
+            break;
+        case 2:
+            printArt(_settingsFont2, _settingsFormats.at(0));
+            break;
+    }
 
-    //printArt(_menuStopwatch, _settingsFormats.at(1));
+    printArt(_settingsNotiOn, _settingsFormats.at(1));
 
-    //printArt(_menuAlarm, _settingsFormats.at(2));
+    printArt(_settingsCredits, _settingsFormats.at(2));
+
+    printArt(_settingsBack, _settingsFormats.at(3));
 
     if(_testing){
         return;
     }
     
     char in = getSettingsInput(selected);
+
+    if(in == '1'){
+        //Rotate fonts
+        if(_fontSetting < NUM_FONTS){
+            _fontSetting++;
+        }
+        else{
+            _fontSetting = 1;
+        }
+    }
+    else if(in == '2'){
+        //Toggle notifications
+    }
+    else if(in == '3'){
+        start();
+    }
+    else if(in == 'q' || in == '4'){
+        //Save settings to file, return to mainMenu
+        _display.setFont(_fontSetting);
+        return;
+    }
     
     settingsMenu(selected);
 }
@@ -183,7 +218,7 @@ void Menu::timerSequence(){
         // Display a message when the timer finishes
         if(timer.remainingMilliseconds() == 0) {
             _display.setSplash("TIMER FINISHED"); 
-            Notification noti("Tempo", "Your timerr is finished!");
+            //Notification noti("Tempo", "Your timerr is finished!");
         }
 
         _display.tickTimer(timer);
@@ -601,12 +636,15 @@ char Menu::getMenuInput(int& selected){
                     case '1':
                     case '2':
                     case '3':
+                        selected = ch - '1';
                         return ch;
                     case 'S':
                     case 's':
+                        selected = 3;
                         return 's';
                     case 'Q':
                     case 'q':
+                        selected = 4;
                         return 'q';
                     default:
                         break;         
@@ -628,19 +666,34 @@ char Menu::getSettingsInput(int& selected){
                 return selected + '1';
             }
 
-            if(ch == -32 || ch == 224){
+            if(ch == -32 || ch == 224 || ch == 0){
                 ch = getch();
                 switch(ch){
                     case 72:
                         selected = max(0,selected-1);
                         break;
                     case 80:
-                        selected = min(2,selected+1);
+                        selected = min(3,selected+1);
                         break;   
                     default:
                         break; 
                 }
                 return '0';
+            }
+            else{
+                switch(ch){
+                    case '1':
+                    case '2':
+                    case '3':
+                        selected = ch - '1';
+                        return ch;
+                    case 'Q':
+                    case 'q':
+                        selected = 3;
+                        return 'q';
+                    default:
+                        break;         
+                }
             }
         }
         wait(LOOPTIME); // Slight delay before checking input again
