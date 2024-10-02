@@ -21,7 +21,7 @@ int main() {
     // Start the main menu system
     menu.start();
     
-    menu.mainMenu();
+    menu.mainMenu(0);
 
     cout << "<< PROGRAM QUIT >>" << endl;
 

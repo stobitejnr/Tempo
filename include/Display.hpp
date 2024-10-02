@@ -23,6 +23,8 @@ class Display
 {
 public:
 
+    static const string SELECTED;
+
     static const string BOLD;
 
     static const string BLACK;

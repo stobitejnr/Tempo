@@ -31,7 +31,7 @@ public:
      *
      * @return char The character corresponding to the user's menu selection.
      */
-    char getMenuInput();
+    char getMenuInput(int& selected);
 
     /**
      * @brief Waits for a specific duration using busy-waiting.
@@ -80,7 +80,7 @@ public:
      * for Timer  Stopwatch  or Alarm. It handles the input and output and returns to the menu after each operation
      * unless the user chooses to quit.
      */
-    void mainMenu();
+    void mainMenu(int selected);
 
     void start();
 
@@ -96,25 +96,14 @@ public:
 
     void printTimerInput(int,int,int);
 
+    void printArt(vector<string> art, string formatting);
+
 private:
     Display _display;  ///< Instance of Display to manage the visual representation.
     bool _run;         ///< Boolean to control the main loop execution.
     bool _testing;
-    vector<string> _logoArt2 = {                                                                                   
-        "  +@@@@@@@@@@@+                                                               "            
-        " :@@@@@@@@@@@@+                                                               "           
-        " .:::@@@@@=:::  .-=======:   .====-.===-. .-===:   :====::===-.    :-=======: "           
-        "    =@@@@%    .#@@@@@@@@@@%  #@@@@@@@@@@@#@@@@@@=  %@@@@@@@@@@@. :%@@@@@@@@@@+"           
-        "    %@@@@=    #@@@@- -@@@@% .@@@@@==@@@@@+-%@@@@= :@@@@%==@@@@@. %@@@@-:#@@@@+"            
-        "   :@@@@@    .@@@@%==*@@@@= +@@@@+ -@@@@# .@@@@@  *@@@@= =@@@@# -@@@@#  %@@@@."            
-        "   *@@@@+    +@@@@@@@@@@@@  @@@@@. #@@@@- +@@@@* .@@@@@  %@@@@: #@@@@: -@@@@# "             
-        "  .@@@@@.    @@@@%  .++++: =@@@@# .@@@@@  %@@@@: +@@@@* :@@@@% :@@@@%  %@@@@: "             
-        "  +@@@@#    -@@@@@##@@@@@. %@@@@- *@@@@+ -@@@@#  @@@@@@%@@@@@- +@@@@@#%@@@@#  "              
-        "  @@@@@-     *%@@@@@@@%+. :@@@@% .@@@@@  %@@@@- =@@@@##@@@%*:  .#@@@@@@@@#    "               
-        "  ==============================================%@@@@*======================  "              
-        " ==============================================+@@@@@===================      "                  
-        "===============================================@@@@@*=============            "
-    };
+
+    vector<string> _menuFormats;
 
     vector<string> _logoArt = {
         "                                                                                                ", 
@@ -152,36 +141,43 @@ private:
     };
 
     vector<string> _menuArt = {
-"             ___                 _            ", 
-" |\\/|   /\\    |   |\\ |    |\\/|  |_  |\\ |  | | ", 
-" |  |  /--\\  _|_  | \\|    |  |  |_  | \\|  |_| ", 
-"________________________________________________",
-};
+        "             ___                 _            ", 
+        " |\\/|   /\\    |   |\\ |    |\\/|  |_  |\\ |  | | ", 
+        " |  |  /--\\  _|_  | \\|    |  |  |_  | \\|  |_| ", 
+        "________________________________________________",
+       "",
+    };
 
-    vector<string> _menuOptions = {
-"",  
-"          ___  ___         _   _                         ", 
-" /|  o     |    |   |\\/|  |_  |_)                        ", 
-"  |  o     |   _|_  |  |  |_  | \\                        ", 
-"                                                         ", 
-" _         __  ___   _    _                 ___   _      ",
-"  )  o    (_    |   / \\  |_)  \\    /   /\\    |   /   |_| ", 
-" /_  o    __)   |   \\_/  |     \\/\\/   /--\\   |   \\_  | | ", 
-"                                                         ", 
-" _                         _                             ", 
-" _)  o     /\\   |    /\\   |_)  |\\/|                      ", 
-" _)  o    /--\\  |_  /--\\  | \\  |  |                      ", 
-"                                                         ",
-"", 
-"  __      __  _ ___ ___ ___       __  __", 
-" (_  o   (_  |_  |   |   |  |\\ | /__ (_",  
-" __) o   __) |_  |   |  _|_ | \\| \\_| __)",
-"",                                       
-" _         _        ___  ___                              ", 
-"/ \\  o    / \\  | |   |    |                               ", 
-"\\_X  o    \\_X  |_|  _|_   |                               ", 
-"                                                         ",
-};
+    vector<string> _menuTimer = {
+        "          ___  ___         _   _                         ", 
+        " /|  o     |    |   |\\/|  |_  |_)                        ", 
+        "  |  o     |   _|_  |  |  |_  | \\                        ",
+        "                                                         ",
+    };
+    vector<string> _menuStopwatch = {
+        " _         __  ___   _    _                 ___   _      ",
+        "  )  o    (_    |   / \\  |_)  \\    /   /\\    |   /   |_| ", 
+        " /_  o    __)   |   \\_/  |     \\/\\/   /--\\   |   \\_  | | ",
+        "                                                         ",
+    };
+    vector<string> _menuAlarm = {
+        " _                         _                             ", 
+        " _)  o     /\\   |    /\\   |_)  |\\/|                      ", 
+        " _)  o    /--\\  |_  /--\\  | \\  |  |                      ",
+        "                                                         ", 
+    };
+    vector<string> _menuSettings = {
+        " __       __  _ ___ ___ ___       __  __                 ", 
+        "(_   o   (_  |_  |   |   |  |\\ | /__ (_                  ",  
+        "__)  o   __) |_  |   |  _|_ | \\| \\_| __)                 ",
+        "                                                         ",
+    };
+    vector<string> _menuQuit = {                                 
+        " _         _        ___  ___                             ", 
+        "/ \\  o    / \\  | |   |    |                              ", 
+        "\\_X  o    \\_X  |_|  _|_   |                              ", 
+        "                                                         ",
+    };
 
     vector<string> _stopMessages = {
         "EXACTLY ON THE DOT! YOU MUST BE A TIME WIZARD.", 

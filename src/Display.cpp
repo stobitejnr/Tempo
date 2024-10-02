@@ -3,6 +3,8 @@
 
 using namespace std;
 
+const string Display::SELECTED = "\033[1;30;46m";
+
 const string Display::BOLD = "\033[1m";
 
 const string Display::BLACK = "\033[30m";

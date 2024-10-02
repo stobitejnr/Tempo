@@ -19,6 +19,17 @@ Menu::Menu(bool testing){
     _display = Display();
     _run = true;
     _testing = testing;
+    _menuFormats = { Display::BOLD_WHITE, Display::BOLD_WHITE, Display::BOLD_WHITE, Display::BOLD_WHITE, Display::BOLD_WHITE };
+}
+
+void Menu::printArt(vector<string> art, string formatting){
+    _display.setFormat(formatting);
+
+    for (string line : art){
+        cout << line << endl;
+    }
+
+    _display.clearFormat();
 }
 
 /**
@@ -28,26 +39,21 @@ void Menu::start(){
     _display.clearScreen();
 
     string lBuffer = "                         ";
-    _display.setFormat(Display::BOLD_CYAN);
 
-    for (string line : _logoArt){
-        cout << line << endl;
-    }
+    printArt(_logoArt, Display::BOLD_CYAN);
 
-    _display.clearFormat();
     _display.setFormat(Display::WHITE);
-
     cout << endl;
-
     for (string line : _credits){
         cout << lBuffer << line << endl;
     }
-
     _display.clearFormat();
 
     _display.setCursor(1,1);
     
     waitForInput();
+
+    _display.clearScreen();
 }
 
 /* =========================================================
@@ -61,24 +67,33 @@ MAIN MENU SEQUENCE
  * for Timer, Stopwatch, or Alarm. It handles the input and output and returns to the menu after each operation
  * unless the user chooses to quit.
  */
-void Menu::mainMenu() {
 
-    _display.clearScreen();
+void Menu::mainMenu(int selected) {
 
-    _display.setFormat(Display::BOLD_CYAN);
-
-    for (string line : _menuArt){
-        cout << "" << line << endl;
+    for (int i = 0; i < _menuFormats.size(); ++i) {
+        if (i == selected) {
+            _menuFormats.at(i) = Display::SELECTED;
+        } else {
+            _menuFormats.at(i) = Display::BOLD_WHITE;
+        }
     }
 
-    _display.clearFormat();
-    _display.setFormat(Display::BOLD_WHITE);
+    _menuFormats.at(selected) = Display::SELECTED;
 
-    for (string line : _menuOptions){
-        cout << "" << line << endl;
-    }
+    //_display.clearScreen();
+    _display.setCursor(1,1);
 
-    _display.clearFormat();
+    printArt(_menuArt, Display::BOLD_CYAN);
+
+    printArt(_menuTimer, _menuFormats.at(0));
+
+    printArt(_menuStopwatch, _menuFormats.at(1));
+
+    printArt(_menuAlarm, _menuFormats.at(2));
+
+    printArt(_menuSettings, _menuFormats.at(3));
+
+    printArt(_menuQuit, _menuFormats.at(4));
 
     if(_testing){
         timerSequence();
@@ -87,32 +102,40 @@ void Menu::mainMenu() {
         return;
     }
     
-    _display.setCursor(1,1);
+    //_display.setCursor(1,1);
     
-    char in = getMenuInput();
+    char in = getMenuInput(selected);
     // ENTER TIMER SEQUENCE
     if(in == '1'){
         timerSequence();
+        _display.clearScreen();
     }
 
     // ENTER STOPWATCH SEQUENCE
     else if(in == '2'){
         stopwatchSequence();
+        _display.clearScreen();
     }
 
     // ENTER ALARM SEQUENCE
     else if(in == '3'){
         alarmSequence();
+        _display.clearScreen();
+    }
+
+    // ENTER SETTINGS SEQUENCE
+    else if(in == 's' || in == '4'){
+        _display.clearScreen();
     }
 
     // QUIT PROGRAM
-    else if(in == 'q'){
+    else if(in == 'q' || in == '5'){
         _display.clearScreen();
         return;
     }
     
     // Restart menu loop
-    mainMenu();
+    mainMenu(selected);
 }
 
 /**
@@ -519,23 +542,47 @@ GET USER INPUT FOR MENU SELECTION
  * 
  * @return char The character corresponding to the user's menu selection.
  */
-char Menu::getMenuInput(){
+char Menu::getMenuInput(int& selected){
     while(true){
         if(_kbhit()){
             char ch = _getch();
-            switch(ch){
-                case '1':
-                    return '1';
-                case '2':
-                    return '2';
-                case '3':
-                    return '3';
-                case 'Q':
-                case 'q':
-                    return 'q';
-                default:
-                    break;
+
+            if(ch == 13){
+                return selected + '1';
             }
+
+            if(ch == -32 || ch == 224){
+                ch = getch();
+                switch(ch){
+                    case 72:
+                        selected = max(0,selected-1);
+                        break;
+                    case 80:
+                        selected = min(4,selected+1);
+                        break;   
+                    default:
+                        break; 
+                }
+                return '0';
+            }
+
+            else{
+                switch(ch){
+                    case '1':
+                    case '2':
+                    case '3':
+                        return ch;
+                    case 'S':
+                    case 's':
+                        return 's';
+                    case 'Q':
+                    case 'q':
+                        return 'q';
+                    default:
+                        break;         
+                }
+            }
+
         }
         wait(LOOPTIME); // Slight delay before checking input again
     }
