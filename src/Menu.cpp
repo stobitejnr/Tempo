@@ -166,7 +166,12 @@ void Menu::settingsMenu(int selected) {
             break;
     }
 
-    printArt(_settingsNotiOn, _settingsFormats.at(1));
+    if(_notiSetting){
+        printArt(_settingsNotiOn, _settingsFormats.at(1));
+    }
+    else{
+        printArt(_settingsNotiOff, _settingsFormats.at(1));
+    }
 
     printArt(_settingsCredits, _settingsFormats.at(2));
 
@@ -189,6 +194,7 @@ void Menu::settingsMenu(int selected) {
     }
     else if(in == '2'){
         //Toggle notifications
+        _notiSetting = !_notiSetting;
     }
     else if(in == '3'){
         start();
