@@ -5,6 +5,7 @@
 #include "Stopwatch.hpp"
 #include "Alarm.hpp"
 #include "Display.hpp"
+#include "Notification.hpp"
 
 #include <iostream>
 #include <conio.h>

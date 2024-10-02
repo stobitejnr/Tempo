@@ -154,6 +154,7 @@ void Menu::timerSequence(){
         // Display a message when the timer finishes
         if(timer.remainingMilliseconds() == 0) {
             _display.setSplash("TIMER FINISHED"); 
+            Notification noti("12", "34", 4);
         }
 
         _display.tickTimer(timer);
