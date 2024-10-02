@@ -20,6 +20,7 @@ add_executable(Tempo
     src/Display.cpp
     src/Timer.cpp
     src/Stopwatch.cpp
+    src/Notification.cpp
     src/Alarm.cpp
     fonts/font1.cpp
     fonts/font2.cpp
@@ -47,6 +48,7 @@ add_executable(DisplayTest
     src/Menu.cpp
     src/Timer.cpp
     src/Stopwatch.cpp
+    src/Notification.cpp
     src/Alarm.cpp
     fonts/font1.cpp
     fonts/font2.cpp
@@ -58,6 +60,7 @@ add_executable(MenuTest
     src/Display.cpp
     src/Timer.cpp
     src/Stopwatch.cpp
+    src/Notification.cpp
     src/Alarm.cpp
     fonts/font1.cpp
     fonts/font2.cpp

@@ -1,4 +1,3 @@
-#define OOF_IMPL
 #include "../include/Menu.hpp"
 
 using namespace std;
@@ -184,7 +183,7 @@ void Menu::timerSequence(){
         // Display a message when the timer finishes
         if(timer.remainingMilliseconds() == 0) {
             _display.setSplash("TIMER FINISHED"); 
-            Notification noti("12", "34", 4);
+            Notification noti("Tempo", "Your timerr is finished!");
         }
 
         _display.tickTimer(timer);
@@ -636,31 +635,13 @@ char Menu::getSettingsInput(int& selected){
                         selected = max(0,selected-1);
                         break;
                     case 80:
-                        selected = min(4,selected+1);
+                        selected = min(2,selected+1);
                         break;   
                     default:
                         break; 
                 }
                 return '0';
             }
-
-            else{
-                switch(ch){
-                    case '1':
-                    case '2':
-                    case '3':
-                        return ch;
-                    case 'S':
-                    case 's':
-                        return 's';
-                    case 'Q':
-                    case 'q':
-                        return 'q';
-                    default:
-                        break;         
-                }
-            }
-
         }
         wait(LOOPTIME); // Slight delay before checking input again
     }
