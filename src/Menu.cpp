@@ -20,6 +20,7 @@ Menu::Menu(bool testing){
     _run = true;
     _testing = testing;
     _menuFormats = { Display::BOLD_WHITE, Display::BOLD_WHITE, Display::BOLD_WHITE, Display::BOLD_WHITE, Display::BOLD_WHITE };
+    _settingsFormats = { Display::BOLD_WHITE, Display::BOLD_WHITE, Display::BOLD_WHITE};
 }
 
 void Menu::printArt(vector<string> art, string formatting){
@@ -80,7 +81,6 @@ void Menu::mainMenu(int selected) {
 
     _menuFormats.at(selected) = Display::SELECTED;
 
-    //_display.clearScreen();
     _display.setCursor(1,1);
 
     printArt(_menuArt, Display::BOLD_CYAN);
@@ -101,8 +101,6 @@ void Menu::mainMenu(int selected) {
         alarmSequence();
         return;
     }
-    
-    //_display.setCursor(1,1);
     
     char in = getMenuInput(selected);
     // ENTER TIMER SEQUENCE
@@ -125,6 +123,7 @@ void Menu::mainMenu(int selected) {
 
     // ENTER SETTINGS SEQUENCE
     else if(in == 's' || in == '4'){
+        settingsMenu(0);
         _display.clearScreen();
     }
 
@@ -136,6 +135,37 @@ void Menu::mainMenu(int selected) {
     
     // Restart menu loop
     mainMenu(selected);
+}
+
+void Menu::settingsMenu(int selected) {
+
+    for (int i = 0; i < _settingsFormats.size(); ++i) {
+        if (i == selected) {
+            _settingsFormats.at(i) = Display::SELECTED;
+        } else {
+            _settingsFormats.at(i) = Display::BOLD_WHITE;
+        }
+    }
+
+    _menuFormats.at(selected) = Display::SELECTED;
+
+    _display.setCursor(1,1);
+
+    //printArt(_menuArt, Display::BOLD_CYAN);
+
+    //printArt(_menuTimer, _settingsFormats.at(0));
+
+    //printArt(_menuStopwatch, _settingsFormats.at(1));
+
+    //printArt(_menuAlarm, _settingsFormats.at(2));
+
+    if(_testing){
+        return;
+    }
+    
+    char in = getSettingsInput(selected);
+    
+    settingsMenu(selected);
 }
 
 /**
@@ -543,6 +573,53 @@ GET USER INPUT FOR MENU SELECTION
  * @return char The character corresponding to the user's menu selection.
  */
 char Menu::getMenuInput(int& selected){
+    while(true){
+        if(_kbhit()){
+            char ch = _getch();
+
+            if(ch == 13){
+                return selected + '1';
+            }
+
+            if(ch == -32 || ch == 224){
+                ch = getch();
+                switch(ch){
+                    case 72:
+                        selected = max(0,selected-1);
+                        break;
+                    case 80:
+                        selected = min(4,selected+1);
+                        break;   
+                    default:
+                        break; 
+                }
+                return '0';
+            }
+
+            else{
+                switch(ch){
+                    case '1':
+                    case '2':
+                    case '3':
+                        return ch;
+                    case 'S':
+                    case 's':
+                        return 's';
+                    case 'Q':
+                    case 'q':
+                        return 'q';
+                    default:
+                        break;         
+                }
+            }
+
+        }
+        wait(LOOPTIME); // Slight delay before checking input again
+    }
+}
+
+
+char Menu::getSettingsInput(int& selected){
     while(true){
         if(_kbhit()){
             char ch = _getch();

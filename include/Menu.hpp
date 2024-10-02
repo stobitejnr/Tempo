@@ -33,6 +33,8 @@ public:
      */
     char getMenuInput(int& selected);
 
+    char getSettingsInput(int& selected);
+
     /**
      * @brief Waits for a specific duration using busy-waiting.
      *
@@ -82,6 +84,8 @@ public:
      */
     void mainMenu(int selected);
 
+    void settingsMenu(int selected);
+
     void start();
 
     void timerSequence();
@@ -104,6 +108,7 @@ private:
     bool _testing;
 
     vector<string> _menuFormats;
+    vector<string> _settingsFormats;
 
     vector<string> _logoArt = {
         "                                                                                                ", 
