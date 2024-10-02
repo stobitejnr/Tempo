@@ -122,7 +122,7 @@ void Menu::mainMenu(int selected) {
 
     // ENTER SETTINGS SEQUENCE
     else if(in == 's' || in == '4'){
-        settingsMenu(0);
+        //settingsMenu(0);
         _display.clearScreen();
     }
 
