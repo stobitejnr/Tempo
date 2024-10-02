@@ -1,36 +1,41 @@
 #include "../include/Notification.hpp"
-#include <shellapi.h>
-#include <cstring>
 
 using namespace std;
 
-// Constructor definition
 Notification::Notification(string title, string body) {
-    _title = title;
-    _body = body;
-    ShowNotification(); // Automatically show notification when object is created
+    showNotification(title.c_str(), body.c_str());
 }
 
-void Notification::ShowNotification() {
-    // Initialize the NOTIFYICONDATA structure
-    NOTIFYICONDATA nid;
-    memset(&nid, 0, sizeof(NOTIFYICONDATA));
-    nid.cbSize = sizeof(NOTIFYICONDATA);
-    nid.hWnd = nullptr;  // No window handle needed
-    nid.uID = 100;       // Unique ID for the notification
-    nid.uFlags = NIF_INFO;  // Use NIF_INFO to show the balloon
-    strcpy_s(nid.szInfoTitle, _title.c_str());  // Set the notification title
-    strcpy_s(nid.szInfo, _body.c_str());        // Set the notification body
+void Notification::showNotification(const char* title, const char* body) {
 
-    // Set icon for the notification (optional, default system icon)
-    nid.hIcon = LoadIcon(NULL, IDI_APPLICATION);
+    NOTIFYICONDATAA nid = { 0 };
+    nid.cbSize = sizeof(NOTIFYICONDATAA);
+    nid.hWnd = nullptr; // Set a valid HWND if possible (or create one)
+    nid.uFlags = NIF_INFO | NIF_MESSAGE | NIF_TIP | NIF_ICON;
+    nid.uCallbackMessage = WM_USER + 1; // Custom message identifier for tray interaction
+    nid.hIcon = LoadIcon(NULL, IDI_APPLICATION); // Default icon
 
-    // Display the notification
-    Shell_NotifyIcon(NIM_ADD, &nid);
+    strcpy_s(nid.szTip, title);    // Tooltip text
+    strcpy_s(nid.szInfo, body);    // Notification text
+    strcpy_s(nid.szInfoTitle, "Tempo");  // Notification title
 
-    // Wait for the balloon to display for 5 seconds (adjustable)
+    // Remove any existing icon before adding a new one
+    Shell_NotifyIconA(NIM_DELETE, &nid);
+
+    // Add the icon to the system tray
+    if (!Shell_NotifyIconA(NIM_ADD, &nid)) {
+        MessageBoxA(NULL, "Failed to add the tray icon.", "Error", MB_OK | MB_ICONERROR);
+        return;  // Exit the function if the tray icon fails to add
+    }
+
+    // Show the notification
+    if (!Shell_NotifyIconA(NIM_MODIFY, &nid)) {
+        MessageBoxA(NULL, "Failed to modify the tray icon.", "Error", MB_OK | MB_ICONERROR);
+    }
+
+    // Keeping the application running to show the notification.
     Sleep(5000);
 
-    // Remove the notification after display
-    Shell_NotifyIcon(NIM_DELETE, &nid);
+    // Clean up: remove the tray icon
+    Shell_NotifyIconA(NIM_DELETE, &nid); 
 }

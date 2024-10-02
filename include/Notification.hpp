@@ -2,22 +2,29 @@
 #define NOTIFICATION_HPP
 
 #define WIN32_LEAN_AND_MEAN
+
 #include <windows.h>
-#include <string>
+#include <shellapi.h>
+#include <cstring>
+#include <thread>
+#include <ctime>
+#include <iostream>
+#include <iomanip>
+#include <chrono>
+#include <sstream>
 
 using namespace std;
 
 class Notification {
+
 public:
-    // Constructor
+
     Notification(string title, string body);
 
-    // Show a tray notification
-    void ShowNotification();
-
+    void showNotification(const char* title, const char* body);
+    
 private:
-    string _title;
-    string _body;
+
 };
 
-#endif // NOTIFICATION_HPP
+#endif
