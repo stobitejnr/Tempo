@@ -581,7 +581,7 @@ char Menu::getMenuInput(int& selected){
                 return selected + '1';
             }
 
-            if(ch == -32 || ch == 224){
+            if(ch == -32 || ch == 224 || ch == 0){
                 ch = getch();
                 switch(ch){
                     case 72:
