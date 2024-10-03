@@ -678,7 +678,7 @@ void Display::tickTimerSetup(string to_print)
     printAscii(1);
     clearFormat();
     setFormat(WHITE);
-    printControls(10);
+    printControls(ASCII_HEIGHT+2);
 
     clearFormat();
     setCursor(1,1);
@@ -728,7 +728,7 @@ void Display::tickAlarmSetup(string to_print)
     printAscii(1);
     clearFormat();
     setFormat(WHITE);
-    printControls(10);
+    printControls(ASCII_HEIGHT+2);
 
     clearFormat();
     setCursor(1,1);
@@ -760,6 +760,7 @@ void Display::tickTimer(Timer &timer)
     else{
         setFormat(BOLD_WHITE); // Bold white
     }
+
     printAscii(1);
     printBar(ASCII_HEIGHT+1);
     clearFormat();

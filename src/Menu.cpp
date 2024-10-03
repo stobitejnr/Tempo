@@ -100,6 +100,8 @@ void Menu::mainMenu(int selected) {
 
     printArt(_menuQuit, _menuFormats.at(4));
 
+    _display.setCursor(1,1);
+
     if(_testing){
         timerSequence();
         stopwatchSequence();
@@ -176,6 +178,8 @@ void Menu::settingsMenu(int selected) {
     printArt(_settingsCredits, _settingsFormats.at(2));
 
     printArt(_settingsBack, _settingsFormats.at(3));
+
+    _display.setCursor(1,1);
 
     if(_testing){
         return;
