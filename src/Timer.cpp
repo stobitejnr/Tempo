@@ -144,6 +144,10 @@ bool Timer::isRunning() {
     return _running;
 }
 
+bool Timer::isDone() {
+    return !_running && !remainingMilliseconds();
+}
+
 /* =========================================================
 GET PERCENTAGE OF TIME ELAPSED
 ========================================================= */

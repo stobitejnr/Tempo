@@ -766,7 +766,7 @@ void Display::tickTimer(Timer &timer)
 
     string temp;
     if(!timer.isRunning()){
-        if(remaining == 0 && flash){
+        if(timer.isDone() && flash){
             temp = BOLD_WHITE;
         }
         else{
