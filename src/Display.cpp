@@ -747,6 +747,10 @@ void Display::tickAlarmSetup(string to_print)
  */
 void Display::tickTimer(Timer &timer)
 {
+    auto now = std::chrono::steady_clock::now();
+    auto millis = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
+    bool flash = ((millis / 500) % 2 == 0);
+
     int remaining = timer.remainingMilliseconds();
     int hours = remaining / 3600000;
     remaining %= 3600000;
@@ -762,7 +766,12 @@ void Display::tickTimer(Timer &timer)
 
     string temp;
     if(!timer.isRunning()){
-        temp = BOLD_RED;
+        if(remaining == 0 && flash){
+            temp = BOLD_WHITE;
+        }
+        else{
+            temp = BOLD_RED;
+        }
     }
     else{
         temp = BOLD_WHITE;
@@ -825,6 +834,10 @@ void Display::tickStopwatch(Stopwatch &stopwatch){
  */
 void Display::tickAlarm(Alarm &alarm){
 
+    auto now = std::chrono::steady_clock::now();
+    auto millis = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
+    bool flash = ((millis / 500) % 2 == 0);
+
     string time = alarm.timeToString(alarm.getEndTime()).substr(0,5);
 
     stageAlarmDisplay(time);
@@ -832,7 +845,7 @@ void Display::tickAlarm(Alarm &alarm){
     stageArt(_alarmControls);
 
     string temp;
-    if(alarm.isDone()){
+    if(alarm.isDone() && flash){
         temp = BOLD_RED;
     }
     else{
