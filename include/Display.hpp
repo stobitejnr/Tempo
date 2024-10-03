@@ -87,7 +87,7 @@ public:
     /**
      * @brief Stages the controls for the timer.
      */
-    void stageTimerControls();
+    void stageArt(vector<string> art);
 
     /**
      * @brief Stages the progress bar for the timer.
@@ -107,15 +107,6 @@ public:
     void stageStopwatchDisplay(int hours, int minutes, int seconds, int hundredths);
 
     /**
-     * @brief Stages the controls for the stopwatch.
-     */
-    void stageStopwatchControls();
-
-    void stageTimerSetupControls();
-
-    void stageAlarmSetupControls();
-
-    /**
      * @brief Stages the splits block to be displayed.
      */
     void stageStopwatchSplits(vector<int> splits);
@@ -124,11 +115,6 @@ public:
      * @brief Stages the display for the alarm.
      */
     void stageAlarmDisplay();
-
-    /**
-     * @brief Stages the controls for the alarm.
-     */
-    void stageAlarmControls();
 
     /**
      * @brief Sets the splash screen text.
@@ -145,30 +131,30 @@ public:
      * @brief Prints the splash screen to the terminal.
      * @param splashIndex The index used for splash screen control.
      */
-    void printSplash(int splashIndex);
+    void printSplash(int splashIndex, string formatting);
 
     /**
      * @brief Prints ASCII art to the terminal.
      * @param asciiIndex The index used for ASCII control.
      */
-    void printAscii(int asciiIndex);
+    void printAscii(int asciiIndex, string formatting);
 
     /**
      * @brief Prints controls to the terminal.
      * @param controlIndex The index used for control display.
      */
-    void printControls(int controlIndex);
+    void printArt(int controlIndex, string formatting);
 
     /**
      * @brief Prints the progress bar to the terminal.
      * @param barIndex The index used for bar control.
      */
-    void printBar(int barIndex);
+    void printBar(int barIndex, string formatting);
 
     /**
      * @brief Prints the stopwatch splits to the terminal.
      */
-    void printSplits(int splitsIndex);
+    void printSplits(int splitsIndex, string formatting);
 
     /**
      * @brief Clears the terminal screen.
@@ -227,6 +213,37 @@ private:
     string _oldFormatting;
 
     int _asciiWidth; ///< Width of the ASCII art.
+
+    vector<string> _timerSetupControls = {
+        "  _     ___ _  _    ___ ___       _  _        _       __ ___      ",
+        " |_ |\\ | | |_ |_)    |   |  |\\/| |_ |_)   |  |_ |\\ | /__  | |_| o ",
+        " |_ | \\| | |_ | \\    |  _|_ |  | |_ | \\   |_ |_ | \\| \\_|  | | | o ",
+    };
+
+    vector<string> _alarmSetupControls = {
+        " _     ___ _  _                  _         ___ ___       _   ",
+        "|_ |\\ | | |_ |_)    /\\  |   /\\  |_) |\\/|    |   |  |\\/| |_ o ",
+        "|_ | \\| | |_ | \\   /--\\ |_ /--\\ | \\ |  |    |  _|_ |  | |_ o ",
+    };
+
+    vector<string> _alarmControls = {
+        "",
+        "A: New Alarm | Q: Main Menu",
+        "",
+    };
+
+    vector<string> _timerControls = {
+        "",
+        "S: Start/Stop | R: Reset | A: New Timer | Q: Main Menu",
+        "",
+    };
+
+    vector<string> _stopwatchControls = {
+        "",
+        "S: Start/Stop | R: Reset | A: Add Split | Q: Main Menu",
+        "",
+    };
+
 };
 
 #endif // DISPLAY_HPP

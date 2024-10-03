@@ -14,7 +14,7 @@ CONSTRUCTOR
  * @brief Constructs a Menu object and initializes its state.
  */
 Menu::Menu(bool testing){ 
-    srand(static_cast<unsigned int>(std::chrono::high_resolution_clock::now().time_since_epoch().count()));
+    srand(static_cast<unsigned int>(chrono::high_resolution_clock::now().time_since_epoch().count()));
     _display = Display();
     _run = true;
     _testing = testing;
@@ -23,6 +23,8 @@ Menu::Menu(bool testing){
 
     _notiSetting = true;
     _fontSetting = 1;
+
+    loadSettings();
 
     _display.setFont(_fontSetting);
 
@@ -43,7 +45,7 @@ void Menu::printArt(vector<string> art, string formatting){
 /**
  * @brief Displays the start screen with logo art and credits.
  */
-void Menu::start(){
+void Menu::credits(){
     _display.clearScreen();
 
     string lBuffer = "                         ";
@@ -62,6 +64,30 @@ void Menu::start(){
     waitForInput();
 
     _display.clearScreen();
+}
+
+void Menu::loadSettings() {
+    ifstream settingsFile("settings.txt");
+    
+    if (settingsFile.is_open()) {
+        settingsFile >> _fontSetting;
+        settingsFile >> _notiSetting;
+        settingsFile.close();
+    } else {
+        // Default settings if the file doesn't exist
+        _fontSetting = 1;
+        _notiSetting = true;
+    }
+}
+
+void Menu::saveSettings() {
+    ofstream settingsFile("settings.txt");
+    
+    if (settingsFile.is_open()) {
+        settingsFile << _fontSetting << endl;
+        settingsFile << _notiSetting << endl;
+        settingsFile.close();
+    }
 }
 
 /* =========================================================
@@ -195,16 +221,18 @@ void Menu::settingsMenu(int selected) {
         else{
             _fontSetting = 1;
         }
+        saveSettings();
     }
     else if(in == '2'){
         //Toggle notifications
         _notiSetting = !_notiSetting;
+        saveSettings();
     }
     else if(in == '3'){
-        start();
+        credits();
     }
     else if(in == 'q' || in == '4'){
-        //Save settings to file, return to mainMenu
+        saveSettings();
         _display.setFont(_fontSetting);
         return;
     }

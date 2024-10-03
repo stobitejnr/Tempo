@@ -10,6 +10,8 @@
 #include <iostream>
 #include <conio.h>
 #include <cstdlib>
+#include <fstream>
+#include <filesystem>
 
 using namespace std;
 
@@ -87,7 +89,11 @@ public:
 
     void settingsMenu(int selected);
 
-    void start();
+    void loadSettings();
+
+    void saveSettings();
+
+    void credits();
 
     void timerSequence();
 

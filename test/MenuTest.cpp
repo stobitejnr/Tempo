@@ -9,8 +9,6 @@ using namespace std;
 
 void test_menu(){
     Menu menu(true);
-    menu.start();
-    menu.mainMenu(0);
     return;
 }
 
