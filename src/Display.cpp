@@ -1,5 +1,8 @@
 #include <windows.h>
+
 #include "../include/Display.hpp"
+
+
 
 using namespace std;
 
@@ -129,17 +132,17 @@ auto Display::fast_print(const std::basic_string<char_type> &sss) -> void
 }
 
 
-void Display::setFormat(const std::string& code) {
+void Display::setFormat(const string& code) {
     _oldFormatting = _formatting;
     _formatting = code;
-    cout << code;
+    fast_print(_formatting);
 }
 
 void Display::clearFormat(){
     _oldFormatting = _formatting;
     _formatting = "\033[0m";
 
-    cout << "\033[0m";
+    fast_print(_formatting);
 }
 
 /* =========================================================

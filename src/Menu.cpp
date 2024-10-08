@@ -237,6 +237,7 @@ void Menu::settingsMenu(int selected) {
         return;
     }
     
+    printArt(_settingsBlank, "");
     settingsMenu(selected);
 }
 
@@ -247,6 +248,7 @@ void Menu::timerSequence(){
     _display.clearScreen();
 
     bool run = true;
+    bool notified = false;
 
     Timer timer = createTimer(run);
 
@@ -256,7 +258,10 @@ void Menu::timerSequence(){
         // Display a message when the timer finishes
         if(timer.remainingMilliseconds() == 0) {
             _display.setSplash("TIMER FINISHED"); 
-            //Notification noti("Tempo", "Your timerr is finished!");
+            if(_notiSetting && !notified){
+                Notification noti("Tempo", "Your timer is finished!");
+                notified = true;
+            }
         }
 
         _display.tickTimer(timer);
@@ -308,6 +313,7 @@ void Menu::alarmSequence(){
     _display.clearScreen();
 
     bool run = true;
+    bool notified = false;
 
     Alarm alarm = createAlarm(run);
 
@@ -317,6 +323,10 @@ void Menu::alarmSequence(){
         // Display a message when the alarm finishes
         if(alarm.isDone()) {
             _display.setSplash("ALARM FINISHED"); 
+            if(_notiSetting && !notified){
+                Notification noti("Tempo", "Your alarm is finished!");
+                notified = true;
+            }
         }
 
         _display.tickAlarm(alarm);

@@ -1,3 +1,13 @@
+#include <windows.h>
+#include <shellapi.h>
+#include <cstring>
+#include <thread>
+#include <ctime>
+#include <iostream>
+#include <iomanip>
+#include <chrono>
+#include <sstream>
+
 #include "../include/Notification.hpp"
 
 using namespace std;
@@ -7,6 +17,19 @@ Notification::Notification(string title, string body) {
 }
 
 void Notification::showNotification(const char* title, const char* body) {
+
+    // Create a dummy window to use as the parent for the notification.
+    HWND hWnd = CreateWindowA(
+        "STATIC", // Use a basic window class.
+        "HiddenWindow", // Window name.
+        WS_OVERLAPPEDWINDOW, // Window style.
+        0, 0, 100, 100, // Position and size.
+        nullptr, nullptr, nullptr, nullptr);
+
+    if (!hWnd) {
+        MessageBoxA(NULL, "Failed to create hidden window.", "Error", MB_OK | MB_ICONERROR);
+        return;
+    }
 
     NOTIFYICONDATAA nid = { 0 };
     nid.cbSize = sizeof(NOTIFYICONDATAA);
@@ -38,4 +61,6 @@ void Notification::showNotification(const char* title, const char* body) {
 
     // Clean up: remove the tray icon
     Shell_NotifyIconA(NIM_DELETE, &nid); 
+    DestroyWindow(hWnd); // Clean up the hidden window.
+    
 }

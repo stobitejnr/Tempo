@@ -12,7 +12,7 @@ vector<string> f1_0 = {
 "\\$$$$$$  /",
 " \\______/ "};
           
-vector<string> f1_1 = {
+vector<string> f1_1 = { 
 "   $$\\    ",
 " $$$$ |   ",
 " \\_$$ |   ",
