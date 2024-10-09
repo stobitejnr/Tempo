@@ -18,12 +18,11 @@ Notification::Notification(string title, string body) {
 
 void Notification::showNotification(const char* title, const char* body) {
 
-    // Create a dummy window to use as the parent for the notification.
     HWND hWnd = CreateWindowA(
-        "STATIC", // Use a basic window class.
-        "HiddenWindow", // Window name.
-        WS_OVERLAPPEDWINDOW, // Window style.
-        0, 0, 100, 100, // Position and size.
+        "STATIC", 
+        "HiddenWindow", 
+        WS_OVERLAPPEDWINDOW,
+        0, 0, 100, 100, 
         nullptr, nullptr, nullptr, nullptr);
 
     if (!hWnd) {
@@ -33,34 +32,31 @@ void Notification::showNotification(const char* title, const char* body) {
 
     NOTIFYICONDATAA nid = { 0 };
     nid.cbSize = sizeof(NOTIFYICONDATAA);
-    nid.hWnd = nullptr; // Set a valid HWND if possible (or create one)
+    nid.hWnd = hWnd;  
     nid.uFlags = NIF_INFO | NIF_MESSAGE | NIF_TIP | NIF_ICON;
-    nid.uCallbackMessage = WM_USER + 1; // Custom message identifier for tray interaction
-    nid.hIcon = LoadIcon(NULL, IDI_APPLICATION); // Default icon
+    nid.uCallbackMessage = WM_USER + 1; 
+    nid.hIcon = LoadIcon(NULL, IDI_APPLICATION); 
+    strcpy_s(nid.szTip, title); 
+    strcpy_s(nid.szInfo, body); 
+    strcpy_s(nid.szInfoTitle, "Tempo"); 
 
-    strcpy_s(nid.szTip, title);    // Tooltip text
-    strcpy_s(nid.szInfo, body);    // Notification text
-    strcpy_s(nid.szInfoTitle, "Tempo");  // Notification title
-
-    // Remove any existing icon before adding a new one
     Shell_NotifyIconA(NIM_DELETE, &nid);
 
-    // Add the icon to the system tray
     if (!Shell_NotifyIconA(NIM_ADD, &nid)) {
         MessageBoxA(NULL, "Failed to add the tray icon.", "Error", MB_OK | MB_ICONERROR);
-        return;  // Exit the function if the tray icon fails to add
+        DestroyWindow(hWnd);
+        return;  
     }
 
-    // Show the notification
     if (!Shell_NotifyIconA(NIM_MODIFY, &nid)) {
         MessageBoxA(NULL, "Failed to modify the tray icon.", "Error", MB_OK | MB_ICONERROR);
+        Shell_NotifyIconA(NIM_DELETE, &nid);
+        DestroyWindow(hWnd);
+        return;
     }
 
-    // Keeping the application running to show the notification.
-    Sleep(5000);
+    Sleep(5000); 
 
-    // Clean up: remove the tray icon
-    Shell_NotifyIconA(NIM_DELETE, &nid); 
-    DestroyWindow(hWnd); // Clean up the hidden window.
-    
+    Shell_NotifyIconA(NIM_DELETE, &nid);
+    DestroyWindow(hWnd);  
 }
