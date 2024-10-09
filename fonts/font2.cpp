@@ -5,6 +5,7 @@ FONT NAME: Mini
 https://patorjk.com/software/taag/#p=display&v=0&f=Mini&t=
 */
 
+using namespace std;
 
 vector<string> f2_0 = {
 "  _  ",

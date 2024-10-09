@@ -5,6 +5,8 @@ FONT NAME: Collosal
 https://patorjk.com/software/taag/#p=display&c=echo&f=Colossal&t=1
 */
 
+using namespace std;
+
 vector<string> f4_0 = {
 " .d8888b.  ",
 "d88P  Y88b ",
