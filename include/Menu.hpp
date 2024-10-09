@@ -141,7 +141,7 @@ private:
 
     vector<string> _credits = {
         "-------------------------------------", 
-        "             Tempo v0.1              ", 
+        "             Tempo v1.0              ", 
         "-------------------------------------", 
         "    A lightweight timer, stopwatch,", 
         "       and alarm terminal app.", 
