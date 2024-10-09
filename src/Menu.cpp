@@ -481,6 +481,14 @@ Alarm Menu::createAlarm(bool& run){
         h = stoi(input.substr(0, 2));
         m = stoi(input.substr(2, 2));
 
+        if(h > 12) { 
+            h = 12; 
+        }
+
+        if(h && m > 59) { 
+            m = 59; 
+        }
+
         to_print = (h < 10 ? "0" : "") + to_string(h) + ":" 
                  + (m < 10 ? "0" : "") + to_string(m);
 
@@ -496,8 +504,9 @@ Alarm Menu::createAlarm(bool& run){
     }
     _display.clearScreen();
     Alarm alarm(0,0);
+    
     if(isAM){
-        if(h = 12){
+        if(h == 12){
             alarm = Alarm(0,m);
         }
         else{
@@ -505,7 +514,12 @@ Alarm Menu::createAlarm(bool& run){
         }
     }
     else{
-        alarm = Alarm(h+12,m);
+        if(h == 12){
+            alarm = Alarm(12,m);
+        }
+        else{
+            alarm = Alarm(h+12,m);
+        }
     }
     return alarm;
 }
