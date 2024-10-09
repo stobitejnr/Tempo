@@ -7,6 +7,8 @@
 
 #include "../fonts/font1.hpp"
 #include "../fonts/font2.hpp"
+#include "../fonts/font3.hpp"
+#include "../fonts/font4.hpp"
 
 #include <cstring>
 #include <iostream>
@@ -223,6 +225,21 @@ private:
         " _     ___ _  _                  _         ___ ___       _   ",
         "|_ |\\ | | |_ |_)    /\\  |   /\\  |_) |\\/|    |   |  |\\/| |_ o ",
         "|_ | \\| | |_ | \\   /--\\ |_ /--\\ | \\ |  |    |  _|_ |  | |_ o ",
+    };
+
+    vector<string> _alarmSetupAM = {
+        "           ",
+        "  /\\  |\\/| ",
+        " /--\\ |  | ",
+        "           ",
+    };
+
+
+    vector<string> _alarmSetupPM = {
+        "  _       ",
+        " |_) |\\/| ",
+        " |   |  | ",
+        "          ",
     };
 
     vector<string> _alarmControls = {

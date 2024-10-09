@@ -47,8 +47,8 @@ Display::Display()
     _oldSplash = "";
     _oldSplits = "";
 
-    _fonts = {f1_ascii, f2_ascii};
-    _fontHeights = {f1_height, f2_height};
+    _fonts = {f1_ascii, f2_ascii, f3_ascii, f4_ascii};
+    _fontHeights = {f1_height, f2_height, f3_height, f4_height};
 
     setFont(1);
 
@@ -694,16 +694,24 @@ void Display::tickTimerSetup(string to_print)
  * @brief Updates the alarm setup display, showing the current input with a blinking cursor.
  * @param to_print The current alarm setup input string.
  */
-void Display::tickAlarmSetup(string to_print)
+void Display::tickAlarmSetup(string to_print, bool isAM)
 {
     auto now = std::chrono::steady_clock::now();
     auto millis = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
 
-    bool showBar = ((millis / 500) % 2 == 0);
+    int tempHeight;
 
-    for (int i = 0; i < ASCII_HEIGHT; i++)
+    bool showBar = ((millis / 500) % 2 == 0);
+    if(ASCII_HEIGHT < 4){
+        tempHeight = 4;
+    }
+    else{
+        tempHeight = ASCII_HEIGHT;
+    }
+    for (int i = 0; i < tempHeight; i++)
     {
         string line;
+        line += BOLD_WHITE;
         for (char ch : to_print)
         {
             if (ch == ':')
@@ -719,11 +727,43 @@ void Display::tickAlarmSetup(string to_print)
         }
 
         if(showBar){
-            line += " |";
+            line += " | ";
         }
 
         else{
             line += "   ";
+        }
+        
+        int linesLeft = tempHeight - i;
+
+        if(linesLeft <= 4){
+
+            line += "  ";
+            if(isAM){
+                line += SELECTED;
+            }
+            else{
+                line += BOLD_WHITE;
+            }
+
+            line += _alarmSetupAM[4-linesLeft];
+
+            line += "\033[0m";
+
+            line += "  ";
+
+            if(!isAM){
+                line += SELECTED;
+            }
+            else{
+                line += BOLD_WHITE;
+            }
+
+            line += _alarmSetupPM[4-linesLeft];
+
+            line += "\033[0m";
+            
+            
         }
 
         _asciiWidth = line.length(); // Update ASCII width
@@ -736,7 +776,22 @@ void Display::tickAlarmSetup(string to_print)
     printArt(1, BOLD_CYAN);
 
     printAscii(5,BOLD_WHITE);
+
+    /*
+    stageArt(_alarmSetupAM);
+
     
+    if(isAM){
+        printArt(ASCII_HEIGHT + 6, SELECTED);
+        stageArt(_alarmSetupPM);
+        printArt(ASCII_HEIGHT + 10, BOLD_WHITE);
+    }
+    else{
+        printArt(ASCII_HEIGHT + 6, BOLD_WHITE);
+        stageArt(_alarmSetupPM);
+        printArt(ASCII_HEIGHT + 10, SELECTED);
+    }
+    */
 
     setCursor(1,1);
 
@@ -820,9 +875,9 @@ void Display::tickStopwatch(Stopwatch &stopwatch){
     }
     printAscii(1, temp);
 
-    printArt(ASCII_HEIGHT+2, BOLD_CYAN);
-    printSplash(ASCII_HEIGHT+5, WHITE);
-    printSplits(ASCII_HEIGHT+7, WHITE);
+    printArt(ASCII_HEIGHT+1, BOLD_CYAN);
+    printSplash(ASCII_HEIGHT+4, WHITE);
+    printSplits(ASCII_HEIGHT+6, WHITE);
 
     clearFormat();
     setCursor(1,1);
