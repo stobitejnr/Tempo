@@ -128,42 +128,44 @@ void Menu::mainMenu(int selected) {
 
     _display.setCursor(1,1);
 
-    if(_testing){
-        timerSequence();
-        stopwatchSequence();
-        alarmSequence();
-        settingsMenu(0);
-        return;
+    char in;
+
+    if(!_testing){
+        in = getMenuInput(selected);
     }
-    
-    char in = getMenuInput(selected);
+
+    if(_testing){ in = '1'; }
     // ENTER TIMER SEQUENCE
     if(in == '1'){
         timerSequence();
         _display.clearScreen();
     }
 
+    if(_testing){ in = '2'; }
     // ENTER STOPWATCH SEQUENCE
-    else if(in == '2'){
+    if(in == '2'){
         stopwatchSequence();
         _display.clearScreen();
     }
 
+    if(_testing){ in = '3'; }
     // ENTER ALARM SEQUENCE
-    else if(in == '3'){
+    if(in == '3'){
         alarmSequence();
         _display.clearScreen();
     }
 
+    if(_testing){ in = '4'; }
     // ENTER SETTINGS SEQUENCE
-    else if(in == 's' || in == '4'){
+    if(in == 's' || in == '4'){
         _display.clearScreen();
         settingsMenu(0);
         _display.clearScreen();
     }
 
+    if(_testing){ in = '5'; }
     // QUIT PROGRAM
-    else if(in == 'q' || in == '5'){
+    if(in == 'q' || in == '5'){
         _display.clearScreen();
         return;
     }
@@ -213,15 +215,10 @@ void Menu::settingsMenu(int selected) {
     printArt(_settingsBack, _settingsFormats.at(3));
 
     _display.setCursor(1,1);
-
-    if(_testing){
-        saveSettings();
-        credits();
-        return;
-    }
     
     char in = getSettingsInput(selected);
 
+    if(_testing){ in = '1'; }
     if(in == '1'){
         //Rotate fonts
         if(_fontSetting < NUM_FONTS){
@@ -232,15 +229,21 @@ void Menu::settingsMenu(int selected) {
         }
         saveSettings();
     }
-    else if(in == '2'){
+
+    if(_testing){ in = '2'; }
+    if(in == '2'){
         //Toggle notifications
         _notiSetting = !_notiSetting;
         saveSettings();
     }
-    else if(in == '3'){
+
+    if(_testing){ in = '3'; }
+    if(in == '3'){
         credits();
     }
-    else if(in == 'q' || in == '4'){
+
+    if(_testing){ in = '4'; }
+    if(in == 'q' || in == '4'){
         saveSettings();
         _display.setFont(_fontSetting);
         return;
@@ -408,7 +411,7 @@ Timer Menu::createTimer(bool& run){
         
         wait(LOOPTIME);
 
-        if(_testing){
+        if(_testing && h){
             break;
         }
     }
@@ -501,7 +504,7 @@ Alarm Menu::createAlarm(bool& run){
         
         wait(LOOPTIME);
 
-        if(_testing){
+        if(_testing && h){
             break;
         }
     }
@@ -569,7 +572,7 @@ HANDLE KEYBOARD INPUT FOR TIMER
  * @param run A boolean reference that determines whether to continue the loop.
  */
 void Menu::checkTimerInput(Timer& timer, bool& run){
-    if(_kbhit()){
+    if(_kbhit() || _testing){
         char ch = _getch();
         switch(ch){
             case 'S':
@@ -619,7 +622,7 @@ HANDLE KEYBOARD INPUT FOR STOPWATCH
  * @param run A boolean reference that determines whether to continue the loop.
  */
 void Menu::checkStopwatchInput(Stopwatch& stopwatch, bool& run){
-    if(_kbhit()){
+    if(_kbhit() || _testing){
         char ch = _getch();
         switch(ch){
             case 'S':
@@ -677,7 +680,7 @@ HANDLE KEYBOARD INPUT FOR ALARM
  * @param run A boolean reference that determines whether to continue the loop.
  */
 void Menu::checkAlarmInput(Alarm& alarm, bool& run){
-    if(_kbhit()){
+    if(_kbhit() || _testing){
         char ch = _getch();
         switch(ch){
             case 'A':
@@ -713,7 +716,7 @@ GET USER INPUT FOR MENU SELECTION
  */
 char Menu::getMenuInput(int& selected){
     while(true){
-        if(_kbhit()){
+        if(_kbhit() || _testing){
             char ch = _getch();
 
             if(ch == 13){
@@ -763,7 +766,7 @@ char Menu::getMenuInput(int& selected){
 
 char Menu::getSettingsInput(int& selected){
     while(true){
-        if(_kbhit()){
+        if(_kbhit() || _testing){
             char ch = _getch();
 
             if(ch == 13){
