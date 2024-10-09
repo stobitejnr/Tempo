@@ -33,17 +33,17 @@ public:
     /**
      * @brief Pauses the timer and calculates the remaining milliseconds.
      */
-    void pause();
+    virtual void pause();
 
     /**
      * @brief Resumes the timer from where it was paused by recalculating the end time.
      */
-    void resume();
+    virtual void resume();
 
     /**
      * @brief Resets the timer to its original duration and pauses it.
      */
-    void reset();
+    virtual void reset();
 
     /**
      * @brief Adds a specified amount of time (in seconds) to the timer.
@@ -59,7 +59,7 @@ public:
      *
      * @return bool True if the timer is running, false otherwise.
      */
-    bool isRunning();
+    virtual bool isRunning();
 
     bool isDone();
 

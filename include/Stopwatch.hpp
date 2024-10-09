@@ -40,7 +40,7 @@ public:
      * A split time is a snapshot of the time elapsed, which can be useful for time intervals
      * without stopping the stopwatch.
      */
-    void addSplit();
+    virtual void addSplit();
 
     /**
      * @brief Clears the splits vector.
@@ -58,24 +58,24 @@ public:
      *
      * Stops the time count until resumed. The current time is recorded.
      */
-    void pause();
+    virtual void pause();
 
     /**
      * @brief Resumes the stopwatch from the last paused time.
      */
-    void resume();
+    virtual void resume();
 
     /**
      * @brief Resets the stopwatch to 0 milliseconds and stops it.
      */
-    void reset();
+    virtual void reset();
 
     /**
      * @brief Checks if the stopwatch is currently running.
      *
      * @return bool True if the stopwatch is running, false otherwise.
      */
-    bool isRunning();
+    virtual bool isRunning();
 
     /**
      * @brief Returns the current elapsed time in milliseconds.

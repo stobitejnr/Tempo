@@ -12,6 +12,8 @@
 #include "Display.hpp"
 #include "Notification.hpp"
 
+class MenuTest;
+
 
 using namespace std;
 
@@ -21,6 +23,7 @@ using namespace std;
 class Menu
 {
 public:
+    // friend class MenuTest;
     /**
      * @brief Constructs a Menu object.
      */
@@ -109,8 +112,6 @@ public:
 
     void printArt(vector<string> art, string formatting);
 
-private:
-    Display _display;  ///< Instance of Display to manage the visual representation.
     bool _run;         ///< Boolean to control the main loop execution.
     bool _testing;
 
@@ -119,6 +120,12 @@ private:
 
     bool _notiSetting;
     int _fontSetting;
+
+    Display _display;
+
+private:
+      ///< Instance of Display to manage the visual representation.
+
 
 
     vector<string> _logoArt = {
