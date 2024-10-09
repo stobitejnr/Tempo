@@ -216,7 +216,11 @@ void Menu::settingsMenu(int selected) {
 
     _display.setCursor(1,1);
     
-    char in = getSettingsInput(selected);
+    char in;
+    
+    if(!_testing){
+        in = getSettingsInput(selected);
+    }
 
     if(_testing){ in = '1'; }
     if(in == '1'){
@@ -411,7 +415,7 @@ Timer Menu::createTimer(bool& run){
         
         wait(LOOPTIME);
 
-        if(_testing && h){
+        if(_testing){
             break;
         }
     }
@@ -504,7 +508,7 @@ Alarm Menu::createAlarm(bool& run){
         
         wait(LOOPTIME);
 
-        if(_testing && h){
+        if(_testing){
             break;
         }
     }
@@ -572,7 +576,7 @@ HANDLE KEYBOARD INPUT FOR TIMER
  * @param run A boolean reference that determines whether to continue the loop.
  */
 void Menu::checkTimerInput(Timer& timer, bool& run){
-    if(_kbhit() || _testing){
+    if(_kbhit()){
         char ch = _getch();
         switch(ch){
             case 'S':
@@ -622,7 +626,7 @@ HANDLE KEYBOARD INPUT FOR STOPWATCH
  * @param run A boolean reference that determines whether to continue the loop.
  */
 void Menu::checkStopwatchInput(Stopwatch& stopwatch, bool& run){
-    if(_kbhit() || _testing){
+    if(_kbhit()){
         char ch = _getch();
         switch(ch){
             case 'S':
@@ -680,7 +684,7 @@ HANDLE KEYBOARD INPUT FOR ALARM
  * @param run A boolean reference that determines whether to continue the loop.
  */
 void Menu::checkAlarmInput(Alarm& alarm, bool& run){
-    if(_kbhit() || _testing){
+    if(_kbhit()){
         char ch = _getch();
         switch(ch){
             case 'A':
@@ -716,7 +720,7 @@ GET USER INPUT FOR MENU SELECTION
  */
 char Menu::getMenuInput(int& selected){
     while(true){
-        if(_kbhit() || _testing){
+        if(_kbhit()){
             char ch = _getch();
 
             if(ch == 13){
@@ -766,7 +770,7 @@ char Menu::getMenuInput(int& selected){
 
 char Menu::getSettingsInput(int& selected){
     while(true){
-        if(_kbhit() || _testing){
+        if(_kbhit()){
             char ch = _getch();
 
             if(ch == 13){
