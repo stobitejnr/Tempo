@@ -4,7 +4,7 @@ using namespace std;
 
 const double LOOPTIME = 0.01;
 
-const int NUM_FONTS = 2;
+const int NUM_FONTS = 4;
 
 /* =========================================================
 CONSTRUCTOR
@@ -191,6 +191,12 @@ void Menu::settingsMenu(int selected) {
             break;
         case 2:
             printArt(_settingsFont2, _settingsFormats.at(0));
+            break;
+        case 3:
+            printArt(_settingsFont3, _settingsFormats.at(0));
+            break;
+        case 4:
+            printArt(_settingsFont4, _settingsFormats.at(0));
             break;
     }
 

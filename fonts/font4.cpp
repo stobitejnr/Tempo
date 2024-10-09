@@ -5,7 +5,7 @@ FONT NAME: Collosal
 https://patorjk.com/software/taag/#p=display&c=echo&f=Colossal&t=1
 */
 
-vector<string> _0 = {
+vector<string> f4_0 = {
 " .d8888b.  ",
 "d88P  Y88b ",
 "888    888 ",
@@ -16,19 +16,19 @@ vector<string> _0 = {
 " \"Y8888P\"  "};
 
           
-vector<string> _1 = {
+vector<string> f4_1 = {
 
-" d888   ",
-"d8888   ",
-"  888   ",
-"  888   ",
-"  888   ",
-"  888   ",
-"  888   ",
-"8888888 "};
+"   d888    ",
+"  d8888    ",
+"    888    ",
+"    888    ",
+"    888    ",
+"    888    ",
+"    888    ",
+"  8888888  "};
 
 
-vector<string> _2 = {
+vector<string> f4_2 = {
 
 " .d8888b.  ",
 "d88P  Y88b ",
@@ -40,7 +40,7 @@ vector<string> _2 = {
 "888888888  "};
 
 
-vector<string> _3 = {
+vector<string> f4_3 = {
 
 " .d8888b.  ",
 "d88P  Y88b ",
@@ -51,7 +51,7 @@ vector<string> _3 = {
 "Y88b  d88P ",
 " \"Y8888P\"  "};
 
-vector<string> _4 = {
+vector<string> f4_4 = {
 
 "    d8888  ",
 "   d8P888  ",
@@ -63,7 +63,7 @@ vector<string> _4 = {
 "      888  "};
 
 
-vector<string> _5 = {
+vector<string> f4_5 = {
 "888888888  ",
 "888        ",
 "888        ",
@@ -74,7 +74,7 @@ vector<string> _5 = {
 " \"Y8888P\"  "};
 
           
-vector<string> _6 = {
+vector<string> f4_6 = {
 
 " .d8888b.  ",
 "d88P  Y88b ",
@@ -86,7 +86,7 @@ vector<string> _6 = {
 " \"Y8888P\"  "};
 
     
-vector<string> _7 = {
+vector<string> f4_7 = {
 
 "8888888888 ",
 "      d88P ",
@@ -97,7 +97,7 @@ vector<string> _7 = {
 " d88P      ",
 "d88P       "};
 
-vector<string> _8 = {
+vector<string> f4_8 = {
 
 " .d8888b.  ",
 "d88P  Y88b ",
@@ -109,7 +109,7 @@ vector<string> _8 = {
 " \"Y8888P\"  "};
 
     
-vector<string> _9 = {
+vector<string> f4_9 = {
 
 " .d8888b.  ",
 "d88P  Y88b ",
@@ -121,23 +121,34 @@ vector<string> _9 = {
 " \"Y8888P\"  "};
 
 
-vector<string> _colon = {
+vector<string> f4_colon = {
 
-"d8b ",
-"88P ",
-"8P  ",
-"\\   "};
+"     ",
+" d8b ",
+" Y8P ",
+"     ",
+"     ",
+" d8b ",
+" Y8P ",
+"     "};
 
     
-vector<string> _period = {
+vector<string> f4_period = {
+"     ",
+"     ",
+"     ",
+"     ",
+"     ",
+"     ",
+" d8b ",
+" Y8P ",
+};
 
-"d8b ",
-"Y8P "};
 
-
-vector<string> _a = {
-
-
+vector<string> f4_a = {
+"         ",
+"         ",
+"         ",
 " 8888b.  ",
 "    \"88b ",
 ".d888888 ",
@@ -145,18 +156,22 @@ vector<string> _a = {
 "\"Y888888 "};
 
 
-vector<string> _p = {
+vector<string> f4_p = {
+"         ",
+"         ",
 "88888b.  ",
 "888 \"88b ",
 "888  888 ",
-"888 d88P ",
-"88888P\"  ",
+"88888P   ",
 "888      ",
 "888      ",
-"888      "};
+};
 
 
-vector<string> _m = {
+vector<string> f4_m = {
+"              ",
+"              ",
+"              ",
 "88888b.d88b.  ",
 "888 \"888 \"88b ",
 "888  888  888 ",
@@ -164,4 +179,5 @@ vector<string> _m = {
 "888  888  888 "};
 
 
-vector<vector<string>> font1 = {_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _colon, _period, _a, _p, _m};
+vector<vector<string>> f4_ascii = {f4_0, f4_1, f4_2, f4_3, f4_4, f4_5, f4_6, f4_7, f4_8, f4_9, f4_colon, f4_period, f4_a, f4_p, f4_m};
+int f4_height = f4_0.size();

@@ -1,6 +1,10 @@
 #include "font2.hpp"
 
-using namespace std;
+/*
+FONT NAME: Mini
+https://patorjk.com/software/taag/#p=display&v=0&f=Mini&t=
+*/
+
 
 vector<string> f2_0 = {
 "  _  ",

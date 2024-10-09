@@ -4,9 +4,9 @@
 #include <vector>
 #include <string>
 
-using std::vector;
-using std::string;
+using namespace std;
 
-extern vector<vector<string>> font3;
+extern vector<vector<string>> f3_ascii;
+extern int f3_height;
 
 #endif // FONT3_HPP

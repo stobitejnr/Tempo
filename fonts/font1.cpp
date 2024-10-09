@@ -1,6 +1,9 @@
 #include "font1.hpp"
 
-using namespace std;
+/*
+FONT NAME: Big Money-nw
+https://patorjk.com/software/taag/#p=display&v=0&f=Big%20Money-nw&t=
+*/
 
 vector<string> f1_0 = {
 " $$$$$$\\  ",

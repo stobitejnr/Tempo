@@ -7,6 +7,8 @@
 
 #include "../fonts/font1.hpp"
 #include "../fonts/font2.hpp"
+#include "../fonts/font3.hpp"
+#include "../fonts/font4.hpp"
 
 #include <cstring>
 #include <iostream>

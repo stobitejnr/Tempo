@@ -49,8 +49,8 @@ Display::Display()
     _oldSplash = "";
     _oldSplits = "";
 
-    _fonts = {f1_ascii, f2_ascii};
-    _fontHeights = {f1_height, f2_height};
+    _fonts = {f1_ascii, f2_ascii, f3_ascii, f4_ascii};
+    _fontHeights = {f1_height, f2_height, f3_height, f4_height};
 
     setFont(1);
 
