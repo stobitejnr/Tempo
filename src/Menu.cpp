@@ -132,6 +132,7 @@ void Menu::mainMenu(int selected) {
         timerSequence();
         stopwatchSequence();
         alarmSequence();
+        settingsMenu(0);
         return;
     }
     
@@ -214,6 +215,8 @@ void Menu::settingsMenu(int selected) {
     _display.setCursor(1,1);
 
     if(_testing){
+        saveSettings();
+        credits();
         return;
     }
     
