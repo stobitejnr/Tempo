@@ -427,18 +427,38 @@ Alarm Menu::createAlarm(bool& run){
 
     string to_print = "00:00";
 
-    _display.tickAlarmSetup(to_print);
+    bool isAM = true;
+
+    _display.tickAlarmSetup(to_print, isAM);
     
     int index = 3;
     
+    
     while (true) {
         char ch; 
+
         if(_testing){
             ch = '1';
         }
+
         else if(_kbhit()){
             ch = _getch();
+
+            if(ch == -32 || ch == 224 || ch == 0){
+                ch = getch();
+                switch(ch){
+                    case 75:
+                        isAM = 1;
+                        break;
+                    case 77:
+                        isAM = 0;
+                        break;   
+                    default:
+                        break; 
+                }
+            }
         }
+
         else{
             ch = 0;
         }
@@ -464,7 +484,9 @@ Alarm Menu::createAlarm(bool& run){
         to_print = (h < 10 ? "0" : "") + to_string(h) + ":" 
                  + (m < 10 ? "0" : "") + to_string(m);
 
-        _display.tickAlarmSetup(to_print);
+        input = to_print.substr(0, 2) + to_print.substr(3, 2);
+
+        _display.tickAlarmSetup(to_print, isAM);
         
         wait(LOOPTIME);
 
@@ -473,7 +495,18 @@ Alarm Menu::createAlarm(bool& run){
         }
     }
     _display.clearScreen();
-    Alarm alarm(h,m);
+    Alarm alarm(0,0);
+    if(isAM){
+        if(h = 12){
+            alarm = Alarm(0,m);
+        }
+        else{
+            alarm = Alarm(h,m);
+        }
+    }
+    else{
+        alarm = Alarm(h+12,m);
+    }
     return alarm;
 }
 

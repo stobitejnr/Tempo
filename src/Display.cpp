@@ -696,7 +696,7 @@ void Display::tickTimerSetup(string to_print)
  * @brief Updates the alarm setup display, showing the current input with a blinking cursor.
  * @param to_print The current alarm setup input string.
  */
-void Display::tickAlarmSetup(string to_print)
+void Display::tickAlarmSetup(string to_print, bool isAM)
 {
     auto now = std::chrono::steady_clock::now();
     auto millis = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
@@ -706,6 +706,7 @@ void Display::tickAlarmSetup(string to_print)
     for (int i = 0; i < ASCII_HEIGHT; i++)
     {
         string line;
+        line += BOLD_WHITE;
         for (char ch : to_print)
         {
             if (ch == ':')
@@ -721,11 +722,42 @@ void Display::tickAlarmSetup(string to_print)
         }
 
         if(showBar){
-            line += " |";
+            line += " | ";
         }
 
         else{
             line += "   ";
+        }
+        
+        int linesLeft = ASCII_HEIGHT - i;
+        if(linesLeft <= 4){
+
+            line += "  ";
+            if(isAM){
+                line += SELECTED;
+            }
+            else{
+                line += BOLD_WHITE;
+            }
+
+            line += _alarmSetupAM[4-linesLeft];
+
+            line += "\033[0m";
+
+            line += "  ";
+
+            if(!isAM){
+                line += SELECTED;
+            }
+            else{
+                line += BOLD_WHITE;
+            }
+
+            line += _alarmSetupPM[4-linesLeft];
+
+            line += "\033[0m";
+            
+            
         }
 
         _asciiWidth = line.length(); // Update ASCII width
@@ -738,7 +770,22 @@ void Display::tickAlarmSetup(string to_print)
     printArt(1, BOLD_CYAN);
 
     printAscii(5,BOLD_WHITE);
+
+    /*
+    stageArt(_alarmSetupAM);
+
     
+    if(isAM){
+        printArt(ASCII_HEIGHT + 6, SELECTED);
+        stageArt(_alarmSetupPM);
+        printArt(ASCII_HEIGHT + 10, BOLD_WHITE);
+    }
+    else{
+        printArt(ASCII_HEIGHT + 6, BOLD_WHITE);
+        stageArt(_alarmSetupPM);
+        printArt(ASCII_HEIGHT + 10, SELECTED);
+    }
+    */
 
     setCursor(1,1);
 
