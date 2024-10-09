@@ -29,7 +29,6 @@ Menu::Menu(bool testing){
     _display.setFont(_fontSetting);
 
     _display.clearScreen();
-    
     mainMenu(0);
 }
 

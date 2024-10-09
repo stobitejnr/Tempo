@@ -52,27 +52,27 @@ public:
      */
     Display();
 
-    virtual void tickTimerSetup(string to_print);
+    void tickTimerSetup(string to_print);
 
-    virtual void tickAlarmSetup(string to_print);
+    void tickAlarmSetup(string to_print);
 
     /**
      * @brief Updates the display based on the state of the provided Timer object.
      * @param timer Reference to the Timer object.
      */
-    virtual void tickTimer(Timer &timer);
+    void tickTimer(Timer &timer);
 
     /**
      * @brief Updates the display based on the state of the provided Stopwatch object.
      * @param stopwatch Reference to the Stopwatch object.
      */
-    virtual void tickStopwatch(Stopwatch &stopwatch);
+    void tickStopwatch(Stopwatch &stopwatch);
 
     /**
      * @brief Updates the display based on the state of the provided Alarm object.
      * @param alarm Reference to the Alarm object.
      */
-    virtual void tickAlarm(Alarm &alarm);
+    void tickAlarm(Alarm &alarm);
 
     /**
      * @brief Stages the timer display with provided time values.
@@ -121,12 +121,12 @@ public:
      * @brief Sets the splash screen text.
      * @param str The string to display as the splash screen.
      */
-    virtual void setSplash(string str);
+    void setSplash(string str);
 
     /**
      * @brief Clears the splash screen.
      */
-     virtual void clearSplash();
+    void clearSplash();
 
     /**
      * @brief Prints the splash screen to the terminal.
@@ -160,18 +160,18 @@ public:
     /**
      * @brief Clears the terminal screen.
      */
-    virtual void clearScreen();
+    void clearScreen();
 
-    virtual void setFormat(const string& code);
+    void setFormat(const string& code);
 
-    virtual void clearFormat();
+    void clearFormat();
 
     /**
      * @brief Sets the cursor position in the terminal.
      * @param x The x-coordinate (column) to move the cursor to.
      * @param y The y-coordinate (row) to move the cursor to.
      */
-    virtual void setCursor(int x, int y);
+    void setCursor(int x, int y);
 
     /**
      * @brief Clears a specific line in the terminal.
@@ -179,7 +179,7 @@ public:
      */
     void clearLine(int lineIndex);
 
-    virtual void setFont(int num);
+    void setFont(int num);
 
 
     /**
