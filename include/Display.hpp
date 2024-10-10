@@ -54,7 +54,7 @@ public:
 
     void tickTimerSetup(string to_print);
 
-    void tickAlarmSetup(string to_print);
+    void tickAlarmSetup(string to_print, bool isAM);
 
     /**
      * @brief Updates the display based on the state of the provided Timer object.
