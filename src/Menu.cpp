@@ -247,7 +247,7 @@ void Menu::settingsMenu(int selected) {
     }
 
     if(_testing){ in = '4'; }
-    if(in == 'q' || in == '4'){
+    if(in == 'q' || in == '4' ){
         saveSettings();
         _display.setFont(_fontSetting);
         return;
@@ -398,7 +398,7 @@ Timer Menu::createTimer(bool& run){
             input = '0' + input.substr(0, 5);
         }
 
-        if(ch == 'q' || ch == 'Q'){
+        if(ch == 'q' || ch == 'Q' || ch == 27){
             run = false;
             return Timer(0,0,0);
         }
@@ -483,7 +483,7 @@ Alarm Menu::createAlarm(bool& run){
             input = '0' + input.substr(0, 3);
         }
 
-        if(ch == 'q' || ch == 'Q'){
+        if(ch == 'q' || ch == 'Q' || ch == 27){
             run = false;
             return Alarm(0,0);
         }
@@ -603,7 +603,7 @@ void Menu::checkTimerInput(Timer& timer, bool& run){
             timer = createTimer(run);
         }
         if(_testing) { ch = 'q'; }
-        if(ch == 'Q' || ch == 'q'){
+        if(ch == 'Q' || ch == 'q' || ch == 27){
             _display.clearSplash();
             run = false;
             return;
@@ -656,7 +656,7 @@ void Menu::checkStopwatchInput(Stopwatch& stopwatch, bool& run){
             _display.setSplash("SPLIT CREATED");
         }
         if(_testing) { ch = 'q'; }
-        if(ch == 'Q' || ch == 'q'){
+        if(ch == 'Q' || ch == 'q' || ch == 27){
             _display.clearSplash();
             run = false;
             return;
@@ -688,7 +688,7 @@ void Menu::checkAlarmInput(Alarm& alarm, bool& run){
             alarm = createAlarm(run);
         }
         if(_testing) { ch = 'q'; }
-        if(ch == 'Q' || ch == 'q'){
+        if(ch == 'Q' || ch == 'q' || ch == 27){
             _display.clearSplash();
             run = false;
             return;
@@ -745,6 +745,7 @@ char Menu::getMenuInput(int& selected){
                         return 's';
                     case 'Q':
                     case 'q':
+                    case 27:
                         selected = 4;
                         return 'q';
                     default:
@@ -790,6 +791,7 @@ char Menu::getSettingsInput(int& selected){
                         return ch;
                     case 'Q':
                     case 'q':
+                    case 27:
                         selected = 3;
                         return 'q';
                     default:
