@@ -253,7 +253,7 @@ void Menu::settingsMenu(int selected) {
         return;
     }
     
-    printArt(_settingsBlank, "");
+    //printArt(_settingsBlank, "");
     settingsMenu(selected);
 }
 
@@ -576,20 +576,20 @@ HANDLE KEYBOARD INPUT FOR TIMER
  * @param run A boolean reference that determines whether to continue the loop.
  */
 void Menu::checkTimerInput(Timer& timer, bool& run){
-    if(_kbhit()){
-        char ch = _getch();
+    if(_kbhit() || _testing){
+        char ch;
+        if(!_testing) { ch = _getch(); }
         switch(ch){
-            case 'S':
-            case 's':
-                if(timer.isRunning()){
-                    timer.pause();
-                    _display.setSplash("TIMER PAUSED");
-                }
-                else if(timer.remainingMilliseconds() > 0){
-                    _display.clearSplash();
-                    timer.resume();        
-                }
-                break;
+        if(ch == 's' || ch == 'S'){
+            if(timer.isRunning()){
+                timer.pause();
+                _display.setSplash("TIMER PAUSED");
+            }
+            else if(timer.remainingMilliseconds() > 0){
+                _display.clearSplash();
+                timer.resume();        
+            }
+        }
             case 'R':
             case 'r':
                 timer.reset();

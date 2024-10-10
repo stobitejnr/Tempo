@@ -9,6 +9,11 @@ using namespace std;
 
 void test_menu(){
     Menu menu(true);
+    menu.saveSettings();
+    menu.loadSettings();
+    menu.settingsMenu(1);
+    menu.settingsMenu(2);
+    menu.settingsMenu(3);
     return;
 }
 
