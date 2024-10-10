@@ -1,12 +1,6 @@
 #include <windows.h>
-#include <shellapi.h>
-#include <cstring>
-#include <thread>
-#include <ctime>
 #include <iostream>
-#include <iomanip>
-#include <chrono>
-#include <sstream>
+#include <string>
 #include <cstdlib>
 
 #include "../include/Notification.hpp"
@@ -53,8 +47,6 @@ void Notification::showNotification(const string& title, const string& body) {
     // Close process and thread handles immediately (since the process runs in background)
     CloseHandle(pi.hProcess);
     CloseHandle(pi.hThread);
-
-    std::cout << "PowerShell script is running in the background." << std::endl;
 
     return;
 }
