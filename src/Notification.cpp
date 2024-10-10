@@ -7,56 +7,54 @@
 #include <iomanip>
 #include <chrono>
 #include <sstream>
+#include <cstdlib>
 
 #include "../include/Notification.hpp"
+#include "Notification.hpp"
 
 using namespace std;
 
 Notification::Notification(string title, string body) {
-    showNotification(title.c_str(), body.c_str());
+    showNotification(title, body);
 }
 
-void Notification::showNotification(const char* title, const char* body) {
+void Notification::showNotification(const string& title, const string& body) {
+    // Prepare the PowerShell command with parameters
+    string powershellCommand = "powershell.exe -ExecutionPolicy Bypass -File \"J:\\COSC345\\Tempo\\src\\notification.ps1\" -title \"" + title + "\" -message \"" + body + "\"";
 
-    HWND hWnd = CreateWindowA(
-        "STATIC", 
-        "HiddenWindow", 
-        WS_OVERLAPPEDWINDOW,
-        0, 0, 100, 100, 
-        nullptr, nullptr, nullptr, nullptr);
+    // Set up the structures
+    STARTUPINFO si;
+    PROCESS_INFORMATION pi;
 
-    if (!hWnd) {
-        MessageBoxA(NULL, "Failed to create hidden window.", "Error", MB_OK | MB_ICONERROR);
+    ZeroMemory(&si, sizeof(si));
+    si.cb = sizeof(si);
+    ZeroMemory(&pi, sizeof(pi));
+
+    // This hides the PowerShell window
+    si.dwFlags = STARTF_USESHOWWINDOW;
+    si.wShowWindow = SW_HIDE;
+
+    // Create the process
+    if (!CreateProcess(NULL, 
+        const_cast<char*>(powershellCommand.c_str()),  // Command line
+        NULL,           // Process handle not inheritable
+        NULL,           // Thread handle not inheritable
+        FALSE,          // No handle inheritance
+        0,              // No creation flags
+        NULL,           // Use parent's environment block
+        NULL,           // Use parent's starting directory
+        &si,            // Pointer to STARTUPINFO (to hide window)
+        &pi)            // Pointer to PROCESS_INFORMATION
+    ) {
+        std::cerr << "CreateProcess failed: " << GetLastError() << std::endl;
         return;
     }
 
-    NOTIFYICONDATAA nid = { 0 };
-    nid.cbSize = sizeof(NOTIFYICONDATAA);
-    nid.hWnd = hWnd;  
-    nid.uFlags = NIF_INFO | NIF_MESSAGE | NIF_TIP | NIF_ICON;
-    nid.uCallbackMessage = WM_USER + 1; 
-    nid.hIcon = LoadIcon(NULL, IDI_APPLICATION); 
-    strcpy_s(nid.szTip, title); 
-    strcpy_s(nid.szInfo, body); 
-    strcpy_s(nid.szInfoTitle, "Tempo"); 
+    // Close process and thread handles immediately (since the process runs in background)
+    CloseHandle(pi.hProcess);
+    CloseHandle(pi.hThread);
 
-    Shell_NotifyIconA(NIM_DELETE, &nid);
+    std::cout << "PowerShell script is running in the background." << std::endl;
 
-    if (!Shell_NotifyIconA(NIM_ADD, &nid)) {
-        MessageBoxA(NULL, "Failed to add the tray icon.", "Error", MB_OK | MB_ICONERROR);
-        DestroyWindow(hWnd);
-        return;  
-    }
-
-    if (!Shell_NotifyIconA(NIM_MODIFY, &nid)) {
-        MessageBoxA(NULL, "Failed to modify the tray icon.", "Error", MB_OK | MB_ICONERROR);
-        Shell_NotifyIconA(NIM_DELETE, &nid);
-        DestroyWindow(hWnd);
-        return;
-    }
-
-    Sleep(5000); 
-
-    Shell_NotifyIconA(NIM_DELETE, &nid);
-    DestroyWindow(hWnd);  
+    return;
 }

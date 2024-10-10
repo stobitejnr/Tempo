@@ -11,7 +11,7 @@ public:
 
     Notification(string title, string body);
 
-    void showNotification(const char* title, const char* body);
+    void showNotification(const string& title, const string&  body);
     
 private:
 
