@@ -44,6 +44,11 @@ add_executable(AlarmTest
     src/Alarm.cpp
 )
 
+add_executable(NotificationTest
+    test/NotificationTest.cpp
+    src/Notification.cpp
+)
+
 add_executable(DisplayTest
     test/DisplayTest.cpp
     src/Display.cpp
@@ -78,3 +83,4 @@ add_test(NAME StopwatchTest COMMAND StopwatchTest)
 add_test(NAME AlarmTest COMMAND AlarmTest)
 add_test(NAME DisplayTest COMMAND DisplayTest)
 add_test(NAME MenuTest COMMAND MenuTest)
+add_test(NAME NotificationTest COMMAND NotificationTest)
