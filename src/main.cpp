@@ -16,15 +16,10 @@ MAIN FUNCTION
  */
 int main() {
 
-    //Notification::setupNotifications();
-    //cout << "\033[?7l";
-
     // Create a Menu object
     Menu menu(false);
 
     cout << "<< PROGRAM QUIT >>" << endl;
 
-
-    //cout << "\033[?7h";
     return 0;
 }

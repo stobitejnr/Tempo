@@ -1,8 +1,9 @@
 param (
-    [string]$title = "Notification",
-    [string]$message = "This is a notification",
-    [string]$imagePath = "C:\Path\To\Your\Image.png"
+    [string]$title = "",
+    [string]$message = "",
+    [string]$imagePath = ""
 )
+
 
 # Load Windows Runtime namespaces for toast notifications
 [Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime] > $null
@@ -10,9 +11,10 @@ param (
 
 # Create the XML content for the toast notification
 $toastXmlString = @"
-<toast>
+<toast activationType="protocol">
     <visual>
-        <binding template="ToastText02">
+        <binding template="ToastGeneric">
+            <image src="$imagePath" placement="appLogoOverride"/>
             <text id="1">$title</text>
             <text id="2">$message</text>
         </binding>
