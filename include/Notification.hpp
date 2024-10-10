@@ -12,6 +12,8 @@ public:
     Notification(string title, string body);
 
     void showNotification(const string& title, const string&  body);
+
+    static void setupNotifications();
     
 private:
 

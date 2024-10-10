@@ -15,6 +15,8 @@ MAIN FUNCTION
  * @return int Returns 0 upon successful execution.
  */
 int main() {
+
+    Notification::setupNotifications();
     //cout << "\033[?7l";
 
     // Create a Menu object
