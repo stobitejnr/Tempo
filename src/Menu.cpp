@@ -579,7 +579,7 @@ void Menu::checkTimerInput(Timer& timer, bool& run){
     if(_kbhit() || _testing){
         char ch;
         if(!_testing) { ch = _getch(); }
-        switch(ch){
+        if(_testing) { ch = 's'; }
         if(ch == 's' || ch == 'S'){
             if(timer.isRunning()){
                 timer.pause();
@@ -590,25 +590,23 @@ void Menu::checkTimerInput(Timer& timer, bool& run){
                 timer.resume();        
             }
         }
-            case 'R':
-            case 'r':
-                timer.reset();
-                _display.clearScreen();
-                _display.setSplash("TIMER RESET, PRESS 'S' TO START");
-                break;
-            case 'A':
-            case 'a':
-                _display.clearScreen();
-                _display.clearSplash();
-                timer = createTimer(run);
-                break;
-            case 'Q':
-            case 'q':
-                _display.clearSplash();
-                run = false;
-                return;
-            default:
-                break;
+        if(_testing) { ch = 'r'; }
+        if(ch == 'R' || ch == 'r'){
+            timer.reset();
+            _display.clearScreen();
+            _display.setSplash("TIMER RESET, PRESS 'S' TO START");
+        }
+        if(_testing) { ch = 'a'; }
+        if(ch == 'A' || ch == 'a'){
+            _display.clearScreen();
+            _display.clearSplash();
+            timer = createTimer(run);
+        }
+        if(_testing) { ch = 'q'; }
+        if(ch == 'Q' || ch == 'q'){
+            _display.clearSplash();
+            run = false;
+            return;
         }
     }
 }
@@ -626,48 +624,44 @@ HANDLE KEYBOARD INPUT FOR STOPWATCH
  * @param run A boolean reference that determines whether to continue the loop.
  */
 void Menu::checkStopwatchInput(Stopwatch& stopwatch, bool& run){
-    if(_kbhit()){
-        char ch = _getch();
-        switch(ch){
-            case 'S':
-            case 's':
-                if(stopwatch.isRunning()){
-                    stopwatch.pause();
-                    if ((stopwatch.currentMilliseconds() / 10) % 100 == 0){
-                        int i = rand() % _stopMessages.size();
-                        _display.setSplash(_stopMessages[i]);
-                    }
-                    else{
-                        _display.setSplash("STOPWATCH PAUSED");
-                    }
+    if(_kbhit() || _testing){
+        char ch;
+        if(!_testing) { ch = _getch(); }
+        if(_testing) { ch = 's'; }
+        if(ch == 's' || ch == 'S'){
+            if(stopwatch.isRunning()){
+                stopwatch.pause();
+                if ((stopwatch.currentMilliseconds() / 10) % 100 == 0){
+                    int i = rand() % _stopMessages.size();
+                    _display.setSplash(_stopMessages[i]);
                 }
                 else{
-                    _display.clearSplash();
-                    stopwatch.resume();        
+                    _display.setSplash("STOPWATCH PAUSED");
                 }
-                break;
-            case 'R':
-            case 'r':
-                stopwatch.reset();
-                _display.clearScreen();
-                _display.setSplash("STOPWATCH RESET, PRESS 'S' TO START");
-                break;
-            case 'A':
-            case 'a':
-                stopwatch.addSplit();
-                _display.setSplash("SPLIT CREATED");
-                break;
-            case 'Q':
-            case 'q':
-            _display.clearSplash();
-                run = false;
-                return;
-            default:
-                if(!run){
-                    return;
-                }
-                break;
+            }
+            else{
+                _display.clearSplash();
+                stopwatch.resume();        
+            }
         }
+        if(_testing) { ch = 'r'; }
+        if(ch == 'R' || ch == 'r'){
+            stopwatch.reset();
+            _display.clearScreen();
+            _display.setSplash("STOPWATCH RESET, PRESS 'S' TO START");
+        }
+        if(_testing) { ch = 'a'; }
+        if(ch == 'A' || ch == 'a'){
+            stopwatch.addSplit();
+            _display.setSplash("SPLIT CREATED");
+        }
+        if(_testing) { ch = 'q'; }
+        if(ch == 'Q' || ch == 'q'){
+            _display.clearSplash();
+            run = false;
+            return;
+        }
+        return;
     }
 }
 
@@ -684,26 +678,22 @@ HANDLE KEYBOARD INPUT FOR ALARM
  * @param run A boolean reference that determines whether to continue the loop.
  */
 void Menu::checkAlarmInput(Alarm& alarm, bool& run){
-    if(_kbhit()){
-        char ch = _getch();
-        switch(ch){
-            case 'A':
-            case 'a':
-                _display.clearScreen();
-                _display.clearSplash();
-                alarm = createAlarm(run);
-                break;
-            case 'Q':
-            case 'q':
-                _display.clearSplash();
-                run = false;
-                return;
-            default:
-                if(!run){
-                    return;
-                }
-                break;
+    if(_kbhit() || _testing){
+        char ch;
+        if(!_testing) { ch = _getch(); }
+        if(_testing) { ch = 'a'; }
+        if(ch == 'A' || ch == 'a'){
+            _display.clearScreen();
+            _display.clearSplash();
+            alarm = createAlarm(run);
         }
+        if(_testing) { ch = 'q'; }
+        if(ch == 'Q' || ch == 'q'){
+            _display.clearSplash();
+            run = false;
+            return;
+        }
+        return;
     }
 }
 /* =========================================================
