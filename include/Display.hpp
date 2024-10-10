@@ -227,6 +227,21 @@ private:
         "|_ | \\| | |_ | \\   /--\\ |_ /--\\ | \\ |  |    |  _|_ |  | |_ o ",
     };
 
+    vector<string> _alarmSetupAM = {
+        "           ",
+        "  /\\  |\\/| ",
+        " /--\\ |  | ",
+        "           ",
+    };
+
+
+    vector<string> _alarmSetupPM = {
+        "  _       ",
+        " |_) |\\/| ",
+        " |   |  | ",
+        "          ",
+    };
+
     vector<string> _alarmControls = {
         "",
         "A: New Alarm | Q: Main Menu",
