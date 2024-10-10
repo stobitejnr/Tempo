@@ -74,6 +74,7 @@ void test_expiration() {
     Timer timer(0, 0, 0); // 1 second
     assert(timer.remainingMilliseconds() == 0);
     assert(!timer.isRunning());
+    bool done = timer.isDone();
     //cout << "test_expiration passed!\n";
 }
 
