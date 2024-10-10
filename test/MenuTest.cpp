@@ -14,9 +14,6 @@ void test_menu(){
     menu.settingsMenu(1);
     menu.settingsMenu(2);
     menu.settingsMenu(3);
-    int select = 0;
-    char ch = menu.getSettingsInput(select);
-    char ch = menu.getSettingsInput(select);
     return;
 }
 
