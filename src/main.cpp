@@ -16,7 +16,7 @@ MAIN FUNCTION
  */
 int main() {
 
-    Notification::setupNotifications();
+    //Notification::setupNotifications();
     //cout << "\033[?7l";
 
     // Create a Menu object
