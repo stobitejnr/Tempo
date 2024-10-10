@@ -44,11 +44,6 @@ add_executable(AlarmTest
     src/Alarm.cpp
 )
 
-add_executable(NotificationTest
-    test/NotificationTest.cpp
-    src/Notification.cpp
-)
-
 add_executable(DisplayTest
     test/DisplayTest.cpp
     src/Display.cpp
@@ -75,6 +70,11 @@ add_executable(MenuTest
     fonts/font2.cpp
     fonts/font3.cpp
     fonts/font4.cpp
+)
+
+add_executable(NotificationTest
+    test/NotificationTest.cpp
+    src/Notification.cpp
 )
 
 # Add the tests
