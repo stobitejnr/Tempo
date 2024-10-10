@@ -14,6 +14,9 @@ void test_nonreturn(){
     display.fast_print(sss);
     display.setCursor(1,1);
     display.clearLine(1);
+    display.setSplash(sss);
+    display.clearSplash();
+
 }
 
 void test_timer_setup(){
@@ -23,20 +26,29 @@ void test_timer_setup(){
 
 void test_timer(){
     Display display;
-    Timer timer(1,0,0);
+    Timer timer(1,1,1);
+    display.tickTimer(timer);
+    timer.pause();
     display.tickTimer(timer);
 }
 
 void test_stopwatch(){
     Display display;
     Stopwatch stopwatch;
+    stopwatch.addSplit();
     display.tickStopwatch(stopwatch);
 }
 
 void test_alarm(){
     Display display;
-    Alarm alarm(0,0);
+    Alarm alarm(12,12);
     display.tickAlarm(alarm);
+}
+
+void test_alarm_setup(){
+    Display display;
+    display.tickAlarmSetup("00:00", false);
+    display.tickAlarmSetup("12:12", true);
 }
 
 int main() {
@@ -47,6 +59,7 @@ int main() {
         test_timer();
         test_stopwatch();
         test_alarm();
+        test_alarm_setup();
 
         cout << "All tests passed successfully!\n";
     } catch (const exception& e) {
