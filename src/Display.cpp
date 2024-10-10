@@ -131,13 +131,19 @@ auto Display::fast_print(const std::basic_string<char_type> &sss) -> void
         WriteConsoleW(output_handle, sss.c_str(), char_count, nullptr, nullptr);
 }
 
-
+/**
+ * @brief Sets the formatting for the text to be displayed.
+ * @tparam code string& The formatting code.
+*/
 void Display::setFormat(const string& code) {
     _oldFormatting = _formatting;
     _formatting = code;
     fast_print(_formatting);
 }
 
+/**
+ * @brief Clears the formatting for the text to be displayed.
+*/
 void Display::clearFormat(){
     _oldFormatting = _formatting;
     _formatting = "\033[0m";

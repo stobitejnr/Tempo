@@ -1,3 +1,8 @@
+/**
+ * @file Notification.cpp
+ * @brief Implementation of the Notification class to display system notifications.
+ */
+
 #include <windows.h>
 #include <iostream>
 #include <string>
@@ -8,10 +13,31 @@
 
 using namespace std;
 
+/**
+ * @class Notification
+ * @brief A class to handle system notifications using PowerShell scripts.
+ */
+
+/**
+ * @brief Constructor that creates a Notification object and shows the notification.
+ * 
+ * @param title The title of the notification.
+ * @param body The body message of the notification.
+ */
 Notification::Notification(string title, string body) {
     showNotification(title, body);
 }
 
+/**
+ * @brief Displays a notification using PowerShell with the given title and body.
+ * 
+ * This method constructs the path to the PowerShell script and an image file,
+ * then creates a hidden process to execute the PowerShell command that shows
+ * the notification.
+ * 
+ * @param title The title of the notification.
+ * @param body The body message of the notification.
+ */
 void Notification::showNotification(const string& title, const string& body) {
     // Get the path to the executable's directory
     char executablePath[MAX_PATH];
@@ -38,7 +64,7 @@ void Notification::showNotification(const string& title, const string& body) {
                                        "\" -message \"" + body +
                                        "\" -imagePath \"" + imagePath + "\"";
 
-            // Set up the structures
+            // Set up the structures for creating the hidden process
             STARTUPINFO si;
             PROCESS_INFORMATION pi;
 
@@ -50,7 +76,7 @@ void Notification::showNotification(const string& title, const string& body) {
             si.dwFlags = STARTF_USESHOWWINDOW;
             si.wShowWindow = SW_HIDE;
 
-            // Create the process
+            // Create the process to run the PowerShell command
             if (!CreateProcess(NULL, 
                 const_cast<char*>(powershellCommand.c_str()),  // Command line
                 NULL,           // Process handle not inheritable

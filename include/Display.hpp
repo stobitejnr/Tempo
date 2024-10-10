@@ -162,8 +162,15 @@ public:
      */
     void clearScreen();
 
+    /**
+     * @brief Sets the terminal text color.
+     * @param color The color to set the text to.
+     */
     void setFormat(const string& code);
 
+    /**
+     * @brief Clears the terminal text color.
+     */
     void clearFormat();
 
     /**
@@ -179,6 +186,10 @@ public:
      */
     void clearLine(int lineIndex);
 
+    /**
+     * @brief Sets the font style for the terminal.
+     * @param num The font style to set.
+     */
     void setFont(int num);
 
 

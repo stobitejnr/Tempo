@@ -32,6 +32,16 @@ Menu::Menu(bool testing){
     mainMenu(0);
 }
 
+/* =========================================================
+HELPER FUNCTIONS
+========================================================= */
+
+/**
+ * @brief Prints ASCII art to the display with specified formatting.
+ * 
+ * @param art A vector of strings representing the ASCII art.
+ * @param formatting The display format for the art.
+ */
 void Menu::printArt(vector<string> art, string formatting){
     _display.setFormat(formatting);
 
@@ -66,6 +76,12 @@ void Menu::credits(){
     _display.clearScreen();
 }
 
+/**
+ * @brief Loads the user's settings from a file.
+ * 
+ * This function reads the font setting and notification setting
+ * from a "settings.txt" file if it exists, otherwise it uses default values.
+ */
 void Menu::loadSettings() {
     ifstream settingsFile("settings.txt");
     
@@ -80,6 +96,12 @@ void Menu::loadSettings() {
     }
 }
 
+/**
+ * @brief Saves the user's settings to a file.
+ * 
+ * This function writes the font setting and notification setting
+ * to a "settings.txt" file.
+ */
 void Menu::saveSettings() {
     ofstream settingsFile("settings.txt");
     
@@ -174,6 +196,13 @@ void Menu::mainMenu(int selected) {
     mainMenu(selected);
 }
 
+/**
+ * @brief Displays the settings menu and allows the user to modify settings.
+ * 
+ * The settings include font selection and notifications.
+ * 
+ * @param selected The index of the selected settings option.
+ */
 void Menu::settingsMenu(int selected) {
 
     for (int i = 0; i < _settingsFormats.size(); ++i) {
@@ -758,7 +787,11 @@ char Menu::getMenuInput(int& selected){
     }
 }
 
-
+/**
+ * @brief Waits for the user to press a valid key (1, 2, 3, or Q) for settings selection.
+ * @param selected The current selected setting.
+ * @return char The character corresponding to the user's settings selection.
+*/
 char Menu::getSettingsInput(int& selected){
     while(true){
         if(_kbhit()){
