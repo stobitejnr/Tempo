@@ -241,11 +241,7 @@ void Menu::settingsMenu(int selected) {
 
     _display.setCursor(1,1);
     
-    char in;
-    
-    if(!_testing){
-        in = getSettingsInput(selected);
-    }
+    char in = getSettingsInput(selected);
 
     if(_testing){ in = '1'; }
     if(in == '1'){
