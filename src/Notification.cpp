@@ -1,109 +1,106 @@
+/**
+ * @file Notification.cpp
+ * @brief Implementation of the Notification class to display system notifications.
+ */
+
 #include <windows.h>
-#include <shellapi.h>
+#include <iostream>
+#include <string>
+#include <cstdlib>
 
-/* =========================================================
-CONSTANTS
-========================================================= */
+#include "../include/Notification.hpp"
+#include "Notification.hpp"
 
-#define WM_TRAYICON (WM_USER + 1)
-
-/* =========================================================
-WINDOW PROCEDURE
-========================================================= */
+using namespace std;
 
 /**
- * @brief Window procedure for handling messages.
- * 
- * This function processes messages sent to the window, including custom tray icon messages and window destruction.
- * 
- * @param hwnd Handle to the window.
- * @param message The message identifier.
- * @param wParam Additional message information.
- * @param lParam Additional message information.
- * @return LRESULT The result of the message processing.
+ * @class Notification
+ * @brief A class to handle system notifications using PowerShell scripts.
  */
-LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
-    switch (message) {
-        case WM_TRAYICON:
-            if (lParam == WM_LBUTTONUP) {
-                MessageBox(NULL, "You clicked the notification icon!", "Notification", MB_OK);
+
+/**
+ * @brief Constructor that creates a Notification object and shows the notification.
+ * 
+ * @param title The title of the notification.
+ * @param body The body message of the notification.
+ */
+Notification::Notification(string title, string body) {
+    showNotification(title, body);
+}
+
+/**
+ * @brief Displays a notification using PowerShell with the given title and body.
+ * 
+ * This method constructs the path to the PowerShell script and an image file,
+ * then creates a hidden process to execute the PowerShell command that shows
+ * the notification.
+ * 
+ * @param title The title of the notification.
+ * @param body The body message of the notification.
+ */
+void Notification::showNotification(const string& title, const string& body) {
+    // Get the path to the executable's directory
+    char executablePath[MAX_PATH];
+    GetModuleFileName(NULL, executablePath, MAX_PATH);
+
+    // Extract the directory from the executable's path
+    string path(executablePath);
+    size_t lastSlash = path.find_last_of("\\/");
+    string directory = path.substr(0, lastSlash);
+
+    // Construct the relative path to the PowerShell script and resolve it to an absolute path
+    char fullScriptPath[MAX_PATH];
+    if (_fullpath(fullScriptPath, (directory + "\\..\\script\\notification.ps1").c_str(), MAX_PATH)) {
+        string scriptPath(fullScriptPath);
+        
+        // Similarly, resolve the image path to an absolute path
+        char fullImagePath[MAX_PATH];
+        if (_fullpath(fullImagePath, (directory + "\\..\\logo.png").c_str(), MAX_PATH)) {
+            string imagePath(fullImagePath);
+
+            // Prepare the PowerShell command with parameters
+            string powershellCommand = "powershell.exe -ExecutionPolicy Bypass -File \"" + scriptPath + 
+                                       "\" -title \"" + title + 
+                                       "\" -message \"" + body +
+                                       "\" -imagePath \"" + imagePath + "\"";
+
+            // Set up the structures for creating the hidden process
+            STARTUPINFO si;
+            PROCESS_INFORMATION pi;
+
+            ZeroMemory(&si, sizeof(si));
+            si.cb = sizeof(si);
+            ZeroMemory(&pi, sizeof(pi));
+
+            // This hides the PowerShell window
+            si.dwFlags = STARTF_USESHOWWINDOW;
+            si.wShowWindow = SW_HIDE;
+
+            // Create the process to run the PowerShell command
+            if (!CreateProcess(NULL, 
+                const_cast<char*>(powershellCommand.c_str()),  // Command line
+                NULL,           // Process handle not inheritable
+                NULL,           // Thread handle not inheritable
+                FALSE,          // No handle inheritance
+                0,              // No creation flags
+                NULL,           // Use parent's environment block
+                NULL,           // Use parent's starting directory
+                &si,            // Pointer to STARTUPINFO (to hide window)
+                &pi)            // Pointer to PROCESS_INFORMATION
+            ) {
+                std::cerr << "CreateProcess failed: " << GetLastError() << std::endl;
+                return;
             }
-            break;
-        case WM_DESTROY:
-            PostQuitMessage(0);
-            break;
-        default:
-            return DefWindowProc(hwnd, message, wParam, lParam);
-    }
-    return 0;
-}
 
-/* =========================================================
-SHOW NOTIFICATION
-========================================================= */
-
-/**
- * @brief Shows a notification in the system tray.
- * 
- * This function adds a notification icon to the system tray and displays a notification message.
- * 
- * @param hInstance Handle to the application instance.
- * @param hwnd Handle to the window.
- */
-void ShowNotification(HINSTANCE hInstance, HWND hwnd) {
-    NOTIFYICONDATA nid = { 0 };
-    nid.cbSize = sizeof(nid);
-    nid.hWnd = hwnd;
-    nid.uID = 1001;
-    nid.uFlags = NIF_ICON | NIF_MESSAGE | NIF_TIP | NIF_INFO;
-    nid.uCallbackMessage = WM_TRAYICON; // Custom message for icon interactions
-    nid.hIcon = LoadIcon(NULL, IDI_APPLICATION);
-    strcpy_s(nid.szTip, "My Notification App");
-    strcpy_s(nid.szInfo, "Hello! This is your notification.");
-    strcpy_s(nid.szInfoTitle, "Notification Title");
-    nid.dwInfoFlags = NIIF_INFO;
-
-    Shell_NotifyIcon(NIM_ADD, &nid);
-}
-
-/* =========================================================
-WINMAIN
-========================================================= */
-
-/**
- * @brief Entry point for the Windows application.
- * 
- * This function initializes the application, creates a window, and enters the message loop.
- * 
- * @param hInstance Handle to the application instance.
- * @param hPrevInstance Handle to the previous instance (always NULL for Win32).
- * @param lpCmdLine Command line arguments.
- * @param nCmdShow How the window should be shown.
- * @return int The exit code of the application.
- */
-int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
-    const char CLASS_NAME[] = "NotificationApp";
-
-    WNDCLASS wc = { 0 };
-    wc.lpfnWndProc = WindowProcedure;
-    wc.hInstance = hInstance;
-    wc.lpszClassName = CLASS_NAME;
-
-    RegisterClass(&wc);
-
-    HWND hwnd = CreateWindowEx(0, CLASS_NAME, "Notification Window", 0, 0, 0, 0, 0, NULL, NULL, hInstance, NULL);
-
-    if (hwnd == NULL) {
-        return 0;
+            // Close process and thread handles immediately (since the process runs in background)
+            CloseHandle(pi.hProcess);
+            CloseHandle(pi.hThread);
+        } else {
+            cerr << "Failed to resolve absolute path for logo.png" << endl;
+        }
+    } else {
+        cerr << "Failed to resolve absolute path for notification.ps1" << endl;
     }
 
-    ShowNotification(hInstance, hwnd);
-
-    MSG msg;
-    while (GetMessage(&msg, NULL, 0, 0)) {
-        TranslateMessage(&msg);
-        DispatchMessage(&msg);
-    }
-
-    return 0;
+    return;
 }

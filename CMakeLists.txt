@@ -20,9 +20,12 @@ add_executable(Tempo
     src/Display.cpp
     src/Timer.cpp
     src/Stopwatch.cpp
+    src/Notification.cpp
     src/Alarm.cpp
     fonts/font1.cpp
     fonts/font2.cpp
+    fonts/font3.cpp
+    fonts/font4.cpp
 )
 
 # Add the test executables
@@ -47,9 +50,12 @@ add_executable(DisplayTest
     src/Menu.cpp
     src/Timer.cpp
     src/Stopwatch.cpp
+    src/Notification.cpp
     src/Alarm.cpp
     fonts/font1.cpp
     fonts/font2.cpp
+    fonts/font3.cpp
+    fonts/font4.cpp
 )
 
 add_executable(MenuTest
@@ -58,9 +64,17 @@ add_executable(MenuTest
     src/Display.cpp
     src/Timer.cpp
     src/Stopwatch.cpp
+    src/Notification.cpp
     src/Alarm.cpp
     fonts/font1.cpp
     fonts/font2.cpp
+    fonts/font3.cpp
+    fonts/font4.cpp
+)
+
+add_executable(NotificationTest
+    test/NotificationTest.cpp
+    src/Notification.cpp
 )
 
 # Add the tests
@@ -69,3 +83,4 @@ add_test(NAME StopwatchTest COMMAND StopwatchTest)
 add_test(NAME AlarmTest COMMAND AlarmTest)
 add_test(NAME DisplayTest COMMAND DisplayTest)
 add_test(NAME MenuTest COMMAND MenuTest)
+add_test(NAME NotificationTest COMMAND NotificationTest)

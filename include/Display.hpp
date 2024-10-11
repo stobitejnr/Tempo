@@ -7,11 +7,12 @@
 
 #include "../fonts/font1.hpp"
 #include "../fonts/font2.hpp"
+#include "../fonts/font3.hpp"
+#include "../fonts/font4.hpp"
 
 #include <cstring>
 #include <iostream>
 #include <vector>
-#include <thread>
 
 using namespace std;
 
@@ -22,6 +23,30 @@ using namespace std;
 class Display
 {
 public:
+
+    static const string SELECTED;
+
+    static const string BOLD;
+
+    static const string BLACK;
+    static const string RED;
+    static const string GREEN;
+    static const string YELLOW;
+    static const string BLUE;
+    static const string MAGENTA;
+    static const string CYAN;
+    static const string WHITE;
+
+    static const string BOLD_BLACK;
+    static const string BOLD_RED;
+    static const string BOLD_GREEN;
+    static const string BOLD_YELLOW;
+    static const string BOLD_BLUE;
+    static const string BOLD_MAGENTA;
+    static const string BOLD_CYAN;
+    static const string BOLD_WHITE;
+
+
     /**
      * @brief Constructs a new Display object.
      */
@@ -29,7 +54,7 @@ public:
 
     void tickTimerSetup(string to_print);
 
-    void tickAlarmSetup(string to_print);
+    void tickAlarmSetup(string to_print, bool isAM);
 
     /**
      * @brief Updates the display based on the state of the provided Timer object.
@@ -63,7 +88,7 @@ public:
     /**
      * @brief Stages the controls for the timer.
      */
-    void stageTimerControls();
+    void stageArt(vector<string> art);
 
     /**
      * @brief Stages the progress bar for the timer.
@@ -83,15 +108,6 @@ public:
     void stageStopwatchDisplay(int hours, int minutes, int seconds, int hundredths);
 
     /**
-     * @brief Stages the controls for the stopwatch.
-     */
-    void stageStopwatchControls();
-
-    void stageTimerSetupControls();
-
-    void stageAlarmSetupControls();
-
-    /**
      * @brief Stages the splits block to be displayed.
      */
     void stageStopwatchSplits(vector<int> splits);
@@ -100,11 +116,6 @@ public:
      * @brief Stages the display for the alarm.
      */
     void stageAlarmDisplay();
-
-    /**
-     * @brief Stages the controls for the alarm.
-     */
-    void stageAlarmControls();
 
     /**
      * @brief Sets the splash screen text.
@@ -121,38 +132,45 @@ public:
      * @brief Prints the splash screen to the terminal.
      * @param splashIndex The index used for splash screen control.
      */
-    void printSplash(int splashIndex);
+    void printSplash(int splashIndex, string formatting);
 
     /**
      * @brief Prints ASCII art to the terminal.
      * @param asciiIndex The index used for ASCII control.
      */
-    void printAscii(int asciiIndex);
+    void printAscii(int asciiIndex, string formatting);
 
     /**
      * @brief Prints controls to the terminal.
      * @param controlIndex The index used for control display.
      */
-    void printControls(int controlIndex);
+    void printArt(int controlIndex, string formatting);
 
     /**
      * @brief Prints the progress bar to the terminal.
      * @param barIndex The index used for bar control.
      */
-    void printBar(int barIndex);
+    void printBar(int barIndex, string formatting);
 
     /**
      * @brief Prints the stopwatch splits to the terminal.
      */
-    void printSplits(int splitsIndex);
+    void printSplits(int splitsIndex, string formatting);
 
     /**
      * @brief Clears the terminal screen.
      */
     void clearScreen();
 
-    void setFormat(const std::string& code);
+    /**
+     * @brief Sets the terminal text color.
+     * @param color The color to set the text to.
+     */
+    void setFormat(const string& code);
 
+    /**
+     * @brief Clears the terminal text color.
+     */
     void clearFormat();
 
     /**
@@ -168,6 +186,12 @@ public:
      */
     void clearLine(int lineIndex);
 
+    /**
+     * @brief Sets the font style for the terminal.
+     * @param num The font style to set.
+     */
+    void setFont(int num);
+
 
     /**
      * @brief Efficiently prints a string to the terminal.
@@ -175,7 +199,7 @@ public:
      * @param sss The string to print.
      */
     template <typename char_type>
-    static auto fast_print(const std::basic_string<char_type> &sss) -> void;
+    static auto fast_print(const basic_string<char_type> &sss) -> void;
 
 private:
     string _asciiBuffer;   ///< Buffer for ASCII art.
@@ -190,12 +214,63 @@ private:
     string _oldSplash;   ///< Previous splash screen for comparison.
     string _oldSplits;   ///< Previous splits for comparison.
 
-    string _font;   ///< Name of font used for loading.
+    vector<vector<vector<string>>> _fonts;   ///< List of font ascii
+    vector<int> _fontHeights;   ///< List of font heights
+    vector<vector<string>> _currFont;   ///< current font ascii
+
+    int ASCII_HEIGHT;
+    string PADDING;
 
     string _formatting;
     string _oldFormatting;
 
     int _asciiWidth; ///< Width of the ASCII art.
+
+    vector<string> _timerSetupControls = {
+        "  _     ___ _  _    ___ ___       _  _        _       __ ___      ",
+        " |_ |\\ | | |_ |_)    |   |  |\\/| |_ |_)   |  |_ |\\ | /__  | |_| o ",
+        " |_ | \\| | |_ | \\    |  _|_ |  | |_ | \\   |_ |_ | \\| \\_|  | | | o ",
+    };
+
+    vector<string> _alarmSetupControls = {
+        " _     ___ _  _                  _         ___ ___       _   ",
+        "|_ |\\ | | |_ |_)    /\\  |   /\\  |_) |\\/|    |   |  |\\/| |_ o ",
+        "|_ | \\| | |_ | \\   /--\\ |_ /--\\ | \\ |  |    |  _|_ |  | |_ o ",
+    };
+
+    vector<string> _alarmSetupAM = {
+        "           ",
+        "  /\\  |\\/| ",
+        " /--\\ |  | ",
+        "           ",
+    };
+
+
+    vector<string> _alarmSetupPM = {
+        "  _       ",
+        " |_) |\\/| ",
+        " |   |  | ",
+        "          ",
+    };
+
+    vector<string> _alarmControls = {
+        "",
+        "A: New Alarm | Q: Main Menu",
+        "",
+    };
+
+    vector<string> _timerControls = {
+        "",
+        "S: Start/Stop | R: Reset | A: New Timer | Q: Main Menu",
+        "",
+    };
+
+    vector<string> _stopwatchControls = {
+        "",
+        "S: Start/Stop | R: Reset | A: Add Split | Q: Main Menu",
+        "",
+    };
+
 };
 
 #endif // DISPLAY_HPP

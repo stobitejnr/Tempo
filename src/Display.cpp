@@ -1,10 +1,32 @@
 #include <windows.h>
+
 #include "../include/Display.hpp"
 
-#define PADDING "  "
-#define ASCII_HEIGHT 8
+
 
 using namespace std;
+
+const string Display::SELECTED = "\033[1;30;46m";
+
+const string Display::BOLD = "\033[1m";
+
+const string Display::BLACK = "\033[30m";
+const string Display::RED = "\033[31m";
+const string Display::GREEN = "\033[32m";
+const string Display::YELLOW = "\033[33m";
+const string Display::BLUE = "\033[34m";
+const string Display::MAGENTA = "\033[35m";
+const string Display::CYAN = "\033[36m";
+const string Display::WHITE = "\033[37m";
+
+const string Display::BOLD_BLACK = "\033[1;30m";
+const string Display::BOLD_RED = "\033[1;31m";
+const string Display::BOLD_GREEN = "\033[1;32m";
+const string Display::BOLD_YELLOW = "\033[1;33m";
+const string Display::BOLD_BLUE = "\033[1;34m";
+const string Display::BOLD_MAGENTA = "\033[1;35m";
+const string Display::BOLD_CYAN = "\033[1;36m";
+const string Display::BOLD_WHITE = "\033[1;37m";
 
 /* =========================================================
 CONSTRUCTOR
@@ -27,7 +49,10 @@ Display::Display()
     _oldSplash = "";
     _oldSplits = "";
 
-    _font = "font1";
+    _fonts = {f1_ascii, f2_ascii, f3_ascii, f4_ascii};
+    _fontHeights = {f1_height, f2_height, f3_height, f4_height};
+
+    setFont(1);
 
     _asciiWidth = 0;
 }
@@ -51,6 +76,23 @@ void Display::clearScreen()
     fast_print(clearscreen);
 }
 
+void Display::setFont(int num)
+{
+    _currFont = _fonts.at(num-1);
+
+    ASCII_HEIGHT = _fontHeights.at(num-1);
+    
+    if(ASCII_HEIGHT >= 8){
+        PADDING = "";
+        for(int i=0; i< ASCII_HEIGHT/4; i++){
+            PADDING += " ";
+        }
+    }
+    else{
+        PADDING = "";
+    }
+}
+
 /**
  * @brief Sets the cursor position in the terminal.
  * @param row The row position.
@@ -71,6 +113,42 @@ void Display::clearLine(int row)
     string clearline = "\033[K";
     setCursor(row, 1);
     fast_print(clearline);
+}
+
+/**
+ * @brief Prints a string to the console efficiently using the Windows API.
+ * @tparam char_type The character type (either char or wchar_t).
+ * @param sss The string to print.
+ */
+template <typename char_type>
+auto Display::fast_print(const std::basic_string<char_type> &sss) -> void
+{
+    HANDLE const output_handle = GetStdHandle(STD_OUTPUT_HANDLE);
+    const auto char_count = static_cast<DWORD>(sss.length());
+    if constexpr (std::is_same_v<char_type, char>)
+        WriteConsoleA(output_handle, sss.c_str(), char_count, nullptr, nullptr);
+    else
+        WriteConsoleW(output_handle, sss.c_str(), char_count, nullptr, nullptr);
+}
+
+/**
+ * @brief Sets the formatting for the text to be displayed.
+ * @tparam code string& The formatting code.
+*/
+void Display::setFormat(const string& code) {
+    _oldFormatting = _formatting;
+    _formatting = code;
+    fast_print(_formatting);
+}
+
+/**
+ * @brief Clears the formatting for the text to be displayed.
+*/
+void Display::clearFormat(){
+    _oldFormatting = _formatting;
+    _formatting = "\033[0m";
+
+    fast_print(_formatting);
 }
 
 /* =========================================================
@@ -143,17 +221,17 @@ void Display::stageTimerDisplay(int hours, int minutes, int seconds, int tenths)
         {
             if (ch == ':')
             {
-                line += font1.at(10)[i]; // Colon character
+                line += _currFont.at(10)[i]; // Colon character
                 line += PADDING;
             }
             else if (ch == '.')
             {
-                line += font1.at(11)[i]; // Period character
+                line += _currFont.at(11)[i]; // Period character
                 line += PADDING;
             }
             else
             {
-                line += font1.at(ch - '0')[i]; // Numeric character
+                line += _currFont.at(ch - '0')[i]; // Numeric character
                 line += PADDING;
             }
         }
@@ -202,27 +280,27 @@ void Display::stageAlarmDisplay(string time){
         {
             if (ch == ':')
             {
-                line += font1.at(10)[i];
+                line += _currFont.at(10)[i];
                 line += PADDING;
             }
             else if (ch == 'a')
             {
-                line += font1.at(12)[i];
+                line += _currFont.at(12)[i];
                 line += PADDING;
             }
             else if (ch == 'p')
             {
-                line += font1.at(13)[i];
+                line += _currFont.at(13)[i];
                 line += PADDING;
             }
             else if (ch == 'm')
             {
-                line += font1.at(14)[i];
+                line += _currFont.at(14)[i];
                 line += PADDING;
             }
             else
             {
-                line += font1.at(ch - '0')[i];
+                line += _currFont.at(ch - '0')[i];
                 line += PADDING;
             }
         }
@@ -313,16 +391,13 @@ void Display::stageAlarmBar(double percentage)
 }
 
 /**
- * @brief Stages the controls for the timer to be displayed in the terminal.
+ * @brief Stages vector<string> ascii art to be displayed in the terminal.
  */
-void Display::stageTimerControls()
+void Display::stageArt(vector<string> art)
 {
-    _controlBuffer += "\n";
-    _controlBuffer += "=======================================================\n";
-    _controlBuffer += "S: Start/Pause | R: Reset | A: New Timer | Q: Main Menu \n";
-    _controlBuffer += "=======================================================\n";
-    _controlBuffer += "\n";
-
+    for(int i=0; i<art.size(); ++i){
+        _controlBuffer += (art.at(i) + "\n");
+    }
 }
 
 /* =========================================================
@@ -402,17 +477,17 @@ void Display::stageStopwatchDisplay(int hours, int minutes, int seconds, int hun
         {
             if (ch == ':')
             {
-                line += font1.at(10)[i]; // Colon character
+                line += _currFont.at(10)[i]; // Colon character
                 line += PADDING;
             }
             else if (ch == '.')
             {
-                line += font1.at(11)[i]; // Period character
+                line += _currFont.at(11)[i]; // Period character
                 line += PADDING;
             }
             else
             {
-                line += font1.at(ch - '0')[i]; // Numeric character
+                line += _currFont.at(ch - '0')[i]; // Numeric character
                 line += PADDING;
             }
         }
@@ -421,57 +496,11 @@ void Display::stageStopwatchDisplay(int hours, int minutes, int seconds, int hun
 }
 
 /**
- * @brief Stages the controls for the stopwatch to be displayed in the terminal.
- */
-void Display::stageStopwatchControls(){
-    _controlBuffer+=("\n");
-    _controlBuffer+=("======================================================\n");
-    _controlBuffer+=("S: Start/Stop | R: Reset | A: Lap/Split | Q: Main Menu\n");
-    _controlBuffer+=("======================================================\n");
-    _controlBuffer+=("\n");
-}
-
-/**
- * @brief Stages the controls for the timer setup to be displayed in the terminal.
- */
-void Display::stageTimerSetupControls(){
-    _controlBuffer+=("\n");
-    _controlBuffer+=("           -=| ENTER THE LENGTH FOR YOUR TIMER |=-         \n");
-    _controlBuffer+=("===========================================================\n");
-    _controlBuffer+=("Enter: Start Timer | Backspace: Delete Digit | Q: Main Menu\n");
-    _controlBuffer+=("===========================================================\n");
-    _controlBuffer+=("\n");
-}
-
-/**
- * @brief Stages the controls for the alarm setup to be displayed in the terminal.
- */
-void Display::stageAlarmSetupControls(){
-    _controlBuffer+=("\n");
-    _controlBuffer+=("        -=| ENTER THE ALARM TIME IN 24HR FORMAT |=-      \n");
-    _controlBuffer+=("=========================================================\n");
-    _controlBuffer+=("Enter: Set Alarm | Backspace: Delete Digit | Q: Main Menu\n");
-    _controlBuffer+=("=========================================================\n");
-    _controlBuffer+=("\n");
-}
-
-/**
- * @brief Stages the controls for the alarm to be displayed in the terminal.
- */
-void Display::stageAlarmControls(){
-    _controlBuffer+=("\n");
-    _controlBuffer+=("===========================\n");
-    _controlBuffer+=("A: New Alarm | Q: Main Menu\n");
-    _controlBuffer+=("===========================\n");
-    _controlBuffer+=("\n");
-}
-
-/**
  * @brief Stages the splits block to be displayed.
  */
 void Display::stageStopwatchSplits(vector<int> splits){
     if (!splits.empty()) {
-        _splitBuffer += "-+=| SPLITS |=+-\n";
+        _splitBuffer += "  SPLITS:\n\n";
         int startIdx = (splits.size() > 10) ? splits.size() - 10 : 0;
         for (int i = startIdx; i < splits.size(); ++i) {
 
@@ -537,8 +566,10 @@ PRINTING TO TERMINAL
  * @brief Prints the ASCII art representation of the timer or stopwatch to the terminal.
  * @param row The row position to print.
  */
-void Display::printAscii(int row)
+void Display::printAscii(int row, string formatting)
 {
+    setFormat(formatting);
+
     if (_asciiBuffer != _oldAscii || _formatting != _oldFormatting)
     {
         setCursor(row, 1);
@@ -546,14 +577,18 @@ void Display::printAscii(int row)
         _oldAscii = _asciiBuffer;
     }
     _asciiBuffer = "";
+
+    clearFormat();
 }
 
 /**
  * @brief Prints the controls for the timer or stopwatch to the terminal.
  * @param row The row position to print.
  */
-void Display::printControls(int row)
+void Display::printArt(int row, string formatting)
 {
+    setFormat(formatting);
+
     if (_controlBuffer != _oldControls || _formatting != _oldFormatting)
     {
         setCursor(row, 1);
@@ -561,14 +596,18 @@ void Display::printControls(int row)
         _oldControls = _controlBuffer;
     }
     _controlBuffer = "";
+
+    clearFormat();
 }
 
 /**
  * @brief Prints the progress bar for the timer to the terminal.
  * @param row The row position to print.
  */
-void Display::printBar(int row)
+void Display::printBar(int row, string formatting)
 {
+    setFormat(formatting);
+
     if (_barBuffer != _oldBar || _formatting != _oldFormatting)
     {
         setCursor(row, 1);
@@ -576,14 +615,18 @@ void Display::printBar(int row)
         _oldBar = _barBuffer;
     }
     _barBuffer = "";
+
+    clearFormat();
 }
 
 /**
  * @brief Prints the splash text to the terminal.
  * @param row The row position to print.
  */
-void Display::printSplash(int row)
+void Display::printSplash(int row, string formatting)
 {
+    setFormat(formatting);
+
     if (_splash != _oldSplash || _formatting != _oldFormatting)
     {
         clearLine(row);
@@ -591,14 +634,17 @@ void Display::printSplash(int row)
         fast_print(_splash);
         _oldSplash = _splash;
     }
+
+    clearFormat();
 }
 
 /**
  * @brief Prints the stopwatch splits to the terminal.
  * @param row The row position to print.
  */
-void Display::printSplits(int row)
+void Display::printSplits(int row, string formatting)
 {
+    setFormat(formatting);
     if (_splitBuffer != _oldSplits || _formatting != _oldFormatting)
     {
         setCursor(row, 1);
@@ -606,6 +652,8 @@ void Display::printSplits(int row)
         _oldSplits = _splitBuffer;
     }
     _splitBuffer = "";
+    
+    clearFormat();
 }
 
 /**
@@ -628,11 +676,11 @@ void Display::tickTimerSetup(string to_print)
         {
             if (ch == ':')
             {
-                line += font1.at(10)[i]; // Colon character
+                line += _currFont.at(10)[i]; // Colon character
             }
             else
             {
-                line += font1.at(ch - '0')[i]; // Numeric character
+                line += _currFont.at(ch - '0')[i]; // Numeric character
             }
             line += PADDING;
         }
@@ -640,16 +688,12 @@ void Display::tickTimerSetup(string to_print)
         _asciiWidth = line.length();
         _asciiBuffer += (line + "\n");
     }
+    stageArt(_timerSetupControls);
 
-    stageTimerSetupControls();
+    printArt(1, BOLD_CYAN);
+    printAscii(5, BOLD_WHITE);
+    
 
-    setFormat("\033[1;37m"); //Bold white
-    printAscii(1);
-    clearFormat();
-    setFormat("\033[37m"); //White
-    printControls(10);
-
-    clearFormat();
     setCursor(1,1);
 
 }
@@ -658,48 +702,105 @@ void Display::tickTimerSetup(string to_print)
  * @brief Updates the alarm setup display, showing the current input with a blinking cursor.
  * @param to_print The current alarm setup input string.
  */
-void Display::tickAlarmSetup(string to_print)
+void Display::tickAlarmSetup(string to_print, bool isAM)
 {
     auto now = std::chrono::steady_clock::now();
     auto millis = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
 
-    bool showBar = ((millis / 500) % 2 == 0);
+    int tempHeight;
 
-    for (int i = 0; i < ASCII_HEIGHT; i++)
+    bool showBar = ((millis / 500) % 2 == 0);
+    if(ASCII_HEIGHT < 4){
+        tempHeight = 4;
+    }
+    else{
+        tempHeight = ASCII_HEIGHT;
+    }
+    for (int i = 0; i < tempHeight; i++)
     {
         string line;
+        line += BOLD_WHITE;
         for (char ch : to_print)
         {
             if (ch == ':')
             {
-                line += font1.at(10)[i]; // Colon character
+                line += _currFont.at(10)[i]; // Colon character
                 line += PADDING;
             }
             else
             {
-                line += font1.at(ch - '0')[i]; // Numeric character
+                line += _currFont.at(ch - '0')[i]; // Numeric character
                 line += PADDING;
             }
         }
+
         if(showBar){
-            line += " |";
+            line += " | ";
         }
+
         else{
             line += "   ";
         }
+        
+        int linesLeft = tempHeight - i;
+
+        if(linesLeft <= 4){
+
+            line += "  ";
+            if(isAM){
+                line += SELECTED;
+            }
+            else{
+                line += BOLD_WHITE;
+            }
+
+            line += _alarmSetupAM[4-linesLeft];
+
+            line += "\033[0m";
+
+            line += "  ";
+
+            if(!isAM){
+                line += SELECTED;
+            }
+            else{
+                line += BOLD_WHITE;
+            }
+
+            line += _alarmSetupPM[4-linesLeft];
+
+            line += "\033[0m";
+            
+            
+        }
+
         _asciiWidth = line.length(); // Update ASCII width
         _asciiBuffer += (line + "\n");
+
     }
-    stageAlarmSetupControls();
 
+    stageArt(_alarmSetupControls);
 
-    setFormat("\033[1;37m"); //Bold white
-    printAscii(1);
-    clearFormat();
-    setFormat("\033[37m"); //White
-    printControls(10);
+    printArt(1, BOLD_CYAN);
 
-    clearFormat();
+    printAscii(5,BOLD_WHITE);
+
+    /*
+    stageArt(_alarmSetupAM);
+
+    
+    if(isAM){
+        printArt(ASCII_HEIGHT + 6, SELECTED);
+        stageArt(_alarmSetupPM);
+        printArt(ASCII_HEIGHT + 10, BOLD_WHITE);
+    }
+    else{
+        printArt(ASCII_HEIGHT + 6, BOLD_WHITE);
+        stageArt(_alarmSetupPM);
+        printArt(ASCII_HEIGHT + 10, SELECTED);
+    }
+    */
+
     setCursor(1,1);
 
 }
@@ -710,6 +811,10 @@ void Display::tickAlarmSetup(string to_print)
  */
 void Display::tickTimer(Timer &timer)
 {
+    auto now = std::chrono::steady_clock::now();
+    auto millis = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
+    bool flash = ((millis / 500) % 2 == 0);
+
     int remaining = timer.remainingMilliseconds();
     int hours = remaining / 3600000;
     remaining %= 3600000;
@@ -721,23 +826,27 @@ void Display::tickTimer(Timer &timer)
 
     stageTimerDisplay(hours, minutes, seconds, tenths);
     stageTimerBar(timer.percentElapsed());
-    stageTimerControls();
-    
+    stageArt(_timerControls);
+
+    string temp;
     if(!timer.isRunning()){
-        setFormat("\033[1;31m"); //Bold Red
+        if(timer.isDone() && flash){
+            temp = BOLD_WHITE;
+        }
+        else{
+            temp = BOLD_RED;
+        }
     }
     else{
-        setFormat("\033[1;37m"); // Bold white
+        temp = BOLD_WHITE;
     }
-    printAscii(1);
-    printBar(10);
-    clearFormat();
-    setFormat("\033[37m"); //White
-    printControls(13);
-    printSplash(18);
 
-    clearFormat();
-    setCursor(20,1);
+    printAscii(1, temp);
+    printBar(ASCII_HEIGHT+2, temp);
+    printArt(ASCII_HEIGHT+5, BOLD_CYAN);
+    printSplash(ASCII_HEIGHT+8, WHITE);
+
+    setCursor(1,1);
 }
 
 /**
@@ -757,26 +866,29 @@ void Display::tickStopwatch(Stopwatch &stopwatch){
     int hundredths = milliseconds / 10;
 
     stageStopwatchDisplay(hours, minutes, seconds, hundredths);
-    stageStopwatchControls();
+    stageArt(_stopwatchControls);
     stageStopwatchSplits(stopwatch.getSplits());
 
+    string temp;
     if(!stopwatch.isRunning()){
-        setFormat("\033[1;31m"); //Bold Red
+        if ((stopwatch.currentMilliseconds() / 10) % 100 == 0 && stopwatch.currentMilliseconds() != 0){
+            temp = BOLD_GREEN;
+        }   
+        else{
+            temp = BOLD_RED;
+        }
     }
     else{
-        setFormat("\033[1;37m"); // Bold white
+        temp = BOLD_WHITE;
     }
-    printAscii(1);
+    printAscii(1, temp);
+
+    printArt(ASCII_HEIGHT+1, BOLD_CYAN);
+    printSplash(ASCII_HEIGHT+4, WHITE);
+    printSplits(ASCII_HEIGHT+6, WHITE);
 
     clearFormat();
-    setFormat("\033[37m"); //White
-
-    printControls(9);
-    printSplash(14);
-    printSplits(16);
-
-    clearFormat();
-    setCursor(15,1);
+    setCursor(1,1);
 
 }
 
@@ -786,58 +898,33 @@ void Display::tickStopwatch(Stopwatch &stopwatch){
  */
 void Display::tickAlarm(Alarm &alarm){
 
+    auto now = std::chrono::steady_clock::now();
+    auto millis = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
+    bool flash = ((millis / 500) % 2 == 0);
+
     string time = alarm.timeToString(alarm.getEndTime()).substr(0,5);
 
     stageAlarmDisplay(time);
     stageAlarmBar(alarm.percentElapsed());
-    stageAlarmControls();
+    stageArt(_alarmControls);
 
-    if(alarm.isDone()){
-        setFormat("\033[1;31m"); //Bold Red
+    string temp;
+    if(alarm.isDone() && flash){
+        temp = BOLD_RED;
     }
     else{
-        setFormat("\033[1;37m"); // Bold white
+        temp = BOLD_WHITE;
     }
-    printAscii(1);
-    printBar(10);
-    clearFormat();
-    setFormat("\033[37m"); //White
-    printControls(13);
-    printSplash(18);
+    printAscii(1, temp);
+    printBar(ASCII_HEIGHT+2, temp);
+
+    printArt(ASCII_HEIGHT+5, BOLD_CYAN);
+    printSplash(ASCII_HEIGHT+8, WHITE);
     
     clearFormat();
-    setCursor(20,1);
+    setCursor(1,1);
 
     return;
 
 }
 
-/**
- * @brief Prints a string to the console efficiently using the Windows API.
- * @tparam char_type The character type (either char or wchar_t).
- * @param sss The string to print.
- */
-template <typename char_type>
-auto Display::fast_print(const std::basic_string<char_type> &sss) -> void
-{
-    HANDLE const output_handle = GetStdHandle(STD_OUTPUT_HANDLE);
-    const auto char_count = static_cast<DWORD>(sss.length());
-    if constexpr (std::is_same_v<char_type, char>)
-        WriteConsoleA(output_handle, sss.c_str(), char_count, nullptr, nullptr);
-    else
-        WriteConsoleW(output_handle, sss.c_str(), char_count, nullptr, nullptr);
-}
-
-
-void Display::setFormat(const std::string& code) {
-    _oldFormatting = _formatting;
-    _formatting = code;
-    cout << code;
-}
-
-void Display::clearFormat(){
-    _oldFormatting = _formatting;
-    _formatting = "\033[0m";
-
-    cout << "\033[0m";
-}

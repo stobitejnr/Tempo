@@ -3,25 +3,19 @@
 #include <chrono>
 #include <thread>
 
-#include "../include/Menu.hpp"
+#include "../include/Notification.hpp"
 
 using namespace std;
 
-void test_menu(){
-    Menu menu(true);
-    menu.saveSettings();
-    menu.loadSettings();
-    menu.settingsMenu(1);
-    menu.settingsMenu(2);
-    menu.settingsMenu(3);
-    return;
+void test_notify(){
+
+    Notification noti("test", "test");
 }
 
 
 int main() {
     try {
-        test_menu();
-
+        test_notify();
         cout << "All tests passed successfully!\n";
     } catch (const exception& e) {
         cerr << "Test failed with exception: " << e.what() << std::endl;

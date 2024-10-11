@@ -15,6 +15,7 @@ void test_alarm(){
     int remaining = alarm.remainingMilliseconds();
     bool runing = alarm.isRunning();
     bool done = alarm.isDone();
+    chrono::time_point<chrono::system_clock> t = alarm.getStartTime();
 }
 
 

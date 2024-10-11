@@ -61,6 +61,8 @@ public:
      */
     bool isRunning();
 
+    bool isDone();
+
     /**
      * @brief Returns the remaining time in milliseconds.
      *
