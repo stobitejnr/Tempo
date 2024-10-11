@@ -9,7 +9,6 @@
 #include <cstdlib>
 
 #include "../include/Notification.hpp"
-#include "Notification.hpp"
 
 using namespace std;
 
