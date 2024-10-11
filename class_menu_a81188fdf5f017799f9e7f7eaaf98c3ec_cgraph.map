@@ -9,6 +9,6 @@
 <area shape="rect" id="node9" href="$class_stopwatch.html#a42c7014e7fffcf4c56ca6fb07f8eb31c" title="Resets the stopwatch to 0 milliseconds and stops it." alt="" coords="306,301,437,327"/>
 <area shape="rect" id="node11" href="$class_stopwatch.html#a789461171238250633eeb26b8f3b0dce" title="Resumes the stopwatch from the last paused time." alt="" coords="298,351,445,376"/>
 <area shape="rect" id="node12" href="$class_display.html#a3a0e77e68157e55d67ac3f28dffdd00c" title="Sets the splash screen text." alt="" coords="301,400,442,425"/>
-<area shape="rect" id="node4" href="$class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="545,55,685,80"/>
+<area shape="rect" id="node4" href="$class_display.html#a0267a9a0b9ca0ce9d850e0c39bed1d1f" title="Efficiently prints a string to the terminal." alt="" coords="545,55,685,80"/>
 <area shape="rect" id="node10" href="$class_stopwatch.html#a0edfa283c9d5e706cef4a43a6cbfbaf5" title="Clears the splits vector." alt="" coords="532,301,699,327"/>
 </map>

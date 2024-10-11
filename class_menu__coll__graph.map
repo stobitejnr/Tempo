@@ -1,9 +1,12 @@
 <map id="Menu" name="Menu">
-<area shape="rect" id="node1" title="The Menu class manages the main menu and user input for the Timer Stopwatch and Alarm." alt="" coords="191,491,250,516"/>
-<area shape="rect" id="node2" href="$class_display.html" title="The Display class manages the visual representation and interaction logic for timers,..." alt="" coords="188,329,259,355"/>
-<area shape="rect" id="node3" title=" " alt="" coords="89,95,176,120"/>
-<area shape="rect" id="node7" title=" " alt="" coords="5,329,164,355"/>
-<area shape="rect" id="node4" title=" " alt="" coords="63,5,202,45"/>
-<area shape="rect" id="node5" title=" " alt="" coords="291,95,329,120"/>
-<area shape="rect" id="node6" title=" " alt="" coords="285,329,335,355"/>
+<area shape="rect" id="node1" title="The Menu class manages the main menu and user input for the Timer Stopwatch and Alarm." alt="" coords="924,589,983,614"/>
+<area shape="rect" id="node2" href="$class_display.html" title="The Display class manages the visual representation and interaction logic for timers,..." alt="" coords="701,337,772,362"/>
+<area shape="rect" id="node3" title=" " alt="" coords="364,159,451,185"/>
+<area shape="rect" id="node4" title=" " alt="" coords="37,152,175,192"/>
+<area shape="rect" id="node5" title=" " alt="" coords="320,272,495,312"/>
+<area shape="rect" id="node6" title=" " alt="" coords="5,239,207,265"/>
+<area shape="rect" id="node7" title=" " alt="" coords="338,337,477,362"/>
+<area shape="rect" id="node8" title=" " alt="" coords="87,403,125,429"/>
+<area shape="rect" id="node9" title=" " alt="" coords="342,535,473,561"/>
+<area shape="rect" id="node10" title=" " alt="" coords="711,683,762,709"/>
 </map>

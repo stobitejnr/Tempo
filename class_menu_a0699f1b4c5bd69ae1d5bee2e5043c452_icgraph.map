@@ -1,7 +1,0 @@
-<map id="Menu::getMenuInput" name="Menu::getMenuInput">
-<area shape="rect" id="node1" title="Waits for the user to press a valid key (1 2 3 or Q) for menu selection." alt="" coords="429,31,585,56"/>
-<area shape="rect" id="node2" href="$class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="247,31,381,56"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,5,181,31"/>
-<area shape="rect" id="node4" href="$_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,55,199,80"/>
-<area shape="rect" id="node5" href="$_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,55,60,80"/>
-</map>

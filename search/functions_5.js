@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['fast_5fprint_0',['fast_print',['../class_display.html#a1233671411c2af0367dc72e4451d0ba2',1,'Display']]],
+  ['fast_5fprint_0',['fast_print',['../class_display.html#a0267a9a0b9ca0ce9d850e0c39bed1d1f',1,'Display']]],
   ['func_1',['func',['../namespacedocstring.html#aec1a168f6e16b33f87fe6a37b9208957',1,'docstring.func()'],['../group__group1.html#ga24f647174760cac13d2624b5ad74b00c',1,'func():&#160;group.cpp'],['../namespacepyexample.html#a2daf35288bc9d0a1d4233ab18b553451',1,'pyexample.func()']]],
   ['func1ingroup1_2',['func1InGroup1',['../class_memgrp___test.html#a5052066c03efb51395b5334da4255cd2',1,'Memgrp_Test']]],
   ['func1ingroup2_3',['func1InGroup2',['../class_memgrp___test.html#ab0e6553ddc36ac3cef0ac229c5dd4cdb',1,'Memgrp_Test']]],

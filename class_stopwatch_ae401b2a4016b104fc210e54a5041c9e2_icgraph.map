@@ -1,13 +1,11 @@
 <map id="Stopwatch::getSplits" name="Stopwatch::getSplits">
-<area shape="rect" id="node1" title="Returns the splits vector." alt="" coords="892,31,1047,56"/>
-<area shape="rect" id="node2" href="$_stopwatch_test_8cpp.html#af44d971f0b7666e71e7d2b554b989292" title=" " alt="" coords="714,5,803,31"/>
-<area shape="rect" id="node4" href="$class_display.html#a670c8db4c53ae0f09d6d3b57f1813b7f" title="Updates the display based on the state of the provided Stopwatch object." alt="" coords="673,55,844,80"/>
-<area shape="rect" id="node3" href="$_stopwatch_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="500,5,555,31"/>
-<area shape="rect" id="node5" href="$class_menu.html#aca5927a856a8d20d738323c2261cc9e4" title="Runs the stopwatch sequence, allowing the user to start, stop, and record splits." alt="" coords="429,55,625,80"/>
-<area shape="rect" id="node10" href="$_display_test_8cpp.html#a95399b2aca69374a0e3efa274a5c3e03" title=" " alt="" coords="467,104,588,129"/>
-<area shape="rect" id="node6" href="$class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="247,55,381,80"/>
-<area shape="rect" id="node7" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,31,181,56"/>
-<area shape="rect" id="node8" href="$_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,80,199,105"/>
-<area shape="rect" id="node9" href="$_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,80,60,105"/>
-<area shape="rect" id="node11" href="$_display_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="287,104,341,129"/>
+<area shape="rect" id="node1" title="Returns the splits vector." alt="" coords="801,31,956,56"/>
+<area shape="rect" id="node2" href="$_stopwatch_test_8cpp.html#af44d971f0b7666e71e7d2b554b989292" title=" " alt="" coords="623,5,713,31"/>
+<area shape="rect" id="node4" href="$class_display.html#a670c8db4c53ae0f09d6d3b57f1813b7f" title="Updates the display based on the state of the provided Stopwatch object." alt="" coords="583,55,753,80"/>
+<area shape="rect" id="node3" href="$_stopwatch_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="409,5,464,31"/>
+<area shape="rect" id="node5" href="$class_menu.html#aca5927a856a8d20d738323c2261cc9e4" title="Displays the help menu for the Timer Stopwatch and Alarm." alt="" coords="339,55,535,80"/>
+<area shape="rect" id="node8" href="$_display_test_8cpp.html#a95399b2aca69374a0e3efa274a5c3e03" title=" " alt="" coords="376,104,497,129"/>
+<area shape="rect" id="node6" href="$class_menu.html#adfad43d64fc6df9172030c25f7d234c5" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="156,55,291,80"/>
+<area shape="rect" id="node7" href="$class_menu.html#a2b43753d834b64bdba7e82bc9f2af305" title="Constructs a Menu object." alt="" coords="5,55,108,80"/>
+<area shape="rect" id="node9" href="$_display_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="196,104,251,129"/>
 </map>

@@ -1,9 +1,7 @@
 <map id="Menu::createAlarm" name="Menu::createAlarm">
-<area shape="rect" id="node1" title="Creates a new Alarm object based on user input." alt="" coords="868,31,1015,56"/>
-<area shape="rect" id="node2" href="$class_menu.html#a4663bff1fca54f0230ff0e20b6ae9ae8" title="Runs the alarm sequence, allowing the user to set and interact with an alarm." alt="" coords="429,31,596,56"/>
-<area shape="rect" id="node7" href="$class_menu.html#a530b357d64d1481172d7808a453f262d" title="Checks and handles user input for the Alarm." alt="" coords="644,56,820,81"/>
-<area shape="rect" id="node3" href="$class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="247,31,381,56"/>
-<area shape="rect" id="node4" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,5,181,31"/>
-<area shape="rect" id="node5" href="$_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,55,199,80"/>
-<area shape="rect" id="node6" href="$_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,55,60,80"/>
+<area shape="rect" id="node1" title="Creates a Alarm object with user input for the duration." alt="" coords="777,29,924,55"/>
+<area shape="rect" id="node2" href="$class_menu.html#a4663bff1fca54f0230ff0e20b6ae9ae8" title="Displays the help menu for the Timer Stopwatch and Alarm." alt="" coords="339,29,505,55"/>
+<area shape="rect" id="node5" href="$class_menu.html#a530b357d64d1481172d7808a453f262d" title="Checks and handles user input for the Alarm." alt="" coords="553,55,729,80"/>
+<area shape="rect" id="node3" href="$class_menu.html#adfad43d64fc6df9172030c25f7d234c5" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="156,29,291,55"/>
+<area shape="rect" id="node4" href="$class_menu.html#a2b43753d834b64bdba7e82bc9f2af305" title="Constructs a Menu object." alt="" coords="5,29,108,55"/>
 </map>

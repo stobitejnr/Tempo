@@ -1,0 +1,7 @@
+<map id="Display::printSplits" name="Display::printSplits">
+<area shape="rect" id="node1" title="Prints the stopwatch splits to the terminal." alt="" coords="5,81,149,107"/>
+<area shape="rect" id="node2" href="$class_display.html#abbc05f4af18fc8665a8022e795c2d574" title="Clears the terminal text color." alt="" coords="197,5,353,31"/>
+<area shape="rect" id="node3" href="$class_display.html#a0267a9a0b9ca0ce9d850e0c39bed1d1f" title="Efficiently prints a string to the terminal." alt="" coords="401,81,541,107"/>
+<area shape="rect" id="node4" href="$class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="205,107,345,132"/>
+<area shape="rect" id="node5" href="$class_display.html#a6f32f09622d7e1dde951d5610167bdce" title="Sets the terminal text color." alt="" coords="203,156,347,181"/>
+</map>

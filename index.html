@@ -76,19 +76,18 @@ $(function() {
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_README"></a> <img src="Logo%20(Mid).png" alt="Logo" class="inline"/> </p>
 <h1><a class="anchor" id="autotoc_md12"></a>
-Tempo (Beta Release)</h1>
+Tempo (1.0)</h1>
 <p><a href="https://app.codacy.com/gh/stobitejnr/Tempo/dashboard?utm_source=gh&amp;utm_medium=referral&amp;utm_content=&amp;utm_campaign=Badge_grade"><img src="https://app.codacy.com/project/badge/Grade/8b2c325c2cc14f8c83427c59c616a839" alt="Codacy Badge" class="inline"/></a> <a href="https://github.com/stobitejnr/Tempo/actions/workflows/codecov.yml"><img src="https://github.com/stobitejnr/Tempo/actions/workflows/codecov.yml/badge.svg" alt="Codecov Coverage Report" style="pointer-events: none;" class="inline"/></a> <a href="https://github.com/stobitejnr/Tempo/actions/workflows/cmake.yml"><img src="https://github.com/stobitejnr/Tempo/actions/workflows/cmake.yml/badge.svg" alt="CMake Build" style="pointer-events: none;" class="inline"/></a> <a href="https://github.com/stobitejnr/Tempo/actions/workflows/clang-tidy.yml"><img src="https://github.com/stobitejnr/Tempo/actions/workflows/clang-tidy.yml/badge.svg" alt="Clang-Tidy Linting" style="pointer-events: none;" class="inline"/></a> <img src="https://img.shields.io/github/license/stobitejnr/Tempo" alt="GitHub License" class="inline"/> <a href="https://codedocs.xyz/stobitejnr/Tempo/"><img src="https://codedocs.xyz/stobitejnr/Tempo.svg" alt="Documentation Status" style="pointer-events: none;" class="inline"/></a> <a href="https://codecov.io/gh/stobitejnr/Tempo"><img src="https://codecov.io/gh/stobitejnr/Tempo/graph/badge.svg?token=NC8JFYBNUF" alt="codecov" style="pointer-events: none;" class="inline"/></a></p>
 <p><a class="el" href="class_a.html">A</a> versatile command-line application that allows users to create and manage timers and stopwatches</p>
-<p><a href="https://forms.gle/yQKxxhWpJ1LWqaSq7">Click here</a> if you want to participate in the beta testing of the application.</p>
 <h2><a class="anchor" id="autotoc_md13"></a>
 Developers</h2>
 <p><img src="team.webp" alt="Team Image" class="inline"/></p>
 <h2><a class="anchor" id="autotoc_md14"></a>
-Beta Changes</h2>
+Final Changes</h2>
 <ol type="1">
-<li>Added a new feature: <a class="el" href="class_alarm.html" title="A class to manage alarms with time-based triggers.">Alarm</a></li>
-<li>Added color to the interface</li>
-<li>Upgraded code coverage</li>
+<li><a class="el" href="class_notification.html" title="A class to manage system notifications using PowerShell scripts.">Notification</a> System</li>
+<li>Improved Startup Experience</li>
+<li>Updated <a class="el" href="class_menu.html" title="The Menu class manages the main menu and user input for the Timer Stopwatch and Alarm.">Menu</a> Traversal</li>
 </ol>
 <h2><a class="anchor" id="autotoc_md15"></a>
 Feature</h2>
@@ -98,6 +97,7 @@ Feature</h2>
 <li>Quickly create new timers</li>
 <li>Reset timer</li>
 <li>Visual progress bar</li>
+<li><a class="el" href="class_notification.html" title="A class to manage system notifications using PowerShell scripts.">Notification</a> When Finished</li>
 </ul>
 </li>
 <li><b><a class="el" href="class_stopwatch.html" title="The Stopwatch class provides a simple timer with start, pause, resume, and reset functionalities.">Stopwatch</a></b>: Measure elapsed time with a hundredth of a second precision.<ul>
@@ -109,6 +109,7 @@ Feature</h2>
 <li><b><a class="el" href="class_alarm.html" title="A class to manage alarms with time-based triggers.">Alarm</a></b>: Set an alarm to go off at any time of the day.<ul>
 <li>Quickly create a new alarm</li>
 <li>Visual progress bar</li>
+<li><a class="el" href="class_notification.html" title="A class to manage system notifications using PowerShell scripts.">Notification</a> System</li>
 </ul>
 </li>
 <li><b>User-friendly Interface</b>:<ul>
@@ -129,13 +130,13 @@ How to Run</h2>
 <h2><a class="anchor" id="autotoc_md17"></a>
 Usage</h2>
 <ol type="1">
-<li><p class="startli">Upon starting the application, you'll be presented with the screen:</p>
-<p class="startli"><img src="startup.png" alt="Start up" class="inline"/></p>
-<p class="startli">Press any key to continue.</p>
+<li><p class="startli">Upon starting the application, you'll be presented with the Main menu:</p>
+<p class="startli"><img src="menu.png" alt="main menu" width="600" class="inline"/></p>
+<p class="startli">Use the number keys to select a function, or use the arrow keys to move around the menu or 'Q' to quit.</p>
 </li>
-<li><p class="startli">Then you will see the main menu:</p>
-<p class="startli"><img src="menu.png" alt="Main Menu" class="inline"/></p>
-<p class="startli">Use the number keys to select a function or 'Q' to quit.</p>
+<li><p class="startli">To access the settings select the appropriate menu button</p>
+<p class="startli"><img src="settings.png" alt="main menu" width="600" class="inline"/></p>
+<p class="startli">Use the number keys to select a function, or use the arrow keys to move around the menu or 'Q' to go back to the Main menu.</p>
 </li>
 <li>Follow the on-screen instructions to control each feature.</li>
 </ol>
@@ -148,9 +149,7 @@ Requirements</h2>
 <h2><a class="anchor" id="autotoc_md19"></a>
 Future Enhancements</h2>
 <ul>
-<li>Add Windows notifications for completed timers and alarms</li>
 <li>Add sound notifications</li>
-<li>Add options menu with customizable fonts</li>
 <li>Expand platform support beyond Windows</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md20"></a>
@@ -160,7 +159,7 @@ Contributions</h2>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 11 2024 00:49:33 for Tempo by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+Generated on Fri Oct 11 2024 00:59:14 for Tempo by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
 </small></address>
 </body>
 </html>

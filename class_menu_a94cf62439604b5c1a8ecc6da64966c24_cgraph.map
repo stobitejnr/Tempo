@@ -1,0 +1,4 @@
+<map id="Menu::getSettingsInput" name="Menu::getSettingsInput">
+<area shape="rect" id="node1" title="Waits for the user to press a valid key (1 2 3 4 or Q) for settings selection." alt="" coords="5,5,179,31"/>
+<area shape="rect" id="node2" href="$class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="227,5,321,31"/>
+</map>

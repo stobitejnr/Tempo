@@ -1,0 +1,9 @@
+<map id="Display::setFont" name="Display::setFont">
+<area shape="rect" id="node1" title="Sets the font style for the terminal." alt="" coords="541,56,668,81"/>
+<area shape="rect" id="node2" href="$class_display.html#ae972fffea6f7ca1d627ef48c3d841bb3" title="Constructs a new Display object." alt="" coords="353,5,479,31"/>
+<area shape="rect" id="node3" href="$class_menu.html#a2b43753d834b64bdba7e82bc9f2af305" title="Constructs a Menu object." alt="" coords="5,93,108,119"/>
+<area shape="rect" id="node4" href="$class_menu.html#a2a39bbdf300035d48c14002a0c54c56f" title="Starts the settings menu loop allowing the user to change the notification and font settings." alt="" coords="339,131,493,156"/>
+<area shape="rect" id="node5" href="$class_menu.html#adfad43d64fc6df9172030c25f7d234c5" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="156,131,291,156"/>
+<area shape="rect" id="node6" href="$_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="178,180,269,205"/>
+<area shape="rect" id="node7" href="$_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="29,180,84,205"/>
+</map>

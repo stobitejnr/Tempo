@@ -86,25 +86,29 @@ Include dependency graph for main.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp__incl.png" border="0" usemap="#asrc_2main_8cpp" alt=""/></div>
 <map name="asrc_2main_8cpp" id="asrc_2main_8cpp">
-<area shape="rect" title=" " alt="" coords="243,5,348,31"/>
-<area shape="rect" href="_menu_8hpp.html" title=" " alt="" coords="221,79,370,104"/>
-<area shape="rect" href="_timer_8hpp.html" title=" " alt="" coords="23,225,109,251"/>
-<area shape="rect" title=" " alt="" coords="26,299,106,324"/>
-<area shape="rect" href="_stopwatch_8hpp.html" title=" " alt="" coords="185,225,304,251"/>
-<area shape="rect" href="_alarm_8hpp.html" title=" " alt="" coords="328,225,417,251"/>
-<area shape="rect" href="_display_8hpp.html" title=" " alt="" coords="333,152,431,177"/>
-<area shape="rect" title=" " alt="" coords="455,152,525,177"/>
-<area shape="rect" title=" " alt="" coords="549,152,615,177"/>
-<area shape="rect" title=" " alt="" coords="130,299,197,324"/>
-<area shape="rect" title=" " alt="" coords="589,299,652,324"/>
-<area shape="rect" title=" " alt="" coords="501,299,565,324"/>
-<area shape="rect" title=" " alt="" coords="221,299,279,324"/>
-<area shape="rect" title=" " alt="" coords="303,299,378,324"/>
-<area shape="rect" title=" " alt="" coords="402,299,477,324"/>
-<area shape="rect" href="font1_8hpp.html" title=" " alt="" coords="701,225,834,251"/>
-<area shape="rect" href="font2_8hpp.html" title=" " alt="" coords="543,225,677,251"/>
-<area shape="rect" title=" " alt="" coords="858,225,925,251"/>
-<area shape="rect" title=" " alt="" coords="707,299,766,324"/>
+<area shape="rect" title=" " alt="" coords="404,5,509,31"/>
+<area shape="rect" href="_menu_8hpp.html" title=" " alt="" coords="382,79,531,104"/>
+<area shape="rect" title=" " alt="" coords="77,299,157,324"/>
+<area shape="rect" title=" " alt="" coords="679,152,749,177"/>
+<area shape="rect" title=" " alt="" coords="773,152,839,177"/>
+<area shape="rect" title=" " alt="" coords="863,152,936,177"/>
+<area shape="rect" href="_timer_8hpp.html" title=" " alt="" coords="24,225,111,251"/>
+<area shape="rect" href="_stopwatch_8hpp.html" title=" " alt="" coords="187,225,305,251"/>
+<area shape="rect" href="_alarm_8hpp.html" title=" " alt="" coords="329,225,419,251"/>
+<area shape="rect" href="_display_8hpp.html" title=" " alt="" coords="408,152,505,177"/>
+<area shape="rect" href="_notification_8hpp.html" title=" " alt="" coords="530,152,655,177"/>
+<area shape="rect" title=" " alt="" coords="181,299,247,324"/>
+<area shape="rect" title=" " alt="" coords="656,299,719,324"/>
+<area shape="rect" title=" " alt="" coords="271,299,335,324"/>
+<area shape="rect" title=" " alt="" coords="359,299,418,324"/>
+<area shape="rect" title=" " alt="" coords="442,299,517,324"/>
+<area shape="rect" title=" " alt="" coords="541,299,615,324"/>
+<area shape="rect" href="font1_8hpp.html" title=" " alt="" coords="809,225,942,251"/>
+<area shape="rect" href="font2_8hpp.html" title=" " alt="" coords="651,225,785,251"/>
+<area shape="rect" href="font3_8hpp.html" title=" " alt="" coords="494,225,627,251"/>
+<area shape="rect" href="font4_8hpp.html" title=" " alt="" coords="1057,225,1190,251"/>
+<area shape="rect" title=" " alt="" coords="966,225,1033,251"/>
+<area shape="rect" title=" " alt="" coords="846,299,905,324"/>
 </map>
 </div>
 </div>
@@ -139,85 +143,22 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00017">17</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   17</span>           {</div>
-<div class="line"><span class="lineno">   18</span>    <span class="comment">// Create a Menu object</span></div>
-<div class="line"><span class="lineno">   19</span>    <a class="code hl_class" href="class_menu.html">Menu</a> menu(<span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">   20</span>    </div>
-<div class="line"><span class="lineno">   21</span>    <span class="comment">// Start the main menu system</span></div>
-<div class="line"><span class="lineno">   22</span>    menu.start();</div>
-<div class="line"><span class="lineno">   23</span>    </div>
-<div class="line"><span class="lineno">   24</span>    menu.mainMenu();</div>
-<div class="line"><span class="lineno">   25</span> </div>
-<div class="line"><span class="lineno">   26</span>    cout &lt;&lt; <span class="stringliteral">&quot;&lt;&lt; PROGRAM QUIT &gt;&gt;&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">   27</span> </div>
-<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">   29</span>}</div>
-<div class="ttc" id="aclass_menu_html"><div class="ttname"><a href="class_menu.html">Menu</a></div><div class="ttdoc">The Menu class manages the main menu and user input for the Timer Stopwatch and Alarm.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8hpp_source.html#l00018">Menu.hpp:19</a></div></div>
+<div class="line"><span class="lineno">   18</span> </div>
+<div class="line"><span class="lineno">   19</span>    <span class="comment">// Create a Menu object</span></div>
+<div class="line"><span class="lineno">   20</span>    <a class="code hl_class" href="class_menu.html">Menu</a> menu(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   21</span> </div>
+<div class="line"><span class="lineno">   22</span>    cout &lt;&lt; <span class="stringliteral">&quot;&lt;&lt; PROGRAM QUIT &gt;&gt;&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">   23</span> </div>
+<div class="line"><span class="lineno">   24</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   25</span>}</div>
+<div class="ttc" id="aclass_menu_html"><div class="ttname"><a href="class_menu.html">Menu</a></div><div class="ttdoc">The Menu class manages the main menu and user input for the Timer Stopwatch and Alarm.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8hpp_source.html#l00021">Menu.hpp:22</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_menu_8cpp_source.html#l00062">Menu::mainMenu()</a>, and <a class="el" href="_menu_8cpp_source.html#l00025">Menu::start()</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png" border="0" usemap="#amain_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" alt=""/></div>
-<map name="amain_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" id="amain_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph">
-<area shape="rect" title="The main function of the program." alt="" coords="5,1258,60,1283"/>
-<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="108,930,243,955"/>
-<area shape="rect" href="class_menu.html#ae1ec62e738dda7faaaec850bd0b58ffe" title="Displays the start screen with logo art and credits." alt="" coords="817,1584,913,1610"/>
-<area shape="rect" href="class_menu.html#a4663bff1fca54f0230ff0e20b6ae9ae8" title="Runs the alarm sequence, allowing the user to set and interact with an alarm." alt="" coords="305,702,472,727"/>
-<area shape="rect" href="class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62" title="Clears the terminal screen." alt="" coords="1001,878,1156,903"/>
-<area shape="rect" href="class_display.html#abbc05f4af18fc8665a8022e795c2d574" title=" " alt="" coords="1256,930,1412,955"/>
-<area shape="rect" href="class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="1538,778,1678,803"/>
-<area shape="rect" href="class_display.html#adb4502abd3d3dd9ca70a97c1f3d66ad7" title=" " alt="" coords="1262,979,1406,1004"/>
-<area shape="rect" href="class_menu.html#a0699f1b4c5bd69ae1d5bee2e5043c452" title="Waits for the user to press a valid key (1 2 3 or Q) for menu selection." alt="" coords="559,220,715,246"/>
-<area shape="rect" href="class_menu.html#aca5927a856a8d20d738323c2261cc9e4" title="Runs the stopwatch sequence, allowing the user to start, stop, and record splits." alt="" coords="291,1082,487,1107"/>
-<area shape="rect" href="class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title="Runs the timer sequence, allowing the user to set and interact with a timer." alt="" coords="307,347,471,372"/>
-<area shape="rect" href="class_menu.html#a530b357d64d1481172d7808a453f262d" title="Checks and handles user input for the Alarm." alt="" coords="549,828,725,854"/>
-<area shape="rect" href="class_menu.html#a76c8148cc85fcc305b80c52b2f9df2ca" title="Creates a new Alarm object based on user input." alt="" coords="791,727,938,752"/>
-<area shape="rect" href="class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="1031,398,1126,423"/>
-<area shape="rect" href="class_alarm.html#a2e1cee43509c402293feeebd70c80442" title="Checks if the alarm has finished." alt="" coords="1277,280,1391,306"/>
-<area shape="rect" href="class_display.html#a3a0e77e68157e55d67ac3f28dffdd00c" title="Sets the splash screen text." alt="" coords="794,678,935,703"/>
-<area shape="rect" href="class_display.html#a8437f93af050167c13f5cf2f3e68f8b8" title="Updates the display based on the state of the provided Alarm object." alt="" coords="1008,527,1149,552"/>
-<area shape="rect" href="class_display.html#ad226aa44204137c5a8fe774967532af4" title="Clears the splash screen." alt="" coords="788,828,941,854"/>
-<area shape="rect" href="class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="1764,778,1904,803"/>
-<area shape="rect" href="class_display.html#a00b39135d34e401529265af26a9611c7" title="Updates the alarm setup display, showing the current input with a blinking cursor." alt="" coords="989,803,1168,828"/>
-<area shape="rect" href="class_display.html#aab9a518037074ce68da2a7792771908d" title="Prints ASCII art to the terminal." alt="" coords="1265,828,1403,854"/>
-<area shape="rect" href="class_display.html#a3480427024243711ee66efc51ddf0fa3" title="Prints controls to the terminal." alt="" coords="1253,727,1415,752"/>
-<area shape="rect" href="class_alarm.html#a8f29e4753be03a7f68c22d2697e65a43" title="Calculates the remaining time in milliseconds until the alarm ends." alt="" coords="1500,282,1716,307"/>
-<area shape="rect" href="class_alarm.html#a4e43d8e48846d1911f5a691c129b731a" title="Returns the alarm&#39;s end time." alt="" coords="1261,330,1407,355"/>
-<area shape="rect" href="class_alarm.html#aee08b5d6eafe7e5adee07f9c30dc3fce" title="Calculates the percentage of time that has elapsed from start to end." alt="" coords="1249,379,1419,404"/>
-<area shape="rect" href="class_display.html#a034871a688ea9c2cf5801d120b0cfcf6" title="Prints the progress bar to the terminal." alt="" coords="1269,231,1399,256"/>
-<area shape="rect" href="class_display.html#a62d8435627ea69fbccaef4cef32d785d" title="Prints the splash screen to the terminal." alt="" coords="1259,527,1409,552"/>
-<area shape="rect" href="class_display.html#ab750543d9a82d7e90b262a772b195c1f" title="Creates a visual progress bar for the alarm based on the percentage completed." alt="" coords="1247,428,1421,454"/>
-<area shape="rect" href="class_display.html#ae6055127511e098a4ce8ea10d0ca2e43" title="Stages the controls for the alarm." alt="" coords="1231,478,1437,503"/>
-<area shape="rect" href="class_display.html#a90235f60d9b1239198ceca9e24df2e33" title="Stages the display for the alarm." alt="" coords="1233,576,1435,602"/>
-<area shape="rect" href="class_alarm.html#a493f5bd8972a4c5769574701f9d92067" title="Converts a given time point to a string format (HH:MM)." alt="" coords="1259,626,1409,651"/>
-<area shape="rect" href="class_menu.html#a81188fdf5f017799f9e7f7eaaf98c3ec" title="Checks and handles user input for the Stopwatch." alt="" coords="535,1208,740,1234"/>
-<area shape="rect" href="class_display.html#a670c8db4c53ae0f09d6d3b57f1813b7f" title="Updates the display based on the state of the provided Stopwatch object." alt="" coords="993,1131,1164,1156"/>
-<area shape="rect" href="class_stopwatch.html#aa0a6e6e55261fa0d2b239800bc7a782d" title="Records and prints the current split time in milliseconds." alt="" coords="789,1382,940,1407"/>
-<area shape="rect" href="class_stopwatch.html#aaf61c1ada98a22cc1c2bc589bdd4134a" title="Returns the current elapsed time in milliseconds." alt="" coords="1221,1327,1447,1352"/>
-<area shape="rect" href="class_stopwatch.html#ae20cb58892efc6ca55117583aac8c392" title="Checks if the stopwatch is currently running." alt="" coords="1253,1376,1415,1402"/>
-<area shape="rect" href="class_stopwatch.html#a2cc48295d6b083361d062b8eb68d753a" title="Pauses the stopwatch." alt="" coords="796,1234,933,1259"/>
-<area shape="rect" href="class_stopwatch.html#a42c7014e7fffcf4c56ca6fb07f8eb31c" title="Resets the stopwatch to 0 milliseconds and stops it." alt="" coords="799,1283,930,1308"/>
-<area shape="rect" href="class_stopwatch.html#a789461171238250633eeb26b8f3b0dce" title="Resumes the stopwatch from the last paused time." alt="" coords="791,1332,938,1358"/>
-<area shape="rect" href="class_stopwatch.html#ae401b2a4016b104fc210e54a5041c9e2" title="Returns the splits vector." alt="" coords="1257,1228,1411,1254"/>
-<area shape="rect" href="class_display.html#ac4f2f5445af6a65554ad9646cc27f3cc" title="Prints the stopwatch splits to the terminal." alt="" coords="1262,1080,1406,1106"/>
-<area shape="rect" href="class_display.html#aa68e271db8f91c18ae2c1e5e38d0f1ee" title="Stages the controls for the stopwatch." alt="" coords="1216,1278,1452,1303"/>
-<area shape="rect" href="class_display.html#ac878f4b1987c4e33c173478fd5bbf34c" title="Stages the stopwatch display with provided time values." alt="" coords="1219,1130,1449,1155"/>
-<area shape="rect" href="class_display.html#a8b0e743648629b44c19cb59b1cbe467e" title="Stages the splits block to be displayed." alt="" coords="1225,1179,1443,1204"/>
-<area shape="rect" href="class_menu.html#ab8d3cccd5b39987a6546f7dc1187b71e" title="Checks and handles user input for the Timer." alt="" coords="550,372,725,398"/>
-<area shape="rect" href="class_menu.html#a1a90c9e670b33e2c9aaddc01f47b3b88" title="Creates a new Timer object based on user input." alt="" coords="792,372,937,398"/>
-<area shape="rect" href="class_timer.html#a330607659937f497389c9989812cd925" title="Returns the remaining time in milliseconds." alt="" coords="1227,80,1441,106"/>
-<area shape="rect" href="class_display.html#a02b2228e05be168eda0b817d1ecf5db7" title="Updates the display based on the state of the provided Timer object." alt="" coords="1009,335,1149,360"/>
-<area shape="rect" href="class_timer.html#a2ef50bfc604ea9fb88d3000c9ad0edd9" title="Checks if the timer is currently running." alt="" coords="1268,130,1400,155"/>
-<area shape="rect" href="class_menu.html#a537a69bfbe3b8c29e3dfd3e2f5dd88b5" title="Waits for any key press from the user." alt="" coords="1005,1534,1152,1559"/>
-</map>
-</div>
-
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 11 2024 00:49:33 for Tempo by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+Generated on Fri Oct 11 2024 00:59:14 for Tempo by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
 </small></address>
 </body>
 </html>

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['value_0',['value',['../class_afterdoc___test.html#a9287a08830e5cdfd9c732bb7932694a0',1,'Afterdoc_Test']]],
-  ['var_1',['var',['../class_autolink___test.html#a8de85603114bc9b9e53bd40764e9b499',1,'Autolink_Test']]]
+  ['padding_0',['PADDING',['../class_display.html#adb51067a1af4ef602e4dfe4fe7a8ab1d',1,'Display']]],
+  ['publicvar_1',['publicVar',['../class_javadoc___test.html#a44a516fbc3a4865e2dcae34649c9df6a',1,'Javadoc_Test::publicVar()'],['../class_q_tstyle___test.html#aabf7b2e9ed83ea44aca4d213baae06d3',1,'QTstyle_Test::publicVar()']]]
 ];

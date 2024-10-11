@@ -1,7 +1,9 @@
 <map id="test_nonreturn" name="test_nonreturn">
-<area shape="rect" id="node1" title=" " alt="" coords="5,81,123,107"/>
-<area shape="rect" id="node2" href="$class_display.html#aaa0ffb7318a45caa0b74d3d439e623f0" title="Clears a specific line in the terminal." alt="" coords="171,5,308,31"/>
-<area shape="rect" id="node3" href="$class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="559,81,699,107"/>
-<area shape="rect" id="node4" href="$class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="363,56,503,81"/>
-<area shape="rect" id="node5" href="$class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62" title="Clears the terminal screen." alt="" coords="356,157,511,183"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,132,123,157"/>
+<area shape="rect" id="node2" href="$class_display.html#aaa0ffb7318a45caa0b74d3d439e623f0" title="Clears a specific line in the terminal." alt="" coords="179,5,316,31"/>
+<area shape="rect" id="node3" href="$class_display.html#a0267a9a0b9ca0ce9d850e0c39bed1d1f" title="Efficiently prints a string to the terminal." alt="" coords="575,81,715,107"/>
+<area shape="rect" id="node4" href="$class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="379,56,519,81"/>
+<area shape="rect" id="node5" href="$class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62" title="Clears the terminal screen." alt="" coords="372,157,527,183"/>
+<area shape="rect" id="node6" href="$class_display.html#ad226aa44204137c5a8fe774967532af4" title="Clears the splash screen." alt="" coords="171,208,324,233"/>
+<area shape="rect" id="node7" href="$class_display.html#a3a0e77e68157e55d67ac3f28dffdd00c" title="Sets the splash screen text." alt="" coords="177,257,318,283"/>
 </map>

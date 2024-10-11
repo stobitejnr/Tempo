@@ -1,0 +1,4 @@
+<map id="Display::Display" name="Display::Display">
+<area shape="rect" id="node1" title="Constructs a new Display object." alt="" coords="5,5,132,31"/>
+<area shape="rect" id="node2" href="$class_display.html#a4aeb617efef8e5a5e306f63eb96fd82d" title="Sets the font style for the terminal." alt="" coords="180,5,307,31"/>
+</map>

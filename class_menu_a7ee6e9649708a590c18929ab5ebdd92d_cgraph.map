@@ -1,0 +1,6 @@
+<map id="Menu::printArt" name="Menu::printArt">
+<area shape="rect" id="node1" title="Prints the Alarm&#39;s input duration to the console." alt="" coords="5,31,120,56"/>
+<area shape="rect" id="node2" href="$class_display.html#abbc05f4af18fc8665a8022e795c2d574" title="Clears the terminal text color." alt="" coords="168,5,324,31"/>
+<area shape="rect" id="node4" href="$class_display.html#a6f32f09622d7e1dde951d5610167bdce" title="Sets the terminal text color." alt="" coords="174,55,318,80"/>
+<area shape="rect" id="node3" href="$class_display.html#a0267a9a0b9ca0ce9d850e0c39bed1d1f" title="Efficiently prints a string to the terminal." alt="" coords="372,31,512,56"/>
+</map>

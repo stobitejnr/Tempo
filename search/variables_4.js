@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['enumptr_0',['enumPtr',['../class_javadoc___test.html#abcb36df9d8af3e69290c239ba483d6df',1,'Javadoc_Test::enumPtr()'],['../class_q_tstyle___test.html#a973a4566c9a036f4eca508ba5fe80dcb',1,'QTstyle_Test::enumPtr()']]],
-  ['enumvar_1',['enumVar',['../class_javadoc___test.html#afcc11e097968fb44080b82b75032e40b',1,'Javadoc_Test::enumVar()'],['../class_q_tstyle___test.html#a241fb54f66dc0b3b03eece3a1a1bf18b',1,'QTstyle_Test::enumVar()']]],
-  ['errno_2',['errno',['../structcmd_8h.html#ad65a8842cc674e3ddf69355898c0ecbf',1,'structcmd.h']]]
+  ['din_5f0_0',['din_0',['../classmux__using__with.html#a9fc14b65611c7124d4cab27b963f3011',1,'mux_using_with']]],
+  ['din_5f1_1',['din_1',['../classmux__using__with.html#aaedccad88ca9b207c86a561342fcbaa1',1,'mux_using_with']]],
+  ['do_5fprint_2',['do_print',['../namespacestrip__example.html#a9fff99ba5b5564a70fa48b9757ef9885',1,'strip_example']]]
 ];

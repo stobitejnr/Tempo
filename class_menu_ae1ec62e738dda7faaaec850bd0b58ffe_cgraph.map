@@ -1,9 +1,0 @@
-<map id="Menu::start" name="Menu::start">
-<area shape="rect" id="node1" title="Displays the start screen with logo art and credits." alt="" coords="5,104,101,129"/>
-<area shape="rect" id="node2" href="$class_display.html#abbc05f4af18fc8665a8022e795c2d574" title=" " alt="" coords="149,5,305,31"/>
-<area shape="rect" id="node3" href="$class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62" title="Clears the terminal screen." alt="" coords="150,55,305,80"/>
-<area shape="rect" id="node5" href="$class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="157,104,297,129"/>
-<area shape="rect" id="node6" href="$class_display.html#adb4502abd3d3dd9ca70a97c1f3d66ad7" title=" " alt="" coords="155,153,299,179"/>
-<area shape="rect" id="node7" href="$class_menu.html#a537a69bfbe3b8c29e3dfd3e2f5dd88b5" title="Waits for any key press from the user." alt="" coords="154,203,301,228"/>
-<area shape="rect" id="node4" href="$class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="353,80,493,105"/>
-</map>

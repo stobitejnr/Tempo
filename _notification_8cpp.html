@@ -75,313 +75,40 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Notification.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implementation of the <a class="el" href="class_notification.html" title="A class to manage system notifications using PowerShell scripts.">Notification</a> class to display system notifications.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;windows.h&gt;</code><br />
-<code>#include &lt;shellapi.h&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;cstdlib&gt;</code><br />
+<code>#include &quot;<a class="el" href="_notification_8hpp_source.html">../include/Notification.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Notification.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="_notification_8cpp__incl.png" border="0" usemap="#asrc_2_notification_8cpp" alt=""/></div>
 <map name="asrc_2_notification_8cpp" id="asrc_2_notification_8cpp">
-<area shape="rect" title=" " alt="" coords="33,5,180,31"/>
+<area shape="rect" title="Implementation of the Notification class to display system notifications." alt="" coords="164,5,311,31"/>
 <area shape="rect" title=" " alt="" coords="5,79,96,104"/>
-<area shape="rect" title=" " alt="" coords="120,79,205,104"/>
+<area shape="rect" title=" " alt="" coords="120,79,200,104"/>
+<area shape="rect" title=" " alt="" coords="319,152,377,177"/>
+<area shape="rect" title=" " alt="" coords="275,79,341,104"/>
+<area shape="rect" href="_notification_8hpp.html" title=" " alt="" coords="365,79,553,104"/>
 </map>
 </div>
 </div>
 <p><a href="_notification_8cpp_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a13e8f6e1a1cbb229a2671156e98830e3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_notification_8cpp.html#a13e8f6e1a1cbb229a2671156e98830e3">WM_TRAYICON</a>&#160;&#160;&#160;(WM_USER + 1)</td></tr>
-<tr class="separator:a13e8f6e1a1cbb229a2671156e98830e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a2f4b224a9110e040668258e2ce04b6ee"><td class="memItemLeft" align="right" valign="top">LRESULT CALLBACK&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_notification_8cpp.html#a2f4b224a9110e040668258e2ce04b6ee">WindowProcedure</a> (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)</td></tr>
-<tr class="memdesc:a2f4b224a9110e040668258e2ce04b6ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Window procedure for handling messages.  <br /></td></tr>
-<tr class="separator:a2f4b224a9110e040668258e2ce04b6ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad23fe8f5aaf1d0460387522c8d85cdb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_notification_8cpp.html#ad23fe8f5aaf1d0460387522c8d85cdb2">ShowNotification</a> (HINSTANCE hInstance, HWND hwnd)</td></tr>
-<tr class="memdesc:ad23fe8f5aaf1d0460387522c8d85cdb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shows a notification in the system tray.  <br /></td></tr>
-<tr class="separator:ad23fe8f5aaf1d0460387522c8d85cdb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1122673f59be78a3997ec7dd1c4688f9"><td class="memItemLeft" align="right" valign="top">int APIENTRY&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_notification_8cpp.html#a1122673f59be78a3997ec7dd1c4688f9">WinMain</a> (HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)</td></tr>
-<tr class="memdesc:a1122673f59be78a3997ec7dd1c4688f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entry point for the Windows application.  <br /></td></tr>
-<tr class="separator:a1122673f59be78a3997ec7dd1c4688f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a13e8f6e1a1cbb229a2671156e98830e3" name="a13e8f6e1a1cbb229a2671156e98830e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13e8f6e1a1cbb229a2671156e98830e3">&#9670;&#160;</a></span>WM_TRAYICON</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of the <a class="el" href="class_notification.html" title="A class to manage system notifications using PowerShell scripts.">Notification</a> class to display system notifications. </p>
 
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define WM_TRAYICON&#160;&#160;&#160;(WM_USER + 1)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_notification_8cpp_source.html#l00008">8</a> of file <a class="el" href="_notification_8cpp_source.html">Notification.cpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="ad23fe8f5aaf1d0460387522c8d85cdb2" name="ad23fe8f5aaf1d0460387522c8d85cdb2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad23fe8f5aaf1d0460387522c8d85cdb2">&#9670;&#160;</a></span>ShowNotification()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ShowNotification </td>
-          <td>(</td>
-          <td class="paramtype">HINSTANCE&#160;</td>
-          <td class="paramname"><em>hInstance</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">HWND&#160;</td>
-          <td class="paramname"><em>hwnd</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Shows a notification in the system tray. </p>
-<p>This function adds a notification icon to the system tray and displays a notification message.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">hInstance</td><td>Handle to the application instance. </td></tr>
-    <tr><td class="paramname">hwnd</td><td>Handle to the window. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="_notification_8cpp_source.html#l00053">53</a> of file <a class="el" href="_notification_8cpp_source.html">Notification.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   53</span>                                                      {</div>
-<div class="line"><span class="lineno">   54</span>    NOTIFYICONDATA nid = { 0 };</div>
-<div class="line"><span class="lineno">   55</span>    nid.cbSize = <span class="keyword">sizeof</span>(nid);</div>
-<div class="line"><span class="lineno">   56</span>    nid.hWnd = hwnd;</div>
-<div class="line"><span class="lineno">   57</span>    nid.uID = 1001;</div>
-<div class="line"><span class="lineno">   58</span>    nid.uFlags = NIF_ICON | NIF_MESSAGE | NIF_TIP | NIF_INFO;</div>
-<div class="line"><span class="lineno">   59</span>    nid.uCallbackMessage = <a class="code hl_define" href="_notification_8cpp.html#a13e8f6e1a1cbb229a2671156e98830e3">WM_TRAYICON</a>; <span class="comment">// Custom message for icon interactions</span></div>
-<div class="line"><span class="lineno">   60</span>    nid.hIcon = LoadIcon(NULL, IDI_APPLICATION);</div>
-<div class="line"><span class="lineno">   61</span>    strcpy_s(nid.szTip, <span class="stringliteral">&quot;My Notification App&quot;</span>);</div>
-<div class="line"><span class="lineno">   62</span>    strcpy_s(nid.szInfo, <span class="stringliteral">&quot;Hello! This is your notification.&quot;</span>);</div>
-<div class="line"><span class="lineno">   63</span>    strcpy_s(nid.szInfoTitle, <span class="stringliteral">&quot;Notification Title&quot;</span>);</div>
-<div class="line"><span class="lineno">   64</span>    nid.dwInfoFlags = NIIF_INFO;</div>
-<div class="line"><span class="lineno">   65</span> </div>
-<div class="line"><span class="lineno">   66</span>    Shell_NotifyIcon(NIM_ADD, &amp;nid);</div>
-<div class="line"><span class="lineno">   67</span>}</div>
-<div class="ttc" id="a_notification_8cpp_html_a13e8f6e1a1cbb229a2671156e98830e3"><div class="ttname"><a href="_notification_8cpp.html#a13e8f6e1a1cbb229a2671156e98830e3">WM_TRAYICON</a></div><div class="ttdeci">#define WM_TRAYICON</div><div class="ttdef"><b>Definition:</b> <a href="_notification_8cpp_source.html#l00008">Notification.cpp:8</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="_notification_8cpp_source.html#l00008">WM_TRAYICON</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="_notification_8cpp_source.html#l00084">WinMain()</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="_notification_8cpp_ad23fe8f5aaf1d0460387522c8d85cdb2_icgraph.png" border="0" usemap="#a_notification_8cpp_ad23fe8f5aaf1d0460387522c8d85cdb2_icgraph" alt=""/></div>
-<map name="a_notification_8cpp_ad23fe8f5aaf1d0460387522c8d85cdb2_icgraph" id="a_notification_8cpp_ad23fe8f5aaf1d0460387522c8d85cdb2_icgraph">
-<area shape="rect" title="Shows a notification in the system tray." alt="" coords="132,5,264,31"/>
-<area shape="rect" href="_notification_8cpp.html#a1122673f59be78a3997ec7dd1c4688f9" title="Entry point for the Windows application." alt="" coords="5,5,84,31"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a2f4b224a9110e040668258e2ce04b6ee" name="a2f4b224a9110e040668258e2ce04b6ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f4b224a9110e040668258e2ce04b6ee">&#9670;&#160;</a></span>WindowProcedure()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">LRESULT CALLBACK WindowProcedure </td>
-          <td>(</td>
-          <td class="paramtype">HWND&#160;</td>
-          <td class="paramname"><em>hwnd</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">UINT&#160;</td>
-          <td class="paramname"><em>message</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">WPARAM&#160;</td>
-          <td class="paramname"><em>wParam</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">LPARAM&#160;</td>
-          <td class="paramname"><em>lParam</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Window procedure for handling messages. </p>
-<p>This function processes messages sent to the window, including custom tray icon messages and window destruction.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">hwnd</td><td>Handle to the window. </td></tr>
-    <tr><td class="paramname">message</td><td>The message identifier. </td></tr>
-    <tr><td class="paramname">wParam</td><td>Additional message information. </td></tr>
-    <tr><td class="paramname">lParam</td><td>Additional message information. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>LRESULT The result of the message processing. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_notification_8cpp_source.html#l00025">25</a> of file <a class="el" href="_notification_8cpp_source.html">Notification.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   25</span>                                                                                        {</div>
-<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">switch</span> (message) {</div>
-<div class="line"><span class="lineno">   27</span>        <span class="keywordflow">case</span> <a class="code hl_define" href="_notification_8cpp.html#a13e8f6e1a1cbb229a2671156e98830e3">WM_TRAYICON</a>:</div>
-<div class="line"><span class="lineno">   28</span>            <span class="keywordflow">if</span> (lParam == WM_LBUTTONUP) {</div>
-<div class="line"><span class="lineno">   29</span>                MessageBox(NULL, <span class="stringliteral">&quot;You clicked the notification icon!&quot;</span>, <span class="stringliteral">&quot;Notification&quot;</span>, MB_OK);</div>
-<div class="line"><span class="lineno">   30</span>            }</div>
-<div class="line"><span class="lineno">   31</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   32</span>        <span class="keywordflow">case</span> WM_DESTROY:</div>
-<div class="line"><span class="lineno">   33</span>            PostQuitMessage(0);</div>
-<div class="line"><span class="lineno">   34</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   35</span>        <span class="keywordflow">default</span>:</div>
-<div class="line"><span class="lineno">   36</span>            <span class="keywordflow">return</span> DefWindowProc(hwnd, message, wParam, lParam);</div>
-<div class="line"><span class="lineno">   37</span>    }</div>
-<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">   39</span>}</div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="_notification_8cpp_source.html#l00008">WM_TRAYICON</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="_notification_8cpp_source.html#l00084">WinMain()</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="_notification_8cpp_a2f4b224a9110e040668258e2ce04b6ee_icgraph.png" border="0" usemap="#a_notification_8cpp_a2f4b224a9110e040668258e2ce04b6ee_icgraph" alt=""/></div>
-<map name="a_notification_8cpp_a2f4b224a9110e040668258e2ce04b6ee_icgraph" id="a_notification_8cpp_a2f4b224a9110e040668258e2ce04b6ee_icgraph">
-<area shape="rect" title="Window procedure for handling messages." alt="" coords="132,5,271,31"/>
-<area shape="rect" href="_notification_8cpp.html#a1122673f59be78a3997ec7dd1c4688f9" title="Entry point for the Windows application." alt="" coords="5,5,84,31"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a1122673f59be78a3997ec7dd1c4688f9" name="a1122673f59be78a3997ec7dd1c4688f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1122673f59be78a3997ec7dd1c4688f9">&#9670;&#160;</a></span>WinMain()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int APIENTRY WinMain </td>
-          <td>(</td>
-          <td class="paramtype">HINSTANCE&#160;</td>
-          <td class="paramname"><em>hInstance</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">HINSTANCE&#160;</td>
-          <td class="paramname"><em>hPrevInstance</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">LPSTR&#160;</td>
-          <td class="paramname"><em>lpCmdLine</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>nCmdShow</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Entry point for the Windows application. </p>
-<p>This function initializes the application, creates a window, and enters the message loop.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">hInstance</td><td>Handle to the application instance. </td></tr>
-    <tr><td class="paramname">hPrevInstance</td><td>Handle to the previous instance (always NULL for Win32). </td></tr>
-    <tr><td class="paramname">lpCmdLine</td><td>Command line arguments. </td></tr>
-    <tr><td class="paramname">nCmdShow</td><td>How the window should be shown. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>int The exit code of the application. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_notification_8cpp_source.html#l00084">84</a> of file <a class="el" href="_notification_8cpp_source.html">Notification.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   84</span>                                                                                                  {</div>
-<div class="line"><span class="lineno">   85</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> CLASS_NAME[] = <span class="stringliteral">&quot;NotificationApp&quot;</span>;</div>
-<div class="line"><span class="lineno">   86</span> </div>
-<div class="line"><span class="lineno">   87</span>    WNDCLASS wc = { 0 };</div>
-<div class="line"><span class="lineno">   88</span>    wc.lpfnWndProc = <a class="code hl_function" href="_notification_8cpp.html#a2f4b224a9110e040668258e2ce04b6ee">WindowProcedure</a>;</div>
-<div class="line"><span class="lineno">   89</span>    wc.hInstance = hInstance;</div>
-<div class="line"><span class="lineno">   90</span>    wc.lpszClassName = CLASS_NAME;</div>
-<div class="line"><span class="lineno">   91</span> </div>
-<div class="line"><span class="lineno">   92</span>    RegisterClass(&amp;wc);</div>
-<div class="line"><span class="lineno">   93</span> </div>
-<div class="line"><span class="lineno">   94</span>    HWND hwnd = CreateWindowEx(0, CLASS_NAME, <span class="stringliteral">&quot;Notification Window&quot;</span>, 0, 0, 0, 0, 0, NULL, NULL, hInstance, NULL);</div>
-<div class="line"><span class="lineno">   95</span> </div>
-<div class="line"><span class="lineno">   96</span>    <span class="keywordflow">if</span> (hwnd == NULL) {</div>
-<div class="line"><span class="lineno">   97</span>        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">   98</span>    }</div>
-<div class="line"><span class="lineno">   99</span> </div>
-<div class="line"><span class="lineno">  100</span>    <a class="code hl_function" href="_notification_8cpp.html#ad23fe8f5aaf1d0460387522c8d85cdb2">ShowNotification</a>(hInstance, hwnd);</div>
-<div class="line"><span class="lineno">  101</span> </div>
-<div class="line"><span class="lineno">  102</span>    MSG msg;</div>
-<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">while</span> (GetMessage(&amp;msg, NULL, 0, 0)) {</div>
-<div class="line"><span class="lineno">  104</span>        TranslateMessage(&amp;msg);</div>
-<div class="line"><span class="lineno">  105</span>        DispatchMessage(&amp;msg);</div>
-<div class="line"><span class="lineno">  106</span>    }</div>
-<div class="line"><span class="lineno">  107</span> </div>
-<div class="line"><span class="lineno">  108</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  109</span>}</div>
-<div class="ttc" id="a_notification_8cpp_html_a2f4b224a9110e040668258e2ce04b6ee"><div class="ttname"><a href="_notification_8cpp.html#a2f4b224a9110e040668258e2ce04b6ee">WindowProcedure</a></div><div class="ttdeci">LRESULT CALLBACK WindowProcedure(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)</div><div class="ttdoc">Window procedure for handling messages.</div><div class="ttdef"><b>Definition:</b> <a href="_notification_8cpp_source.html#l00025">Notification.cpp:25</a></div></div>
-<div class="ttc" id="a_notification_8cpp_html_ad23fe8f5aaf1d0460387522c8d85cdb2"><div class="ttname"><a href="_notification_8cpp.html#ad23fe8f5aaf1d0460387522c8d85cdb2">ShowNotification</a></div><div class="ttdeci">void ShowNotification(HINSTANCE hInstance, HWND hwnd)</div><div class="ttdoc">Shows a notification in the system tray.</div><div class="ttdef"><b>Definition:</b> <a href="_notification_8cpp_source.html#l00053">Notification.cpp:53</a></div></div>
-</div><!-- fragment -->
-<p class="reference">References <a class="el" href="_notification_8cpp_source.html#l00053">ShowNotification()</a>, and <a class="el" href="_notification_8cpp_source.html#l00025">WindowProcedure()</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="_notification_8cpp_a1122673f59be78a3997ec7dd1c4688f9_cgraph.png" border="0" usemap="#a_notification_8cpp_a1122673f59be78a3997ec7dd1c4688f9_cgraph" alt=""/></div>
-<map name="a_notification_8cpp_a1122673f59be78a3997ec7dd1c4688f9_cgraph" id="a_notification_8cpp_a1122673f59be78a3997ec7dd1c4688f9_cgraph">
-<area shape="rect" title="Entry point for the Windows application." alt="" coords="5,31,84,56"/>
-<area shape="rect" href="_notification_8cpp.html#ad23fe8f5aaf1d0460387522c8d85cdb2" title="Shows a notification in the system tray." alt="" coords="135,5,267,31"/>
-<area shape="rect" href="_notification_8cpp.html#a2f4b224a9110e040668258e2ce04b6ee" title="Window procedure for handling messages." alt="" coords="132,55,271,80"/>
-</map>
-</div>
-
-</div>
-</div>
-</div><!-- contents -->
+<p class="definition">Definition in file <a class="el" href="_notification_8cpp_source.html">Notification.cpp</a>.</p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 11 2024 00:49:33 for Tempo by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+Generated on Fri Oct 11 2024 00:59:14 for Tempo by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
 </small></address>
 </body>
 </html>

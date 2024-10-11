@@ -1,0 +1,33 @@
+<map id="Display::setFormat" name="Display::setFormat">
+<area shape="rect" id="node1" title="Sets the terminal text color." alt="" coords="1435,307,1579,332"/>
+<area shape="rect" id="node2" href="$class_menu.html#ad038639f1dbf6e0d16ce7986d141155d" title="Displays the credits for the Timer Stopwatch and Alarm." alt="" coords="1043,5,1154,31"/>
+<area shape="rect" id="node8" href="$class_display.html#adaad0e1b5d4d161f107818583c3b4ef2" title="Prints controls to the terminal." alt="" coords="1248,356,1375,381"/>
+<area shape="rect" id="node27" href="$class_menu.html#a7ee6e9649708a590c18929ab5ebdd92d" title="Prints the Alarm&#39;s input duration to the console." alt="" coords="1254,95,1369,120"/>
+<area shape="rect" id="node28" href="$class_display.html#aea651e91d87c11ca3723d08dcf8a5b48" title="Prints ASCII art to the terminal." alt="" coords="1242,307,1381,332"/>
+<area shape="rect" id="node29" href="$class_display.html#a6368055fbde2ff2e14bcf9fc44db1a14" title="Prints the progress bar to the terminal." alt="" coords="1246,455,1377,480"/>
+<area shape="rect" id="node30" href="$class_display.html#a0918dd20f8a177b7c61509ecc1994b3b" title="Prints the splash screen to the terminal." alt="" coords="1236,405,1387,431"/>
+<area shape="rect" id="node31" href="$class_display.html#a39a12fa82f3f8c7614d32bd91bb34ae5" title="Prints the stopwatch splits to the terminal." alt="" coords="1239,257,1383,283"/>
+<area shape="rect" id="node3" href="$class_menu.html#a2a39bbdf300035d48c14002a0c54c56f" title="Starts the settings menu loop allowing the user to change the notification and font settings." alt="" coords="807,31,961,56"/>
+<area shape="rect" id="node4" href="$class_menu.html#adfad43d64fc6df9172030c25f7d234c5" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="156,157,291,183"/>
+<area shape="rect" id="node6" href="$_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="625,5,716,31"/>
+<area shape="rect" id="node5" href="$class_menu.html#a2b43753d834b64bdba7e82bc9f2af305" title="Constructs a Menu object." alt="" coords="5,157,108,183"/>
+<area shape="rect" id="node7" href="$_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="409,5,464,31"/>
+<area shape="rect" id="node9" href="$class_display.html#a8437f93af050167c13f5cf2f3e68f8b8" title="Updates the display based on the state of the provided Alarm object." alt="" coords="1028,455,1169,480"/>
+<area shape="rect" id="node13" href="$class_display.html#ac8ccd7ba3691d710cb516abc82d55fae" title="Updates the alarm setup display, showing the current input with a blinking cursor." alt="" coords="1009,356,1188,381"/>
+<area shape="rect" id="node17" href="$class_display.html#a670c8db4c53ae0f09d6d3b57f1813b7f" title="Updates the display based on the state of the provided Stopwatch object." alt="" coords="1013,257,1184,283"/>
+<area shape="rect" id="node20" href="$class_display.html#a02b2228e05be168eda0b817d1ecf5db7" title="Updates the display based on the state of the provided Timer object." alt="" coords="1029,405,1169,431"/>
+<area shape="rect" id="node23" href="$class_display.html#aae213ab2d8df542fbe9b58d526a47052" title="Updates the timer setup display, showing the current input with a blinking cursor." alt="" coords="1010,307,1187,332"/>
+<area shape="rect" id="node10" href="$class_menu.html#a4663bff1fca54f0230ff0e20b6ae9ae8" title="Displays the help menu for the Timer Stopwatch and Alarm." alt="" coords="353,532,520,557"/>
+<area shape="rect" id="node11" href="$_display_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6" title=" " alt="" coords="838,507,930,532"/>
+<area shape="rect" id="node12" href="$_display_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="643,356,698,381"/>
+<area shape="rect" id="node14" href="$class_menu.html#a76c8148cc85fcc305b80c52b2f9df2ca" title="Creates a Alarm object with user input for the duration." alt="" coords="811,556,957,581"/>
+<area shape="rect" id="node16" href="$_display_test_8cpp.html#a363a4218e1a87b645235a6dc953defa8" title=" " alt="" coords="817,356,951,381"/>
+<area shape="rect" id="node15" href="$class_menu.html#a530b357d64d1481172d7808a453f262d" title="Checks and handles user input for the Alarm." alt="" coords="583,557,759,583"/>
+<area shape="rect" id="node18" href="$class_menu.html#aca5927a856a8d20d738323c2261cc9e4" title="Displays the help menu for the Timer Stopwatch and Alarm." alt="" coords="339,157,535,183"/>
+<area shape="rect" id="node19" href="$_display_test_8cpp.html#a95399b2aca69374a0e3efa274a5c3e03" title=" " alt="" coords="823,257,945,283"/>
+<area shape="rect" id="node21" href="$_display_test_8cpp.html#aaebf8e553939222f4e0682af515b3674" title=" " alt="" coords="839,405,929,431"/>
+<area shape="rect" id="node22" href="$class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title="Displays the help menu for the Timer Stopwatch and Alarm." alt="" coords="355,233,519,259"/>
+<area shape="rect" id="node24" href="$class_menu.html#a1a90c9e670b33e2c9aaddc01f47b3b88" title="Creates a Timer object with user input for the duration." alt="" coords="811,208,957,233"/>
+<area shape="rect" id="node26" href="$_display_test_8cpp.html#a6294fd865d398d67618ac1493f971eb1" title=" " alt="" coords="818,307,950,332"/>
+<area shape="rect" id="node25" href="$class_menu.html#ab8d3cccd5b39987a6546f7dc1187b71e" title="Checks and handles user input for the Timer." alt="" coords="583,208,758,233"/>
+</map>

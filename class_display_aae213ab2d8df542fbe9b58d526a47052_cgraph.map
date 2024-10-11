@@ -1,10 +1,10 @@
 <map id="Display::tickTimerSetup" name="Display::tickTimerSetup">
-<area shape="rect" id="node1" title="Updates the timer setup display, showing the current input with a blinking cursor." alt="" coords="5,131,183,156"/>
-<area shape="rect" id="node2" href="$class_display.html#abbc05f4af18fc8665a8022e795c2d574" title=" " alt="" coords="247,5,403,31"/>
-<area shape="rect" id="node3" href="$class_display.html#aab9a518037074ce68da2a7792771908d" title="Prints ASCII art to the terminal." alt="" coords="256,55,395,80"/>
-<area shape="rect" id="node5" href="$class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="468,105,608,131"/>
-<area shape="rect" id="node6" href="$class_display.html#a3480427024243711ee66efc51ddf0fa3" title="Prints controls to the terminal." alt="" coords="244,156,407,181"/>
-<area shape="rect" id="node7" href="$class_display.html#adb4502abd3d3dd9ca70a97c1f3d66ad7" title=" " alt="" coords="253,205,397,231"/>
-<area shape="rect" id="node8" href="$class_display.html#a8a1135ceff6c3fb0a3a83dd694914f1f" title="Stages the controls for the timer setup to be displayed in the terminal." alt="" coords="231,255,420,295"/>
-<area shape="rect" id="node4" href="$class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="656,105,796,131"/>
+<area shape="rect" id="node1" title="Updates the timer setup display, showing the current input with a blinking cursor." alt="" coords="5,107,183,133"/>
+<area shape="rect" id="node2" href="$class_display.html#adaad0e1b5d4d161f107818583c3b4ef2" title="Prints controls to the terminal." alt="" coords="237,82,363,107"/>
+<area shape="rect" id="node5" href="$class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="425,33,565,58"/>
+<area shape="rect" id="node7" href="$class_display.html#aea651e91d87c11ca3723d08dcf8a5b48" title="Prints ASCII art to the terminal." alt="" coords="231,131,369,157"/>
+<area shape="rect" id="node8" href="$class_display.html#a5f40f6193deb6304f0598b49944bd0d1" title="Stages the controls for the timer." alt="" coords="233,181,367,206"/>
+<area shape="rect" id="node3" href="$class_display.html#abbc05f4af18fc8665a8022e795c2d574" title="Clears the terminal text color." alt="" coords="417,131,573,157"/>
+<area shape="rect" id="node4" href="$class_display.html#a0267a9a0b9ca0ce9d850e0c39bed1d1f" title="Efficiently prints a string to the terminal." alt="" coords="621,82,761,107"/>
+<area shape="rect" id="node6" href="$class_display.html#a6f32f09622d7e1dde951d5610167bdce" title="Sets the terminal text color." alt="" coords="423,82,567,107"/>
 </map>

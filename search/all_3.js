@@ -24,7 +24,9 @@ var searchData=
   ['coordstruct_21',['CoordStruct',['../struct_coord_struct.html',1,'']]],
   ['createalarm_22',['createAlarm',['../class_menu.html#a76c8148cc85fcc305b80c52b2f9df2ca',1,'Menu']]],
   ['createtimer_23',['createTimer',['../class_menu.html#a1a90c9e670b33e2c9aaddc01f47b3b88',1,'Menu']]],
-  ['cstyle_24',['cstyle',['../javadoc-banner_8h.html#a6ec4bf0132201719721e103451590a9e',1,'javadoc-banner.h']]],
-  ['currentmilliseconds_25',['currentMilliseconds',['../class_stopwatch.html#aaf61c1ada98a22cc1c2bc589bdd4134a',1,'Stopwatch']]],
-  ['currenttime_26',['currentTime',['../class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f',1,'Alarm']]]
+  ['credits_24',['credits',['../class_menu.html#ad038639f1dbf6e0d16ce7986d141155d',1,'Menu']]],
+  ['cstyle_25',['cstyle',['../javadoc-banner_8h.html#a6ec4bf0132201719721e103451590a9e',1,'javadoc-banner.h']]],
+  ['currentmilliseconds_26',['currentMilliseconds',['../class_stopwatch.html#aaf61c1ada98a22cc1c2bc589bdd4134a',1,'Stopwatch']]],
+  ['currenttime_27',['currentTime',['../class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f',1,'Alarm']]],
+  ['cyan_28',['CYAN',['../class_display.html#a858ae458b9c753c5bae3c17057d35ef5',1,'Display']]]
 ];

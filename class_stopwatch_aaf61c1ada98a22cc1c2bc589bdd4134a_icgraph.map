@@ -1,16 +1,14 @@
 <map id="Stopwatch::currentMilliseconds" name="Stopwatch::currentMilliseconds">
-<area shape="rect" id="node1" title="Returns the current elapsed time in milliseconds." alt="" coords="927,104,1152,129"/>
-<area shape="rect" id="node2" href="$class_menu.html#a81188fdf5f017799f9e7f7eaaf98c3ec" title="Checks and handles user input for the Stopwatch." alt="" coords="673,153,879,179"/>
-<area shape="rect" id="node8" href="$_stopwatch_test_8cpp.html#acba75a8bdc084005b14d0ab6214dc244" title=" " alt="" coords="713,5,839,31"/>
-<area shape="rect" id="node10" href="$_stopwatch_test_8cpp.html#ae968c56d18bef1bf9802840c2349192b" title=" " alt="" coords="701,55,851,80"/>
-<area shape="rect" id="node11" href="$_stopwatch_test_8cpp.html#ab89fbb465413f5edb0ed7a5250df74e5" title=" " alt="" coords="733,104,819,129"/>
-<area shape="rect" id="node12" href="$class_display.html#a670c8db4c53ae0f09d6d3b57f1813b7f" title="Updates the display based on the state of the provided Stopwatch object." alt="" coords="691,203,861,228"/>
-<area shape="rect" id="node3" href="$class_menu.html#aca5927a856a8d20d738323c2261cc9e4" title="Runs the stopwatch sequence, allowing the user to start, stop, and record splits." alt="" coords="429,153,625,179"/>
-<area shape="rect" id="node4" href="$class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="247,153,381,179"/>
-<area shape="rect" id="node5" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,129,181,155"/>
-<area shape="rect" id="node6" href="$_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,179,199,204"/>
-<area shape="rect" id="node7" href="$_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,179,60,204"/>
-<area shape="rect" id="node9" href="$_stopwatch_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="500,55,555,80"/>
-<area shape="rect" id="node13" href="$_display_test_8cpp.html#a95399b2aca69374a0e3efa274a5c3e03" title=" " alt="" coords="467,203,588,228"/>
-<area shape="rect" id="node14" href="$_display_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="287,203,341,228"/>
+<area shape="rect" id="node1" title="Returns the current elapsed time in milliseconds." alt="" coords="836,104,1061,129"/>
+<area shape="rect" id="node2" href="$class_menu.html#a81188fdf5f017799f9e7f7eaaf98c3ec" title="Checks and handles user input for the Stopwatch." alt="" coords="583,153,788,179"/>
+<area shape="rect" id="node6" href="$_stopwatch_test_8cpp.html#acba75a8bdc084005b14d0ab6214dc244" title=" " alt="" coords="622,5,749,31"/>
+<area shape="rect" id="node8" href="$_stopwatch_test_8cpp.html#ae968c56d18bef1bf9802840c2349192b" title=" " alt="" coords="611,55,760,80"/>
+<area shape="rect" id="node9" href="$_stopwatch_test_8cpp.html#ab89fbb465413f5edb0ed7a5250df74e5" title=" " alt="" coords="642,104,729,129"/>
+<area shape="rect" id="node10" href="$class_display.html#a670c8db4c53ae0f09d6d3b57f1813b7f" title="Updates the display based on the state of the provided Stopwatch object." alt="" coords="600,203,771,228"/>
+<area shape="rect" id="node3" href="$class_menu.html#aca5927a856a8d20d738323c2261cc9e4" title="Displays the help menu for the Timer Stopwatch and Alarm." alt="" coords="339,153,535,179"/>
+<area shape="rect" id="node4" href="$class_menu.html#adfad43d64fc6df9172030c25f7d234c5" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="156,153,291,179"/>
+<area shape="rect" id="node5" href="$class_menu.html#a2b43753d834b64bdba7e82bc9f2af305" title="Constructs a Menu object." alt="" coords="5,153,108,179"/>
+<area shape="rect" id="node7" href="$_stopwatch_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="409,55,464,80"/>
+<area shape="rect" id="node11" href="$_display_test_8cpp.html#a95399b2aca69374a0e3efa274a5c3e03" title=" " alt="" coords="376,203,497,228"/>
+<area shape="rect" id="node12" href="$_display_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="196,203,251,228"/>
 </map>

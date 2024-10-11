@@ -1,4 +1,4 @@
 <map id="Display::setCursor" name="Display::setCursor">
 <area shape="rect" id="node1" title="Sets the cursor position in the terminal." alt="" coords="5,5,145,31"/>
-<area shape="rect" id="node2" href="$class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="193,5,333,31"/>
+<area shape="rect" id="node2" href="$class_display.html#a0267a9a0b9ca0ce9d850e0c39bed1d1f" title="Efficiently prints a string to the terminal." alt="" coords="193,5,333,31"/>
 </map>

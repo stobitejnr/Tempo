@@ -117,6 +117,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2ef50bfc604ea9fb88d3000c9ad0edd9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_timer.html#a2ef50bfc604ea9fb88d3000c9ad0edd9">isRunning</a> ()</td></tr>
 <tr class="memdesc:a2ef50bfc604ea9fb88d3000c9ad0edd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the timer is currently running.  <br /></td></tr>
 <tr class="separator:a2ef50bfc604ea9fb88d3000c9ad0edd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fb3e9233a159f03cfcee78b000e80cf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_timer.html#a4fb3e9233a159f03cfcee78b000e80cf">isDone</a> ()</td></tr>
+<tr class="separator:a4fb3e9233a159f03cfcee78b000e80cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a330607659937f497389c9989812cd925"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_timer.html#a330607659937f497389c9989812cd925">remainingMilliseconds</a> ()</td></tr>
 <tr class="memdesc:a330607659937f497389c9989812cd925"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the remaining time in milliseconds.  <br /></td></tr>
 <tr class="separator:a330607659937f497389c9989812cd925"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -215,13 +217,13 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   25</span>    <a class="code hl_variable" href="class_timer.html#aa8f27b761a340cbab040e05412711056">_incrementMilliseconds</a> = 0;</div>
 <div class="line"><span class="lineno">   26</span>    <a class="code hl_function" href="class_timer.html#aded1ecf859b397258dcfa95d3d7cfc41">start</a>(<a class="code hl_variable" href="class_timer.html#a751e8cad5b33a2157d1f4ed0dff10d9a">_countdownMilliseconds</a>);</div>
 <div class="line"><span class="lineno">   27</span>}</div>
-<div class="ttc" id="aclass_timer_html_a751e8cad5b33a2157d1f4ed0dff10d9a"><div class="ttname"><a href="class_timer.html#a751e8cad5b33a2157d1f4ed0dff10d9a">Timer::_countdownMilliseconds</a></div><div class="ttdeci">int _countdownMilliseconds</div><div class="ttdoc">The duration of the countdown in milliseconds.</div><div class="ttdef"><b>Definition:</b> <a href="_timer_8hpp_source.html#l00082">Timer.hpp:82</a></div></div>
-<div class="ttc" id="aclass_timer_html_a82b2a7bb825239edeaf391dd3b0e9dd9"><div class="ttname"><a href="class_timer.html#a82b2a7bb825239edeaf391dd3b0e9dd9">Timer::_startMilliseconds</a></div><div class="ttdeci">int _startMilliseconds</div><div class="ttdoc">The initial duration of the timer in milliseconds.</div><div class="ttdef"><b>Definition:</b> <a href="_timer_8hpp_source.html#l00081">Timer.hpp:81</a></div></div>
-<div class="ttc" id="aclass_timer_html_aa8f27b761a340cbab040e05412711056"><div class="ttname"><a href="class_timer.html#aa8f27b761a340cbab040e05412711056">Timer::_incrementMilliseconds</a></div><div class="ttdeci">int _incrementMilliseconds</div><div class="ttdoc">The increment time in milliseconds for adding time.</div><div class="ttdef"><b>Definition:</b> <a href="_timer_8hpp_source.html#l00084">Timer.hpp:84</a></div></div>
-<div class="ttc" id="aclass_timer_html_aad16481efed1a745745148ef6f0dfd3e"><div class="ttname"><a href="class_timer.html#aad16481efed1a745745148ef6f0dfd3e">Timer::_remainingMilliseconds</a></div><div class="ttdeci">int _remainingMilliseconds</div><div class="ttdoc">The remaining time in milliseconds.</div><div class="ttdef"><b>Definition:</b> <a href="_timer_8hpp_source.html#l00083">Timer.hpp:83</a></div></div>
+<div class="ttc" id="aclass_timer_html_a751e8cad5b33a2157d1f4ed0dff10d9a"><div class="ttname"><a href="class_timer.html#a751e8cad5b33a2157d1f4ed0dff10d9a">Timer::_countdownMilliseconds</a></div><div class="ttdeci">int _countdownMilliseconds</div><div class="ttdoc">The duration of the countdown in milliseconds.</div><div class="ttdef"><b>Definition:</b> <a href="_timer_8hpp_source.html#l00084">Timer.hpp:84</a></div></div>
+<div class="ttc" id="aclass_timer_html_a82b2a7bb825239edeaf391dd3b0e9dd9"><div class="ttname"><a href="class_timer.html#a82b2a7bb825239edeaf391dd3b0e9dd9">Timer::_startMilliseconds</a></div><div class="ttdeci">int _startMilliseconds</div><div class="ttdoc">The initial duration of the timer in milliseconds.</div><div class="ttdef"><b>Definition:</b> <a href="_timer_8hpp_source.html#l00083">Timer.hpp:83</a></div></div>
+<div class="ttc" id="aclass_timer_html_aa8f27b761a340cbab040e05412711056"><div class="ttname"><a href="class_timer.html#aa8f27b761a340cbab040e05412711056">Timer::_incrementMilliseconds</a></div><div class="ttdeci">int _incrementMilliseconds</div><div class="ttdoc">The increment time in milliseconds for adding time.</div><div class="ttdef"><b>Definition:</b> <a href="_timer_8hpp_source.html#l00086">Timer.hpp:86</a></div></div>
+<div class="ttc" id="aclass_timer_html_aad16481efed1a745745148ef6f0dfd3e"><div class="ttname"><a href="class_timer.html#aad16481efed1a745745148ef6f0dfd3e">Timer::_remainingMilliseconds</a></div><div class="ttdeci">int _remainingMilliseconds</div><div class="ttdoc">The remaining time in milliseconds.</div><div class="ttdef"><b>Definition:</b> <a href="_timer_8hpp_source.html#l00085">Timer.hpp:85</a></div></div>
 <div class="ttc" id="aclass_timer_html_aded1ecf859b397258dcfa95d3d7cfc41"><div class="ttname"><a href="class_timer.html#aded1ecf859b397258dcfa95d3d7cfc41">Timer::start</a></div><div class="ttdeci">void start(int countdownMilliseconds)</div><div class="ttdoc">Starts the timer by setting the end time based on the current time plus the countdown duration.</div><div class="ttdef"><b>Definition:</b> <a href="_timer_8cpp_source.html#l00038">Timer.cpp:38</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_timer_8hpp_source.html#l00082">_countdownMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00084">_incrementMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00083">_remainingMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00081">_startMilliseconds</a>, and <a class="el" href="_timer_8cpp_source.html#l00038">start()</a>.</p>
+<p class="reference">References <a class="el" href="_timer_8hpp_source.html#l00084">_countdownMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00086">_incrementMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00085">_remainingMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00083">_startMilliseconds</a>, and <a class="el" href="_timer_8cpp_source.html#l00038">start()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -280,10 +282,10 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  104</span>    }</div>
 <div class="line"><span class="lineno">  105</span>}</div>
 <div class="ttc" id="aclass_timer_html_a0289effad7b573c508bc27e405900a23"><div class="ttname"><a href="class_timer.html#a0289effad7b573c508bc27e405900a23">Timer::pause</a></div><div class="ttdeci">void pause()</div><div class="ttdoc">Pauses the timer and calculates the remaining milliseconds.</div><div class="ttdef"><b>Definition:</b> <a href="_timer_8cpp_source.html#l00050">Timer.cpp:50</a></div></div>
-<div class="ttc" id="aclass_timer_html_a0e92367e8b9f4fe50e7395d01db259af"><div class="ttname"><a href="class_timer.html#a0e92367e8b9f4fe50e7395d01db259af">Timer::_running</a></div><div class="ttdeci">bool _running</div><div class="ttdoc">Indicates whether the timer is currently running.</div><div class="ttdef"><b>Definition:</b> <a href="_timer_8hpp_source.html#l00086">Timer.hpp:86</a></div></div>
+<div class="ttc" id="aclass_timer_html_a0e92367e8b9f4fe50e7395d01db259af"><div class="ttname"><a href="class_timer.html#a0e92367e8b9f4fe50e7395d01db259af">Timer::_running</a></div><div class="ttdeci">bool _running</div><div class="ttdoc">Indicates whether the timer is currently running.</div><div class="ttdef"><b>Definition:</b> <a href="_timer_8hpp_source.html#l00088">Timer.hpp:88</a></div></div>
 <div class="ttc" id="aclass_timer_html_a4ac55a73bb3431db9d4d2fd70ae9a2e8"><div class="ttname"><a href="class_timer.html#a4ac55a73bb3431db9d4d2fd70ae9a2e8">Timer::resume</a></div><div class="ttdeci">void resume()</div><div class="ttdoc">Resumes the timer from where it was paused by recalculating the end time.</div><div class="ttdef"><b>Definition:</b> <a href="_timer_8cpp_source.html#l00065">Timer.cpp:65</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_timer_8hpp_source.html#l00082">_countdownMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00083">_remainingMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00086">_running</a>, <a class="el" href="_timer_8cpp_source.html#l00050">pause()</a>, and <a class="el" href="_timer_8cpp_source.html#l00065">resume()</a>.</p>
+<p class="reference">References <a class="el" href="_timer_8hpp_source.html#l00084">_countdownMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00085">_remainingMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00088">_running</a>, <a class="el" href="_timer_8cpp_source.html#l00050">pause()</a>, and <a class="el" href="_timer_8cpp_source.html#l00065">resume()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_timer_test_8cpp_source.html#l00051">test_add_time()</a>.</p>
 <div class="dynheader">
@@ -304,6 +306,58 @@ Here is the caller graph for this function:</div>
 <area shape="rect" title="Adds a specified amount of time (in seconds) to the timer." alt="" coords="271,5,396,31"/>
 <area shape="rect" href="_timer_test_8cpp.html#ad6d1baf23a5b08ce7c326940832f8a05" title=" " alt="" coords="108,5,223,31"/>
 <area shape="rect" href="_timer_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4fb3e9233a159f03cfcee78b000e80cf" name="a4fb3e9233a159f03cfcee78b000e80cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fb3e9233a159f03cfcee78b000e80cf">&#9670;&#160;</a></span>isDone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Timer::isDone </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_timer_8cpp_source.html#l00147">147</a> of file <a class="el" href="_timer_8cpp_source.html">Timer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  147</span>                   {</div>
+<div class="line"><span class="lineno">  148</span>    <span class="keywordflow">return</span> !<a class="code hl_variable" href="class_timer.html#a0e92367e8b9f4fe50e7395d01db259af">_running</a> &amp;&amp; !<a class="code hl_function" href="class_timer.html#a330607659937f497389c9989812cd925">remainingMilliseconds</a>();</div>
+<div class="line"><span class="lineno">  149</span>}</div>
+<div class="ttc" id="aclass_timer_html_a330607659937f497389c9989812cd925"><div class="ttname"><a href="class_timer.html#a330607659937f497389c9989812cd925">Timer::remainingMilliseconds</a></div><div class="ttdeci">int remainingMilliseconds()</div><div class="ttdoc">Returns the remaining time in milliseconds.</div><div class="ttdef"><b>Definition:</b> <a href="_timer_8cpp_source.html#l00118">Timer.cpp:118</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_timer_8hpp_source.html#l00088">_running</a>, and <a class="el" href="_timer_8cpp_source.html#l00118">remainingMilliseconds()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_timer_test_8cpp_source.html#l00073">test_expiration()</a>, and <a class="el" href="_display_8cpp_source.html#l00812">Display::tickTimer()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_timer_a4fb3e9233a159f03cfcee78b000e80cf_cgraph.png" border="0" usemap="#aclass_timer_a4fb3e9233a159f03cfcee78b000e80cf_cgraph" alt=""/></div>
+<map name="aclass_timer_a4fb3e9233a159f03cfcee78b000e80cf_cgraph" id="aclass_timer_a4fb3e9233a159f03cfcee78b000e80cf_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,119,31"/>
+<area shape="rect" href="class_timer.html#a330607659937f497389c9989812cd925" title="Returns the remaining time in milliseconds." alt="" coords="167,5,381,31"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_timer_a4fb3e9233a159f03cfcee78b000e80cf_icgraph.png" border="0" usemap="#aclass_timer_a4fb3e9233a159f03cfcee78b000e80cf_icgraph" alt=""/></div>
+<map name="aclass_timer_a4fb3e9233a159f03cfcee78b000e80cf_icgraph" id="aclass_timer_a4fb3e9233a159f03cfcee78b000e80cf_icgraph">
+<area shape="rect" title=" " alt="" coords="739,31,852,56"/>
+<area shape="rect" href="_timer_test_8cpp.html#a14451092b3f80a4a088637f1705ae471" title=" " alt="" coords="561,5,681,31"/>
+<area shape="rect" href="class_display.html#a02b2228e05be168eda0b817d1ecf5db7" title="Updates the display based on the state of the provided Timer object." alt="" coords="551,55,691,80"/>
+<area shape="rect" href="_timer_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="393,5,448,31"/>
+<area shape="rect" href="_display_test_8cpp.html#aaebf8e553939222f4e0682af515b3674" title=" " alt="" coords="376,55,465,80"/>
+<area shape="rect" href="class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title="Displays the help menu for the Timer Stopwatch and Alarm." alt="" coords="339,109,503,135"/>
+<area shape="rect" href="_display_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="196,48,251,73"/>
+<area shape="rect" href="class_menu.html#adfad43d64fc6df9172030c25f7d234c5" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="156,121,291,147"/>
+<area shape="rect" href="class_menu.html#a2b43753d834b64bdba7e82bc9f2af305" title="Constructs a Menu object." alt="" coords="5,121,108,147"/>
 </map>
 </div>
 
@@ -333,29 +387,27 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  144</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_timer.html#a0e92367e8b9f4fe50e7395d01db259af">_running</a>;</div>
 <div class="line"><span class="lineno">  145</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_timer_8hpp_source.html#l00086">_running</a>.</p>
+<p class="reference">References <a class="el" href="_timer_8hpp_source.html#l00088">_running</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00377">Menu::checkTimerInput()</a>, <a class="el" href="_timer_test_8cpp_source.html#l00010">test_constructor()</a>, <a class="el" href="_timer_test_8cpp_source.html#l00073">test_expiration()</a>, <a class="el" href="_timer_test_8cpp_source.html#l00022">test_pause_resume()</a>, <a class="el" href="_timer_test_8cpp_source.html#l00039">test_reset()</a>, and <a class="el" href="_display_8cpp_source.html#l00711">Display::tickTimer()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00599">Menu::checkTimerInput()</a>, <a class="el" href="_timer_test_8cpp_source.html#l00010">test_constructor()</a>, <a class="el" href="_timer_test_8cpp_source.html#l00073">test_expiration()</a>, <a class="el" href="_timer_test_8cpp_source.html#l00022">test_pause_resume()</a>, <a class="el" href="_timer_test_8cpp_source.html#l00039">test_reset()</a>, and <a class="el" href="_display_8cpp_source.html#l00812">Display::tickTimer()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_timer_a2ef50bfc604ea9fb88d3000c9ad0edd9_icgraph.png" border="0" usemap="#aclass_timer_a2ef50bfc604ea9fb88d3000c9ad0edd9_icgraph" alt=""/></div>
 <map name="aclass_timer_a2ef50bfc604ea9fb88d3000c9ad0edd9_icgraph" id="aclass_timer_a2ef50bfc604ea9fb88d3000c9ad0edd9_icgraph">
-<area shape="rect" title="Checks if the timer is currently running." alt="" coords="864,129,996,155"/>
-<area shape="rect" href="class_menu.html#ab8d3cccd5b39987a6546f7dc1187b71e" title="Checks and handles user input for the Timer." alt="" coords="641,203,816,228"/>
-<area shape="rect" href="_timer_test_8cpp.html#acba75a8bdc084005b14d0ab6214dc244" title=" " alt="" coords="665,5,792,31"/>
-<area shape="rect" href="_timer_test_8cpp.html#a14451092b3f80a4a088637f1705ae471" title=" " alt="" coords="669,55,789,80"/>
-<area shape="rect" href="_timer_test_8cpp.html#ae968c56d18bef1bf9802840c2349192b" title=" " alt="" coords="654,104,803,129"/>
-<area shape="rect" href="_timer_test_8cpp.html#ab89fbb465413f5edb0ed7a5250df74e5" title=" " alt="" coords="685,153,772,179"/>
-<area shape="rect" href="class_display.html#a02b2228e05be168eda0b817d1ecf5db7" title="Updates the display based on the state of the provided Timer object." alt="" coords="659,252,799,277"/>
-<area shape="rect" href="class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title="Runs the timer sequence, allowing the user to set and interact with a timer." alt="" coords="429,203,593,228"/>
-<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="247,203,381,228"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,179,181,204"/>
-<area shape="rect" href="_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,228,199,253"/>
-<area shape="rect" href="_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,228,60,253"/>
-<area shape="rect" href="_timer_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="484,80,539,105"/>
-<area shape="rect" href="_display_test_8cpp.html#aaebf8e553939222f4e0682af515b3674" title=" " alt="" coords="467,252,556,277"/>
-<area shape="rect" href="_display_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="287,252,341,277"/>
+<area shape="rect" title="Checks if the timer is currently running." alt="" coords="773,129,905,155"/>
+<area shape="rect" href="class_menu.html#ab8d3cccd5b39987a6546f7dc1187b71e" title="Checks and handles user input for the Timer." alt="" coords="551,203,725,228"/>
+<area shape="rect" href="_timer_test_8cpp.html#acba75a8bdc084005b14d0ab6214dc244" title=" " alt="" coords="575,5,701,31"/>
+<area shape="rect" href="_timer_test_8cpp.html#a14451092b3f80a4a088637f1705ae471" title=" " alt="" coords="578,55,698,80"/>
+<area shape="rect" href="_timer_test_8cpp.html#ae968c56d18bef1bf9802840c2349192b" title=" " alt="" coords="563,104,713,129"/>
+<area shape="rect" href="_timer_test_8cpp.html#ab89fbb465413f5edb0ed7a5250df74e5" title=" " alt="" coords="595,153,681,179"/>
+<area shape="rect" href="class_display.html#a02b2228e05be168eda0b817d1ecf5db7" title="Updates the display based on the state of the provided Timer object." alt="" coords="568,252,708,277"/>
+<area shape="rect" href="class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title="Displays the help menu for the Timer Stopwatch and Alarm." alt="" coords="339,203,503,228"/>
+<area shape="rect" href="class_menu.html#adfad43d64fc6df9172030c25f7d234c5" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="156,203,291,228"/>
+<area shape="rect" href="class_menu.html#a2b43753d834b64bdba7e82bc9f2af305" title="Constructs a Menu object." alt="" coords="5,203,108,228"/>
+<area shape="rect" href="_timer_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="393,80,448,105"/>
+<area shape="rect" href="_display_test_8cpp.html#aaebf8e553939222f4e0682af515b3674" title=" " alt="" coords="376,252,465,277"/>
+<area shape="rect" href="_display_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="196,252,251,277"/>
 </map>
 </div>
 
@@ -386,30 +438,30 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   54</span>       <a class="code hl_variable" href="class_timer.html#a0e92367e8b9f4fe50e7395d01db259af">_running</a> = <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">   55</span>    }</div>
 <div class="line"><span class="lineno">   56</span>}</div>
-<div class="ttc" id="aclass_timer_html_acd2dad285d0de4df16d3504a7b4a26f4"><div class="ttname"><a href="class_timer.html#acd2dad285d0de4df16d3504a7b4a26f4">Timer::_pauseTime</a></div><div class="ttdeci">chrono::time_point&lt; chrono::steady_clock &gt; _pauseTime</div><div class="ttdoc">The time point when the timer was paused.</div><div class="ttdef"><b>Definition:</b> <a href="_timer_8hpp_source.html#l00089">Timer.hpp:89</a></div></div>
-<div class="ttc" id="aclass_timer_html_af9c1fdb6d15ad4aac9080bf7e84283cf"><div class="ttname"><a href="class_timer.html#af9c1fdb6d15ad4aac9080bf7e84283cf">Timer::_endTime</a></div><div class="ttdeci">chrono::time_point&lt; chrono::steady_clock &gt; _endTime</div><div class="ttdoc">The time point when the timer will end.</div><div class="ttdef"><b>Definition:</b> <a href="_timer_8hpp_source.html#l00088">Timer.hpp:88</a></div></div>
+<div class="ttc" id="aclass_timer_html_acd2dad285d0de4df16d3504a7b4a26f4"><div class="ttname"><a href="class_timer.html#acd2dad285d0de4df16d3504a7b4a26f4">Timer::_pauseTime</a></div><div class="ttdeci">chrono::time_point&lt; chrono::steady_clock &gt; _pauseTime</div><div class="ttdoc">The time point when the timer was paused.</div><div class="ttdef"><b>Definition:</b> <a href="_timer_8hpp_source.html#l00091">Timer.hpp:91</a></div></div>
+<div class="ttc" id="aclass_timer_html_af9c1fdb6d15ad4aac9080bf7e84283cf"><div class="ttname"><a href="class_timer.html#af9c1fdb6d15ad4aac9080bf7e84283cf">Timer::_endTime</a></div><div class="ttdeci">chrono::time_point&lt; chrono::steady_clock &gt; _endTime</div><div class="ttdoc">The time point when the timer will end.</div><div class="ttdef"><b>Definition:</b> <a href="_timer_8hpp_source.html#l00090">Timer.hpp:90</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_timer_8hpp_source.html#l00088">_endTime</a>, <a class="el" href="_timer_8hpp_source.html#l00089">_pauseTime</a>, <a class="el" href="_timer_8hpp_source.html#l00083">_remainingMilliseconds</a>, and <a class="el" href="_timer_8hpp_source.html#l00086">_running</a>.</p>
+<p class="reference">References <a class="el" href="_timer_8hpp_source.html#l00090">_endTime</a>, <a class="el" href="_timer_8hpp_source.html#l00091">_pauseTime</a>, <a class="el" href="_timer_8hpp_source.html#l00085">_remainingMilliseconds</a>, and <a class="el" href="_timer_8hpp_source.html#l00088">_running</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_timer_8cpp_source.html#l00095">addTime()</a>, <a class="el" href="_menu_8cpp_source.html#l00377">Menu::checkTimerInput()</a>, <a class="el" href="_timer_8cpp_source.html#l00078">reset()</a>, and <a class="el" href="_timer_test_8cpp_source.html#l00022">test_pause_resume()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_timer_8cpp_source.html#l00095">addTime()</a>, <a class="el" href="_menu_8cpp_source.html#l00599">Menu::checkTimerInput()</a>, <a class="el" href="_timer_8cpp_source.html#l00078">reset()</a>, <a class="el" href="_timer_test_8cpp_source.html#l00022">test_pause_resume()</a>, and <a class="el" href="_display_test_8cpp_source.html#l00027">test_timer()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_timer_a0289effad7b573c508bc27e405900a23_icgraph.png" border="0" usemap="#aclass_timer_a0289effad7b573c508bc27e405900a23_icgraph" alt=""/></div>
 <map name="aclass_timer_a0289effad7b573c508bc27e405900a23_icgraph" id="aclass_timer_a0289effad7b573c508bc27e405900a23_icgraph">
-<area shape="rect" title="Pauses the timer and calculates the remaining milliseconds." alt="" coords="1061,105,1168,131"/>
-<area shape="rect" href="class_timer.html#ae85c869ff61b97b53ade8e701014dde6" title="Adds a specified amount of time (in seconds) to the timer." alt="" coords="876,129,1001,155"/>
-<area shape="rect" href="class_menu.html#ab8d3cccd5b39987a6546f7dc1187b71e" title="Checks and handles user input for the Timer." alt="" coords="641,31,816,56"/>
-<area shape="rect" href="class_timer.html#a9020542d73357a4eef512eefaf57524b" title="Resets the timer to its original duration and pauses it." alt="" coords="888,80,989,105"/>
-<area shape="rect" href="_timer_test_8cpp.html#ae968c56d18bef1bf9802840c2349192b" title=" " alt="" coords="864,179,1013,204"/>
-<area shape="rect" href="_timer_test_8cpp.html#ad6d1baf23a5b08ce7c326940832f8a05" title=" " alt="" coords="671,129,786,155"/>
-<area shape="rect" href="_timer_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="484,129,539,155"/>
-<area shape="rect" href="class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title="Runs the timer sequence, allowing the user to set and interact with a timer." alt="" coords="429,31,593,56"/>
-<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="247,31,381,56"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,5,181,31"/>
-<area shape="rect" href="_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,55,199,80"/>
-<area shape="rect" href="_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,55,60,80"/>
-<area shape="rect" href="_timer_test_8cpp.html#ab89fbb465413f5edb0ed7a5250df74e5" title=" " alt="" coords="685,80,772,105"/>
+<area shape="rect" title="Pauses the timer and calculates the remaining milliseconds." alt="" coords="971,129,1077,155"/>
+<area shape="rect" href="class_timer.html#ae85c869ff61b97b53ade8e701014dde6" title="Adds a specified amount of time (in seconds) to the timer." alt="" coords="785,129,911,155"/>
+<area shape="rect" href="class_menu.html#ab8d3cccd5b39987a6546f7dc1187b71e" title="Checks and handles user input for the Timer." alt="" coords="551,29,725,55"/>
+<area shape="rect" href="class_timer.html#a9020542d73357a4eef512eefaf57524b" title="Resets the timer to its original duration and pauses it." alt="" coords="797,80,899,105"/>
+<area shape="rect" href="_timer_test_8cpp.html#ae968c56d18bef1bf9802840c2349192b" title=" " alt="" coords="773,179,923,204"/>
+<area shape="rect" href="_display_test_8cpp.html#aaebf8e553939222f4e0682af515b3674" title=" " alt="" coords="803,228,893,253"/>
+<area shape="rect" href="_timer_test_8cpp.html#ad6d1baf23a5b08ce7c326940832f8a05" title=" " alt="" coords="581,128,695,153"/>
+<area shape="rect" href="_timer_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="393,128,448,153"/>
+<area shape="rect" href="class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title="Displays the help menu for the Timer Stopwatch and Alarm." alt="" coords="339,29,503,55"/>
+<area shape="rect" href="class_menu.html#adfad43d64fc6df9172030c25f7d234c5" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="156,29,291,55"/>
+<area shape="rect" href="class_menu.html#a2b43753d834b64bdba7e82bc9f2af305" title="Constructs a Menu object." alt="" coords="5,29,108,55"/>
+<area shape="rect" href="_timer_test_8cpp.html#ab89fbb465413f5edb0ed7a5250df74e5" title=" " alt="" coords="595,79,681,104"/>
+<area shape="rect" href="_display_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="611,229,665,255"/>
 </map>
 </div>
 
@@ -434,27 +486,26 @@ Here is the caller graph for this function:</div>
 <dl class="section return"><dt>Returns</dt><dd>double The percentage of time elapsed.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>double The percentage of time elapsed. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_timer_8cpp_source.html#l00156">156</a> of file <a class="el" href="_timer_8cpp_source.html">Timer.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  156</span>                             {</div>
-<div class="line"><span class="lineno">  157</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_timer.html#aded1ecf859b397258dcfa95d3d7cfc41">start</a> = 0;</div>
-<div class="line"><span class="lineno">  158</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_timer.html#aad16481efed1a745745148ef6f0dfd3e">_remainingMilliseconds</a> &gt; <a class="code hl_variable" href="class_timer.html#a82b2a7bb825239edeaf391dd3b0e9dd9">_startMilliseconds</a>) {</div>
-<div class="line"><span class="lineno">  159</span>        <a class="code hl_function" href="class_timer.html#aded1ecf859b397258dcfa95d3d7cfc41">start</a> = <a class="code hl_variable" href="class_timer.html#aad16481efed1a745745148ef6f0dfd3e">_remainingMilliseconds</a>;</div>
-<div class="line"><span class="lineno">  160</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  161</span>        <a class="code hl_function" href="class_timer.html#aded1ecf859b397258dcfa95d3d7cfc41">start</a> = <a class="code hl_variable" href="class_timer.html#a82b2a7bb825239edeaf391dd3b0e9dd9">_startMilliseconds</a>;</div>
-<div class="line"><span class="lineno">  162</span>    }</div>
-<div class="line"><span class="lineno">  163</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="class_timer.html#aded1ecf859b397258dcfa95d3d7cfc41">start</a> == 0) { </div>
-<div class="line"><span class="lineno">  164</span>        <span class="keywordflow">return</span> 100.0; </div>
-<div class="line"><span class="lineno">  165</span>    }</div>
-<div class="line"><span class="lineno">  166</span> </div>
-<div class="line"><span class="lineno">  167</span>    <span class="keywordtype">int</span> elapsedMilliseconds = <a class="code hl_function" href="class_timer.html#aded1ecf859b397258dcfa95d3d7cfc41">start</a> - <a class="code hl_function" href="class_timer.html#a330607659937f497389c9989812cd925">remainingMilliseconds</a>();</div>
-<div class="line"><span class="lineno">  168</span>    <span class="keywordtype">double</span> percentage = ((double)(elapsedMilliseconds) / <a class="code hl_function" href="class_timer.html#aded1ecf859b397258dcfa95d3d7cfc41">start</a>) * 100;</div>
-<div class="line"><span class="lineno">  169</span>    <span class="keywordflow">return</span> percentage;</div>
-<div class="line"><span class="lineno">  170</span>}</div>
-<div class="ttc" id="aclass_timer_html_a330607659937f497389c9989812cd925"><div class="ttname"><a href="class_timer.html#a330607659937f497389c9989812cd925">Timer::remainingMilliseconds</a></div><div class="ttdeci">int remainingMilliseconds()</div><div class="ttdoc">Returns the remaining time in milliseconds.</div><div class="ttdef"><b>Definition:</b> <a href="_timer_8cpp_source.html#l00118">Timer.cpp:118</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_timer_8cpp_source.html#l00160">160</a> of file <a class="el" href="_timer_8cpp_source.html">Timer.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  160</span>                             {</div>
+<div class="line"><span class="lineno">  161</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_timer.html#aded1ecf859b397258dcfa95d3d7cfc41">start</a> = 0;</div>
+<div class="line"><span class="lineno">  162</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_timer.html#aad16481efed1a745745148ef6f0dfd3e">_remainingMilliseconds</a> &gt; <a class="code hl_variable" href="class_timer.html#a82b2a7bb825239edeaf391dd3b0e9dd9">_startMilliseconds</a>) {</div>
+<div class="line"><span class="lineno">  163</span>        <a class="code hl_function" href="class_timer.html#aded1ecf859b397258dcfa95d3d7cfc41">start</a> = <a class="code hl_variable" href="class_timer.html#aad16481efed1a745745148ef6f0dfd3e">_remainingMilliseconds</a>;</div>
+<div class="line"><span class="lineno">  164</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  165</span>        <a class="code hl_function" href="class_timer.html#aded1ecf859b397258dcfa95d3d7cfc41">start</a> = <a class="code hl_variable" href="class_timer.html#a82b2a7bb825239edeaf391dd3b0e9dd9">_startMilliseconds</a>;</div>
+<div class="line"><span class="lineno">  166</span>    }</div>
+<div class="line"><span class="lineno">  167</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="class_timer.html#aded1ecf859b397258dcfa95d3d7cfc41">start</a> == 0) { </div>
+<div class="line"><span class="lineno">  168</span>        <span class="keywordflow">return</span> 100.0; </div>
+<div class="line"><span class="lineno">  169</span>    }</div>
+<div class="line"><span class="lineno">  170</span> </div>
+<div class="line"><span class="lineno">  171</span>    <span class="keywordtype">int</span> elapsedMilliseconds = <a class="code hl_function" href="class_timer.html#aded1ecf859b397258dcfa95d3d7cfc41">start</a> - <a class="code hl_function" href="class_timer.html#a330607659937f497389c9989812cd925">remainingMilliseconds</a>();</div>
+<div class="line"><span class="lineno">  172</span>    <span class="keywordtype">double</span> percentage = ((double)(elapsedMilliseconds) / <a class="code hl_function" href="class_timer.html#aded1ecf859b397258dcfa95d3d7cfc41">start</a>) * 100;</div>
+<div class="line"><span class="lineno">  173</span>    <span class="keywordflow">return</span> percentage;</div>
+<div class="line"><span class="lineno">  174</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_timer_8hpp_source.html#l00083">_remainingMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00081">_startMilliseconds</a>, <a class="el" href="_timer_8cpp_source.html#l00118">remainingMilliseconds()</a>, and <a class="el" href="_timer_8cpp_source.html#l00038">start()</a>.</p>
+<p class="reference">References <a class="el" href="_timer_8hpp_source.html#l00085">_remainingMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00083">_startMilliseconds</a>, <a class="el" href="_timer_8cpp_source.html#l00118">remainingMilliseconds()</a>, and <a class="el" href="_timer_8cpp_source.html#l00038">start()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_timer_test_8cpp_source.html#l00062">test_percent_elapsed()</a>, and <a class="el" href="_display_8cpp_source.html#l00711">Display::tickTimer()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_timer_test_8cpp_source.html#l00062">test_percent_elapsed()</a>, and <a class="el" href="_display_8cpp_source.html#l00812">Display::tickTimer()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -470,17 +521,15 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_timer_a97ab4bd97e34c2ce2b8afa7c993fbaec_icgraph.png" border="0" usemap="#aclass_timer_a97ab4bd97e34c2ce2b8afa7c993fbaec_icgraph" alt=""/></div>
 <map name="aclass_timer_a97ab4bd97e34c2ce2b8afa7c993fbaec_icgraph" id="aclass_timer_a97ab4bd97e34c2ce2b8afa7c993fbaec_icgraph">
-<area shape="rect" title="Returns the percentage of time that has elapsed since the timer started." alt="" coords="851,31,1019,56"/>
-<area shape="rect" href="_timer_test_8cpp.html#a975480003033c372805a43801b7c2a02" title=" " alt="" coords="641,5,803,31"/>
-<area shape="rect" href="class_display.html#a02b2228e05be168eda0b817d1ecf5db7" title="Updates the display based on the state of the provided Timer object." alt="" coords="652,55,792,80"/>
-<area shape="rect" href="_timer_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="484,5,539,31"/>
-<area shape="rect" href="_display_test_8cpp.html#aaebf8e553939222f4e0682af515b3674" title=" " alt="" coords="467,55,556,80"/>
-<area shape="rect" href="class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title="Runs the timer sequence, allowing the user to set and interact with a timer." alt="" coords="429,109,593,135"/>
-<area shape="rect" href="_display_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="287,48,341,73"/>
-<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="247,121,381,147"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,96,181,121"/>
-<area shape="rect" href="_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,145,199,171"/>
-<area shape="rect" href="_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,145,60,171"/>
+<area shape="rect" title="Returns the percentage of time that has elapsed since the timer started." alt="" coords="760,31,928,56"/>
+<area shape="rect" href="_timer_test_8cpp.html#a975480003033c372805a43801b7c2a02" title=" " alt="" coords="551,5,712,31"/>
+<area shape="rect" href="class_display.html#a02b2228e05be168eda0b817d1ecf5db7" title="Updates the display based on the state of the provided Timer object." alt="" coords="561,55,701,80"/>
+<area shape="rect" href="_timer_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="393,5,448,31"/>
+<area shape="rect" href="_display_test_8cpp.html#aaebf8e553939222f4e0682af515b3674" title=" " alt="" coords="376,55,465,80"/>
+<area shape="rect" href="class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title="Displays the help menu for the Timer Stopwatch and Alarm." alt="" coords="339,109,503,135"/>
+<area shape="rect" href="_display_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="196,48,251,73"/>
+<area shape="rect" href="class_menu.html#adfad43d64fc6df9172030c25f7d234c5" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="156,121,291,147"/>
+<area shape="rect" href="class_menu.html#a2b43753d834b64bdba7e82bc9f2af305" title="Constructs a Menu object." alt="" coords="5,121,108,147"/>
 </map>
 </div>
 
@@ -524,32 +573,31 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  131</span>    }</div>
 <div class="line"><span class="lineno">  132</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_timer_8hpp_source.html#l00088">_endTime</a>, <a class="el" href="_timer_8hpp_source.html#l00083">_remainingMilliseconds</a>, and <a class="el" href="_timer_8hpp_source.html#l00086">_running</a>.</p>
+<p class="reference">References <a class="el" href="_timer_8hpp_source.html#l00090">_endTime</a>, <a class="el" href="_timer_8hpp_source.html#l00085">_remainingMilliseconds</a>, and <a class="el" href="_timer_8hpp_source.html#l00088">_running</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00377">Menu::checkTimerInput()</a>, <a class="el" href="_timer_8cpp_source.html#l00156">percentElapsed()</a>, <a class="el" href="_timer_test_8cpp_source.html#l00051">test_add_time()</a>, <a class="el" href="_timer_test_8cpp_source.html#l00010">test_constructor()</a>, <a class="el" href="_timer_test_8cpp_source.html#l00073">test_expiration()</a>, <a class="el" href="_timer_test_8cpp_source.html#l00022">test_pause_resume()</a>, <a class="el" href="_timer_test_8cpp_source.html#l00039">test_reset()</a>, <a class="el" href="_display_8cpp_source.html#l00711">Display::tickTimer()</a>, and <a class="el" href="_menu_8cpp_source.html#l00119">Menu::timerSequence()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00599">Menu::checkTimerInput()</a>, <a class="el" href="_timer_8cpp_source.html#l00147">isDone()</a>, <a class="el" href="_timer_8cpp_source.html#l00160">percentElapsed()</a>, <a class="el" href="_timer_test_8cpp_source.html#l00051">test_add_time()</a>, <a class="el" href="_timer_test_8cpp_source.html#l00010">test_constructor()</a>, <a class="el" href="_timer_test_8cpp_source.html#l00073">test_expiration()</a>, <a class="el" href="_timer_test_8cpp_source.html#l00022">test_pause_resume()</a>, <a class="el" href="_timer_test_8cpp_source.html#l00039">test_reset()</a>, <a class="el" href="_display_8cpp_source.html#l00812">Display::tickTimer()</a>, and <a class="el" href="_menu_8cpp_source.html#l00284">Menu::timerSequence()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_timer_a330607659937f497389c9989812cd925_icgraph.png" border="0" usemap="#aclass_timer_a330607659937f497389c9989812cd925_icgraph" alt=""/></div>
 <map name="aclass_timer_a330607659937f497389c9989812cd925_icgraph" id="aclass_timer_a330607659937f497389c9989812cd925_icgraph">
-<area shape="rect" title="Returns the remaining time in milliseconds." alt="" coords="1080,208,1295,233"/>
-<area shape="rect" href="class_menu.html#ab8d3cccd5b39987a6546f7dc1187b71e" title="Checks and handles user input for the Timer." alt="" coords="641,5,816,31"/>
-<area shape="rect" href="class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title="Runs the timer sequence, allowing the user to set and interact with a timer." alt="" coords="429,56,593,81"/>
-<area shape="rect" href="class_timer.html#a97ab4bd97e34c2ce2b8afa7c993fbaec" title="Returns the percentage of time that has elapsed since the timer started." alt="" coords="864,157,1032,183"/>
-<area shape="rect" href="class_display.html#a02b2228e05be168eda0b817d1ecf5db7" title="Updates the display based on the state of the provided Timer object." alt="" coords="659,107,799,132"/>
-<area shape="rect" href="_timer_test_8cpp.html#ad6d1baf23a5b08ce7c326940832f8a05" title=" " alt="" coords="671,208,786,233"/>
-<area shape="rect" href="_timer_test_8cpp.html#acba75a8bdc084005b14d0ab6214dc244" title=" " alt="" coords="665,257,792,283"/>
-<area shape="rect" href="_timer_test_8cpp.html#a14451092b3f80a4a088637f1705ae471" title=" " alt="" coords="888,309,1008,335"/>
-<area shape="rect" href="_timer_test_8cpp.html#ae968c56d18bef1bf9802840c2349192b" title=" " alt="" coords="873,359,1023,384"/>
-<area shape="rect" href="_timer_test_8cpp.html#ab89fbb465413f5edb0ed7a5250df74e5" title=" " alt="" coords="905,408,991,433"/>
-<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="247,56,381,81"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,32,181,57"/>
-<area shape="rect" href="_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,81,199,107"/>
-<area shape="rect" href="_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,81,60,107"/>
-<area shape="rect" href="_timer_test_8cpp.html#a975480003033c372805a43801b7c2a02" title=" " alt="" coords="648,157,809,183"/>
-<area shape="rect" href="_timer_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="484,283,539,308"/>
-<area shape="rect" href="_display_test_8cpp.html#aaebf8e553939222f4e0682af515b3674" title=" " alt="" coords="467,107,556,132"/>
-<area shape="rect" href="_display_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="287,107,341,132"/>
+<area shape="rect" title="Returns the remaining time in milliseconds." alt="" coords="989,211,1204,237"/>
+<area shape="rect" href="class_menu.html#ab8d3cccd5b39987a6546f7dc1187b71e" title="Checks and handles user input for the Timer." alt="" coords="551,35,725,61"/>
+<area shape="rect" href="class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title="Displays the help menu for the Timer Stopwatch and Alarm." alt="" coords="339,35,503,61"/>
+<area shape="rect" href="class_timer.html#a4fb3e9233a159f03cfcee78b000e80cf" title=" " alt="" coords="801,186,914,211"/>
+<area shape="rect" href="_timer_test_8cpp.html#a14451092b3f80a4a088637f1705ae471" title=" " alt="" coords="578,237,698,262"/>
+<area shape="rect" href="class_display.html#a02b2228e05be168eda0b817d1ecf5db7" title="Updates the display based on the state of the provided Timer object." alt="" coords="568,99,708,125"/>
+<area shape="rect" href="class_timer.html#a97ab4bd97e34c2ce2b8afa7c993fbaec" title="Returns the percentage of time that has elapsed since the timer started." alt="" coords="773,137,941,162"/>
+<area shape="rect" href="_timer_test_8cpp.html#ad6d1baf23a5b08ce7c326940832f8a05" title=" " alt="" coords="581,286,695,311"/>
+<area shape="rect" href="_timer_test_8cpp.html#acba75a8bdc084005b14d0ab6214dc244" title=" " alt="" coords="794,338,921,363"/>
+<area shape="rect" href="_timer_test_8cpp.html#ae968c56d18bef1bf9802840c2349192b" title=" " alt="" coords="783,387,932,413"/>
+<area shape="rect" href="_timer_test_8cpp.html#ab89fbb465413f5edb0ed7a5250df74e5" title=" " alt="" coords="814,437,901,462"/>
+<area shape="rect" href="class_menu.html#adfad43d64fc6df9172030c25f7d234c5" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="156,35,291,61"/>
+<area shape="rect" href="class_menu.html#a2b43753d834b64bdba7e82bc9f2af305" title="Constructs a Menu object." alt="" coords="5,35,108,61"/>
+<area shape="rect" href="_timer_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="393,311,448,337"/>
+<area shape="rect" href="_display_test_8cpp.html#aaebf8e553939222f4e0682af515b3674" title=" " alt="" coords="376,99,465,125"/>
+<area shape="rect" href="_display_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="196,99,251,125"/>
+<area shape="rect" href="_timer_test_8cpp.html#a975480003033c372805a43801b7c2a02" title=" " alt="" coords="557,162,719,187"/>
 </map>
 </div>
 
@@ -579,9 +627,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   81</span>    <a class="code hl_variable" href="class_timer.html#a751e8cad5b33a2157d1f4ed0dff10d9a">_countdownMilliseconds</a> = <a class="code hl_variable" href="class_timer.html#a82b2a7bb825239edeaf391dd3b0e9dd9">_startMilliseconds</a>;</div>
 <div class="line"><span class="lineno">   82</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_timer_8hpp_source.html#l00082">_countdownMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00083">_remainingMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00081">_startMilliseconds</a>, and <a class="el" href="_timer_8cpp_source.html#l00050">pause()</a>.</p>
+<p class="reference">References <a class="el" href="_timer_8hpp_source.html#l00084">_countdownMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00085">_remainingMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00083">_startMilliseconds</a>, and <a class="el" href="_timer_8cpp_source.html#l00050">pause()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00377">Menu::checkTimerInput()</a>, and <a class="el" href="_timer_test_8cpp_source.html#l00039">test_reset()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00599">Menu::checkTimerInput()</a>, and <a class="el" href="_timer_test_8cpp_source.html#l00039">test_reset()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -596,15 +644,13 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_timer_a9020542d73357a4eef512eefaf57524b_icgraph.png" border="0" usemap="#aclass_timer_a9020542d73357a4eef512eefaf57524b_icgraph" alt=""/></div>
 <map name="aclass_timer_a9020542d73357a4eef512eefaf57524b_icgraph" id="aclass_timer_a9020542d73357a4eef512eefaf57524b_icgraph">
-<area shape="rect" title="Resets the timer to its original duration and pauses it." alt="" coords="864,56,965,81"/>
-<area shape="rect" href="class_menu.html#ab8d3cccd5b39987a6546f7dc1187b71e" title="Checks and handles user input for the Timer." alt="" coords="641,31,816,56"/>
-<area shape="rect" href="_timer_test_8cpp.html#ab89fbb465413f5edb0ed7a5250df74e5" title=" " alt="" coords="685,80,772,105"/>
-<area shape="rect" href="class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title="Runs the timer sequence, allowing the user to set and interact with a timer." alt="" coords="429,31,593,56"/>
-<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="247,31,381,56"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,5,181,31"/>
-<area shape="rect" href="_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,55,199,80"/>
-<area shape="rect" href="_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,55,60,80"/>
-<area shape="rect" href="_timer_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="484,80,539,105"/>
+<area shape="rect" title="Resets the timer to its original duration and pauses it." alt="" coords="773,55,875,80"/>
+<area shape="rect" href="class_menu.html#ab8d3cccd5b39987a6546f7dc1187b71e" title="Checks and handles user input for the Timer." alt="" coords="551,29,725,55"/>
+<area shape="rect" href="_timer_test_8cpp.html#ab89fbb465413f5edb0ed7a5250df74e5" title=" " alt="" coords="595,79,681,104"/>
+<area shape="rect" href="class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title="Displays the help menu for the Timer Stopwatch and Alarm." alt="" coords="339,29,503,55"/>
+<area shape="rect" href="class_menu.html#adfad43d64fc6df9172030c25f7d234c5" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="156,29,291,55"/>
+<area shape="rect" href="class_menu.html#a2b43753d834b64bdba7e82bc9f2af305" title="Constructs a Menu object." alt="" coords="5,29,108,55"/>
+<area shape="rect" href="_timer_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="393,79,448,104"/>
 </map>
 </div>
 
@@ -635,25 +681,23 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   69</span>    }</div>
 <div class="line"><span class="lineno">   70</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_timer_8hpp_source.html#l00088">_endTime</a>, <a class="el" href="_timer_8hpp_source.html#l00083">_remainingMilliseconds</a>, and <a class="el" href="_timer_8hpp_source.html#l00086">_running</a>.</p>
+<p class="reference">References <a class="el" href="_timer_8hpp_source.html#l00090">_endTime</a>, <a class="el" href="_timer_8hpp_source.html#l00085">_remainingMilliseconds</a>, and <a class="el" href="_timer_8hpp_source.html#l00088">_running</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_timer_8cpp_source.html#l00095">addTime()</a>, <a class="el" href="_menu_8cpp_source.html#l00377">Menu::checkTimerInput()</a>, and <a class="el" href="_timer_test_8cpp_source.html#l00022">test_pause_resume()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_timer_8cpp_source.html#l00095">addTime()</a>, <a class="el" href="_menu_8cpp_source.html#l00599">Menu::checkTimerInput()</a>, and <a class="el" href="_timer_test_8cpp_source.html#l00022">test_pause_resume()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_timer_a4ac55a73bb3431db9d4d2fd70ae9a2e8_icgraph.png" border="0" usemap="#aclass_timer_a4ac55a73bb3431db9d4d2fd70ae9a2e8_icgraph" alt=""/></div>
 <map name="aclass_timer_a4ac55a73bb3431db9d4d2fd70ae9a2e8_icgraph" id="aclass_timer_a4ac55a73bb3431db9d4d2fd70ae9a2e8_icgraph">
-<area shape="rect" title="Resumes the timer from where it was paused by recalculating the end time." alt="" coords="864,55,981,80"/>
-<area shape="rect" href="class_timer.html#ae85c869ff61b97b53ade8e701014dde6" title="Adds a specified amount of time (in seconds) to the timer." alt="" coords="666,55,791,80"/>
-<area shape="rect" href="class_menu.html#ab8d3cccd5b39987a6546f7dc1187b71e" title="Checks and handles user input for the Timer." alt="" coords="641,104,816,129"/>
-<area shape="rect" href="_timer_test_8cpp.html#ae968c56d18bef1bf9802840c2349192b" title=" " alt="" coords="437,5,586,31"/>
-<area shape="rect" href="_timer_test_8cpp.html#ad6d1baf23a5b08ce7c326940832f8a05" title=" " alt="" coords="454,55,569,80"/>
-<area shape="rect" href="_timer_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="287,19,341,44"/>
-<area shape="rect" href="class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title="Runs the timer sequence, allowing the user to set and interact with a timer." alt="" coords="429,104,593,129"/>
-<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="247,104,381,129"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,79,181,104"/>
-<area shape="rect" href="_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,128,199,153"/>
-<area shape="rect" href="_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,128,60,153"/>
+<area shape="rect" title="Resumes the timer from where it was paused by recalculating the end time." alt="" coords="773,55,891,80"/>
+<area shape="rect" href="class_timer.html#ae85c869ff61b97b53ade8e701014dde6" title="Adds a specified amount of time (in seconds) to the timer." alt="" coords="575,55,701,80"/>
+<area shape="rect" href="class_menu.html#ab8d3cccd5b39987a6546f7dc1187b71e" title="Checks and handles user input for the Timer." alt="" coords="551,104,725,129"/>
+<area shape="rect" href="_timer_test_8cpp.html#ae968c56d18bef1bf9802840c2349192b" title=" " alt="" coords="346,5,495,31"/>
+<area shape="rect" href="_timer_test_8cpp.html#ad6d1baf23a5b08ce7c326940832f8a05" title=" " alt="" coords="363,55,478,80"/>
+<area shape="rect" href="_timer_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="196,19,251,44"/>
+<area shape="rect" href="class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title="Displays the help menu for the Timer Stopwatch and Alarm." alt="" coords="339,104,503,129"/>
+<area shape="rect" href="class_menu.html#adfad43d64fc6df9172030c25f7d234c5" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="156,104,291,129"/>
+<area shape="rect" href="class_menu.html#a2b43753d834b64bdba7e82bc9f2af305" title="Constructs a Menu object." alt="" coords="5,104,108,129"/>
 </map>
 </div>
 
@@ -695,27 +739,25 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   40</span>    <a class="code hl_variable" href="class_timer.html#af9c1fdb6d15ad4aac9080bf7e84283cf">_endTime</a> = chrono::steady_clock::now() + chrono::milliseconds(<a class="code hl_variable" href="class_timer.html#a751e8cad5b33a2157d1f4ed0dff10d9a">_countdownMilliseconds</a>);</div>
 <div class="line"><span class="lineno">   41</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_timer_8hpp_source.html#l00082">_countdownMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00088">_endTime</a>, and <a class="el" href="_timer_8hpp_source.html#l00086">_running</a>.</p>
+<p class="reference">References <a class="el" href="_timer_8hpp_source.html#l00084">_countdownMilliseconds</a>, <a class="el" href="_timer_8hpp_source.html#l00090">_endTime</a>, and <a class="el" href="_timer_8hpp_source.html#l00088">_running</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_timer_8cpp_source.html#l00156">percentElapsed()</a>, and <a class="el" href="_timer_8cpp_source.html#l00019">Timer()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_timer_8cpp_source.html#l00160">percentElapsed()</a>, and <a class="el" href="_timer_8cpp_source.html#l00019">Timer()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_timer_aded1ecf859b397258dcfa95d3d7cfc41_icgraph.png" border="0" usemap="#aclass_timer_aded1ecf859b397258dcfa95d3d7cfc41_icgraph" alt=""/></div>
 <map name="aclass_timer_aded1ecf859b397258dcfa95d3d7cfc41_icgraph" id="aclass_timer_aded1ecf859b397258dcfa95d3d7cfc41_icgraph">
-<area shape="rect" title="Starts the timer by setting the end time based on the current time plus the countdown duration." alt="" coords="1067,55,1165,80"/>
-<area shape="rect" href="class_timer.html#a97ab4bd97e34c2ce2b8afa7c993fbaec" title="Returns the percentage of time that has elapsed since the timer started." alt="" coords="851,29,1019,55"/>
-<area shape="rect" href="class_timer.html#af3774b6f9a3f6759e6852be35617b405" title="Constructor to specify the timer duration directly in hours, minutes, and seconds." alt="" coords="881,79,988,104"/>
-<area shape="rect" href="_timer_test_8cpp.html#a975480003033c372805a43801b7c2a02" title=" " alt="" coords="641,5,803,31"/>
-<area shape="rect" href="class_display.html#a02b2228e05be168eda0b817d1ecf5db7" title="Updates the display based on the state of the provided Timer object." alt="" coords="652,55,792,80"/>
-<area shape="rect" href="_timer_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="484,5,539,31"/>
-<area shape="rect" href="_display_test_8cpp.html#aaebf8e553939222f4e0682af515b3674" title=" " alt="" coords="467,55,556,80"/>
-<area shape="rect" href="class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title="Runs the timer sequence, allowing the user to set and interact with a timer." alt="" coords="429,109,593,135"/>
-<area shape="rect" href="_display_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="287,48,341,73"/>
-<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="247,121,381,147"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,96,181,121"/>
-<area shape="rect" href="_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,145,199,171"/>
-<area shape="rect" href="_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,145,60,171"/>
+<area shape="rect" title="Starts the timer by setting the end time based on the current time plus the countdown duration." alt="" coords="976,55,1075,80"/>
+<area shape="rect" href="class_timer.html#a97ab4bd97e34c2ce2b8afa7c993fbaec" title="Returns the percentage of time that has elapsed since the timer started." alt="" coords="760,29,928,55"/>
+<area shape="rect" href="class_timer.html#af3774b6f9a3f6759e6852be35617b405" title="Constructor to specify the timer duration directly in hours, minutes, and seconds." alt="" coords="791,79,897,104"/>
+<area shape="rect" href="_timer_test_8cpp.html#a975480003033c372805a43801b7c2a02" title=" " alt="" coords="551,5,712,31"/>
+<area shape="rect" href="class_display.html#a02b2228e05be168eda0b817d1ecf5db7" title="Updates the display based on the state of the provided Timer object." alt="" coords="561,55,701,80"/>
+<area shape="rect" href="_timer_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="393,5,448,31"/>
+<area shape="rect" href="_display_test_8cpp.html#aaebf8e553939222f4e0682af515b3674" title=" " alt="" coords="376,55,465,80"/>
+<area shape="rect" href="class_menu.html#a4a3468dd5028b68b1fd7fd8ecd9ea36a" title="Displays the help menu for the Timer Stopwatch and Alarm." alt="" coords="339,109,503,135"/>
+<area shape="rect" href="_display_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="196,48,251,73"/>
+<area shape="rect" href="class_menu.html#adfad43d64fc6df9172030c25f7d234c5" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="156,121,291,147"/>
+<area shape="rect" href="class_menu.html#a2b43753d834b64bdba7e82bc9f2af305" title="Constructs a Menu object." alt="" coords="5,121,108,147"/>
 </map>
 </div>
 
@@ -744,7 +786,7 @@ Here is the caller graph for this function:</div>
 
 <p>The duration of the countdown in milliseconds. </p>
 
-<p class="definition">Definition at line <a class="el" href="_timer_8hpp_source.html#l00082">82</a> of file <a class="el" href="_timer_8hpp_source.html">Timer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_timer_8hpp_source.html#l00084">84</a> of file <a class="el" href="_timer_8hpp_source.html">Timer.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_timer_8cpp_source.html#l00095">addTime()</a>, <a class="el" href="_timer_8cpp_source.html#l00078">reset()</a>, <a class="el" href="_timer_8cpp_source.html#l00038">start()</a>, and <a class="el" href="_timer_8cpp_source.html#l00019">Timer()</a>.</p>
 
@@ -772,7 +814,7 @@ Here is the caller graph for this function:</div>
 
 <p>The time point when the timer will end. </p>
 
-<p class="definition">Definition at line <a class="el" href="_timer_8hpp_source.html#l00088">88</a> of file <a class="el" href="_timer_8hpp_source.html">Timer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_timer_8hpp_source.html#l00090">90</a> of file <a class="el" href="_timer_8hpp_source.html">Timer.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_timer_8cpp_source.html#l00050">pause()</a>, <a class="el" href="_timer_8cpp_source.html#l00118">remainingMilliseconds()</a>, <a class="el" href="_timer_8cpp_source.html#l00065">resume()</a>, and <a class="el" href="_timer_8cpp_source.html#l00038">start()</a>.</p>
 
@@ -800,7 +842,7 @@ Here is the caller graph for this function:</div>
 
 <p>The increment time in milliseconds for adding time. </p>
 
-<p class="definition">Definition at line <a class="el" href="_timer_8hpp_source.html#l00084">84</a> of file <a class="el" href="_timer_8hpp_source.html">Timer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_timer_8hpp_source.html#l00086">86</a> of file <a class="el" href="_timer_8hpp_source.html">Timer.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_timer_8cpp_source.html#l00019">Timer()</a>.</p>
 
@@ -828,7 +870,7 @@ Here is the caller graph for this function:</div>
 
 <p>The time point when the timer was paused. </p>
 
-<p class="definition">Definition at line <a class="el" href="_timer_8hpp_source.html#l00089">89</a> of file <a class="el" href="_timer_8hpp_source.html">Timer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_timer_8hpp_source.html#l00091">91</a> of file <a class="el" href="_timer_8hpp_source.html">Timer.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_timer_8cpp_source.html#l00050">pause()</a>.</p>
 
@@ -856,9 +898,9 @@ Here is the caller graph for this function:</div>
 
 <p>The remaining time in milliseconds. </p>
 
-<p class="definition">Definition at line <a class="el" href="_timer_8hpp_source.html#l00083">83</a> of file <a class="el" href="_timer_8hpp_source.html">Timer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_timer_8hpp_source.html#l00085">85</a> of file <a class="el" href="_timer_8hpp_source.html">Timer.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_timer_8cpp_source.html#l00095">addTime()</a>, <a class="el" href="_timer_8cpp_source.html#l00050">pause()</a>, <a class="el" href="_timer_8cpp_source.html#l00156">percentElapsed()</a>, <a class="el" href="_timer_8cpp_source.html#l00118">remainingMilliseconds()</a>, <a class="el" href="_timer_8cpp_source.html#l00078">reset()</a>, <a class="el" href="_timer_8cpp_source.html#l00065">resume()</a>, and <a class="el" href="_timer_8cpp_source.html#l00019">Timer()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_timer_8cpp_source.html#l00095">addTime()</a>, <a class="el" href="_timer_8cpp_source.html#l00050">pause()</a>, <a class="el" href="_timer_8cpp_source.html#l00160">percentElapsed()</a>, <a class="el" href="_timer_8cpp_source.html#l00118">remainingMilliseconds()</a>, <a class="el" href="_timer_8cpp_source.html#l00078">reset()</a>, <a class="el" href="_timer_8cpp_source.html#l00065">resume()</a>, and <a class="el" href="_timer_8cpp_source.html#l00019">Timer()</a>.</p>
 
 </div>
 </div>
@@ -884,9 +926,9 @@ Here is the caller graph for this function:</div>
 
 <p>Indicates whether the timer is currently running. </p>
 
-<p class="definition">Definition at line <a class="el" href="_timer_8hpp_source.html#l00086">86</a> of file <a class="el" href="_timer_8hpp_source.html">Timer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_timer_8hpp_source.html#l00088">88</a> of file <a class="el" href="_timer_8hpp_source.html">Timer.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_timer_8cpp_source.html#l00095">addTime()</a>, <a class="el" href="_timer_8cpp_source.html#l00143">isRunning()</a>, <a class="el" href="_timer_8cpp_source.html#l00050">pause()</a>, <a class="el" href="_timer_8cpp_source.html#l00118">remainingMilliseconds()</a>, <a class="el" href="_timer_8cpp_source.html#l00065">resume()</a>, and <a class="el" href="_timer_8cpp_source.html#l00038">start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_timer_8cpp_source.html#l00095">addTime()</a>, <a class="el" href="_timer_8cpp_source.html#l00147">isDone()</a>, <a class="el" href="_timer_8cpp_source.html#l00143">isRunning()</a>, <a class="el" href="_timer_8cpp_source.html#l00050">pause()</a>, <a class="el" href="_timer_8cpp_source.html#l00118">remainingMilliseconds()</a>, <a class="el" href="_timer_8cpp_source.html#l00065">resume()</a>, and <a class="el" href="_timer_8cpp_source.html#l00038">start()</a>.</p>
 
 </div>
 </div>
@@ -912,9 +954,9 @@ Here is the caller graph for this function:</div>
 
 <p>The initial duration of the timer in milliseconds. </p>
 
-<p class="definition">Definition at line <a class="el" href="_timer_8hpp_source.html#l00081">81</a> of file <a class="el" href="_timer_8hpp_source.html">Timer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_timer_8hpp_source.html#l00083">83</a> of file <a class="el" href="_timer_8hpp_source.html">Timer.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_timer_8cpp_source.html#l00156">percentElapsed()</a>, <a class="el" href="_timer_8cpp_source.html#l00078">reset()</a>, and <a class="el" href="_timer_8cpp_source.html#l00019">Timer()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_timer_8cpp_source.html#l00160">percentElapsed()</a>, <a class="el" href="_timer_8cpp_source.html#l00078">reset()</a>, and <a class="el" href="_timer_8cpp_source.html#l00019">Timer()</a>.</p>
 
 </div>
 </div>
@@ -925,7 +967,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 11 2024 00:49:33 for Tempo by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+Generated on Fri Oct 11 2024 00:59:14 for Tempo by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
 </small></address>
 </body>
 </html>

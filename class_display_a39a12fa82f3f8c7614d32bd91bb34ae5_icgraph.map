@@ -1,0 +1,9 @@
+<map id="Display::printSplits" name="Display::printSplits">
+<area shape="rect" id="node1" title="Prints the stopwatch splits to the terminal." alt="" coords="801,55,945,80"/>
+<area shape="rect" id="node2" href="$class_display.html#a670c8db4c53ae0f09d6d3b57f1813b7f" title="Updates the display based on the state of the provided Stopwatch object." alt="" coords="583,55,753,80"/>
+<area shape="rect" id="node3" href="$class_menu.html#aca5927a856a8d20d738323c2261cc9e4" title="Displays the help menu for the Timer Stopwatch and Alarm." alt="" coords="339,29,535,55"/>
+<area shape="rect" id="node6" href="$_display_test_8cpp.html#a95399b2aca69374a0e3efa274a5c3e03" title=" " alt="" coords="376,79,497,104"/>
+<area shape="rect" id="node4" href="$class_menu.html#adfad43d64fc6df9172030c25f7d234c5" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="156,29,291,55"/>
+<area shape="rect" id="node5" href="$class_menu.html#a2b43753d834b64bdba7e82bc9f2af305" title="Constructs a Menu object." alt="" coords="5,29,108,55"/>
+<area shape="rect" id="node7" href="$_display_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="196,79,251,104"/>
+</map>

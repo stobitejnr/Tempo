@@ -186,24 +186,24 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00019">19</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   19</span>                        {</div>
-<div class="line"><span class="lineno">   20</span>    <a class="code hl_variable" href="class_alarm.html#a6195c687d8393ce87c804ef6478ee1d5">_startTime</a> = <a class="code hl_function" href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">currentTime</a>();</div>
-<div class="line"><span class="lineno">   21</span>    <a class="code hl_variable" href="class_alarm.html#a217703cc3e557bd820255f064d458b93">_endTime</a> = <a class="code hl_function" href="class_alarm.html#af67e929b3875f73d8edba526265d5d64">getTime</a>(h, m);</div>
-<div class="line"><span class="lineno">   22</span>    <a class="code hl_variable" href="class_alarm.html#a951293e840b44912d2ca4abd8e63be8e">_remainingMilliseconds</a> = 0;</div>
-<div class="line"><span class="lineno">   23</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_alarm.html#a6195c687d8393ce87c804ef6478ee1d5">_startTime</a> &gt;= <a class="code hl_variable" href="class_alarm.html#a217703cc3e557bd820255f064d458b93">_endTime</a>){</div>
-<div class="line"><span class="lineno">   24</span>        <a class="code hl_variable" href="class_alarm.html#a217703cc3e557bd820255f064d458b93">_endTime</a> = <a class="code hl_function" href="class_alarm.html#af67e929b3875f73d8edba526265d5d64">getTime</a>(h+24, m);</div>
-<div class="line"><span class="lineno">   25</span>    }</div>
-<div class="line"><span class="lineno">   26</span>    <a class="code hl_variable" href="class_alarm.html#ad464c4de831a8aa5363431a4a1f0b5d8">_running</a> = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   27</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00018">18</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   18</span>                        {</div>
+<div class="line"><span class="lineno">   19</span>    <a class="code hl_variable" href="class_alarm.html#a6195c687d8393ce87c804ef6478ee1d5">_startTime</a> = <a class="code hl_function" href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">currentTime</a>();</div>
+<div class="line"><span class="lineno">   20</span>    <a class="code hl_variable" href="class_alarm.html#a217703cc3e557bd820255f064d458b93">_endTime</a> = <a class="code hl_function" href="class_alarm.html#af67e929b3875f73d8edba526265d5d64">getTime</a>(h, m);</div>
+<div class="line"><span class="lineno">   21</span>    <a class="code hl_variable" href="class_alarm.html#a951293e840b44912d2ca4abd8e63be8e">_remainingMilliseconds</a> = 0;</div>
+<div class="line"><span class="lineno">   22</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_alarm.html#a6195c687d8393ce87c804ef6478ee1d5">_startTime</a> &gt;= <a class="code hl_variable" href="class_alarm.html#a217703cc3e557bd820255f064d458b93">_endTime</a>){</div>
+<div class="line"><span class="lineno">   23</span>        <a class="code hl_variable" href="class_alarm.html#a217703cc3e557bd820255f064d458b93">_endTime</a> = <a class="code hl_function" href="class_alarm.html#af67e929b3875f73d8edba526265d5d64">getTime</a>(h+24, m);</div>
+<div class="line"><span class="lineno">   24</span>    }</div>
+<div class="line"><span class="lineno">   25</span>    <a class="code hl_variable" href="class_alarm.html#ad464c4de831a8aa5363431a4a1f0b5d8">_running</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   26</span>}</div>
 <div class="ttc" id="aclass_alarm_html_a217703cc3e557bd820255f064d458b93"><div class="ttname"><a href="class_alarm.html#a217703cc3e557bd820255f064d458b93">Alarm::_endTime</a></div><div class="ttdeci">chrono::time_point&lt; chrono::system_clock &gt; _endTime</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8hpp_source.html#l00042">Alarm.hpp:42</a></div></div>
-<div class="ttc" id="aclass_alarm_html_a387c6a3ab4f521e108f092c6bcce611f"><div class="ttname"><a href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">Alarm::currentTime</a></div><div class="ttdeci">static chrono::time_point&lt; chrono::system_clock &gt; currentTime()</div><div class="ttdoc">Returns the current system time.</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8cpp_source.html#l00160">Alarm.cpp:160</a></div></div>
+<div class="ttc" id="aclass_alarm_html_a387c6a3ab4f521e108f092c6bcce611f"><div class="ttname"><a href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">Alarm::currentTime</a></div><div class="ttdeci">static chrono::time_point&lt; chrono::system_clock &gt; currentTime()</div><div class="ttdoc">Returns the current system time.</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8cpp_source.html#l00159">Alarm.cpp:159</a></div></div>
 <div class="ttc" id="aclass_alarm_html_a6195c687d8393ce87c804ef6478ee1d5"><div class="ttname"><a href="class_alarm.html#a6195c687d8393ce87c804ef6478ee1d5">Alarm::_startTime</a></div><div class="ttdeci">chrono::time_point&lt; chrono::system_clock &gt; _startTime</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8hpp_source.html#l00041">Alarm.hpp:41</a></div></div>
 <div class="ttc" id="aclass_alarm_html_a951293e840b44912d2ca4abd8e63be8e"><div class="ttname"><a href="class_alarm.html#a951293e840b44912d2ca4abd8e63be8e">Alarm::_remainingMilliseconds</a></div><div class="ttdeci">int _remainingMilliseconds</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8hpp_source.html#l00037">Alarm.hpp:37</a></div></div>
 <div class="ttc" id="aclass_alarm_html_ad464c4de831a8aa5363431a4a1f0b5d8"><div class="ttname"><a href="class_alarm.html#ad464c4de831a8aa5363431a4a1f0b5d8">Alarm::_running</a></div><div class="ttdeci">bool _running</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8hpp_source.html#l00039">Alarm.hpp:39</a></div></div>
-<div class="ttc" id="aclass_alarm_html_af67e929b3875f73d8edba526265d5d64"><div class="ttname"><a href="class_alarm.html#af67e929b3875f73d8edba526265d5d64">Alarm::getTime</a></div><div class="ttdeci">chrono::time_point&lt; chrono::system_clock &gt; getTime(int h, int m)</div><div class="ttdoc">Creates the nearest future time point with hours h and minutes m.</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8cpp_source.html#l00039">Alarm.cpp:39</a></div></div>
+<div class="ttc" id="aclass_alarm_html_af67e929b3875f73d8edba526265d5d64"><div class="ttname"><a href="class_alarm.html#af67e929b3875f73d8edba526265d5d64">Alarm::getTime</a></div><div class="ttdeci">chrono::time_point&lt; chrono::system_clock &gt; getTime(int h, int m)</div><div class="ttdoc">Creates the nearest future time point with hours h and minutes m.</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8cpp_source.html#l00038">Alarm.cpp:38</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_alarm_8hpp_source.html#l00042">_endTime</a>, <a class="el" href="_alarm_8hpp_source.html#l00037">_remainingMilliseconds</a>, <a class="el" href="_alarm_8hpp_source.html#l00039">_running</a>, <a class="el" href="_alarm_8hpp_source.html#l00041">_startTime</a>, <a class="el" href="_alarm_8cpp_source.html#l00160">currentTime()</a>, and <a class="el" href="_alarm_8cpp_source.html#l00039">getTime()</a>.</p>
+<p class="reference">References <a class="el" href="_alarm_8hpp_source.html#l00042">_endTime</a>, <a class="el" href="_alarm_8hpp_source.html#l00037">_remainingMilliseconds</a>, <a class="el" href="_alarm_8hpp_source.html#l00039">_running</a>, <a class="el" href="_alarm_8hpp_source.html#l00041">_startTime</a>, <a class="el" href="_alarm_8cpp_source.html#l00159">currentTime()</a>, and <a class="el" href="_alarm_8cpp_source.html#l00038">getTime()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -244,34 +244,32 @@ Here is the call graph for this function:</div>
 <p>Returns the current system time. </p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_a.html">A</a> time point representing the current time. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00160">160</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  160</span>                                                       {</div>
-<div class="line"><span class="lineno">  161</span>    <span class="keywordflow">return</span> chrono::system_clock::now();</div>
-<div class="line"><span class="lineno">  162</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00159">159</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  159</span>                                                       {</div>
+<div class="line"><span class="lineno">  160</span>    <span class="keywordflow">return</span> chrono::system_clock::now();</div>
+<div class="line"><span class="lineno">  161</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="_alarm_8cpp_source.html#l00019">Alarm()</a>, <a class="el" href="_alarm_8cpp_source.html#l00039">getTime()</a>, <a class="el" href="_alarm_8cpp_source.html#l00079">percentElapsed()</a>, <a class="el" href="_alarm_8cpp_source.html#l00103">remainingMilliseconds()</a>, and <a class="el" href="_alarm_8cpp_source.html#l00060">timeToString()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_alarm_8cpp_source.html#l00018">Alarm()</a>, <a class="el" href="_alarm_8cpp_source.html#l00038">getTime()</a>, <a class="el" href="_alarm_8cpp_source.html#l00078">percentElapsed()</a>, <a class="el" href="_alarm_8cpp_source.html#l00102">remainingMilliseconds()</a>, and <a class="el" href="_alarm_8cpp_source.html#l00059">timeToString()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_alarm_a387c6a3ab4f521e108f092c6bcce611f_icgraph.png" border="0" usemap="#aclass_alarm_a387c6a3ab4f521e108f092c6bcce611f_icgraph" alt=""/></div>
 <map name="aclass_alarm_a387c6a3ab4f521e108f092c6bcce611f_icgraph" id="aclass_alarm_a387c6a3ab4f521e108f092c6bcce611f_icgraph">
-<area shape="rect" title="Returns the current system time." alt="" coords="1315,107,1463,132"/>
-<area shape="rect" href="class_alarm.html#a9c05bd5c0a13a0774afc6f5df8c66f0f" title="Constructor for the Alarm object." alt="" coords="864,19,972,44"/>
-<area shape="rect" href="class_alarm.html#af67e929b3875f73d8edba526265d5d64" title="Creates the nearest future time point with hours h and minutes m." alt="" coords="1097,5,1220,31"/>
-<area shape="rect" href="class_alarm.html#aee08b5d6eafe7e5adee07f9c30dc3fce" title="Calculates the percentage of time that has elapsed from start to end." alt="" coords="833,81,1003,107"/>
-<area shape="rect" href="class_alarm.html#a8f29e4753be03a7f68c22d2697e65a43" title="Calculates the remaining time in milliseconds until the alarm ends." alt="" coords="1051,208,1267,233"/>
-<area shape="rect" href="class_alarm.html#a493f5bd8972a4c5769574701f9d92067" title="Converts a given time point to a string format (HH:MM)." alt="" coords="843,183,993,208"/>
-<area shape="rect" href="_alarm_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6" title=" " alt="" coords="669,132,761,157"/>
-<area shape="rect" href="class_display.html#a8437f93af050167c13f5cf2f3e68f8b8" title="Updates the display based on the state of the provided Alarm object." alt="" coords="644,181,785,207"/>
-<area shape="rect" href="_alarm_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="485,132,540,157"/>
-<area shape="rect" href="class_menu.html#a4663bff1fca54f0230ff0e20b6ae9ae8" title="Runs the alarm sequence, allowing the user to set and interact with an alarm." alt="" coords="429,232,596,257"/>
-<area shape="rect" href="_display_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6" title=" " alt="" coords="467,181,559,207"/>
-<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="247,243,381,268"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,217,181,243"/>
-<area shape="rect" href="_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,267,199,292"/>
-<area shape="rect" href="_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,267,60,292"/>
-<area shape="rect" href="_display_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="287,169,341,195"/>
-<area shape="rect" href="class_alarm.html#a2e1cee43509c402293feeebd70c80442" title="Checks if the alarm has finished." alt="" coords="861,232,975,257"/>
+<area shape="rect" title="Returns the current system time." alt="" coords="1224,107,1372,132"/>
+<area shape="rect" href="class_alarm.html#a9c05bd5c0a13a0774afc6f5df8c66f0f" title="Constructor for the Alarm object." alt="" coords="773,19,881,44"/>
+<area shape="rect" href="class_alarm.html#af67e929b3875f73d8edba526265d5d64" title="Creates the nearest future time point with hours h and minutes m." alt="" coords="1007,5,1129,31"/>
+<area shape="rect" href="class_alarm.html#aee08b5d6eafe7e5adee07f9c30dc3fce" title="Calculates the percentage of time that has elapsed from start to end." alt="" coords="743,81,912,107"/>
+<area shape="rect" href="class_alarm.html#a8f29e4753be03a7f68c22d2697e65a43" title="Calculates the remaining time in milliseconds until the alarm ends." alt="" coords="960,208,1176,233"/>
+<area shape="rect" href="class_alarm.html#a493f5bd8972a4c5769574701f9d92067" title="Converts a given time point to a string format (HH:MM)." alt="" coords="752,183,903,208"/>
+<area shape="rect" href="_alarm_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6" title=" " alt="" coords="578,132,670,157"/>
+<area shape="rect" href="class_display.html#a8437f93af050167c13f5cf2f3e68f8b8" title="Updates the display based on the state of the provided Alarm object." alt="" coords="553,181,695,207"/>
+<area shape="rect" href="_alarm_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="395,132,449,157"/>
+<area shape="rect" href="class_menu.html#a4663bff1fca54f0230ff0e20b6ae9ae8" title="Displays the help menu for the Timer Stopwatch and Alarm." alt="" coords="339,232,505,257"/>
+<area shape="rect" href="_display_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6" title=" " alt="" coords="376,181,468,207"/>
+<area shape="rect" href="class_menu.html#adfad43d64fc6df9172030c25f7d234c5" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="156,243,291,268"/>
+<area shape="rect" href="class_menu.html#a2b43753d834b64bdba7e82bc9f2af305" title="Constructs a Menu object." alt="" coords="5,243,108,268"/>
+<area shape="rect" href="_display_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="196,169,251,195"/>
+<area shape="rect" href="class_alarm.html#a2e1cee43509c402293feeebd70c80442" title="Checks if the alarm has finished." alt="" coords="770,232,885,257"/>
 </map>
 </div>
 
@@ -295,30 +293,28 @@ Here is the caller graph for this function:</div>
 <p>Returns the alarm's end time. </p>
 <dl class="section return"><dt>Returns</dt><dd>Time point representing the end time of the alarm. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00124">124</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  124</span>                                                      {</div>
-<div class="line"><span class="lineno">  125</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_alarm.html#a217703cc3e557bd820255f064d458b93">_endTime</a>;</div>
-<div class="line"><span class="lineno">  126</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00123">123</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  123</span>                                                      {</div>
+<div class="line"><span class="lineno">  124</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_alarm.html#a217703cc3e557bd820255f064d458b93">_endTime</a>;</div>
+<div class="line"><span class="lineno">  125</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_alarm_8hpp_source.html#l00042">_endTime</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_alarm_test_8cpp_source.html#l00010">test_alarm()</a>, and <a class="el" href="_display_8cpp_source.html#l00787">Display::tickAlarm()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_alarm_test_8cpp_source.html#l00010">test_alarm()</a>, and <a class="el" href="_display_8cpp_source.html#l00899">Display::tickAlarm()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_alarm_a4e43d8e48846d1911f5a691c129b731a_icgraph.png" border="0" usemap="#aclass_alarm_a4e43d8e48846d1911f5a691c129b731a_icgraph" alt=""/></div>
 <map name="aclass_alarm_a4e43d8e48846d1911f5a691c129b731a_icgraph" id="aclass_alarm_a4e43d8e48846d1911f5a691c129b731a_icgraph">
-<area shape="rect" title="Returns the alarm&#39;s end time." alt="" coords="833,31,980,56"/>
-<area shape="rect" href="_alarm_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6" title=" " alt="" coords="669,5,761,31"/>
-<area shape="rect" href="class_display.html#a8437f93af050167c13f5cf2f3e68f8b8" title="Updates the display based on the state of the provided Alarm object." alt="" coords="644,55,785,80"/>
-<area shape="rect" href="_alarm_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="485,5,540,31"/>
-<area shape="rect" href="class_menu.html#a4663bff1fca54f0230ff0e20b6ae9ae8" title="Runs the alarm sequence, allowing the user to set and interact with an alarm." alt="" coords="429,55,596,80"/>
-<area shape="rect" href="_display_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6" title=" " alt="" coords="467,104,559,129"/>
-<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="247,55,381,80"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,31,181,56"/>
-<area shape="rect" href="_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,80,199,105"/>
-<area shape="rect" href="_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,80,60,105"/>
-<area shape="rect" href="_display_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="287,104,341,129"/>
+<area shape="rect" title="Returns the alarm&#39;s end time." alt="" coords="743,31,889,56"/>
+<area shape="rect" href="_alarm_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6" title=" " alt="" coords="578,5,670,31"/>
+<area shape="rect" href="class_display.html#a8437f93af050167c13f5cf2f3e68f8b8" title="Updates the display based on the state of the provided Alarm object." alt="" coords="553,55,695,80"/>
+<area shape="rect" href="_alarm_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="395,5,449,31"/>
+<area shape="rect" href="class_menu.html#a4663bff1fca54f0230ff0e20b6ae9ae8" title="Displays the help menu for the Timer Stopwatch and Alarm." alt="" coords="339,55,505,80"/>
+<area shape="rect" href="_display_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6" title=" " alt="" coords="376,104,468,129"/>
+<area shape="rect" href="class_menu.html#adfad43d64fc6df9172030c25f7d234c5" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="156,55,291,80"/>
+<area shape="rect" href="class_menu.html#a2b43753d834b64bdba7e82bc9f2af305" title="Constructs a Menu object." alt="" coords="5,55,108,80"/>
+<area shape="rect" href="_display_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="196,104,251,129"/>
 </map>
 </div>
 
@@ -342,12 +338,24 @@ Here is the caller graph for this function:</div>
 <p>Returns the alarm's start time. </p>
 <dl class="section return"><dt>Returns</dt><dd>Time point representing the start time of the alarm. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00115">115</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  115</span>                                                        {</div>
-<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_alarm.html#a6195c687d8393ce87c804ef6478ee1d5">_startTime</a>;</div>
-<div class="line"><span class="lineno">  117</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00114">114</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  114</span>                                                        {</div>
+<div class="line"><span class="lineno">  115</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_alarm.html#a6195c687d8393ce87c804ef6478ee1d5">_startTime</a>;</div>
+<div class="line"><span class="lineno">  116</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_alarm_8hpp_source.html#l00041">_startTime</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_alarm_test_8cpp_source.html#l00010">test_alarm()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_alarm_a6d90db7055eb0c3b9d9e4737b08e7650_icgraph.png" border="0" usemap="#aclass_alarm_a6d90db7055eb0c3b9d9e4737b08e7650_icgraph" alt=""/></div>
+<map name="aclass_alarm_a6d90db7055eb0c3b9d9e4737b08e7650_icgraph" id="aclass_alarm_a6d90db7055eb0c3b9d9e4737b08e7650_icgraph">
+<area shape="rect" title="Returns the alarm&#39;s start time." alt="" coords="248,5,403,31"/>
+<area shape="rect" href="_alarm_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6" title=" " alt="" coords="108,5,200,31"/>
+<area shape="rect" href="_alarm_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -388,25 +396,25 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Time point representing the future alarm time. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00039">39</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   39</span>                                                                {</div>
-<div class="line"><span class="lineno">   40</span>    </div>
-<div class="line"><span class="lineno">   41</span>    <span class="keyword">auto</span> now = <a class="code hl_function" href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">currentTime</a>();</div>
-<div class="line"><span class="lineno">   42</span> </div>
-<div class="line"><span class="lineno">   43</span>    time_t <a class="code hl_function" href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">currentTime</a> = chrono::system_clock::to_time_t(now);</div>
-<div class="line"><span class="lineno">   44</span>    tm* localTime = localtime(&amp;<a class="code hl_function" href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">currentTime</a>);</div>
-<div class="line"><span class="lineno">   45</span> </div>
-<div class="line"><span class="lineno">   46</span>    localTime-&gt;tm_hour = h;</div>
-<div class="line"><span class="lineno">   47</span>    localTime-&gt;tm_min = m;</div>
-<div class="line"><span class="lineno">   48</span>    localTime-&gt;tm_sec = 0;</div>
-<div class="line"><span class="lineno">   49</span>    </div>
-<div class="line"><span class="lineno">   50</span>    <span class="keyword">auto</span> futureTime = chrono::system_clock::from_time_t(mktime(localTime));</div>
-<div class="line"><span class="lineno">   51</span>    <span class="keywordflow">return</span> futureTime;</div>
-<div class="line"><span class="lineno">   52</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00038">38</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>                                                                {</div>
+<div class="line"><span class="lineno">   39</span>    </div>
+<div class="line"><span class="lineno">   40</span>    <span class="keyword">auto</span> now = <a class="code hl_function" href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">currentTime</a>();</div>
+<div class="line"><span class="lineno">   41</span> </div>
+<div class="line"><span class="lineno">   42</span>    time_t <a class="code hl_function" href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">currentTime</a> = chrono::system_clock::to_time_t(now);</div>
+<div class="line"><span class="lineno">   43</span>    tm* localTime = localtime(&amp;<a class="code hl_function" href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">currentTime</a>);</div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>    localTime-&gt;tm_hour = h;</div>
+<div class="line"><span class="lineno">   46</span>    localTime-&gt;tm_min = m;</div>
+<div class="line"><span class="lineno">   47</span>    localTime-&gt;tm_sec = 0;</div>
+<div class="line"><span class="lineno">   48</span>    </div>
+<div class="line"><span class="lineno">   49</span>    <span class="keyword">auto</span> futureTime = chrono::system_clock::from_time_t(mktime(localTime));</div>
+<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">return</span> futureTime;</div>
+<div class="line"><span class="lineno">   51</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_alarm_8cpp_source.html#l00160">currentTime()</a>.</p>
+<p class="reference">References <a class="el" href="_alarm_8cpp_source.html#l00159">currentTime()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_alarm_8cpp_source.html#l00019">Alarm()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_alarm_8cpp_source.html#l00018">Alarm()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -447,22 +455,22 @@ Here is the caller graph for this function:</div>
 <p>If the remaining milliseconds are less than or equal to 0, the alarm is considered done.</p>
 <dl class="section return"><dt>Returns</dt><dd>True if the alarm has completed, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00135">135</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  135</span>                  {</div>
-<div class="line"><span class="lineno">  136</span>    <span class="keywordtype">int</span> remaining = <a class="code hl_function" href="class_alarm.html#a8f29e4753be03a7f68c22d2697e65a43">remainingMilliseconds</a>();</div>
-<div class="line"><span class="lineno">  137</span>    <span class="keywordflow">if</span> (remaining &gt; 0) {</div>
-<div class="line"><span class="lineno">  138</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  139</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  140</span>        <a class="code hl_variable" href="class_alarm.html#ad464c4de831a8aa5363431a4a1f0b5d8">_running</a> = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  141</span>        <a class="code hl_variable" href="class_alarm.html#a951293e840b44912d2ca4abd8e63be8e">_remainingMilliseconds</a> = 0;</div>
-<div class="line"><span class="lineno">  142</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  143</span>    }</div>
-<div class="line"><span class="lineno">  144</span>}</div>
-<div class="ttc" id="aclass_alarm_html_a8f29e4753be03a7f68c22d2697e65a43"><div class="ttname"><a href="class_alarm.html#a8f29e4753be03a7f68c22d2697e65a43">Alarm::remainingMilliseconds</a></div><div class="ttdeci">int remainingMilliseconds()</div><div class="ttdoc">Calculates the remaining time in milliseconds until the alarm ends.</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8cpp_source.html#l00103">Alarm.cpp:103</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00134">134</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  134</span>                  {</div>
+<div class="line"><span class="lineno">  135</span>    <span class="keywordtype">int</span> remaining = <a class="code hl_function" href="class_alarm.html#a8f29e4753be03a7f68c22d2697e65a43">remainingMilliseconds</a>();</div>
+<div class="line"><span class="lineno">  136</span>    <span class="keywordflow">if</span> (remaining &gt; 0) {</div>
+<div class="line"><span class="lineno">  137</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  138</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  139</span>        <a class="code hl_variable" href="class_alarm.html#ad464c4de831a8aa5363431a4a1f0b5d8">_running</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  140</span>        <a class="code hl_variable" href="class_alarm.html#a951293e840b44912d2ca4abd8e63be8e">_remainingMilliseconds</a> = 0;</div>
+<div class="line"><span class="lineno">  141</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  142</span>    }</div>
+<div class="line"><span class="lineno">  143</span>}</div>
+<div class="ttc" id="aclass_alarm_html_a8f29e4753be03a7f68c22d2697e65a43"><div class="ttname"><a href="class_alarm.html#a8f29e4753be03a7f68c22d2697e65a43">Alarm::remainingMilliseconds</a></div><div class="ttdeci">int remainingMilliseconds()</div><div class="ttdoc">Calculates the remaining time in milliseconds until the alarm ends.</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8cpp_source.html#l00102">Alarm.cpp:102</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_alarm_8hpp_source.html#l00037">_remainingMilliseconds</a>, <a class="el" href="_alarm_8hpp_source.html#l00039">_running</a>, and <a class="el" href="_alarm_8cpp_source.html#l00103">remainingMilliseconds()</a>.</p>
+<p class="reference">References <a class="el" href="_alarm_8hpp_source.html#l00037">_remainingMilliseconds</a>, <a class="el" href="_alarm_8hpp_source.html#l00039">_running</a>, and <a class="el" href="_alarm_8cpp_source.html#l00102">remainingMilliseconds()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00179">Menu::alarmSequence()</a>, <a class="el" href="_alarm_test_8cpp_source.html#l00010">test_alarm()</a>, and <a class="el" href="_display_8cpp_source.html#l00787">Display::tickAlarm()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_menu_8cpp_source.html#l00349">Menu::alarmSequence()</a>, <a class="el" href="_alarm_test_8cpp_source.html#l00010">test_alarm()</a>, and <a class="el" href="_display_8cpp_source.html#l00899">Display::tickAlarm()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -478,17 +486,15 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_alarm_a2e1cee43509c402293feeebd70c80442_icgraph.png" border="0" usemap="#aclass_alarm_a2e1cee43509c402293feeebd70c80442_icgraph" alt=""/></div>
 <map name="aclass_alarm_a2e1cee43509c402293feeebd70c80442_icgraph" id="aclass_alarm_a2e1cee43509c402293feeebd70c80442_icgraph">
-<area shape="rect" title="Checks if the alarm has finished." alt="" coords="833,56,948,81"/>
-<area shape="rect" href="class_menu.html#a4663bff1fca54f0230ff0e20b6ae9ae8" title="Runs the alarm sequence, allowing the user to set and interact with an alarm." alt="" coords="429,57,596,83"/>
-<area shape="rect" href="_alarm_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6" title=" " alt="" coords="669,5,761,31"/>
-<area shape="rect" href="class_display.html#a8437f93af050167c13f5cf2f3e68f8b8" title="Updates the display based on the state of the provided Alarm object." alt="" coords="644,107,785,132"/>
-<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="247,57,381,83"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,33,181,59"/>
-<area shape="rect" href="_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,83,199,108"/>
-<area shape="rect" href="_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,83,60,108"/>
-<area shape="rect" href="_alarm_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="485,5,540,31"/>
-<area shape="rect" href="_display_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6" title=" " alt="" coords="467,107,559,132"/>
-<area shape="rect" href="_display_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="287,107,341,132"/>
+<area shape="rect" title="Checks if the alarm has finished." alt="" coords="743,56,857,81"/>
+<area shape="rect" href="class_menu.html#a4663bff1fca54f0230ff0e20b6ae9ae8" title="Displays the help menu for the Timer Stopwatch and Alarm." alt="" coords="339,57,505,83"/>
+<area shape="rect" href="_alarm_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6" title=" " alt="" coords="578,5,670,31"/>
+<area shape="rect" href="class_display.html#a8437f93af050167c13f5cf2f3e68f8b8" title="Updates the display based on the state of the provided Alarm object." alt="" coords="553,107,695,132"/>
+<area shape="rect" href="class_menu.html#adfad43d64fc6df9172030c25f7d234c5" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="156,57,291,83"/>
+<area shape="rect" href="class_menu.html#a2b43753d834b64bdba7e82bc9f2af305" title="Constructs a Menu object." alt="" coords="5,57,108,83"/>
+<area shape="rect" href="_alarm_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="395,5,449,31"/>
+<area shape="rect" href="_display_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6" title=" " alt="" coords="376,107,468,132"/>
+<area shape="rect" href="_display_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="196,107,251,132"/>
 </map>
 </div>
 
@@ -512,10 +518,10 @@ Here is the caller graph for this function:</div>
 <p>Checks if the alarm is currently running. </p>
 <dl class="section return"><dt>Returns</dt><dd>True if the alarm is running, false otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00151">151</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  151</span>                      {</div>
-<div class="line"><span class="lineno">  152</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_alarm.html#ad464c4de831a8aa5363431a4a1f0b5d8">_running</a>;</div>
-<div class="line"><span class="lineno">  153</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00150">150</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  150</span>                      {</div>
+<div class="line"><span class="lineno">  151</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_alarm.html#ad464c4de831a8aa5363431a4a1f0b5d8">_running</a>;</div>
+<div class="line"><span class="lineno">  152</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_alarm_8hpp_source.html#l00039">_running</a>.</p>
 
@@ -552,29 +558,29 @@ Here is the caller graph for this function:</div>
 <p>This method calculates the percentage of time passed relative to the alarm's start and end times.</p>
 <dl class="section return"><dt>Returns</dt><dd>The percentage of time elapsed as a double. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00079">79</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   79</span>                             {</div>
-<div class="line"><span class="lineno">   80</span> </div>
-<div class="line"><span class="lineno">   81</span>    <span class="keyword">auto</span> totalMilliseconds = chrono::duration_cast&lt;chrono::milliseconds&gt;(<a class="code hl_variable" href="class_alarm.html#a217703cc3e557bd820255f064d458b93">_endTime</a> - <a class="code hl_variable" href="class_alarm.html#a6195c687d8393ce87c804ef6478ee1d5">_startTime</a>).count();</div>
-<div class="line"><span class="lineno">   82</span>    </div>
-<div class="line"><span class="lineno">   83</span>    <span class="keywordflow">if</span> (totalMilliseconds == 0) {</div>
-<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">return</span> 100.0;</div>
-<div class="line"><span class="lineno">   85</span>    }</div>
-<div class="line"><span class="lineno">   86</span> </div>
-<div class="line"><span class="lineno">   87</span>    <span class="keyword">auto</span> now = <a class="code hl_function" href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">currentTime</a>();</div>
-<div class="line"><span class="lineno">   88</span>    <span class="keyword">auto</span> elapsedMilliseconds = chrono::duration_cast&lt;chrono::milliseconds&gt;(now - <a class="code hl_variable" href="class_alarm.html#a6195c687d8393ce87c804ef6478ee1d5">_startTime</a>).count();</div>
-<div class="line"><span class="lineno">   89</span> </div>
-<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">if</span> (elapsedMilliseconds &gt;= totalMilliseconds) {</div>
-<div class="line"><span class="lineno">   91</span>        <span class="keywordflow">return</span> 100.0;</div>
-<div class="line"><span class="lineno">   92</span>    }</div>
-<div class="line"><span class="lineno">   93</span> </div>
-<div class="line"><span class="lineno">   94</span>    <span class="keywordtype">double</span> percentage = (<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(elapsedMilliseconds) / totalMilliseconds) * 100.0;</div>
-<div class="line"><span class="lineno">   95</span>    <span class="keywordflow">return</span> percentage;</div>
-<div class="line"><span class="lineno">   96</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00078">78</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   78</span>                             {</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>    <span class="keyword">auto</span> totalMilliseconds = chrono::duration_cast&lt;chrono::milliseconds&gt;(<a class="code hl_variable" href="class_alarm.html#a217703cc3e557bd820255f064d458b93">_endTime</a> - <a class="code hl_variable" href="class_alarm.html#a6195c687d8393ce87c804ef6478ee1d5">_startTime</a>).count();</div>
+<div class="line"><span class="lineno">   81</span>    </div>
+<div class="line"><span class="lineno">   82</span>    <span class="keywordflow">if</span> (totalMilliseconds == 0) {</div>
+<div class="line"><span class="lineno">   83</span>        <span class="keywordflow">return</span> 100.0;</div>
+<div class="line"><span class="lineno">   84</span>    }</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>    <span class="keyword">auto</span> now = <a class="code hl_function" href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">currentTime</a>();</div>
+<div class="line"><span class="lineno">   87</span>    <span class="keyword">auto</span> elapsedMilliseconds = chrono::duration_cast&lt;chrono::milliseconds&gt;(now - <a class="code hl_variable" href="class_alarm.html#a6195c687d8393ce87c804ef6478ee1d5">_startTime</a>).count();</div>
+<div class="line"><span class="lineno">   88</span> </div>
+<div class="line"><span class="lineno">   89</span>    <span class="keywordflow">if</span> (elapsedMilliseconds &gt;= totalMilliseconds) {</div>
+<div class="line"><span class="lineno">   90</span>        <span class="keywordflow">return</span> 100.0;</div>
+<div class="line"><span class="lineno">   91</span>    }</div>
+<div class="line"><span class="lineno">   92</span> </div>
+<div class="line"><span class="lineno">   93</span>    <span class="keywordtype">double</span> percentage = (<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(elapsedMilliseconds) / totalMilliseconds) * 100.0;</div>
+<div class="line"><span class="lineno">   94</span>    <span class="keywordflow">return</span> percentage;</div>
+<div class="line"><span class="lineno">   95</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_alarm_8hpp_source.html#l00042">_endTime</a>, <a class="el" href="_alarm_8hpp_source.html#l00041">_startTime</a>, and <a class="el" href="_alarm_8cpp_source.html#l00160">currentTime()</a>.</p>
+<p class="reference">References <a class="el" href="_alarm_8hpp_source.html#l00042">_endTime</a>, <a class="el" href="_alarm_8hpp_source.html#l00041">_startTime</a>, and <a class="el" href="_alarm_8cpp_source.html#l00159">currentTime()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_alarm_test_8cpp_source.html#l00010">test_alarm()</a>, and <a class="el" href="_display_8cpp_source.html#l00787">Display::tickAlarm()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_alarm_test_8cpp_source.html#l00010">test_alarm()</a>, and <a class="el" href="_display_8cpp_source.html#l00899">Display::tickAlarm()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -589,17 +595,15 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_alarm_aee08b5d6eafe7e5adee07f9c30dc3fce_icgraph.png" border="0" usemap="#aclass_alarm_aee08b5d6eafe7e5adee07f9c30dc3fce_icgraph" alt=""/></div>
 <map name="aclass_alarm_aee08b5d6eafe7e5adee07f9c30dc3fce_icgraph" id="aclass_alarm_aee08b5d6eafe7e5adee07f9c30dc3fce_icgraph">
-<area shape="rect" title="Calculates the percentage of time that has elapsed from start to end." alt="" coords="833,31,1003,56"/>
-<area shape="rect" href="_alarm_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6" title=" " alt="" coords="669,5,761,31"/>
-<area shape="rect" href="class_display.html#a8437f93af050167c13f5cf2f3e68f8b8" title="Updates the display based on the state of the provided Alarm object." alt="" coords="644,55,785,80"/>
-<area shape="rect" href="_alarm_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="485,5,540,31"/>
-<area shape="rect" href="class_menu.html#a4663bff1fca54f0230ff0e20b6ae9ae8" title="Runs the alarm sequence, allowing the user to set and interact with an alarm." alt="" coords="429,55,596,80"/>
-<area shape="rect" href="_display_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6" title=" " alt="" coords="467,104,559,129"/>
-<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="247,55,381,80"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,31,181,56"/>
-<area shape="rect" href="_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,80,199,105"/>
-<area shape="rect" href="_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,80,60,105"/>
-<area shape="rect" href="_display_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="287,104,341,129"/>
+<area shape="rect" title="Calculates the percentage of time that has elapsed from start to end." alt="" coords="743,31,912,56"/>
+<area shape="rect" href="_alarm_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6" title=" " alt="" coords="578,5,670,31"/>
+<area shape="rect" href="class_display.html#a8437f93af050167c13f5cf2f3e68f8b8" title="Updates the display based on the state of the provided Alarm object." alt="" coords="553,55,695,80"/>
+<area shape="rect" href="_alarm_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="395,5,449,31"/>
+<area shape="rect" href="class_menu.html#a4663bff1fca54f0230ff0e20b6ae9ae8" title="Displays the help menu for the Timer Stopwatch and Alarm." alt="" coords="339,55,505,80"/>
+<area shape="rect" href="_display_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6" title=" " alt="" coords="376,104,468,129"/>
+<area shape="rect" href="class_menu.html#adfad43d64fc6df9172030c25f7d234c5" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="156,55,291,80"/>
+<area shape="rect" href="class_menu.html#a2b43753d834b64bdba7e82bc9f2af305" title="Constructs a Menu object." alt="" coords="5,55,108,80"/>
+<area shape="rect" href="_display_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="196,104,251,129"/>
 </map>
 </div>
 
@@ -623,17 +627,17 @@ Here is the caller graph for this function:</div>
 <p>Calculates the remaining time in milliseconds until the alarm ends. </p>
 <dl class="section return"><dt>Returns</dt><dd>Remaining milliseconds until the alarm ends. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00103">103</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  103</span>                                 {</div>
-<div class="line"><span class="lineno">  104</span> </div>
-<div class="line"><span class="lineno">  105</span>    <span class="keyword">auto</span> now = <a class="code hl_function" href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">currentTime</a>();</div>
-<div class="line"><span class="lineno">  106</span>    <span class="keyword">auto</span> ms = chrono::duration_cast&lt;chrono::milliseconds&gt;(<a class="code hl_variable" href="class_alarm.html#a217703cc3e557bd820255f064d458b93">_endTime</a> - now).count();</div>
-<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">return</span> ms;</div>
-<div class="line"><span class="lineno">  108</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00102">102</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  102</span>                                 {</div>
+<div class="line"><span class="lineno">  103</span> </div>
+<div class="line"><span class="lineno">  104</span>    <span class="keyword">auto</span> now = <a class="code hl_function" href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">currentTime</a>();</div>
+<div class="line"><span class="lineno">  105</span>    <span class="keyword">auto</span> ms = chrono::duration_cast&lt;chrono::milliseconds&gt;(<a class="code hl_variable" href="class_alarm.html#a217703cc3e557bd820255f064d458b93">_endTime</a> - now).count();</div>
+<div class="line"><span class="lineno">  106</span>    <span class="keywordflow">return</span> ms;</div>
+<div class="line"><span class="lineno">  107</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_alarm_8hpp_source.html#l00042">_endTime</a>, and <a class="el" href="_alarm_8cpp_source.html#l00160">currentTime()</a>.</p>
+<p class="reference">References <a class="el" href="_alarm_8hpp_source.html#l00042">_endTime</a>, and <a class="el" href="_alarm_8cpp_source.html#l00159">currentTime()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_alarm_8cpp_source.html#l00135">isDone()</a>, and <a class="el" href="_alarm_test_8cpp_source.html#l00010">test_alarm()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_alarm_8cpp_source.html#l00134">isDone()</a>, and <a class="el" href="_alarm_test_8cpp_source.html#l00010">test_alarm()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -648,18 +652,16 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_alarm_a8f29e4753be03a7f68c22d2697e65a43_icgraph.png" border="0" usemap="#aclass_alarm_a8f29e4753be03a7f68c22d2697e65a43_icgraph" alt=""/></div>
 <map name="aclass_alarm_a8f29e4753be03a7f68c22d2697e65a43_icgraph" id="aclass_alarm_a8f29e4753be03a7f68c22d2697e65a43_icgraph">
-<area shape="rect" title="Calculates the remaining time in milliseconds until the alarm ends." alt="" coords="996,103,1212,128"/>
-<area shape="rect" href="class_alarm.html#a2e1cee43509c402293feeebd70c80442" title="Checks if the alarm has finished." alt="" coords="833,77,948,103"/>
-<area shape="rect" href="_alarm_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6" title=" " alt="" coords="669,128,761,153"/>
-<area shape="rect" href="class_menu.html#a4663bff1fca54f0230ff0e20b6ae9ae8" title="Runs the alarm sequence, allowing the user to set and interact with an alarm." alt="" coords="429,29,596,55"/>
-<area shape="rect" href="class_display.html#a8437f93af050167c13f5cf2f3e68f8b8" title="Updates the display based on the state of the provided Alarm object." alt="" coords="644,79,785,104"/>
-<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="247,29,381,55"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,5,181,31"/>
-<area shape="rect" href="_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,55,199,80"/>
-<area shape="rect" href="_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,55,60,80"/>
-<area shape="rect" href="_alarm_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="485,128,540,153"/>
-<area shape="rect" href="_display_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6" title=" " alt="" coords="467,79,559,104"/>
-<area shape="rect" href="_display_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="287,79,341,104"/>
+<area shape="rect" title="Calculates the remaining time in milliseconds until the alarm ends." alt="" coords="905,103,1121,128"/>
+<area shape="rect" href="class_alarm.html#a2e1cee43509c402293feeebd70c80442" title="Checks if the alarm has finished." alt="" coords="743,77,857,103"/>
+<area shape="rect" href="_alarm_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6" title=" " alt="" coords="578,128,670,153"/>
+<area shape="rect" href="class_menu.html#a4663bff1fca54f0230ff0e20b6ae9ae8" title="Displays the help menu for the Timer Stopwatch and Alarm." alt="" coords="339,29,505,55"/>
+<area shape="rect" href="class_display.html#a8437f93af050167c13f5cf2f3e68f8b8" title="Updates the display based on the state of the provided Alarm object." alt="" coords="553,79,695,104"/>
+<area shape="rect" href="class_menu.html#adfad43d64fc6df9172030c25f7d234c5" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="156,29,291,55"/>
+<area shape="rect" href="class_menu.html#a2b43753d834b64bdba7e82bc9f2af305" title="Constructs a Menu object." alt="" coords="5,29,108,55"/>
+<area shape="rect" href="_alarm_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="395,128,449,153"/>
+<area shape="rect" href="_display_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6" title=" " alt="" coords="376,79,468,104"/>
+<area shape="rect" href="_display_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="196,79,251,104"/>
 </map>
 </div>
 
@@ -707,22 +709,22 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_a.html">A</a> string representing the time in HH:MM format. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00060">60</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   60</span>                                                                 {</div>
-<div class="line"><span class="lineno">   61</span> </div>
-<div class="line"><span class="lineno">   62</span>    time_t <a class="code hl_function" href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">currentTime</a> = chrono::system_clock::to_time_t(t);</div>
-<div class="line"><span class="lineno">   63</span>    tm* localTime = localtime(&amp;<a class="code hl_function" href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">currentTime</a>);</div>
-<div class="line"><span class="lineno">   64</span> </div>
-<div class="line"><span class="lineno">   65</span>    stringstream ss;</div>
-<div class="line"><span class="lineno">   66</span>    ss &lt;&lt; setw(2) &lt;&lt; setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; localTime-&gt;tm_hour &lt;&lt; <span class="stringliteral">&quot;:&quot;</span></div>
-<div class="line"><span class="lineno">   67</span>       &lt;&lt; setw(2) &lt;&lt; setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; localTime-&gt;tm_min;</div>
-<div class="line"><span class="lineno">   68</span> </div>
-<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">return</span> ss.str();</div>
-<div class="line"><span class="lineno">   70</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_alarm_8cpp_source.html#l00059">59</a> of file <a class="el" href="_alarm_8cpp_source.html">Alarm.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   59</span>                                                                 {</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>    time_t <a class="code hl_function" href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">currentTime</a> = chrono::system_clock::to_time_t(t);</div>
+<div class="line"><span class="lineno">   62</span>    tm* localTime = localtime(&amp;<a class="code hl_function" href="class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f">currentTime</a>);</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>    stringstream ss;</div>
+<div class="line"><span class="lineno">   65</span>    ss &lt;&lt; setw(2) &lt;&lt; setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; localTime-&gt;tm_hour &lt;&lt; <span class="stringliteral">&quot;:&quot;</span></div>
+<div class="line"><span class="lineno">   66</span>       &lt;&lt; setw(2) &lt;&lt; setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; localTime-&gt;tm_min;</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>    <span class="keywordflow">return</span> ss.str();</div>
+<div class="line"><span class="lineno">   69</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_alarm_8cpp_source.html#l00160">currentTime()</a>.</p>
+<p class="reference">References <a class="el" href="_alarm_8cpp_source.html#l00159">currentTime()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_alarm_test_8cpp_source.html#l00010">test_alarm()</a>, and <a class="el" href="_display_8cpp_source.html#l00787">Display::tickAlarm()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_alarm_test_8cpp_source.html#l00010">test_alarm()</a>, and <a class="el" href="_display_8cpp_source.html#l00899">Display::tickAlarm()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -737,17 +739,15 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_alarm_a493f5bd8972a4c5769574701f9d92067_icgraph.png" border="0" usemap="#aclass_alarm_a493f5bd8972a4c5769574701f9d92067_icgraph" alt=""/></div>
 <map name="aclass_alarm_a493f5bd8972a4c5769574701f9d92067_icgraph" id="aclass_alarm_a493f5bd8972a4c5769574701f9d92067_icgraph">
-<area shape="rect" title="Converts a given time point to a string format (HH:MM)." alt="" coords="833,31,984,56"/>
-<area shape="rect" href="_alarm_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6" title=" " alt="" coords="669,5,761,31"/>
-<area shape="rect" href="class_display.html#a8437f93af050167c13f5cf2f3e68f8b8" title="Updates the display based on the state of the provided Alarm object." alt="" coords="644,55,785,80"/>
-<area shape="rect" href="_alarm_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="485,5,540,31"/>
-<area shape="rect" href="class_menu.html#a4663bff1fca54f0230ff0e20b6ae9ae8" title="Runs the alarm sequence, allowing the user to set and interact with an alarm." alt="" coords="429,55,596,80"/>
-<area shape="rect" href="_display_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6" title=" " alt="" coords="467,104,559,129"/>
-<area shape="rect" href="class_menu.html#aef9edee86d2ea460606361c92e061583" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="247,55,381,80"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="The main function of the program." alt="" coords="126,31,181,56"/>
-<area shape="rect" href="_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="108,80,199,105"/>
-<area shape="rect" href="_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,80,60,105"/>
-<area shape="rect" href="_display_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="287,104,341,129"/>
+<area shape="rect" title="Converts a given time point to a string format (HH:MM)." alt="" coords="743,31,893,56"/>
+<area shape="rect" href="_alarm_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6" title=" " alt="" coords="578,5,670,31"/>
+<area shape="rect" href="class_display.html#a8437f93af050167c13f5cf2f3e68f8b8" title="Updates the display based on the state of the provided Alarm object." alt="" coords="553,55,695,80"/>
+<area shape="rect" href="_alarm_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="395,5,449,31"/>
+<area shape="rect" href="class_menu.html#a4663bff1fca54f0230ff0e20b6ae9ae8" title="Displays the help menu for the Timer Stopwatch and Alarm." alt="" coords="339,55,505,80"/>
+<area shape="rect" href="_display_test_8cpp.html#afda5c321584b8b1bbbd3ab30e6a796b6" title=" " alt="" coords="376,104,468,129"/>
+<area shape="rect" href="class_menu.html#adfad43d64fc6df9172030c25f7d234c5" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="156,55,291,80"/>
+<area shape="rect" href="class_menu.html#a2b43753d834b64bdba7e82bc9f2af305" title="Constructs a Menu object." alt="" coords="5,55,108,80"/>
+<area shape="rect" href="_display_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="196,104,251,129"/>
 </map>
 </div>
 
@@ -776,7 +776,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_alarm_8hpp_source.html#l00042">42</a> of file <a class="el" href="_alarm_8hpp_source.html">Alarm.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_alarm_8cpp_source.html#l00019">Alarm()</a>, <a class="el" href="_alarm_8cpp_source.html#l00124">getEndTime()</a>, <a class="el" href="_alarm_8cpp_source.html#l00079">percentElapsed()</a>, and <a class="el" href="_alarm_8cpp_source.html#l00103">remainingMilliseconds()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_alarm_8cpp_source.html#l00018">Alarm()</a>, <a class="el" href="_alarm_8cpp_source.html#l00123">getEndTime()</a>, <a class="el" href="_alarm_8cpp_source.html#l00078">percentElapsed()</a>, and <a class="el" href="_alarm_8cpp_source.html#l00102">remainingMilliseconds()</a>.</p>
 
 </div>
 </div>
@@ -802,7 +802,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_alarm_8hpp_source.html#l00037">37</a> of file <a class="el" href="_alarm_8hpp_source.html">Alarm.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_alarm_8cpp_source.html#l00019">Alarm()</a>, and <a class="el" href="_alarm_8cpp_source.html#l00135">isDone()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_alarm_8cpp_source.html#l00018">Alarm()</a>, and <a class="el" href="_alarm_8cpp_source.html#l00134">isDone()</a>.</p>
 
 </div>
 </div>
@@ -828,7 +828,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_alarm_8hpp_source.html#l00039">39</a> of file <a class="el" href="_alarm_8hpp_source.html">Alarm.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_alarm_8cpp_source.html#l00019">Alarm()</a>, <a class="el" href="_alarm_8cpp_source.html#l00135">isDone()</a>, and <a class="el" href="_alarm_8cpp_source.html#l00151">isRunning()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_alarm_8cpp_source.html#l00018">Alarm()</a>, <a class="el" href="_alarm_8cpp_source.html#l00134">isDone()</a>, and <a class="el" href="_alarm_8cpp_source.html#l00150">isRunning()</a>.</p>
 
 </div>
 </div>
@@ -854,7 +854,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="_alarm_8hpp_source.html#l00041">41</a> of file <a class="el" href="_alarm_8hpp_source.html">Alarm.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="_alarm_8cpp_source.html#l00019">Alarm()</a>, <a class="el" href="_alarm_8cpp_source.html#l00115">getStartTime()</a>, and <a class="el" href="_alarm_8cpp_source.html#l00079">percentElapsed()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_alarm_8cpp_source.html#l00018">Alarm()</a>, <a class="el" href="_alarm_8cpp_source.html#l00114">getStartTime()</a>, and <a class="el" href="_alarm_8cpp_source.html#l00078">percentElapsed()</a>.</p>
 
 </div>
 </div>
@@ -865,7 +865,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 11 2024 00:49:33 for Tempo by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+Generated on Fri Oct 11 2024 00:59:14 for Tempo by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
 </small></address>
 </body>
 </html>

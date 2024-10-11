@@ -1,15 +1,15 @@
 <map id="Menu::checkAlarmInput" name="Menu::checkAlarmInput">
-<area shape="rect" id="node1" title="Checks and handles user input for the Alarm." alt="" coords="5,77,181,102"/>
-<area shape="rect" id="node2" href="$class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62" title="Clears the terminal screen." alt="" coords="443,26,597,52"/>
-<area shape="rect" id="node4" href="$class_display.html#ad226aa44204137c5a8fe774967532af4" title="Clears the splash screen." alt="" coords="229,77,383,102"/>
-<area shape="rect" id="node5" href="$class_menu.html#a76c8148cc85fcc305b80c52b2f9df2ca" title="Creates a new Alarm object based on user input." alt="" coords="233,126,379,152"/>
-<area shape="rect" id="node3" href="$class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="1084,101,1224,126"/>
-<area shape="rect" id="node6" href="$class_display.html#a00b39135d34e401529265af26a9611c7" title="Updates the alarm setup display, showing the current input with a blinking cursor." alt="" coords="431,126,609,152"/>
-<area shape="rect" id="node13" href="$class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="473,176,567,201"/>
-<area shape="rect" id="node7" href="$class_display.html#abbc05f4af18fc8665a8022e795c2d574" title=" " alt="" coords="675,26,831,52"/>
-<area shape="rect" id="node8" href="$class_display.html#aab9a518037074ce68da2a7792771908d" title="Prints ASCII art to the terminal." alt="" coords="683,76,822,101"/>
-<area shape="rect" id="node9" href="$class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="896,126,1036,152"/>
-<area shape="rect" id="node10" href="$class_display.html#a3480427024243711ee66efc51ddf0fa3" title="Prints controls to the terminal." alt="" coords="671,177,834,202"/>
-<area shape="rect" id="node11" href="$class_display.html#adb4502abd3d3dd9ca70a97c1f3d66ad7" title=" " alt="" coords="681,226,825,252"/>
-<area shape="rect" id="node12" href="$class_display.html#a40847809dd620e1a99f360c7e2ae977c" title="Stages the controls for the alarm setup to be displayed in the terminal." alt="" coords="657,276,848,316"/>
+<area shape="rect" id="node1" title="Checks and handles user input for the Alarm." alt="" coords="5,56,181,81"/>
+<area shape="rect" id="node2" href="$class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62" title="Clears the terminal screen." alt="" coords="443,5,597,31"/>
+<area shape="rect" id="node4" href="$class_display.html#ad226aa44204137c5a8fe774967532af4" title="Clears the splash screen." alt="" coords="229,105,383,131"/>
+<area shape="rect" id="node5" href="$class_menu.html#a76c8148cc85fcc305b80c52b2f9df2ca" title="Creates a Alarm object with user input for the duration." alt="" coords="233,56,379,81"/>
+<area shape="rect" id="node3" href="$class_display.html#a0267a9a0b9ca0ce9d850e0c39bed1d1f" title="Efficiently prints a string to the terminal." alt="" coords="1048,131,1188,156"/>
+<area shape="rect" id="node6" href="$class_display.html#ac8ccd7ba3691d710cb516abc82d55fae" title="Updates the alarm setup display, showing the current input with a blinking cursor." alt="" coords="431,105,609,131"/>
+<area shape="rect" id="node13" href="$class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="473,56,567,81"/>
+<area shape="rect" id="node7" href="$class_display.html#adaad0e1b5d4d161f107818583c3b4ef2" title="Prints controls to the terminal." alt="" coords="663,204,790,229"/>
+<area shape="rect" id="node9" href="$class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="852,105,992,131"/>
+<area shape="rect" id="node11" href="$class_display.html#aea651e91d87c11ca3723d08dcf8a5b48" title="Prints ASCII art to the terminal." alt="" coords="657,105,796,131"/>
+<area shape="rect" id="node12" href="$class_display.html#a5f40f6193deb6304f0598b49944bd0d1" title="Stages the controls for the timer." alt="" coords="660,155,793,180"/>
+<area shape="rect" id="node8" href="$class_display.html#abbc05f4af18fc8665a8022e795c2d574" title="Clears the terminal text color." alt="" coords="844,155,1000,180"/>
+<area shape="rect" id="node10" href="$class_display.html#a6f32f09622d7e1dde951d5610167bdce" title="Sets the terminal text color." alt="" coords="850,204,994,229"/>
 </map>

@@ -1,18 +1,18 @@
 <map id="Display::tickStopwatch" name="Display::tickStopwatch">
-<area shape="rect" id="node1" title="Updates the display based on the state of the provided Stopwatch object." alt="" coords="5,305,176,331"/>
-<area shape="rect" id="node2" href="$class_display.html#abbc05f4af18fc8665a8022e795c2d574" title=" " alt="" coords="264,5,420,31"/>
-<area shape="rect" id="node3" href="$class_stopwatch.html#aaf61c1ada98a22cc1c2bc589bdd4134a" title="Returns the current elapsed time in milliseconds." alt="" coords="229,55,455,80"/>
-<area shape="rect" id="node4" href="$class_stopwatch.html#ae401b2a4016b104fc210e54a5041c9e2" title="Returns the splits vector." alt="" coords="265,104,419,129"/>
-<area shape="rect" id="node5" href="$class_stopwatch.html#ae20cb58892efc6ca55117583aac8c392" title="Checks if the stopwatch is currently running." alt="" coords="261,153,423,179"/>
-<area shape="rect" id="node6" href="$class_display.html#aab9a518037074ce68da2a7792771908d" title="Prints ASCII art to the terminal." alt="" coords="520,205,659,231"/>
-<area shape="rect" id="node8" href="$class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="719,356,859,381"/>
-<area shape="rect" id="node9" href="$class_display.html#a3480427024243711ee66efc51ddf0fa3" title="Prints controls to the terminal." alt="" coords="508,255,671,280"/>
-<area shape="rect" id="node10" href="$class_display.html#a62d8435627ea69fbccaef4cef32d785d" title="Prints the splash screen to the terminal." alt="" coords="267,356,417,381"/>
-<area shape="rect" id="node12" href="$class_display.html#ac4f2f5445af6a65554ad9646cc27f3cc" title="Prints the stopwatch splits to the terminal." alt="" coords="517,508,661,533"/>
-<area shape="rect" id="node13" href="$class_display.html#adb4502abd3d3dd9ca70a97c1f3d66ad7" title=" " alt="" coords="270,457,414,483"/>
-<area shape="rect" id="node14" href="$class_display.html#aa68e271db8f91c18ae2c1e5e38d0f1ee" title="Stages the controls for the stopwatch." alt="" coords="224,507,460,532"/>
-<area shape="rect" id="node15" href="$class_display.html#ac878f4b1987c4e33c173478fd5bbf34c" title="Stages the stopwatch display with provided time values." alt="" coords="227,556,457,581"/>
-<area shape="rect" id="node16" href="$class_display.html#a8b0e743648629b44c19cb59b1cbe467e" title="Stages the splits block to be displayed." alt="" coords="233,605,451,631"/>
-<area shape="rect" id="node7" href="$class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="907,381,1047,407"/>
-<area shape="rect" id="node11" href="$class_display.html#aaa0ffb7318a45caa0b74d3d439e623f0" title="Clears a specific line in the terminal." alt="" coords="521,407,658,432"/>
+<area shape="rect" id="node1" title="Updates the display based on the state of the provided Stopwatch object." alt="" coords="5,376,176,401"/>
+<area shape="rect" id="node2" href="$class_display.html#abbc05f4af18fc8665a8022e795c2d574" title="Clears the terminal text color." alt="" coords="695,98,851,124"/>
+<area shape="rect" id="node4" href="$class_stopwatch.html#aaf61c1ada98a22cc1c2bc589bdd4134a" title="Returns the current elapsed time in milliseconds." alt="" coords="227,400,452,425"/>
+<area shape="rect" id="node5" href="$class_stopwatch.html#ae401b2a4016b104fc210e54a5041c9e2" title="Returns the splits vector." alt="" coords="262,449,417,474"/>
+<area shape="rect" id="node6" href="$class_stopwatch.html#ae20cb58892efc6ca55117583aac8c392" title="Checks if the stopwatch is currently running." alt="" coords="258,498,421,524"/>
+<area shape="rect" id="node7" href="$class_display.html#adaad0e1b5d4d161f107818583c3b4ef2" title="Prints controls to the terminal." alt="" coords="511,149,638,174"/>
+<area shape="rect" id="node8" href="$class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="703,301,843,326"/>
+<area shape="rect" id="node10" href="$class_display.html#aea651e91d87c11ca3723d08dcf8a5b48" title="Prints ASCII art to the terminal." alt="" coords="505,48,644,73"/>
+<area shape="rect" id="node11" href="$class_display.html#a0918dd20f8a177b7c61509ecc1994b3b" title="Prints the splash screen to the terminal." alt="" coords="264,350,415,376"/>
+<area shape="rect" id="node13" href="$class_display.html#a39a12fa82f3f8c7614d32bd91bb34ae5" title="Prints the stopwatch splits to the terminal." alt="" coords="503,198,647,224"/>
+<area shape="rect" id="node14" href="$class_display.html#a5f40f6193deb6304f0598b49944bd0d1" title="Stages the controls for the timer." alt="" coords="273,548,406,573"/>
+<area shape="rect" id="node15" href="$class_display.html#ac878f4b1987c4e33c173478fd5bbf34c" title="Stages the stopwatch display with provided time values." alt="" coords="224,597,455,622"/>
+<area shape="rect" id="node16" href="$class_display.html#a8b0e743648629b44c19cb59b1cbe467e" title="Stages the splits block to be displayed." alt="" coords="230,646,449,672"/>
+<area shape="rect" id="node3" href="$class_display.html#a0267a9a0b9ca0ce9d850e0c39bed1d1f" title="Efficiently prints a string to the terminal." alt="" coords="899,225,1039,250"/>
+<area shape="rect" id="node9" href="$class_display.html#a6f32f09622d7e1dde951d5610167bdce" title="Sets the terminal text color." alt="" coords="701,200,845,225"/>
+<area shape="rect" id="node12" href="$class_display.html#aaa0ffb7318a45caa0b74d3d439e623f0" title="Clears a specific line in the terminal." alt="" coords="506,401,643,426"/>
 </map>

@@ -1,0 +1,4 @@
+<map id="Notification::showNotification" name="Notification::showNotification">
+<area shape="rect" id="node1" title="Displays a notification with the given title and body." alt="" coords="233,5,448,31"/>
+<area shape="rect" id="node2" href="$class_notification.html#a9892fce2a960ef44f8133b02bef6fb8e" title="Constructs a Notification object and displays the notification." alt="" coords="5,5,185,31"/>
+</map>

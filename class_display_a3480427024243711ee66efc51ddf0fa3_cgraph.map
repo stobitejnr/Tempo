@@ -1,5 +1,0 @@
-<map id="Display::printControls" name="Display::printControls">
-<area shape="rect" id="node1" title="Prints controls to the terminal." alt="" coords="5,5,168,31"/>
-<area shape="rect" id="node2" href="$class_display.html#a1233671411c2af0367dc72e4451d0ba2" title="Efficiently prints a string to the terminal." alt="" coords="404,5,544,31"/>
-<area shape="rect" id="node3" href="$class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="216,31,356,56"/>
-</map>

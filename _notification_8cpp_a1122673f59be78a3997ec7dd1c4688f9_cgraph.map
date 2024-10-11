@@ -1,5 +1,0 @@
-<map id="WinMain" name="WinMain">
-<area shape="rect" id="node1" title="Entry point for the Windows application." alt="" coords="5,31,84,56"/>
-<area shape="rect" id="node2" href="$_notification_8cpp.html#ad23fe8f5aaf1d0460387522c8d85cdb2" title="Shows a notification in the system tray." alt="" coords="135,5,267,31"/>
-<area shape="rect" id="node3" href="$_notification_8cpp.html#a2f4b224a9110e040668258e2ce04b6ee" title="Window procedure for handling messages." alt="" coords="132,55,271,80"/>
-</map>

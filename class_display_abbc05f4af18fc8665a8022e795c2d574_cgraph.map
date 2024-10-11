@@ -1,0 +1,4 @@
+<map id="Display::clearFormat" name="Display::clearFormat">
+<area shape="rect" id="node1" title="Clears the terminal text color." alt="" coords="5,5,161,31"/>
+<area shape="rect" id="node2" href="$class_display.html#a0267a9a0b9ca0ce9d850e0c39bed1d1f" title="Efficiently prints a string to the terminal." alt="" coords="209,5,349,31"/>
+</map>

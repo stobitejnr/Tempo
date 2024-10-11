@@ -11,7 +11,8 @@ var searchData=
   ['close_8',['close',['../structcmd_8h.html#ae152484c890a24e4d9b4980e7b965be0',1,'structcmd.h']]],
   ['createalarm_9',['createAlarm',['../class_menu.html#a76c8148cc85fcc305b80c52b2f9df2ca',1,'Menu']]],
   ['createtimer_10',['createTimer',['../class_menu.html#a1a90c9e670b33e2c9aaddc01f47b3b88',1,'Menu']]],
-  ['cstyle_11',['cstyle',['../javadoc-banner_8h.html#a6ec4bf0132201719721e103451590a9e',1,'javadoc-banner.h']]],
-  ['currentmilliseconds_12',['currentMilliseconds',['../class_stopwatch.html#aaf61c1ada98a22cc1c2bc589bdd4134a',1,'Stopwatch']]],
-  ['currenttime_13',['currentTime',['../class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f',1,'Alarm']]]
+  ['credits_11',['credits',['../class_menu.html#ad038639f1dbf6e0d16ce7986d141155d',1,'Menu']]],
+  ['cstyle_12',['cstyle',['../javadoc-banner_8h.html#a6ec4bf0132201719721e103451590a9e',1,'javadoc-banner.h']]],
+  ['currentmilliseconds_13',['currentMilliseconds',['../class_stopwatch.html#aaf61c1ada98a22cc1c2bc589bdd4134a',1,'Stopwatch']]],
+  ['currenttime_14',['currentTime',['../class_alarm.html#a387c6a3ab4f521e108f092c6bcce611f',1,'Alarm']]]
 ];

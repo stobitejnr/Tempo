@@ -1,0 +1,11 @@
+<map id="test_alarm_setup" name="test_alarm_setup">
+<area shape="rect" id="node1" title=" " alt="" coords="5,107,140,133"/>
+<area shape="rect" id="node2" href="$class_display.html#ac8ccd7ba3691d710cb516abc82d55fae" title="Updates the alarm setup display, showing the current input with a blinking cursor." alt="" coords="188,107,367,133"/>
+<area shape="rect" id="node3" href="$class_display.html#adaad0e1b5d4d161f107818583c3b4ef2" title="Prints controls to the terminal." alt="" coords="421,82,547,107"/>
+<area shape="rect" id="node6" href="$class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="609,33,749,58"/>
+<area shape="rect" id="node8" href="$class_display.html#aea651e91d87c11ca3723d08dcf8a5b48" title="Prints ASCII art to the terminal." alt="" coords="415,131,553,157"/>
+<area shape="rect" id="node9" href="$class_display.html#a5f40f6193deb6304f0598b49944bd0d1" title="Stages the controls for the timer." alt="" coords="417,181,551,206"/>
+<area shape="rect" id="node4" href="$class_display.html#abbc05f4af18fc8665a8022e795c2d574" title="Clears the terminal text color." alt="" coords="601,131,757,157"/>
+<area shape="rect" id="node5" href="$class_display.html#a0267a9a0b9ca0ce9d850e0c39bed1d1f" title="Efficiently prints a string to the terminal." alt="" coords="805,82,945,107"/>
+<area shape="rect" id="node7" href="$class_display.html#a6f32f09622d7e1dde951d5610167bdce" title="Sets the terminal text color." alt="" coords="607,82,751,107"/>
+</map>

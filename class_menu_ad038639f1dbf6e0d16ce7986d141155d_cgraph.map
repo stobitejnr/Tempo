@@ -1,0 +1,10 @@
+<map id="Menu::credits" name="Menu::credits">
+<area shape="rect" id="node1" title="Displays the credits for the Timer Stopwatch and Alarm." alt="" coords="5,110,116,136"/>
+<area shape="rect" id="node2" href="$class_display.html#abbc05f4af18fc8665a8022e795c2d574" title="Clears the terminal text color." alt="" coords="359,34,515,60"/>
+<area shape="rect" id="node4" href="$class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62" title="Clears the terminal screen." alt="" coords="359,134,514,160"/>
+<area shape="rect" id="node5" href="$class_menu.html#a7ee6e9649708a590c18929ab5ebdd92d" title="Prints the Alarm&#39;s input duration to the console." alt="" coords="180,34,295,60"/>
+<area shape="rect" id="node6" href="$class_display.html#a6f32f09622d7e1dde951d5610167bdce" title="Sets the terminal text color." alt="" coords="365,85,509,110"/>
+<area shape="rect" id="node7" href="$class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="167,186,307,212"/>
+<area shape="rect" id="node8" href="$class_menu.html#a537a69bfbe3b8c29e3dfd3e2f5dd88b5" title="Waits for any key press from the user." alt="" coords="164,236,311,261"/>
+<area shape="rect" id="node3" href="$class_display.html#a0267a9a0b9ca0ce9d850e0c39bed1d1f" title="Efficiently prints a string to the terminal." alt="" coords="563,110,703,136"/>
+</map>
