@@ -1,5 +1,5 @@
 ![Logo](Logo%20(Mid).png)
-# Tempo (Beta Release)
+# Tempo (1.0)
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/8b2c325c2cc14f8c83427c59c616a839)](https://app.codacy.com/gh/stobitejnr/Tempo/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![Codecov Coverage Report](https://github.com/stobitejnr/Tempo/actions/workflows/codecov.yml/badge.svg)](https://github.com/stobitejnr/Tempo/actions/workflows/codecov.yml)
@@ -11,16 +11,14 @@
 
 A versatile command-line application that allows users to create and manage timers and stopwatches
 
-[Click here](https://forms.gle/yQKxxhWpJ1LWqaSq7) if you want to participate in the beta testing of the application.
-
 ## Developers
 
 ![Team Image](team.webp)
 
-## Beta Changes
-1. Added a new feature: Alarm
-2. Added color to the interface
-3. Upgraded code coverage
+## Final Changes
+1. Notification System
+2. Improved Startup Experience
+3. Updated Menu Traversal
 
 ## Feature
 
@@ -29,6 +27,7 @@ A versatile command-line application that allows users to create and manage time
    - Quickly create new timers
    - Reset timer
    - Visual progress bar
+   - Notification When Finished
 
 2. **Stopwatch**: Measure elapsed time with a hundredth of a second precision.
    - Start, pause, and resume functionality
@@ -38,6 +37,7 @@ A versatile command-line application that allows users to create and manage time
 3. **Alarm**: Set an alarm to go off at any time of the day.
    - Quickly create a new alarm
    - Visual progress bar
+   - Notification System
 
 4. **User-friendly Interface**:
    - ASCII art time display
@@ -53,17 +53,19 @@ A versatile command-line application that allows users to create and manage time
 
 ## Usage
 
-1. Upon starting the application, you'll be presented with the screen:
+1. Upon starting the application, you'll be presented with the Main menu:
 
-   ![Start up](startup.png)
+   <img src="menu.png" alt="main menu" width="600"/>
 
-   Press any key to continue.
+   Use the number keys to select a function, or use the arrow keys to move around the menu or 'Q' to quit.
 
-2. Then you will see the main menu:
+2. To access the settings select the appropriate menu button 
 
-   ![Main Menu](menu.png)
+   <img src="settings.png" alt="main menu" width="600"/>
 
-   Use the number keys to select a function or 'Q' to quit.
+
+   Use the number keys to select a function, or use the arrow keys to move around the menu or 'Q' to go back to the Main menu. 
+
 3. Follow the on-screen instructions to control each feature.
 
 ## Requirements
@@ -71,9 +73,7 @@ A versatile command-line application that allows users to create and manage time
 - Windows operating system (due to use of Windows-specific libraries)
 
 ## Future Enhancements
-- Add Windows notifications for completed timers and alarms
 - Add sound notifications
-- Add options menu with customizable fonts
 - Expand platform support beyond Windows
 
 ## Contributions
