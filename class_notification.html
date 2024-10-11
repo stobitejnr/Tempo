@@ -147,13 +147,13 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_notification_8cpp_source.html#l00027">27</a> of file <a class="el" href="_notification_8cpp_source.html">Notification.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   27</span>                                                    {</div>
-<div class="line"><span class="lineno">   28</span>    <a class="code hl_function" href="class_notification.html#af203bc83ecf09714883bdae80bf18b49">showNotification</a>(title, body);</div>
-<div class="line"><span class="lineno">   29</span>}</div>
-<div class="ttc" id="aclass_notification_html_af203bc83ecf09714883bdae80bf18b49"><div class="ttname"><a href="class_notification.html#af203bc83ecf09714883bdae80bf18b49">Notification::showNotification</a></div><div class="ttdeci">void showNotification(const string &amp;title, const string &amp;body)</div><div class="ttdoc">Displays a notification with the given title and body.</div><div class="ttdef"><b>Definition:</b> <a href="_notification_8cpp_source.html#l00041">Notification.cpp:41</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_notification_8cpp_source.html#l00026">26</a> of file <a class="el" href="_notification_8cpp_source.html">Notification.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   26</span>                                                    {</div>
+<div class="line"><span class="lineno">   27</span>    <a class="code hl_function" href="class_notification.html#af203bc83ecf09714883bdae80bf18b49">showNotification</a>(title, body);</div>
+<div class="line"><span class="lineno">   28</span>}</div>
+<div class="ttc" id="aclass_notification_html_af203bc83ecf09714883bdae80bf18b49"><div class="ttname"><a href="class_notification.html#af203bc83ecf09714883bdae80bf18b49">Notification::showNotification</a></div><div class="ttdeci">void showNotification(const string &amp;title, const string &amp;body)</div><div class="ttdoc">Displays a notification with the given title and body.</div><div class="ttdef"><b>Definition:</b> <a href="_notification_8cpp_source.html#l00040">Notification.cpp:40</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_notification_8cpp_source.html#l00041">showNotification()</a>.</p>
+<p class="reference">References <a class="el" href="_notification_8cpp_source.html#l00040">showNotification()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -239,75 +239,75 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_notification_8cpp_source.html#l00041">41</a> of file <a class="el" href="_notification_8cpp_source.html">Notification.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   41</span>                                                                           {</div>
-<div class="line"><span class="lineno">   42</span>    <span class="comment">// Get the path to the executable&#39;s directory</span></div>
-<div class="line"><span class="lineno">   43</span>    <span class="keywordtype">char</span> executablePath[MAX_PATH];</div>
-<div class="line"><span class="lineno">   44</span>    GetModuleFileName(NULL, executablePath, MAX_PATH);</div>
-<div class="line"><span class="lineno">   45</span> </div>
-<div class="line"><span class="lineno">   46</span>    <span class="comment">// Extract the directory from the executable&#39;s path</span></div>
-<div class="line"><span class="lineno">   47</span>    <span class="keywordtype">string</span> path(executablePath);</div>
-<div class="line"><span class="lineno">   48</span>    <span class="keywordtype">size_t</span> lastSlash = path.find_last_of(<span class="stringliteral">&quot;\\/&quot;</span>);</div>
-<div class="line"><span class="lineno">   49</span>    <span class="keywordtype">string</span> directory = path.substr(0, lastSlash);</div>
-<div class="line"><span class="lineno">   50</span> </div>
-<div class="line"><span class="lineno">   51</span>    <span class="comment">// Construct the relative path to the PowerShell script and resolve it to an absolute path</span></div>
-<div class="line"><span class="lineno">   52</span>    <span class="keywordtype">char</span> fullScriptPath[MAX_PATH];</div>
-<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">if</span> (_fullpath(fullScriptPath, (directory + <span class="stringliteral">&quot;\\..\\script\\notification.ps1&quot;</span>).c_str(), MAX_PATH)) {</div>
-<div class="line"><span class="lineno">   54</span>        <span class="keywordtype">string</span> scriptPath(fullScriptPath);</div>
-<div class="line"><span class="lineno">   55</span>        </div>
-<div class="line"><span class="lineno">   56</span>        <span class="comment">// Similarly, resolve the image path to an absolute path</span></div>
-<div class="line"><span class="lineno">   57</span>        <span class="keywordtype">char</span> fullImagePath[MAX_PATH];</div>
-<div class="line"><span class="lineno">   58</span>        <span class="keywordflow">if</span> (_fullpath(fullImagePath, (directory + <span class="stringliteral">&quot;\\..\\logo.png&quot;</span>).c_str(), MAX_PATH)) {</div>
-<div class="line"><span class="lineno">   59</span>            <span class="keywordtype">string</span> imagePath(fullImagePath);</div>
-<div class="line"><span class="lineno">   60</span> </div>
-<div class="line"><span class="lineno">   61</span>            <span class="comment">// Prepare the PowerShell command with parameters</span></div>
-<div class="line"><span class="lineno">   62</span>            <span class="keywordtype">string</span> powershellCommand = <span class="stringliteral">&quot;powershell.exe -ExecutionPolicy Bypass -File \&quot;&quot;</span> + scriptPath + </div>
-<div class="line"><span class="lineno">   63</span>                                       <span class="stringliteral">&quot;\&quot; -title \&quot;&quot;</span> + title + </div>
-<div class="line"><span class="lineno">   64</span>                                       <span class="stringliteral">&quot;\&quot; -message \&quot;&quot;</span> + body +</div>
-<div class="line"><span class="lineno">   65</span>                                       <span class="stringliteral">&quot;\&quot; -imagePath \&quot;&quot;</span> + imagePath + <span class="stringliteral">&quot;\&quot;&quot;</span>;</div>
-<div class="line"><span class="lineno">   66</span> </div>
-<div class="line"><span class="lineno">   67</span>            <span class="comment">// Set up the structures for creating the hidden process</span></div>
-<div class="line"><span class="lineno">   68</span>            STARTUPINFO si;</div>
-<div class="line"><span class="lineno">   69</span>            PROCESS_INFORMATION pi;</div>
-<div class="line"><span class="lineno">   70</span> </div>
-<div class="line"><span class="lineno">   71</span>            ZeroMemory(&amp;si, <span class="keyword">sizeof</span>(si));</div>
-<div class="line"><span class="lineno">   72</span>            si.cb = <span class="keyword">sizeof</span>(si);</div>
-<div class="line"><span class="lineno">   73</span>            ZeroMemory(&amp;pi, <span class="keyword">sizeof</span>(pi));</div>
-<div class="line"><span class="lineno">   74</span> </div>
-<div class="line"><span class="lineno">   75</span>            <span class="comment">// This hides the PowerShell window</span></div>
-<div class="line"><span class="lineno">   76</span>            si.dwFlags = STARTF_USESHOWWINDOW;</div>
-<div class="line"><span class="lineno">   77</span>            si.wShowWindow = SW_HIDE;</div>
-<div class="line"><span class="lineno">   78</span> </div>
-<div class="line"><span class="lineno">   79</span>            <span class="comment">// Create the process to run the PowerShell command</span></div>
-<div class="line"><span class="lineno">   80</span>            <span class="keywordflow">if</span> (!CreateProcess(NULL, </div>
-<div class="line"><span class="lineno">   81</span>                <span class="keyword">const_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(powershellCommand.c_str()),  <span class="comment">// Command line</span></div>
-<div class="line"><span class="lineno">   82</span>                NULL,           <span class="comment">// Process handle not inheritable</span></div>
-<div class="line"><span class="lineno">   83</span>                NULL,           <span class="comment">// Thread handle not inheritable</span></div>
-<div class="line"><span class="lineno">   84</span>                FALSE,          <span class="comment">// No handle inheritance</span></div>
-<div class="line"><span class="lineno">   85</span>                0,              <span class="comment">// No creation flags</span></div>
-<div class="line"><span class="lineno">   86</span>                NULL,           <span class="comment">// Use parent&#39;s environment block</span></div>
-<div class="line"><span class="lineno">   87</span>                NULL,           <span class="comment">// Use parent&#39;s starting directory</span></div>
-<div class="line"><span class="lineno">   88</span>                &amp;si,            <span class="comment">// Pointer to STARTUPINFO (to hide window)</span></div>
-<div class="line"><span class="lineno">   89</span>                &amp;pi)            <span class="comment">// Pointer to PROCESS_INFORMATION</span></div>
-<div class="line"><span class="lineno">   90</span>            ) {</div>
-<div class="line"><span class="lineno">   91</span>                std::cerr &lt;&lt; <span class="stringliteral">&quot;CreateProcess failed: &quot;</span> &lt;&lt; GetLastError() &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   92</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   93</span>            }</div>
-<div class="line"><span class="lineno">   94</span> </div>
-<div class="line"><span class="lineno">   95</span>            <span class="comment">// Close process and thread handles immediately (since the process runs in background)</span></div>
-<div class="line"><span class="lineno">   96</span>            CloseHandle(pi.hProcess);</div>
-<div class="line"><span class="lineno">   97</span>            CloseHandle(pi.hThread);</div>
-<div class="line"><span class="lineno">   98</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   99</span>            cerr &lt;&lt; <span class="stringliteral">&quot;Failed to resolve absolute path for logo.png&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  100</span>        }</div>
-<div class="line"><span class="lineno">  101</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  102</span>        cerr &lt;&lt; <span class="stringliteral">&quot;Failed to resolve absolute path for notification.ps1&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><span class="lineno">  103</span>    }</div>
-<div class="line"><span class="lineno">  104</span> </div>
-<div class="line"><span class="lineno">  105</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  106</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_notification_8cpp_source.html#l00040">40</a> of file <a class="el" href="_notification_8cpp_source.html">Notification.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>                                                                           {</div>
+<div class="line"><span class="lineno">   41</span>    <span class="comment">// Get the path to the executable&#39;s directory</span></div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordtype">char</span> executablePath[MAX_PATH];</div>
+<div class="line"><span class="lineno">   43</span>    GetModuleFileName(NULL, executablePath, MAX_PATH);</div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>    <span class="comment">// Extract the directory from the executable&#39;s path</span></div>
+<div class="line"><span class="lineno">   46</span>    <span class="keywordtype">string</span> path(executablePath);</div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordtype">size_t</span> lastSlash = path.find_last_of(<span class="stringliteral">&quot;\\/&quot;</span>);</div>
+<div class="line"><span class="lineno">   48</span>    <span class="keywordtype">string</span> directory = path.substr(0, lastSlash);</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>    <span class="comment">// Construct the relative path to the PowerShell script and resolve it to an absolute path</span></div>
+<div class="line"><span class="lineno">   51</span>    <span class="keywordtype">char</span> fullScriptPath[MAX_PATH];</div>
+<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">if</span> (_fullpath(fullScriptPath, (directory + <span class="stringliteral">&quot;\\..\\script\\notification.ps1&quot;</span>).c_str(), MAX_PATH)) {</div>
+<div class="line"><span class="lineno">   53</span>        <span class="keywordtype">string</span> scriptPath(fullScriptPath);</div>
+<div class="line"><span class="lineno">   54</span>        </div>
+<div class="line"><span class="lineno">   55</span>        <span class="comment">// Similarly, resolve the image path to an absolute path</span></div>
+<div class="line"><span class="lineno">   56</span>        <span class="keywordtype">char</span> fullImagePath[MAX_PATH];</div>
+<div class="line"><span class="lineno">   57</span>        <span class="keywordflow">if</span> (_fullpath(fullImagePath, (directory + <span class="stringliteral">&quot;\\..\\logo.png&quot;</span>).c_str(), MAX_PATH)) {</div>
+<div class="line"><span class="lineno">   58</span>            <span class="keywordtype">string</span> imagePath(fullImagePath);</div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>            <span class="comment">// Prepare the PowerShell command with parameters</span></div>
+<div class="line"><span class="lineno">   61</span>            <span class="keywordtype">string</span> powershellCommand = <span class="stringliteral">&quot;powershell.exe -ExecutionPolicy Bypass -File \&quot;&quot;</span> + scriptPath + </div>
+<div class="line"><span class="lineno">   62</span>                                       <span class="stringliteral">&quot;\&quot; -title \&quot;&quot;</span> + title + </div>
+<div class="line"><span class="lineno">   63</span>                                       <span class="stringliteral">&quot;\&quot; -message \&quot;&quot;</span> + body +</div>
+<div class="line"><span class="lineno">   64</span>                                       <span class="stringliteral">&quot;\&quot; -imagePath \&quot;&quot;</span> + imagePath + <span class="stringliteral">&quot;\&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">   65</span> </div>
+<div class="line"><span class="lineno">   66</span>            <span class="comment">// Set up the structures for creating the hidden process</span></div>
+<div class="line"><span class="lineno">   67</span>            STARTUPINFO si;</div>
+<div class="line"><span class="lineno">   68</span>            PROCESS_INFORMATION pi;</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>            ZeroMemory(&amp;si, <span class="keyword">sizeof</span>(si));</div>
+<div class="line"><span class="lineno">   71</span>            si.cb = <span class="keyword">sizeof</span>(si);</div>
+<div class="line"><span class="lineno">   72</span>            ZeroMemory(&amp;pi, <span class="keyword">sizeof</span>(pi));</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>            <span class="comment">// This hides the PowerShell window</span></div>
+<div class="line"><span class="lineno">   75</span>            si.dwFlags = STARTF_USESHOWWINDOW;</div>
+<div class="line"><span class="lineno">   76</span>            si.wShowWindow = SW_HIDE;</div>
+<div class="line"><span class="lineno">   77</span> </div>
+<div class="line"><span class="lineno">   78</span>            <span class="comment">// Create the process to run the PowerShell command</span></div>
+<div class="line"><span class="lineno">   79</span>            <span class="keywordflow">if</span> (!CreateProcess(NULL, </div>
+<div class="line"><span class="lineno">   80</span>                <span class="keyword">const_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(powershellCommand.c_str()),  <span class="comment">// Command line</span></div>
+<div class="line"><span class="lineno">   81</span>                NULL,           <span class="comment">// Process handle not inheritable</span></div>
+<div class="line"><span class="lineno">   82</span>                NULL,           <span class="comment">// Thread handle not inheritable</span></div>
+<div class="line"><span class="lineno">   83</span>                FALSE,          <span class="comment">// No handle inheritance</span></div>
+<div class="line"><span class="lineno">   84</span>                0,              <span class="comment">// No creation flags</span></div>
+<div class="line"><span class="lineno">   85</span>                NULL,           <span class="comment">// Use parent&#39;s environment block</span></div>
+<div class="line"><span class="lineno">   86</span>                NULL,           <span class="comment">// Use parent&#39;s starting directory</span></div>
+<div class="line"><span class="lineno">   87</span>                &amp;si,            <span class="comment">// Pointer to STARTUPINFO (to hide window)</span></div>
+<div class="line"><span class="lineno">   88</span>                &amp;pi)            <span class="comment">// Pointer to PROCESS_INFORMATION</span></div>
+<div class="line"><span class="lineno">   89</span>            ) {</div>
+<div class="line"><span class="lineno">   90</span>                std::cerr &lt;&lt; <span class="stringliteral">&quot;CreateProcess failed: &quot;</span> &lt;&lt; GetLastError() &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   91</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   92</span>            }</div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span>            <span class="comment">// Close process and thread handles immediately (since the process runs in background)</span></div>
+<div class="line"><span class="lineno">   95</span>            CloseHandle(pi.hProcess);</div>
+<div class="line"><span class="lineno">   96</span>            CloseHandle(pi.hThread);</div>
+<div class="line"><span class="lineno">   97</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   98</span>            cerr &lt;&lt; <span class="stringliteral">&quot;Failed to resolve absolute path for logo.png&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">   99</span>        }</div>
+<div class="line"><span class="lineno">  100</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  101</span>        cerr &lt;&lt; <span class="stringliteral">&quot;Failed to resolve absolute path for notification.ps1&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><span class="lineno">  102</span>    }</div>
+<div class="line"><span class="lineno">  103</span> </div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  105</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="_notification_8cpp_source.html#l00027">Notification()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="_notification_8cpp_source.html#l00026">Notification()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -327,7 +327,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 11 2024 01:03:32 for Tempo by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+Generated on Fri Oct 11 2024 01:10:50 for Tempo by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
 </small></address>
 </body>
 </html>
