@@ -150,11 +150,7 @@ void Menu::mainMenu(int selected) {
 
     _display.setCursor(1,1);
 
-    char in;
-
-    if(!_testing){
-        in = getMenuInput(selected);
-    }
+    char in = getMenuInput(selected);
 
     if(_testing){ in = '1'; }
     // ENTER TIMER SEQUENCE
@@ -245,11 +241,7 @@ void Menu::settingsMenu(int selected) {
 
     _display.setCursor(1,1);
     
-    char in;
-    
-    if(!_testing){
-        in = getSettingsInput(selected);
-    }
+    char in = getSettingsInput(selected);
 
     if(_testing){ in = '1'; }
     if(in == '1'){
@@ -739,8 +731,9 @@ GET USER INPUT FOR MENU SELECTION
  */
 char Menu::getMenuInput(int& selected){
     while(true){
-        if(_kbhit()){
-            char ch = _getch();
+        if(_kbhit() || _testing){
+            char ch = -1;
+            if(!_testing) { ch = _getch(); }
 
             if(ch == 13){
                 return selected + '1';
@@ -760,8 +753,9 @@ char Menu::getMenuInput(int& selected){
                 }
                 return '0';
             }
-
+            
             else{
+                if(_testing) { ch = 27; }
                 switch(ch){
                     case '1':
                     case '2':
@@ -794,8 +788,9 @@ char Menu::getMenuInput(int& selected){
 */
 char Menu::getSettingsInput(int& selected){
     while(true){
-        if(_kbhit()){
-            char ch = _getch();
+        if(_kbhit() || _testing){
+            char ch = -1;
+            if(!_testing) { ch = _getch(); }
 
             if(ch == 13){
                 return selected + '1';
@@ -816,6 +811,7 @@ char Menu::getSettingsInput(int& selected){
                 return '0';
             }
             else{
+                if(_testing) { ch = 27; }
                 switch(ch){
                     case '1':
                     case '2':
