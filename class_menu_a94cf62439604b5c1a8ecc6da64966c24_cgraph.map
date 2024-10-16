@@ -1,4 +1,8 @@
 <map id="Menu::getSettingsInput" name="Menu::getSettingsInput">
-<area shape="rect" id="node1" title="Waits for the user to press a valid key (1 2 3 4 or Q) for settings selection." alt="" coords="5,5,179,31"/>
-<area shape="rect" id="node2" href="$class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="227,5,321,31"/>
+<area shape="rect" id="node1" title="Waits for the user to press a valid key (1 2 3 4 or Q) for settings selection." alt="" coords="5,55,179,80"/>
+<area shape="rect" id="node2" href="$class_menu.html#a7ee6e9649708a590c18929ab5ebdd92d" title="Prints the Alarm&#39;s input duration to the console." alt="" coords="227,29,341,55"/>
+<area shape="rect" id="node6" href="$class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="237,79,331,104"/>
+<area shape="rect" id="node3" href="$class_display.html#abbc05f4af18fc8665a8022e795c2d574" title="Clears the terminal text color." alt="" coords="389,5,545,31"/>
+<area shape="rect" id="node5" href="$class_display.html#a6f32f09622d7e1dde951d5610167bdce" title="Sets the terminal text color." alt="" coords="395,55,539,80"/>
+<area shape="rect" id="node4" href="$class_display.html#a0267a9a0b9ca0ce9d850e0c39bed1d1f" title="Efficiently prints a string to the terminal." alt="" coords="593,31,733,56"/>
 </map>

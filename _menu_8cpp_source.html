@@ -765,44 +765,45 @@ $(function() {
 <div class="line"><a id="l00793" name="l00793"></a><span class="lineno">  793</span>            <span class="keywordflow">if</span>(!<a class="code hl_variable" href="class_menu.html#a773a1b7f947f866b08e7f65858b3d44f">_testing</a>) { ch = _getch(); }</div>
 <div class="line"><a id="l00794" name="l00794"></a><span class="lineno">  794</span> </div>
 <div class="line"><a id="l00795" name="l00795"></a><span class="lineno">  795</span>            <span class="keywordflow">if</span>(ch == 13){</div>
-<div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span>                <span class="keywordflow">return</span> selected + <span class="charliteral">&#39;1&#39;</span>;</div>
-<div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span>            }</div>
-<div class="line"><a id="l00798" name="l00798"></a><span class="lineno">  798</span> </div>
-<div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span>            <span class="keywordflow">if</span>(ch == -32 || ch == 224 || ch == 0){</div>
-<div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span>                ch = getch();</div>
-<div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span>                <span class="keywordflow">switch</span>(ch){</div>
-<div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span>                    <span class="keywordflow">case</span> 72:</div>
-<div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span>                        selected = max(0,selected-1);</div>
-<div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span>                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span>                    <span class="keywordflow">case</span> 80:</div>
-<div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span>                        selected = min(3,selected+1);</div>
-<div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span>                        <span class="keywordflow">break</span>;   </div>
-<div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span>                    <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span>                        <span class="keywordflow">break</span>; </div>
-<div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span>                }</div>
-<div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span>                <span class="keywordflow">return</span> <span class="charliteral">&#39;0&#39;</span>;</div>
-<div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span>            }</div>
-<div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span>            <span class="keywordflow">else</span>{</div>
-<div class="line"><a id="l00814" name="l00814"></a><span class="lineno">  814</span>                <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_menu.html#a773a1b7f947f866b08e7f65858b3d44f">_testing</a>) { ch = 27; }</div>
-<div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span>                <span class="keywordflow">switch</span>(ch){</div>
-<div class="line"><a id="l00816" name="l00816"></a><span class="lineno">  816</span>                    <span class="keywordflow">case</span> <span class="charliteral">&#39;1&#39;</span>:</div>
-<div class="line"><a id="l00817" name="l00817"></a><span class="lineno">  817</span>                    <span class="keywordflow">case</span> <span class="charliteral">&#39;2&#39;</span>:</div>
-<div class="line"><a id="l00818" name="l00818"></a><span class="lineno">  818</span>                    <span class="keywordflow">case</span> <span class="charliteral">&#39;3&#39;</span>:</div>
-<div class="line"><a id="l00819" name="l00819"></a><span class="lineno">  819</span>                        selected = ch - <span class="charliteral">&#39;1&#39;</span>;</div>
-<div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span>                        <span class="keywordflow">return</span> ch;</div>
-<div class="line"><a id="l00821" name="l00821"></a><span class="lineno">  821</span>                    <span class="keywordflow">case</span> <span class="charliteral">&#39;Q&#39;</span>:</div>
-<div class="line"><a id="l00822" name="l00822"></a><span class="lineno">  822</span>                    <span class="keywordflow">case</span> <span class="charliteral">&#39;q&#39;</span>:</div>
-<div class="line"><a id="l00823" name="l00823"></a><span class="lineno">  823</span>                    <span class="keywordflow">case</span> 27:</div>
-<div class="line"><a id="l00824" name="l00824"></a><span class="lineno">  824</span>                        selected = 3;</div>
-<div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span>                        <span class="keywordflow">return</span> <span class="charliteral">&#39;q&#39;</span>;</div>
-<div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span>                    <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>                        <span class="keywordflow">break</span>;         </div>
-<div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span>                }</div>
-<div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span>            }</div>
-<div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span>        }</div>
-<div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span>        <a class="code hl_function" href="class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b">wait</a>(<a class="code hl_variable" href="_menu_8cpp.html#a610ba0608c23aad07fdc25e521c50906">LOOPTIME</a>); <span class="comment">// Slight delay before checking input again</span></div>
-<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span>    }</div>
-<div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span>}</div>
+<div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span>                <a class="code hl_function" href="class_menu.html#a7ee6e9649708a590c18929ab5ebdd92d">printArt</a>(<a class="code hl_variable" href="class_menu.html#a99850e4d8fc0a3bb12fcfb5126590e4b">_settingsBlank</a>, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span>                <span class="keywordflow">return</span> selected + <span class="charliteral">&#39;1&#39;</span>;</div>
+<div class="line"><a id="l00798" name="l00798"></a><span class="lineno">  798</span>            }</div>
+<div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span> </div>
+<div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span>            <span class="keywordflow">if</span>(ch == -32 || ch == 224 || ch == 0){</div>
+<div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span>                ch = getch();</div>
+<div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span>                <span class="keywordflow">switch</span>(ch){</div>
+<div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span>                    <span class="keywordflow">case</span> 72:</div>
+<div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span>                        selected = max(0,selected-1);</div>
+<div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span>                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span>                    <span class="keywordflow">case</span> 80:</div>
+<div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span>                        selected = min(3,selected+1);</div>
+<div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span>                        <span class="keywordflow">break</span>;   </div>
+<div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span>                    <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span>                        <span class="keywordflow">break</span>; </div>
+<div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span>                }</div>
+<div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span>                <span class="keywordflow">return</span> <span class="charliteral">&#39;0&#39;</span>;</div>
+<div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span>            }</div>
+<div class="line"><a id="l00814" name="l00814"></a><span class="lineno">  814</span>            <span class="keywordflow">else</span>{</div>
+<div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span>                <span class="keywordflow">if</span>(<a class="code hl_variable" href="class_menu.html#a773a1b7f947f866b08e7f65858b3d44f">_testing</a>) { ch = 27; }</div>
+<div class="line"><a id="l00816" name="l00816"></a><span class="lineno">  816</span>                <span class="keywordflow">switch</span>(ch){</div>
+<div class="line"><a id="l00817" name="l00817"></a><span class="lineno">  817</span>                    <span class="keywordflow">case</span> <span class="charliteral">&#39;1&#39;</span>:</div>
+<div class="line"><a id="l00818" name="l00818"></a><span class="lineno">  818</span>                    <span class="keywordflow">case</span> <span class="charliteral">&#39;2&#39;</span>:</div>
+<div class="line"><a id="l00819" name="l00819"></a><span class="lineno">  819</span>                    <span class="keywordflow">case</span> <span class="charliteral">&#39;3&#39;</span>:</div>
+<div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span>                        selected = ch - <span class="charliteral">&#39;1&#39;</span>;</div>
+<div class="line"><a id="l00821" name="l00821"></a><span class="lineno">  821</span>                        <span class="keywordflow">return</span> ch;</div>
+<div class="line"><a id="l00822" name="l00822"></a><span class="lineno">  822</span>                    <span class="keywordflow">case</span> <span class="charliteral">&#39;Q&#39;</span>:</div>
+<div class="line"><a id="l00823" name="l00823"></a><span class="lineno">  823</span>                    <span class="keywordflow">case</span> <span class="charliteral">&#39;q&#39;</span>:</div>
+<div class="line"><a id="l00824" name="l00824"></a><span class="lineno">  824</span>                    <span class="keywordflow">case</span> 27:</div>
+<div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span>                        selected = 3;</div>
+<div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span>                        <span class="keywordflow">return</span> <span class="charliteral">&#39;q&#39;</span>;</div>
+<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>                    <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span>                        <span class="keywordflow">break</span>;         </div>
+<div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span>                }</div>
+<div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span>            }</div>
+<div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span>        }</div>
+<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span>        <a class="code hl_function" href="class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b">wait</a>(<a class="code hl_variable" href="_menu_8cpp.html#a610ba0608c23aad07fdc25e521c50906">LOOPTIME</a>); <span class="comment">// Slight delay before checking input again</span></div>
+<div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span>    }</div>
+<div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span>}</div>
 <div class="ttc" id="a_menu_8cpp_html_a610ba0608c23aad07fdc25e521c50906"><div class="ttname"><a href="_menu_8cpp.html#a610ba0608c23aad07fdc25e521c50906">LOOPTIME</a></div><div class="ttdeci">const double LOOPTIME</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00005">Menu.cpp:5</a></div></div>
 <div class="ttc" id="a_menu_8cpp_html_af23e838731571850b005fd1ecf6b7dc4"><div class="ttname"><a href="_menu_8cpp.html#af23e838731571850b005fd1ecf6b7dc4">NUM_FONTS</a></div><div class="ttdeci">const int NUM_FONTS</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00007">Menu.cpp:7</a></div></div>
 <div class="ttc" id="aclass_alarm_html"><div class="ttname"><a href="class_alarm.html">Alarm</a></div><div class="ttdoc">A class to manage alarms with time-based triggers.</div><div class="ttdef"><b>Definition:</b> <a href="_alarm_8hpp_source.html#l00013">Alarm.hpp:13</a></div></div>
@@ -855,6 +856,7 @@ $(function() {
 <div class="ttc" id="aclass_menu_html_a836f729dae007026c27f10b3354709fd"><div class="ttname"><a href="class_menu.html#a836f729dae007026c27f10b3354709fd">Menu::_display</a></div><div class="ttdeci">Display _display</div><div class="ttdoc">Instance of Display to manage the visual representation.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8hpp_source.html#l00189">Menu.hpp:189</a></div></div>
 <div class="ttc" id="aclass_menu_html_a83b6fd49306fb3db84f7604ff2e31e03"><div class="ttname"><a href="class_menu.html#a83b6fd49306fb3db84f7604ff2e31e03">Menu::saveSettings</a></div><div class="ttdeci">void saveSettings()</div><div class="ttdoc">Saves the notification and font settings to a file.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00105">Menu.cpp:105</a></div></div>
 <div class="ttc" id="aclass_menu_html_a94cf62439604b5c1a8ecc6da64966c24"><div class="ttname"><a href="class_menu.html#a94cf62439604b5c1a8ecc6da64966c24">Menu::getSettingsInput</a></div><div class="ttdeci">char getSettingsInput(int &amp;selected)</div><div class="ttdoc">Waits for the user to press a valid key (1 2 3 4 or Q) for settings selection.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8cpp_source.html#l00789">Menu.cpp:789</a></div></div>
+<div class="ttc" id="aclass_menu_html_a99850e4d8fc0a3bb12fcfb5126590e4b"><div class="ttname"><a href="class_menu.html#a99850e4d8fc0a3bb12fcfb5126590e4b">Menu::_settingsBlank</a></div><div class="ttdeci">vector&lt; string &gt; _settingsBlank</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8hpp_source.html#l00380">Menu.hpp:380</a></div></div>
 <div class="ttc" id="aclass_menu_html_a9d05e7243afa5ff307fe278e145991de"><div class="ttname"><a href="class_menu.html#a9d05e7243afa5ff307fe278e145991de">Menu::_logoArt</a></div><div class="ttdeci">vector&lt; string &gt; _logoArt</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8hpp_source.html#l00200">Menu.hpp:200</a></div></div>
 <div class="ttc" id="aclass_menu_html_aa77048fb0fdf99cc45bca7030d12a98c"><div class="ttname"><a href="class_menu.html#aa77048fb0fdf99cc45bca7030d12a98c">Menu::_menuFormats</a></div><div class="ttdeci">vector&lt; string &gt; _menuFormats</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8hpp_source.html#l00193">Menu.hpp:193</a></div></div>
 <div class="ttc" id="aclass_menu_html_aaf2cde31220911ed41f9973e5bd9beff"><div class="ttname"><a href="class_menu.html#aaf2cde31220911ed41f9973e5bd9beff">Menu::_menuStopwatch</a></div><div class="ttdeci">vector&lt; string &gt; _menuStopwatch</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8hpp_source.html#l00249">Menu.hpp:249</a></div></div>
@@ -885,7 +887,7 @@ $(function() {
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 11 2024 01:10:57 for Tempo by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+Generated on Wed Oct 16 2024 20:05:15 for Tempo by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
 </small></address>
 </body>
 </html>

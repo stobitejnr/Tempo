@@ -4,15 +4,15 @@
 <area shape="rect" id="node3" href="$class_menu.html#ac191b03c7f1b0f69271bd86bcd21c7cb" title="Loads the notification and font settings from a file." alt="" coords="251,5,397,31"/>
 <area shape="rect" id="node4" href="$class_menu.html#a83b6fd49306fb3db84f7604ff2e31e03" title="Saves the notification and font settings to a file." alt="" coords="461,43,611,68"/>
 <area shape="rect" id="node5" href="$class_menu.html#a2a39bbdf300035d48c14002a0c54c56f" title="Starts the settings menu loop allowing the user to change the notification and font settings." alt="" coords="247,143,401,168"/>
-<area shape="rect" id="node6" href="$class_menu.html#ad038639f1dbf6e0d16ce7986d141155d" title="Displays the credits for the Timer Stopwatch and Alarm." alt="" coords="481,243,591,268"/>
-<area shape="rect" id="node10" href="$class_menu.html#a7ee6e9649708a590c18929ab5ebdd92d" title="Prints the Alarm&#39;s input duration to the console." alt="" coords="687,395,801,420"/>
-<area shape="rect" id="node12" href="$class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="674,141,814,167"/>
+<area shape="rect" id="node6" href="$class_menu.html#ad038639f1dbf6e0d16ce7986d141155d" title="Displays the credits for the Timer Stopwatch and Alarm." alt="" coords="481,193,591,219"/>
+<area shape="rect" id="node10" href="$class_menu.html#a7ee6e9649708a590c18929ab5ebdd92d" title="Prints the Alarm&#39;s input duration to the console." alt="" coords="687,92,801,117"/>
+<area shape="rect" id="node12" href="$class_display.html#a5454c0ff9a9d1730b3604bc15f94a5b3" title="Sets the cursor position in the terminal." alt="" coords="674,345,814,371"/>
 <area shape="rect" id="node14" href="$class_menu.html#a94cf62439604b5c1a8ecc6da64966c24" title="Waits for the user to press a valid key (1 2 3 4 or Q) for settings selection." alt="" coords="449,92,623,117"/>
-<area shape="rect" id="node16" href="$class_display.html#a4aeb617efef8e5a5e306f63eb96fd82d" title="Sets the font style for the terminal." alt="" coords="473,193,599,219"/>
-<area shape="rect" id="node7" href="$class_display.html#abbc05f4af18fc8665a8022e795c2d574" title="Clears the terminal text color." alt="" coords="865,293,1021,319"/>
-<area shape="rect" id="node9" href="$class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62" title="Clears the terminal screen." alt="" coords="866,219,1021,244"/>
-<area shape="rect" id="node11" href="$class_display.html#a6f32f09622d7e1dde951d5610167bdce" title="Sets the terminal text color." alt="" coords="871,344,1015,369"/>
-<area shape="rect" id="node13" href="$class_menu.html#a537a69bfbe3b8c29e3dfd3e2f5dd88b5" title="Waits for any key press from the user." alt="" coords="671,243,817,268"/>
-<area shape="rect" id="node8" href="$class_display.html#a0267a9a0b9ca0ce9d850e0c39bed1d1f" title="Efficiently prints a string to the terminal." alt="" coords="1069,269,1209,295"/>
-<area shape="rect" id="node15" href="$class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="697,92,791,117"/>
+<area shape="rect" id="node16" href="$class_display.html#a4aeb617efef8e5a5e306f63eb96fd82d" title="Sets the font style for the terminal." alt="" coords="473,243,599,268"/>
+<area shape="rect" id="node7" href="$class_display.html#abbc05f4af18fc8665a8022e795c2d574" title="Clears the terminal text color." alt="" coords="865,143,1021,168"/>
+<area shape="rect" id="node9" href="$class_display.html#a729a08fa7f1f33907b6c2ba13fcf6d62" title="Clears the terminal screen." alt="" coords="866,269,1021,295"/>
+<area shape="rect" id="node11" href="$class_display.html#a6f32f09622d7e1dde951d5610167bdce" title="Sets the terminal text color." alt="" coords="871,193,1015,219"/>
+<area shape="rect" id="node13" href="$class_menu.html#a537a69bfbe3b8c29e3dfd3e2f5dd88b5" title="Waits for any key press from the user." alt="" coords="671,244,817,269"/>
+<area shape="rect" id="node8" href="$class_display.html#a0267a9a0b9ca0ce9d850e0c39bed1d1f" title="Efficiently prints a string to the terminal." alt="" coords="1069,219,1209,244"/>
+<area shape="rect" id="node15" href="$class_menu.html#a4ab7d9809ad0f490ad7634a76b37589b" title="Waits for a specific duration using busy&#45;waiting." alt="" coords="697,43,791,68"/>
 </map>

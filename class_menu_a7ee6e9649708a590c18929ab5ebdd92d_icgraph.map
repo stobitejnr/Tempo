@@ -1,9 +1,10 @@
 <map id="Menu::printArt" name="Menu::printArt">
-<area shape="rect" id="node1" title="Prints the Alarm&#39;s input duration to the console." alt="" coords="700,56,815,81"/>
-<area shape="rect" id="node2" href="$class_menu.html#ad038639f1dbf6e0d16ce7986d141155d" title="Displays the credits for the Timer Stopwatch and Alarm." alt="" coords="541,5,652,31"/>
-<area shape="rect" id="node3" href="$class_menu.html#a2a39bbdf300035d48c14002a0c54c56f" title="Starts the settings menu loop allowing the user to change the notification and font settings." alt="" coords="339,45,493,71"/>
-<area shape="rect" id="node4" href="$class_menu.html#adfad43d64fc6df9172030c25f7d234c5" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="156,107,291,132"/>
-<area shape="rect" id="node6" href="$_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="178,33,269,59"/>
-<area shape="rect" id="node5" href="$class_menu.html#a2b43753d834b64bdba7e82bc9f2af305" title="Constructs a Menu object." alt="" coords="5,107,108,132"/>
-<area shape="rect" id="node7" href="$_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="29,33,84,59"/>
+<area shape="rect" id="node1" title="Prints the Alarm&#39;s input duration to the console." alt="" coords="763,81,877,107"/>
+<area shape="rect" id="node2" href="$class_menu.html#ad038639f1dbf6e0d16ce7986d141155d" title="Displays the credits for the Timer Stopwatch and Alarm." alt="" coords="573,5,683,31"/>
+<area shape="rect" id="node3" href="$class_menu.html#a2a39bbdf300035d48c14002a0c54c56f" title="Starts the settings menu loop allowing the user to change the notification and font settings." alt="" coords="339,64,493,89"/>
+<area shape="rect" id="node4" href="$class_menu.html#adfad43d64fc6df9172030c25f7d234c5" title="Starts the main menu loop allowing the user to choose between Timer Stopwatch and Alarm." alt="" coords="156,144,291,169"/>
+<area shape="rect" id="node8" href="$class_menu.html#a94cf62439604b5c1a8ecc6da64966c24" title="Waits for the user to press a valid key (1 2 3 4 or Q) for settings selection." alt="" coords="541,107,715,132"/>
+<area shape="rect" id="node6" href="$_menu_test_8cpp.html#a25ba3fb7af6ebbefc65c74be1ed8e186" title=" " alt="" coords="178,64,269,89"/>
+<area shape="rect" id="node5" href="$class_menu.html#a2b43753d834b64bdba7e82bc9f2af305" title="Constructs a Menu object." alt="" coords="5,144,108,169"/>
+<area shape="rect" id="node7" href="$_menu_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="29,64,84,89"/>
 </map>
