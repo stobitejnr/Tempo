@@ -793,6 +793,7 @@ char Menu::getSettingsInput(int& selected){
             if(!_testing) { ch = _getch(); }
 
             if(ch == 13){
+                printArt(_settingsBlank, "");
                 return selected + '1';
             }
 
